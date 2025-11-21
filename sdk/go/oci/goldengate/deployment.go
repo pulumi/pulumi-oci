@@ -111,12 +111,16 @@ type Deployment struct {
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringOutput `pulumi:"sourceDeploymentId"`
-	State              pulumi.StringOutput `pulumi:"state"`
+	// Possible lifecycle states.
+	State pulumi.StringOutput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
@@ -264,12 +268,16 @@ type deploymentState struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
-	State              *string `pulumi:"state"`
+	// Possible lifecycle states.
+	State *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId *string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -379,12 +387,16 @@ type DeploymentState struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
-	State              pulumi.StringPtrInput
+	// Possible lifecycle states.
+	State pulumi.StringPtrInput
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput
@@ -468,10 +480,14 @@ type deploymentArgs struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
-	State              *string `pulumi:"state"`
+	// Possible lifecycle states.
+	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
@@ -534,10 +550,14 @@ type DeploymentArgs struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
-	State              pulumi.StringPtrInput
+	// Possible lifecycle states.
+	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringPtrInput
 }
 
@@ -847,6 +867,7 @@ func (o DeploymentOutput) SourceDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SourceDeploymentId }).(pulumi.StringOutput)
 }
 
+// Possible lifecycle states.
 func (o DeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -862,6 +883,9 @@ func (o DeploymentOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DeploymentOutput) SubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }

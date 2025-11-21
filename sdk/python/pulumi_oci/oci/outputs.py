@@ -22,6 +22,8 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestApproverDetail',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
     'DbmulticloudMultiCloudResourceDiscoveryResource',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNode',
     'DifStackAdb',
@@ -92,6 +94,16 @@ __all__ = [
     'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult',
     'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult',
     'GetDbmulticloudMultiCloudResourceDiscoveryResourceResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailResult',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeResult',
+    'GetDbmulticloudOracleDbAwsKeysFilterResult',
+    'GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionResult',
+    'GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult',
     'GetDbmulticloudOracleDbAzureBlobContainersFilterResult',
     'GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionResult',
     'GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult',
@@ -241,6 +253,21 @@ __all__ = [
     'GetMulticloudResourceAnchorsFilterResult',
     'GetMulticloudResourceAnchorsResourceAnchorCollectionResult',
     'GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult',
+    'GetPsaPrivateServiceAccessesFilterResult',
+    'GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionResult',
+    'GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemResult',
+    'GetPsaPsaServicesFilterResult',
+    'GetPsaPsaServicesPsaServiceCollectionResult',
+    'GetPsaPsaServicesPsaServiceCollectionItemResult',
+    'GetPsaPsaWorkRequestErrorsFilterResult',
+    'GetPsaPsaWorkRequestErrorsWorkRequestErrorResult',
+    'GetPsaPsaWorkRequestLogsFilterResult',
+    'GetPsaPsaWorkRequestLogsWorkRequestLogEntryResult',
+    'GetPsaPsaWorkRequestResourceResult',
+    'GetPsaPsaWorkRequestsFilterResult',
+    'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionResult',
+    'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResult',
+    'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult',
     'GetResourceAnalyticsMonitoredRegionsFilterResult',
     'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionResult',
     'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult',
@@ -660,6 +687,179 @@ class DbmulticloudMultiCloudResourceDiscoveryResource(dict):
         Discovered Resource Type.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "roleArn":
+            suggest = "role_arn"
+        elif key == "servicePrivateEndpoint":
+            suggest = "service_private_endpoint"
+        elif key == "serviceType":
+            suggest = "service_type"
+        elif key == "assumeRoleStatus":
+            suggest = "assume_role_status"
+        elif key == "awsNodes":
+            suggest = "aws_nodes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 role_arn: _builtins.str,
+                 service_private_endpoint: _builtins.str,
+                 service_type: _builtins.str,
+                 assume_role_status: Optional[_builtins.str] = None,
+                 aws_nodes: Optional[Sequence['outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode']] = None):
+        """
+        :param _builtins.str role_arn: (Updatable) Amazon resource name AWSof the IAM role.
+        :param _builtins.str service_private_endpoint: (Updatable) Private endpoint of the AWS service.
+        :param _builtins.str service_type: (Updatable) Type of service.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str assume_role_status: Assume role  status.
+        :param Sequence['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs'] aws_nodes: List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        pulumi.set(__self__, "role_arn", role_arn)
+        pulumi.set(__self__, "service_private_endpoint", service_private_endpoint)
+        pulumi.set(__self__, "service_type", service_type)
+        if assume_role_status is not None:
+            pulumi.set(__self__, "assume_role_status", assume_role_status)
+        if aws_nodes is not None:
+            pulumi.set(__self__, "aws_nodes", aws_nodes)
+
+    @_builtins.property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> _builtins.str:
+        """
+        (Updatable) Amazon resource name AWSof the IAM role.
+        """
+        return pulumi.get(self, "role_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="servicePrivateEndpoint")
+    def service_private_endpoint(self) -> _builtins.str:
+        """
+        (Updatable) Private endpoint of the AWS service.
+        """
+        return pulumi.get(self, "service_private_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of service.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "service_type")
+
+    @_builtins.property
+    @pulumi.getter(name="assumeRoleStatus")
+    def assume_role_status(self) -> Optional[_builtins.str]:
+        """
+        Assume role  status.
+        """
+        return pulumi.get(self, "assume_role_status")
+
+    @_builtins.property
+    @pulumi.getter(name="awsNodes")
+    def aws_nodes(self) -> Optional[Sequence['outputs.DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode']]:
+        """
+        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        return pulumi.get(self, "aws_nodes")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostId":
+            suggest = "host_id"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "timeLastChecked":
+            suggest = "time_last_checked"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_id: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 time_last_checked: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_id: AWS host ID.
+        :param _builtins.str host_name: AWS Host name or Identity Connector name.
+        :param _builtins.str status: The current status of the AWS Identity Connector resource.
+        :param _builtins.str time_last_checked: Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[_builtins.str]:
+        """
+        AWS host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        AWS Host name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The current status of the AWS Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[_builtins.str]:
+        """
+        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_last_checked")
 
 
 @pulumi.output_type
@@ -5523,6 +5723,698 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResourceResult(dict):
 
 
 @pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailResult(dict):
+    def __init__(__self__, *,
+                 assume_role_status: _builtins.str,
+                 aws_nodes: Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeResult'],
+                 role_arn: _builtins.str,
+                 service_private_endpoint: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str assume_role_status: Assume role  status.
+        :param Sequence['GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs'] aws_nodes: List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        :param _builtins.str role_arn: Amazon resource name AWSof the IAM role.
+        :param _builtins.str service_private_endpoint: Private endpoint of the AWS service.
+        :param _builtins.str service_type: Type of service.
+        """
+        pulumi.set(__self__, "assume_role_status", assume_role_status)
+        pulumi.set(__self__, "aws_nodes", aws_nodes)
+        pulumi.set(__self__, "role_arn", role_arn)
+        pulumi.set(__self__, "service_private_endpoint", service_private_endpoint)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="assumeRoleStatus")
+    def assume_role_status(self) -> _builtins.str:
+        """
+        Assume role  status.
+        """
+        return pulumi.get(self, "assume_role_status")
+
+    @_builtins.property
+    @pulumi.getter(name="awsNodes")
+    def aws_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeResult']:
+        """
+        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        return pulumi.get(self, "aws_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> _builtins.str:
+        """
+        Amazon resource name AWSof the IAM role.
+        """
+        return pulumi.get(self, "role_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="servicePrivateEndpoint")
+    def service_private_endpoint(self) -> _builtins.str:
+        """
+        Private endpoint of the AWS service.
+        """
+        return pulumi.get(self, "service_private_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        Type of service.
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeResult(dict):
+    def __init__(__self__, *,
+                 host_id: _builtins.str,
+                 host_name: _builtins.str,
+                 status: _builtins.str,
+                 time_last_checked: _builtins.str):
+        """
+        :param _builtins.str host_id: AWS host ID.
+        :param _builtins.str host_name: AWS Host name or Identity Connector name.
+        :param _builtins.str status: The current status of the AWS Identity Connector resource.
+        :param _builtins.str time_last_checked: Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> _builtins.str:
+        """
+        AWS host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        AWS Host name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the AWS Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> _builtins.str:
+        """
+        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 aws_account_id: _builtins.str,
+                 aws_location: _builtins.str,
+                 aws_sts_private_endpoint: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 issuer_url: _builtins.str,
+                 lifecycle_state_details: _builtins.str,
+                 oidc_scope: _builtins.str,
+                 resource_id: _builtins.str,
+                 service_role_details: Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str aws_account_id: AWS Account ID.
+        :param _builtins.str aws_location: AWS resource location.
+        :param _builtins.str aws_sts_private_endpoint: Private endpoint of AWS Security Token Service.
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
+        :param _builtins.str issuer_url: OIDC token issuer Url.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param _builtins.str oidc_scope: Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
+        :param _builtins.str resource_id: A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs'] service_role_details: Service role details and respective Amazon resource nam of Role.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the Oracle DB AWS Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "aws_account_id", aws_account_id)
+        pulumi.set(__self__, "aws_location", aws_location)
+        pulumi.set(__self__, "aws_sts_private_endpoint", aws_sts_private_endpoint)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "issuer_url", issuer_url)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "oidc_scope", oidc_scope)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "service_role_details", service_role_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="awsAccountId")
+    def aws_account_id(self) -> _builtins.str:
+        """
+        AWS Account ID.
+        """
+        return pulumi.get(self, "aws_account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsLocation")
+    def aws_location(self) -> _builtins.str:
+        """
+        AWS resource location.
+        """
+        return pulumi.get(self, "aws_location")
+
+    @_builtins.property
+    @pulumi.getter(name="awsStsPrivateEndpoint")
+    def aws_sts_private_endpoint(self) -> _builtins.str:
+        """
+        Private endpoint of AWS Security Token Service.
+        """
+        return pulumi.get(self, "aws_sts_private_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="issuerUrl")
+    def issuer_url(self) -> _builtins.str:
+        """
+        OIDC token issuer Url.
+        """
+        return pulumi.get(self, "issuer_url")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter(name="oidcScope")
+    def oidc_scope(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
+        """
+        return pulumi.get(self, "oidc_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceRoleDetails")
+    def service_role_details(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailResult']:
+        """
+        Service role details and respective Amazon resource nam of Role.
+        """
+        return pulumi.get(self, "service_role_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the Oracle DB AWS Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailResult(dict):
+    def __init__(__self__, *,
+                 assume_role_status: _builtins.str,
+                 aws_nodes: Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeResult'],
+                 role_arn: _builtins.str,
+                 service_private_endpoint: _builtins.str,
+                 service_type: _builtins.str):
+        """
+        :param _builtins.str assume_role_status: Assume role  status.
+        :param Sequence['GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs'] aws_nodes: List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        :param _builtins.str role_arn: Amazon resource name AWSof the IAM role.
+        :param _builtins.str service_private_endpoint: Private endpoint of the AWS service.
+        :param _builtins.str service_type: Type of service.
+        """
+        pulumi.set(__self__, "assume_role_status", assume_role_status)
+        pulumi.set(__self__, "aws_nodes", aws_nodes)
+        pulumi.set(__self__, "role_arn", role_arn)
+        pulumi.set(__self__, "service_private_endpoint", service_private_endpoint)
+        pulumi.set(__self__, "service_type", service_type)
+
+    @_builtins.property
+    @pulumi.getter(name="assumeRoleStatus")
+    def assume_role_status(self) -> _builtins.str:
+        """
+        Assume role  status.
+        """
+        return pulumi.get(self, "assume_role_status")
+
+    @_builtins.property
+    @pulumi.getter(name="awsNodes")
+    def aws_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeResult']:
+        """
+        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        return pulumi.get(self, "aws_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> _builtins.str:
+        """
+        Amazon resource name AWSof the IAM role.
+        """
+        return pulumi.get(self, "role_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="servicePrivateEndpoint")
+    def service_private_endpoint(self) -> _builtins.str:
+        """
+        Private endpoint of the AWS service.
+        """
+        return pulumi.get(self, "service_private_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> _builtins.str:
+        """
+        Type of service.
+        """
+        return pulumi.get(self, "service_type")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeResult(dict):
+    def __init__(__self__, *,
+                 host_id: _builtins.str,
+                 host_name: _builtins.str,
+                 status: _builtins.str,
+                 time_last_checked: _builtins.str):
+        """
+        :param _builtins.str host_id: AWS host ID.
+        :param _builtins.str host_name: AWS Host name or Identity Connector name.
+        :param _builtins.str status: The current status of the AWS Identity Connector resource.
+        :param _builtins.str time_last_checked: Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> _builtins.str:
+        """
+        AWS host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        AWS Host name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the AWS Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> _builtins.str:
+        """
+        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 aws_account_id: _builtins.str,
+                 aws_key_arn: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_aws_key_enabled: _builtins.bool,
+                 lifecycle_state_details: _builtins.str,
+                 location: _builtins.str,
+                 oracle_db_connector_id: _builtins.str,
+                 properties: Mapping[str, _builtins.str],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str aws_account_id: AWS Account ID.
+        :param _builtins.str aws_key_arn: Amazon resource name of AWS Key.
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB AWS Key Resource that match the given display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
+        :param _builtins.bool is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param _builtins.str location: AWS Key resource location.
+        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+        :param Mapping[str, _builtins.str] properties: AWS Key resource's properties.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str type: Key resource type.
+        """
+        pulumi.set(__self__, "aws_account_id", aws_account_id)
+        pulumi.set(__self__, "aws_key_arn", aws_key_arn)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_aws_key_enabled", is_aws_key_enabled)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsAccountId")
+    def aws_account_id(self) -> _builtins.str:
+        """
+        AWS Account ID.
+        """
+        return pulumi.get(self, "aws_account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsKeyArn")
+    def aws_key_arn(self) -> _builtins.str:
+        """
+        Amazon resource name of AWS Key.
+        """
+        return pulumi.get(self, "aws_key_arn")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB AWS Key Resource that match the given display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isAwsKeyEnabled")
+    def is_aws_key_enabled(self) -> _builtins.bool:
+        """
+        The Oracle AWS Key resource is enabled or disabled at AWS.
+        """
+        return pulumi.get(self, "is_aws_key_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        AWS Key resource location.
+        """
+        return pulumi.get(self, "location")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleDbConnectorId")
+    def oracle_db_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+        """
+        return pulumi.get(self, "oracle_db_connector_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, _builtins.str]:
+        """
+        AWS Key resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Key resource type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDbmulticloudOracleDbAzureBlobContainersFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -7050,7 +7942,7 @@ class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSu
         :param _builtins.str issuer_url: OIDC token issuer Url.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param _builtins.str project_id: Project id of the customer project.
-        :param _builtins.str resource_id: A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str resource_id: A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: Time when the Oracle DB GCP Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -7192,7 +8084,7 @@ class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSu
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "resource_id")
 
@@ -14039,6 +14931,662 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
         The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPsaPrivateServiceAccessesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 fqdns: Sequence[_builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 ipv4ip: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str],
+                 security_attributes: Mapping[str, _builtins.str],
+                 service_id: _builtins.str,
+                 state: _builtins.str,
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vcn_id: _builtins.str,
+                 vnic_id: _builtins.str):
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fqdns", fqdns)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ipv4ip", ipv4ip)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "security_attributes", security_attributes)
+        pulumi.set(__self__, "service_id", service_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdns(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "fqdns")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4ip(self) -> _builtins.str:
+        return pulumi.get(self, "ipv4ip")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceId")
+    def service_id(self) -> _builtins.str:
+        return pulumi.get(self, "service_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> _builtins.str:
+        return pulumi.get(self, "vcn_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> _builtins.str:
+        return pulumi.get(self, "vnic_id")
+
+
+@pulumi.output_type
+class GetPsaPsaServicesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPsaPsaServicesPsaServiceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPsaPsaServicesPsaServiceCollectionItemResult']):
+        """
+        :param Sequence['GetPsaPsaServicesPsaServiceCollectionItemArgs'] items: List of PsaServiceSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPsaPsaServicesPsaServiceCollectionItemResult']:
+        """
+        List of PsaServiceSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPsaPsaServicesPsaServiceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 fqdns: Sequence[_builtins.str],
+                 id: _builtins.str,
+                 is_v6enabled: _builtins.bool):
+        """
+        :param _builtins.str description: A description of the Oracle Cloud Infrastructure service.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Sequence[_builtins.str] fqdns: The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+        :param _builtins.str id: A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+        :param _builtins.bool is_v6enabled: This optional field will indicate that whether service is IPv6 enabled.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fqdns", fqdns)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_v6enabled", is_v6enabled)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the Oracle Cloud Infrastructure service.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdns(self) -> Sequence[_builtins.str]:
+        """
+        The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+        """
+        return pulumi.get(self, "fqdns")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isV6enabled")
+    def is_v6enabled(self) -> _builtins.bool:
+        """
+        This optional field will indicate that whether service is IPv6 enabled.
+        """
+        return pulumi.get(self, "is_v6enabled")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestErrorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestErrorsWorkRequestErrorResult(dict):
+    def __init__(__self__, *,
+                 code: _builtins.str,
+                 message: _builtins.str,
+                 timestamp: _builtins.str):
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "timestamp", timestamp)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> _builtins.str:
+        return pulumi.get(self, "code")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> _builtins.str:
+        return pulumi.get(self, "timestamp")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestLogsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestLogsWorkRequestLogEntryResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 timestamp: _builtins.str):
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "timestamp", timestamp)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter
+    def timestamp(self) -> _builtins.str:
+        return pulumi.get(self, "timestamp")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestResourceResult(dict):
+    def __init__(__self__, *,
+                 action_type: _builtins.str,
+                 entity_type: _builtins.str,
+                 entity_uri: _builtins.str,
+                 identifier: _builtins.str,
+                 metadata: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str action_type: The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+        :param _builtins.str entity_type: The resource type that the work request affects.
+        :param _builtins.str entity_uri: The URI path that you can use for a GET request to access the resource metadata.
+        :param _builtins.str identifier: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+        :param Mapping[str, _builtins.str] metadata: Additional information that helps to explain the resource.
+        """
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "entity_uri", entity_uri)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> _builtins.str:
+        """
+        The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+        """
+        return pulumi.get(self, "action_type")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        The resource type that the work request affects.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter(name="entityUri")
+    def entity_uri(self) -> _builtins.str:
+        """
+        The URI path that you can use for a GET request to access the resource metadata.
+        """
+        return pulumi.get(self, "entity_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Additional information that helps to explain the resource.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestsWorkRequestSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 id: _builtins.str,
+                 operation_type: _builtins.str,
+                 percent_complete: _builtins.float,
+                 resources: Sequence['outputs.GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult'],
+                 status: _builtins.str,
+                 time_accepted: _builtins.str,
+                 time_finished: _builtins.str,
+                 time_started: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+        :param _builtins.str operation_type: The asynchronous operation tracked by this work request.
+        :param _builtins.float percent_complete: Shows the progress of the operation tracked by the work request, as a percentage of the total work that must be performed.
+        :param Sequence['GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs'] resources: The resources that are affected by the work request.
+        :param _builtins.str status: A filter to return only the resources that match the given lifecycle state.
+        :param _builtins.str time_accepted: The date and time the work request was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_finished: The date and time the work request was finished, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_started: The date and time the work request was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_updated: The date and time the work request was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "operation_type", operation_type)
+        pulumi.set(__self__, "percent_complete", percent_complete)
+        pulumi.set(__self__, "resources", resources)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="operationType")
+    def operation_type(self) -> _builtins.str:
+        """
+        The asynchronous operation tracked by this work request.
+        """
+        return pulumi.get(self, "operation_type")
+
+    @_builtins.property
+    @pulumi.getter(name="percentComplete")
+    def percent_complete(self) -> _builtins.float:
+        """
+        Shows the progress of the operation tracked by the work request, as a percentage of the total work that must be performed.
+        """
+        return pulumi.get(self, "percent_complete")
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> Sequence['outputs.GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult']:
+        """
+        The resources that are affected by the work request.
+        """
+        return pulumi.get(self, "resources")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        A filter to return only the resources that match the given lifecycle state.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> _builtins.str:
+        """
+        The date and time the work request was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_accepted")
+
+    @_builtins.property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> _builtins.str:
+        """
+        The date and time the work request was finished, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the work request was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the work request was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult(dict):
+    def __init__(__self__, *,
+                 action_type: _builtins.str,
+                 entity_type: _builtins.str,
+                 entity_uri: _builtins.str,
+                 identifier: _builtins.str,
+                 metadata: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str action_type: The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+        :param _builtins.str entity_type: The resource type that the work request affects.
+        :param _builtins.str entity_uri: The URI path that you can use for a GET request to access the resource metadata.
+        :param _builtins.str identifier: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+        :param Mapping[str, _builtins.str] metadata: Additional information that helps to explain the resource.
+        """
+        pulumi.set(__self__, "action_type", action_type)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "entity_uri", entity_uri)
+        pulumi.set(__self__, "identifier", identifier)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> _builtins.str:
+        """
+        The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+        """
+        return pulumi.get(self, "action_type")
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> _builtins.str:
+        """
+        The resource type that the work request affects.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter(name="entityUri")
+    def entity_uri(self) -> _builtins.str:
+        """
+        The URI path that you can use for a GET request to access the resource metadata.
+        """
+        return pulumi.get(self, "entity_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def identifier(self) -> _builtins.str:
+        """
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+        """
+        return pulumi.get(self, "identifier")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, _builtins.str]:
+        """
+        Additional information that helps to explain the resource.
+        """
+        return pulumi.get(self, "metadata")
 
 
 @pulumi.output_type

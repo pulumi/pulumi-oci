@@ -29,6 +29,7 @@ class BastionArgs:
                  max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Bastion resource.
@@ -46,6 +47,7 @@ class BastionArgs:
         :param pulumi.Input[_builtins.int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
         :param pulumi.Input[_builtins.str] name: The name of the bastion, which can't be changed after creation.
         :param pulumi.Input[_builtins.str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         """
         pulumi.set(__self__, "bastion_type", bastion_type)
@@ -65,6 +67,8 @@ class BastionArgs:
             pulumi.set(__self__, "name", name)
         if phone_book_entry is not None:
             pulumi.set(__self__, "phone_book_entry", phone_book_entry)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if static_jump_host_ip_addresses is not None:
             pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
 
@@ -193,6 +197,18 @@ class BastionArgs:
         pulumi.set(self, "phone_book_entry", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="staticJumpHostIpAddresses")
     def static_jump_host_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -220,6 +236,7 @@ class _BastionState:
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -241,6 +258,7 @@ class _BastionState:
         :param pulumi.Input[_builtins.str] name: The name of the bastion, which can't be changed after creation.
         :param pulumi.Input[_builtins.str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: The private IP address of the created private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[_builtins.str] state: The current state of the bastion.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -277,6 +295,8 @@ class _BastionState:
             pulumi.set(__self__, "phone_book_entry", phone_book_entry)
         if private_endpoint_ip_address is not None:
             pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if static_jump_host_ip_addresses is not None:
@@ -437,6 +457,18 @@ class _BastionState:
         pulumi.set(self, "private_endpoint_ip_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -540,6 +572,7 @@ class Bastion(pulumi.CustomResource):
                  max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -565,6 +598,7 @@ class Bastion(pulumi.CustomResource):
             max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
+            security_attributes=bastion_security_attributes,
             static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
 
@@ -587,6 +621,7 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] max_session_ttl_in_seconds: (Updatable) The maximum amount of time that any session on the bastion can remain active.
         :param pulumi.Input[_builtins.str] name: The name of the bastion, which can't be changed after creation.
         :param pulumi.Input[_builtins.str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[_builtins.str] target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
                
@@ -622,6 +657,7 @@ class Bastion(pulumi.CustomResource):
             max_session_ttl_in_seconds=bastion_max_session_ttl_in_seconds,
             name=bastion_name,
             phone_book_entry=bastion_phone_book_entry,
+            security_attributes=bastion_security_attributes,
             static_jump_host_ip_addresses=bastion_static_jump_host_ip_addresses)
         ```
 
@@ -657,6 +693,7 @@ class Bastion(pulumi.CustomResource):
                  max_session_ttl_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  target_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -681,6 +718,7 @@ class Bastion(pulumi.CustomResource):
             __props__.__dict__["max_session_ttl_in_seconds"] = max_session_ttl_in_seconds
             __props__.__dict__["name"] = name
             __props__.__dict__["phone_book_entry"] = phone_book_entry
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["static_jump_host_ip_addresses"] = static_jump_host_ip_addresses
             if target_subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_subnet_id'")
@@ -715,6 +753,7 @@ class Bastion(pulumi.CustomResource):
             name: Optional[pulumi.Input[_builtins.str]] = None,
             phone_book_entry: Optional[pulumi.Input[_builtins.str]] = None,
             private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -741,6 +780,7 @@ class Bastion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the bastion, which can't be changed after creation.
         :param pulumi.Input[_builtins.str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: The private IP address of the created private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
         :param pulumi.Input[_builtins.str] state: The current state of the bastion.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -769,6 +809,7 @@ class Bastion(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         __props__.__dict__["phone_book_entry"] = phone_book_entry
         __props__.__dict__["private_endpoint_ip_address"] = private_endpoint_ip_address
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["static_jump_host_ip_addresses"] = static_jump_host_ip_addresses
         __props__.__dict__["system_tags"] = system_tags
@@ -873,6 +914,14 @@ class Bastion(pulumi.CustomResource):
         The private IP address of the created private endpoint.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

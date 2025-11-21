@@ -867,7 +867,9 @@ class Database(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
+
+        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
 
         ## Import
 
@@ -899,7 +901,9 @@ class Database(pulumi.CustomResource):
                  args: DatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
+
+        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
 
         ## Import
 

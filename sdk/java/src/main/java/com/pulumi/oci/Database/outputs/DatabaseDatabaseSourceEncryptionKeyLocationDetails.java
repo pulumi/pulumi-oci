@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseDatabaseSourceEncryptionKeyLocationDetails {
@@ -14,9 +16,9 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetails {
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    private String hsmPassword;
+    private @Nullable String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     private String providerType;
@@ -26,11 +28,11 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetails {
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    public String hsmPassword() {
-        return this.hsmPassword;
+    public Optional<String> hsmPassword() {
+        return Optional.ofNullable(this.hsmPassword);
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     public String providerType() {
@@ -46,7 +48,7 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hsmPassword;
+        private @Nullable String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(DatabaseDatabaseSourceEncryptionKeyLocationDetails defaults) {
@@ -56,10 +58,8 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetails {
         }
 
         @CustomType.Setter
-        public Builder hsmPassword(String hsmPassword) {
-            if (hsmPassword == null) {
-              throw new MissingRequiredPropertyException("DatabaseDatabaseSourceEncryptionKeyLocationDetails", "hsmPassword");
-            }
+        public Builder hsmPassword(@Nullable String hsmPassword) {
+
             this.hsmPassword = hsmPassword;
             return this;
         }

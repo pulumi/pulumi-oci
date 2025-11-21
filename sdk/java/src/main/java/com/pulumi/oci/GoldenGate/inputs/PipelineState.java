@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GoldenGate.inputs.PipelineIngressIpArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineMappingRuleArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelinePipelineDiagnosticDataArgs;
@@ -113,6 +114,21 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    @Import(name="ingressIps")
+    private @Nullable Output<List<PipelineIngressIpArgs>> ingressIps;
+
+    /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    public Optional<Output<List<PipelineIngressIpArgs>>> ingressIps() {
+        return Optional.ofNullable(this.ingressIps);
     }
 
     /**
@@ -281,6 +297,21 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
@@ -364,6 +395,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.ingressIps = $.ingressIps;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -375,6 +407,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.recipeType = $.recipeType;
         this.sourceConnectionDetails = $.sourceConnectionDetails;
         this.state = $.state;
+        this.subnetId = $.subnetId;
         this.systemTags = $.systemTags;
         this.targetConnectionDetails = $.targetConnectionDetails;
         this.timeCreated = $.timeCreated;
@@ -524,6 +557,37 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param ingressIps List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ingressIps(@Nullable Output<List<PipelineIngressIpArgs>> ingressIps) {
+            $.ingressIps = ingressIps;
+            return this;
+        }
+
+        /**
+         * @param ingressIps List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ingressIps(List<PipelineIngressIpArgs> ingressIps) {
+            return ingressIps(Output.of(ingressIps));
+        }
+
+        /**
+         * @param ingressIps List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ingressIps(PipelineIngressIpArgs... ingressIps) {
+            return ingressIps(List.of(ingressIps));
         }
 
         /**
@@ -785,6 +849,27 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         /**

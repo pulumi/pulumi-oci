@@ -378,6 +378,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointLockResult'],
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -393,6 +394,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
         :param _builtins.str id: Unique identifier that is immutable
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param Sequence['GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs'] locks: Locks associated with this resource.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param _builtins.str subnet_id: Subnet Identifier
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -408,6 +410,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -485,6 +488,14 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

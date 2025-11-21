@@ -152,6 +152,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string ComputeNetworkBlockId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        /// </summary>
+        public readonly string CurrentFirmwareBundleId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -164,6 +168,14 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string FabricHealth;
         /// <summary>
+        /// The reason for updating firmware bundle version of the GPU memory fabric.
+        /// </summary>
+        public readonly string FirmwareUpdateReason;
+        /// <summary>
+        /// The state of Memory Fabric Firmware update
+        /// </summary>
+        public readonly string FirmwareUpdateState;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -172,17 +184,33 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string HealthyHostCount;
         /// <summary>
+        /// The host platform identifier used for bundle queries
+        /// </summary>
+        public readonly string HostPlatformName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeGpuMemoryFabricMemoryFabricPreferenceResult> MemoryFabricPreferences;
         /// <summary>
         /// The lifecycle state of the GPU memory fabric
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The switch platform identifier used for bundle queries
+        /// </summary>
+        public readonly string SwitchPlatformName;
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        /// </summary>
+        public readonly string TargetFirmwareBundleId;
         /// <summary>
         /// The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -208,21 +236,35 @@ namespace Pulumi.Oci.Core
 
             string computeNetworkBlockId,
 
+            string currentFirmwareBundleId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
             string fabricHealth,
 
+            string firmwareUpdateReason,
+
+            string firmwareUpdateState,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string healthyHostCount,
 
+            string hostPlatformName,
+
             string id,
+
+            ImmutableArray<Outputs.GetComputeGpuMemoryFabricMemoryFabricPreferenceResult> memoryFabricPreferences,
 
             string state,
 
+            string switchPlatformName,
+
             ImmutableDictionary<string, string> systemTags,
+
+            string targetFirmwareBundleId,
 
             string timeCreated,
 
@@ -235,14 +277,21 @@ namespace Pulumi.Oci.Core
             ComputeHpcIslandId = computeHpcIslandId;
             ComputeLocalBlockId = computeLocalBlockId;
             ComputeNetworkBlockId = computeNetworkBlockId;
+            CurrentFirmwareBundleId = currentFirmwareBundleId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FabricHealth = fabricHealth;
+            FirmwareUpdateReason = firmwareUpdateReason;
+            FirmwareUpdateState = firmwareUpdateState;
             FreeformTags = freeformTags;
             HealthyHostCount = healthyHostCount;
+            HostPlatformName = hostPlatformName;
             Id = id;
+            MemoryFabricPreferences = memoryFabricPreferences;
             State = state;
+            SwitchPlatformName = switchPlatformName;
             SystemTags = systemTags;
+            TargetFirmwareBundleId = targetFirmwareBundleId;
             TimeCreated = timeCreated;
             TotalHostCount = totalHostCount;
         }

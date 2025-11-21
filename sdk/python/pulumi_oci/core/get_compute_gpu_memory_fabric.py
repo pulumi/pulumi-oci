@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetComputeGpuMemoryFabricResult',
@@ -26,7 +27,7 @@ class GetComputeGpuMemoryFabricResult:
     """
     A collection of values returned by getComputeGpuMemoryFabric.
     """
-    def __init__(__self__, additional_data=None, available_host_count=None, compartment_id=None, compute_gpu_memory_fabric_id=None, compute_hpc_island_id=None, compute_local_block_id=None, compute_network_block_id=None, defined_tags=None, display_name=None, fabric_health=None, freeform_tags=None, healthy_host_count=None, id=None, state=None, system_tags=None, time_created=None, total_host_count=None):
+    def __init__(__self__, additional_data=None, available_host_count=None, compartment_id=None, compute_gpu_memory_fabric_id=None, compute_hpc_island_id=None, compute_local_block_id=None, compute_network_block_id=None, current_firmware_bundle_id=None, defined_tags=None, display_name=None, fabric_health=None, firmware_update_reason=None, firmware_update_state=None, freeform_tags=None, healthy_host_count=None, host_platform_name=None, id=None, memory_fabric_preferences=None, state=None, switch_platform_name=None, system_tags=None, target_firmware_bundle_id=None, time_created=None, total_host_count=None):
         if additional_data and not isinstance(additional_data, dict):
             raise TypeError("Expected argument 'additional_data' to be a dict")
         pulumi.set(__self__, "additional_data", additional_data)
@@ -48,6 +49,9 @@ class GetComputeGpuMemoryFabricResult:
         if compute_network_block_id and not isinstance(compute_network_block_id, str):
             raise TypeError("Expected argument 'compute_network_block_id' to be a str")
         pulumi.set(__self__, "compute_network_block_id", compute_network_block_id)
+        if current_firmware_bundle_id and not isinstance(current_firmware_bundle_id, str):
+            raise TypeError("Expected argument 'current_firmware_bundle_id' to be a str")
+        pulumi.set(__self__, "current_firmware_bundle_id", current_firmware_bundle_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -57,21 +61,39 @@ class GetComputeGpuMemoryFabricResult:
         if fabric_health and not isinstance(fabric_health, str):
             raise TypeError("Expected argument 'fabric_health' to be a str")
         pulumi.set(__self__, "fabric_health", fabric_health)
+        if firmware_update_reason and not isinstance(firmware_update_reason, str):
+            raise TypeError("Expected argument 'firmware_update_reason' to be a str")
+        pulumi.set(__self__, "firmware_update_reason", firmware_update_reason)
+        if firmware_update_state and not isinstance(firmware_update_state, str):
+            raise TypeError("Expected argument 'firmware_update_state' to be a str")
+        pulumi.set(__self__, "firmware_update_state", firmware_update_state)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         if healthy_host_count and not isinstance(healthy_host_count, str):
             raise TypeError("Expected argument 'healthy_host_count' to be a str")
         pulumi.set(__self__, "healthy_host_count", healthy_host_count)
+        if host_platform_name and not isinstance(host_platform_name, str):
+            raise TypeError("Expected argument 'host_platform_name' to be a str")
+        pulumi.set(__self__, "host_platform_name", host_platform_name)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if memory_fabric_preferences and not isinstance(memory_fabric_preferences, list):
+            raise TypeError("Expected argument 'memory_fabric_preferences' to be a list")
+        pulumi.set(__self__, "memory_fabric_preferences", memory_fabric_preferences)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if switch_platform_name and not isinstance(switch_platform_name, str):
+            raise TypeError("Expected argument 'switch_platform_name' to be a str")
+        pulumi.set(__self__, "switch_platform_name", switch_platform_name)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if target_firmware_bundle_id and not isinstance(target_firmware_bundle_id, str):
+            raise TypeError("Expected argument 'target_firmware_bundle_id' to be a str")
+        pulumi.set(__self__, "target_firmware_bundle_id", target_firmware_bundle_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -133,6 +155,14 @@ class GetComputeGpuMemoryFabricResult:
         return pulumi.get(self, "compute_network_block_id")
 
     @_builtins.property
+    @pulumi.getter(name="currentFirmwareBundleId")
+    def current_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        """
+        return pulumi.get(self, "current_firmware_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -157,6 +187,22 @@ class GetComputeGpuMemoryFabricResult:
         return pulumi.get(self, "fabric_health")
 
     @_builtins.property
+    @pulumi.getter(name="firmwareUpdateReason")
+    def firmware_update_reason(self) -> _builtins.str:
+        """
+        The reason for updating firmware bundle version of the GPU memory fabric.
+        """
+        return pulumi.get(self, "firmware_update_reason")
+
+    @_builtins.property
+    @pulumi.getter(name="firmwareUpdateState")
+    def firmware_update_state(self) -> _builtins.str:
+        """
+        The state of Memory Fabric Firmware update
+        """
+        return pulumi.get(self, "firmware_update_state")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -173,12 +219,28 @@ class GetComputeGpuMemoryFabricResult:
         return pulumi.get(self, "healthy_host_count")
 
     @_builtins.property
+    @pulumi.getter(name="hostPlatformName")
+    def host_platform_name(self) -> _builtins.str:
+        """
+        The host platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "host_platform_name")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique GPU memory fabric
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryFabricPreferences")
+    def memory_fabric_preferences(self) -> Sequence['outputs.GetComputeGpuMemoryFabricMemoryFabricPreferenceResult']:
+        """
+        The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        """
+        return pulumi.get(self, "memory_fabric_preferences")
 
     @_builtins.property
     @pulumi.getter
@@ -189,12 +251,28 @@ class GetComputeGpuMemoryFabricResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="switchPlatformName")
+    def switch_platform_name(self) -> _builtins.str:
+        """
+        The switch platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "switch_platform_name")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetFirmwareBundleId")
+    def target_firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        """
+        return pulumi.get(self, "target_firmware_bundle_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -226,14 +304,21 @@ class AwaitableGetComputeGpuMemoryFabricResult(GetComputeGpuMemoryFabricResult):
             compute_hpc_island_id=self.compute_hpc_island_id,
             compute_local_block_id=self.compute_local_block_id,
             compute_network_block_id=self.compute_network_block_id,
+            current_firmware_bundle_id=self.current_firmware_bundle_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             fabric_health=self.fabric_health,
+            firmware_update_reason=self.firmware_update_reason,
+            firmware_update_state=self.firmware_update_state,
             freeform_tags=self.freeform_tags,
             healthy_host_count=self.healthy_host_count,
+            host_platform_name=self.host_platform_name,
             id=self.id,
+            memory_fabric_preferences=self.memory_fabric_preferences,
             state=self.state,
+            switch_platform_name=self.switch_platform_name,
             system_tags=self.system_tags,
+            target_firmware_bundle_id=self.target_firmware_bundle_id,
             time_created=self.time_created,
             total_host_count=self.total_host_count)
 
@@ -270,14 +355,21 @@ def get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id: Optional[_builti
         compute_hpc_island_id=pulumi.get(__ret__, 'compute_hpc_island_id'),
         compute_local_block_id=pulumi.get(__ret__, 'compute_local_block_id'),
         compute_network_block_id=pulumi.get(__ret__, 'compute_network_block_id'),
+        current_firmware_bundle_id=pulumi.get(__ret__, 'current_firmware_bundle_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         fabric_health=pulumi.get(__ret__, 'fabric_health'),
+        firmware_update_reason=pulumi.get(__ret__, 'firmware_update_reason'),
+        firmware_update_state=pulumi.get(__ret__, 'firmware_update_state'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         healthy_host_count=pulumi.get(__ret__, 'healthy_host_count'),
+        host_platform_name=pulumi.get(__ret__, 'host_platform_name'),
         id=pulumi.get(__ret__, 'id'),
+        memory_fabric_preferences=pulumi.get(__ret__, 'memory_fabric_preferences'),
         state=pulumi.get(__ret__, 'state'),
+        switch_platform_name=pulumi.get(__ret__, 'switch_platform_name'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        target_firmware_bundle_id=pulumi.get(__ret__, 'target_firmware_bundle_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_host_count=pulumi.get(__ret__, 'total_host_count'))
 def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -311,13 +403,20 @@ def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[
         compute_hpc_island_id=pulumi.get(__response__, 'compute_hpc_island_id'),
         compute_local_block_id=pulumi.get(__response__, 'compute_local_block_id'),
         compute_network_block_id=pulumi.get(__response__, 'compute_network_block_id'),
+        current_firmware_bundle_id=pulumi.get(__response__, 'current_firmware_bundle_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         fabric_health=pulumi.get(__response__, 'fabric_health'),
+        firmware_update_reason=pulumi.get(__response__, 'firmware_update_reason'),
+        firmware_update_state=pulumi.get(__response__, 'firmware_update_state'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         healthy_host_count=pulumi.get(__response__, 'healthy_host_count'),
+        host_platform_name=pulumi.get(__response__, 'host_platform_name'),
         id=pulumi.get(__response__, 'id'),
+        memory_fabric_preferences=pulumi.get(__response__, 'memory_fabric_preferences'),
         state=pulumi.get(__response__, 'state'),
+        switch_platform_name=pulumi.get(__response__, 'switch_platform_name'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        target_firmware_bundle_id=pulumi.get(__response__, 'target_firmware_bundle_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         total_host_count=pulumi.get(__response__, 'total_host_count')))

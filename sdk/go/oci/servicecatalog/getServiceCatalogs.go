@@ -33,6 +33,7 @@ import (
 //				CompartmentId:    compartmentId,
 //				DisplayName:      pulumi.StringRef(serviceCatalogDisplayName),
 //				ServiceCatalogId: pulumi.StringRef(testServiceCatalog.Id),
+//				Status:           pulumi.StringRef(serviceCatalogStatus),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,6 +62,8 @@ type GetServiceCatalogsArgs struct {
 	Filters     []GetServiceCatalogsFilter `pulumi:"filters"`
 	// The unique identifier for the service catalog.
 	ServiceCatalogId *string `pulumi:"serviceCatalogId"`
+	// Status of the service catalog, use as a filter to filter out all active catalogs.
+	Status *string `pulumi:"status"`
 }
 
 // A collection of values returned by getServiceCatalogs.
@@ -75,6 +78,8 @@ type GetServiceCatalogsResult struct {
 	// The list of service_catalog_collection.
 	ServiceCatalogCollections []GetServiceCatalogsServiceCatalogCollection `pulumi:"serviceCatalogCollections"`
 	ServiceCatalogId          *string                                      `pulumi:"serviceCatalogId"`
+	// The status of a service catalog.
+	Status *string `pulumi:"status"`
 }
 
 func GetServiceCatalogsOutput(ctx *pulumi.Context, args GetServiceCatalogsOutputArgs, opts ...pulumi.InvokeOption) GetServiceCatalogsResultOutput {
@@ -95,6 +100,8 @@ type GetServiceCatalogsOutputArgs struct {
 	Filters     GetServiceCatalogsFilterArrayInput `pulumi:"filters"`
 	// The unique identifier for the service catalog.
 	ServiceCatalogId pulumi.StringPtrInput `pulumi:"serviceCatalogId"`
+	// Status of the service catalog, use as a filter to filter out all active catalogs.
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (GetServiceCatalogsOutputArgs) ElementType() reflect.Type {
@@ -144,6 +151,11 @@ func (o GetServiceCatalogsResultOutput) ServiceCatalogCollections() GetServiceCa
 
 func (o GetServiceCatalogsResultOutput) ServiceCatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetServiceCatalogsResult) *string { return v.ServiceCatalogId }).(pulumi.StringPtrOutput)
+}
+
+// The status of a service catalog.
+func (o GetServiceCatalogsResultOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetServiceCatalogsResult) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
 func init() {

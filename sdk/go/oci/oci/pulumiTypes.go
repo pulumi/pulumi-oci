@@ -712,6 +712,278 @@ func (o DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) Index(i pulu
 	}).(DbmulticloudMultiCloudResourceDiscoveryResourceOutput)
 }
 
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail struct {
+	// Assume role  status.
+	AssumeRoleStatus *string `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes []DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode `pulumi:"awsNodes"`
+	// (Updatable) Amazon resource name AWSof the IAM role.
+	RoleArn string `pulumi:"roleArn"`
+	// (Updatable) Private endpoint of the AWS service.
+	ServicePrivateEndpoint string `pulumi:"servicePrivateEndpoint"`
+	// (Updatable) Type of service.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput is an input type that accepts DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs and DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput` via:
+//
+//	DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{...}
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs struct {
+	// Assume role  status.
+	AssumeRoleStatus pulumi.StringPtrInput `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput `pulumi:"awsNodes"`
+	// (Updatable) Amazon resource name AWSof the IAM role.
+	RoleArn pulumi.StringInput `pulumi:"roleArn"`
+	// (Updatable) Private endpoint of the AWS service.
+	ServicePrivateEndpoint pulumi.StringInput `pulumi:"servicePrivateEndpoint"`
+	// (Updatable) Type of service.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return i.ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput)
+}
+
+// DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput is an input type that accepts DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray and DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput` via:
+//
+//	DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray{ DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{...} }
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray []DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return i.ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput)
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return o
+}
+
+// Assume role  status.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) AssumeRoleStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) *string { return v.AssumeRoleStatus }).(pulumi.StringPtrOutput)
+}
+
+// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) AwsNodes() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) []DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode {
+		return v.AwsNodes
+	}).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput)
+}
+
+// (Updatable) Amazon resource name AWSof the IAM role.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string { return v.RoleArn }).(pulumi.StringOutput)
+}
+
+// (Updatable) Private endpoint of the AWS service.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ServicePrivateEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string {
+		return v.ServicePrivateEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of service.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) Index(i pulumi.IntInput) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail {
+		return vs[0].([]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)[vs[1].(int)]
+	}).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput)
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode struct {
+	// AWS host ID.
+	HostId *string `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName *string `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status *string `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked *string `pulumi:"timeLastChecked"`
+}
+
+// DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput is an input type that accepts DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs and DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput` via:
+//
+//	DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{...}
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs struct {
+	// AWS host ID.
+	HostId pulumi.StringPtrInput `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked pulumi.StringPtrInput `pulumi:"timeLastChecked"`
+}
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return i.ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput)
+}
+
+// DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput is an input type that accepts DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray and DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput` via:
+//
+//	DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray{ DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{...} }
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput
+	ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray []DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return i.ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput)
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+// AWS host ID.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) HostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) *string { return v.HostId }).(pulumi.StringPtrOutput)
+}
+
+// AWS Host name or Identity Connector name.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// The current status of the AWS Identity Connector resource.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) TimeLastChecked() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) *string {
+		return v.TimeLastChecked
+	}).(pulumi.StringPtrOutput)
+}
+
+type DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ToDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) Index(i pulumi.IntInput) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode {
+		return vs[0].([]DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)[vs[1].(int)]
+	}).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput)
+}
+
 type DbmulticloudOracleDbAzureConnectorArcAgentNode struct {
 	// Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
 	CurrentArcAgentVersion *string `pulumi:"currentArcAgentVersion"`
@@ -10803,6 +11075,1482 @@ func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) Index(i p
 	}).(GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput)
 }
 
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail struct {
+	// Assume role  status.
+	AssumeRoleStatus string `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes []GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode `pulumi:"awsNodes"`
+	// Amazon resource name AWSof the IAM role.
+	RoleArn string `pulumi:"roleArn"`
+	// Private endpoint of the AWS service.
+	ServicePrivateEndpoint string `pulumi:"servicePrivateEndpoint"`
+	// Type of service.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs and GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs struct {
+	// Assume role  status.
+	AssumeRoleStatus pulumi.StringInput `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput `pulumi:"awsNodes"`
+	// Amazon resource name AWSof the IAM role.
+	RoleArn pulumi.StringInput `pulumi:"roleArn"`
+	// Private endpoint of the AWS service.
+	ServicePrivateEndpoint pulumi.StringInput `pulumi:"servicePrivateEndpoint"`
+	// Type of service.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray and GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray{ GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray []GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return o
+}
+
+// Assume role  status.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) AssumeRoleStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string { return v.AssumeRoleStatus }).(pulumi.StringOutput)
+}
+
+// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) AwsNodes() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) []GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode {
+		return v.AwsNodes
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput)
+}
+
+// Amazon resource name AWSof the IAM role.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string { return v.RoleArn }).(pulumi.StringOutput)
+}
+
+// Private endpoint of the AWS service.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ServicePrivateEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string {
+		return v.ServicePrivateEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// Type of service.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail) string { return v.ServiceType }).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode struct {
+	// AWS host ID.
+	HostId string `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName string `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status string `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked string `pulumi:"timeLastChecked"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs and GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs struct {
+	// AWS host ID.
+	HostId pulumi.StringInput `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked pulumi.StringInput `pulumi:"timeLastChecked"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray and GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray{ GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray []GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+// AWS host ID.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) HostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) string { return v.HostId }).(pulumi.StringOutput)
+}
+
+// AWS Host name or Identity Connector name.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The current status of the AWS Identity Connector resource.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput) TimeLastChecked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode) string {
+		return v.TimeLastChecked
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsFilterInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs and GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray and GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray{ GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray []GetDbmulticloudOracleDbAwsIdentityConnectorsFilterInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray{ GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection) []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem struct {
+	// AWS Account ID.
+	AwsAccountId string `pulumi:"awsAccountId"`
+	// AWS resource location.
+	AwsLocation string `pulumi:"awsLocation"`
+	// Private endpoint of AWS Security Token Service.
+	AwsStsPrivateEndpoint string `pulumi:"awsStsPrivateEndpoint"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
+	Id string `pulumi:"id"`
+	// OIDC token issuer Url.
+	IssuerUrl string `pulumi:"issuerUrl"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
+	OidcScope string `pulumi:"oidcScope"`
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ResourceId string `pulumi:"resourceId"`
+	// Service role details and respective Amazon resource nam of Role.
+	ServiceRoleDetails []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail `pulumi:"serviceRoleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB AWS Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs struct {
+	// AWS Account ID.
+	AwsAccountId pulumi.StringInput `pulumi:"awsAccountId"`
+	// AWS resource location.
+	AwsLocation pulumi.StringInput `pulumi:"awsLocation"`
+	// Private endpoint of AWS Security Token Service.
+	AwsStsPrivateEndpoint pulumi.StringInput `pulumi:"awsStsPrivateEndpoint"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// OIDC token issuer Url.
+	IssuerUrl pulumi.StringInput `pulumi:"issuerUrl"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
+	OidcScope pulumi.StringInput `pulumi:"oidcScope"`
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// Service role details and respective Amazon resource nam of Role.
+	ServiceRoleDetails GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput `pulumi:"serviceRoleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB AWS Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray{ GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput {
+	return o
+}
+
+// AWS Account ID.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) AwsAccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.AwsAccountId
+	}).(pulumi.StringOutput)
+}
+
+// AWS resource location.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) AwsLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.AwsLocation
+	}).(pulumi.StringOutput)
+}
+
+// Private endpoint of AWS Security Token Service.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) AwsStsPrivateEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.AwsStsPrivateEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Oracle DB AWS Identity Connector Resource that match the given display name.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// OIDC token issuer Url.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) IssuerUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.IssuerUrl
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure IAM Domain scope for issuer URL.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) OidcScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.OidcScope
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.ResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Service role details and respective Amazon resource nam of Role.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) ServiceRoleDetails() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail {
+		return v.ServiceRoleDetails
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Oracle DB AWS Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB AWS Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail struct {
+	// Assume role  status.
+	AssumeRoleStatus string `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode `pulumi:"awsNodes"`
+	// Amazon resource name AWSof the IAM role.
+	RoleArn string `pulumi:"roleArn"`
+	// Private endpoint of the AWS service.
+	ServicePrivateEndpoint string `pulumi:"servicePrivateEndpoint"`
+	// Type of service.
+	ServiceType string `pulumi:"serviceType"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs struct {
+	// Assume role  status.
+	AssumeRoleStatus pulumi.StringInput `pulumi:"assumeRoleStatus"`
+	// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+	AwsNodes GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput `pulumi:"awsNodes"`
+	// Amazon resource name AWSof the IAM role.
+	RoleArn pulumi.StringInput `pulumi:"roleArn"`
+	// Private endpoint of the AWS service.
+	ServicePrivateEndpoint pulumi.StringInput `pulumi:"servicePrivateEndpoint"`
+	// Type of service.
+	ServiceType pulumi.StringInput `pulumi:"serviceType"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray{ GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput {
+	return o
+}
+
+// Assume role  status.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) AssumeRoleStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail) string {
+		return v.AssumeRoleStatus
+	}).(pulumi.StringOutput)
+}
+
+// List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) AwsNodes() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail) []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode {
+		return v.AwsNodes
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput)
+}
+
+// Amazon resource name AWSof the IAM role.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) RoleArn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail) string {
+		return v.RoleArn
+	}).(pulumi.StringOutput)
+}
+
+// Private endpoint of the AWS service.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) ServicePrivateEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail) string {
+		return v.ServicePrivateEndpoint
+	}).(pulumi.StringOutput)
+}
+
+// Type of service.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput) ServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail) string {
+		return v.ServiceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetail)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode struct {
+	// AWS host ID.
+	HostId string `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName string `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status string `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked string `pulumi:"timeLastChecked"`
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs{...}
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs struct {
+	// AWS host ID.
+	HostId pulumi.StringInput `pulumi:"hostId"`
+	// AWS Host name or Identity Connector name.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The current status of the AWS Identity Connector resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+	TimeLastChecked pulumi.StringInput `pulumi:"timeLastChecked"`
+}
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput)
+}
+
+// GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray and GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray{ GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs{...} }
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput
+	ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray []GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput {
+	return o
+}
+
+// AWS host ID.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) HostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode) string {
+		return v.HostId
+	}).(pulumi.StringOutput)
+}
+
+// AWS Host name or Identity Connector name.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
+// The current status of the AWS Identity Connector resource.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput) TimeLastChecked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode) string {
+		return v.TimeLastChecked
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput() GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput) ToGetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode {
+		return vs[0].([]GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNode)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAwsKeysFilterInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysFilterArgs and GetDbmulticloudOracleDbAwsKeysFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysFilterArgs{...}
+type GetDbmulticloudOracleDbAwsKeysFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysFilterOutput() GetDbmulticloudOracleDbAwsKeysFilterOutput
+	ToGetDbmulticloudOracleDbAwsKeysFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysFilterOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysFilterArgs) ToGetDbmulticloudOracleDbAwsKeysFilterOutput() GetDbmulticloudOracleDbAwsKeysFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysFilterArgs) ToGetDbmulticloudOracleDbAwsKeysFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeysFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysFilterArray and GetDbmulticloudOracleDbAwsKeysFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysFilterArray{ GetDbmulticloudOracleDbAwsKeysFilterArgs{...} }
+type GetDbmulticloudOracleDbAwsKeysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutput() GetDbmulticloudOracleDbAwsKeysFilterArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysFilterArray []GetDbmulticloudOracleDbAwsKeysFilterInput
+
+func (GetDbmulticloudOracleDbAwsKeysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysFilterArray) ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutput() GetDbmulticloudOracleDbAwsKeysFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysFilterArray) ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterOutput) ToGetDbmulticloudOracleDbAwsKeysFilterOutput() GetDbmulticloudOracleDbAwsKeysFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterOutput) ToGetDbmulticloudOracleDbAwsKeysFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterArrayOutput) ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutput() GetDbmulticloudOracleDbAwsKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterArrayOutput) ToGetDbmulticloudOracleDbAwsKeysFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeysFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeysFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeysFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs and GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray and GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray{ GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput) Items() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection) []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem struct {
+	// AWS Account ID.
+	AwsAccountId string `pulumi:"awsAccountId"`
+	// Amazon resource name of AWS Key.
+	AwsKeyArn string `pulumi:"awsKeyArn"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Key Resource that match the given display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
+	Id string `pulumi:"id"`
+	// The Oracle AWS Key resource is enabled or disabled at AWS.
+	IsAwsKeyEnabled bool `pulumi:"isAwsKeyEnabled"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// AWS Key resource location.
+	Location string `pulumi:"location"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
+	// AWS Key resource's properties.
+	Properties map[string]string `pulumi:"properties"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Key resource type.
+	Type string `pulumi:"type"`
+}
+
+// GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs and GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs struct {
+	// AWS Account ID.
+	AwsAccountId pulumi.StringInput `pulumi:"awsAccountId"`
+	// Amazon resource name of AWS Key.
+	AwsKeyArn pulumi.StringInput `pulumi:"awsKeyArn"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Key Resource that match the given display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Oracle AWS Key resource is enabled or disabled at AWS.
+	IsAwsKeyEnabled pulumi.BoolInput `pulumi:"isAwsKeyEnabled"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// AWS Key resource location.
+	Location pulumi.StringInput `pulumi:"location"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+	OracleDbConnectorId pulumi.StringInput `pulumi:"oracleDbConnectorId"`
+	// AWS Key resource's properties.
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Key resource type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray and GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray{ GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput {
+	return o
+}
+
+// AWS Account ID.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) AwsAccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
+		return v.AwsAccountId
+	}).(pulumi.StringOutput)
+}
+
+// Amazon resource name of AWS Key.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) AwsKeyArn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.AwsKeyArn }).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Oracle DB AWS Key Resource that match the given display name.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The Oracle AWS Key resource is enabled or disabled at AWS.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) IsAwsKeyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) bool {
+		return v.IsAwsKeyEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// AWS Key resource location.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) OracleDbConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
+		return v.OracleDbConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// AWS Key resource's properties.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) map[string]string {
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Key resource type.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput)
+}
+
 type GetDbmulticloudOracleDbAzureBlobContainersFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -14169,7 +15917,7 @@ type GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSum
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
 	// Project id of the customer project.
 	ProjectId string `pulumi:"projectId"`
-	// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId string `pulumi:"resourceId"`
 	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
@@ -14221,7 +15969,7 @@ type GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSum
 	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
 	// Project id of the customer project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
-	// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ResourceId pulumi.StringInput `pulumi:"resourceId"`
 	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
@@ -14382,7 +16130,7 @@ func (o GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnector
 	}).(pulumi.StringOutput)
 }
 
-// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemOutput) ResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItem) string {
 		return v.ResourceId
@@ -30744,6 +32492,1818 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput) Ind
 	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput)
 }
 
+type GetPsaPrivateServiceAccessesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPrivateServiceAccessesFilterInput is an input type that accepts GetPsaPrivateServiceAccessesFilterArgs and GetPsaPrivateServiceAccessesFilterOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesFilterInput` via:
+//
+//	GetPsaPrivateServiceAccessesFilterArgs{...}
+type GetPsaPrivateServiceAccessesFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput
+	ToGetPsaPrivateServiceAccessesFilterOutputWithContext(context.Context) GetPsaPrivateServiceAccessesFilterOutput
+}
+
+type GetPsaPrivateServiceAccessesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPrivateServiceAccessesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArgs) ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput {
+	return i.ToGetPsaPrivateServiceAccessesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArgs) ToGetPsaPrivateServiceAccessesFilterOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesFilterOutput)
+}
+
+// GetPsaPrivateServiceAccessesFilterArrayInput is an input type that accepts GetPsaPrivateServiceAccessesFilterArray and GetPsaPrivateServiceAccessesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesFilterArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesFilterArray{ GetPsaPrivateServiceAccessesFilterArgs{...} }
+type GetPsaPrivateServiceAccessesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput
+	ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesFilterArray []GetPsaPrivateServiceAccessesFilterInput
+
+func (GetPsaPrivateServiceAccessesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArray) ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesFilterArray) ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesFilterArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) ToGetPsaPrivateServiceAccessesFilterOutput() GetPsaPrivateServiceAccessesFilterOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) ToGetPsaPrivateServiceAccessesFilterOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) ToGetPsaPrivateServiceAccessesFilterArrayOutput() GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) ToGetPsaPrivateServiceAccessesFilterArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesFilter {
+		return vs[0].([]GetPsaPrivateServiceAccessesFilter)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesFilterOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollection struct {
+	Items []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem `pulumi:"items"`
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{...}
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs struct {
+	Items GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput)
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray{ GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{...} }
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput) Items() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollection) []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem {
+		return v.Items
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesPrivateServiceAccessCollection {
+		return vs[0].([]GetPsaPrivateServiceAccessesPrivateServiceAccessCollection)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem struct {
+	CompartmentId      string            `pulumi:"compartmentId"`
+	DefinedTags        map[string]string `pulumi:"definedTags"`
+	Description        string            `pulumi:"description"`
+	DisplayName        string            `pulumi:"displayName"`
+	Fqdns              []string          `pulumi:"fqdns"`
+	FreeformTags       map[string]string `pulumi:"freeformTags"`
+	Id                 string            `pulumi:"id"`
+	Ipv4ip             string            `pulumi:"ipv4ip"`
+	NsgIds             []string          `pulumi:"nsgIds"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	ServiceId          string            `pulumi:"serviceId"`
+	State              string            `pulumi:"state"`
+	SubnetId           string            `pulumi:"subnetId"`
+	SystemTags         map[string]string `pulumi:"systemTags"`
+	TimeCreated        string            `pulumi:"timeCreated"`
+	TimeUpdated        string            `pulumi:"timeUpdated"`
+	VcnId              string            `pulumi:"vcnId"`
+	VnicId             string            `pulumi:"vnicId"`
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{...}
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs struct {
+	CompartmentId      pulumi.StringInput      `pulumi:"compartmentId"`
+	DefinedTags        pulumi.StringMapInput   `pulumi:"definedTags"`
+	Description        pulumi.StringInput      `pulumi:"description"`
+	DisplayName        pulumi.StringInput      `pulumi:"displayName"`
+	Fqdns              pulumi.StringArrayInput `pulumi:"fqdns"`
+	FreeformTags       pulumi.StringMapInput   `pulumi:"freeformTags"`
+	Id                 pulumi.StringInput      `pulumi:"id"`
+	Ipv4ip             pulumi.StringInput      `pulumi:"ipv4ip"`
+	NsgIds             pulumi.StringArrayInput `pulumi:"nsgIds"`
+	SecurityAttributes pulumi.StringMapInput   `pulumi:"securityAttributes"`
+	ServiceId          pulumi.StringInput      `pulumi:"serviceId"`
+	State              pulumi.StringInput      `pulumi:"state"`
+	SubnetId           pulumi.StringInput      `pulumi:"subnetId"`
+	SystemTags         pulumi.StringMapInput   `pulumi:"systemTags"`
+	TimeCreated        pulumi.StringInput      `pulumi:"timeCreated"`
+	TimeUpdated        pulumi.StringInput      `pulumi:"timeUpdated"`
+	VcnId              pulumi.StringInput      `pulumi:"vcnId"`
+	VnicId             pulumi.StringInput      `pulumi:"vnicId"`
+}
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput)
+}
+
+// GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput is an input type that accepts GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray and GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput` via:
+//
+//	GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray{ GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{...} }
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput
+	ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray []GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return i.ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Fqdns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) []string { return v.Fqdns }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) Ipv4ip() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.Ipv4ip }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) ServiceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.ServiceId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem) string { return v.VnicId }).(pulumi.StringOutput)
+}
+
+type GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput() GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) ToGetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem {
+		return vs[0].([]GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItem)[vs[1].(int)]
+	}).(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput)
+}
+
+type GetPsaPsaServicesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaServicesFilterInput is an input type that accepts GetPsaPsaServicesFilterArgs and GetPsaPsaServicesFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesFilterInput` via:
+//
+//	GetPsaPsaServicesFilterArgs{...}
+type GetPsaPsaServicesFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput
+	ToGetPsaPsaServicesFilterOutputWithContext(context.Context) GetPsaPsaServicesFilterOutput
+}
+
+type GetPsaPsaServicesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaServicesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesFilterArgs) ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput {
+	return i.ToGetPsaPsaServicesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesFilterArgs) ToGetPsaPsaServicesFilterOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesFilterOutput)
+}
+
+// GetPsaPsaServicesFilterArrayInput is an input type that accepts GetPsaPsaServicesFilterArray and GetPsaPsaServicesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesFilterArrayInput` via:
+//
+//	GetPsaPsaServicesFilterArray{ GetPsaPsaServicesFilterArgs{...} }
+type GetPsaPsaServicesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput
+	ToGetPsaPsaServicesFilterArrayOutputWithContext(context.Context) GetPsaPsaServicesFilterArrayOutput
+}
+
+type GetPsaPsaServicesFilterArray []GetPsaPsaServicesFilterInput
+
+func (GetPsaPsaServicesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesFilterArray) ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput {
+	return i.ToGetPsaPsaServicesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesFilterArray) ToGetPsaPsaServicesFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesFilterArrayOutput)
+}
+
+type GetPsaPsaServicesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesFilterOutput) ToGetPsaPsaServicesFilterOutput() GetPsaPsaServicesFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterOutput) ToGetPsaPsaServicesFilterOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaServicesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaServicesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaServicesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) ToGetPsaPsaServicesFilterArrayOutput() GetPsaPsaServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) ToGetPsaPsaServicesFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesFilter {
+		return vs[0].([]GetPsaPsaServicesFilter)[vs[1].(int)]
+	}).(GetPsaPsaServicesFilterOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollection struct {
+	// List of PsaServiceSummary.
+	Items []GetPsaPsaServicesPsaServiceCollectionItem `pulumi:"items"`
+}
+
+// GetPsaPsaServicesPsaServiceCollectionInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionArgs and GetPsaPsaServicesPsaServiceCollectionOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionArgs{...}
+type GetPsaPsaServicesPsaServiceCollectionInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput
+	ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArgs struct {
+	// List of PsaServiceSummary.
+	Items GetPsaPsaServicesPsaServiceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPsaPsaServicesPsaServiceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArgs) ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArgs) ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionOutput)
+}
+
+// GetPsaPsaServicesPsaServiceCollectionArrayInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionArray and GetPsaPsaServicesPsaServiceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionArrayInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionArray{ GetPsaPsaServicesPsaServiceCollectionArgs{...} }
+type GetPsaPsaServicesPsaServiceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput
+	ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArray []GetPsaPsaServicesPsaServiceCollectionInput
+
+func (GetPsaPsaServicesPsaServiceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArray) ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionArray) ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) ToGetPsaPsaServicesPsaServiceCollectionOutput() GetPsaPsaServicesPsaServiceCollectionOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) ToGetPsaPsaServicesPsaServiceCollectionOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return o
+}
+
+// List of PsaServiceSummary.
+func (o GetPsaPsaServicesPsaServiceCollectionOutput) Items() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollection) []GetPsaPsaServicesPsaServiceCollectionItem {
+		return v.Items
+	}).(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionArrayOutput() GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesPsaServiceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesPsaServiceCollection {
+		return vs[0].([]GetPsaPsaServicesPsaServiceCollection)[vs[1].(int)]
+	}).(GetPsaPsaServicesPsaServiceCollectionOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItem struct {
+	// A description of the Oracle Cloud Infrastructure service.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+	Fqdns []string `pulumi:"fqdns"`
+	// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+	Id string `pulumi:"id"`
+	// This optional field will indicate that whether service is IPv6 enabled.
+	IsV6enabled bool `pulumi:"isV6enabled"`
+}
+
+// GetPsaPsaServicesPsaServiceCollectionItemInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionItemArgs and GetPsaPsaServicesPsaServiceCollectionItemOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionItemInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionItemArgs{...}
+type GetPsaPsaServicesPsaServiceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput
+	ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArgs struct {
+	// A description of the Oracle Cloud Infrastructure service.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+	Fqdns pulumi.StringArrayInput `pulumi:"fqdns"`
+	// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+	Id pulumi.StringInput `pulumi:"id"`
+	// This optional field will indicate that whether service is IPv6 enabled.
+	IsV6enabled pulumi.BoolInput `pulumi:"isV6enabled"`
+}
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArgs) ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArgs) ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionItemOutput)
+}
+
+// GetPsaPsaServicesPsaServiceCollectionItemArrayInput is an input type that accepts GetPsaPsaServicesPsaServiceCollectionItemArray and GetPsaPsaServicesPsaServiceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaServicesPsaServiceCollectionItemArrayInput` via:
+//
+//	GetPsaPsaServicesPsaServiceCollectionItemArray{ GetPsaPsaServicesPsaServiceCollectionItemArgs{...} }
+type GetPsaPsaServicesPsaServiceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput
+	ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArray []GetPsaPsaServicesPsaServiceCollectionItemInput
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArray) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return i.ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaServicesPsaServiceCollectionItemArray) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) ToGetPsaPsaServicesPsaServiceCollectionItemOutput() GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) ToGetPsaPsaServicesPsaServiceCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return o
+}
+
+// A description of the Oracle Cloud Infrastructure service.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The public facing service FQDNs, which are going to be used to access the service.  Example: `xyz.oraclecloud.com`
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Fqdns() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) []string { return v.Fqdns }).(pulumi.StringArrayOutput)
+}
+
+// A unique Oracle Cloud Infrastructure service identifier.  Example: `object-storage-api`
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This optional field will indicate that whether service is IPv6 enabled.
+func (o GetPsaPsaServicesPsaServiceCollectionItemOutput) IsV6enabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPsaPsaServicesPsaServiceCollectionItem) bool { return v.IsV6enabled }).(pulumi.BoolOutput)
+}
+
+type GetPsaPsaServicesPsaServiceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaServicesPsaServiceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutput() GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) ToGetPsaPsaServicesPsaServiceCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaServicesPsaServiceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaServicesPsaServiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPsaPsaServicesPsaServiceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaServicesPsaServiceCollectionItem {
+		return vs[0].([]GetPsaPsaServicesPsaServiceCollectionItem)[vs[1].(int)]
+	}).(GetPsaPsaServicesPsaServiceCollectionItemOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaWorkRequestErrorsFilterInput is an input type that accepts GetPsaPsaWorkRequestErrorsFilterArgs and GetPsaPsaWorkRequestErrorsFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsFilterInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsFilterArgs{...}
+type GetPsaPsaWorkRequestErrorsFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput
+	ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsFilterOutput
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaWorkRequestErrorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArgs) ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArgs) ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsFilterOutput)
+}
+
+// GetPsaPsaWorkRequestErrorsFilterArrayInput is an input type that accepts GetPsaPsaWorkRequestErrorsFilterArray and GetPsaPsaWorkRequestErrorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsFilterArrayInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsFilterArray{ GetPsaPsaWorkRequestErrorsFilterArgs{...} }
+type GetPsaPsaWorkRequestErrorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput
+	ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArray []GetPsaPsaWorkRequestErrorsFilterInput
+
+func (GetPsaPsaWorkRequestErrorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArray) ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsFilterArray) ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsFilterArrayOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) ToGetPsaPsaWorkRequestErrorsFilterOutput() GetPsaPsaWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) ToGetPsaPsaWorkRequestErrorsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) ToGetPsaPsaWorkRequestErrorsFilterArrayOutput() GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) ToGetPsaPsaWorkRequestErrorsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestErrorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestErrorsFilter {
+		return vs[0].([]GetPsaPsaWorkRequestErrorsFilter)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestErrorsFilterOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsWorkRequestError struct {
+	Code      string `pulumi:"code"`
+	Message   string `pulumi:"message"`
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPsaPsaWorkRequestErrorsWorkRequestErrorInput is an input type that accepts GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs and GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsWorkRequestErrorInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs{...}
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput
+	ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput
+}
+
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs struct {
+	Code      pulumi.StringInput `pulumi:"code"`
+	Message   pulumi.StringInput `pulumi:"message"`
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestError)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput)
+}
+
+// GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayInput is an input type that accepts GetPsaPsaWorkRequestErrorsWorkRequestErrorArray and GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayInput` via:
+//
+//	GetPsaPsaWorkRequestErrorsWorkRequestErrorArray{ GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs{...} }
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput
+	ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput
+}
+
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorArray []GetPsaPsaWorkRequestErrorsWorkRequestErrorInput
+
+func (GetPsaPsaWorkRequestErrorsWorkRequestErrorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsWorkRequestError)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestErrorsWorkRequestErrorArray) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput {
+	return i.ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestErrorsWorkRequestErrorArray) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestError)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsWorkRequestError) string { return v.Code }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsWorkRequestError) string { return v.Message }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestErrorsWorkRequestError) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestErrorsWorkRequestError)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput() GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput) ToGetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestErrorsWorkRequestError {
+		return vs[0].([]GetPsaPsaWorkRequestErrorsWorkRequestError)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput)
+}
+
+type GetPsaPsaWorkRequestLogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaWorkRequestLogsFilterInput is an input type that accepts GetPsaPsaWorkRequestLogsFilterArgs and GetPsaPsaWorkRequestLogsFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestLogsFilterInput` via:
+//
+//	GetPsaPsaWorkRequestLogsFilterArgs{...}
+type GetPsaPsaWorkRequestLogsFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestLogsFilterOutput() GetPsaPsaWorkRequestLogsFilterOutput
+	ToGetPsaPsaWorkRequestLogsFilterOutputWithContext(context.Context) GetPsaPsaWorkRequestLogsFilterOutput
+}
+
+type GetPsaPsaWorkRequestLogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaWorkRequestLogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestLogsFilterArgs) ToGetPsaPsaWorkRequestLogsFilterOutput() GetPsaPsaWorkRequestLogsFilterOutput {
+	return i.ToGetPsaPsaWorkRequestLogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestLogsFilterArgs) ToGetPsaPsaWorkRequestLogsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestLogsFilterOutput)
+}
+
+// GetPsaPsaWorkRequestLogsFilterArrayInput is an input type that accepts GetPsaPsaWorkRequestLogsFilterArray and GetPsaPsaWorkRequestLogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestLogsFilterArrayInput` via:
+//
+//	GetPsaPsaWorkRequestLogsFilterArray{ GetPsaPsaWorkRequestLogsFilterArgs{...} }
+type GetPsaPsaWorkRequestLogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestLogsFilterArrayOutput() GetPsaPsaWorkRequestLogsFilterArrayOutput
+	ToGetPsaPsaWorkRequestLogsFilterArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestLogsFilterArrayOutput
+}
+
+type GetPsaPsaWorkRequestLogsFilterArray []GetPsaPsaWorkRequestLogsFilterInput
+
+func (GetPsaPsaWorkRequestLogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestLogsFilterArray) ToGetPsaPsaWorkRequestLogsFilterArrayOutput() GetPsaPsaWorkRequestLogsFilterArrayOutput {
+	return i.ToGetPsaPsaWorkRequestLogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestLogsFilterArray) ToGetPsaPsaWorkRequestLogsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestLogsFilterArrayOutput)
+}
+
+type GetPsaPsaWorkRequestLogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestLogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterOutput) ToGetPsaPsaWorkRequestLogsFilterOutput() GetPsaPsaWorkRequestLogsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterOutput) ToGetPsaPsaWorkRequestLogsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestLogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestLogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestLogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaWorkRequestLogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestLogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestLogsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterArrayOutput) ToGetPsaPsaWorkRequestLogsFilterArrayOutput() GetPsaPsaWorkRequestLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterArrayOutput) ToGetPsaPsaWorkRequestLogsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestLogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestLogsFilter {
+		return vs[0].([]GetPsaPsaWorkRequestLogsFilter)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestLogsFilterOutput)
+}
+
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntry struct {
+	Message   string `pulumi:"message"`
+	Timestamp string `pulumi:"timestamp"`
+}
+
+// GetPsaPsaWorkRequestLogsWorkRequestLogEntryInput is an input type that accepts GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs and GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestLogsWorkRequestLogEntryInput` via:
+//
+//	GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs{...}
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput
+	ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutputWithContext(context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput
+}
+
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs struct {
+	Message   pulumi.StringInput `pulumi:"message"`
+	Timestamp pulumi.StringInput `pulumi:"timestamp"`
+}
+
+func (GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestLogsWorkRequestLogEntry)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput {
+	return i.ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput)
+}
+
+// GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayInput is an input type that accepts GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray and GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayInput` via:
+//
+//	GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray{ GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs{...} }
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput
+	ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput
+}
+
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray []GetPsaPsaWorkRequestLogsWorkRequestLogEntryInput
+
+func (GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestLogsWorkRequestLogEntry)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput {
+	return i.ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput)
+}
+
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestLogsWorkRequestLogEntry)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestLogsWorkRequestLogEntry) string { return v.Message }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput) Timestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestLogsWorkRequestLogEntry) string { return v.Timestamp }).(pulumi.StringOutput)
+}
+
+type GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestLogsWorkRequestLogEntry)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput() GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput) ToGetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestLogsWorkRequestLogEntry {
+		return vs[0].([]GetPsaPsaWorkRequestLogsWorkRequestLogEntry)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput)
+}
+
+type GetPsaPsaWorkRequestResource struct {
+	// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+	ActionType string `pulumi:"actionType"`
+	// The resource type that the work request affects.
+	EntityType string `pulumi:"entityType"`
+	// The URI path that you can use for a GET request to access the resource metadata.
+	EntityUri string `pulumi:"entityUri"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+	Identifier string `pulumi:"identifier"`
+	// Additional information that helps to explain the resource.
+	Metadata map[string]string `pulumi:"metadata"`
+}
+
+// GetPsaPsaWorkRequestResourceInput is an input type that accepts GetPsaPsaWorkRequestResourceArgs and GetPsaPsaWorkRequestResourceOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestResourceInput` via:
+//
+//	GetPsaPsaWorkRequestResourceArgs{...}
+type GetPsaPsaWorkRequestResourceInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestResourceOutput() GetPsaPsaWorkRequestResourceOutput
+	ToGetPsaPsaWorkRequestResourceOutputWithContext(context.Context) GetPsaPsaWorkRequestResourceOutput
+}
+
+type GetPsaPsaWorkRequestResourceArgs struct {
+	// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The resource type that the work request affects.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The URI path that you can use for a GET request to access the resource metadata.
+	EntityUri pulumi.StringInput `pulumi:"entityUri"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Additional information that helps to explain the resource.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+}
+
+func (GetPsaPsaWorkRequestResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestResourceArgs) ToGetPsaPsaWorkRequestResourceOutput() GetPsaPsaWorkRequestResourceOutput {
+	return i.ToGetPsaPsaWorkRequestResourceOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestResourceArgs) ToGetPsaPsaWorkRequestResourceOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestResourceOutput)
+}
+
+// GetPsaPsaWorkRequestResourceArrayInput is an input type that accepts GetPsaPsaWorkRequestResourceArray and GetPsaPsaWorkRequestResourceArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestResourceArrayInput` via:
+//
+//	GetPsaPsaWorkRequestResourceArray{ GetPsaPsaWorkRequestResourceArgs{...} }
+type GetPsaPsaWorkRequestResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestResourceArrayOutput() GetPsaPsaWorkRequestResourceArrayOutput
+	ToGetPsaPsaWorkRequestResourceArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestResourceArrayOutput
+}
+
+type GetPsaPsaWorkRequestResourceArray []GetPsaPsaWorkRequestResourceInput
+
+func (GetPsaPsaWorkRequestResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestResource)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestResourceArray) ToGetPsaPsaWorkRequestResourceArrayOutput() GetPsaPsaWorkRequestResourceArrayOutput {
+	return i.ToGetPsaPsaWorkRequestResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestResourceArray) ToGetPsaPsaWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestResourceArrayOutput)
+}
+
+type GetPsaPsaWorkRequestResourceOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestResourceOutput) ToGetPsaPsaWorkRequestResourceOutput() GetPsaPsaWorkRequestResourceOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestResourceOutput) ToGetPsaPsaWorkRequestResourceOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestResourceOutput {
+	return o
+}
+
+// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+func (o GetPsaPsaWorkRequestResourceOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestResource) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The resource type that the work request affects.
+func (o GetPsaPsaWorkRequestResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestResource) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The URI path that you can use for a GET request to access the resource metadata.
+func (o GetPsaPsaWorkRequestResourceOutput) EntityUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestResource) string { return v.EntityUri }).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+func (o GetPsaPsaWorkRequestResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// Additional information that helps to explain the resource.
+func (o GetPsaPsaWorkRequestResourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+type GetPsaPsaWorkRequestResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestResource)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestResourceArrayOutput) ToGetPsaPsaWorkRequestResourceArrayOutput() GetPsaPsaWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestResourceArrayOutput) ToGetPsaPsaWorkRequestResourceArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestResourceArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestResourceArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestResource {
+		return vs[0].([]GetPsaPsaWorkRequestResource)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestResourceOutput)
+}
+
+type GetPsaPsaWorkRequestsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPsaPsaWorkRequestsFilterInput is an input type that accepts GetPsaPsaWorkRequestsFilterArgs and GetPsaPsaWorkRequestsFilterOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsFilterInput` via:
+//
+//	GetPsaPsaWorkRequestsFilterArgs{...}
+type GetPsaPsaWorkRequestsFilterInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsFilterOutput() GetPsaPsaWorkRequestsFilterOutput
+	ToGetPsaPsaWorkRequestsFilterOutputWithContext(context.Context) GetPsaPsaWorkRequestsFilterOutput
+}
+
+type GetPsaPsaWorkRequestsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPsaPsaWorkRequestsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsFilterArgs) ToGetPsaPsaWorkRequestsFilterOutput() GetPsaPsaWorkRequestsFilterOutput {
+	return i.ToGetPsaPsaWorkRequestsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsFilterArgs) ToGetPsaPsaWorkRequestsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsFilterOutput)
+}
+
+// GetPsaPsaWorkRequestsFilterArrayInput is an input type that accepts GetPsaPsaWorkRequestsFilterArray and GetPsaPsaWorkRequestsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsFilterArrayInput` via:
+//
+//	GetPsaPsaWorkRequestsFilterArray{ GetPsaPsaWorkRequestsFilterArgs{...} }
+type GetPsaPsaWorkRequestsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsFilterArrayOutput() GetPsaPsaWorkRequestsFilterArrayOutput
+	ToGetPsaPsaWorkRequestsFilterArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestsFilterArrayOutput
+}
+
+type GetPsaPsaWorkRequestsFilterArray []GetPsaPsaWorkRequestsFilterInput
+
+func (GetPsaPsaWorkRequestsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsFilter)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsFilterArray) ToGetPsaPsaWorkRequestsFilterArrayOutput() GetPsaPsaWorkRequestsFilterArrayOutput {
+	return i.ToGetPsaPsaWorkRequestsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsFilterArray) ToGetPsaPsaWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsFilterArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsFilterOutput) ToGetPsaPsaWorkRequestsFilterOutput() GetPsaPsaWorkRequestsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsFilterOutput) ToGetPsaPsaWorkRequestsFilterOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsFilterOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPsaPsaWorkRequestsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPsaPsaWorkRequestsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsFilter)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsFilterArrayOutput) ToGetPsaPsaWorkRequestsFilterArrayOutput() GetPsaPsaWorkRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsFilterArrayOutput) ToGetPsaPsaWorkRequestsFilterArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsFilterArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsFilterArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestsFilter {
+		return vs[0].([]GetPsaPsaWorkRequestsFilter)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestsFilterOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollection struct {
+	Items []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs{...}
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs struct {
+	Items GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput)
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray{ GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs{...} }
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionInput
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollection)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput) Items() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollection) []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem {
+		return v.Items
+	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollection)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestsWorkRequestSummaryCollection {
+		return vs[0].([]GetPsaPsaWorkRequestsWorkRequestSummaryCollection)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+	Id string `pulumi:"id"`
+	// The asynchronous operation tracked by this work request.
+	OperationType string `pulumi:"operationType"`
+	// Shows the progress of the operation tracked by the work request, as a percentage of the total work that must be performed.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// The resources that are affected by the work request.
+	Resources []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource `pulumi:"resources"`
+	// A filter to return only the resources that match the given lifecycle state.
+	Status string `pulumi:"status"`
+	// The date and time the work request was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// The date and time the work request was finished, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time the work request was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted string `pulumi:"timeStarted"`
+	// The date and time the work request was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs{...}
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The asynchronous operation tracked by this work request.
+	OperationType pulumi.StringInput `pulumi:"operationType"`
+	// Shows the progress of the operation tracked by the work request, as a percentage of the total work that must be performed.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// The resources that are affected by the work request.
+	Resources GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput `pulumi:"resources"`
+	// A filter to return only the resources that match the given lifecycle state.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The date and time the work request was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// The date and time the work request was finished, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time the work request was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The date and time the work request was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput)
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray{ GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs{...} }
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemInput
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The asynchronous operation tracked by this work request.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) OperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.OperationType }).(pulumi.StringOutput)
+}
+
+// Shows the progress of the operation tracked by the work request, as a percentage of the total work that must be performed.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) PercentComplete() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) float64 { return v.PercentComplete }).(pulumi.Float64Output)
+}
+
+// The resources that are affected by the work request.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) Resources() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource {
+		return v.Resources
+	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput)
+}
+
+// A filter to return only the resources that match the given lifecycle state.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The date and time the work request was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.TimeAccepted }).(pulumi.StringOutput)
+}
+
+// The date and time the work request was finished, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time the work request was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The date and time the work request was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem {
+		return vs[0].([]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItem)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource struct {
+	// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+	ActionType string `pulumi:"actionType"`
+	// The resource type that the work request affects.
+	EntityType string `pulumi:"entityType"`
+	// The URI path that you can use for a GET request to access the resource metadata.
+	EntityUri string `pulumi:"entityUri"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+	Identifier string `pulumi:"identifier"`
+	// Additional information that helps to explain the resource.
+	Metadata map[string]string `pulumi:"metadata"`
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs{...}
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs struct {
+	// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+	ActionType pulumi.StringInput `pulumi:"actionType"`
+	// The resource type that the work request affects.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The URI path that you can use for a GET request to access the resource metadata.
+	EntityUri pulumi.StringInput `pulumi:"entityUri"`
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// Additional information that helps to explain the resource.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+}
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput)
+}
+
+// GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput is an input type that accepts GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray and GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput values.
+// You can construct a concrete instance of `GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput` via:
+//
+//	GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray{ GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs{...} }
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput
+	ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutputWithContext(context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray []GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput {
+	return i.ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput {
+	return o
+}
+
+// The way in which this resource is affected by the operation tracked in the work request. A resource being created, updated, or deleted remains in the IN_PROGRESS state until work is complete for that resource, at which point it transitions to CREATED, UPDATED, or DELETED, respectively.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+// The resource type that the work request affects.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The URI path that you can use for a GET request to access the resource metadata.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) EntityUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource) string { return v.EntityUri }).(pulumi.StringOutput)
+}
+
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// Additional information that helps to explain the resource.
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource) map[string]string {
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+type GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput() GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput) ToGetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutputWithContext(ctx context.Context) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput {
+	return o
+}
+
+func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput) Index(i pulumi.IntInput) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource {
+		return vs[0].([]GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResource)[vs[1].(int)]
+	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput)
+}
+
 type GetResourceAnalyticsMonitoredRegionsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -37158,6 +40718,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbGcpIdentityConnectorGcpNodeInput)(nil)).Elem(), DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs{})
@@ -37298,6 +40862,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResourceInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveryResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs{})
@@ -37596,6 +41180,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorsResourceAnchorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesFilterInput)(nil)).Elem(), GetPsaPrivateServiceAccessesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesFilterArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayInput)(nil)).Elem(), GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesFilterInput)(nil)).Elem(), GetPsaPsaServicesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesFilterArrayInput)(nil)).Elem(), GetPsaPsaServicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionArrayInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItemInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaServicesPsaServiceCollectionItemArrayInput)(nil)).Elem(), GetPsaPsaServicesPsaServiceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilterInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsFilterArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestErrorInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsWorkRequestErrorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestErrorsWorkRequestErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestLogsFilterInput)(nil)).Elem(), GetPsaPsaWorkRequestLogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestLogsFilterArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestLogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestLogsWorkRequestLogEntryInput)(nil)).Elem(), GetPsaPsaWorkRequestLogsWorkRequestLogEntryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestLogsWorkRequestLogEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestResourceInput)(nil)).Elem(), GetPsaPsaWorkRequestResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestResourceArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsFilterInput)(nil)).Elem(), GetPsaPsaWorkRequestsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsFilterArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{})
@@ -37708,6 +41322,10 @@ func init() {
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceOutput{})
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbGcpIdentityConnectorGcpNodeOutput{})
@@ -37848,6 +41466,26 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersFilterOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput{})
@@ -38146,6 +41784,36 @@ func init() {
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsResourceAnchorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPsaPrivateServiceAccessesPrivateServiceAccessCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaServicesPsaServiceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsWorkRequestErrorOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestErrorsWorkRequestErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestLogsFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestLogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestLogsWorkRequestLogEntryOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestLogsWorkRequestLogEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestResourceOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsFilterOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput{})
+	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput{})

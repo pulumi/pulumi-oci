@@ -91,6 +91,13 @@ public final class Config {
         return Codegen.stringProp("region").config(config).get();
     }
 /**
+ * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+ * 
+ */
+    public Optional<String> retriesConfigFile() {
+        return Codegen.stringProp("retriesConfigFile").config(config).get();
+    }
+/**
  * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
  * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
  * 

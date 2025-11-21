@@ -679,9 +679,17 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sourceDeploymentId);
     }
 
+    /**
+     * Possible lifecycle states.
+     * 
+     */
     @Import(name="state")
     private @Nullable Output<String> state;
 
+    /**
+     * @return Possible lifecycle states.
+     * 
+     */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
     }
@@ -719,12 +727,18 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="subscriptionId")
     private @Nullable Output<String> subscriptionId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> subscriptionId() {
@@ -1908,11 +1922,23 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
             return sourceDeploymentId(Output.of(sourceDeploymentId));
         }
 
+        /**
+         * @param state Possible lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
             return this;
         }
 
+        /**
+         * @param state Possible lifecycle states.
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(String state) {
             return state(Output.of(state));
         }
@@ -1962,6 +1988,9 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1972,6 +2001,9 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

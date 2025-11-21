@@ -172,6 +172,7 @@ class _PrivateApplicationState:
                  package_type: Optional[pulumi.Input[_builtins.str]] = None,
                  short_description: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -191,6 +192,7 @@ class _PrivateApplicationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private application.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
@@ -216,6 +218,8 @@ class _PrivateApplicationState:
             pulumi.set(__self__, "short_description", short_description)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -356,6 +360,18 @@ class _PrivateApplicationState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -537,6 +553,7 @@ class PrivateApplication(pulumi.CustomResource):
             __props__.__dict__["logos"] = None
             __props__.__dict__["package_type"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(PrivateApplication, __self__).__init__(
@@ -560,6 +577,7 @@ class PrivateApplication(pulumi.CustomResource):
             package_type: Optional[pulumi.Input[_builtins.str]] = None,
             short_description: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'PrivateApplication':
         """
@@ -584,6 +602,7 @@ class PrivateApplication(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private application.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
@@ -602,6 +621,7 @@ class PrivateApplication(pulumi.CustomResource):
         __props__.__dict__["package_type"] = package_type
         __props__.__dict__["short_description"] = short_description
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return PrivateApplication(resource_name, opts=opts, __props__=__props__)
@@ -697,6 +717,14 @@ class PrivateApplication(pulumi.CustomResource):
         The lifecycle state of the private application.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

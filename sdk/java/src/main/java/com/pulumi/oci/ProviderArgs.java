@@ -182,6 +182,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     * 
+     */
+    @Import(name="retriesConfigFile")
+    private @Nullable Output<String> retriesConfigFile;
+
+    /**
+     * @return (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     * 
+     */
+    public Optional<Output<String>> retriesConfigFile() {
+        return Optional.ofNullable(this.retriesConfigFile);
+    }
+
+    /**
      * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
      * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
      * 
@@ -249,6 +264,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.privateKeyPath = $.privateKeyPath;
         this.realmSpecificServiceEndpointTemplateEnabled = $.realmSpecificServiceEndpointTemplateEnabled;
         this.region = $.region;
+        this.retriesConfigFile = $.retriesConfigFile;
         this.retryDurationSeconds = $.retryDurationSeconds;
         this.tenancyOcid = $.tenancyOcid;
         this.testTimeMaintenanceRebootDue = $.testTimeMaintenanceRebootDue;
@@ -500,6 +516,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder region(String region) {
             return region(Output.of(region));
+        }
+
+        /**
+         * @param retriesConfigFile (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retriesConfigFile(@Nullable Output<String> retriesConfigFile) {
+            $.retriesConfigFile = retriesConfigFile;
+            return this;
+        }
+
+        /**
+         * @param retriesConfigFile (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retriesConfigFile(String retriesConfigFile) {
+            return retriesConfigFile(Output.of(retriesConfigFile));
         }
 
         /**

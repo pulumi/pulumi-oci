@@ -28,7 +28,7 @@ class GetServiceCatalogsResult:
     """
     A collection of values returned by getServiceCatalogs.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, service_catalog_collections=None, service_catalog_id=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, service_catalog_collections=None, service_catalog_id=None, status=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetServiceCatalogsResult:
         if service_catalog_id and not isinstance(service_catalog_id, str):
             raise TypeError("Expected argument 'service_catalog_id' to be a str")
         pulumi.set(__self__, "service_catalog_id", service_catalog_id)
+        if status and not isinstance(status, str):
+            raise TypeError("Expected argument 'status' to be a str")
+        pulumi.set(__self__, "status", status)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -90,6 +93,14 @@ class GetServiceCatalogsResult:
     def service_catalog_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "service_catalog_id")
 
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The status of a service catalog.
+        """
+        return pulumi.get(self, "status")
+
 
 class AwaitableGetServiceCatalogsResult(GetServiceCatalogsResult):
     # pylint: disable=using-constant-test
@@ -102,13 +113,15 @@ class AwaitableGetServiceCatalogsResult(GetServiceCatalogsResult):
             filters=self.filters,
             id=self.id,
             service_catalog_collections=self.service_catalog_collections,
-            service_catalog_id=self.service_catalog_id)
+            service_catalog_id=self.service_catalog_id,
+            status=self.status)
 
 
 def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
                          display_name: Optional[_builtins.str] = None,
                          filters: Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]] = None,
                          service_catalog_id: Optional[_builtins.str] = None,
+                         status: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogsResult:
     """
     This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
@@ -123,19 +136,22 @@ def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
 
     test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
-        service_catalog_id=test_service_catalog["id"])
+        service_catalog_id=test_service_catalog["id"],
+        status=service_catalog_status)
     ```
 
 
     :param _builtins.str compartment_id: The unique identifier for the compartment.
     :param _builtins.str display_name: Exact match name filter.
     :param _builtins.str service_catalog_id: The unique identifier for the service catalog.
+    :param _builtins.str status: Status of the service catalog, use as a filter to filter out all active catalogs.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['serviceCatalogId'] = service_catalog_id
+    __args__['status'] = status
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs', __args__, opts=opts, typ=GetServiceCatalogsResult).value
 
@@ -145,11 +161,13 @@ def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         service_catalog_collections=pulumi.get(__ret__, 'service_catalog_collections'),
-        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
+        service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
+        status=pulumi.get(__ret__, 'status'))
 def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]]]] = None,
                                 service_catalog_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogsResult]:
     """
     This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
@@ -164,19 +182,22 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.
 
     test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
-        service_catalog_id=test_service_catalog["id"])
+        service_catalog_id=test_service_catalog["id"],
+        status=service_catalog_status)
     ```
 
 
     :param _builtins.str compartment_id: The unique identifier for the compartment.
     :param _builtins.str display_name: Exact match name filter.
     :param _builtins.str service_catalog_id: The unique identifier for the service catalog.
+    :param _builtins.str status: Status of the service catalog, use as a filter to filter out all active catalogs.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['serviceCatalogId'] = service_catalog_id
+    __args__['status'] = status
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs', __args__, opts=opts, typ=GetServiceCatalogsResult)
     return __ret__.apply(lambda __response__: GetServiceCatalogsResult(
@@ -185,4 +206,5 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         service_catalog_collections=pulumi.get(__response__, 'service_catalog_collections'),
-        service_catalog_id=pulumi.get(__response__, 'service_catalog_id')))
+        service_catalog_id=pulumi.get(__response__, 'service_catalog_id'),
+        status=pulumi.get(__response__, 'status')))

@@ -155,6 +155,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineIngressIpResult> IngressIps;
+        /// <summary>
         /// Indicates if auto scaling is enabled for the Deployment's CPU core count.
         /// </summary>
         public readonly bool IsAutoScalingEnabled;
@@ -200,6 +204,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        /// </summary>
+        public readonly string SubnetId;
+        /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -236,6 +244,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string id,
 
+            ImmutableArray<Outputs.GetPipelineIngressIpResult> ingressIps,
+
             bool isAutoScalingEnabled,
 
             string licenseModel,
@@ -260,6 +270,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string state,
 
+            string subnetId,
+
             ImmutableDictionary<string, string> systemTags,
 
             ImmutableArray<Outputs.GetPipelineTargetConnectionDetailResult> targetConnectionDetails,
@@ -277,6 +289,7 @@ namespace Pulumi.Oci.GoldenGate
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IngressIps = ingressIps;
             IsAutoScalingEnabled = isAutoScalingEnabled;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
@@ -289,6 +302,7 @@ namespace Pulumi.Oci.GoldenGate
             RecipeType = recipeType;
             SourceConnectionDetails = sourceConnectionDetails;
             State = state;
+            SubnetId = subnetId;
             SystemTags = systemTags;
             TargetConnectionDetails = targetConnectionDetails;
             TimeCreated = timeCreated;

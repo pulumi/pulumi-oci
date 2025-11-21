@@ -13,10 +13,12 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetails
     {
+        public readonly string? AwsEncryptionKeyId;
         /// <summary>
         /// Provide the key OCID of a registered Azure key.
         /// </summary>
         public readonly string? AzureEncryptionKeyId;
+        public readonly string? GoogleCloudProviderEncryptionKeyId;
         /// <summary>
         /// Provide the HSM password as you would in RDBMS for External HSM.
         /// </summary>
@@ -28,13 +30,19 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private DbHomeDatabaseEncryptionKeyLocationDetails(
+            string? awsEncryptionKeyId,
+
             string? azureEncryptionKeyId,
+
+            string? googleCloudProviderEncryptionKeyId,
 
             string? hsmPassword,
 
             string providerType)
         {
+            AwsEncryptionKeyId = awsEncryptionKeyId;
             AzureEncryptionKeyId = azureEncryptionKeyId;
+            GoogleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             HsmPassword = hsmPassword;
             ProviderType = providerType;
         }

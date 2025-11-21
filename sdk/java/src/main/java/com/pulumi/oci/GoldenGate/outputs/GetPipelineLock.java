@@ -16,6 +16,16 @@ public final class GetPipelineLock {
      */
     private String message;
     /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    private String relatedResourceId;
+    /**
+     * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    private String timeCreated;
+    /**
      * @return Type of the lock.
      * 
      */
@@ -28,6 +38,20 @@ public final class GetPipelineLock {
      */
     public String message() {
         return this.message;
+    }
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    public String relatedResourceId() {
+        return this.relatedResourceId;
+    }
+    /**
+     * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
+    public String timeCreated() {
+        return this.timeCreated;
     }
     /**
      * @return Type of the lock.
@@ -47,11 +71,15 @@ public final class GetPipelineLock {
     @CustomType.Builder
     public static final class Builder {
         private String message;
+        private String relatedResourceId;
+        private String timeCreated;
         private String type;
         public Builder() {}
         public Builder(GetPipelineLock defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
+    	      this.relatedResourceId = defaults.relatedResourceId;
+    	      this.timeCreated = defaults.timeCreated;
     	      this.type = defaults.type;
         }
 
@@ -61,6 +89,22 @@ public final class GetPipelineLock {
               throw new MissingRequiredPropertyException("GetPipelineLock", "message");
             }
             this.message = message;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder relatedResourceId(String relatedResourceId) {
+            if (relatedResourceId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineLock", "relatedResourceId");
+            }
+            this.relatedResourceId = relatedResourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(String timeCreated) {
+            if (timeCreated == null) {
+              throw new MissingRequiredPropertyException("GetPipelineLock", "timeCreated");
+            }
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +118,8 @@ public final class GetPipelineLock {
         public GetPipelineLock build() {
             final var _resultValue = new GetPipelineLock();
             _resultValue.message = message;
+            _resultValue.relatedResourceId = relatedResourceId;
+            _resultValue.timeCreated = timeCreated;
             _resultValue.type = type;
             return _resultValue;
         }

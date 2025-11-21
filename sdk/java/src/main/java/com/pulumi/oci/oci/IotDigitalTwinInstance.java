@@ -125,28 +125,28 @@ public class IotDigitalTwinInstance extends com.pulumi.resources.CustomResource 
         return this.digitalTwinAdapterId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
     @Export(name="digitalTwinModelId", refs={String.class}, tree="[0]")
     private Output<String> digitalTwinModelId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
     public Output<String> digitalTwinModelId() {
         return this.digitalTwinModelId;
     }
     /**
-     * The URI of the digital twin model specification.
+     * (Updatable) The URI of the digital twin model specification.
      * 
      */
     @Export(name="digitalTwinModelSpecUri", refs={String.class}, tree="[0]")
     private Output<String> digitalTwinModelSpecUri;
 
     /**
-     * @return The URI of the digital twin model specification.
+     * @return (Updatable) The URI of the digital twin model specification.
      * 
      */
     public Output<String> digitalTwinModelSpecUri() {

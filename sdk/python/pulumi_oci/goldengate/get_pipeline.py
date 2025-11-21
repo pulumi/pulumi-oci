@@ -27,7 +27,7 @@ class GetPipelineResult:
     """
     A collection of values returned by getPipeline.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, locks=None, mapping_rules=None, pipeline_diagnostic_datas=None, pipeline_id=None, process_options=None, recipe_type=None, source_connection_details=None, state=None, system_tags=None, target_connection_details=None, time_created=None, time_last_recorded=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, locks=None, mapping_rules=None, pipeline_diagnostic_datas=None, pipeline_id=None, process_options=None, recipe_type=None, source_connection_details=None, state=None, subnet_id=None, system_tags=None, target_connection_details=None, time_created=None, time_last_recorded=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +49,9 @@ class GetPipelineResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ingress_ips and not isinstance(ingress_ips, list):
+            raise TypeError("Expected argument 'ingress_ips' to be a list")
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
         if is_auto_scaling_enabled and not isinstance(is_auto_scaling_enabled, bool):
             raise TypeError("Expected argument 'is_auto_scaling_enabled' to be a bool")
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
@@ -85,6 +88,9 @@ class GetPipelineResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if subnet_id and not isinstance(subnet_id, str):
+            raise TypeError("Expected argument 'subnet_id' to be a str")
+        pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -156,6 +162,14 @@ class GetPipelineResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Sequence['outputs.GetPipelineIngressIpResult']:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
@@ -251,6 +265,14 @@ class GetPipelineResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -304,6 +326,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            ingress_ips=self.ingress_ips,
             is_auto_scaling_enabled=self.is_auto_scaling_enabled,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
@@ -316,6 +339,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
             recipe_type=self.recipe_type,
             source_connection_details=self.source_connection_details,
             state=self.state,
+            subnet_id=self.subnet_id,
             system_tags=self.system_tags,
             target_connection_details=self.target_connection_details,
             time_created=self.time_created,
@@ -355,6 +379,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        ingress_ips=pulumi.get(__ret__, 'ingress_ips'),
         is_auto_scaling_enabled=pulumi.get(__ret__, 'is_auto_scaling_enabled'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -367,6 +392,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
         recipe_type=pulumi.get(__ret__, 'recipe_type'),
         source_connection_details=pulumi.get(__ret__, 'source_connection_details'),
         state=pulumi.get(__ret__, 'state'),
+        subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_connection_details=pulumi.get(__ret__, 'target_connection_details'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -403,6 +429,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        ingress_ips=pulumi.get(__response__, 'ingress_ips'),
         is_auto_scaling_enabled=pulumi.get(__response__, 'is_auto_scaling_enabled'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
@@ -415,6 +442,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
         recipe_type=pulumi.get(__response__, 'recipe_type'),
         source_connection_details=pulumi.get(__response__, 'source_connection_details'),
         state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_connection_details=pulumi.get(__response__, 'target_connection_details'),
         time_created=pulumi.get(__response__, 'time_created'),

@@ -71,6 +71,10 @@ type GetServiceCatalogResult struct {
 	ServiceCatalogId string `pulumi:"serviceCatalogId"`
 	// The lifecycle state of the service catalog.
 	State string `pulumi:"state"`
+	// The status of a service catalog.
+	Status string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -143,6 +147,16 @@ func (o GetServiceCatalogResultOutput) ServiceCatalogId() pulumi.StringOutput {
 // The lifecycle state of the service catalog.
 func (o GetServiceCatalogResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The status of a service catalog.
+func (o GetServiceCatalogResultOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetServiceCatalogResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`

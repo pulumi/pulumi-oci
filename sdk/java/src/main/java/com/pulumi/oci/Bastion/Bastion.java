@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .maxSessionTtlInSeconds(bastionMaxSessionTtlInSeconds)
  *             .name(bastionName)
  *             .phoneBookEntry(bastionPhoneBookEntry)
+ *             .securityAttributes(bastionSecurityAttributes)
  *             .staticJumpHostIpAddresses(bastionStaticJumpHostIpAddresses)
  *             .build());
  * 
@@ -238,6 +239,20 @@ public class Bastion extends com.pulumi.resources.CustomResource {
      */
     public Output<String> privateEndpointIpAddress() {
         return this.privateEndpointIpAddress;
+    }
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{&#34;Oracle-DataSecurity-ZPR.MaxEgressCount.value&#34;: &#34;42&#34;, &#34;Oracle-DataSecurity-ZPR.MaxEgressCount.mode&#34;: &#34;audit&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The current state of the bastion.

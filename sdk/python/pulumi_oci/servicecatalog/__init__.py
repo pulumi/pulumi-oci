@@ -8,6 +8,8 @@ import typing
 # Export this package's modules as members:
 from .catalog import *
 from .catalog_association import *
+from .get_all_applications import *
+from .get_configuration import *
 from .get_private_application import *
 from .get_private_application_package import *
 from .get_private_application_packages import *

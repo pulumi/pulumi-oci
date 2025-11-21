@@ -48,8 +48,8 @@ import (
 //					&goldengate.PipelineLockArgs{
 //						Type:              pulumi.Any(pipelineLocksType),
 //						Message:           pulumi.Any(pipelineLocksMessage),
-//						RelatedResourceId: testResource.Id,
-//						TimeCreated:       pipelineLocksTimeCreated,
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(pipelineLocksTimeCreated),
 //					},
 //				},
 //				ProcessOptions: &goldengate.PipelineProcessOptionsArgs{
@@ -65,6 +65,7 @@ import (
 //					ShouldRestartOnFailure:   pulumi.Any(pipelineProcessOptionsShouldRestartOnFailure),
 //					StartUsingDefaultMapping: pulumi.Any(pipelineProcessOptionsStartUsingDefaultMapping),
 //				},
+//				SubnetId: pulumi.Any(testSubnet.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -97,6 +98,8 @@ type Pipeline struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps PipelineIngressIpArrayOutput `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
@@ -119,6 +122,8 @@ type Pipeline struct {
 	SourceConnectionDetails PipelineSourceConnectionDetailsOutput `pulumi:"sourceConnectionDetails"`
 	// Lifecycle state of the pipeline.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The target connection details for creating a pipeline.
@@ -191,6 +196,8 @@ type pipelineState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []PipelineIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
@@ -213,6 +220,8 @@ type pipelineState struct {
 	SourceConnectionDetails *PipelineSourceConnectionDetails `pulumi:"sourceConnectionDetails"`
 	// Lifecycle state of the pipeline.
 	State *string `pulumi:"state"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The target connection details for creating a pipeline.
@@ -238,6 +247,8 @@ type PipelineState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps PipelineIngressIpArrayInput
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
@@ -260,6 +271,8 @@ type PipelineState struct {
 	SourceConnectionDetails PipelineSourceConnectionDetailsPtrInput
 	// Lifecycle state of the pipeline.
 	State pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput
 	// The target connection details for creating a pipeline.
@@ -297,6 +310,8 @@ type pipelineArgs struct {
 	RecipeType string `pulumi:"recipeType"`
 	// The source connection details for creating a pipeline.
 	SourceConnectionDetails PipelineSourceConnectionDetails `pulumi:"sourceConnectionDetails"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId *string `pulumi:"subnetId"`
 	// The target connection details for creating a pipeline.
 	TargetConnectionDetails PipelineTargetConnectionDetails `pulumi:"targetConnectionDetails"`
 }
@@ -323,6 +338,8 @@ type PipelineArgs struct {
 	RecipeType pulumi.StringInput
 	// The source connection details for creating a pipeline.
 	SourceConnectionDetails PipelineSourceConnectionDetailsInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId pulumi.StringPtrInput
 	// The target connection details for creating a pipeline.
 	TargetConnectionDetails PipelineTargetConnectionDetailsInput
 }
@@ -444,6 +461,11 @@ func (o PipelineOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o PipelineOutput) IngressIps() PipelineIngressIpArrayOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineIngressIpArrayOutput { return v.IngressIps }).(PipelineIngressIpArrayOutput)
+}
+
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o PipelineOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.BoolOutput { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -497,6 +519,11 @@ func (o PipelineOutput) SourceConnectionDetails() PipelineSourceConnectionDetail
 // Lifecycle state of the pipeline.
 func (o PipelineOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+func (o PipelineOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

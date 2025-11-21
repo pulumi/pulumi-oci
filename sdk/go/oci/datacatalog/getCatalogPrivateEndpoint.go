@@ -77,6 +77,8 @@ type LookupCatalogPrivateEndpointResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks []GetCatalogPrivateEndpointLock `pulumi:"locks"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the private endpoint resource.
 	State string `pulumi:"state"`
 	// Subnet Identifier
@@ -170,6 +172,11 @@ func (o LookupCatalogPrivateEndpointResultOutput) LifecycleDetails() pulumi.Stri
 // Locks associated with this resource.
 func (o LookupCatalogPrivateEndpointResultOutput) Locks() GetCatalogPrivateEndpointLockArrayOutput {
 	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) []GetCatalogPrivateEndpointLock { return v.Locks }).(GetCatalogPrivateEndpointLockArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupCatalogPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the private endpoint resource.

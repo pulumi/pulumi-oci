@@ -31,7 +31,8 @@ class PipelineArgs:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
-                 process_options: Optional[pulumi.Input['PipelineProcessOptionsArgs']] = None):
+                 process_options: Optional[pulumi.Input['PipelineProcessOptionsArgs']] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Pipeline resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -45,6 +46,7 @@ class PipelineArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input['PipelineProcessOptionsArgs'] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -62,6 +64,8 @@ class PipelineArgs:
             pulumi.set(__self__, "locks", locks)
         if process_options is not None:
             pulumi.set(__self__, "process_options", process_options)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -195,6 +199,18 @@ class PipelineArgs:
     def process_options(self, value: Optional[pulumi.Input['PipelineProcessOptionsArgs']]):
         pulumi.set(self, "process_options", value)
 
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
 
 @pulumi.input_type
 class _PipelineState:
@@ -205,6 +221,7 @@ class _PipelineState:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -216,6 +233,7 @@ class _PipelineState:
                  recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_connection_details: Optional[pulumi.Input['PipelineSourceConnectionDetailsArgs']] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_connection_details: Optional[pulumi.Input['PipelineTargetConnectionDetailsArgs']] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -229,6 +247,7 @@ class _PipelineState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -240,6 +259,7 @@ class _PipelineState:
         :param pulumi.Input[_builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input['PipelineSourceConnectionDetailsArgs'] source_connection_details: The source connection details for creating a pipeline.
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the pipeline.
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input['PipelineTargetConnectionDetailsArgs'] target_connection_details: The target connection details for creating a pipeline.
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -258,6 +278,8 @@ class _PipelineState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ingress_ips is not None:
+            pulumi.set(__self__, "ingress_ips", ingress_ips)
         if is_auto_scaling_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if license_model is not None:
@@ -280,6 +302,8 @@ class _PipelineState:
             pulumi.set(__self__, "source_connection_details", source_connection_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if target_connection_details is not None:
@@ -362,6 +386,18 @@ class _PipelineState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @ingress_ips.setter
+    def ingress_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]):
+        pulumi.set(self, "ingress_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
@@ -496,6 +532,18 @@ class _PipelineState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -572,6 +620,7 @@ class Pipeline(pulumi.CustomResource):
                  process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
                  recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         """
@@ -617,7 +666,8 @@ class Pipeline(pulumi.CustomResource):
                 },
                 "should_restart_on_failure": pipeline_process_options_should_restart_on_failure,
                 "start_using_default_mapping": pipeline_process_options_start_using_default_mapping,
-            })
+            },
+            subnet_id=test_subnet["id"])
         ```
 
         ## Import
@@ -640,6 +690,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']] process_options: (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         :param pulumi.Input[_builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']] source_connection_details: The source connection details for creating a pipeline.
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         :param pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']] target_connection_details: The target connection details for creating a pipeline.
         """
         ...
@@ -691,7 +742,8 @@ class Pipeline(pulumi.CustomResource):
                 },
                 "should_restart_on_failure": pipeline_process_options_should_restart_on_failure,
                 "start_using_default_mapping": pipeline_process_options_start_using_default_mapping,
-            })
+            },
+            subnet_id=test_subnet["id"])
         ```
 
         ## Import
@@ -727,6 +779,7 @@ class Pipeline(pulumi.CustomResource):
                  process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
                  recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
+                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -757,10 +810,12 @@ class Pipeline(pulumi.CustomResource):
             if source_connection_details is None and not opts.urn:
                 raise TypeError("Missing required property 'source_connection_details'")
             __props__.__dict__["source_connection_details"] = source_connection_details
+            __props__.__dict__["subnet_id"] = subnet_id
             if target_connection_details is None and not opts.urn:
                 raise TypeError("Missing required property 'target_connection_details'")
             __props__.__dict__["target_connection_details"] = target_connection_details
             __props__.__dict__["cpu_core_count"] = None
+            __props__.__dict__["ingress_ips"] = None
             __props__.__dict__["is_auto_scaling_enabled"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecycle_sub_state"] = None
@@ -787,6 +842,7 @@ class Pipeline(pulumi.CustomResource):
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict']]]]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             license_model: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -798,6 +854,7 @@ class Pipeline(pulumi.CustomResource):
             recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
             source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -816,6 +873,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[_builtins.bool] is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[_builtins.str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -827,6 +885,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] recipe_type: (Updatable) The type of the recipe
         :param pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']] source_connection_details: The source connection details for creating a pipeline.
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the pipeline.
+        :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']] target_connection_details: The target connection details for creating a pipeline.
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -843,6 +902,7 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["ingress_ips"] = ingress_ips
         __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -854,6 +914,7 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["recipe_type"] = recipe_type
         __props__.__dict__["source_connection_details"] = source_connection_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_connection_details"] = target_connection_details
         __props__.__dict__["time_created"] = time_created
@@ -908,6 +969,14 @@ class Pipeline(pulumi.CustomResource):
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> pulumi.Output[Sequence['outputs.PipelineIngressIp']]:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
@@ -996,6 +1065,14 @@ class Pipeline(pulumi.CustomResource):
         Lifecycle state of the pipeline.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+        """
+        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

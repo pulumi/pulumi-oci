@@ -119,6 +119,8 @@ __all__ = [
     'DeploymentSpecificationRouteResponsePoliciesResponseCacheStore',
     'GatewayCaBundle',
     'GatewayIpAddress',
+    'GatewayIpv4addressConfiguration',
+    'GatewayIpv6addressConfiguration',
     'GatewayLock',
     'GatewayResponseCacheDetails',
     'GatewayResponseCacheDetailsServer',
@@ -440,6 +442,8 @@ __all__ = [
     'GetDeploymentsFilterResult',
     'GetGatewayCaBundleResult',
     'GetGatewayIpAddressResult',
+    'GetGatewayIpv4addressConfigurationResult',
+    'GetGatewayIpv6addressConfigurationResult',
     'GetGatewayLockResult',
     'GetGatewayResponseCacheDetailResult',
     'GetGatewayResponseCacheDetailServerResult',
@@ -447,6 +451,8 @@ __all__ = [
     'GetGatewaysGatewayCollectionResult',
     'GetGatewaysGatewayCollectionCaBundleResult',
     'GetGatewaysGatewayCollectionIpAddressResult',
+    'GetGatewaysGatewayCollectionIpv4addressConfigurationResult',
+    'GetGatewaysGatewayCollectionIpv6addressConfigurationResult',
     'GetGatewaysGatewayCollectionLockResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailServerResult',
@@ -7059,6 +7065,90 @@ class GatewayIpAddress(dict):
         An IP address.
         """
         return pulumi.get(self, "ip_address")
+
+
+@pulumi.output_type
+class GatewayIpv4addressConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "reservedIpIds":
+            suggest = "reserved_ip_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayIpv4addressConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayIpv4addressConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayIpv4addressConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 reserved_ip_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] reserved_ip_ids: List of Reserved IP OCIDs created in VCN service.
+        """
+        if reserved_ip_ids is not None:
+            pulumi.set(__self__, "reserved_ip_ids", reserved_ip_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedIpIds")
+    def reserved_ip_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of Reserved IP OCIDs created in VCN service.
+        """
+        return pulumi.get(self, "reserved_ip_ids")
+
+
+@pulumi.output_type
+class GatewayIpv6addressConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetCidrs":
+            suggest = "subnet_cidrs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayIpv6addressConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayIpv6addressConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayIpv6addressConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 addresses: Optional[Sequence[_builtins.str]] = None,
+                 subnet_cidrs: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] addresses: List of IPv6 addresses that will be assigned to the gateway during creation.
+        :param Sequence[_builtins.str] subnet_cidrs: List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        if addresses is not None:
+            pulumi.set(__self__, "addresses", addresses)
+        if subnet_cidrs is not None:
+            pulumi.set(__self__, "subnet_cidrs", subnet_cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def addresses(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of IPv6 addresses that will be assigned to the gateway during creation.
+        """
+        return pulumi.get(self, "addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidrs")
+    def subnet_cidrs(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        return pulumi.get(self, "subnet_cidrs")
 
 
 @pulumi.output_type
@@ -22392,6 +22482,53 @@ class GetGatewayIpAddressResult(dict):
 
 
 @pulumi.output_type
+class GetGatewayIpv4addressConfigurationResult(dict):
+    def __init__(__self__, *,
+                 reserved_ip_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] reserved_ip_ids: List of Reserved IP OCIDs created in VCN service.
+        """
+        pulumi.set(__self__, "reserved_ip_ids", reserved_ip_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedIpIds")
+    def reserved_ip_ids(self) -> Sequence[_builtins.str]:
+        """
+        List of Reserved IP OCIDs created in VCN service.
+        """
+        return pulumi.get(self, "reserved_ip_ids")
+
+
+@pulumi.output_type
+class GetGatewayIpv6addressConfigurationResult(dict):
+    def __init__(__self__, *,
+                 addresses: Sequence[_builtins.str],
+                 subnet_cidrs: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] addresses: List of IPv6 addresses that will be assigned to the gateway during creation.
+        :param Sequence[_builtins.str] subnet_cidrs: List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        pulumi.set(__self__, "addresses", addresses)
+        pulumi.set(__self__, "subnet_cidrs", subnet_cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def addresses(self) -> Sequence[_builtins.str]:
+        """
+        List of IPv6 addresses that will be assigned to the gateway during creation.
+        """
+        return pulumi.get(self, "addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidrs")
+    def subnet_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        return pulumi.get(self, "subnet_cidrs")
+
+
+@pulumi.output_type
 class GetGatewayLockResult(dict):
     def __init__(__self__, *,
                  message: _builtins.str,
@@ -22617,6 +22754,9 @@ class GetGatewaysGatewayCollectionResult(dict):
                  hostname: _builtins.str,
                  id: _builtins.str,
                  ip_addresses: Sequence['outputs.GetGatewaysGatewayCollectionIpAddressResult'],
+                 ip_mode: _builtins.str,
+                 ipv4address_configurations: Sequence['outputs.GetGatewaysGatewayCollectionIpv4addressConfigurationResult'],
+                 ipv6address_configurations: Sequence['outputs.GetGatewaysGatewayCollectionIpv6addressConfigurationResult'],
                  is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetGatewaysGatewayCollectionLockResult'],
@@ -22638,6 +22778,9 @@ class GetGatewaysGatewayCollectionResult(dict):
         :param _builtins.str hostname: The hostname for APIs deployed on the gateway.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param Sequence['GetGatewaysGatewayCollectionIpAddressArgs'] ip_addresses: An array of IP addresses associated with the gateway.
+        :param _builtins.str ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        :param Sequence['GetGatewaysGatewayCollectionIpv4addressConfigurationArgs'] ipv4address_configurations: IPv4 address configuration details that should be used when creating the gateway.
+        :param Sequence['GetGatewaysGatewayCollectionIpv6addressConfigurationArgs'] ipv6address_configurations: IPv6 address configuration details that should be used when creating the gateway.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetGatewaysGatewayCollectionLockArgs'] locks: Locks associated with this resource.
         :param Sequence[_builtins.str] network_security_group_ids: An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -22658,6 +22801,9 @@ class GetGatewaysGatewayCollectionResult(dict):
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "ip_mode", ip_mode)
+        pulumi.set(__self__, "ipv4address_configurations", ipv4address_configurations)
+        pulumi.set(__self__, "ipv6address_configurations", ipv6address_configurations)
         pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
@@ -22748,6 +22894,30 @@ class GetGatewaysGatewayCollectionResult(dict):
         An array of IP addresses associated with the gateway.
         """
         return pulumi.get(self, "ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="ipMode")
+    def ip_mode(self) -> _builtins.str:
+        """
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        """
+        return pulumi.get(self, "ip_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4addressConfigurations")
+    def ipv4address_configurations(self) -> Sequence['outputs.GetGatewaysGatewayCollectionIpv4addressConfigurationResult']:
+        """
+        IPv4 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv4address_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressConfigurations")
+    def ipv6address_configurations(self) -> Sequence['outputs.GetGatewaysGatewayCollectionIpv6addressConfigurationResult']:
+        """
+        IPv6 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv6address_configurations")
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
@@ -22883,6 +23053,53 @@ class GetGatewaysGatewayCollectionIpAddressResult(dict):
         An IP address.
         """
         return pulumi.get(self, "ip_address")
+
+
+@pulumi.output_type
+class GetGatewaysGatewayCollectionIpv4addressConfigurationResult(dict):
+    def __init__(__self__, *,
+                 reserved_ip_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] reserved_ip_ids: List of Reserved IP OCIDs created in VCN service.
+        """
+        pulumi.set(__self__, "reserved_ip_ids", reserved_ip_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedIpIds")
+    def reserved_ip_ids(self) -> Sequence[_builtins.str]:
+        """
+        List of Reserved IP OCIDs created in VCN service.
+        """
+        return pulumi.get(self, "reserved_ip_ids")
+
+
+@pulumi.output_type
+class GetGatewaysGatewayCollectionIpv6addressConfigurationResult(dict):
+    def __init__(__self__, *,
+                 addresses: Sequence[_builtins.str],
+                 subnet_cidrs: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] addresses: List of IPv6 addresses that will be assigned to the gateway during creation.
+        :param Sequence[_builtins.str] subnet_cidrs: List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        pulumi.set(__self__, "addresses", addresses)
+        pulumi.set(__self__, "subnet_cidrs", subnet_cidrs)
+
+    @_builtins.property
+    @pulumi.getter
+    def addresses(self) -> Sequence[_builtins.str]:
+        """
+        List of IPv6 addresses that will be assigned to the gateway during creation.
+        """
+        return pulumi.get(self, "addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidrs")
+    def subnet_cidrs(self) -> Sequence[_builtins.str]:
+        """
+        List of IPv6 prefixes from which to provision IPv6 addresses from. This is required if more than one prefix exists on the subnet.
+        """
+        return pulumi.get(self, "subnet_cidrs")
 
 
 @pulumi.output_type

@@ -84,7 +84,7 @@ public final class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdenti
      */
     private String projectId;
     /**
-     * @return A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String resourceId;
@@ -209,7 +209,7 @@ public final class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdenti
         return this.projectId;
     }
     /**
-     * @return A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String resourceId() {

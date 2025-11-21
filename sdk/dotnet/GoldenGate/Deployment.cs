@@ -284,6 +284,9 @@ namespace Pulumi.Oci.GoldenGate
         [Output("sourceDeploymentId")]
         public Output<string> SourceDeploymentId { get; private set; } = null!;
 
+        /// <summary>
+        /// Possible lifecycle states.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -301,6 +304,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("subscriptionId")]
         public Output<string> SubscriptionId { get; private set; } = null!;
@@ -612,6 +619,9 @@ namespace Pulumi.Oci.GoldenGate
         [Input("sourceDeploymentId")]
         public Input<string>? SourceDeploymentId { get; set; }
 
+        /// <summary>
+        /// Possible lifecycle states.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
@@ -623,6 +633,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }
@@ -944,6 +958,9 @@ namespace Pulumi.Oci.GoldenGate
         [Input("sourceDeploymentId")]
         public Input<string>? SourceDeploymentId { get; set; }
 
+        /// <summary>
+        /// Possible lifecycle states.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
@@ -961,6 +978,10 @@ namespace Pulumi.Oci.GoldenGate
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }

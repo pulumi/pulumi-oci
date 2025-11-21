@@ -98,6 +98,13 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('region')
 
     @_builtins.property
+    def retries_config_file(self) -> Optional[str]:
+        """
+        (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        """
+        return __config__.get('retriesConfigFile')
+
+    @_builtins.property
     def retry_duration_seconds(self) -> Optional[int]:
         """
         (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.

@@ -35,6 +35,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
+//				Status: pulumi.Any(serviceCatalogStatus),
 //			})
 //			if err != nil {
 //				return err
@@ -62,12 +63,16 @@ type Catalog struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The lifecycle state of the service catalog.
 	State pulumi.StringOutput `pulumi:"state"`
+	// (Updatable) The status of a service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Status pulumi.StringOutput `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -117,12 +122,16 @@ type catalogState struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The lifecycle state of the service catalog.
 	State *string `pulumi:"state"`
+	// (Updatable) The status of a service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Status *string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -137,12 +146,16 @@ type CatalogState struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
 	// The lifecycle state of the service catalog.
 	State pulumi.StringPtrInput
+	// (Updatable) The status of a service catalog.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Status pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -161,10 +174,12 @@ type catalogArgs struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The status of a service catalog.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Status *string `pulumi:"status"`
 }
 
 // The set of arguments for constructing a Catalog resource.
@@ -176,10 +191,12 @@ type CatalogArgs struct {
 	// (Updatable) The display name of the service catalog.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
+	// (Updatable) The status of a service catalog.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	Status pulumi.StringPtrInput
 }
 
 func (CatalogArgs) ElementType() reflect.Type {
@@ -285,9 +302,6 @@ func (o CatalogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -295,6 +309,19 @@ func (o CatalogOutput) FreeformTags() pulumi.StringMapOutput {
 // The lifecycle state of the service catalog.
 func (o CatalogOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// (Updatable) The status of a service catalog.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o CatalogOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o CatalogOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`

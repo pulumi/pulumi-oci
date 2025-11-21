@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ApplyRate;
         /// <summary>
+        /// The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        /// </summary>
+        public readonly string DataLossExposure;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         /// </summary>
         public readonly string DatabaseId;
@@ -30,6 +34,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
+        /// The failover readiness status of the Data Guard member.
+        /// </summary>
+        public readonly string FailoverReadiness;
+        /// <summary>
+        /// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        /// </summary>
+        public readonly string FailoverReadinessMessage;
+        /// <summary>
         /// True if active Data Guard is enabled.
         /// </summary>
         public readonly bool IsActiveDataGuardEnabled;
@@ -37,6 +49,18 @@ namespace Pulumi.Oci.Database.Outputs
         /// The role of the reporting database in this Data Guard association.
         /// </summary>
         public readonly string Role;
+        /// <summary>
+        /// The switchover readiness status of the Data Guard member.
+        /// </summary>
+        public readonly string SwitchoverReadiness;
+        /// <summary>
+        /// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        /// </summary>
+        public readonly string SwitchoverReadinessMessage;
+        /// <summary>
+        /// The date and time when the last successful Data Guard refresh occurred.
+        /// </summary>
+        public readonly string TimeUpdated;
         /// <summary>
         /// The rate at which redo logs are transported between the associated databases.  Example: `1 second`
         /// </summary>
@@ -59,13 +83,25 @@ namespace Pulumi.Oci.Database.Outputs
 
             string applyRate,
 
+            string dataLossExposure,
+
             string databaseId,
 
             string dbSystemId,
 
+            string failoverReadiness,
+
+            string failoverReadinessMessage,
+
             bool isActiveDataGuardEnabled,
 
             string role,
+
+            string switchoverReadiness,
+
+            string switchoverReadinessMessage,
+
+            string timeUpdated,
 
             string transportLag,
 
@@ -75,10 +111,16 @@ namespace Pulumi.Oci.Database.Outputs
         {
             ApplyLag = applyLag;
             ApplyRate = applyRate;
+            DataLossExposure = dataLossExposure;
             DatabaseId = databaseId;
             DbSystemId = dbSystemId;
+            FailoverReadiness = failoverReadiness;
+            FailoverReadinessMessage = failoverReadinessMessage;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
             Role = role;
+            SwitchoverReadiness = switchoverReadiness;
+            SwitchoverReadinessMessage = switchoverReadinessMessage;
+            TimeUpdated = timeUpdated;
             TransportLag = transportLag;
             TransportLagRefresh = transportLagRefresh;
             TransportType = transportType;

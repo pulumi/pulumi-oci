@@ -27,6 +27,10 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs',
+    'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs',
@@ -113,6 +117,10 @@ __all__ = [
     'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs',
+    'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict',
+    'GetDbmulticloudOracleDbAwsKeysFilterArgs',
+    'GetDbmulticloudOracleDbAwsKeysFilterArgsDict',
     'GetDbmulticloudOracleDbAzureBlobContainersFilterArgs',
     'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict',
     'GetDbmulticloudOracleDbAzureBlobMountsFilterArgs',
@@ -159,6 +167,16 @@ __all__ = [
     'GetMulticloudExternalLocationsMetadataFilterArgsDict',
     'GetMulticloudResourceAnchorsFilterArgs',
     'GetMulticloudResourceAnchorsFilterArgsDict',
+    'GetPsaPrivateServiceAccessesFilterArgs',
+    'GetPsaPrivateServiceAccessesFilterArgsDict',
+    'GetPsaPsaServicesFilterArgs',
+    'GetPsaPsaServicesFilterArgsDict',
+    'GetPsaPsaWorkRequestErrorsFilterArgs',
+    'GetPsaPsaWorkRequestErrorsFilterArgsDict',
+    'GetPsaPsaWorkRequestLogsFilterArgs',
+    'GetPsaPsaWorkRequestLogsFilterArgsDict',
+    'GetPsaPsaWorkRequestsFilterArgs',
+    'GetPsaPsaWorkRequestsFilterArgsDict',
     'GetResourceAnalyticsMonitoredRegionsFilterArgs',
     'GetResourceAnalyticsMonitoredRegionsFilterArgsDict',
     'GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs',
@@ -639,6 +657,219 @@ class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict(TypedDict):
+        role_arn: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Amazon resource name AWSof the IAM role.
+        """
+        service_private_endpoint: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Private endpoint of the AWS service.
+        """
+        service_type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Type of service.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        assume_role_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Assume role  status.
+        """
+        aws_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict']]]]
+        """
+        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+elif False:
+    DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs:
+    def __init__(__self__, *,
+                 role_arn: pulumi.Input[_builtins.str],
+                 service_private_endpoint: pulumi.Input[_builtins.str],
+                 service_type: pulumi.Input[_builtins.str],
+                 assume_role_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 aws_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] role_arn: (Updatable) Amazon resource name AWSof the IAM role.
+        :param pulumi.Input[_builtins.str] service_private_endpoint: (Updatable) Private endpoint of the AWS service.
+        :param pulumi.Input[_builtins.str] service_type: (Updatable) Type of service.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] assume_role_status: Assume role  status.
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs']]] aws_nodes: List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        pulumi.set(__self__, "role_arn", role_arn)
+        pulumi.set(__self__, "service_private_endpoint", service_private_endpoint)
+        pulumi.set(__self__, "service_type", service_type)
+        if assume_role_status is not None:
+            pulumi.set(__self__, "assume_role_status", assume_role_status)
+        if aws_nodes is not None:
+            pulumi.set(__self__, "aws_nodes", aws_nodes)
+
+    @_builtins.property
+    @pulumi.getter(name="roleArn")
+    def role_arn(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Amazon resource name AWSof the IAM role.
+        """
+        return pulumi.get(self, "role_arn")
+
+    @role_arn.setter
+    def role_arn(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "role_arn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="servicePrivateEndpoint")
+    def service_private_endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Private endpoint of the AWS service.
+        """
+        return pulumi.get(self, "service_private_endpoint")
+
+    @service_private_endpoint.setter
+    def service_private_endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "service_private_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceType")
+    def service_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Type of service.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "service_type")
+
+    @service_type.setter
+    def service_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "service_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="assumeRoleStatus")
+    def assume_role_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Assume role  status.
+        """
+        return pulumi.get(self, "assume_role_status")
+
+    @assume_role_status.setter
+    def assume_role_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "assume_role_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="awsNodes")
+    def aws_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs']]]]:
+        """
+        List of all VMs where AWS Identity Connector is configured for Oracle DB Cloud VM Cluster.
+        """
+        return pulumi.get(self, "aws_nodes")
+
+    @aws_nodes.setter
+    def aws_nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs']]]]):
+        pulumi.set(self, "aws_nodes", value)
+
+
+if not MYPY:
+    class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict(TypedDict):
+        host_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        AWS host ID.
+        """
+        host_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        AWS Host name or Identity Connector name.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The current status of the AWS Identity Connector resource.
+        """
+        time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+elif False:
+    DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs:
+    def __init__(__self__, *,
+                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_last_checked: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] host_id: AWS host ID.
+        :param pulumi.Input[_builtins.str] host_name: AWS Host name or Identity Connector name.
+        :param pulumi.Input[_builtins.str] status: The current status of the AWS Identity Connector resource.
+        :param pulumi.Input[_builtins.str] time_last_checked: Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        AWS host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @host_id.setter
+    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        AWS Host name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current status of the AWS Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_last_checked")
+
+    @time_last_checked.setter
+    def time_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_last_checked", value)
 
 
 if not MYPY:
@@ -4173,6 +4404,100 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs:
 
 
 if not MYPY:
+    class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAwsKeysFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAwsKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAwsKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -5225,6 +5550,241 @@ elif False:
 
 @pulumi.input_type
 class GetMulticloudResourceAnchorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPsaPrivateServiceAccessesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPsaPrivateServiceAccessesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPsaPrivateServiceAccessesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPsaPsaServicesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPsaPsaServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPsaPsaServicesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPsaPsaWorkRequestErrorsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPsaPsaWorkRequestErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPsaPsaWorkRequestErrorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPsaPsaWorkRequestLogsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPsaPsaWorkRequestLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPsaPsaWorkRequestLogsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetPsaPsaWorkRequestsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetPsaPsaWorkRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetPsaPsaWorkRequestsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

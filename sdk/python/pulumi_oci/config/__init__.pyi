@@ -69,6 +69,11 @@ region: Optional[str]
 (Required) The region for API connections (e.g. us-ashburn-1).
 """
 
+retriesConfigFile: Optional[str]
+"""
+(Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+"""
+
 retryDurationSeconds: Optional[int]
 """
 (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.

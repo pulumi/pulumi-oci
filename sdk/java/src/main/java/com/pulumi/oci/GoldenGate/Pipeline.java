@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.PipelineArgs;
 import com.pulumi.oci.GoldenGate.inputs.PipelineState;
+import com.pulumi.oci.GoldenGate.outputs.PipelineIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.PipelineLock;
 import com.pulumi.oci.GoldenGate.outputs.PipelineMappingRule;
 import com.pulumi.oci.GoldenGate.outputs.PipelinePipelineDiagnosticData;
@@ -87,6 +88,7 @@ import javax.annotation.Nullable;
  *                 .shouldRestartOnFailure(pipelineProcessOptionsShouldRestartOnFailure)
  *                 .startUsingDefaultMapping(pipelineProcessOptionsStartUsingDefaultMapping)
  *                 .build())
+ *             .subnetId(testSubnet.id())
  *             .build());
  * 
  *     }
@@ -188,6 +190,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    @Export(name="ingressIps", refs={List.class,PipelineIngressIp.class}, tree="[0,1]")
+    private Output<List<PipelineIngressIp>> ingressIps;
+
+    /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    public Output<List<PipelineIngressIp>> ingressIps() {
+        return this.ingressIps;
     }
     /**
      * Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
@@ -342,6 +358,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
+    private Output<String> subnetId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    public Output<String> subnetId() {
+        return this.subnetId;
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

@@ -11,6 +11,8 @@ import com.pulumi.oci.ApiGateway.GatewayArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayState;
 import com.pulumi.oci.ApiGateway.outputs.GatewayCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GatewayIpAddress;
+import com.pulumi.oci.ApiGateway.outputs.GatewayIpv4addressConfiguration;
+import com.pulumi.oci.ApiGateway.outputs.GatewayIpv6addressConfiguration;
 import com.pulumi.oci.ApiGateway.outputs.GatewayLock;
 import com.pulumi.oci.ApiGateway.outputs.GatewayResponseCacheDetails;
 import com.pulumi.oci.Utilities;
@@ -33,6 +35,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApiGateway.Gateway;
  * import com.pulumi.oci.ApiGateway.GatewayArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayIpv4addressConfigurationArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayIpv6addressConfigurationArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayLockArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
  * import java.util.List;
@@ -61,6 +65,14 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(gatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .ipMode(gatewayIpMode)
+ *             .ipv4addressConfiguration(GatewayIpv4addressConfigurationArgs.builder()
+ *                 .reservedIpIds(gatewayIpv4addressConfigurationReservedIpIds)
+ *                 .build())
+ *             .ipv6addressConfiguration(GatewayIpv6addressConfigurationArgs.builder()
+ *                 .addresses(gatewayIpv6addressConfigurationAddresses)
+ *                 .subnetCidrs(gatewayIpv6addressConfigurationSubnetCidrs)
+ *                 .build())
  *             .locks(GatewayLockArgs.builder()
  *                 .type(gatewayLocksType)
  *                 .message(gatewayLocksMessage)
@@ -223,6 +235,48 @@ public class Gateway extends com.pulumi.resources.CustomResource {
      */
     public Output<List<GatewayIpAddress>> ipAddresses() {
         return this.ipAddresses;
+    }
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    @Export(name="ipMode", refs={String.class}, tree="[0]")
+    private Output<String> ipMode;
+
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    public Output<String> ipMode() {
+        return this.ipMode;
+    }
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    @Export(name="ipv4addressConfiguration", refs={GatewayIpv4addressConfiguration.class}, tree="[0]")
+    private Output<GatewayIpv4addressConfiguration> ipv4addressConfiguration;
+
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public Output<GatewayIpv4addressConfiguration> ipv4addressConfiguration() {
+        return this.ipv4addressConfiguration;
+    }
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    @Export(name="ipv6addressConfiguration", refs={GatewayIpv6addressConfiguration.class}, tree="[0]")
+    private Output<GatewayIpv6addressConfiguration> ipv6addressConfiguration;
+
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public Output<GatewayIpv6addressConfiguration> ipv6addressConfiguration() {
+        return this.ipv6addressConfiguration;
     }
     @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLockOverride;

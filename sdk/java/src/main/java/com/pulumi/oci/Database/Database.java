@@ -25,7 +25,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
+ * 
+ * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
  * 
  * ## Import
  * 

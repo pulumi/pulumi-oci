@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ComputeGpuMemoryFabricArgs', 'ComputeGpuMemoryFabric']
 
@@ -23,18 +25,16 @@ class ComputeGpuMemoryFabricArgs:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 memory_fabric_preferences: Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']] = None):
         """
         The set of arguments for constructing a ComputeGpuMemoryFabric resource.
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs'] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         """
         pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
         if compartment_id is not None:
@@ -45,6 +45,8 @@ class ComputeGpuMemoryFabricArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if memory_fabric_preferences is not None:
+            pulumi.set(__self__, "memory_fabric_preferences", memory_fabric_preferences)
 
     @_builtins.property
     @pulumi.getter(name="computeGpuMemoryFabricId")
@@ -98,17 +100,25 @@ class ComputeGpuMemoryFabricArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryFabricPreferences")
+    def memory_fabric_preferences(self) -> Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']]:
+        """
+        (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        """
+        return pulumi.get(self, "memory_fabric_preferences")
+
+    @memory_fabric_preferences.setter
+    def memory_fabric_preferences(self, value: Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']]):
+        pulumi.set(self, "memory_fabric_preferences", value)
 
 
 @pulumi.input_type
@@ -121,13 +131,20 @@ class _ComputeGpuMemoryFabricState:
                  compute_hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 current_firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fabric_health: Optional[pulumi.Input[_builtins.str]] = None,
+                 firmware_update_reason: Optional[pulumi.Input[_builtins.str]] = None,
+                 firmware_update_state: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  healthy_host_count: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 memory_fabric_preferences: Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 switch_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  total_host_count: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -139,17 +156,20 @@ class _ComputeGpuMemoryFabricState:
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param pulumi.Input[_builtins.str] compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param pulumi.Input[_builtins.str] compute_network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param pulumi.Input[_builtins.str] current_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fabric_health: The health state of the GPU memory fabric
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] firmware_update_reason: The reason for updating firmware bundle version of the GPU memory fabric.
+        :param pulumi.Input[_builtins.str] firmware_update_state: The state of Memory Fabric Firmware update
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] healthy_host_count: The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+        :param pulumi.Input[_builtins.str] host_platform_name: The host platform identifier used for bundle queries
+        :param pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs'] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the GPU memory fabric
+        :param pulumi.Input[_builtins.str] switch_platform_name: The switch platform identifier used for bundle queries
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
         :param pulumi.Input[_builtins.str] time_created: The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] total_host_count: The total number of bare metal hosts located in this compute GPU memory fabric.
         """
@@ -167,20 +187,34 @@ class _ComputeGpuMemoryFabricState:
             pulumi.set(__self__, "compute_local_block_id", compute_local_block_id)
         if compute_network_block_id is not None:
             pulumi.set(__self__, "compute_network_block_id", compute_network_block_id)
+        if current_firmware_bundle_id is not None:
+            pulumi.set(__self__, "current_firmware_bundle_id", current_firmware_bundle_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if fabric_health is not None:
             pulumi.set(__self__, "fabric_health", fabric_health)
+        if firmware_update_reason is not None:
+            pulumi.set(__self__, "firmware_update_reason", firmware_update_reason)
+        if firmware_update_state is not None:
+            pulumi.set(__self__, "firmware_update_state", firmware_update_state)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if healthy_host_count is not None:
             pulumi.set(__self__, "healthy_host_count", healthy_host_count)
+        if host_platform_name is not None:
+            pulumi.set(__self__, "host_platform_name", host_platform_name)
+        if memory_fabric_preferences is not None:
+            pulumi.set(__self__, "memory_fabric_preferences", memory_fabric_preferences)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if switch_platform_name is not None:
+            pulumi.set(__self__, "switch_platform_name", switch_platform_name)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_firmware_bundle_id is not None:
+            pulumi.set(__self__, "target_firmware_bundle_id", target_firmware_bundle_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if total_host_count is not None:
@@ -271,6 +305,18 @@ class _ComputeGpuMemoryFabricState:
         pulumi.set(self, "compute_network_block_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="currentFirmwareBundleId")
+    def current_firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        """
+        return pulumi.get(self, "current_firmware_bundle_id")
+
+    @current_firmware_bundle_id.setter
+    def current_firmware_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "current_firmware_bundle_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -307,14 +353,34 @@ class _ComputeGpuMemoryFabricState:
         pulumi.set(self, "fabric_health", value)
 
     @_builtins.property
+    @pulumi.getter(name="firmwareUpdateReason")
+    def firmware_update_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The reason for updating firmware bundle version of the GPU memory fabric.
+        """
+        return pulumi.get(self, "firmware_update_reason")
+
+    @firmware_update_reason.setter
+    def firmware_update_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "firmware_update_reason", value)
+
+    @_builtins.property
+    @pulumi.getter(name="firmwareUpdateState")
+    def firmware_update_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The state of Memory Fabric Firmware update
+        """
+        return pulumi.get(self, "firmware_update_state")
+
+    @firmware_update_state.setter
+    def firmware_update_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "firmware_update_state", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -335,6 +401,30 @@ class _ComputeGpuMemoryFabricState:
         pulumi.set(self, "healthy_host_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="hostPlatformName")
+    def host_platform_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The host platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "host_platform_name")
+
+    @host_platform_name.setter
+    def host_platform_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_platform_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryFabricPreferences")
+    def memory_fabric_preferences(self) -> Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']]:
+        """
+        (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        """
+        return pulumi.get(self, "memory_fabric_preferences")
+
+    @memory_fabric_preferences.setter
+    def memory_fabric_preferences(self, value: Optional[pulumi.Input['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs']]):
+        pulumi.set(self, "memory_fabric_preferences", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -347,6 +437,18 @@ class _ComputeGpuMemoryFabricState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="switchPlatformName")
+    def switch_platform_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The switch platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "switch_platform_name")
+
+    @switch_platform_name.setter
+    def switch_platform_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "switch_platform_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -357,6 +459,18 @@ class _ComputeGpuMemoryFabricState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetFirmwareBundleId")
+    def target_firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        """
+        return pulumi.get(self, "target_firmware_bundle_id")
+
+    @target_firmware_bundle_id.setter
+    def target_firmware_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_firmware_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -394,6 +508,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 memory_fabric_preferences: Optional[pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -412,11 +527,8 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_gpu_memory_fabric_id: The OCID of the compute GPU memory fabric.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         """
         ...
     @overload
@@ -455,6 +567,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 memory_fabric_preferences: Optional[pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -471,15 +584,22 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["memory_fabric_preferences"] = memory_fabric_preferences
             __props__.__dict__["additional_data"] = None
             __props__.__dict__["available_host_count"] = None
             __props__.__dict__["compute_hpc_island_id"] = None
             __props__.__dict__["compute_local_block_id"] = None
             __props__.__dict__["compute_network_block_id"] = None
+            __props__.__dict__["current_firmware_bundle_id"] = None
             __props__.__dict__["fabric_health"] = None
+            __props__.__dict__["firmware_update_reason"] = None
+            __props__.__dict__["firmware_update_state"] = None
             __props__.__dict__["healthy_host_count"] = None
+            __props__.__dict__["host_platform_name"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["switch_platform_name"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["target_firmware_bundle_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["total_host_count"] = None
         super(ComputeGpuMemoryFabric, __self__).__init__(
@@ -499,13 +619,20 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
             compute_hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
+            current_firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             fabric_health: Optional[pulumi.Input[_builtins.str]] = None,
+            firmware_update_reason: Optional[pulumi.Input[_builtins.str]] = None,
+            firmware_update_state: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             healthy_host_count: Optional[pulumi.Input[_builtins.str]] = None,
+            host_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
+            memory_fabric_preferences: Optional[pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            switch_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             total_host_count: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeGpuMemoryFabric':
         """
@@ -522,17 +649,20 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param pulumi.Input[_builtins.str] compute_local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param pulumi.Input[_builtins.str] compute_network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param pulumi.Input[_builtins.str] current_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fabric_health: The health state of the GPU memory fabric
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] firmware_update_reason: The reason for updating firmware bundle version of the GPU memory fabric.
+        :param pulumi.Input[_builtins.str] firmware_update_state: The state of Memory Fabric Firmware update
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] healthy_host_count: The total number of healthy bare metal hosts located in this compute GPU memory fabric.
+        :param pulumi.Input[_builtins.str] host_platform_name: The host platform identifier used for bundle queries
+        :param pulumi.Input[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict']] memory_fabric_preferences: (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the GPU memory fabric
+        :param pulumi.Input[_builtins.str] switch_platform_name: The switch platform identifier used for bundle queries
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
         :param pulumi.Input[_builtins.str] time_created: The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] total_host_count: The total number of bare metal hosts located in this compute GPU memory fabric.
         """
@@ -547,13 +677,20 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         __props__.__dict__["compute_hpc_island_id"] = compute_hpc_island_id
         __props__.__dict__["compute_local_block_id"] = compute_local_block_id
         __props__.__dict__["compute_network_block_id"] = compute_network_block_id
+        __props__.__dict__["current_firmware_bundle_id"] = current_firmware_bundle_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fabric_health"] = fabric_health
+        __props__.__dict__["firmware_update_reason"] = firmware_update_reason
+        __props__.__dict__["firmware_update_state"] = firmware_update_state
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["healthy_host_count"] = healthy_host_count
+        __props__.__dict__["host_platform_name"] = host_platform_name
+        __props__.__dict__["memory_fabric_preferences"] = memory_fabric_preferences
         __props__.__dict__["state"] = state
+        __props__.__dict__["switch_platform_name"] = switch_platform_name
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_firmware_bundle_id"] = target_firmware_bundle_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["total_host_count"] = total_host_count
         return ComputeGpuMemoryFabric(resource_name, opts=opts, __props__=__props__)
@@ -615,6 +752,14 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         return pulumi.get(self, "compute_network_block_id")
 
     @_builtins.property
+    @pulumi.getter(name="currentFirmwareBundleId")
+    def current_firmware_bundle_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+        """
+        return pulumi.get(self, "current_firmware_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
@@ -639,14 +784,26 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         return pulumi.get(self, "fabric_health")
 
     @_builtins.property
+    @pulumi.getter(name="firmwareUpdateReason")
+    def firmware_update_reason(self) -> pulumi.Output[_builtins.str]:
+        """
+        The reason for updating firmware bundle version of the GPU memory fabric.
+        """
+        return pulumi.get(self, "firmware_update_reason")
+
+    @_builtins.property
+    @pulumi.getter(name="firmwareUpdateState")
+    def firmware_update_state(self) -> pulumi.Output[_builtins.str]:
+        """
+        The state of Memory Fabric Firmware update
+        """
+        return pulumi.get(self, "firmware_update_state")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -659,6 +816,22 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         return pulumi.get(self, "healthy_host_count")
 
     @_builtins.property
+    @pulumi.getter(name="hostPlatformName")
+    def host_platform_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The host platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "host_platform_name")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryFabricPreferences")
+    def memory_fabric_preferences(self) -> pulumi.Output['outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']:
+        """
+        (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+        """
+        return pulumi.get(self, "memory_fabric_preferences")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
@@ -667,12 +840,28 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="switchPlatformName")
+    def switch_platform_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The switch platform identifier used for bundle queries
+        """
+        return pulumi.get(self, "switch_platform_name")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetFirmwareBundleId")
+    def target_firmware_bundle_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+        """
+        return pulumi.get(self, "target_firmware_bundle_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

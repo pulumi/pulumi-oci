@@ -99,8 +99,8 @@ namespace Pulumi.Oci.GoldenGate
     ///         KeyId = testKey.Id,
     ///         KeyStore = connectionKeyStore,
     ///         KeyStorePassword = connectionKeyStorePassword,
-    ///         KeyStoreSecretId = testSecret.Id,
     ///         KeyStorePasswordSecretId = testSecret.Id,
+    ///         KeyStoreSecretId = testSecret.Id,
     ///         Locks = new[]
     ///         {
     ///             new Oci.GoldenGate.Inputs.ConnectionLockArgs
@@ -185,7 +185,6 @@ namespace Pulumi.Oci.GoldenGate
     ///         VaultId = testVault.Id,
     ///         Wallet = connectionWallet,
     ///         WalletSecretId = testSecret.Id,
-    ///         TriggerRefresh = true,
     ///     });
     /// 
     /// });
@@ -313,7 +312,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConnectionFactory { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         /// </summary>
         [Output("connectionString")]
         public Output<string> ConnectionString { get; private set; } = null!;
@@ -391,13 +390,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> DoesUseSecretIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
+        /// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.&lt;region&gt;.amazonaws.com'.
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Output("fingerprint")]
         public Output<string> Fingerprint { get; private set; } = null!;
@@ -409,7 +408,8 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        /// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+        /// 
         /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         /// </summary>
         [Output("host")]
@@ -856,13 +856,6 @@ namespace Pulumi.Oci.GoldenGate
         [Output("tlsCertificateKeyFileSecretId")]
         public Output<string> TlsCertificateKeyFileSecretId { get; private set; } = null!;
 
-        /// <summary>
-        /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         [Output("triggerRefresh")]
         public Output<bool?> TriggerRefresh { get; private set; } = null!;
 
@@ -921,7 +914,11 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string?> Wallet { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("walletSecretId")]
         public Output<string?> WalletSecretId { get; private set; } = null!;
@@ -1138,7 +1135,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConnectionFactory { get; set; }
 
         /// <summary>
-        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -1222,13 +1219,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
+        /// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.&lt;region&gt;.amazonaws.com'.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
@@ -1246,7 +1243,8 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        /// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+        /// 
         /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         /// </summary>
         [Input("host")]
@@ -1825,13 +1823,6 @@ namespace Pulumi.Oci.GoldenGate
         [Input("tlsCertificateKeyFileSecretId")]
         public Input<string>? TlsCertificateKeyFileSecretId { get; set; }
 
-        /// <summary>
-        /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         [Input("triggerRefresh")]
         public Input<bool>? TriggerRefresh { get; set; }
 
@@ -1920,7 +1911,11 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("walletSecretId")]
         public Input<string>? WalletSecretId { get; set; }
@@ -2076,7 +2071,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConnectionFactory { get; set; }
 
         /// <summary>
-        /// (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        /// (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         /// </summary>
         [Input("connectionString")]
         public Input<string>? ConnectionString { get; set; }
@@ -2160,13 +2155,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
+        /// (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to 'https://kinesis.&lt;region&gt;.amazonaws.com'.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
@@ -2184,7 +2179,8 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        /// (Updatable) Host and port separated by colon. Example: `"server.example.com:1234"`
+        /// 
         /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         /// </summary>
         [Input("host")]
@@ -2811,13 +2807,6 @@ namespace Pulumi.Oci.GoldenGate
         [Input("tlsCertificateKeyFileSecretId")]
         public Input<string>? TlsCertificateKeyFileSecretId { get; set; }
 
-        /// <summary>
-        /// (Updatable) If value is true, it triggers connection refresh action and this attribute change will always show up in the "update" plan and will apply steps in order to refresh secrets and dependent service properties (such as ADB connection strings, wallets, etc..).
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
         [Input("triggerRefresh")]
         public Input<bool>? TriggerRefresh { get; set; }
 
@@ -2906,7 +2895,11 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("walletSecretId")]
         public Input<string>? WalletSecretId { get; set; }

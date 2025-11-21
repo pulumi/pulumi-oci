@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -72,6 +74,10 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly computeNetworkBlockId: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     */
+    declare public /*out*/ readonly currentFirmwareBundleId: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
@@ -84,11 +90,15 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly fabricHealth: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The reason for updating firmware bundle version of the GPU memory fabric.
+     */
+    declare public /*out*/ readonly firmwareUpdateReason: pulumi.Output<string>;
+    /**
+     * The state of Memory Fabric Firmware update
+     */
+    declare public /*out*/ readonly firmwareUpdateState: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
@@ -96,13 +106,29 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly healthyHostCount: pulumi.Output<string>;
     /**
+     * The host platform identifier used for bundle queries
+     */
+    declare public /*out*/ readonly hostPlatformName: pulumi.Output<string>;
+    /**
+     * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     */
+    declare public readonly memoryFabricPreferences: pulumi.Output<outputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences>;
+    /**
      * The lifecycle state of the GPU memory fabric
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * The switch platform identifier used for bundle queries
+     */
+    declare public /*out*/ readonly switchPlatformName: pulumi.Output<string>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     */
+    declare public /*out*/ readonly targetFirmwareBundleId: pulumi.Output<string>;
     /**
      * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -132,13 +158,20 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
             resourceInputs["computeHpcIslandId"] = state?.computeHpcIslandId;
             resourceInputs["computeLocalBlockId"] = state?.computeLocalBlockId;
             resourceInputs["computeNetworkBlockId"] = state?.computeNetworkBlockId;
+            resourceInputs["currentFirmwareBundleId"] = state?.currentFirmwareBundleId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["fabricHealth"] = state?.fabricHealth;
+            resourceInputs["firmwareUpdateReason"] = state?.firmwareUpdateReason;
+            resourceInputs["firmwareUpdateState"] = state?.firmwareUpdateState;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["healthyHostCount"] = state?.healthyHostCount;
+            resourceInputs["hostPlatformName"] = state?.hostPlatformName;
+            resourceInputs["memoryFabricPreferences"] = state?.memoryFabricPreferences;
             resourceInputs["state"] = state?.state;
+            resourceInputs["switchPlatformName"] = state?.switchPlatformName;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["targetFirmwareBundleId"] = state?.targetFirmwareBundleId;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["totalHostCount"] = state?.totalHostCount;
         } else {
@@ -151,15 +184,22 @@ export class ComputeGpuMemoryFabric extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["memoryFabricPreferences"] = args?.memoryFabricPreferences;
             resourceInputs["additionalData"] = undefined /*out*/;
             resourceInputs["availableHostCount"] = undefined /*out*/;
             resourceInputs["computeHpcIslandId"] = undefined /*out*/;
             resourceInputs["computeLocalBlockId"] = undefined /*out*/;
             resourceInputs["computeNetworkBlockId"] = undefined /*out*/;
+            resourceInputs["currentFirmwareBundleId"] = undefined /*out*/;
             resourceInputs["fabricHealth"] = undefined /*out*/;
+            resourceInputs["firmwareUpdateReason"] = undefined /*out*/;
+            resourceInputs["firmwareUpdateState"] = undefined /*out*/;
             resourceInputs["healthyHostCount"] = undefined /*out*/;
+            resourceInputs["hostPlatformName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["switchPlatformName"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["targetFirmwareBundleId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["totalHostCount"] = undefined /*out*/;
         }
@@ -201,6 +241,10 @@ export interface ComputeGpuMemoryFabricState {
      */
     computeNetworkBlockId?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for current firmware bundle
+     */
+    currentFirmwareBundleId?: pulumi.Input<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -213,11 +257,15 @@ export interface ComputeGpuMemoryFabricState {
      */
     fabricHealth?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The reason for updating firmware bundle version of the GPU memory fabric.
+     */
+    firmwareUpdateReason?: pulumi.Input<string>;
+    /**
+     * The state of Memory Fabric Firmware update
+     */
+    firmwareUpdateState?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -225,13 +273,29 @@ export interface ComputeGpuMemoryFabricState {
      */
     healthyHostCount?: pulumi.Input<string>;
     /**
+     * The host platform identifier used for bundle queries
+     */
+    hostPlatformName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     */
+    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences>;
+    /**
      * The lifecycle state of the GPU memory fabric
      */
     state?: pulumi.Input<string>;
     /**
+     * The switch platform identifier used for bundle queries
+     */
+    switchPlatformName?: pulumi.Input<string>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for targeted firmware bundle
+     */
+    targetFirmwareBundleId?: pulumi.Input<string>;
     /**
      * The date and time that the compute GPU memory fabric record was created, in the format defined by [RFC3339] (https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -263,11 +327,11 @@ export interface ComputeGpuMemoryFabricArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The preference object specified by customer. Contains customerDesiredFirmwareBundleId, fabricRecycleLevel.
+     */
+    memoryFabricPreferences?: pulumi.Input<inputs.Core.ComputeGpuMemoryFabricMemoryFabricPreferences>;
 }

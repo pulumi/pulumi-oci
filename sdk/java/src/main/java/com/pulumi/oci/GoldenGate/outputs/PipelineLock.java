@@ -18,6 +18,16 @@ public final class PipelineLock {
      */
     private @Nullable String message;
     /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    private @Nullable String relatedResourceId;
+    /**
+     * @return When the lock was created.
+     * 
+     */
+    private @Nullable String timeCreated;
+    /**
      * @return Type of the lock.
      * 
      */
@@ -30,6 +40,20 @@ public final class PipelineLock {
      */
     public Optional<String> message() {
         return Optional.ofNullable(this.message);
+    }
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    public Optional<String> relatedResourceId() {
+        return Optional.ofNullable(this.relatedResourceId);
+    }
+    /**
+     * @return When the lock was created.
+     * 
+     */
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Type of the lock.
@@ -49,11 +73,15 @@ public final class PipelineLock {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String message;
+        private @Nullable String relatedResourceId;
+        private @Nullable String timeCreated;
         private String type;
         public Builder() {}
         public Builder(PipelineLock defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.message = defaults.message;
+    	      this.relatedResourceId = defaults.relatedResourceId;
+    	      this.timeCreated = defaults.timeCreated;
     	      this.type = defaults.type;
         }
 
@@ -61,6 +89,18 @@ public final class PipelineLock {
         public Builder message(@Nullable String message) {
 
             this.message = message;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder relatedResourceId(@Nullable String relatedResourceId) {
+
+            this.relatedResourceId = relatedResourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCreated(@Nullable String timeCreated) {
+
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +114,8 @@ public final class PipelineLock {
         public PipelineLock build() {
             final var _resultValue = new PipelineLock();
             _resultValue.message = message;
+            _resultValue.relatedResourceId = relatedResourceId;
+            _resultValue.timeCreated = timeCreated;
             _resultValue.type = type;
             return _resultValue;
         }

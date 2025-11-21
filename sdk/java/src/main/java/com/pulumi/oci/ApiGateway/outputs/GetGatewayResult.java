@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayIpAddress;
+import com.pulumi.oci.ApiGateway.outputs.GetGatewayIpv4addressConfiguration;
+import com.pulumi.oci.ApiGateway.outputs.GetGatewayIpv6addressConfiguration;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayLock;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewayResponseCacheDetail;
 import java.lang.Boolean;
@@ -68,6 +70,21 @@ public final class GetGatewayResult {
      * 
      */
     private List<GetGatewayIpAddress> ipAddresses;
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    private String ipMode;
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    private List<GetGatewayIpv4addressConfiguration> ipv4addressConfigurations;
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    private List<GetGatewayIpv6addressConfiguration> ipv6addressConfigurations;
     private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -189,6 +206,27 @@ public final class GetGatewayResult {
     public List<GetGatewayIpAddress> ipAddresses() {
         return this.ipAddresses;
     }
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    public String ipMode() {
+        return this.ipMode;
+    }
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public List<GetGatewayIpv4addressConfiguration> ipv4addressConfigurations() {
+        return this.ipv4addressConfigurations;
+    }
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public List<GetGatewayIpv6addressConfiguration> ipv6addressConfigurations() {
+        return this.ipv6addressConfigurations;
+    }
     public Boolean isLockOverride() {
         return this.isLockOverride;
     }
@@ -276,6 +314,9 @@ public final class GetGatewayResult {
         private String hostname;
         private String id;
         private List<GetGatewayIpAddress> ipAddresses;
+        private String ipMode;
+        private List<GetGatewayIpv4addressConfiguration> ipv4addressConfigurations;
+        private List<GetGatewayIpv6addressConfiguration> ipv6addressConfigurations;
         private Boolean isLockOverride;
         private String lifecycleDetails;
         private List<GetGatewayLock> locks;
@@ -300,6 +341,9 @@ public final class GetGatewayResult {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.ipAddresses = defaults.ipAddresses;
+    	      this.ipMode = defaults.ipMode;
+    	      this.ipv4addressConfigurations = defaults.ipv4addressConfigurations;
+    	      this.ipv6addressConfigurations = defaults.ipv6addressConfigurations;
     	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
@@ -407,6 +451,36 @@ public final class GetGatewayResult {
             return ipAddresses(List.of(ipAddresses));
         }
         @CustomType.Setter
+        public Builder ipMode(String ipMode) {
+            if (ipMode == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "ipMode");
+            }
+            this.ipMode = ipMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipv4addressConfigurations(List<GetGatewayIpv4addressConfiguration> ipv4addressConfigurations) {
+            if (ipv4addressConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "ipv4addressConfigurations");
+            }
+            this.ipv4addressConfigurations = ipv4addressConfigurations;
+            return this;
+        }
+        public Builder ipv4addressConfigurations(GetGatewayIpv4addressConfiguration... ipv4addressConfigurations) {
+            return ipv4addressConfigurations(List.of(ipv4addressConfigurations));
+        }
+        @CustomType.Setter
+        public Builder ipv6addressConfigurations(List<GetGatewayIpv6addressConfiguration> ipv6addressConfigurations) {
+            if (ipv6addressConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetGatewayResult", "ipv6addressConfigurations");
+            }
+            this.ipv6addressConfigurations = ipv6addressConfigurations;
+            return this;
+        }
+        public Builder ipv6addressConfigurations(GetGatewayIpv6addressConfiguration... ipv6addressConfigurations) {
+            return ipv6addressConfigurations(List.of(ipv6addressConfigurations));
+        }
+        @CustomType.Setter
         public Builder isLockOverride(Boolean isLockOverride) {
             if (isLockOverride == null) {
               throw new MissingRequiredPropertyException("GetGatewayResult", "isLockOverride");
@@ -508,6 +582,9 @@ public final class GetGatewayResult {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.ipAddresses = ipAddresses;
+            _resultValue.ipMode = ipMode;
+            _resultValue.ipv4addressConfigurations = ipv4addressConfigurations;
+            _resultValue.ipv6addressConfigurations = ipv6addressConfigurations;
             _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;

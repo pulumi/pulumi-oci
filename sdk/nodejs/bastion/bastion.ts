@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     maxSessionTtlInSeconds: bastionMaxSessionTtlInSeconds,
  *     name: bastionName,
  *     phoneBookEntry: bastionPhoneBookEntry,
+ *     securityAttributes: bastionSecurityAttributes,
  *     staticJumpHostIpAddresses: bastionStaticJumpHostIpAddresses,
  * });
  * ```
@@ -115,6 +116,10 @@ export class Bastion extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly privateEndpointIpAddress: pulumi.Output<string>;
     /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the bastion.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -172,6 +177,7 @@ export class Bastion extends pulumi.CustomResource {
             resourceInputs["name"] = state?.name;
             resourceInputs["phoneBookEntry"] = state?.phoneBookEntry;
             resourceInputs["privateEndpointIpAddress"] = state?.privateEndpointIpAddress;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["staticJumpHostIpAddresses"] = state?.staticJumpHostIpAddresses;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -199,6 +205,7 @@ export class Bastion extends pulumi.CustomResource {
             resourceInputs["maxSessionTtlInSeconds"] = args?.maxSessionTtlInSeconds;
             resourceInputs["name"] = args?.name;
             resourceInputs["phoneBookEntry"] = args?.phoneBookEntry;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["staticJumpHostIpAddresses"] = args?.staticJumpHostIpAddresses;
             resourceInputs["targetSubnetId"] = args?.targetSubnetId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -267,6 +274,10 @@ export interface BastionState {
      * The private IP address of the created private endpoint.
      */
     privateEndpointIpAddress?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the bastion.
      */
@@ -341,6 +352,10 @@ export interface BastionArgs {
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
     phoneBookEntry?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */

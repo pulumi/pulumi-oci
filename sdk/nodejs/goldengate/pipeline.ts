@@ -50,6 +50,7 @@ import * as utilities from "../utilities";
  *         shouldRestartOnFailure: pipelineProcessOptionsShouldRestartOnFailure,
  *         startUsingDefaultMapping: pipelineProcessOptionsStartUsingDefaultMapping,
  *     },
+ *     subnetId: testSubnet.id,
  * });
  * ```
  *
@@ -114,6 +115,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     */
+    declare public /*out*/ readonly ingressIps: pulumi.Output<outputs.GoldenGate.PipelineIngressIp[]>;
+    /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     declare public /*out*/ readonly isAutoScalingEnabled: pulumi.Output<boolean>;
@@ -158,6 +163,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    declare public readonly subnetId: pulumi.Output<string>;
+    /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
@@ -197,6 +206,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["ingressIps"] = state?.ingressIps;
             resourceInputs["isAutoScalingEnabled"] = state?.isAutoScalingEnabled;
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -208,6 +218,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["recipeType"] = state?.recipeType;
             resourceInputs["sourceConnectionDetails"] = state?.sourceConnectionDetails;
             resourceInputs["state"] = state?.state;
+            resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["targetConnectionDetails"] = state?.targetConnectionDetails;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -243,8 +254,10 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["processOptions"] = args?.processOptions;
             resourceInputs["recipeType"] = args?.recipeType;
             resourceInputs["sourceConnectionDetails"] = args?.sourceConnectionDetails;
+            resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["targetConnectionDetails"] = args?.targetConnectionDetails;
             resourceInputs["cpuCoreCount"] = undefined /*out*/;
+            resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["isAutoScalingEnabled"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["lifecycleSubState"] = undefined /*out*/;
@@ -290,6 +303,10 @@ export interface PipelineState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     */
+    ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.PipelineIngressIp>[]>;
+    /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     isAutoScalingEnabled?: pulumi.Input<boolean>;
@@ -333,6 +350,10 @@ export interface PipelineState {
      * Lifecycle state of the pipeline.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    subnetId?: pulumi.Input<string>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
@@ -399,6 +420,10 @@ export interface PipelineArgs {
      * The source connection details for creating a pipeline.
      */
     sourceConnectionDetails: pulumi.Input<inputs.GoldenGate.PipelineSourceConnectionDetails>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    subnetId?: pulumi.Input<string>;
     /**
      * The target connection details for creating a pipeline.
      */

@@ -26,7 +26,8 @@ class CatalogPrivateEndpointArgs:
                  subnet_id: pulumi.Input[_builtins.str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a CatalogPrivateEndpoint resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment identifier.
@@ -39,6 +40,7 @@ class CatalogPrivateEndpointArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the private endpoint resource being created.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dns_zones", dns_zones)
@@ -49,6 +51,8 @@ class CatalogPrivateEndpointArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -126,6 +130,18 @@ class CatalogPrivateEndpointArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _CatalogPrivateEndpointState:
@@ -138,6 +154,7 @@ class _CatalogPrivateEndpointState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['CatalogPrivateEndpointLockArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -153,6 +170,7 @@ class _CatalogPrivateEndpointState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[Sequence[pulumi.Input['CatalogPrivateEndpointLockArgs']]] locks: Locks associated with this resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint resource.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
                
@@ -179,6 +197,8 @@ class _CatalogPrivateEndpointState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if locks is not None:
             pulumi.set(__self__, "locks", locks)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -287,6 +307,18 @@ class _CatalogPrivateEndpointState:
         pulumi.set(self, "locks", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -362,6 +394,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -381,7 +414,8 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
             display_name=catalog_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            security_attributes=catalog_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -399,6 +433,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of the private endpoint resource being created.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
                
                
@@ -428,7 +463,8 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
             display_name=catalog_private_endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            security_attributes=catalog_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -459,6 +495,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -478,6 +515,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
                 raise TypeError("Missing required property 'dns_zones'")
             __props__.__dict__["dns_zones"] = dns_zones
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -506,6 +544,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CatalogPrivateEndpointLockArgs', 'CatalogPrivateEndpointLockArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -526,6 +565,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogPrivateEndpointLockArgs', 'CatalogPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint resource.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
                
@@ -548,6 +588,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locks"] = locks
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
@@ -618,6 +659,14 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

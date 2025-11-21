@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayIpAddressArgs;
+import com.pulumi.oci.ApiGateway.inputs.GatewayIpv4addressConfigurationArgs;
+import com.pulumi.oci.ApiGateway.inputs.GatewayIpv6addressConfigurationArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayLockArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
 import java.lang.Boolean;
@@ -155,6 +157,51 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<GatewayIpAddressArgs>>> ipAddresses() {
         return Optional.ofNullable(this.ipAddresses);
+    }
+
+    /**
+     * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    @Import(name="ipMode")
+    private @Nullable Output<String> ipMode;
+
+    /**
+     * @return Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+     * 
+     */
+    public Optional<Output<String>> ipMode() {
+        return Optional.ofNullable(this.ipMode);
+    }
+
+    /**
+     * IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    @Import(name="ipv4addressConfiguration")
+    private @Nullable Output<GatewayIpv4addressConfigurationArgs> ipv4addressConfiguration;
+
+    /**
+     * @return IPv4 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public Optional<Output<GatewayIpv4addressConfigurationArgs>> ipv4addressConfiguration() {
+        return Optional.ofNullable(this.ipv4addressConfiguration);
+    }
+
+    /**
+     * IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    @Import(name="ipv6addressConfiguration")
+    private @Nullable Output<GatewayIpv6addressConfigurationArgs> ipv6addressConfiguration;
+
+    /**
+     * @return IPv6 address configuration details that should be used when creating the gateway.
+     * 
+     */
+    public Optional<Output<GatewayIpv6addressConfigurationArgs>> ipv6addressConfiguration() {
+        return Optional.ofNullable(this.ipv6addressConfiguration);
     }
 
     @Import(name="isLockOverride")
@@ -317,6 +364,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.hostname = $.hostname;
         this.ipAddresses = $.ipAddresses;
+        this.ipMode = $.ipMode;
+        this.ipv4addressConfiguration = $.ipv4addressConfiguration;
+        this.ipv6addressConfiguration = $.ipv6addressConfiguration;
         this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
         this.locks = $.locks;
@@ -554,6 +604,69 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipAddresses(GatewayIpAddressArgs... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
+        }
+
+        /**
+         * @param ipMode Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipMode(@Nullable Output<String> ipMode) {
+            $.ipMode = ipMode;
+            return this;
+        }
+
+        /**
+         * @param ipMode Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipMode(String ipMode) {
+            return ipMode(Output.of(ipMode));
+        }
+
+        /**
+         * @param ipv4addressConfiguration IPv4 address configuration details that should be used when creating the gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4addressConfiguration(@Nullable Output<GatewayIpv4addressConfigurationArgs> ipv4addressConfiguration) {
+            $.ipv4addressConfiguration = ipv4addressConfiguration;
+            return this;
+        }
+
+        /**
+         * @param ipv4addressConfiguration IPv4 address configuration details that should be used when creating the gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4addressConfiguration(GatewayIpv4addressConfigurationArgs ipv4addressConfiguration) {
+            return ipv4addressConfiguration(Output.of(ipv4addressConfiguration));
+        }
+
+        /**
+         * @param ipv6addressConfiguration IPv6 address configuration details that should be used when creating the gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressConfiguration(@Nullable Output<GatewayIpv6addressConfigurationArgs> ipv6addressConfiguration) {
+            $.ipv6addressConfiguration = ipv6addressConfiguration;
+            return this;
+        }
+
+        /**
+         * @param ipv6addressConfiguration IPv6 address configuration details that should be used when creating the gateway.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6addressConfiguration(GatewayIpv6addressConfigurationArgs ipv6addressConfiguration) {
+            return ipv6addressConfiguration(Output.of(ipv6addressConfiguration));
         }
 
         public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {

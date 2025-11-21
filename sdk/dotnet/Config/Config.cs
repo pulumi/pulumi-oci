@@ -142,6 +142,16 @@ namespace Pulumi.Oci
             set => _region.Set(value);
         }
 
+        private static readonly __Value<string?> _retriesConfigFile = new __Value<string?>(() => __config.Get("retriesConfigFile"));
+        /// <summary>
+        /// (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+        /// </summary>
+        public static string? RetriesConfigFile
+        {
+            get => _retriesConfigFile.Get();
+            set => _retriesConfigFile.Set(value);
+        }
+
         private static readonly __Value<int?> _retryDurationSeconds = new __Value<int?>(() => __config.GetInt32("retryDurationSeconds"));
         /// <summary>
         /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.

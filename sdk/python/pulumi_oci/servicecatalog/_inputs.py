@@ -19,6 +19,8 @@ __all__ = [
     'PrivateApplicationLogoArgsDict',
     'PrivateApplicationPackageDetailsArgs',
     'PrivateApplicationPackageDetailsArgsDict',
+    'GetAllApplicationsFilterArgs',
+    'GetAllApplicationsFilterArgsDict',
     'GetPrivateApplicationPackagesFilterArgs',
     'GetPrivateApplicationPackagesFilterArgsDict',
     'GetPrivateApplicationsFilterArgs',
@@ -113,7 +115,7 @@ if not MYPY:
         """
         The package version.
         """
-        zip_file_base64encoded: NotRequired[pulumi.Input[_builtins.str]]
+        zip_file_base64encoded: pulumi.Input[_builtins.str]
 elif False:
     PrivateApplicationPackageDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -122,15 +124,14 @@ class PrivateApplicationPackageDetailsArgs:
     def __init__(__self__, *,
                  package_type: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.str],
-                 zip_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None):
+                 zip_file_base64encoded: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] package_type: The package's type.
         :param pulumi.Input[_builtins.str] version: The package version.
         """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
-        if zip_file_base64encoded is not None:
-            pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
 
     @_builtins.property
     @pulumi.getter(name="packageType")
@@ -158,12 +159,59 @@ class PrivateApplicationPackageDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="zipFileBase64encoded")
-    def zip_file_base64encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zip_file_base64encoded(self) -> pulumi.Input[_builtins.str]:
         return pulumi.get(self, "zip_file_base64encoded")
 
     @zip_file_base64encoded.setter
-    def zip_file_base64encoded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zip_file_base64encoded(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "zip_file_base64encoded", value)
+
+
+if not MYPY:
+    class GetAllApplicationsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAllApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAllApplicationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

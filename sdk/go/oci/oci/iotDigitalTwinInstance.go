@@ -69,9 +69,9 @@ type IotDigitalTwinInstance struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
 	DigitalTwinAdapterId pulumi.StringOutput `pulumi:"digitalTwinAdapterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId pulumi.StringOutput `pulumi:"digitalTwinModelId"`
-	// The URI of the digital twin model specification.
+	// (Updatable) The URI of the digital twin model specification.
 	DigitalTwinModelSpecUri pulumi.StringOutput `pulumi:"digitalTwinModelSpecUri"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -135,9 +135,9 @@ type iotDigitalTwinInstanceState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
 	DigitalTwinAdapterId *string `pulumi:"digitalTwinAdapterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId *string `pulumi:"digitalTwinModelId"`
-	// The URI of the digital twin model specification.
+	// (Updatable) The URI of the digital twin model specification.
 	DigitalTwinModelSpecUri *string `pulumi:"digitalTwinModelSpecUri"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -169,9 +169,9 @@ type IotDigitalTwinInstanceState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
 	DigitalTwinAdapterId pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId pulumi.StringPtrInput
-	// The URI of the digital twin model specification.
+	// (Updatable) The URI of the digital twin model specification.
 	DigitalTwinModelSpecUri pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -207,9 +207,9 @@ type iotDigitalTwinInstanceArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
 	DigitalTwinAdapterId *string `pulumi:"digitalTwinAdapterId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId *string `pulumi:"digitalTwinModelId"`
-	// The URI of the digital twin model specification.
+	// (Updatable) The URI of the digital twin model specification.
 	DigitalTwinModelSpecUri *string `pulumi:"digitalTwinModelSpecUri"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -234,9 +234,9 @@ type IotDigitalTwinInstanceArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
 	DigitalTwinAdapterId pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 	DigitalTwinModelId pulumi.StringPtrInput
-	// The URI of the digital twin model specification.
+	// (Updatable) The URI of the digital twin model specification.
 	DigitalTwinModelSpecUri pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
@@ -358,12 +358,12 @@ func (o IotDigitalTwinInstanceOutput) DigitalTwinAdapterId() pulumi.StringOutput
 	return o.ApplyT(func(v *IotDigitalTwinInstance) pulumi.StringOutput { return v.DigitalTwinAdapterId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
 func (o IotDigitalTwinInstanceOutput) DigitalTwinModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v *IotDigitalTwinInstance) pulumi.StringOutput { return v.DigitalTwinModelId }).(pulumi.StringOutput)
 }
 
-// The URI of the digital twin model specification.
+// (Updatable) The URI of the digital twin model specification.
 func (o IotDigitalTwinInstanceOutput) DigitalTwinModelSpecUri() pulumi.StringOutput {
 	return o.ApplyT(func(v *IotDigitalTwinInstance) pulumi.StringOutput { return v.DigitalTwinModelSpecUri }).(pulumi.StringOutput)
 }

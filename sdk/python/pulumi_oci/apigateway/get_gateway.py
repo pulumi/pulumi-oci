@@ -27,7 +27,7 @@ class GetGatewayResult:
     """
     A collection of values returned by getGateway.
     """
-    def __init__(__self__, ca_bundles=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, endpoint_type=None, freeform_tags=None, gateway_id=None, hostname=None, id=None, ip_addresses=None, is_lock_override=None, lifecycle_details=None, locks=None, network_security_group_ids=None, response_cache_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, ca_bundles=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, endpoint_type=None, freeform_tags=None, gateway_id=None, hostname=None, id=None, ip_addresses=None, ip_mode=None, ipv4address_configurations=None, ipv6address_configurations=None, is_lock_override=None, lifecycle_details=None, locks=None, network_security_group_ids=None, response_cache_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if ca_bundles and not isinstance(ca_bundles, list):
             raise TypeError("Expected argument 'ca_bundles' to be a list")
         pulumi.set(__self__, "ca_bundles", ca_bundles)
@@ -61,6 +61,15 @@ class GetGatewayResult:
         if ip_addresses and not isinstance(ip_addresses, list):
             raise TypeError("Expected argument 'ip_addresses' to be a list")
         pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if ip_mode and not isinstance(ip_mode, str):
+            raise TypeError("Expected argument 'ip_mode' to be a str")
+        pulumi.set(__self__, "ip_mode", ip_mode)
+        if ipv4address_configurations and not isinstance(ipv4address_configurations, list):
+            raise TypeError("Expected argument 'ipv4address_configurations' to be a list")
+        pulumi.set(__self__, "ipv4address_configurations", ipv4address_configurations)
+        if ipv6address_configurations and not isinstance(ipv6address_configurations, list):
+            raise TypeError("Expected argument 'ipv6address_configurations' to be a list")
+        pulumi.set(__self__, "ipv6address_configurations", ipv6address_configurations)
         if is_lock_override and not isinstance(is_lock_override, bool):
             raise TypeError("Expected argument 'is_lock_override' to be a bool")
         pulumi.set(__self__, "is_lock_override", is_lock_override)
@@ -178,6 +187,30 @@ class GetGatewayResult:
         return pulumi.get(self, "ip_addresses")
 
     @_builtins.property
+    @pulumi.getter(name="ipMode")
+    def ip_mode(self) -> _builtins.str:
+        """
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        """
+        return pulumi.get(self, "ip_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4addressConfigurations")
+    def ipv4address_configurations(self) -> Sequence['outputs.GetGatewayIpv4addressConfigurationResult']:
+        """
+        IPv4 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv4address_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressConfigurations")
+    def ipv6address_configurations(self) -> Sequence['outputs.GetGatewayIpv6addressConfigurationResult']:
+        """
+        IPv6 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv6address_configurations")
+
+    @_builtins.property
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> _builtins.bool:
         return pulumi.get(self, "is_lock_override")
@@ -272,6 +305,9 @@ class AwaitableGetGatewayResult(GetGatewayResult):
             hostname=self.hostname,
             id=self.id,
             ip_addresses=self.ip_addresses,
+            ip_mode=self.ip_mode,
+            ipv4address_configurations=self.ipv4address_configurations,
+            ipv6address_configurations=self.ipv6address_configurations,
             is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
             locks=self.locks,
@@ -320,6 +356,9 @@ def get_gateway(gateway_id: Optional[_builtins.str] = None,
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         ip_addresses=pulumi.get(__ret__, 'ip_addresses'),
+        ip_mode=pulumi.get(__ret__, 'ip_mode'),
+        ipv4address_configurations=pulumi.get(__ret__, 'ipv4address_configurations'),
+        ipv6address_configurations=pulumi.get(__ret__, 'ipv6address_configurations'),
         is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         locks=pulumi.get(__ret__, 'locks'),
@@ -365,6 +404,9 @@ def get_gateway_output(gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        ip_mode=pulumi.get(__response__, 'ip_mode'),
+        ipv4address_configurations=pulumi.get(__response__, 'ipv4address_configurations'),
+        ipv6address_configurations=pulumi.get(__response__, 'ipv6address_configurations'),
         is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         locks=pulumi.get(__response__, 'locks'),

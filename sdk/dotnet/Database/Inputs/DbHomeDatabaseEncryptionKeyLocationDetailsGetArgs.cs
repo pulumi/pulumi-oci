@@ -12,11 +12,17 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("awsEncryptionKeyId")]
+        public Input<string>? AwsEncryptionKeyId { get; set; }
+
         /// <summary>
         /// Provide the key OCID of a registered Azure key.
         /// </summary>
         [Input("azureEncryptionKeyId")]
         public Input<string>? AzureEncryptionKeyId { get; set; }
+
+        [Input("googleCloudProviderEncryptionKeyId")]
+        public Input<string>? GoogleCloudProviderEncryptionKeyId { get; set; }
 
         [Input("hsmPassword")]
         private Input<string>? _hsmPassword;

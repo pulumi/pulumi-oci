@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsPlainArgs;
+import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackageArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetPrivateApplicationPackagePlainArgs;
@@ -24,6 +28,8 @@ import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogAssociationsPlainAr
 import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogPlainArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsArgs;
 import com.pulumi.oci.ServiceCatalog.inputs.GetServiceCatalogsPlainArgs;
+import com.pulumi.oci.ServiceCatalog.outputs.GetAllApplicationsResult;
+import com.pulumi.oci.ServiceCatalog.outputs.GetConfigurationResult;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationPackageResult;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationPackagesResult;
 import com.pulumi.oci.ServiceCatalog.outputs.GetPrivateApplicationResult;
@@ -36,6 +42,566 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class ServiceCatalogFunctions {
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAllApplicationsResult> getAllApplications() {
+        return getAllApplications(GetAllApplicationsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAllApplicationsResult> getAllApplicationsPlain() {
+        return getAllApplicationsPlain(GetAllApplicationsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAllApplicationsResult> getAllApplications(GetAllApplicationsArgs args) {
+        return getAllApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAllApplicationsResult> getAllApplicationsPlain(GetAllApplicationsPlainArgs args) {
+        return getAllApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAllApplicationsResult> getAllApplications(GetAllApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getAllApplications:getAllApplications", TypeShape.of(GetAllApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAllApplicationsResult> getAllApplications(GetAllApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getAllApplications:getAllApplications", TypeShape.of(GetAllApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of All Applications in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Lists all the available listings and private applications in a compartment.
+     * A new API for catalog manager use when creating/updating a service catalog.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetAllApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAllApplications = ServiceCatalogFunctions.getAllApplications(GetAllApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(allApplicationDisplayName)
+     *             .entityId(testEntity.id())
+     *             .entityType(allApplicationEntityType)
+     *             .isFeatured(allApplicationIsFeatured)
+     *             .packageTypes(allApplicationPackageType)
+     *             .pricings(allApplicationPricing)
+     *             .publisherIds(testPublisher.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAllApplicationsResult> getAllApplicationsPlain(GetAllApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getAllApplications:getAllApplications", TypeShape.of(GetAllApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ServiceCatalogFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
+        return getConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ServiceCatalogFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
+        return getConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ServiceCatalogFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ServiceCatalogFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ServiceCatalog/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Service Catalog service.
+     * 
+     * Get the detail of whether the tenancy is in service catalog mode or not.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ServiceCatalog.ServiceCatalogFunctions;
+     * import com.pulumi.oci.ServiceCatalog.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ServiceCatalogFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ServiceCatalog/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
      * 
@@ -1669,6 +2235,7 @@ public final class ServiceCatalogFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(serviceCatalogDisplayName)
      *             .serviceCatalogId(testServiceCatalog.id())
+     *             .status(serviceCatalogStatus)
      *             .build());
      * 
      *     }
@@ -1713,6 +2280,7 @@ public final class ServiceCatalogFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(serviceCatalogDisplayName)
      *             .serviceCatalogId(testServiceCatalog.id())
+     *             .status(serviceCatalogStatus)
      *             .build());
      * 
      *     }
@@ -1757,6 +2325,7 @@ public final class ServiceCatalogFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(serviceCatalogDisplayName)
      *             .serviceCatalogId(testServiceCatalog.id())
+     *             .status(serviceCatalogStatus)
      *             .build());
      * 
      *     }
@@ -1801,6 +2370,7 @@ public final class ServiceCatalogFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(serviceCatalogDisplayName)
      *             .serviceCatalogId(testServiceCatalog.id())
+     *             .status(serviceCatalogStatus)
      *             .build());
      * 
      *     }
@@ -1845,6 +2415,7 @@ public final class ServiceCatalogFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(serviceCatalogDisplayName)
      *             .serviceCatalogId(testServiceCatalog.id())
+     *             .status(serviceCatalogStatus)
      *             .build());
      * 
      *     }

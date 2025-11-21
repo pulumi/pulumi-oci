@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetPipelineIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineLock;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelineMappingRule;
 import com.pulumi.oci.GoldenGate.outputs.GetPipelinePipelineDiagnosticData;
@@ -55,6 +56,11 @@ public final class GetPipelineResult {
      * 
      */
     private String id;
+    /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    private List<GetPipelineIngressIp> ingressIps;
     /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
@@ -111,6 +117,11 @@ public final class GetPipelineResult {
      * 
      */
     private String state;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    private String subnetId;
     /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
@@ -186,6 +197,13 @@ public final class GetPipelineResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    public List<GetPipelineIngressIp> ingressIps() {
+        return this.ingressIps;
     }
     /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
@@ -268,6 +286,13 @@ public final class GetPipelineResult {
         return this.state;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline&#39;s private endpoint. The subnet must be a private subnet.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
+    }
+    /**
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
@@ -319,6 +344,7 @@ public final class GetPipelineResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetPipelineIngressIp> ingressIps;
         private Boolean isAutoScalingEnabled;
         private String licenseModel;
         private String lifecycleDetails;
@@ -331,6 +357,7 @@ public final class GetPipelineResult {
         private String recipeType;
         private List<GetPipelineSourceConnectionDetail> sourceConnectionDetails;
         private String state;
+        private String subnetId;
         private Map<String,String> systemTags;
         private List<GetPipelineTargetConnectionDetail> targetConnectionDetails;
         private String timeCreated;
@@ -346,6 +373,7 @@ public final class GetPipelineResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.ingressIps = defaults.ingressIps;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -358,6 +386,7 @@ public final class GetPipelineResult {
     	      this.recipeType = defaults.recipeType;
     	      this.sourceConnectionDetails = defaults.sourceConnectionDetails;
     	      this.state = defaults.state;
+    	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
     	      this.targetConnectionDetails = defaults.targetConnectionDetails;
     	      this.timeCreated = defaults.timeCreated;
@@ -420,6 +449,17 @@ public final class GetPipelineResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ingressIps(List<GetPipelineIngressIp> ingressIps) {
+            if (ingressIps == null) {
+              throw new MissingRequiredPropertyException("GetPipelineResult", "ingressIps");
+            }
+            this.ingressIps = ingressIps;
+            return this;
+        }
+        public Builder ingressIps(GetPipelineIngressIp... ingressIps) {
+            return ingressIps(List.of(ingressIps));
         }
         @CustomType.Setter
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
@@ -533,6 +573,14 @@ public final class GetPipelineResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetPipelineResult", "subnetId");
+            }
+            this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetPipelineResult", "systemTags");
@@ -584,6 +632,7 @@ public final class GetPipelineResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.ingressIps = ingressIps;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -596,6 +645,7 @@ public final class GetPipelineResult {
             _resultValue.recipeType = recipeType;
             _resultValue.sourceConnectionDetails = sourceConnectionDetails;
             _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;
             _resultValue.targetConnectionDetails = targetConnectionDetails;
             _resultValue.timeCreated = timeCreated;

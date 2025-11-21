@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("resourceId")]
         public string? ResourceId { get; set; }
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// A filter to return Oracle DB Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("resourceId")]
         public Input<string>? ResourceId { get; set; }

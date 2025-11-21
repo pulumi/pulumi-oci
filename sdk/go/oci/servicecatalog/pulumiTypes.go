@@ -132,8 +132,8 @@ type PrivateApplicationPackageDetails struct {
 	// The package's type.
 	PackageType string `pulumi:"packageType"`
 	// The package version.
-	Version              string  `pulumi:"version"`
-	ZipFileBase64encoded *string `pulumi:"zipFileBase64encoded"`
+	Version              string `pulumi:"version"`
+	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
 }
 
 // PrivateApplicationPackageDetailsInput is an input type that accepts PrivateApplicationPackageDetailsArgs and PrivateApplicationPackageDetailsOutput values.
@@ -151,8 +151,8 @@ type PrivateApplicationPackageDetailsArgs struct {
 	// The package's type.
 	PackageType pulumi.StringInput `pulumi:"packageType"`
 	// The package version.
-	Version              pulumi.StringInput    `pulumi:"version"`
-	ZipFileBase64encoded pulumi.StringPtrInput `pulumi:"zipFileBase64encoded"`
+	Version              pulumi.StringInput `pulumi:"version"`
+	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
 }
 
 func (PrivateApplicationPackageDetailsArgs) ElementType() reflect.Type {
@@ -242,8 +242,8 @@ func (o PrivateApplicationPackageDetailsOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateApplicationPackageDetails) string { return v.Version }).(pulumi.StringOutput)
 }
 
-func (o PrivateApplicationPackageDetailsOutput) ZipFileBase64encoded() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v PrivateApplicationPackageDetails) *string { return v.ZipFileBase64encoded }).(pulumi.StringPtrOutput)
+func (o PrivateApplicationPackageDetailsOutput) ZipFileBase64encoded() pulumi.StringOutput {
+	return o.ApplyT(func(v PrivateApplicationPackageDetails) string { return v.ZipFileBase64encoded }).(pulumi.StringOutput)
 }
 
 type PrivateApplicationPackageDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -295,8 +295,625 @@ func (o PrivateApplicationPackageDetailsPtrOutput) ZipFileBase64encoded() pulumi
 		if v == nil {
 			return nil
 		}
-		return v.ZipFileBase64encoded
+		return &v.ZipFileBase64encoded
 	}).(pulumi.StringPtrOutput)
+}
+
+type GetAllApplicationsApplicationCollection struct {
+	// Collection of service catalog applications.
+	Items []GetAllApplicationsApplicationCollectionItem `pulumi:"items"`
+}
+
+// GetAllApplicationsApplicationCollectionInput is an input type that accepts GetAllApplicationsApplicationCollectionArgs and GetAllApplicationsApplicationCollectionOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionInput` via:
+//
+//	GetAllApplicationsApplicationCollectionArgs{...}
+type GetAllApplicationsApplicationCollectionInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionOutput() GetAllApplicationsApplicationCollectionOutput
+	ToGetAllApplicationsApplicationCollectionOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionOutput
+}
+
+type GetAllApplicationsApplicationCollectionArgs struct {
+	// Collection of service catalog applications.
+	Items GetAllApplicationsApplicationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAllApplicationsApplicationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollection)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionArgs) ToGetAllApplicationsApplicationCollectionOutput() GetAllApplicationsApplicationCollectionOutput {
+	return i.ToGetAllApplicationsApplicationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionArgs) ToGetAllApplicationsApplicationCollectionOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionOutput)
+}
+
+// GetAllApplicationsApplicationCollectionArrayInput is an input type that accepts GetAllApplicationsApplicationCollectionArray and GetAllApplicationsApplicationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionArrayInput` via:
+//
+//	GetAllApplicationsApplicationCollectionArray{ GetAllApplicationsApplicationCollectionArgs{...} }
+type GetAllApplicationsApplicationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionArrayOutput() GetAllApplicationsApplicationCollectionArrayOutput
+	ToGetAllApplicationsApplicationCollectionArrayOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionArrayOutput
+}
+
+type GetAllApplicationsApplicationCollectionArray []GetAllApplicationsApplicationCollectionInput
+
+func (GetAllApplicationsApplicationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollection)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionArray) ToGetAllApplicationsApplicationCollectionArrayOutput() GetAllApplicationsApplicationCollectionArrayOutput {
+	return i.ToGetAllApplicationsApplicationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionArray) ToGetAllApplicationsApplicationCollectionArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionArrayOutput)
+}
+
+type GetAllApplicationsApplicationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollection)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionOutput) ToGetAllApplicationsApplicationCollectionOutput() GetAllApplicationsApplicationCollectionOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionOutput) ToGetAllApplicationsApplicationCollectionOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionOutput {
+	return o
+}
+
+// Collection of service catalog applications.
+func (o GetAllApplicationsApplicationCollectionOutput) Items() GetAllApplicationsApplicationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollection) []GetAllApplicationsApplicationCollectionItem {
+		return v.Items
+	}).(GetAllApplicationsApplicationCollectionItemArrayOutput)
+}
+
+type GetAllApplicationsApplicationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollection)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionArrayOutput) ToGetAllApplicationsApplicationCollectionArrayOutput() GetAllApplicationsApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionArrayOutput) ToGetAllApplicationsApplicationCollectionArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionArrayOutput) Index(i pulumi.IntInput) GetAllApplicationsApplicationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllApplicationsApplicationCollection {
+		return vs[0].([]GetAllApplicationsApplicationCollection)[vs[1].(int)]
+	}).(GetAllApplicationsApplicationCollectionOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItem struct {
+	// Product categories that the application belongs to.
+	Categories []string `pulumi:"categories"`
+	// Exact match name filter.
+	DisplayName string `pulumi:"displayName"`
+	// The unique identifier of the entity associated with service catalog.
+	EntityId string `pulumi:"entityId"`
+	// The type of the application in the service catalog.
+	EntityType string `pulumi:"entityType"`
+	// Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+	IsFeatured bool `pulumi:"isFeatured"`
+	// The model for uploaded binary data, like logos and images.
+	Logos []GetAllApplicationsApplicationCollectionItemLogo `pulumi:"logos"`
+	// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
+	PackageType string `pulumi:"packageType"`
+	// Summary of the pricing types available across all packages in the application.
+	PricingType string `pulumi:"pricingType"`
+	// Summary details about the publisher of the resource.
+	Publishers []GetAllApplicationsApplicationCollectionItemPublisher `pulumi:"publishers"`
+	// A short description of the application.
+	ShortDescription string `pulumi:"shortDescription"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetAllApplicationsApplicationCollectionItemInput is an input type that accepts GetAllApplicationsApplicationCollectionItemArgs and GetAllApplicationsApplicationCollectionItemOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemArgs{...}
+type GetAllApplicationsApplicationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemOutput() GetAllApplicationsApplicationCollectionItemOutput
+	ToGetAllApplicationsApplicationCollectionItemOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemArgs struct {
+	// Product categories that the application belongs to.
+	Categories pulumi.StringArrayInput `pulumi:"categories"`
+	// Exact match name filter.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The unique identifier of the entity associated with service catalog.
+	EntityId pulumi.StringInput `pulumi:"entityId"`
+	// The type of the application in the service catalog.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+	IsFeatured pulumi.BoolInput `pulumi:"isFeatured"`
+	// The model for uploaded binary data, like logos and images.
+	Logos GetAllApplicationsApplicationCollectionItemLogoArrayInput `pulumi:"logos"`
+	// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Summary of the pricing types available across all packages in the application.
+	PricingType pulumi.StringInput `pulumi:"pricingType"`
+	// Summary details about the publisher of the resource.
+	Publishers GetAllApplicationsApplicationCollectionItemPublisherArrayInput `pulumi:"publishers"`
+	// A short description of the application.
+	ShortDescription pulumi.StringInput `pulumi:"shortDescription"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetAllApplicationsApplicationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemArgs) ToGetAllApplicationsApplicationCollectionItemOutput() GetAllApplicationsApplicationCollectionItemOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemArgs) ToGetAllApplicationsApplicationCollectionItemOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemOutput)
+}
+
+// GetAllApplicationsApplicationCollectionItemArrayInput is an input type that accepts GetAllApplicationsApplicationCollectionItemArray and GetAllApplicationsApplicationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemArrayInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemArray{ GetAllApplicationsApplicationCollectionItemArgs{...} }
+type GetAllApplicationsApplicationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemArrayOutput() GetAllApplicationsApplicationCollectionItemArrayOutput
+	ToGetAllApplicationsApplicationCollectionItemArrayOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemArrayOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemArray []GetAllApplicationsApplicationCollectionItemInput
+
+func (GetAllApplicationsApplicationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemArray) ToGetAllApplicationsApplicationCollectionItemArrayOutput() GetAllApplicationsApplicationCollectionItemArrayOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemArray) ToGetAllApplicationsApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemArrayOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemOutput) ToGetAllApplicationsApplicationCollectionItemOutput() GetAllApplicationsApplicationCollectionItemOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemOutput) ToGetAllApplicationsApplicationCollectionItemOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemOutput {
+	return o
+}
+
+// Product categories that the application belongs to.
+func (o GetAllApplicationsApplicationCollectionItemOutput) Categories() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) []string { return v.Categories }).(pulumi.StringArrayOutput)
+}
+
+// Exact match name filter.
+func (o GetAllApplicationsApplicationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the entity associated with service catalog.
+func (o GetAllApplicationsApplicationCollectionItemOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+// The type of the application in the service catalog.
+func (o GetAllApplicationsApplicationCollectionItemOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
+func (o GetAllApplicationsApplicationCollectionItemOutput) IsFeatured() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) bool { return v.IsFeatured }).(pulumi.BoolOutput)
+}
+
+// The model for uploaded binary data, like logos and images.
+func (o GetAllApplicationsApplicationCollectionItemOutput) Logos() GetAllApplicationsApplicationCollectionItemLogoArrayOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) []GetAllApplicationsApplicationCollectionItemLogo {
+		return v.Logos
+	}).(GetAllApplicationsApplicationCollectionItemLogoArrayOutput)
+}
+
+// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
+func (o GetAllApplicationsApplicationCollectionItemOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Summary of the pricing types available across all packages in the application.
+func (o GetAllApplicationsApplicationCollectionItemOutput) PricingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.PricingType }).(pulumi.StringOutput)
+}
+
+// Summary details about the publisher of the resource.
+func (o GetAllApplicationsApplicationCollectionItemOutput) Publishers() GetAllApplicationsApplicationCollectionItemPublisherArrayOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) []GetAllApplicationsApplicationCollectionItemPublisher {
+		return v.Publishers
+	}).(GetAllApplicationsApplicationCollectionItemPublisherArrayOutput)
+}
+
+// A short description of the application.
+func (o GetAllApplicationsApplicationCollectionItemOutput) ShortDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) string { return v.ShortDescription }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAllApplicationsApplicationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemArrayOutput) ToGetAllApplicationsApplicationCollectionItemArrayOutput() GetAllApplicationsApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemArrayOutput) ToGetAllApplicationsApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAllApplicationsApplicationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllApplicationsApplicationCollectionItem {
+		return vs[0].([]GetAllApplicationsApplicationCollectionItem)[vs[1].(int)]
+	}).(GetAllApplicationsApplicationCollectionItemOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemLogo struct {
+	// The content URL of the uploaded data.
+	ContentUrl string `pulumi:"contentUrl"`
+	// Exact match name filter.
+	DisplayName string `pulumi:"displayName"`
+	// The MIME type of the uploaded data.
+	MimeType string `pulumi:"mimeType"`
+}
+
+// GetAllApplicationsApplicationCollectionItemLogoInput is an input type that accepts GetAllApplicationsApplicationCollectionItemLogoArgs and GetAllApplicationsApplicationCollectionItemLogoOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemLogoInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemLogoArgs{...}
+type GetAllApplicationsApplicationCollectionItemLogoInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemLogoOutput() GetAllApplicationsApplicationCollectionItemLogoOutput
+	ToGetAllApplicationsApplicationCollectionItemLogoOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemLogoOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemLogoArgs struct {
+	// The content URL of the uploaded data.
+	ContentUrl pulumi.StringInput `pulumi:"contentUrl"`
+	// Exact match name filter.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The MIME type of the uploaded data.
+	MimeType pulumi.StringInput `pulumi:"mimeType"`
+}
+
+func (GetAllApplicationsApplicationCollectionItemLogoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemLogo)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemLogoArgs) ToGetAllApplicationsApplicationCollectionItemLogoOutput() GetAllApplicationsApplicationCollectionItemLogoOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemLogoOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemLogoArgs) ToGetAllApplicationsApplicationCollectionItemLogoOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemLogoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemLogoOutput)
+}
+
+// GetAllApplicationsApplicationCollectionItemLogoArrayInput is an input type that accepts GetAllApplicationsApplicationCollectionItemLogoArray and GetAllApplicationsApplicationCollectionItemLogoArrayOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemLogoArrayInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemLogoArray{ GetAllApplicationsApplicationCollectionItemLogoArgs{...} }
+type GetAllApplicationsApplicationCollectionItemLogoArrayInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemLogoArrayOutput() GetAllApplicationsApplicationCollectionItemLogoArrayOutput
+	ToGetAllApplicationsApplicationCollectionItemLogoArrayOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemLogoArrayOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemLogoArray []GetAllApplicationsApplicationCollectionItemLogoInput
+
+func (GetAllApplicationsApplicationCollectionItemLogoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItemLogo)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemLogoArray) ToGetAllApplicationsApplicationCollectionItemLogoArrayOutput() GetAllApplicationsApplicationCollectionItemLogoArrayOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemLogoArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemLogoArray) ToGetAllApplicationsApplicationCollectionItemLogoArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemLogoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemLogoArrayOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemLogoOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemLogoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemLogo)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemLogoOutput) ToGetAllApplicationsApplicationCollectionItemLogoOutput() GetAllApplicationsApplicationCollectionItemLogoOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemLogoOutput) ToGetAllApplicationsApplicationCollectionItemLogoOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemLogoOutput {
+	return o
+}
+
+// The content URL of the uploaded data.
+func (o GetAllApplicationsApplicationCollectionItemLogoOutput) ContentUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItemLogo) string { return v.ContentUrl }).(pulumi.StringOutput)
+}
+
+// Exact match name filter.
+func (o GetAllApplicationsApplicationCollectionItemLogoOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItemLogo) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The MIME type of the uploaded data.
+func (o GetAllApplicationsApplicationCollectionItemLogoOutput) MimeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItemLogo) string { return v.MimeType }).(pulumi.StringOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemLogoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemLogoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItemLogo)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemLogoArrayOutput) ToGetAllApplicationsApplicationCollectionItemLogoArrayOutput() GetAllApplicationsApplicationCollectionItemLogoArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemLogoArrayOutput) ToGetAllApplicationsApplicationCollectionItemLogoArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemLogoArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemLogoArrayOutput) Index(i pulumi.IntInput) GetAllApplicationsApplicationCollectionItemLogoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllApplicationsApplicationCollectionItemLogo {
+		return vs[0].([]GetAllApplicationsApplicationCollectionItemLogo)[vs[1].(int)]
+	}).(GetAllApplicationsApplicationCollectionItemLogoOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemPublisher struct {
+	// Exact match name filter.
+	DisplayName string `pulumi:"displayName"`
+	// The unique identifier for the publisher.
+	Id string `pulumi:"id"`
+}
+
+// GetAllApplicationsApplicationCollectionItemPublisherInput is an input type that accepts GetAllApplicationsApplicationCollectionItemPublisherArgs and GetAllApplicationsApplicationCollectionItemPublisherOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemPublisherInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemPublisherArgs{...}
+type GetAllApplicationsApplicationCollectionItemPublisherInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemPublisherOutput() GetAllApplicationsApplicationCollectionItemPublisherOutput
+	ToGetAllApplicationsApplicationCollectionItemPublisherOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemPublisherOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemPublisherArgs struct {
+	// Exact match name filter.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The unique identifier for the publisher.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetAllApplicationsApplicationCollectionItemPublisherArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemPublisher)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemPublisherArgs) ToGetAllApplicationsApplicationCollectionItemPublisherOutput() GetAllApplicationsApplicationCollectionItemPublisherOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemPublisherOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemPublisherArgs) ToGetAllApplicationsApplicationCollectionItemPublisherOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemPublisherOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemPublisherOutput)
+}
+
+// GetAllApplicationsApplicationCollectionItemPublisherArrayInput is an input type that accepts GetAllApplicationsApplicationCollectionItemPublisherArray and GetAllApplicationsApplicationCollectionItemPublisherArrayOutput values.
+// You can construct a concrete instance of `GetAllApplicationsApplicationCollectionItemPublisherArrayInput` via:
+//
+//	GetAllApplicationsApplicationCollectionItemPublisherArray{ GetAllApplicationsApplicationCollectionItemPublisherArgs{...} }
+type GetAllApplicationsApplicationCollectionItemPublisherArrayInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutput() GetAllApplicationsApplicationCollectionItemPublisherArrayOutput
+	ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutputWithContext(context.Context) GetAllApplicationsApplicationCollectionItemPublisherArrayOutput
+}
+
+type GetAllApplicationsApplicationCollectionItemPublisherArray []GetAllApplicationsApplicationCollectionItemPublisherInput
+
+func (GetAllApplicationsApplicationCollectionItemPublisherArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItemPublisher)(nil)).Elem()
+}
+
+func (i GetAllApplicationsApplicationCollectionItemPublisherArray) ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutput() GetAllApplicationsApplicationCollectionItemPublisherArrayOutput {
+	return i.ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsApplicationCollectionItemPublisherArray) ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemPublisherArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsApplicationCollectionItemPublisherArrayOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemPublisherOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemPublisherOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemPublisher)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemPublisherOutput) ToGetAllApplicationsApplicationCollectionItemPublisherOutput() GetAllApplicationsApplicationCollectionItemPublisherOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemPublisherOutput) ToGetAllApplicationsApplicationCollectionItemPublisherOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemPublisherOutput {
+	return o
+}
+
+// Exact match name filter.
+func (o GetAllApplicationsApplicationCollectionItemPublisherOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItemPublisher) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The unique identifier for the publisher.
+func (o GetAllApplicationsApplicationCollectionItemPublisherOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsApplicationCollectionItemPublisher) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetAllApplicationsApplicationCollectionItemPublisherArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsApplicationCollectionItemPublisherArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsApplicationCollectionItemPublisher)(nil)).Elem()
+}
+
+func (o GetAllApplicationsApplicationCollectionItemPublisherArrayOutput) ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutput() GetAllApplicationsApplicationCollectionItemPublisherArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemPublisherArrayOutput) ToGetAllApplicationsApplicationCollectionItemPublisherArrayOutputWithContext(ctx context.Context) GetAllApplicationsApplicationCollectionItemPublisherArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsApplicationCollectionItemPublisherArrayOutput) Index(i pulumi.IntInput) GetAllApplicationsApplicationCollectionItemPublisherOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllApplicationsApplicationCollectionItemPublisher {
+		return vs[0].([]GetAllApplicationsApplicationCollectionItemPublisher)[vs[1].(int)]
+	}).(GetAllApplicationsApplicationCollectionItemPublisherOutput)
+}
+
+type GetAllApplicationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAllApplicationsFilterInput is an input type that accepts GetAllApplicationsFilterArgs and GetAllApplicationsFilterOutput values.
+// You can construct a concrete instance of `GetAllApplicationsFilterInput` via:
+//
+//	GetAllApplicationsFilterArgs{...}
+type GetAllApplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsFilterOutput() GetAllApplicationsFilterOutput
+	ToGetAllApplicationsFilterOutputWithContext(context.Context) GetAllApplicationsFilterOutput
+}
+
+type GetAllApplicationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAllApplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetAllApplicationsFilterArgs) ToGetAllApplicationsFilterOutput() GetAllApplicationsFilterOutput {
+	return i.ToGetAllApplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsFilterArgs) ToGetAllApplicationsFilterOutputWithContext(ctx context.Context) GetAllApplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsFilterOutput)
+}
+
+// GetAllApplicationsFilterArrayInput is an input type that accepts GetAllApplicationsFilterArray and GetAllApplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAllApplicationsFilterArrayInput` via:
+//
+//	GetAllApplicationsFilterArray{ GetAllApplicationsFilterArgs{...} }
+type GetAllApplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAllApplicationsFilterArrayOutput() GetAllApplicationsFilterArrayOutput
+	ToGetAllApplicationsFilterArrayOutputWithContext(context.Context) GetAllApplicationsFilterArrayOutput
+}
+
+type GetAllApplicationsFilterArray []GetAllApplicationsFilterInput
+
+func (GetAllApplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetAllApplicationsFilterArray) ToGetAllApplicationsFilterArrayOutput() GetAllApplicationsFilterArrayOutput {
+	return i.ToGetAllApplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAllApplicationsFilterArray) ToGetAllApplicationsFilterArrayOutputWithContext(ctx context.Context) GetAllApplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAllApplicationsFilterArrayOutput)
+}
+
+type GetAllApplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAllApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetAllApplicationsFilterOutput) ToGetAllApplicationsFilterOutput() GetAllApplicationsFilterOutput {
+	return o
+}
+
+func (o GetAllApplicationsFilterOutput) ToGetAllApplicationsFilterOutputWithContext(ctx context.Context) GetAllApplicationsFilterOutput {
+	return o
+}
+
+func (o GetAllApplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAllApplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAllApplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAllApplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAllApplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAllApplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAllApplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAllApplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAllApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetAllApplicationsFilterArrayOutput) ToGetAllApplicationsFilterArrayOutput() GetAllApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsFilterArrayOutput) ToGetAllApplicationsFilterArrayOutputWithContext(ctx context.Context) GetAllApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetAllApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetAllApplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAllApplicationsFilter {
+		return vs[0].([]GetAllApplicationsFilter)[vs[1].(int)]
+	}).(GetAllApplicationsFilterOutput)
 }
 
 type GetPrivateApplicationLogo struct {
@@ -1114,6 +1731,8 @@ type GetPrivateApplicationsPrivateApplicationCollectionItem struct {
 	ShortDescription string `pulumi:"shortDescription"`
 	// The lifecycle state of the private application.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -1154,6 +1773,8 @@ type GetPrivateApplicationsPrivateApplicationCollectionItemArgs struct {
 	ShortDescription pulumi.StringInput `pulumi:"shortDescription"`
 	// The lifecycle state of the private application.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -1273,6 +1894,11 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) ShortDescr
 // The lifecycle state of the private application.
 func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
@@ -2089,6 +2715,10 @@ type GetServiceCatalogsServiceCatalogCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The lifecycle state of the service catalog.
 	State string `pulumi:"state"`
+	// Status of the service catalog, use as a filter to filter out all active catalogs.
+	Status string `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -2119,6 +2749,10 @@ type GetServiceCatalogsServiceCatalogCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The lifecycle state of the service catalog.
 	State pulumi.StringInput `pulumi:"state"`
+	// Status of the service catalog, use as a filter to filter out all active catalogs.
+	Status pulumi.StringInput `pulumi:"status"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the service catalog was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
@@ -2206,6 +2840,16 @@ func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) State() pulumi.Str
 	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Status of the service catalog, use as a filter to filter out all active catalogs.
+func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
 // The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
 func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -2241,6 +2885,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PrivateApplicationLogoArrayInput)(nil)).Elem(), PrivateApplicationLogoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PrivateApplicationPackageDetailsInput)(nil)).Elem(), PrivateApplicationPackageDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PrivateApplicationPackageDetailsPtrInput)(nil)).Elem(), PrivateApplicationPackageDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionArrayInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemArrayInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemLogoInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemLogoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemLogoArrayInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemLogoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemPublisherInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemPublisherArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsApplicationCollectionItemPublisherArrayInput)(nil)).Elem(), GetAllApplicationsApplicationCollectionItemPublisherArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsFilterInput)(nil)).Elem(), GetAllApplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAllApplicationsFilterArrayInput)(nil)).Elem(), GetAllApplicationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateApplicationLogoInput)(nil)).Elem(), GetPrivateApplicationLogoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateApplicationLogoArrayInput)(nil)).Elem(), GetPrivateApplicationLogoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateApplicationPackageDetailInput)(nil)).Elem(), GetPrivateApplicationPackageDetailArgs{})
@@ -2277,6 +2931,16 @@ func init() {
 	pulumi.RegisterOutputType(PrivateApplicationLogoArrayOutput{})
 	pulumi.RegisterOutputType(PrivateApplicationPackageDetailsOutput{})
 	pulumi.RegisterOutputType(PrivateApplicationPackageDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemLogoOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemLogoArrayOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemPublisherOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsApplicationCollectionItemPublisherArrayOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetAllApplicationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateApplicationLogoOutput{})
 	pulumi.RegisterOutputType(GetPrivateApplicationLogoArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateApplicationPackageDetailOutput{})

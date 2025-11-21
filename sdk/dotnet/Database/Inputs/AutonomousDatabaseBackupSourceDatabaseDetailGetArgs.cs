@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<Inputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactGetArgs>? _autonomousDatabaseCustomerContacts;
 
         /// <summary>
-        /// Customer Contacts for the Autonomous database.
+        /// Customer Contacts for the Autonomous Database.
         /// </summary>
         public InputList<Inputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactGetArgs> AutonomousDatabaseCustomerContacts
         {

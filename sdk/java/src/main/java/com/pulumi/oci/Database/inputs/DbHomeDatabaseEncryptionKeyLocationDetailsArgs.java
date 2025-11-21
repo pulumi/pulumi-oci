@@ -16,6 +16,13 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
 
     public static final DbHomeDatabaseEncryptionKeyLocationDetailsArgs Empty = new DbHomeDatabaseEncryptionKeyLocationDetailsArgs();
 
+    @Import(name="awsEncryptionKeyId")
+    private @Nullable Output<String> awsEncryptionKeyId;
+
+    public Optional<Output<String>> awsEncryptionKeyId() {
+        return Optional.ofNullable(this.awsEncryptionKeyId);
+    }
+
     /**
      * Provide the key OCID of a registered Azure key.
      * 
@@ -29,6 +36,13 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
      */
     public Optional<Output<String>> azureEncryptionKeyId() {
         return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+
+    @Import(name="googleCloudProviderEncryptionKeyId")
+    private @Nullable Output<String> googleCloudProviderEncryptionKeyId;
+
+    public Optional<Output<String>> googleCloudProviderEncryptionKeyId() {
+        return Optional.ofNullable(this.googleCloudProviderEncryptionKeyId);
     }
 
     /**
@@ -64,7 +78,9 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
     private DbHomeDatabaseEncryptionKeyLocationDetailsArgs() {}
 
     private DbHomeDatabaseEncryptionKeyLocationDetailsArgs(DbHomeDatabaseEncryptionKeyLocationDetailsArgs $) {
+        this.awsEncryptionKeyId = $.awsEncryptionKeyId;
         this.azureEncryptionKeyId = $.azureEncryptionKeyId;
+        this.googleCloudProviderEncryptionKeyId = $.googleCloudProviderEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
         this.providerType = $.providerType;
     }
@@ -87,6 +103,15 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
             $ = new DbHomeDatabaseEncryptionKeyLocationDetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        public Builder awsEncryptionKeyId(@Nullable Output<String> awsEncryptionKeyId) {
+            $.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+
+        public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
+            return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
+        }
+
         /**
          * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
          * 
@@ -106,6 +131,15 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
          */
         public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
             return azureEncryptionKeyId(Output.of(azureEncryptionKeyId));
+        }
+
+        public Builder googleCloudProviderEncryptionKeyId(@Nullable Output<String> googleCloudProviderEncryptionKeyId) {
+            $.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
+            return this;
+        }
+
+        public Builder googleCloudProviderEncryptionKeyId(String googleCloudProviderEncryptionKeyId) {
+            return googleCloudProviderEncryptionKeyId(Output.of(googleCloudProviderEncryptionKeyId));
         }
 
         /**

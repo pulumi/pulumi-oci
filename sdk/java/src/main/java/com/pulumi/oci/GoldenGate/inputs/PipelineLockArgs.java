@@ -32,6 +32,36 @@ public final class PipelineLockArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    @Import(name="relatedResourceId")
+    private @Nullable Output<String> relatedResourceId;
+
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
+    public Optional<Output<String>> relatedResourceId() {
+        return Optional.ofNullable(this.relatedResourceId);
+    }
+
+    /**
+     * When the lock was created.
+     * 
+     */
+    @Import(name="timeCreated")
+    private @Nullable Output<String> timeCreated;
+
+    /**
+     * @return When the lock was created.
+     * 
+     */
+    public Optional<Output<String>> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
+    }
+
+    /**
      * Type of the lock.
      * 
      */
@@ -50,6 +80,8 @@ public final class PipelineLockArgs extends com.pulumi.resources.ResourceArgs {
 
     private PipelineLockArgs(PipelineLockArgs $) {
         this.message = $.message;
+        this.relatedResourceId = $.relatedResourceId;
+        this.timeCreated = $.timeCreated;
         this.type = $.type;
     }
 
@@ -90,6 +122,48 @@ public final class PipelineLockArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder message(String message) {
             return message(Output.of(message));
+        }
+
+        /**
+         * @param relatedResourceId The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder relatedResourceId(@Nullable Output<String> relatedResourceId) {
+            $.relatedResourceId = relatedResourceId;
+            return this;
+        }
+
+        /**
+         * @param relatedResourceId The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder relatedResourceId(String relatedResourceId) {
+            return relatedResourceId(Output.of(relatedResourceId));
+        }
+
+        /**
+         * @param timeCreated When the lock was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreated(@Nullable Output<String> timeCreated) {
+            $.timeCreated = timeCreated;
+            return this;
+        }
+
+        /**
+         * @param timeCreated When the lock was created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCreated(String timeCreated) {
+            return timeCreated(Output.of(timeCreated));
         }
 
         /**

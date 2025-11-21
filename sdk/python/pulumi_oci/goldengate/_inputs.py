@@ -47,6 +47,8 @@ __all__ = [
     'DeploymentOggDataGroupToRolesMappingArgsDict',
     'DeploymentPlacementArgs',
     'DeploymentPlacementArgsDict',
+    'PipelineIngressIpArgs',
+    'PipelineIngressIpArgsDict',
     'PipelineLockArgs',
     'PipelineLockArgsDict',
     'PipelineMappingRuleArgs',
@@ -1442,7 +1444,7 @@ if not MYPY:
         """
         admin_password: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         admin_username: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1494,7 +1496,7 @@ class DeploymentOggDataArgs:
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param pulumi.Input[_builtins.str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[_builtins.str] certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] credential_store: (Updatable) The type of credential store for OGG.
@@ -1540,7 +1542,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         return pulumi.get(self, "admin_password")
 
@@ -1789,6 +1791,38 @@ class DeploymentPlacementArgs:
 
 
 if not MYPY:
+    class PipelineIngressIpArgsDict(TypedDict):
+        ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+elif False:
+    PipelineIngressIpArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class PipelineIngressIpArgs:
+    def __init__(__self__, *,
+                 ingress_ip: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+    @ingress_ip.setter
+    def ingress_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ingress_ip", value)
+
+
+if not MYPY:
     class PipelineLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
@@ -1798,6 +1832,14 @@ if not MYPY:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        When the lock was created.
+        """
 elif False:
     PipelineLockArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1805,14 +1847,22 @@ elif False:
 class PipelineLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the lock was created.
         """
         pulumi.set(__self__, "type", type)
         if message is not None:
             pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
 
     @_builtins.property
     @pulumi.getter
@@ -1837,6 +1887,30 @@ class PipelineLockArgs:
     @message.setter
     def message(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:

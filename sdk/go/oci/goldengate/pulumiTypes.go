@@ -2185,7 +2185,7 @@ func (o DeploymentMaintenanceWindowPtrOutput) StartHour() pulumi.IntPtrOutput {
 }
 
 type DeploymentOggData struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 	AdminPassword *string `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername *string `pulumi:"adminUsername"`
@@ -2219,7 +2219,7 @@ type DeploymentOggDataInput interface {
 }
 
 type DeploymentOggDataArgs struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 	AdminPassword pulumi.StringPtrInput `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
@@ -2318,7 +2318,7 @@ func (o DeploymentOggDataOutput) ToDeploymentOggDataPtrOutputWithContext(ctx con
 	}).(DeploymentOggDataPtrOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 func (o DeploymentOggDataOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.AdminPassword }).(pulumi.StringPtrOutput)
 }
@@ -2392,7 +2392,7 @@ func (o DeploymentOggDataPtrOutput) Elem() DeploymentOggDataOutput {
 	}).(DeploymentOggDataOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 func (o DeploymentOggDataPtrOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -2792,9 +2792,110 @@ func (o DeploymentPlacementArrayOutput) Index(i pulumi.IntInput) DeploymentPlace
 	}).(DeploymentPlacementOutput)
 }
 
+type PipelineIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp *string `pulumi:"ingressIp"`
+}
+
+// PipelineIngressIpInput is an input type that accepts PipelineIngressIpArgs and PipelineIngressIpOutput values.
+// You can construct a concrete instance of `PipelineIngressIpInput` via:
+//
+//	PipelineIngressIpArgs{...}
+type PipelineIngressIpInput interface {
+	pulumi.Input
+
+	ToPipelineIngressIpOutput() PipelineIngressIpOutput
+	ToPipelineIngressIpOutputWithContext(context.Context) PipelineIngressIpOutput
+}
+
+type PipelineIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringPtrInput `pulumi:"ingressIp"`
+}
+
+func (PipelineIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineIngressIp)(nil)).Elem()
+}
+
+func (i PipelineIngressIpArgs) ToPipelineIngressIpOutput() PipelineIngressIpOutput {
+	return i.ToPipelineIngressIpOutputWithContext(context.Background())
+}
+
+func (i PipelineIngressIpArgs) ToPipelineIngressIpOutputWithContext(ctx context.Context) PipelineIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineIngressIpOutput)
+}
+
+// PipelineIngressIpArrayInput is an input type that accepts PipelineIngressIpArray and PipelineIngressIpArrayOutput values.
+// You can construct a concrete instance of `PipelineIngressIpArrayInput` via:
+//
+//	PipelineIngressIpArray{ PipelineIngressIpArgs{...} }
+type PipelineIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToPipelineIngressIpArrayOutput() PipelineIngressIpArrayOutput
+	ToPipelineIngressIpArrayOutputWithContext(context.Context) PipelineIngressIpArrayOutput
+}
+
+type PipelineIngressIpArray []PipelineIngressIpInput
+
+func (PipelineIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineIngressIp)(nil)).Elem()
+}
+
+func (i PipelineIngressIpArray) ToPipelineIngressIpArrayOutput() PipelineIngressIpArrayOutput {
+	return i.ToPipelineIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i PipelineIngressIpArray) ToPipelineIngressIpArrayOutputWithContext(ctx context.Context) PipelineIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineIngressIpArrayOutput)
+}
+
+type PipelineIngressIpOutput struct{ *pulumi.OutputState }
+
+func (PipelineIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineIngressIp)(nil)).Elem()
+}
+
+func (o PipelineIngressIpOutput) ToPipelineIngressIpOutput() PipelineIngressIpOutput {
+	return o
+}
+
+func (o PipelineIngressIpOutput) ToPipelineIngressIpOutputWithContext(ctx context.Context) PipelineIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o PipelineIngressIpOutput) IngressIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineIngressIp) *string { return v.IngressIp }).(pulumi.StringPtrOutput)
+}
+
+type PipelineIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (PipelineIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineIngressIp)(nil)).Elem()
+}
+
+func (o PipelineIngressIpArrayOutput) ToPipelineIngressIpArrayOutput() PipelineIngressIpArrayOutput {
+	return o
+}
+
+func (o PipelineIngressIpArrayOutput) ToPipelineIngressIpArrayOutputWithContext(ctx context.Context) PipelineIngressIpArrayOutput {
+	return o
+}
+
+func (o PipelineIngressIpArrayOutput) Index(i pulumi.IntInput) PipelineIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineIngressIp {
+		return vs[0].([]PipelineIngressIp)[vs[1].(int)]
+	}).(PipelineIngressIpOutput)
+}
+
 type PipelineLock struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type string `pulumi:"type"`
 }
@@ -2813,6 +2914,10 @@ type PipelineLockInput interface {
 type PipelineLockArgs struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -2871,6 +2976,16 @@ func (o PipelineLockOutput) ToPipelineLockOutputWithContext(ctx context.Context)
 // A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 func (o PipelineLockOutput) Message() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o PipelineLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o PipelineLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Type of the lock.
@@ -14907,9 +15022,110 @@ func (o GetMessagesFilterArrayOutput) Index(i pulumi.IntInput) GetMessagesFilter
 	}).(GetMessagesFilterOutput)
 }
 
+type GetPipelineIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetPipelineIngressIpInput is an input type that accepts GetPipelineIngressIpArgs and GetPipelineIngressIpOutput values.
+// You can construct a concrete instance of `GetPipelineIngressIpInput` via:
+//
+//	GetPipelineIngressIpArgs{...}
+type GetPipelineIngressIpInput interface {
+	pulumi.Input
+
+	ToGetPipelineIngressIpOutput() GetPipelineIngressIpOutput
+	ToGetPipelineIngressIpOutputWithContext(context.Context) GetPipelineIngressIpOutput
+}
+
+type GetPipelineIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetPipelineIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineIngressIp)(nil)).Elem()
+}
+
+func (i GetPipelineIngressIpArgs) ToGetPipelineIngressIpOutput() GetPipelineIngressIpOutput {
+	return i.ToGetPipelineIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetPipelineIngressIpArgs) ToGetPipelineIngressIpOutputWithContext(ctx context.Context) GetPipelineIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineIngressIpOutput)
+}
+
+// GetPipelineIngressIpArrayInput is an input type that accepts GetPipelineIngressIpArray and GetPipelineIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetPipelineIngressIpArrayInput` via:
+//
+//	GetPipelineIngressIpArray{ GetPipelineIngressIpArgs{...} }
+type GetPipelineIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineIngressIpArrayOutput() GetPipelineIngressIpArrayOutput
+	ToGetPipelineIngressIpArrayOutputWithContext(context.Context) GetPipelineIngressIpArrayOutput
+}
+
+type GetPipelineIngressIpArray []GetPipelineIngressIpInput
+
+func (GetPipelineIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineIngressIp)(nil)).Elem()
+}
+
+func (i GetPipelineIngressIpArray) ToGetPipelineIngressIpArrayOutput() GetPipelineIngressIpArrayOutput {
+	return i.ToGetPipelineIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineIngressIpArray) ToGetPipelineIngressIpArrayOutputWithContext(ctx context.Context) GetPipelineIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineIngressIpArrayOutput)
+}
+
+type GetPipelineIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineIngressIp)(nil)).Elem()
+}
+
+func (o GetPipelineIngressIpOutput) ToGetPipelineIngressIpOutput() GetPipelineIngressIpOutput {
+	return o
+}
+
+func (o GetPipelineIngressIpOutput) ToGetPipelineIngressIpOutputWithContext(ctx context.Context) GetPipelineIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetPipelineIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetPipelineIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineIngressIp)(nil)).Elem()
+}
+
+func (o GetPipelineIngressIpArrayOutput) ToGetPipelineIngressIpArrayOutput() GetPipelineIngressIpArrayOutput {
+	return o
+}
+
+func (o GetPipelineIngressIpArrayOutput) ToGetPipelineIngressIpArrayOutputWithContext(ctx context.Context) GetPipelineIngressIpArrayOutput {
+	return o
+}
+
+func (o GetPipelineIngressIpArrayOutput) Index(i pulumi.IntInput) GetPipelineIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineIngressIp {
+		return vs[0].([]GetPipelineIngressIp)[vs[1].(int)]
+	}).(GetPipelineIngressIpOutput)
+}
+
 type GetPipelineLock struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type string `pulumi:"type"`
 }
@@ -14928,6 +15144,10 @@ type GetPipelineLockInput interface {
 type GetPipelineLockArgs struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -14986,6 +15206,16 @@ func (o GetPipelineLockOutput) ToGetPipelineLockOutputWithContext(ctx context.Co
 // A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 func (o GetPipelineLockOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetPipelineLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetPipelineLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineLock) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // Type of the lock.
@@ -17002,6 +17232,8 @@ type GetPipelinesPipelineCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
 	Id string `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []GetPipelinesPipelineCollectionItemIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// The Oracle license model that applies to a Deployment.
@@ -17024,6 +17256,8 @@ type GetPipelinesPipelineCollectionItem struct {
 	SourceConnectionDetails []GetPipelinesPipelineCollectionItemSourceConnectionDetail `pulumi:"sourceConnectionDetails"`
 	// A filtered list of pipelines to return for a given lifecycleState.
 	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The target connection details for creating a pipeline.
@@ -17062,6 +17296,8 @@ type GetPipelinesPipelineCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
 	Id pulumi.StringInput `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps GetPipelinesPipelineCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// The Oracle license model that applies to a Deployment.
@@ -17084,6 +17320,8 @@ type GetPipelinesPipelineCollectionItemArgs struct {
 	SourceConnectionDetails GetPipelinesPipelineCollectionItemSourceConnectionDetailArrayInput `pulumi:"sourceConnectionDetails"`
 	// A filtered list of pipelines to return for a given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The target connection details for creating a pipeline.
@@ -17182,6 +17420,13 @@ func (o GetPipelinesPipelineCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o GetPipelinesPipelineCollectionItemOutput) IngressIps() GetPipelinesPipelineCollectionItemIngressIpArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) []GetPipelinesPipelineCollectionItemIngressIp {
+		return v.IngressIps
+	}).(GetPipelinesPipelineCollectionItemIngressIpArrayOutput)
+}
+
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o GetPipelinesPipelineCollectionItemOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -17245,6 +17490,11 @@ func (o GetPipelinesPipelineCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+func (o GetPipelinesPipelineCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetPipelinesPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
@@ -17292,9 +17542,110 @@ func (o GetPipelinesPipelineCollectionItemArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetPipelinesPipelineCollectionItemOutput)
 }
 
+type GetPipelinesPipelineCollectionItemIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetPipelinesPipelineCollectionItemIngressIpInput is an input type that accepts GetPipelinesPipelineCollectionItemIngressIpArgs and GetPipelinesPipelineCollectionItemIngressIpOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemIngressIpInput` via:
+//
+//	GetPipelinesPipelineCollectionItemIngressIpArgs{...}
+type GetPipelinesPipelineCollectionItemIngressIpInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemIngressIpOutput() GetPipelinesPipelineCollectionItemIngressIpOutput
+	ToGetPipelinesPipelineCollectionItemIngressIpOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemIngressIpOutput
+}
+
+type GetPipelinesPipelineCollectionItemIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetPipelinesPipelineCollectionItemIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemIngressIpArgs) ToGetPipelinesPipelineCollectionItemIngressIpOutput() GetPipelinesPipelineCollectionItemIngressIpOutput {
+	return i.ToGetPipelinesPipelineCollectionItemIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemIngressIpArgs) ToGetPipelinesPipelineCollectionItemIngressIpOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemIngressIpOutput)
+}
+
+// GetPipelinesPipelineCollectionItemIngressIpArrayInput is an input type that accepts GetPipelinesPipelineCollectionItemIngressIpArray and GetPipelinesPipelineCollectionItemIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineCollectionItemIngressIpArrayInput` via:
+//
+//	GetPipelinesPipelineCollectionItemIngressIpArray{ GetPipelinesPipelineCollectionItemIngressIpArgs{...} }
+type GetPipelinesPipelineCollectionItemIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineCollectionItemIngressIpArrayOutput() GetPipelinesPipelineCollectionItemIngressIpArrayOutput
+	ToGetPipelinesPipelineCollectionItemIngressIpArrayOutputWithContext(context.Context) GetPipelinesPipelineCollectionItemIngressIpArrayOutput
+}
+
+type GetPipelinesPipelineCollectionItemIngressIpArray []GetPipelinesPipelineCollectionItemIngressIpInput
+
+func (GetPipelinesPipelineCollectionItemIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineCollectionItemIngressIpArray) ToGetPipelinesPipelineCollectionItemIngressIpArrayOutput() GetPipelinesPipelineCollectionItemIngressIpArrayOutput {
+	return i.ToGetPipelinesPipelineCollectionItemIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineCollectionItemIngressIpArray) ToGetPipelinesPipelineCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineCollectionItemIngressIpArrayOutput)
+}
+
+type GetPipelinesPipelineCollectionItemIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemIngressIpOutput) ToGetPipelinesPipelineCollectionItemIngressIpOutput() GetPipelinesPipelineCollectionItemIngressIpOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemIngressIpOutput) ToGetPipelinesPipelineCollectionItemIngressIpOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetPipelinesPipelineCollectionItemIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineCollectionItemIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineCollectionItemIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineCollectionItemIngressIpArrayOutput) ToGetPipelinesPipelineCollectionItemIngressIpArrayOutput() GetPipelinesPipelineCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemIngressIpArrayOutput) ToGetPipelinesPipelineCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineCollectionItemIngressIpArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineCollectionItemIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineCollectionItemIngressIp {
+		return vs[0].([]GetPipelinesPipelineCollectionItemIngressIp)[vs[1].(int)]
+	}).(GetPipelinesPipelineCollectionItemIngressIpOutput)
+}
+
 type GetPipelinesPipelineCollectionItemLock struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type string `pulumi:"type"`
 }
@@ -17313,6 +17664,10 @@ type GetPipelinesPipelineCollectionItemLockInput interface {
 type GetPipelinesPipelineCollectionItemLockArgs struct {
 	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -17371,6 +17726,16 @@ func (o GetPipelinesPipelineCollectionItemLockOutput) ToGetPipelinesPipelineColl
 // A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
 func (o GetPipelinesPipelineCollectionItemLockOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetPipelinesPipelineCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetPipelinesPipelineCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // Type of the lock.
@@ -19590,6 +19955,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataGroupToRolesMappingPtrInput)(nil)).Elem(), DeploymentOggDataGroupToRolesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentPlacementInput)(nil)).Elem(), DeploymentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentPlacementArrayInput)(nil)).Elem(), DeploymentPlacementArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineIngressIpInput)(nil)).Elem(), PipelineIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineIngressIpArrayInput)(nil)).Elem(), PipelineIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockInput)(nil)).Elem(), PipelineLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineLockArrayInput)(nil)).Elem(), PipelineLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineMappingRuleInput)(nil)).Elem(), PipelineMappingRuleArgs{})
@@ -19746,6 +20113,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItemArrayInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterInput)(nil)).Elem(), GetMessagesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterArrayInput)(nil)).Elem(), GetMessagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineIngressIpInput)(nil)).Elem(), GetPipelineIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineIngressIpArrayInput)(nil)).Elem(), GetPipelineIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLockInput)(nil)).Elem(), GetPipelineLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineLockArrayInput)(nil)).Elem(), GetPipelineLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineMappingRuleInput)(nil)).Elem(), GetPipelineMappingRuleArgs{})
@@ -19786,6 +20155,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemIngressIpInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemIngressIpArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemLockInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemLockArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemLockArrayInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineCollectionItemMappingRuleInput)(nil)).Elem(), GetPipelinesPipelineCollectionItemMappingRuleArgs{})
@@ -19856,6 +20227,8 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentOggDataGroupToRolesMappingPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentPlacementOutput{})
 	pulumi.RegisterOutputType(DeploymentPlacementArrayOutput{})
+	pulumi.RegisterOutputType(PipelineIngressIpOutput{})
+	pulumi.RegisterOutputType(PipelineIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(PipelineLockOutput{})
 	pulumi.RegisterOutputType(PipelineLockArrayOutput{})
 	pulumi.RegisterOutputType(PipelineMappingRuleOutput{})
@@ -20012,6 +20385,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMessagesFilterOutput{})
 	pulumi.RegisterOutputType(GetMessagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineIngressIpOutput{})
+	pulumi.RegisterOutputType(GetPipelineIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineLockOutput{})
 	pulumi.RegisterOutputType(GetPipelineLockArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineMappingRuleOutput{})
@@ -20052,6 +20427,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemIngressIpOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemLockOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineCollectionItemMappingRuleOutput{})

@@ -72,6 +72,10 @@ export interface GetPipelineResult {
      */
     readonly id: string;
     /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     */
+    readonly ingressIps: outputs.GoldenGate.GetPipelineIngressIp[];
+    /**
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     readonly isAutoScalingEnabled: boolean;
@@ -116,6 +120,10 @@ export interface GetPipelineResult {
      * Lifecycle state of the pipeline.
      */
     readonly state: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+     */
+    readonly subnetId: string;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */

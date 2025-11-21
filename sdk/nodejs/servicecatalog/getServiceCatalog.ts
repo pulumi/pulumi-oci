@@ -67,6 +67,14 @@ export interface GetServiceCatalogResult {
      */
     readonly state: string;
     /**
+     * The status of a service catalog.
+     */
+    readonly status: string;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
     readonly timeCreated: string;

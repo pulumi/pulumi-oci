@@ -72,6 +72,8 @@ type LookupPipelineResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline. This option applies when retrieving a pipeline.
 	Id string `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []GetPipelineIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// The Oracle license model that applies to a Deployment.
@@ -95,6 +97,8 @@ type LookupPipelineResult struct {
 	SourceConnectionDetails []GetPipelineSourceConnectionDetail `pulumi:"sourceConnectionDetails"`
 	// Lifecycle state of the pipeline.
 	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The target connection details for creating a pipeline.
@@ -176,6 +180,11 @@ func (o LookupPipelineResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o LookupPipelineResultOutput) IngressIps() GetPipelineIngressIpArrayOutput {
+	return o.ApplyT(func(v LookupPipelineResult) []GetPipelineIngressIp { return v.IngressIps }).(GetPipelineIngressIpArrayOutput)
+}
+
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o LookupPipelineResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPipelineResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -233,6 +242,11 @@ func (o LookupPipelineResultOutput) SourceConnectionDetails() GetPipelineSourceC
 // Lifecycle state of the pipeline.
 func (o LookupPipelineResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
+func (o LookupPipelineResultOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPipelineResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

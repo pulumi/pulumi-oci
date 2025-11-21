@@ -16,18 +16,48 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     public static final BackupEncryptionKeyLocationDetailArgs Empty = new BackupEncryptionKeyLocationDetailArgs();
 
     /**
-     * The key OCID of a registered Azure key.
+     * Provide the key OCID of a registered AWS key.
+     * 
+     */
+    @Import(name="awsEncryptionKeyId")
+    private @Nullable Output<String> awsEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    public Optional<Output<String>> awsEncryptionKeyId() {
+        return Optional.ofNullable(this.awsEncryptionKeyId);
+    }
+
+    /**
+     * Provide the key OCID of a registered Azure key.
      * 
      */
     @Import(name="azureEncryptionKeyId")
     private @Nullable Output<String> azureEncryptionKeyId;
 
     /**
-     * @return The key OCID of a registered Azure key.
+     * @return Provide the key OCID of a registered Azure key.
      * 
      */
     public Optional<Output<String>> azureEncryptionKeyId() {
         return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+
+    /**
+     * Provide the key OCID of a registered GCP key.
+     * 
+     */
+    @Import(name="googleCloudProviderEncryptionKeyId")
+    private @Nullable Output<String> googleCloudProviderEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    public Optional<Output<String>> googleCloudProviderEncryptionKeyId() {
+        return Optional.ofNullable(this.googleCloudProviderEncryptionKeyId);
     }
 
     /**
@@ -46,14 +76,14 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     }
 
     /**
-     * Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     @Import(name="providerType")
     private @Nullable Output<String> providerType;
 
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
      * 
      */
     public Optional<Output<String>> providerType() {
@@ -63,7 +93,9 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     private BackupEncryptionKeyLocationDetailArgs() {}
 
     private BackupEncryptionKeyLocationDetailArgs(BackupEncryptionKeyLocationDetailArgs $) {
+        this.awsEncryptionKeyId = $.awsEncryptionKeyId;
         this.azureEncryptionKeyId = $.azureEncryptionKeyId;
+        this.googleCloudProviderEncryptionKeyId = $.googleCloudProviderEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
         this.providerType = $.providerType;
     }
@@ -87,7 +119,28 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param azureEncryptionKeyId The key OCID of a registered Azure key.
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyId(@Nullable Output<String> awsEncryptionKeyId) {
+            $.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
+            return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
+        }
+
+        /**
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
          * 
          * @return builder
          * 
@@ -98,13 +151,34 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param azureEncryptionKeyId The key OCID of a registered Azure key.
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
          * 
          * @return builder
          * 
          */
         public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
             return azureEncryptionKeyId(Output.of(azureEncryptionKeyId));
+        }
+
+        /**
+         * @param googleCloudProviderEncryptionKeyId Provide the key OCID of a registered GCP key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder googleCloudProviderEncryptionKeyId(@Nullable Output<String> googleCloudProviderEncryptionKeyId) {
+            $.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param googleCloudProviderEncryptionKeyId Provide the key OCID of a registered GCP key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder googleCloudProviderEncryptionKeyId(String googleCloudProviderEncryptionKeyId) {
+            return googleCloudProviderEncryptionKeyId(Output.of(googleCloudProviderEncryptionKeyId));
         }
 
         /**
@@ -129,7 +203,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
          * 
          * @return builder
          * 
@@ -140,7 +214,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure. Use &#39;AWS&#39; for creating a new database or migrating a database key to Aws. Use &#39;GCP&#39; for creating a new database or migrating a database key to Gcp.
          * 
          * @return builder
          * 

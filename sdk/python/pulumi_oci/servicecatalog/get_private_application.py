@@ -27,7 +27,7 @@ class GetPrivateApplicationResult:
     """
     A collection of values returned by getPrivateApplication.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, logo_file_base64encoded=None, logos=None, long_description=None, package_details=None, package_type=None, private_application_id=None, short_description=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, logo_file_base64encoded=None, logos=None, long_description=None, package_details=None, package_type=None, private_application_id=None, short_description=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -67,6 +67,9 @@ class GetPrivateApplicationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -170,6 +173,14 @@ class GetPrivateApplicationResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -205,6 +216,7 @@ class AwaitableGetPrivateApplicationResult(GetPrivateApplicationResult):
             private_application_id=self.private_application_id,
             short_description=self.short_description,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -247,6 +259,7 @@ def get_private_application(private_application_id: Optional[_builtins.str] = No
         private_application_id=pulumi.get(__ret__, 'private_application_id'),
         short_description=pulumi.get(__ret__, 'short_description'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_private_application_output(private_application_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -286,5 +299,6 @@ def get_private_application_output(private_application_id: Optional[pulumi.Input
         private_application_id=pulumi.get(__response__, 'private_application_id'),
         short_description=pulumi.get(__response__, 'short_description'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

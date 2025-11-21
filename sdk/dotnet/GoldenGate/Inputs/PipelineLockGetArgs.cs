@@ -19,6 +19,18 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? Message { get; set; }
 
         /// <summary>
+        /// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        /// </summary>
+        [Input("relatedResourceId")]
+        public Input<string>? RelatedResourceId { get; set; }
+
+        /// <summary>
+        /// When the lock was created.
+        /// </summary>
+        [Input("timeCreated")]
+        public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
         /// Type of the lock.
         /// </summary>
         [Input("type", required: true)]

@@ -65,9 +65,6 @@ public final class CatalogArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
@@ -75,12 +72,30 @@ public final class CatalogArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
+     */
+    public Optional<Output<Map<String,String>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) The status of a service catalog.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Map<String,String>>> freeformTags() {
-        return Optional.ofNullable(this.freeformTags);
+    @Import(name="status")
+    private @Nullable Output<String> status;
+
+    /**
+     * @return (Updatable) The status of a service catalog.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> status() {
+        return Optional.ofNullable(this.status);
     }
 
     private CatalogArgs() {}
@@ -90,6 +105,7 @@ public final class CatalogArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.status = $.status;
     }
 
     public static Builder builder() {
@@ -176,9 +192,6 @@ public final class CatalogArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -190,14 +203,38 @@ public final class CatalogArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param status (Updatable) The status of a service catalog.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,String> freeformTags) {
-            return freeformTags(Output.of(freeformTags));
+        public Builder status(@Nullable Output<String> status) {
+            $.status = status;
+            return this;
+        }
+
+        /**
+         * @param status (Updatable) The status of a service catalog.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder status(String status) {
+            return status(Output.of(status));
         }
 
         public CatalogArgs build() {

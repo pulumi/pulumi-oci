@@ -79,13 +79,13 @@ namespace Pulumi.Oci.Oci
         public Output<string> DigitalTwinAdapterId { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         /// </summary>
         [Output("digitalTwinModelId")]
         public Output<string> DigitalTwinModelId { get; private set; } = null!;
 
         /// <summary>
-        /// The URI of the digital twin model specification.
+        /// (Updatable) The URI of the digital twin model specification.
         /// </summary>
         [Output("digitalTwinModelSpecUri")]
         public Output<string> DigitalTwinModelSpecUri { get; private set; } = null!;
@@ -219,13 +219,13 @@ namespace Pulumi.Oci.Oci
         public Input<string>? DigitalTwinAdapterId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         /// </summary>
         [Input("digitalTwinModelId")]
         public Input<string>? DigitalTwinModelId { get; set; }
 
         /// <summary>
-        /// The URI of the digital twin model specification.
+        /// (Updatable) The URI of the digital twin model specification.
         /// </summary>
         [Input("digitalTwinModelSpecUri")]
         public Input<string>? DigitalTwinModelSpecUri { get; set; }
@@ -303,13 +303,13 @@ namespace Pulumi.Oci.Oci
         public Input<string>? DigitalTwinAdapterId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
         /// </summary>
         [Input("digitalTwinModelId")]
         public Input<string>? DigitalTwinModelId { get; set; }
 
         /// <summary>
-        /// The URI of the digital twin model specification.
+        /// (Updatable) The URI of the digital twin model specification.
         /// </summary>
         [Input("digitalTwinModelSpecUri")]
         public Input<string>? DigitalTwinModelSpecUri { get; set; }

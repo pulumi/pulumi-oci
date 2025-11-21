@@ -78,14 +78,14 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
     @Import(name="digitalTwinModelId")
     private @Nullable Output<String> digitalTwinModelId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
      * 
      */
     public Optional<Output<String>> digitalTwinModelId() {
@@ -93,14 +93,14 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The URI of the digital twin model specification.
+     * (Updatable) The URI of the digital twin model specification.
      * 
      */
     @Import(name="digitalTwinModelSpecUri")
     private @Nullable Output<String> digitalTwinModelSpecUri;
 
     /**
-     * @return The URI of the digital twin model specification.
+     * @return (Updatable) The URI of the digital twin model specification.
      * 
      */
     public Optional<Output<String>> digitalTwinModelSpecUri() {
@@ -291,7 +291,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param digitalTwinModelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+         * @param digitalTwinModelId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param digitalTwinModelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+         * @param digitalTwinModelId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param digitalTwinModelSpecUri The URI of the digital twin model specification.
+         * @param digitalTwinModelSpecUri (Updatable) The URI of the digital twin model specification.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class IotDigitalTwinInstanceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param digitalTwinModelSpecUri The URI of the digital twin model specification.
+         * @param digitalTwinModelSpecUri (Updatable) The URI of the digital twin model specification.
          * 
          * @return builder
          * 

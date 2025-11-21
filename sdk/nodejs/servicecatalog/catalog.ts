@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     status: serviceCatalogStatus,
  * });
  * ```
  *
@@ -72,17 +73,25 @@ export class Catalog extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The lifecycle state of the service catalog.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
+    /**
+     * (Updatable) The status of a service catalog.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly status: pulumi.Output<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
@@ -110,6 +119,8 @@ export class Catalog extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
@@ -124,7 +135,9 @@ export class Catalog extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["status"] = args?.status;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -150,17 +163,25 @@ export interface CatalogState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The lifecycle state of the service catalog.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) The status of a service catalog.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the service catalog was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
@@ -188,11 +209,15 @@ export interface CatalogArgs {
      */
     displayName: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The status of a service catalog.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    status?: pulumi.Input<string>;
 }

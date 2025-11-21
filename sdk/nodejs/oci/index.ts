@@ -30,6 +30,16 @@ export type DbmulticloudMultiCloudResourceDiscovery = import("./dbmulticloudMult
 export const DbmulticloudMultiCloudResourceDiscovery: typeof import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudMultiCloudResourceDiscovery"], () => require("./dbmulticloudMultiCloudResourceDiscovery"));
 
+export { DbmulticloudOracleDbAwsIdentityConnectorArgs, DbmulticloudOracleDbAwsIdentityConnectorState } from "./dbmulticloudOracleDbAwsIdentityConnector";
+export type DbmulticloudOracleDbAwsIdentityConnector = import("./dbmulticloudOracleDbAwsIdentityConnector").DbmulticloudOracleDbAwsIdentityConnector;
+export const DbmulticloudOracleDbAwsIdentityConnector: typeof import("./dbmulticloudOracleDbAwsIdentityConnector").DbmulticloudOracleDbAwsIdentityConnector = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAwsIdentityConnector"], () => require("./dbmulticloudOracleDbAwsIdentityConnector"));
+
+export { DbmulticloudOracleDbAwsKeyArgs, DbmulticloudOracleDbAwsKeyState } from "./dbmulticloudOracleDbAwsKey";
+export type DbmulticloudOracleDbAwsKey = import("./dbmulticloudOracleDbAwsKey").DbmulticloudOracleDbAwsKey;
+export const DbmulticloudOracleDbAwsKey: typeof import("./dbmulticloudOracleDbAwsKey").DbmulticloudOracleDbAwsKey = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAwsKey"], () => require("./dbmulticloudOracleDbAwsKey"));
+
 export { DbmulticloudOracleDbAzureBlobContainerArgs, DbmulticloudOracleDbAzureBlobContainerState } from "./dbmulticloudOracleDbAzureBlobContainer";
 export type DbmulticloudOracleDbAzureBlobContainer = import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer;
 export const DbmulticloudOracleDbAzureBlobContainer: typeof import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer = null as any;
@@ -134,6 +144,26 @@ export { GetDbmulticloudMultiCloudResourceDiscoveryArgs, GetDbmulticloudMultiClo
 export const getDbmulticloudMultiCloudResourceDiscovery: typeof import("./getDbmulticloudMultiCloudResourceDiscovery").getDbmulticloudMultiCloudResourceDiscovery = null as any;
 export const getDbmulticloudMultiCloudResourceDiscoveryOutput: typeof import("./getDbmulticloudMultiCloudResourceDiscovery").getDbmulticloudMultiCloudResourceDiscoveryOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudMultiCloudResourceDiscovery","getDbmulticloudMultiCloudResourceDiscoveryOutput"], () => require("./getDbmulticloudMultiCloudResourceDiscovery"));
+
+export { GetDbmulticloudOracleDbAwsIdentityConnectorArgs, GetDbmulticloudOracleDbAwsIdentityConnectorResult, GetDbmulticloudOracleDbAwsIdentityConnectorOutputArgs } from "./getDbmulticloudOracleDbAwsIdentityConnector";
+export const getDbmulticloudOracleDbAwsIdentityConnector: typeof import("./getDbmulticloudOracleDbAwsIdentityConnector").getDbmulticloudOracleDbAwsIdentityConnector = null as any;
+export const getDbmulticloudOracleDbAwsIdentityConnectorOutput: typeof import("./getDbmulticloudOracleDbAwsIdentityConnector").getDbmulticloudOracleDbAwsIdentityConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsIdentityConnector","getDbmulticloudOracleDbAwsIdentityConnectorOutput"], () => require("./getDbmulticloudOracleDbAwsIdentityConnector"));
+
+export { GetDbmulticloudOracleDbAwsIdentityConnectorsArgs, GetDbmulticloudOracleDbAwsIdentityConnectorsResult, GetDbmulticloudOracleDbAwsIdentityConnectorsOutputArgs } from "./getDbmulticloudOracleDbAwsIdentityConnectors";
+export const getDbmulticloudOracleDbAwsIdentityConnectors: typeof import("./getDbmulticloudOracleDbAwsIdentityConnectors").getDbmulticloudOracleDbAwsIdentityConnectors = null as any;
+export const getDbmulticloudOracleDbAwsIdentityConnectorsOutput: typeof import("./getDbmulticloudOracleDbAwsIdentityConnectors").getDbmulticloudOracleDbAwsIdentityConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsIdentityConnectors","getDbmulticloudOracleDbAwsIdentityConnectorsOutput"], () => require("./getDbmulticloudOracleDbAwsIdentityConnectors"));
+
+export { GetDbmulticloudOracleDbAwsKeyArgs, GetDbmulticloudOracleDbAwsKeyResult, GetDbmulticloudOracleDbAwsKeyOutputArgs } from "./getDbmulticloudOracleDbAwsKey";
+export const getDbmulticloudOracleDbAwsKey: typeof import("./getDbmulticloudOracleDbAwsKey").getDbmulticloudOracleDbAwsKey = null as any;
+export const getDbmulticloudOracleDbAwsKeyOutput: typeof import("./getDbmulticloudOracleDbAwsKey").getDbmulticloudOracleDbAwsKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsKey","getDbmulticloudOracleDbAwsKeyOutput"], () => require("./getDbmulticloudOracleDbAwsKey"));
+
+export { GetDbmulticloudOracleDbAwsKeysArgs, GetDbmulticloudOracleDbAwsKeysResult, GetDbmulticloudOracleDbAwsKeysOutputArgs } from "./getDbmulticloudOracleDbAwsKeys";
+export const getDbmulticloudOracleDbAwsKeys: typeof import("./getDbmulticloudOracleDbAwsKeys").getDbmulticloudOracleDbAwsKeys = null as any;
+export const getDbmulticloudOracleDbAwsKeysOutput: typeof import("./getDbmulticloudOracleDbAwsKeys").getDbmulticloudOracleDbAwsKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsKeys","getDbmulticloudOracleDbAwsKeysOutput"], () => require("./getDbmulticloudOracleDbAwsKeys"));
 
 export { GetDbmulticloudOracleDbAzureBlobContainerArgs, GetDbmulticloudOracleDbAzureBlobContainerResult, GetDbmulticloudOracleDbAzureBlobContainerOutputArgs } from "./getDbmulticloudOracleDbAzureBlobContainer";
 export const getDbmulticloudOracleDbAzureBlobContainer: typeof import("./getDbmulticloudOracleDbAzureBlobContainer").getDbmulticloudOracleDbAzureBlobContainer = null as any;
@@ -380,6 +410,41 @@ export const getMulticloudResourceAnchors: typeof import("./getMulticloudResourc
 export const getMulticloudResourceAnchorsOutput: typeof import("./getMulticloudResourceAnchors").getMulticloudResourceAnchorsOutput = null as any;
 utilities.lazyLoad(exports, ["getMulticloudResourceAnchors","getMulticloudResourceAnchorsOutput"], () => require("./getMulticloudResourceAnchors"));
 
+export { GetPsaPrivateServiceAccessArgs, GetPsaPrivateServiceAccessResult, GetPsaPrivateServiceAccessOutputArgs } from "./getPsaPrivateServiceAccess";
+export const getPsaPrivateServiceAccess: typeof import("./getPsaPrivateServiceAccess").getPsaPrivateServiceAccess = null as any;
+export const getPsaPrivateServiceAccessOutput: typeof import("./getPsaPrivateServiceAccess").getPsaPrivateServiceAccessOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPrivateServiceAccess","getPsaPrivateServiceAccessOutput"], () => require("./getPsaPrivateServiceAccess"));
+
+export { GetPsaPrivateServiceAccessesArgs, GetPsaPrivateServiceAccessesResult, GetPsaPrivateServiceAccessesOutputArgs } from "./getPsaPrivateServiceAccesses";
+export const getPsaPrivateServiceAccesses: typeof import("./getPsaPrivateServiceAccesses").getPsaPrivateServiceAccesses = null as any;
+export const getPsaPrivateServiceAccessesOutput: typeof import("./getPsaPrivateServiceAccesses").getPsaPrivateServiceAccessesOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPrivateServiceAccesses","getPsaPrivateServiceAccessesOutput"], () => require("./getPsaPrivateServiceAccesses"));
+
+export { GetPsaPsaServicesArgs, GetPsaPsaServicesResult, GetPsaPsaServicesOutputArgs } from "./getPsaPsaServices";
+export const getPsaPsaServices: typeof import("./getPsaPsaServices").getPsaPsaServices = null as any;
+export const getPsaPsaServicesOutput: typeof import("./getPsaPsaServices").getPsaPsaServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPsaServices","getPsaPsaServicesOutput"], () => require("./getPsaPsaServices"));
+
+export { GetPsaPsaWorkRequestArgs, GetPsaPsaWorkRequestResult, GetPsaPsaWorkRequestOutputArgs } from "./getPsaPsaWorkRequest";
+export const getPsaPsaWorkRequest: typeof import("./getPsaPsaWorkRequest").getPsaPsaWorkRequest = null as any;
+export const getPsaPsaWorkRequestOutput: typeof import("./getPsaPsaWorkRequest").getPsaPsaWorkRequestOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPsaWorkRequest","getPsaPsaWorkRequestOutput"], () => require("./getPsaPsaWorkRequest"));
+
+export { GetPsaPsaWorkRequestErrorsArgs, GetPsaPsaWorkRequestErrorsResult, GetPsaPsaWorkRequestErrorsOutputArgs } from "./getPsaPsaWorkRequestErrors";
+export const getPsaPsaWorkRequestErrors: typeof import("./getPsaPsaWorkRequestErrors").getPsaPsaWorkRequestErrors = null as any;
+export const getPsaPsaWorkRequestErrorsOutput: typeof import("./getPsaPsaWorkRequestErrors").getPsaPsaWorkRequestErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPsaWorkRequestErrors","getPsaPsaWorkRequestErrorsOutput"], () => require("./getPsaPsaWorkRequestErrors"));
+
+export { GetPsaPsaWorkRequestLogsArgs, GetPsaPsaWorkRequestLogsResult, GetPsaPsaWorkRequestLogsOutputArgs } from "./getPsaPsaWorkRequestLogs";
+export const getPsaPsaWorkRequestLogs: typeof import("./getPsaPsaWorkRequestLogs").getPsaPsaWorkRequestLogs = null as any;
+export const getPsaPsaWorkRequestLogsOutput: typeof import("./getPsaPsaWorkRequestLogs").getPsaPsaWorkRequestLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPsaWorkRequestLogs","getPsaPsaWorkRequestLogsOutput"], () => require("./getPsaPsaWorkRequestLogs"));
+
+export { GetPsaPsaWorkRequestsArgs, GetPsaPsaWorkRequestsResult, GetPsaPsaWorkRequestsOutputArgs } from "./getPsaPsaWorkRequests";
+export const getPsaPsaWorkRequests: typeof import("./getPsaPsaWorkRequests").getPsaPsaWorkRequests = null as any;
+export const getPsaPsaWorkRequestsOutput: typeof import("./getPsaPsaWorkRequests").getPsaPsaWorkRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getPsaPsaWorkRequests","getPsaPsaWorkRequestsOutput"], () => require("./getPsaPsaWorkRequests"));
+
 export { GetResourceAnalyticsMonitoredRegionArgs, GetResourceAnalyticsMonitoredRegionResult, GetResourceAnalyticsMonitoredRegionOutputArgs } from "./getResourceAnalyticsMonitoredRegion";
 export const getResourceAnalyticsMonitoredRegion: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegion = null as any;
 export const getResourceAnalyticsMonitoredRegionOutput: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegionOutput = null as any;
@@ -505,6 +570,11 @@ export type IotDigitalTwinInstance = import("./iotDigitalTwinInstance").IotDigit
 export const IotDigitalTwinInstance: typeof import("./iotDigitalTwinInstance").IotDigitalTwinInstance = null as any;
 utilities.lazyLoad(exports, ["IotDigitalTwinInstance"], () => require("./iotDigitalTwinInstance"));
 
+export { IotDigitalTwinInstanceInvokeRawCommandArgs, IotDigitalTwinInstanceInvokeRawCommandState } from "./iotDigitalTwinInstanceInvokeRawCommand";
+export type IotDigitalTwinInstanceInvokeRawCommand = import("./iotDigitalTwinInstanceInvokeRawCommand").IotDigitalTwinInstanceInvokeRawCommand;
+export const IotDigitalTwinInstanceInvokeRawCommand: typeof import("./iotDigitalTwinInstanceInvokeRawCommand").IotDigitalTwinInstanceInvokeRawCommand = null as any;
+utilities.lazyLoad(exports, ["IotDigitalTwinInstanceInvokeRawCommand"], () => require("./iotDigitalTwinInstanceInvokeRawCommand"));
+
 export { IotDigitalTwinModelArgs, IotDigitalTwinModelState } from "./iotDigitalTwinModel";
 export type IotDigitalTwinModel = import("./iotDigitalTwinModel").IotDigitalTwinModel;
 export const IotDigitalTwinModel: typeof import("./iotDigitalTwinModel").IotDigitalTwinModel = null as any;
@@ -520,10 +590,25 @@ export type IotIotDomain = import("./iotIotDomain").IotIotDomain;
 export const IotIotDomain: typeof import("./iotIotDomain").IotIotDomain = null as any;
 utilities.lazyLoad(exports, ["IotIotDomain"], () => require("./iotIotDomain"));
 
+export { IotIotDomainChangeDataRetentionPeriodArgs, IotIotDomainChangeDataRetentionPeriodState } from "./iotIotDomainChangeDataRetentionPeriod";
+export type IotIotDomainChangeDataRetentionPeriod = import("./iotIotDomainChangeDataRetentionPeriod").IotIotDomainChangeDataRetentionPeriod;
+export const IotIotDomainChangeDataRetentionPeriod: typeof import("./iotIotDomainChangeDataRetentionPeriod").IotIotDomainChangeDataRetentionPeriod = null as any;
+utilities.lazyLoad(exports, ["IotIotDomainChangeDataRetentionPeriod"], () => require("./iotIotDomainChangeDataRetentionPeriod"));
+
+export { IotIotDomainConfigureDataAccessArgs, IotIotDomainConfigureDataAccessState } from "./iotIotDomainConfigureDataAccess";
+export type IotIotDomainConfigureDataAccess = import("./iotIotDomainConfigureDataAccess").IotIotDomainConfigureDataAccess;
+export const IotIotDomainConfigureDataAccess: typeof import("./iotIotDomainConfigureDataAccess").IotIotDomainConfigureDataAccess = null as any;
+utilities.lazyLoad(exports, ["IotIotDomainConfigureDataAccess"], () => require("./iotIotDomainConfigureDataAccess"));
+
 export { IotIotDomainGroupArgs, IotIotDomainGroupState } from "./iotIotDomainGroup";
 export type IotIotDomainGroup = import("./iotIotDomainGroup").IotIotDomainGroup;
 export const IotIotDomainGroup: typeof import("./iotIotDomainGroup").IotIotDomainGroup = null as any;
 utilities.lazyLoad(exports, ["IotIotDomainGroup"], () => require("./iotIotDomainGroup"));
+
+export { IotIotDomainGroupConfigureDataAccessArgs, IotIotDomainGroupConfigureDataAccessState } from "./iotIotDomainGroupConfigureDataAccess";
+export type IotIotDomainGroupConfigureDataAccess = import("./iotIotDomainGroupConfigureDataAccess").IotIotDomainGroupConfigureDataAccess;
+export const IotIotDomainGroupConfigureDataAccess: typeof import("./iotIotDomainGroupConfigureDataAccess").IotIotDomainGroupConfigureDataAccess = null as any;
+utilities.lazyLoad(exports, ["IotIotDomainGroupConfigureDataAccess"], () => require("./iotIotDomainGroupConfigureDataAccess"));
 
 export { ManagedKafkaKafkaClusterArgs, ManagedKafkaKafkaClusterState } from "./managedKafkaKafkaCluster";
 export type ManagedKafkaKafkaCluster = import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster;
@@ -539,6 +624,11 @@ export { ManagedKafkaKafkaClusterSuperusersManagementArgs, ManagedKafkaKafkaClus
 export type ManagedKafkaKafkaClusterSuperusersManagement = import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement;
 export const ManagedKafkaKafkaClusterSuperusersManagement: typeof import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterSuperusersManagement"], () => require("./managedKafkaKafkaClusterSuperusersManagement"));
+
+export { PsaPrivateServiceAccessArgs, PsaPrivateServiceAccessState } from "./psaPrivateServiceAccess";
+export type PsaPrivateServiceAccess = import("./psaPrivateServiceAccess").PsaPrivateServiceAccess;
+export const PsaPrivateServiceAccess: typeof import("./psaPrivateServiceAccess").PsaPrivateServiceAccess = null as any;
+utilities.lazyLoad(exports, ["PsaPrivateServiceAccess"], () => require("./psaPrivateServiceAccess"));
 
 export { ResourceAnalyticsMonitoredRegionArgs, ResourceAnalyticsMonitoredRegionState } from "./resourceAnalyticsMonitoredRegion";
 export type ResourceAnalyticsMonitoredRegion = import("./resourceAnalyticsMonitoredRegion").ResourceAnalyticsMonitoredRegion;
@@ -575,6 +665,10 @@ const _module = {
                 return new ApiaccesscontrolPrivilegedApiRequest(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
                 return new DbmulticloudMultiCloudResourceDiscovery(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
+                return new DbmulticloudOracleDbAwsIdentityConnector(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey":
+                return new DbmulticloudOracleDbAwsKey(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
                 return new DbmulticloudOracleDbAzureBlobContainer(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
@@ -595,20 +689,30 @@ const _module = {
                 return new IotDigitalTwinAdapter(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
                 return new IotDigitalTwinInstance(name, <any>undefined, { urn })
+            case "oci:oci/iotDigitalTwinInstanceInvokeRawCommand:IotDigitalTwinInstanceInvokeRawCommand":
+                return new IotDigitalTwinInstanceInvokeRawCommand(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinModel:IotDigitalTwinModel":
                 return new IotDigitalTwinModel(name, <any>undefined, { urn })
             case "oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship":
                 return new IotDigitalTwinRelationship(name, <any>undefined, { urn })
             case "oci:oci/iotIotDomain:IotIotDomain":
                 return new IotIotDomain(name, <any>undefined, { urn })
+            case "oci:oci/iotIotDomainChangeDataRetentionPeriod:IotIotDomainChangeDataRetentionPeriod":
+                return new IotIotDomainChangeDataRetentionPeriod(name, <any>undefined, { urn })
+            case "oci:oci/iotIotDomainConfigureDataAccess:IotIotDomainConfigureDataAccess":
+                return new IotIotDomainConfigureDataAccess(name, <any>undefined, { urn })
             case "oci:oci/iotIotDomainGroup:IotIotDomainGroup":
                 return new IotIotDomainGroup(name, <any>undefined, { urn })
+            case "oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess":
+                return new IotIotDomainGroupConfigureDataAccess(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
                 return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
                 return new ManagedKafkaKafkaClusterConfig(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
                 return new ManagedKafkaKafkaClusterSuperusersManagement(name, <any>undefined, { urn })
+            case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
+                return new PsaPrivateServiceAccess(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
                 return new ResourceAnalyticsMonitoredRegion(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
@@ -627,6 +731,8 @@ pulumi.runtime.registerResourceModule("oci", "oci/apiPlatformApiPlatformInstance
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiControl", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsIdentityConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKey", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobContainer", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobMount", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureConnector", _module)
@@ -637,13 +743,18 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing
 pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstanceInvokeRawCommand", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinModel", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinRelationship", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomain", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainChangeDataRetentionPeriod", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainConfigureDataAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroupConfigureDataAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/psaPrivateServiceAccess", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsMonitoredRegion", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement", _module)

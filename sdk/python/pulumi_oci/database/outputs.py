@@ -4206,7 +4206,7 @@ class AutonomousDatabaseBackupSourceDatabaseDetail(dict):
         :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
-        :param Sequence['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param Sequence['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous Database.
         :param _builtins.str autonomous_database_name: Autonomous Database's name.
         :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
         :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
@@ -4268,7 +4268,7 @@ class AutonomousDatabaseBackupSourceDatabaseDetail(dict):
     @pulumi.getter(name="autonomousDatabaseCustomerContacts")
     def autonomous_database_customer_contacts(self) -> Optional[Sequence['outputs.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact']]:
         """
-        Customer Contacts for the Autonomous database.
+        Customer Contacts for the Autonomous Database.
         """
         return pulumi.get(self, "autonomous_database_customer_contacts")
 
@@ -7407,8 +7407,12 @@ class BackupEncryptionKeyLocationDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "azureEncryptionKeyId":
+        if key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
+        elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
+        elif key == "googleCloudProviderEncryptionKeyId":
+            suggest = "google_cloud_provider_encryption_key_id"
         elif key == "hsmPassword":
             suggest = "hsm_password"
         elif key == "providerType":
@@ -7426,28 +7430,52 @@ class BackupEncryptionKeyLocationDetail(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
+                 google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None,
                  provider_type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str azure_encryption_key_id: The key OCID of a registered Azure key.
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if google_cloud_provider_encryption_key_id is not None:
+            pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         if hsm_password is not None:
             pulumi.set(__self__, "hsm_password", hsm_password)
         if provider_type is not None:
             pulumi.set(__self__, "provider_type", provider_type)
 
     @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
     def azure_encryption_key_id(self) -> Optional[_builtins.str]:
         """
-        The key OCID of a registered Azure key.
+        Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -7461,7 +7489,7 @@ class BackupEncryptionKeyLocationDetail(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> Optional[_builtins.str]:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -9383,12 +9411,24 @@ class DatabaseDataGuardGroupMember(dict):
             suggest = "apply_lag"
         elif key == "applyRate":
             suggest = "apply_rate"
+        elif key == "dataLossExposure":
+            suggest = "data_loss_exposure"
         elif key == "databaseId":
             suggest = "database_id"
         elif key == "dbSystemId":
             suggest = "db_system_id"
+        elif key == "failoverReadiness":
+            suggest = "failover_readiness"
+        elif key == "failoverReadinessMessage":
+            suggest = "failover_readiness_message"
         elif key == "isActiveDataGuardEnabled":
             suggest = "is_active_data_guard_enabled"
+        elif key == "switchoverReadiness":
+            suggest = "switchover_readiness"
+        elif key == "switchoverReadinessMessage":
+            suggest = "switchover_readiness_message"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
         elif key == "transportLag":
             suggest = "transport_lag"
         elif key == "transportLagRefresh":
@@ -9410,20 +9450,32 @@ class DatabaseDataGuardGroupMember(dict):
     def __init__(__self__, *,
                  apply_lag: Optional[_builtins.str] = None,
                  apply_rate: Optional[_builtins.str] = None,
+                 data_loss_exposure: Optional[_builtins.str] = None,
                  database_id: Optional[_builtins.str] = None,
                  db_system_id: Optional[_builtins.str] = None,
+                 failover_readiness: Optional[_builtins.str] = None,
+                 failover_readiness_message: Optional[_builtins.str] = None,
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
                  role: Optional[_builtins.str] = None,
+                 switchover_readiness: Optional[_builtins.str] = None,
+                 switchover_readiness_message: Optional[_builtins.str] = None,
+                 time_updated: Optional[_builtins.str] = None,
                  transport_lag: Optional[_builtins.str] = None,
                  transport_lag_refresh: Optional[_builtins.str] = None,
                  transport_type: Optional[_builtins.str] = None):
         """
         :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
         :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
+        :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+        :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
         :param _builtins.str transport_lag_refresh: The date and time when last redo transport has been done.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -9435,14 +9487,26 @@ class DatabaseDataGuardGroupMember(dict):
             pulumi.set(__self__, "apply_lag", apply_lag)
         if apply_rate is not None:
             pulumi.set(__self__, "apply_rate", apply_rate)
+        if data_loss_exposure is not None:
+            pulumi.set(__self__, "data_loss_exposure", data_loss_exposure)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if failover_readiness is not None:
+            pulumi.set(__self__, "failover_readiness", failover_readiness)
+        if failover_readiness_message is not None:
+            pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         if role is not None:
             pulumi.set(__self__, "role", role)
+        if switchover_readiness is not None:
+            pulumi.set(__self__, "switchover_readiness", switchover_readiness)
+        if switchover_readiness_message is not None:
+            pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
         if transport_lag is not None:
             pulumi.set(__self__, "transport_lag", transport_lag)
         if transport_lag_refresh is not None:
@@ -9467,6 +9531,14 @@ class DatabaseDataGuardGroupMember(dict):
         return pulumi.get(self, "apply_rate")
 
     @_builtins.property
+    @pulumi.getter(name="dataLossExposure")
+    def data_loss_exposure(self) -> Optional[_builtins.str]:
+        """
+        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        """
+        return pulumi.get(self, "data_loss_exposure")
+
+    @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[_builtins.str]:
         """
@@ -9483,6 +9555,22 @@ class DatabaseDataGuardGroupMember(dict):
         return pulumi.get(self, "db_system_id")
 
     @_builtins.property
+    @pulumi.getter(name="failoverReadiness")
+    def failover_readiness(self) -> Optional[_builtins.str]:
+        """
+        The failover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "failover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="failoverReadinessMessage")
+    def failover_readiness_message(self) -> Optional[_builtins.str]:
+        """
+        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        """
+        return pulumi.get(self, "failover_readiness_message")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
         """
@@ -9497,6 +9585,30 @@ class DatabaseDataGuardGroupMember(dict):
         The role of the reporting database in this Data Guard association.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadiness")
+    def switchover_readiness(self) -> Optional[_builtins.str]:
+        """
+        The switchover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "switchover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadinessMessage")
+    def switchover_readiness_message(self) -> Optional[_builtins.str]:
+        """
+        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        """
+        return pulumi.get(self, "switchover_readiness_message")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time when the last successful Data Guard refresh occurred.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter(name="transportLag")
@@ -10243,8 +10355,12 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
         suggest = None
         if key == "providerType":
             suggest = "provider_type"
+        elif key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
         elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
+        elif key == "googleCloudProviderEncryptionKeyId":
+            suggest = "google_cloud_provider_encryption_key_id"
         elif key == "hsmPassword":
             suggest = "hsm_password"
 
@@ -10261,16 +10377,24 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
 
     def __init__(__self__, *,
                  provider_type: _builtins.str,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
+                 google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None):
         """
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         """
         pulumi.set(__self__, "provider_type", provider_type)
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if google_cloud_provider_encryption_key_id is not None:
+            pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         if hsm_password is not None:
             pulumi.set(__self__, "hsm_password", hsm_password)
 
@@ -10278,9 +10402,17 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -10289,6 +10421,14 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
         Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -10354,10 +10494,10 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "hsmPassword":
-            suggest = "hsm_password"
-        elif key == "providerType":
+        if key == "providerType":
             suggest = "provider_type"
+        elif key == "hsmPassword":
+            suggest = "hsm_password"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseSourceEncryptionKeyLocationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -10371,30 +10511,31 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 hsm_password: _builtins.str,
-                 provider_type: _builtins.str):
+                 provider_type: _builtins.str,
+                 hsm_password: Optional[_builtins.str] = None):
         """
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
-        pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
-
-    @_builtins.property
-    @pulumi.getter(name="hsmPassword")
-    def hsm_password(self) -> _builtins.str:
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-        return pulumi.get(self, "hsm_password")
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
 
     @_builtins.property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[_builtins.str]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
 
 
 @pulumi.output_type
@@ -10425,8 +10566,8 @@ class DatabaseDatabaseStorageSizeDetails(dict):
                  reco_storage_size_in_gbs: _builtins.int,
                  redo_log_storage_size_in_gbs: Optional[_builtins.int] = None):
         """
-        :param _builtins.int data_storage_size_in_gb: (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
-        :param _builtins.int reco_storage_size_in_gbs: (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
         :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
         """
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -10438,7 +10579,7 @@ class DatabaseDatabaseStorageSizeDetails(dict):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> _builtins.int:
         """
-        (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        The DATA storage size, in gigabytes, that is applicable for the database.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -10446,7 +10587,7 @@ class DatabaseDatabaseStorageSizeDetails(dict):
     @pulumi.getter(name="recoStorageSizeInGbs")
     def reco_storage_size_in_gbs(self) -> _builtins.int:
         """
-        (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        The RECO storage size, in gigabytes, that is applicable for the database.
         """
         return pulumi.get(self, "reco_storage_size_in_gbs")
 
@@ -11090,7 +11231,7 @@ class DatabaseSnapshotStandbyDbBackupConfig(dict):
         :param _builtins.str auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param _builtins.str auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param _builtins.str auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param _builtins.str backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param Sequence['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs'] backup_destination_details: Backup destination details.
         :param _builtins.int recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param _builtins.bool run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -11148,7 +11289,7 @@ class DatabaseSnapshotStandbyDbBackupConfig(dict):
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[_builtins.str]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -11464,12 +11605,24 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
             suggest = "apply_lag"
         elif key == "applyRate":
             suggest = "apply_rate"
+        elif key == "dataLossExposure":
+            suggest = "data_loss_exposure"
         elif key == "databaseId":
             suggest = "database_id"
         elif key == "dbSystemId":
             suggest = "db_system_id"
+        elif key == "failoverReadiness":
+            suggest = "failover_readiness"
+        elif key == "failoverReadinessMessage":
+            suggest = "failover_readiness_message"
         elif key == "isActiveDataGuardEnabled":
             suggest = "is_active_data_guard_enabled"
+        elif key == "switchoverReadiness":
+            suggest = "switchover_readiness"
+        elif key == "switchoverReadinessMessage":
+            suggest = "switchover_readiness_message"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
         elif key == "transportLag":
             suggest = "transport_lag"
         elif key == "transportLagRefresh":
@@ -11491,20 +11644,32 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
     def __init__(__self__, *,
                  apply_lag: Optional[_builtins.str] = None,
                  apply_rate: Optional[_builtins.str] = None,
+                 data_loss_exposure: Optional[_builtins.str] = None,
                  database_id: Optional[_builtins.str] = None,
                  db_system_id: Optional[_builtins.str] = None,
+                 failover_readiness: Optional[_builtins.str] = None,
+                 failover_readiness_message: Optional[_builtins.str] = None,
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
                  role: Optional[_builtins.str] = None,
+                 switchover_readiness: Optional[_builtins.str] = None,
+                 switchover_readiness_message: Optional[_builtins.str] = None,
+                 time_updated: Optional[_builtins.str] = None,
                  transport_lag: Optional[_builtins.str] = None,
                  transport_lag_refresh: Optional[_builtins.str] = None,
                  transport_type: Optional[_builtins.str] = None):
         """
         :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
         :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
+        :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+        :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
         :param _builtins.str transport_lag_refresh: The date and time when last redo transport has been done.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -11516,14 +11681,26 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
             pulumi.set(__self__, "apply_lag", apply_lag)
         if apply_rate is not None:
             pulumi.set(__self__, "apply_rate", apply_rate)
+        if data_loss_exposure is not None:
+            pulumi.set(__self__, "data_loss_exposure", data_loss_exposure)
         if database_id is not None:
             pulumi.set(__self__, "database_id", database_id)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if failover_readiness is not None:
+            pulumi.set(__self__, "failover_readiness", failover_readiness)
+        if failover_readiness_message is not None:
+            pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         if role is not None:
             pulumi.set(__self__, "role", role)
+        if switchover_readiness is not None:
+            pulumi.set(__self__, "switchover_readiness", switchover_readiness)
+        if switchover_readiness_message is not None:
+            pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
         if transport_lag is not None:
             pulumi.set(__self__, "transport_lag", transport_lag)
         if transport_lag_refresh is not None:
@@ -11548,6 +11725,14 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
         return pulumi.get(self, "apply_rate")
 
     @_builtins.property
+    @pulumi.getter(name="dataLossExposure")
+    def data_loss_exposure(self) -> Optional[_builtins.str]:
+        """
+        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        """
+        return pulumi.get(self, "data_loss_exposure")
+
+    @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> Optional[_builtins.str]:
         """
@@ -11564,6 +11749,22 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
         return pulumi.get(self, "db_system_id")
 
     @_builtins.property
+    @pulumi.getter(name="failoverReadiness")
+    def failover_readiness(self) -> Optional[_builtins.str]:
+        """
+        The failover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "failover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="failoverReadinessMessage")
+    def failover_readiness_message(self) -> Optional[_builtins.str]:
+        """
+        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        """
+        return pulumi.get(self, "failover_readiness_message")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
         """
@@ -11578,6 +11779,30 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
         The role of the reporting database in this Data Guard association.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadiness")
+    def switchover_readiness(self) -> Optional[_builtins.str]:
+        """
+        The switchover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "switchover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadinessMessage")
+    def switchover_readiness_message(self) -> Optional[_builtins.str]:
+        """
+        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        """
+        return pulumi.get(self, "switchover_readiness_message")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time when the last successful Data Guard refresh occurred.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter(name="transportLag")
@@ -12753,8 +12978,12 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
         suggest = None
         if key == "providerType":
             suggest = "provider_type"
+        elif key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
         elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
+        elif key == "googleCloudProviderEncryptionKeyId":
+            suggest = "google_cloud_provider_encryption_key_id"
         elif key == "hsmPassword":
             suggest = "hsm_password"
 
@@ -12771,7 +13000,9 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
 
     def __init__(__self__, *,
                  provider_type: _builtins.str,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
+                 google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None):
         """
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
@@ -12779,8 +13010,12 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         """
         pulumi.set(__self__, "provider_type", provider_type)
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if google_cloud_provider_encryption_key_id is not None:
+            pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         if hsm_password is not None:
             pulumi.set(__self__, "hsm_password", hsm_password)
 
@@ -12793,12 +13028,22 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
         return pulumi.get(self, "provider_type")
 
     @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
     def azure_encryption_key_id(self) -> Optional[_builtins.str]:
         """
         Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -25342,7 +25587,7 @@ class GetAutonomousDatabaseBackupSourceDatabaseDetailResult(dict):
         :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
-        :param Sequence['GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param Sequence['GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous Database.
         :param _builtins.str autonomous_database_name: Autonomous Database's name.
         :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
         :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
@@ -25396,7 +25641,7 @@ class GetAutonomousDatabaseBackupSourceDatabaseDetailResult(dict):
     @pulumi.getter(name="autonomousDatabaseCustomerContacts")
     def autonomous_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult']:
         """
-        Customer Contacts for the Autonomous database.
+        Customer Contacts for the Autonomous Database.
         """
         return pulumi.get(self, "autonomous_database_customer_contacts")
 
@@ -25876,7 +26121,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailRe
         :param _builtins.str autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param _builtins.str autonomous_container_database_name: Autonomous Container Database name.
-        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param Sequence['GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs'] autonomous_database_customer_contacts: Customer Contacts for the Autonomous Database.
         :param _builtins.str autonomous_database_name: Autonomous Database's name.
         :param _builtins.str autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
         :param _builtins.str db_workload: The Autonomous Database workload type. The following values are valid:
@@ -25930,7 +26175,7 @@ class GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailRe
     @pulumi.getter(name="autonomousDatabaseCustomerContacts")
     def autonomous_database_customer_contacts(self) -> Sequence['outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactResult']:
         """
-        Customer Contacts for the Autonomous database.
+        Customer Contacts for the Autonomous Database.
         """
         return pulumi.get(self, "autonomous_database_customer_contacts")
 
@@ -38278,17 +38523,31 @@ class GetBackupsBackupResult(dict):
 @pulumi.output_type
 class GetBackupsBackupEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -38297,6 +38556,14 @@ class GetBackupsBackupEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -38310,7 +38577,7 @@ class GetBackupsBackupEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -43081,20 +43348,32 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
     def __init__(__self__, *,
                  apply_lag: _builtins.str,
                  apply_rate: _builtins.str,
+                 data_loss_exposure: _builtins.str,
                  database_id: _builtins.str,
                  db_system_id: _builtins.str,
+                 failover_readiness: _builtins.str,
+                 failover_readiness_message: _builtins.str,
                  is_active_data_guard_enabled: _builtins.bool,
                  role: _builtins.str,
+                 switchover_readiness: _builtins.str,
+                 switchover_readiness_message: _builtins.str,
+                 time_updated: _builtins.str,
                  transport_lag: _builtins.str,
                  transport_lag_refresh: _builtins.str,
                  transport_type: _builtins.str):
         """
         :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
         :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
+        :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+        :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
         :param _builtins.str transport_lag_refresh: The date and time when last redo transport has been done.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -43104,10 +43383,16 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         """
         pulumi.set(__self__, "apply_lag", apply_lag)
         pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "data_loss_exposure", data_loss_exposure)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "failover_readiness", failover_readiness)
+        pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "switchover_readiness", switchover_readiness)
+        pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
+        pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "transport_lag", transport_lag)
         pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
         pulumi.set(__self__, "transport_type", transport_type)
@@ -43129,6 +43414,14 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "apply_rate")
 
     @_builtins.property
+    @pulumi.getter(name="dataLossExposure")
+    def data_loss_exposure(self) -> _builtins.str:
+        """
+        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        """
+        return pulumi.get(self, "data_loss_exposure")
+
+    @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> _builtins.str:
         """
@@ -43145,6 +43438,22 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @_builtins.property
+    @pulumi.getter(name="failoverReadiness")
+    def failover_readiness(self) -> _builtins.str:
+        """
+        The failover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "failover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="failoverReadinessMessage")
+    def failover_readiness_message(self) -> _builtins.str:
+        """
+        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        """
+        return pulumi.get(self, "failover_readiness_message")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> _builtins.bool:
         """
@@ -43159,6 +43468,30 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         The role of the reporting database in this Data Guard association.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadiness")
+    def switchover_readiness(self) -> _builtins.str:
+        """
+        The switchover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "switchover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadinessMessage")
+    def switchover_readiness_message(self) -> _builtins.str:
+        """
+        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        """
+        return pulumi.get(self, "switchover_readiness_message")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the last successful Data Guard refresh occurred.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter(name="transportLag")
@@ -43673,17 +44006,31 @@ class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
 @pulumi.output_type
 class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -43692,6 +44039,14 @@ class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -43705,7 +44060,7 @@ class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -43746,7 +44101,7 @@ class GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
                  provider_type: _builtins.str):
         """
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
@@ -43763,7 +44118,7 @@ class GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -47332,20 +47687,32 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
     def __init__(__self__, *,
                  apply_lag: _builtins.str,
                  apply_rate: _builtins.str,
+                 data_loss_exposure: _builtins.str,
                  database_id: _builtins.str,
                  db_system_id: _builtins.str,
+                 failover_readiness: _builtins.str,
+                 failover_readiness_message: _builtins.str,
                  is_active_data_guard_enabled: _builtins.bool,
                  role: _builtins.str,
+                 switchover_readiness: _builtins.str,
+                 switchover_readiness_message: _builtins.str,
+                 time_updated: _builtins.str,
                  transport_lag: _builtins.str,
                  transport_lag_refresh: _builtins.str,
                  transport_type: _builtins.str):
         """
         :param _builtins.str apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
         :param _builtins.str apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
+        :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+        :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
         :param _builtins.str transport_lag_refresh: The date and time when last redo transport has been done.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -47355,10 +47722,16 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         """
         pulumi.set(__self__, "apply_lag", apply_lag)
         pulumi.set(__self__, "apply_rate", apply_rate)
+        pulumi.set(__self__, "data_loss_exposure", data_loss_exposure)
         pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "failover_readiness", failover_readiness)
+        pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
         pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "switchover_readiness", switchover_readiness)
+        pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
+        pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "transport_lag", transport_lag)
         pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
         pulumi.set(__self__, "transport_type", transport_type)
@@ -47380,6 +47753,14 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "apply_rate")
 
     @_builtins.property
+    @pulumi.getter(name="dataLossExposure")
+    def data_loss_exposure(self) -> _builtins.str:
+        """
+        The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
+        """
+        return pulumi.get(self, "data_loss_exposure")
+
+    @_builtins.property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> _builtins.str:
         """
@@ -47396,6 +47777,22 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @_builtins.property
+    @pulumi.getter(name="failoverReadiness")
+    def failover_readiness(self) -> _builtins.str:
+        """
+        The failover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "failover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="failoverReadinessMessage")
+    def failover_readiness_message(self) -> _builtins.str:
+        """
+        The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        """
+        return pulumi.get(self, "failover_readiness_message")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> _builtins.bool:
         """
@@ -47410,6 +47807,30 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         The role of the reporting database in this Data Guard association.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadiness")
+    def switchover_readiness(self) -> _builtins.str:
+        """
+        The switchover readiness status of the Data Guard member.
+        """
+        return pulumi.get(self, "switchover_readiness")
+
+    @_builtins.property
+    @pulumi.getter(name="switchoverReadinessMessage")
+    def switchover_readiness_message(self) -> _builtins.str:
+        """
+        The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
+        """
+        return pulumi.get(self, "switchover_readiness_message")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the last successful Data Guard refresh occurred.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter(name="transportLag")
@@ -47920,17 +48341,31 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult(di
 @pulumi.output_type
 class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -47939,6 +48374,14 @@ class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered Azure key.
         """
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -47952,7 +48395,7 @@ class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -47993,7 +48436,7 @@ class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
                  provider_type: _builtins.str):
         """
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
@@ -48010,7 +48453,7 @@ class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
-        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
 
@@ -48732,17 +49175,31 @@ class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
 @pulumi.output_type
 class GetDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
     def azure_encryption_key_id(self) -> _builtins.str:
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -49682,17 +50139,31 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
 @pulumi.output_type
 class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
     def azure_encryption_key_id(self) -> _builtins.str:
         return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")

@@ -29,6 +29,9 @@ class GatewayArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4address_configuration: Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']] = None,
+                 ipv6address_configuration: Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -47,6 +50,9 @@ class GatewayArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        :param pulumi.Input['GatewayIpv4addressConfigurationArgs'] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input['GatewayIpv6addressConfigurationArgs'] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
         :param pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
         :param pulumi.Input['GatewayResponseCacheDetailsArgs'] response_cache_details: (Updatable) Base Gateway response cache.
@@ -64,6 +70,12 @@ class GatewayArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ip_mode is not None:
+            pulumi.set(__self__, "ip_mode", ip_mode)
+        if ipv4address_configuration is not None:
+            pulumi.set(__self__, "ipv4address_configuration", ipv4address_configuration)
+        if ipv6address_configuration is not None:
+            pulumi.set(__self__, "ipv6address_configuration", ipv6address_configuration)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if locks is not None:
@@ -174,6 +186,42 @@ class GatewayArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="ipMode")
+    def ip_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        """
+        return pulumi.get(self, "ip_mode")
+
+    @ip_mode.setter
+    def ip_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4addressConfiguration")
+    def ipv4address_configuration(self) -> Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']]:
+        """
+        IPv4 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv4address_configuration")
+
+    @ipv4address_configuration.setter
+    def ipv4address_configuration(self, value: Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']]):
+        pulumi.set(self, "ipv4address_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressConfiguration")
+    def ipv6address_configuration(self) -> Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']]:
+        """
+        IPv6 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv6address_configuration")
+
+    @ipv6address_configuration.setter
+    def ipv6address_configuration(self, value: Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']]):
+        pulumi.set(self, "ipv6address_configuration", value)
+
+    @_builtins.property
     @pulumi.getter(name="isLockOverride")
     def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
@@ -231,6 +279,9 @@ class _GatewayState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayIpAddressArgs']]]] = None,
+                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4address_configuration: Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']] = None,
+                 ipv6address_configuration: Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]] = None,
@@ -252,6 +303,9 @@ class _GatewayState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: The hostname for APIs deployed on the gateway.
         :param pulumi.Input[Sequence[pulumi.Input['GatewayIpAddressArgs']]] ip_addresses: An array of IP addresses associated with the gateway.
+        :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        :param pulumi.Input['GatewayIpv4addressConfigurationArgs'] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input['GatewayIpv6addressConfigurationArgs'] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -284,6 +338,12 @@ class _GatewayState:
             pulumi.set(__self__, "hostname", hostname)
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if ip_mode is not None:
+            pulumi.set(__self__, "ip_mode", ip_mode)
+        if ipv4address_configuration is not None:
+            pulumi.set(__self__, "ipv4address_configuration", ipv4address_configuration)
+        if ipv6address_configuration is not None:
+            pulumi.set(__self__, "ipv6address_configuration", ipv6address_configuration)
         if is_lock_override is not None:
             pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
@@ -412,6 +472,42 @@ class _GatewayState:
     @ip_addresses.setter
     def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayIpAddressArgs']]]]):
         pulumi.set(self, "ip_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipMode")
+    def ip_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        """
+        return pulumi.get(self, "ip_mode")
+
+    @ip_mode.setter
+    def ip_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4addressConfiguration")
+    def ipv4address_configuration(self) -> Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']]:
+        """
+        IPv4 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv4address_configuration")
+
+    @ipv4address_configuration.setter
+    def ipv4address_configuration(self, value: Optional[pulumi.Input['GatewayIpv4addressConfigurationArgs']]):
+        pulumi.set(self, "ipv4address_configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressConfiguration")
+    def ipv6address_configuration(self) -> Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']]:
+        """
+        IPv6 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv6address_configuration")
+
+    @ipv6address_configuration.setter
+    def ipv6address_configuration(self, value: Optional[pulumi.Input['GatewayIpv6addressConfigurationArgs']]):
+        pulumi.set(self, "ipv6address_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
@@ -548,6 +644,9 @@ class Gateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4address_configuration: Optional[pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
+                 ipv6address_configuration: Optional[pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -577,6 +676,14 @@ class Gateway(pulumi.CustomResource):
             display_name=gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
+            },
+            ip_mode=gateway_ip_mode,
+            ipv4address_configuration={
+                "reserved_ip_ids": gateway_ipv4address_configuration_reserved_ip_ids,
+            },
+            ipv6address_configuration={
+                "addresses": gateway_ipv6address_configuration_addresses,
+                "subnet_cidrs": gateway_ipv6address_configuration_subnet_cidrs,
             },
             locks=[{
                 "type": gateway_locks_type,
@@ -616,6 +723,9 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         :param pulumi.Input[_builtins.str] endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
         :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
         :param pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']] response_cache_details: (Updatable) Base Gateway response cache.
@@ -654,6 +764,14 @@ class Gateway(pulumi.CustomResource):
             display_name=gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
+            },
+            ip_mode=gateway_ip_mode,
+            ipv4address_configuration={
+                "reserved_ip_ids": gateway_ipv4address_configuration_reserved_ip_ids,
+            },
+            ipv6address_configuration={
+                "addresses": gateway_ipv6address_configuration_addresses,
+                "subnet_cidrs": gateway_ipv6address_configuration_subnet_cidrs,
             },
             locks=[{
                 "type": gateway_locks_type,
@@ -706,6 +824,9 @@ class Gateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 ipv4address_configuration: Optional[pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
+                 ipv6address_configuration: Optional[pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -731,6 +852,9 @@ class Gateway(pulumi.CustomResource):
                 raise TypeError("Missing required property 'endpoint_type'")
             __props__.__dict__["endpoint_type"] = endpoint_type
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["ip_mode"] = ip_mode
+            __props__.__dict__["ipv4address_configuration"] = ipv4address_configuration
+            __props__.__dict__["ipv6address_configuration"] = ipv6address_configuration
             __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["locks"] = locks
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
@@ -764,6 +888,9 @@ class Gateway(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]]] = None,
+            ip_mode: Optional[pulumi.Input[_builtins.str]] = None,
+            ipv4address_configuration: Optional[pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']]] = None,
+            ipv6address_configuration: Optional[pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']]] = None,
             is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
@@ -790,6 +917,9 @@ class Gateway(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: The hostname for APIs deployed on the gateway.
         :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]] ip_addresses: An array of IP addresses associated with the gateway.
+        :param pulumi.Input[_builtins.str] ip_mode: Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        :param pulumi.Input[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict']] ipv4address_configuration: IPv4 address configuration details that should be used when creating the gateway.
+        :param pulumi.Input[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict']] ipv6address_configuration: IPv6 address configuration details that should be used when creating the gateway.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -817,6 +947,9 @@ class Gateway(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["ip_addresses"] = ip_addresses
+        __props__.__dict__["ip_mode"] = ip_mode
+        __props__.__dict__["ipv4address_configuration"] = ipv4address_configuration
+        __props__.__dict__["ipv6address_configuration"] = ipv6address_configuration
         __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["locks"] = locks
@@ -900,6 +1033,30 @@ class Gateway(pulumi.CustomResource):
         An array of IP addresses associated with the gateway.
         """
         return pulumi.get(self, "ip_addresses")
+
+    @_builtins.property
+    @pulumi.getter(name="ipMode")
+    def ip_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
+        """
+        return pulumi.get(self, "ip_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4addressConfiguration")
+    def ipv4address_configuration(self) -> pulumi.Output['outputs.GatewayIpv4addressConfiguration']:
+        """
+        IPv4 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv4address_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="ipv6addressConfiguration")
+    def ipv6address_configuration(self) -> pulumi.Output['outputs.GatewayIpv6addressConfiguration']:
+        """
+        IPv6 address configuration details that should be used when creating the gateway.
+        """
+        return pulumi.get(self, "ipv6address_configuration")
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")

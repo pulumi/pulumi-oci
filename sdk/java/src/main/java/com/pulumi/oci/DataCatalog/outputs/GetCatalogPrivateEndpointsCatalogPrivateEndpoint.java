@@ -59,6 +59,11 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
      */
     private List<GetCatalogPrivateEndpointsCatalogPrivateEndpointLock> locks;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
@@ -149,6 +154,13 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
         return this.locks;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
@@ -202,6 +214,7 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
         private String id;
         private String lifecycleDetails;
         private List<GetCatalogPrivateEndpointsCatalogPrivateEndpointLock> locks;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -219,6 +232,7 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -308,6 +322,14 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
             return locks(List.of(locks));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetCatalogPrivateEndpointsCatalogPrivateEndpoint", "state");
@@ -358,6 +380,7 @@ public final class GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

@@ -126,6 +126,20 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.region);
     }
     /**
+     * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     * 
+     */
+    @Export(name="retriesConfigFile", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> retriesConfigFile;
+
+    /**
+     * @return (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
+     * 
+     */
+    public Output<Optional<String>> retriesConfigFile() {
+        return Codegen.optional(this.retriesConfigFile);
+    }
+    /**
      * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */

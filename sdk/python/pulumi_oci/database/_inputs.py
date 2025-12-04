@@ -203,10 +203,10 @@ __all__ = [
     'CloudVmClusterDataCollectionOptionsArgsDict',
     'CloudVmClusterFileSystemConfigurationDetailArgs',
     'CloudVmClusterFileSystemConfigurationDetailArgsDict',
-    'CloudVmClusterIormConfigCachArgs',
-    'CloudVmClusterIormConfigCachArgsDict',
-    'CloudVmClusterIormConfigCachDbPlanArgs',
-    'CloudVmClusterIormConfigCachDbPlanArgsDict',
+    'CloudVmClusterIormConfigCacheArgs',
+    'CloudVmClusterIormConfigCacheArgsDict',
+    'CloudVmClusterIormConfigCacheDbPlanArgs',
+    'CloudVmClusterIormConfigCacheDbPlanArgsDict',
     'CloudVmClusterIormConfigDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgsDict',
     'CloudVmClusterMultiCloudIdentityConnectorConfigArgs',
@@ -299,10 +299,10 @@ __all__ = [
     'DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
     'DbSystemDbSystemOptionsArgs',
     'DbSystemDbSystemOptionsArgsDict',
-    'DbSystemIormConfigCachArgs',
-    'DbSystemIormConfigCachArgsDict',
-    'DbSystemIormConfigCachDbPlanArgs',
-    'DbSystemIormConfigCachDbPlanArgsDict',
+    'DbSystemIormConfigCacheArgs',
+    'DbSystemIormConfigCacheArgsDict',
+    'DbSystemIormConfigCacheDbPlanArgs',
+    'DbSystemIormConfigCacheDbPlanArgsDict',
     'DbSystemMaintenanceWindowArgs',
     'DbSystemMaintenanceWindowArgsDict',
     'DbSystemMaintenanceWindowDaysOfWeekArgs',
@@ -317,10 +317,10 @@ __all__ = [
     'DbSystemMaintenanceWindowMonthArgsDict',
     'DbSystemsUpgradeDbSystemOptionArgs',
     'DbSystemsUpgradeDbSystemOptionArgsDict',
-    'DbSystemsUpgradeIormConfigCachArgs',
-    'DbSystemsUpgradeIormConfigCachArgsDict',
-    'DbSystemsUpgradeIormConfigCachDbPlanArgs',
-    'DbSystemsUpgradeIormConfigCachDbPlanArgsDict',
+    'DbSystemsUpgradeIormConfigCacheArgs',
+    'DbSystemsUpgradeIormConfigCacheArgsDict',
+    'DbSystemsUpgradeIormConfigCacheDbPlanArgs',
+    'DbSystemsUpgradeIormConfigCacheDbPlanArgsDict',
     'DbSystemsUpgradeMaintenanceWindowArgs',
     'DbSystemsUpgradeMaintenanceWindowArgsDict',
     'DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs',
@@ -375,10 +375,10 @@ __all__ = [
     'ExadataIormConfigDbPlanArgsDict',
     'ExadbVmClusterDataCollectionOptionsArgs',
     'ExadbVmClusterDataCollectionOptionsArgsDict',
-    'ExadbVmClusterIormConfigCachArgs',
-    'ExadbVmClusterIormConfigCachArgsDict',
-    'ExadbVmClusterIormConfigCachDbPlanArgs',
-    'ExadbVmClusterIormConfigCachDbPlanArgsDict',
+    'ExadbVmClusterIormConfigCacheArgs',
+    'ExadbVmClusterIormConfigCacheArgsDict',
+    'ExadbVmClusterIormConfigCacheDbPlanArgs',
+    'ExadbVmClusterIormConfigCacheDbPlanArgsDict',
     'ExadbVmClusterNodeConfigArgs',
     'ExadbVmClusterNodeConfigArgsDict',
     'ExadbVmClusterNodeResourceArgs',
@@ -11388,8 +11388,8 @@ class CloudVmClusterFileSystemConfigurationDetailArgs:
 
 
 if not MYPY:
-    class CloudVmClusterIormConfigCachArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgsDict']]]]
+    class CloudVmClusterIormConfigCacheArgsDict(TypedDict):
+        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgsDict']]]]
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -11406,17 +11406,17 @@ if not MYPY:
         The current state of the cloud VM cluster.
         """
 elif False:
-    CloudVmClusterIormConfigCachArgsDict: TypeAlias = Mapping[str, Any]
+    CloudVmClusterIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class CloudVmClusterIormConfigCachArgs:
+class CloudVmClusterIormConfigCacheArgs:
     def __init__(__self__, *,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  objective: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[_builtins.str] state: The current state of the cloud VM cluster.
@@ -11432,14 +11432,14 @@ class CloudVmClusterIormConfigCachArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]]]:
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgs']]]]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachDbPlanArgs']]]]):
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCacheDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
@@ -11480,7 +11480,7 @@ class CloudVmClusterIormConfigCachArgs:
 
 
 if not MYPY:
-    class CloudVmClusterIormConfigCachDbPlanArgsDict(TypedDict):
+    class CloudVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
         db_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -11494,10 +11494,10 @@ if not MYPY:
         The relative priority of this database.
         """
 elif False:
-    CloudVmClusterIormConfigCachDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+    CloudVmClusterIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class CloudVmClusterIormConfigCachDbPlanArgs:
+class CloudVmClusterIormConfigCacheDbPlanArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[_builtins.str]] = None,
@@ -18427,8 +18427,8 @@ class DbSystemDbSystemOptionsArgs:
 
 
 if not MYPY:
-    class DbSystemIormConfigCachArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgsDict']]]]
+    class DbSystemIormConfigCacheArgsDict(TypedDict):
+        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgsDict']]]]
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -18446,18 +18446,18 @@ if not MYPY:
         The current state of the DB system.
         """
 elif False:
-    DbSystemIormConfigCachArgsDict: TypeAlias = Mapping[str, Any]
+    DbSystemIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class DbSystemIormConfigCachArgs:
+class DbSystemIormConfigCacheArgs:
     def __init__(__self__, *,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgs']]]] = None,
                  db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  objective: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[_builtins.str] state: The current state of the DB system.
@@ -18475,14 +18475,14 @@ class DbSystemIormConfigCachArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]]]:
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgs']]]]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachDbPlanArgs']]]]):
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
@@ -18532,7 +18532,7 @@ class DbSystemIormConfigCachArgs:
 
 
 if not MYPY:
-    class DbSystemIormConfigCachDbPlanArgsDict(TypedDict):
+    class DbSystemIormConfigCacheDbPlanArgsDict(TypedDict):
         db_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -18546,10 +18546,10 @@ if not MYPY:
         The relative priority of this database.
         """
 elif False:
-    DbSystemIormConfigCachDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+    DbSystemIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class DbSystemIormConfigCachDbPlanArgs:
+class DbSystemIormConfigCacheDbPlanArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[_builtins.str]] = None,
@@ -19234,8 +19234,8 @@ class DbSystemsUpgradeDbSystemOptionArgs:
 
 
 if not MYPY:
-    class DbSystemsUpgradeIormConfigCachArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgsDict']]]]
+    class DbSystemsUpgradeIormConfigCacheArgsDict(TypedDict):
+        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgsDict']]]]
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -19252,17 +19252,17 @@ if not MYPY:
         The current state of the DB system.
         """
 elif False:
-    DbSystemsUpgradeIormConfigCachArgsDict: TypeAlias = Mapping[str, Any]
+    DbSystemsUpgradeIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class DbSystemsUpgradeIormConfigCachArgs:
+class DbSystemsUpgradeIormConfigCacheArgs:
     def __init__(__self__, *,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  objective: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[_builtins.str] state: The current state of the DB system.
@@ -19278,14 +19278,14 @@ class DbSystemsUpgradeIormConfigCachArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]]:
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgs']]]]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachDbPlanArgs']]]]):
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
@@ -19326,7 +19326,7 @@ class DbSystemsUpgradeIormConfigCachArgs:
 
 
 if not MYPY:
-    class DbSystemsUpgradeIormConfigCachDbPlanArgsDict(TypedDict):
+    class DbSystemsUpgradeIormConfigCacheDbPlanArgsDict(TypedDict):
         db_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -19340,10 +19340,10 @@ if not MYPY:
         The relative priority of this database.
         """
 elif False:
-    DbSystemsUpgradeIormConfigCachDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+    DbSystemsUpgradeIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class DbSystemsUpgradeIormConfigCachDbPlanArgs:
+class DbSystemsUpgradeIormConfigCacheDbPlanArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[_builtins.str]] = None,
@@ -21590,8 +21590,8 @@ class ExadbVmClusterDataCollectionOptionsArgs:
 
 
 if not MYPY:
-    class ExadbVmClusterIormConfigCachArgsDict(TypedDict):
-        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgsDict']]]]
+    class ExadbVmClusterIormConfigCacheArgsDict(TypedDict):
+        db_plans: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgsDict']]]]
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -21608,17 +21608,17 @@ if not MYPY:
         The current state of the Exadata VM cluster on Exascale Infrastructure.
         """
 elif False:
-    ExadbVmClusterIormConfigCachArgsDict: TypeAlias = Mapping[str, Any]
+    ExadbVmClusterIormConfigCacheArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class ExadbVmClusterIormConfigCachArgs:
+class ExadbVmClusterIormConfigCacheArgs:
     def __init__(__self__, *,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]] = None,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  objective: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] objective: The current value for the IORM objective. The default is `AUTO`.
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -21634,14 +21634,14 @@ class ExadbVmClusterIormConfigCachArgs:
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]]:
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgs']]]]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]]):
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
@@ -21682,7 +21682,7 @@ class ExadbVmClusterIormConfigCachArgs:
 
 
 if not MYPY:
-    class ExadbVmClusterIormConfigCachDbPlanArgsDict(TypedDict):
+    class ExadbVmClusterIormConfigCacheDbPlanArgsDict(TypedDict):
         db_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The database name. For the default `DbPlan`, the `dbName` is `default`.
@@ -21696,10 +21696,10 @@ if not MYPY:
         The relative priority of this database.
         """
 elif False:
-    ExadbVmClusterIormConfigCachDbPlanArgsDict: TypeAlias = Mapping[str, Any]
+    ExadbVmClusterIormConfigCacheDbPlanArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class ExadbVmClusterIormConfigCachDbPlanArgs:
+class ExadbVmClusterIormConfigCacheDbPlanArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  flash_cache_limit: Optional[pulumi.Input[_builtins.str]] = None,

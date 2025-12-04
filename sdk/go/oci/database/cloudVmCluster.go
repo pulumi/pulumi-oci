@@ -172,7 +172,7 @@ type CloudVmCluster struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches CloudVmClusterIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
+	IormConfigCaches CloudVmClusterIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolOutput `pulumi:"isLocalBackupEnabled"`
 	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
@@ -373,7 +373,7 @@ type cloudVmClusterState struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []CloudVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []CloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled *bool `pulumi:"isLocalBackupEnabled"`
 	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
@@ -518,7 +518,7 @@ type CloudVmClusterState struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches CloudVmClusterIormConfigCachArrayInput
+	IormConfigCaches CloudVmClusterIormConfigCacheArrayInput
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled pulumi.BoolPtrInput
 	// If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
@@ -1032,8 +1032,8 @@ func (o CloudVmClusterOutput) Hostname() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o CloudVmClusterOutput) IormConfigCaches() CloudVmClusterIormConfigCachArrayOutput {
-	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterIormConfigCachArrayOutput { return v.IormConfigCaches }).(CloudVmClusterIormConfigCachArrayOutput)
+func (o CloudVmClusterOutput) IormConfigCaches() CloudVmClusterIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterIormConfigCacheArrayOutput { return v.IormConfigCaches }).(CloudVmClusterIormConfigCacheArrayOutput)
 }
 
 // If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.

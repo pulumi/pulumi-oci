@@ -6,7 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DbSystemsUpgradeDbSystemOptionArgs;
-import com.pulumi.oci.Database.inputs.DbSystemsUpgradeIormConfigCachArgs;
+import com.pulumi.oci.Database.inputs.DbSystemsUpgradeIormConfigCacheArgs;
 import com.pulumi.oci.Database.inputs.DbSystemsUpgradeMaintenanceWindowArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -312,13 +312,13 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
      * 
      */
     @Import(name="iormConfigCaches")
-    private @Nullable Output<List<DbSystemsUpgradeIormConfigCachArgs>> iormConfigCaches;
+    private @Nullable Output<List<DbSystemsUpgradeIormConfigCacheArgs>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Optional<Output<List<DbSystemsUpgradeIormConfigCachArgs>>> iormConfigCaches() {
+    public Optional<Output<List<DbSystemsUpgradeIormConfigCacheArgs>>> iormConfigCaches() {
         return Optional.ofNullable(this.iormConfigCaches);
     }
 
@@ -1284,7 +1284,7 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(@Nullable Output<List<DbSystemsUpgradeIormConfigCachArgs>> iormConfigCaches) {
+        public Builder iormConfigCaches(@Nullable Output<List<DbSystemsUpgradeIormConfigCacheArgs>> iormConfigCaches) {
             $.iormConfigCaches = iormConfigCaches;
             return this;
         }
@@ -1295,7 +1295,7 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(List<DbSystemsUpgradeIormConfigCachArgs> iormConfigCaches) {
+        public Builder iormConfigCaches(List<DbSystemsUpgradeIormConfigCacheArgs> iormConfigCaches) {
             return iormConfigCaches(Output.of(iormConfigCaches));
         }
 
@@ -1305,7 +1305,7 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(DbSystemsUpgradeIormConfigCachArgs... iormConfigCaches) {
+        public Builder iormConfigCaches(DbSystemsUpgradeIormConfigCacheArgs... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
 

@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         public readonly string Id;
-        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachResult> IormConfigCaches;
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCacheResult> IormConfigCaches;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -296,7 +296,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
-            ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCachResult> iormConfigCaches,
+            ImmutableArray<Outputs.GetDbSystemsDbSystemIormConfigCacheResult> iormConfigCaches,
 
             string kmsKeyId,
 

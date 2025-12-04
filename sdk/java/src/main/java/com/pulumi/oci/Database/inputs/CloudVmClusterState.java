@@ -8,7 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
-import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCachArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCacheArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterMultiCloudIdentityConnectorConfigArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -420,13 +420,13 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="iormConfigCaches")
-    private @Nullable Output<List<CloudVmClusterIormConfigCachArgs>> iormConfigCaches;
+    private @Nullable Output<List<CloudVmClusterIormConfigCacheArgs>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Optional<Output<List<CloudVmClusterIormConfigCachArgs>>> iormConfigCaches() {
+    public Optional<Output<List<CloudVmClusterIormConfigCacheArgs>>> iormConfigCaches() {
         return Optional.ofNullable(this.iormConfigCaches);
     }
 
@@ -1612,7 +1612,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(@Nullable Output<List<CloudVmClusterIormConfigCachArgs>> iormConfigCaches) {
+        public Builder iormConfigCaches(@Nullable Output<List<CloudVmClusterIormConfigCacheArgs>> iormConfigCaches) {
             $.iormConfigCaches = iormConfigCaches;
             return this;
         }
@@ -1623,7 +1623,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(List<CloudVmClusterIormConfigCachArgs> iormConfigCaches) {
+        public Builder iormConfigCaches(List<CloudVmClusterIormConfigCacheArgs> iormConfigCaches) {
             return iormConfigCaches(Output.of(iormConfigCaches));
         }
 
@@ -1633,7 +1633,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(CloudVmClusterIormConfigCachArgs... iormConfigCaches) {
+        public Builder iormConfigCaches(CloudVmClusterIormConfigCacheArgs... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
 

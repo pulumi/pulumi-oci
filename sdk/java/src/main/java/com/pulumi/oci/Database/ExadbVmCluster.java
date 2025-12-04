@@ -10,7 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.ExadbVmClusterArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterState;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterDataCollectionOptions;
-import com.pulumi.oci.Database.outputs.ExadbVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.ExadbVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeResource;
 import com.pulumi.oci.Utilities;
@@ -349,14 +349,14 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", refs={List.class,ExadbVmClusterIormConfigCach.class}, tree="[0,1]")
-    private Output<List<ExadbVmClusterIormConfigCach>> iormConfigCaches;
+    @Export(name="iormConfigCaches", refs={List.class,ExadbVmClusterIormConfigCache.class}, tree="[0,1]")
+    private Output<List<ExadbVmClusterIormConfigCache>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<ExadbVmClusterIormConfigCach>> iormConfigCaches() {
+    public Output<List<ExadbVmClusterIormConfigCache>> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**

@@ -10,7 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.DbSystemsUpgradeArgs;
 import com.pulumi.oci.Database.inputs.DbSystemsUpgradeState;
 import com.pulumi.oci.Database.outputs.DbSystemsUpgradeDbSystemOption;
-import com.pulumi.oci.Database.outputs.DbSystemsUpgradeIormConfigCach;
+import com.pulumi.oci.Database.outputs.DbSystemsUpgradeIormConfigCache;
 import com.pulumi.oci.Database.outputs.DbSystemsUpgradeMaintenanceWindow;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -339,14 +339,14 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", refs={List.class,DbSystemsUpgradeIormConfigCach.class}, tree="[0,1]")
-    private Output<List<DbSystemsUpgradeIormConfigCach>> iormConfigCaches;
+    @Export(name="iormConfigCaches", refs={List.class,DbSystemsUpgradeIormConfigCache.class}, tree="[0,1]")
+    private Output<List<DbSystemsUpgradeIormConfigCache>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<DbSystemsUpgradeIormConfigCach>> iormConfigCaches() {
+    public Output<List<DbSystemsUpgradeIormConfigCache>> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**

@@ -115,7 +115,7 @@ export interface GetExadbVmClusterResult {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    readonly iormConfigCaches: outputs.Database.GetExadbVmClusterIormConfigCach[];
+    readonly iormConfigCaches: outputs.Database.GetExadbVmClusterIormConfigCache[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */

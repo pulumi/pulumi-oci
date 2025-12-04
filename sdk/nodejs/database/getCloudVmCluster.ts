@@ -144,7 +144,7 @@ export interface GetCloudVmClusterResult {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    readonly iormConfigCaches: outputs.Database.GetCloudVmClusterIormConfigCach[];
+    readonly iormConfigCaches: outputs.Database.GetCloudVmClusterIormConfigCache[];
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */

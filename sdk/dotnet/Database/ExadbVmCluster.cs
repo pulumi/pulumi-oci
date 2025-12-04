@@ -195,7 +195,7 @@ namespace Pulumi.Oci.Database
         /// The IORM settings of the Exadata DB system.
         /// </summary>
         [Output("iormConfigCaches")]
-        public Output<ImmutableArray<Outputs.ExadbVmClusterIormConfigCach>> IormConfigCaches { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.ExadbVmClusterIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -754,14 +754,14 @@ namespace Pulumi.Oci.Database
         public Input<string>? Hostname { get; set; }
 
         [Input("iormConfigCaches")]
-        private InputList<Inputs.ExadbVmClusterIormConfigCachGetArgs>? _iormConfigCaches;
+        private InputList<Inputs.ExadbVmClusterIormConfigCacheGetArgs>? _iormConfigCaches;
 
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public InputList<Inputs.ExadbVmClusterIormConfigCachGetArgs> IormConfigCaches
+        public InputList<Inputs.ExadbVmClusterIormConfigCacheGetArgs> IormConfigCaches
         {
-            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.ExadbVmClusterIormConfigCachGetArgs>());
+            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.ExadbVmClusterIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
 

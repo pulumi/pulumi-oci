@@ -8,7 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DbSystemDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbHomeArgs;
 import com.pulumi.oci.Database.inputs.DbSystemDbSystemOptionsArgs;
-import com.pulumi.oci.Database.inputs.DbSystemIormConfigCachArgs;
+import com.pulumi.oci.Database.inputs.DbSystemIormConfigCacheArgs;
 import com.pulumi.oci.Database.inputs.DbSystemMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.DbSystemMaintenanceWindowDetailsArgs;
 import java.lang.Boolean;
@@ -408,13 +408,13 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="iormConfigCaches")
-    private @Nullable Output<List<DbSystemIormConfigCachArgs>> iormConfigCaches;
+    private @Nullable Output<List<DbSystemIormConfigCacheArgs>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Optional<Output<List<DbSystemIormConfigCachArgs>>> iormConfigCaches() {
+    public Optional<Output<List<DbSystemIormConfigCacheArgs>>> iormConfigCaches() {
         return Optional.ofNullable(this.iormConfigCaches);
     }
 
@@ -1648,7 +1648,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(@Nullable Output<List<DbSystemIormConfigCachArgs>> iormConfigCaches) {
+        public Builder iormConfigCaches(@Nullable Output<List<DbSystemIormConfigCacheArgs>> iormConfigCaches) {
             $.iormConfigCaches = iormConfigCaches;
             return this;
         }
@@ -1659,7 +1659,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(List<DbSystemIormConfigCachArgs> iormConfigCaches) {
+        public Builder iormConfigCaches(List<DbSystemIormConfigCacheArgs> iormConfigCaches) {
             return iormConfigCaches(Output.of(iormConfigCaches));
         }
 
@@ -1669,7 +1669,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(DbSystemIormConfigCachArgs... iormConfigCaches) {
+        public Builder iormConfigCaches(DbSystemIormConfigCacheArgs... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
 

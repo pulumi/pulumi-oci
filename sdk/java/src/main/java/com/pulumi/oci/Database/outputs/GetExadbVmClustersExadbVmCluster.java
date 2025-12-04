@@ -6,7 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterDataCollectionOption;
-import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterNodeResource;
 import java.lang.Integer;
@@ -106,7 +106,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    private List<GetExadbVmClustersExadbVmClusterIormConfigCach> iormConfigCaches;
+    private List<GetExadbVmClustersExadbVmClusterIormConfigCache> iormConfigCaches;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
@@ -363,7 +363,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public List<GetExadbVmClustersExadbVmClusterIormConfigCach> iormConfigCaches() {
+    public List<GetExadbVmClustersExadbVmClusterIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**
@@ -576,7 +576,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         private String gridImageType;
         private String hostname;
         private String id;
-        private List<GetExadbVmClustersExadbVmClusterIormConfigCach> iormConfigCaches;
+        private List<GetExadbVmClustersExadbVmClusterIormConfigCache> iormConfigCaches;
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
         private String lifecycleDetails;
@@ -795,14 +795,14 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetExadbVmClustersExadbVmClusterIormConfigCach> iormConfigCaches) {
+        public Builder iormConfigCaches(List<GetExadbVmClustersExadbVmClusterIormConfigCache> iormConfigCaches) {
             if (iormConfigCaches == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "iormConfigCaches");
             }
             this.iormConfigCaches = iormConfigCaches;
             return this;
         }
-        public Builder iormConfigCaches(GetExadbVmClustersExadbVmClusterIormConfigCach... iormConfigCaches) {
+        public Builder iormConfigCaches(GetExadbVmClustersExadbVmClusterIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter

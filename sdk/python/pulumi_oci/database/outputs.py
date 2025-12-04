@@ -110,8 +110,8 @@ __all__ = [
     'CloudVmClusterCloudAutomationUpdateDetailsFreezePeriod',
     'CloudVmClusterDataCollectionOptions',
     'CloudVmClusterFileSystemConfigurationDetail',
-    'CloudVmClusterIormConfigCach',
-    'CloudVmClusterIormConfigCachDbPlan',
+    'CloudVmClusterIormConfigCache',
+    'CloudVmClusterIormConfigCacheDbPlan',
     'CloudVmClusterIormConfigDbPlan',
     'CloudVmClusterMultiCloudIdentityConnectorConfig',
     'DataGuardAssociationDataCollectionOptions',
@@ -158,8 +158,8 @@ __all__ = [
     'DbSystemDbHomeDatabaseDbBackupConfig',
     'DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail',
     'DbSystemDbSystemOptions',
-    'DbSystemIormConfigCach',
-    'DbSystemIormConfigCachDbPlan',
+    'DbSystemIormConfigCache',
+    'DbSystemIormConfigCacheDbPlan',
     'DbSystemMaintenanceWindow',
     'DbSystemMaintenanceWindowDaysOfWeek',
     'DbSystemMaintenanceWindowDetails',
@@ -167,8 +167,8 @@ __all__ = [
     'DbSystemMaintenanceWindowDetailsMonth',
     'DbSystemMaintenanceWindowMonth',
     'DbSystemsUpgradeDbSystemOption',
-    'DbSystemsUpgradeIormConfigCach',
-    'DbSystemsUpgradeIormConfigCachDbPlan',
+    'DbSystemsUpgradeIormConfigCache',
+    'DbSystemsUpgradeIormConfigCacheDbPlan',
     'DbSystemsUpgradeMaintenanceWindow',
     'DbSystemsUpgradeMaintenanceWindowDaysOfWeek',
     'DbSystemsUpgradeMaintenanceWindowMonth',
@@ -196,8 +196,8 @@ __all__ = [
     'ExadataInfrastructureStorageMaintenanceWindowMonth',
     'ExadataIormConfigDbPlan',
     'ExadbVmClusterDataCollectionOptions',
-    'ExadbVmClusterIormConfigCach',
-    'ExadbVmClusterIormConfigCachDbPlan',
+    'ExadbVmClusterIormConfigCache',
+    'ExadbVmClusterIormConfigCacheDbPlan',
     'ExadbVmClusterNodeConfig',
     'ExadbVmClusterNodeResource',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorage',
@@ -498,8 +498,8 @@ __all__ = [
     'GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClusterFileSystemConfigurationDetailResult',
-    'GetCloudVmClusterIormConfigCachResult',
-    'GetCloudVmClusterIormConfigCachDbPlanResult',
+    'GetCloudVmClusterIormConfigCacheResult',
+    'GetCloudVmClusterIormConfigCacheDbPlanResult',
     'GetCloudVmClusterIormConfigDbPlanResult',
     'GetCloudVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetCloudVmClustersCloudVmClusterResult',
@@ -508,8 +508,8 @@ __all__ = [
     'GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodResult',
     'GetCloudVmClustersCloudVmClusterDataCollectionOptionResult',
     'GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailResult',
-    'GetCloudVmClustersCloudVmClusterIormConfigCachResult',
-    'GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult',
+    'GetCloudVmClustersCloudVmClusterIormConfigCacheResult',
+    'GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanResult',
     'GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetCloudVmClustersFilterResult',
     'GetDataGuardAssociationDataCollectionOptionResult',
@@ -628,8 +628,8 @@ __all__ = [
     'GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigResult',
     'GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDbSystemsDbSystemDbSystemOptionResult',
-    'GetDbSystemsDbSystemIormConfigCachResult',
-    'GetDbSystemsDbSystemIormConfigCachDbPlanResult',
+    'GetDbSystemsDbSystemIormConfigCacheResult',
+    'GetDbSystemsDbSystemIormConfigCacheDbPlanResult',
     'GetDbSystemsDbSystemMaintenanceWindowResult',
     'GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekResult',
     'GetDbSystemsDbSystemMaintenanceWindowDetailResult',
@@ -660,8 +660,8 @@ __all__ = [
     'GetExadataInfrastructuresFilterResult',
     'GetExadataIormConfigDbPlanResult',
     'GetExadbVmClusterDataCollectionOptionResult',
-    'GetExadbVmClusterIormConfigCachResult',
-    'GetExadbVmClusterIormConfigCachDbPlanResult',
+    'GetExadbVmClusterIormConfigCacheResult',
+    'GetExadbVmClusterIormConfigCacheDbPlanResult',
     'GetExadbVmClusterNodeConfigResult',
     'GetExadbVmClusterNodeResourceResult',
     'GetExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntryResult',
@@ -670,8 +670,8 @@ __all__ = [
     'GetExadbVmClusterUpdatesFilterResult',
     'GetExadbVmClustersExadbVmClusterResult',
     'GetExadbVmClustersExadbVmClusterDataCollectionOptionResult',
-    'GetExadbVmClustersExadbVmClusterIormConfigCachResult',
-    'GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult',
+    'GetExadbVmClustersExadbVmClusterIormConfigCacheResult',
+    'GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult',
     'GetExadbVmClustersExadbVmClusterNodeConfigResult',
     'GetExadbVmClustersExadbVmClusterNodeResourceResult',
     'GetExadbVmClustersFilterResult',
@@ -8983,7 +8983,7 @@ class CloudVmClusterFileSystemConfigurationDetail(dict):
 
 
 @pulumi.output_type
-class CloudVmClusterIormConfigCach(dict):
+class CloudVmClusterIormConfigCache(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -8993,23 +8993,23 @@ class CloudVmClusterIormConfigCach(dict):
             suggest = "lifecycle_details"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterIormConfigCache. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        CloudVmClusterIormConfigCach.__key_warning(key)
+        CloudVmClusterIormConfigCache.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        CloudVmClusterIormConfigCach.__key_warning(key)
+        CloudVmClusterIormConfigCache.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 db_plans: Optional[Sequence['outputs.CloudVmClusterIormConfigCachDbPlan']] = None,
+                 db_plans: Optional[Sequence['outputs.CloudVmClusterIormConfigCacheDbPlan']] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  objective: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
-        :param Sequence['CloudVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['CloudVmClusterIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the cloud VM cluster.
@@ -9025,7 +9025,7 @@ class CloudVmClusterIormConfigCach(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[Sequence['outputs.CloudVmClusterIormConfigCachDbPlan']]:
+    def db_plans(self) -> Optional[Sequence['outputs.CloudVmClusterIormConfigCacheDbPlan']]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -9057,7 +9057,7 @@ class CloudVmClusterIormConfigCach(dict):
 
 
 @pulumi.output_type
-class CloudVmClusterIormConfigCachDbPlan(dict):
+class CloudVmClusterIormConfigCacheDbPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -9067,14 +9067,14 @@ class CloudVmClusterIormConfigCachDbPlan(dict):
             suggest = "flash_cache_limit"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in CloudVmClusterIormConfigCacheDbPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        CloudVmClusterIormConfigCachDbPlan.__key_warning(key)
+        CloudVmClusterIormConfigCacheDbPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        CloudVmClusterIormConfigCachDbPlan.__key_warning(key)
+        CloudVmClusterIormConfigCacheDbPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -14459,7 +14459,7 @@ class DbSystemDbSystemOptions(dict):
 
 
 @pulumi.output_type
-class DbSystemIormConfigCach(dict):
+class DbSystemIormConfigCache(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -14471,24 +14471,24 @@ class DbSystemIormConfigCach(dict):
             suggest = "lifecycle_details"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DbSystemIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemIormConfigCache. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DbSystemIormConfigCach.__key_warning(key)
+        DbSystemIormConfigCache.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DbSystemIormConfigCach.__key_warning(key)
+        DbSystemIormConfigCache.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 db_plans: Optional[Sequence['outputs.DbSystemIormConfigCachDbPlan']] = None,
+                 db_plans: Optional[Sequence['outputs.DbSystemIormConfigCacheDbPlan']] = None,
                  db_system_id: Optional[_builtins.str] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  objective: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
-        :param Sequence['DbSystemIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['DbSystemIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the DB system.
@@ -14506,7 +14506,7 @@ class DbSystemIormConfigCach(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[Sequence['outputs.DbSystemIormConfigCachDbPlan']]:
+    def db_plans(self) -> Optional[Sequence['outputs.DbSystemIormConfigCacheDbPlan']]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -14543,7 +14543,7 @@ class DbSystemIormConfigCach(dict):
 
 
 @pulumi.output_type
-class DbSystemIormConfigCachDbPlan(dict):
+class DbSystemIormConfigCacheDbPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -14553,14 +14553,14 @@ class DbSystemIormConfigCachDbPlan(dict):
             suggest = "flash_cache_limit"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DbSystemIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemIormConfigCacheDbPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DbSystemIormConfigCachDbPlan.__key_warning(key)
+        DbSystemIormConfigCacheDbPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DbSystemIormConfigCachDbPlan.__key_warning(key)
+        DbSystemIormConfigCacheDbPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -15065,7 +15065,7 @@ class DbSystemsUpgradeDbSystemOption(dict):
 
 
 @pulumi.output_type
-class DbSystemsUpgradeIormConfigCach(dict):
+class DbSystemsUpgradeIormConfigCache(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -15075,23 +15075,23 @@ class DbSystemsUpgradeIormConfigCach(dict):
             suggest = "lifecycle_details"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCache. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DbSystemsUpgradeIormConfigCach.__key_warning(key)
+        DbSystemsUpgradeIormConfigCache.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DbSystemsUpgradeIormConfigCach.__key_warning(key)
+        DbSystemsUpgradeIormConfigCache.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 db_plans: Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCachDbPlan']] = None,
+                 db_plans: Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCacheDbPlan']] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  objective: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
-        :param Sequence['DbSystemsUpgradeIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['DbSystemsUpgradeIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the DB system.
@@ -15107,7 +15107,7 @@ class DbSystemsUpgradeIormConfigCach(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCachDbPlan']]:
+    def db_plans(self) -> Optional[Sequence['outputs.DbSystemsUpgradeIormConfigCacheDbPlan']]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -15139,7 +15139,7 @@ class DbSystemsUpgradeIormConfigCach(dict):
 
 
 @pulumi.output_type
-class DbSystemsUpgradeIormConfigCachDbPlan(dict):
+class DbSystemsUpgradeIormConfigCacheDbPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -15149,14 +15149,14 @@ class DbSystemsUpgradeIormConfigCachDbPlan(dict):
             suggest = "flash_cache_limit"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemsUpgradeIormConfigCacheDbPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        DbSystemsUpgradeIormConfigCachDbPlan.__key_warning(key)
+        DbSystemsUpgradeIormConfigCacheDbPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        DbSystemsUpgradeIormConfigCachDbPlan.__key_warning(key)
+        DbSystemsUpgradeIormConfigCacheDbPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -16900,7 +16900,7 @@ class ExadbVmClusterDataCollectionOptions(dict):
 
 
 @pulumi.output_type
-class ExadbVmClusterIormConfigCach(dict):
+class ExadbVmClusterIormConfigCache(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -16910,23 +16910,23 @@ class ExadbVmClusterIormConfigCach(dict):
             suggest = "lifecycle_details"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCache. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        ExadbVmClusterIormConfigCach.__key_warning(key)
+        ExadbVmClusterIormConfigCache.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        ExadbVmClusterIormConfigCach.__key_warning(key)
+        ExadbVmClusterIormConfigCache.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 db_plans: Optional[Sequence['outputs.ExadbVmClusterIormConfigCachDbPlan']] = None,
+                 db_plans: Optional[Sequence['outputs.ExadbVmClusterIormConfigCacheDbPlan']] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  objective: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None):
         """
-        :param Sequence['ExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['ExadbVmClusterIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -16942,7 +16942,7 @@ class ExadbVmClusterIormConfigCach(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[Sequence['outputs.ExadbVmClusterIormConfigCachDbPlan']]:
+    def db_plans(self) -> Optional[Sequence['outputs.ExadbVmClusterIormConfigCacheDbPlan']]:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -16974,7 +16974,7 @@ class ExadbVmClusterIormConfigCach(dict):
 
 
 @pulumi.output_type
-class ExadbVmClusterIormConfigCachDbPlan(dict):
+class ExadbVmClusterIormConfigCacheDbPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -16984,14 +16984,14 @@ class ExadbVmClusterIormConfigCachDbPlan(dict):
             suggest = "flash_cache_limit"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCacheDbPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        ExadbVmClusterIormConfigCachDbPlan.__key_warning(key)
+        ExadbVmClusterIormConfigCacheDbPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        ExadbVmClusterIormConfigCachDbPlan.__key_warning(key)
+        ExadbVmClusterIormConfigCacheDbPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -41637,14 +41637,14 @@ class GetCloudVmClusterFileSystemConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
-class GetCloudVmClusterIormConfigCachResult(dict):
+class GetCloudVmClusterIormConfigCacheResult(dict):
     def __init__(__self__, *,
-                 db_plans: Sequence['outputs.GetCloudVmClusterIormConfigCachDbPlanResult'],
+                 db_plans: Sequence['outputs.GetCloudVmClusterIormConfigCacheDbPlanResult'],
                  lifecycle_details: _builtins.str,
                  objective: _builtins.str,
                  state: _builtins.str):
         """
-        :param Sequence['GetCloudVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['GetCloudVmClusterIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the cloud VM cluster.
@@ -41656,7 +41656,7 @@ class GetCloudVmClusterIormConfigCachResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetCloudVmClusterIormConfigCachDbPlanResult']:
+    def db_plans(self) -> Sequence['outputs.GetCloudVmClusterIormConfigCacheDbPlanResult']:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -41688,7 +41688,7 @@ class GetCloudVmClusterIormConfigCachResult(dict):
 
 
 @pulumi.output_type
-class GetCloudVmClusterIormConfigCachDbPlanResult(dict):
+class GetCloudVmClusterIormConfigCacheDbPlanResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
                  flash_cache_limit: _builtins.str,
@@ -41824,7 +41824,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  gi_version: _builtins.str,
                  hostname: _builtins.str,
                  id: _builtins.str,
-                 iorm_config_caches: Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCachResult'],
+                 iorm_config_caches: Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCacheResult'],
                  is_local_backup_enabled: _builtins.bool,
                  is_sparse_diskgroup_enabled: _builtins.bool,
                  last_update_history_entry_id: _builtins.str,
@@ -42182,7 +42182,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCachResult']:
+    def iorm_config_caches(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCacheResult']:
         return pulumi.get(self, "iorm_config_caches")
 
     @_builtins.property
@@ -42643,9 +42643,9 @@ class GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
-class GetCloudVmClustersCloudVmClusterIormConfigCachResult(dict):
+class GetCloudVmClustersCloudVmClusterIormConfigCacheResult(dict):
     def __init__(__self__, *,
-                 db_plans: Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult'],
+                 db_plans: Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanResult'],
                  lifecycle_details: _builtins.str,
                  objective: _builtins.str,
                  state: _builtins.str):
@@ -42660,7 +42660,7 @@ class GetCloudVmClustersCloudVmClusterIormConfigCachResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult']:
+    def db_plans(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanResult']:
         return pulumi.get(self, "db_plans")
 
     @_builtins.property
@@ -42686,7 +42686,7 @@ class GetCloudVmClustersCloudVmClusterIormConfigCachResult(dict):
 
 
 @pulumi.output_type
-class GetCloudVmClustersCloudVmClusterIormConfigCachDbPlanResult(dict):
+class GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
                  flash_cache_limit: _builtins.str,
@@ -52584,7 +52584,7 @@ class GetDbSystemsDbSystemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  hostname: _builtins.str,
                  id: _builtins.str,
-                 iorm_config_caches: Sequence['outputs.GetDbSystemsDbSystemIormConfigCachResult'],
+                 iorm_config_caches: Sequence['outputs.GetDbSystemsDbSystemIormConfigCacheResult'],
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
                  last_maintenance_run_id: _builtins.str,
@@ -52932,7 +52932,7 @@ class GetDbSystemsDbSystemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Sequence['outputs.GetDbSystemsDbSystemIormConfigCachResult']:
+    def iorm_config_caches(self) -> Sequence['outputs.GetDbSystemsDbSystemIormConfigCacheResult']:
         return pulumi.get(self, "iorm_config_caches")
 
     @_builtins.property
@@ -53800,9 +53800,9 @@ class GetDbSystemsDbSystemDbSystemOptionResult(dict):
 
 
 @pulumi.output_type
-class GetDbSystemsDbSystemIormConfigCachResult(dict):
+class GetDbSystemsDbSystemIormConfigCacheResult(dict):
     def __init__(__self__, *,
-                 db_plans: Sequence['outputs.GetDbSystemsDbSystemIormConfigCachDbPlanResult'],
+                 db_plans: Sequence['outputs.GetDbSystemsDbSystemIormConfigCacheDbPlanResult'],
                  db_system_id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  objective: _builtins.str,
@@ -53819,7 +53819,7 @@ class GetDbSystemsDbSystemIormConfigCachResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetDbSystemsDbSystemIormConfigCachDbPlanResult']:
+    def db_plans(self) -> Sequence['outputs.GetDbSystemsDbSystemIormConfigCacheDbPlanResult']:
         return pulumi.get(self, "db_plans")
 
     @_builtins.property
@@ -53850,7 +53850,7 @@ class GetDbSystemsDbSystemIormConfigCachResult(dict):
 
 
 @pulumi.output_type
-class GetDbSystemsDbSystemIormConfigCachDbPlanResult(dict):
+class GetDbSystemsDbSystemIormConfigCacheDbPlanResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
                  flash_cache_limit: _builtins.str,
@@ -55911,14 +55911,14 @@ class GetExadbVmClusterDataCollectionOptionResult(dict):
 
 
 @pulumi.output_type
-class GetExadbVmClusterIormConfigCachResult(dict):
+class GetExadbVmClusterIormConfigCacheResult(dict):
     def __init__(__self__, *,
-                 db_plans: Sequence['outputs.GetExadbVmClusterIormConfigCachDbPlanResult'],
+                 db_plans: Sequence['outputs.GetExadbVmClusterIormConfigCacheDbPlanResult'],
                  lifecycle_details: _builtins.str,
                  objective: _builtins.str,
                  state: _builtins.str):
         """
-        :param Sequence['GetExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['GetExadbVmClusterIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
@@ -55930,7 +55930,7 @@ class GetExadbVmClusterIormConfigCachResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetExadbVmClusterIormConfigCachDbPlanResult']:
+    def db_plans(self) -> Sequence['outputs.GetExadbVmClusterIormConfigCacheDbPlanResult']:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -55962,7 +55962,7 @@ class GetExadbVmClusterIormConfigCachResult(dict):
 
 
 @pulumi.output_type
-class GetExadbVmClusterIormConfigCachDbPlanResult(dict):
+class GetExadbVmClusterIormConfigCacheDbPlanResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
                  flash_cache_limit: _builtins.str,
@@ -56407,7 +56407,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  grid_image_type: _builtins.str,
                  hostname: _builtins.str,
                  id: _builtins.str,
-                 iorm_config_caches: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachResult'],
+                 iorm_config_caches: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheResult'],
                  last_update_history_entry_id: _builtins.str,
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
@@ -56452,7 +56452,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.str grid_image_type: The type of Grid Image
         :param _builtins.str hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
-        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCachArgs'] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCacheArgs'] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param _builtins.str license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
@@ -56664,7 +56664,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachResult']:
+    def iorm_config_caches(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheResult']:
         """
         The IORM settings of the Exadata DB system.
         """
@@ -56921,14 +56921,14 @@ class GetExadbVmClustersExadbVmClusterDataCollectionOptionResult(dict):
 
 
 @pulumi.output_type
-class GetExadbVmClustersExadbVmClusterIormConfigCachResult(dict):
+class GetExadbVmClustersExadbVmClusterIormConfigCacheResult(dict):
     def __init__(__self__, *,
-                 db_plans: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult'],
+                 db_plans: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult'],
                  lifecycle_details: _builtins.str,
                  objective: _builtins.str,
                  state: _builtins.str):
         """
-        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str objective: The current value for the IORM objective. The default is `AUTO`.
         :param _builtins.str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
@@ -56940,7 +56940,7 @@ class GetExadbVmClustersExadbVmClusterIormConfigCachResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult']:
+    def db_plans(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult']:
         """
         An array of IORM settings for all the database in the Exadata DB system.
         """
@@ -56972,7 +56972,7 @@ class GetExadbVmClustersExadbVmClusterIormConfigCachResult(dict):
 
 
 @pulumi.output_type
-class GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult(dict):
+class GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult(dict):
     def __init__(__self__, *,
                  db_name: _builtins.str,
                  flash_cache_limit: _builtins.str,

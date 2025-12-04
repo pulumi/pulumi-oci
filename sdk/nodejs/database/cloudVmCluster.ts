@@ -224,7 +224,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.CloudVmClusterIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.CloudVmClusterIormConfigCache[]>;
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */
@@ -658,7 +658,7 @@ export interface CloudVmClusterState {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigCach>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigCache>[]>;
     /**
      * If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      */

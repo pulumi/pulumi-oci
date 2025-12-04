@@ -198,7 +198,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetExadbVmClusterIormConfigCachResult> IormConfigCaches;
+        public readonly ImmutableArray<Outputs.GetExadbVmClusterIormConfigCacheResult> IormConfigCaches;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         /// </summary>
@@ -343,7 +343,7 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            ImmutableArray<Outputs.GetExadbVmClusterIormConfigCachResult> iormConfigCaches,
+            ImmutableArray<Outputs.GetExadbVmClusterIormConfigCacheResult> iormConfigCaches,
 
             string lastUpdateHistoryEntryId,
 

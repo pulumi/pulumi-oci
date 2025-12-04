@@ -6,7 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterDataCollectionOptionsArgs;
-import com.pulumi.oci.Database.inputs.ExadbVmClusterIormConfigCachArgs;
+import com.pulumi.oci.Database.inputs.ExadbVmClusterIormConfigCacheArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeConfigArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterNodeResourceArgs;
 import java.lang.Integer;
@@ -279,13 +279,13 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="iormConfigCaches")
-    private @Nullable Output<List<ExadbVmClusterIormConfigCachArgs>> iormConfigCaches;
+    private @Nullable Output<List<ExadbVmClusterIormConfigCacheArgs>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Optional<Output<List<ExadbVmClusterIormConfigCachArgs>>> iormConfigCaches() {
+    public Optional<Output<List<ExadbVmClusterIormConfigCacheArgs>>> iormConfigCaches() {
         return Optional.ofNullable(this.iormConfigCaches);
     }
 
@@ -1117,7 +1117,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(@Nullable Output<List<ExadbVmClusterIormConfigCachArgs>> iormConfigCaches) {
+        public Builder iormConfigCaches(@Nullable Output<List<ExadbVmClusterIormConfigCacheArgs>> iormConfigCaches) {
             $.iormConfigCaches = iormConfigCaches;
             return this;
         }
@@ -1128,7 +1128,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(List<ExadbVmClusterIormConfigCachArgs> iormConfigCaches) {
+        public Builder iormConfigCaches(List<ExadbVmClusterIormConfigCacheArgs> iormConfigCaches) {
             return iormConfigCaches(Output.of(iormConfigCaches));
         }
 
@@ -1138,7 +1138,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder iormConfigCaches(ExadbVmClusterIormConfigCachArgs... iormConfigCaches) {
+        public Builder iormConfigCaches(ExadbVmClusterIormConfigCacheArgs... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
 

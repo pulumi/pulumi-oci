@@ -6,7 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterDataCollectionOption;
-import com.pulumi.oci.Database.outputs.GetExadbVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClusterNodeResource;
 import java.lang.Integer;
@@ -107,7 +107,7 @@ public final class GetExadbVmClusterResult {
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    private List<GetExadbVmClusterIormConfigCach> iormConfigCaches;
+    private List<GetExadbVmClusterIormConfigCache> iormConfigCaches;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      * 
@@ -367,7 +367,7 @@ public final class GetExadbVmClusterResult {
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public List<GetExadbVmClusterIormConfigCach> iormConfigCaches() {
+    public List<GetExadbVmClusterIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**
@@ -581,7 +581,7 @@ public final class GetExadbVmClusterResult {
         private String gridImageType;
         private String hostname;
         private String id;
-        private List<GetExadbVmClusterIormConfigCach> iormConfigCaches;
+        private List<GetExadbVmClusterIormConfigCache> iormConfigCaches;
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
         private String lifecycleDetails;
@@ -809,14 +809,14 @@ public final class GetExadbVmClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetExadbVmClusterIormConfigCach> iormConfigCaches) {
+        public Builder iormConfigCaches(List<GetExadbVmClusterIormConfigCache> iormConfigCaches) {
             if (iormConfigCaches == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClusterResult", "iormConfigCaches");
             }
             this.iormConfigCaches = iormConfigCaches;
             return this;
         }
-        public Builder iormConfigCaches(GetExadbVmClusterIormConfigCach... iormConfigCaches) {
+        public Builder iormConfigCaches(GetExadbVmClusterIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter

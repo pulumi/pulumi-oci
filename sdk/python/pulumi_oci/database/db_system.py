@@ -778,7 +778,7 @@ class _DbSystemState:
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachArgs']]]] = None,
+                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -869,7 +869,7 @@ class _DbSystemState:
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1340,14 +1340,14 @@ class _DbSystemState:
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachArgs']]]]:
+    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]:
         """
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
-    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCachArgs']]]]):
+    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
 
     @_builtins.property
@@ -2221,7 +2221,7 @@ class DbSystem(pulumi.CustomResource):
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCachArgs', 'DbSystemIormConfigCachArgsDict']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict']]]]] = None,
             kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
             kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2317,7 +2317,7 @@ class DbSystem(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique, the DB system will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCachArgs', 'DbSystemIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemIormConfigCacheArgs', 'DbSystemIormConfigCacheArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -2643,7 +2643,7 @@ class DbSystem(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.DbSystemIormConfigCach']]:
+    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.DbSystemIormConfigCache']]:
         """
         The IORM settings of the Exadata DB system.
         """

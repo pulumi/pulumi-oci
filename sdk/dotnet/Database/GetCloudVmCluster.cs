@@ -227,7 +227,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetCloudVmClusterIormConfigCachResult> IormConfigCaches;
+        public readonly ImmutableArray<Outputs.GetCloudVmClusterIormConfigCacheResult> IormConfigCaches;
         /// <summary>
         /// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         /// </summary>
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.Database
 
             string id,
 
-            ImmutableArray<Outputs.GetCloudVmClusterIormConfigCachResult> iormConfigCaches,
+            ImmutableArray<Outputs.GetCloudVmClusterIormConfigCacheResult> iormConfigCaches,
 
             bool isLocalBackupEnabled,
 

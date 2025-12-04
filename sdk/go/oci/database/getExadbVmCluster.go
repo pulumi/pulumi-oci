@@ -94,7 +94,7 @@ type LookupExadbVmClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []GetExadbVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []GetExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -276,8 +276,8 @@ func (o LookupExadbVmClusterResultOutput) Id() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o LookupExadbVmClusterResultOutput) IormConfigCaches() GetExadbVmClusterIormConfigCachArrayOutput {
-	return o.ApplyT(func(v LookupExadbVmClusterResult) []GetExadbVmClusterIormConfigCach { return v.IormConfigCaches }).(GetExadbVmClusterIormConfigCachArrayOutput)
+func (o LookupExadbVmClusterResultOutput) IormConfigCaches() GetExadbVmClusterIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) []GetExadbVmClusterIormConfigCache { return v.IormConfigCaches }).(GetExadbVmClusterIormConfigCacheArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

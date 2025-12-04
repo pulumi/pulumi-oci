@@ -504,7 +504,7 @@ class _ExadbVmClusterState:
                  grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  grid_image_type: Optional[pulumi.Input[_builtins.str]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachArgs']]]] = None,
+                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]] = None,
                  last_update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -555,7 +555,7 @@ class _ExadbVmClusterState:
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -875,14 +875,14 @@ class _ExadbVmClusterState:
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachArgs']]]]:
+    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]:
         """
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
-    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachArgs']]]]):
+    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
 
     @_builtins.property
@@ -1555,7 +1555,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             grid_image_id: Optional[pulumi.Input[_builtins.str]] = None,
             grid_image_type: Optional[pulumi.Input[_builtins.str]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCachArgs', 'ExadbVmClusterIormConfigCachArgsDict']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict']]]]] = None,
             last_update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
             license_model: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1611,7 +1611,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                The maximum length of the combined hostname and domain is 63 characters.
                
                **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCachArgs', 'ExadbVmClusterIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterIormConfigCacheArgs', 'ExadbVmClusterIormConfigCacheArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -1829,7 +1829,7 @@ class ExadbVmCluster(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.ExadbVmClusterIormConfigCach']]:
+    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.ExadbVmClusterIormConfigCache']]:
         """
         The IORM settings of the Exadata DB system.
         """

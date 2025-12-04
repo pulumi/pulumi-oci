@@ -16770,8 +16770,8 @@ type GetDbSystemsDbSystem struct {
 	// The hostname for the DB system.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id               string                               `pulumi:"id"`
-	IormConfigCaches []GetDbSystemsDbSystemIormConfigCach `pulumi:"iormConfigCaches"`
+	Id               string                                `pulumi:"id"`
+	IormConfigCaches []GetDbSystemsDbSystemIormConfigCache `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
@@ -16906,8 +16906,8 @@ type GetDbSystemsDbSystemArgs struct {
 	// The hostname for the DB system.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-	Id               pulumi.StringInput                           `pulumi:"id"`
-	IormConfigCaches GetDbSystemsDbSystemIormConfigCachArrayInput `pulumi:"iormConfigCaches"`
+	Id               pulumi.StringInput                            `pulumi:"id"`
+	IormConfigCaches GetDbSystemsDbSystemIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId        pulumi.StringInput `pulumi:"kmsKeyId"`
 	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
@@ -17153,8 +17153,8 @@ func (o GetDbSystemsDbSystemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemsDbSystemOutput) IormConfigCaches() GetDbSystemsDbSystemIormConfigCachArrayOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemIormConfigCach { return v.IormConfigCaches }).(GetDbSystemsDbSystemIormConfigCachArrayOutput)
+func (o GetDbSystemsDbSystemOutput) IormConfigCaches() GetDbSystemsDbSystemIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) []GetDbSystemsDbSystemIormConfigCache { return v.IormConfigCaches }).(GetDbSystemsDbSystemIormConfigCacheArrayOutput)
 }
 
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -18441,9 +18441,9 @@ func (o GetDbSystemsDbSystemDbSystemOptionArrayOutput) Index(i pulumi.IntInput) 
 	}).(GetDbSystemsDbSystemDbSystemOptionOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCach struct {
-	DbPlans    []GetDbSystemsDbSystemIormConfigCachDbPlan `pulumi:"dbPlans"`
-	DbSystemId string                                     `pulumi:"dbSystemId"`
+type GetDbSystemsDbSystemIormConfigCache struct {
+	DbPlans    []GetDbSystemsDbSystemIormConfigCacheDbPlan `pulumi:"dbPlans"`
+	DbSystemId string                                      `pulumi:"dbSystemId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	Objective        string `pulumi:"objective"`
@@ -18451,20 +18451,20 @@ type GetDbSystemsDbSystemIormConfigCach struct {
 	State string `pulumi:"state"`
 }
 
-// GetDbSystemsDbSystemIormConfigCachInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArgs and GetDbSystemsDbSystemIormConfigCachOutput values.
-// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachInput` via:
+// GetDbSystemsDbSystemIormConfigCacheInput is an input type that accepts GetDbSystemsDbSystemIormConfigCacheArgs and GetDbSystemsDbSystemIormConfigCacheOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCacheInput` via:
 //
-//	GetDbSystemsDbSystemIormConfigCachArgs{...}
-type GetDbSystemsDbSystemIormConfigCachInput interface {
+//	GetDbSystemsDbSystemIormConfigCacheArgs{...}
+type GetDbSystemsDbSystemIormConfigCacheInput interface {
 	pulumi.Input
 
-	ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput
-	ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachOutput
+	ToGetDbSystemsDbSystemIormConfigCacheOutput() GetDbSystemsDbSystemIormConfigCacheOutput
+	ToGetDbSystemsDbSystemIormConfigCacheOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCacheOutput
 }
 
-type GetDbSystemsDbSystemIormConfigCachArgs struct {
-	DbPlans    GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
-	DbSystemId pulumi.StringInput                                 `pulumi:"dbSystemId"`
+type GetDbSystemsDbSystemIormConfigCacheArgs struct {
+	DbPlans    GetDbSystemsDbSystemIormConfigCacheDbPlanArrayInput `pulumi:"dbPlans"`
+	DbSystemId pulumi.StringInput                                  `pulumi:"dbSystemId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	Objective        pulumi.StringInput `pulumi:"objective"`
@@ -18472,205 +18472,205 @@ type GetDbSystemsDbSystemIormConfigCachArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 }
 
-func (GetDbSystemsDbSystemIormConfigCachArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCache)(nil)).Elem()
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachArgs) ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput {
-	return i.ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(context.Background())
+func (i GetDbSystemsDbSystemIormConfigCacheArgs) ToGetDbSystemsDbSystemIormConfigCacheOutput() GetDbSystemsDbSystemIormConfigCacheOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCacheOutputWithContext(context.Background())
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachArgs) ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachOutput)
+func (i GetDbSystemsDbSystemIormConfigCacheArgs) ToGetDbSystemsDbSystemIormConfigCacheOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCacheOutput)
 }
 
-// GetDbSystemsDbSystemIormConfigCachArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachArray and GetDbSystemsDbSystemIormConfigCachArrayOutput values.
-// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachArrayInput` via:
+// GetDbSystemsDbSystemIormConfigCacheArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCacheArray and GetDbSystemsDbSystemIormConfigCacheArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCacheArrayInput` via:
 //
-//	GetDbSystemsDbSystemIormConfigCachArray{ GetDbSystemsDbSystemIormConfigCachArgs{...} }
-type GetDbSystemsDbSystemIormConfigCachArrayInput interface {
+//	GetDbSystemsDbSystemIormConfigCacheArray{ GetDbSystemsDbSystemIormConfigCacheArgs{...} }
+type GetDbSystemsDbSystemIormConfigCacheArrayInput interface {
 	pulumi.Input
 
-	ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput
-	ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCacheArrayOutput() GetDbSystemsDbSystemIormConfigCacheArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCacheArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCacheArrayOutput
 }
 
-type GetDbSystemsDbSystemIormConfigCachArray []GetDbSystemsDbSystemIormConfigCachInput
+type GetDbSystemsDbSystemIormConfigCacheArray []GetDbSystemsDbSystemIormConfigCacheInput
 
-func (GetDbSystemsDbSystemIormConfigCachArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCache)(nil)).Elem()
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachArray) ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput {
-	return i.ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(context.Background())
+func (i GetDbSystemsDbSystemIormConfigCacheArray) ToGetDbSystemsDbSystemIormConfigCacheArrayOutput() GetDbSystemsDbSystemIormConfigCacheArrayOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCacheArrayOutputWithContext(context.Background())
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachArray) ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachArrayOutput)
+func (i GetDbSystemsDbSystemIormConfigCacheArray) ToGetDbSystemsDbSystemIormConfigCacheArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCacheArrayOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCachOutput struct{ *pulumi.OutputState }
+type GetDbSystemsDbSystemIormConfigCacheOutput struct{ *pulumi.OutputState }
 
-func (GetDbSystemsDbSystemIormConfigCachOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCache)(nil)).Elem()
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachOutput) ToGetDbSystemsDbSystemIormConfigCachOutput() GetDbSystemsDbSystemIormConfigCachOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) ToGetDbSystemsDbSystemIormConfigCacheOutput() GetDbSystemsDbSystemIormConfigCacheOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachOutput) ToGetDbSystemsDbSystemIormConfigCachOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) ToGetDbSystemsDbSystemIormConfigCacheOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachOutput) DbPlans() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) []GetDbSystemsDbSystemIormConfigCachDbPlan {
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) DbPlans() GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCache) []GetDbSystemsDbSystemIormConfigCacheDbPlan {
 		return v.DbPlans
-	}).(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput)
+	}).(GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput)
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachOutput) DbSystemId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.DbSystemId }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCache) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetDbSystemsDbSystemIormConfigCachOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCache) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.Objective }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCache) string { return v.Objective }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
-func (o GetDbSystemsDbSystemIormConfigCachOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCach) string { return v.State }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCache) string { return v.State }).(pulumi.StringOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+type GetDbSystemsDbSystemIormConfigCacheArrayOutput struct{ *pulumi.OutputState }
 
-func (GetDbSystemsDbSystemIormConfigCachArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCach)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCache)(nil)).Elem()
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) ToGetDbSystemsDbSystemIormConfigCachArrayOutput() GetDbSystemsDbSystemIormConfigCachArrayOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheArrayOutput) ToGetDbSystemsDbSystemIormConfigCacheArrayOutput() GetDbSystemsDbSystemIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) ToGetDbSystemsDbSystemIormConfigCachArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachArrayOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheArrayOutput) ToGetDbSystemsDbSystemIormConfigCacheArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCachOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCach {
-		return vs[0].([]GetDbSystemsDbSystemIormConfigCach)[vs[1].(int)]
-	}).(GetDbSystemsDbSystemIormConfigCachOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCacheOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCache {
+		return vs[0].([]GetDbSystemsDbSystemIormConfigCache)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemIormConfigCacheOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCachDbPlan struct {
+type GetDbSystemsDbSystemIormConfigCacheDbPlan struct {
 	DbName          string `pulumi:"dbName"`
 	FlashCacheLimit string `pulumi:"flashCacheLimit"`
 	Share           int    `pulumi:"share"`
 }
 
-// GetDbSystemsDbSystemIormConfigCachDbPlanInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArgs and GetDbSystemsDbSystemIormConfigCachDbPlanOutput values.
-// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanInput` via:
+// GetDbSystemsDbSystemIormConfigCacheDbPlanInput is an input type that accepts GetDbSystemsDbSystemIormConfigCacheDbPlanArgs and GetDbSystemsDbSystemIormConfigCacheDbPlanOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCacheDbPlanInput` via:
 //
-//	GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...}
-type GetDbSystemsDbSystemIormConfigCachDbPlanInput interface {
+//	GetDbSystemsDbSystemIormConfigCacheDbPlanArgs{...}
+type GetDbSystemsDbSystemIormConfigCacheDbPlanInput interface {
 	pulumi.Input
 
-	ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput
-	ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput
+	ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanOutput
+	ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanOutput
 }
 
-type GetDbSystemsDbSystemIormConfigCachDbPlanArgs struct {
+type GetDbSystemsDbSystemIormConfigCacheDbPlanArgs struct {
 	DbName          pulumi.StringInput `pulumi:"dbName"`
 	FlashCacheLimit pulumi.StringInput `pulumi:"flashCacheLimit"`
 	Share           pulumi.IntInput    `pulumi:"share"`
 }
 
-func (GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
-	return i.ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(context.Background())
+func (i GetDbSystemsDbSystemIormConfigCacheDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutputWithContext(context.Background())
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachDbPlanOutput)
+func (i GetDbSystemsDbSystemIormConfigCacheDbPlanArgs) ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCacheDbPlanOutput)
 }
 
-// GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCachDbPlanArray and GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput values.
-// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput` via:
+// GetDbSystemsDbSystemIormConfigCacheDbPlanArrayInput is an input type that accepts GetDbSystemsDbSystemIormConfigCacheDbPlanArray and GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemIormConfigCacheDbPlanArrayInput` via:
 //
-//	GetDbSystemsDbSystemIormConfigCachDbPlanArray{ GetDbSystemsDbSystemIormConfigCachDbPlanArgs{...} }
-type GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput interface {
+//	GetDbSystemsDbSystemIormConfigCacheDbPlanArray{ GetDbSystemsDbSystemIormConfigCacheDbPlanArgs{...} }
+type GetDbSystemsDbSystemIormConfigCacheDbPlanArrayInput interface {
 	pulumi.Input
 
-	ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput
-	ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput
+	ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutputWithContext(context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput
 }
 
-type GetDbSystemsDbSystemIormConfigCachDbPlanArray []GetDbSystemsDbSystemIormConfigCachDbPlanInput
+type GetDbSystemsDbSystemIormConfigCacheDbPlanArray []GetDbSystemsDbSystemIormConfigCacheDbPlanInput
 
-func (GetDbSystemsDbSystemIormConfigCachDbPlanArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachDbPlanArray) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
-	return i.ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+func (i GetDbSystemsDbSystemIormConfigCacheDbPlanArray) ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput {
+	return i.ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutputWithContext(context.Background())
 }
 
-func (i GetDbSystemsDbSystemIormConfigCachDbPlanArray) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput)
+func (i GetDbSystemsDbSystemIormConfigCacheDbPlanArray) ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+type GetDbSystemsDbSystemIormConfigCacheDbPlanOutput struct{ *pulumi.OutputState }
 
-func (GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutput() GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) ToGetDbSystemsDbSystemIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCacheDbPlan) string { return v.DbName }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCacheDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanOutput) Share() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCachDbPlan) int { return v.Share }).(pulumi.IntOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemIormConfigCacheDbPlan) int { return v.Share }).(pulumi.IntOutput)
 }
 
-type GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+type GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput struct{ *pulumi.OutputState }
 
-func (GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCachDbPlan)(nil)).Elem()
+func (GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput() GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput {
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput) ToGetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCachDbPlanOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCachDbPlan {
-		return vs[0].([]GetDbSystemsDbSystemIormConfigCachDbPlan)[vs[1].(int)]
-	}).(GetDbSystemsDbSystemIormConfigCachDbPlanOutput)
+func (o GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemIormConfigCacheDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemIormConfigCacheDbPlan {
+		return vs[0].([]GetDbSystemsDbSystemIormConfigCacheDbPlan)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemIormConfigCacheDbPlanOutput)
 }
 
 type GetDbSystemsDbSystemMaintenanceWindow struct {
@@ -22870,9 +22870,9 @@ func (o GetExadbVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInpu
 	}).(GetExadbVmClusterDataCollectionOptionOutput)
 }
 
-type GetExadbVmClusterIormConfigCach struct {
+type GetExadbVmClusterIormConfigCache struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
-	DbPlans []GetExadbVmClusterIormConfigCachDbPlan `pulumi:"dbPlans"`
+	DbPlans []GetExadbVmClusterIormConfigCacheDbPlan `pulumi:"dbPlans"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
@@ -22881,20 +22881,20 @@ type GetExadbVmClusterIormConfigCach struct {
 	State string `pulumi:"state"`
 }
 
-// GetExadbVmClusterIormConfigCachInput is an input type that accepts GetExadbVmClusterIormConfigCachArgs and GetExadbVmClusterIormConfigCachOutput values.
-// You can construct a concrete instance of `GetExadbVmClusterIormConfigCachInput` via:
+// GetExadbVmClusterIormConfigCacheInput is an input type that accepts GetExadbVmClusterIormConfigCacheArgs and GetExadbVmClusterIormConfigCacheOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterIormConfigCacheInput` via:
 //
-//	GetExadbVmClusterIormConfigCachArgs{...}
-type GetExadbVmClusterIormConfigCachInput interface {
+//	GetExadbVmClusterIormConfigCacheArgs{...}
+type GetExadbVmClusterIormConfigCacheInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClusterIormConfigCachOutput() GetExadbVmClusterIormConfigCachOutput
-	ToGetExadbVmClusterIormConfigCachOutputWithContext(context.Context) GetExadbVmClusterIormConfigCachOutput
+	ToGetExadbVmClusterIormConfigCacheOutput() GetExadbVmClusterIormConfigCacheOutput
+	ToGetExadbVmClusterIormConfigCacheOutputWithContext(context.Context) GetExadbVmClusterIormConfigCacheOutput
 }
 
-type GetExadbVmClusterIormConfigCachArgs struct {
+type GetExadbVmClusterIormConfigCacheArgs struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
-	DbPlans GetExadbVmClusterIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
+	DbPlans GetExadbVmClusterIormConfigCacheDbPlanArrayInput `pulumi:"dbPlans"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
@@ -22903,98 +22903,98 @@ type GetExadbVmClusterIormConfigCachArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 }
 
-func (GetExadbVmClusterIormConfigCachArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (i GetExadbVmClusterIormConfigCachArgs) ToGetExadbVmClusterIormConfigCachOutput() GetExadbVmClusterIormConfigCachOutput {
-	return i.ToGetExadbVmClusterIormConfigCachOutputWithContext(context.Background())
+func (i GetExadbVmClusterIormConfigCacheArgs) ToGetExadbVmClusterIormConfigCacheOutput() GetExadbVmClusterIormConfigCacheOutput {
+	return i.ToGetExadbVmClusterIormConfigCacheOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClusterIormConfigCachArgs) ToGetExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCachOutput)
+func (i GetExadbVmClusterIormConfigCacheArgs) ToGetExadbVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCacheOutput)
 }
 
-// GetExadbVmClusterIormConfigCachArrayInput is an input type that accepts GetExadbVmClusterIormConfigCachArray and GetExadbVmClusterIormConfigCachArrayOutput values.
-// You can construct a concrete instance of `GetExadbVmClusterIormConfigCachArrayInput` via:
+// GetExadbVmClusterIormConfigCacheArrayInput is an input type that accepts GetExadbVmClusterIormConfigCacheArray and GetExadbVmClusterIormConfigCacheArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterIormConfigCacheArrayInput` via:
 //
-//	GetExadbVmClusterIormConfigCachArray{ GetExadbVmClusterIormConfigCachArgs{...} }
-type GetExadbVmClusterIormConfigCachArrayInput interface {
+//	GetExadbVmClusterIormConfigCacheArray{ GetExadbVmClusterIormConfigCacheArgs{...} }
+type GetExadbVmClusterIormConfigCacheArrayInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClusterIormConfigCachArrayOutput
-	ToGetExadbVmClusterIormConfigCachArrayOutputWithContext(context.Context) GetExadbVmClusterIormConfigCachArrayOutput
+	ToGetExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClusterIormConfigCacheArrayOutput
+	ToGetExadbVmClusterIormConfigCacheArrayOutputWithContext(context.Context) GetExadbVmClusterIormConfigCacheArrayOutput
 }
 
-type GetExadbVmClusterIormConfigCachArray []GetExadbVmClusterIormConfigCachInput
+type GetExadbVmClusterIormConfigCacheArray []GetExadbVmClusterIormConfigCacheInput
 
-func (GetExadbVmClusterIormConfigCachArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (i GetExadbVmClusterIormConfigCachArray) ToGetExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClusterIormConfigCachArrayOutput {
-	return i.ToGetExadbVmClusterIormConfigCachArrayOutputWithContext(context.Background())
+func (i GetExadbVmClusterIormConfigCacheArray) ToGetExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClusterIormConfigCacheArrayOutput {
+	return i.ToGetExadbVmClusterIormConfigCacheArrayOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClusterIormConfigCachArray) ToGetExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCachArrayOutput)
+func (i GetExadbVmClusterIormConfigCacheArray) ToGetExadbVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCacheArrayOutput)
 }
 
-type GetExadbVmClusterIormConfigCachOutput struct{ *pulumi.OutputState }
+type GetExadbVmClusterIormConfigCacheOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClusterIormConfigCachOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (o GetExadbVmClusterIormConfigCachOutput) ToGetExadbVmClusterIormConfigCachOutput() GetExadbVmClusterIormConfigCachOutput {
+func (o GetExadbVmClusterIormConfigCacheOutput) ToGetExadbVmClusterIormConfigCacheOutput() GetExadbVmClusterIormConfigCacheOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachOutput) ToGetExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachOutput {
+func (o GetExadbVmClusterIormConfigCacheOutput) ToGetExadbVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheOutput {
 	return o
 }
 
 // An array of IORM settings for all the database in the Exadata DB system.
-func (o GetExadbVmClusterIormConfigCachOutput) DbPlans() GetExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCach) []GetExadbVmClusterIormConfigCachDbPlan { return v.DbPlans }).(GetExadbVmClusterIormConfigCachDbPlanArrayOutput)
+func (o GetExadbVmClusterIormConfigCacheOutput) DbPlans() GetExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCache) []GetExadbVmClusterIormConfigCacheDbPlan { return v.DbPlans }).(GetExadbVmClusterIormConfigCacheDbPlanArrayOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetExadbVmClusterIormConfigCachOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCach) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExadbVmClusterIormConfigCacheOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCache) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The current value for the IORM objective. The default is `AUTO`.
-func (o GetExadbVmClusterIormConfigCachOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCach) string { return v.Objective }).(pulumi.StringOutput)
+func (o GetExadbVmClusterIormConfigCacheOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCache) string { return v.Objective }).(pulumi.StringOutput)
 }
 
 // The current state of the Exadata VM cluster on Exascale Infrastructure.
-func (o GetExadbVmClusterIormConfigCachOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCach) string { return v.State }).(pulumi.StringOutput)
+func (o GetExadbVmClusterIormConfigCacheOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCache) string { return v.State }).(pulumi.StringOutput)
 }
 
-type GetExadbVmClusterIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+type GetExadbVmClusterIormConfigCacheArrayOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClusterIormConfigCachArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (o GetExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClusterIormConfigCachArrayOutput {
+func (o GetExadbVmClusterIormConfigCacheArrayOutput) ToGetExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClusterIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachArrayOutput {
+func (o GetExadbVmClusterIormConfigCacheArrayOutput) ToGetExadbVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterIormConfigCachOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterIormConfigCach {
-		return vs[0].([]GetExadbVmClusterIormConfigCach)[vs[1].(int)]
-	}).(GetExadbVmClusterIormConfigCachOutput)
+func (o GetExadbVmClusterIormConfigCacheArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterIormConfigCacheOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterIormConfigCache {
+		return vs[0].([]GetExadbVmClusterIormConfigCache)[vs[1].(int)]
+	}).(GetExadbVmClusterIormConfigCacheOutput)
 }
 
-type GetExadbVmClusterIormConfigCachDbPlan struct {
+type GetExadbVmClusterIormConfigCacheDbPlan struct {
 	// The database name. For the default `DbPlan`, the `dbName` is `default`.
 	DbName string `pulumi:"dbName"`
 	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
@@ -23003,18 +23003,18 @@ type GetExadbVmClusterIormConfigCachDbPlan struct {
 	Share int `pulumi:"share"`
 }
 
-// GetExadbVmClusterIormConfigCachDbPlanInput is an input type that accepts GetExadbVmClusterIormConfigCachDbPlanArgs and GetExadbVmClusterIormConfigCachDbPlanOutput values.
-// You can construct a concrete instance of `GetExadbVmClusterIormConfigCachDbPlanInput` via:
+// GetExadbVmClusterIormConfigCacheDbPlanInput is an input type that accepts GetExadbVmClusterIormConfigCacheDbPlanArgs and GetExadbVmClusterIormConfigCacheDbPlanOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterIormConfigCacheDbPlanInput` via:
 //
-//	GetExadbVmClusterIormConfigCachDbPlanArgs{...}
-type GetExadbVmClusterIormConfigCachDbPlanInput interface {
+//	GetExadbVmClusterIormConfigCacheDbPlanArgs{...}
+type GetExadbVmClusterIormConfigCacheDbPlanInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClusterIormConfigCachDbPlanOutput
-	ToGetExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Context) GetExadbVmClusterIormConfigCachDbPlanOutput
+	ToGetExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClusterIormConfigCacheDbPlanOutput
+	ToGetExadbVmClusterIormConfigCacheDbPlanOutputWithContext(context.Context) GetExadbVmClusterIormConfigCacheDbPlanOutput
 }
 
-type GetExadbVmClusterIormConfigCachDbPlanArgs struct {
+type GetExadbVmClusterIormConfigCacheDbPlanArgs struct {
 	// The database name. For the default `DbPlan`, the `dbName` is `default`.
 	DbName pulumi.StringInput `pulumi:"dbName"`
 	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
@@ -23023,90 +23023,90 @@ type GetExadbVmClusterIormConfigCachDbPlanArgs struct {
 	Share pulumi.IntInput `pulumi:"share"`
 }
 
-func (GetExadbVmClusterIormConfigCachDbPlanArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClusterIormConfigCachDbPlanOutput {
-	return i.ToGetExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Background())
+func (i GetExadbVmClusterIormConfigCacheDbPlanArgs) ToGetExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClusterIormConfigCacheDbPlanOutput {
+	return i.ToGetExadbVmClusterIormConfigCacheDbPlanOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachDbPlanOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCachDbPlanOutput)
+func (i GetExadbVmClusterIormConfigCacheDbPlanArgs) ToGetExadbVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
-// GetExadbVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts GetExadbVmClusterIormConfigCachDbPlanArray and GetExadbVmClusterIormConfigCachDbPlanArrayOutput values.
-// You can construct a concrete instance of `GetExadbVmClusterIormConfigCachDbPlanArrayInput` via:
+// GetExadbVmClusterIormConfigCacheDbPlanArrayInput is an input type that accepts GetExadbVmClusterIormConfigCacheDbPlanArray and GetExadbVmClusterIormConfigCacheDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterIormConfigCacheDbPlanArrayInput` via:
 //
-//	GetExadbVmClusterIormConfigCachDbPlanArray{ GetExadbVmClusterIormConfigCachDbPlanArgs{...} }
-type GetExadbVmClusterIormConfigCachDbPlanArrayInput interface {
+//	GetExadbVmClusterIormConfigCacheDbPlanArray{ GetExadbVmClusterIormConfigCacheDbPlanArgs{...} }
+type GetExadbVmClusterIormConfigCacheDbPlanArrayInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClusterIormConfigCachDbPlanArrayOutput
-	ToGetExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Context) GetExadbVmClusterIormConfigCachDbPlanArrayOutput
+	ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClusterIormConfigCacheDbPlanArrayOutput
+	ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Context) GetExadbVmClusterIormConfigCacheDbPlanArrayOutput
 }
 
-type GetExadbVmClusterIormConfigCachDbPlanArray []GetExadbVmClusterIormConfigCachDbPlanInput
+type GetExadbVmClusterIormConfigCacheDbPlanArray []GetExadbVmClusterIormConfigCacheDbPlanInput
 
-func (GetExadbVmClusterIormConfigCachDbPlanArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return i.ToGetExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+func (i GetExadbVmClusterIormConfigCacheDbPlanArray) ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return i.ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCachDbPlanArrayOutput)
+func (i GetExadbVmClusterIormConfigCacheDbPlanArray) ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterIormConfigCacheDbPlanArrayOutput)
 }
 
-type GetExadbVmClusterIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+type GetExadbVmClusterIormConfigCacheDbPlanOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClusterIormConfigCachDbPlanOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClusterIormConfigCachDbPlanOutput {
+func (o GetExadbVmClusterIormConfigCacheDbPlanOutput) ToGetExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClusterIormConfigCacheDbPlanOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachDbPlanOutput {
+func (o GetExadbVmClusterIormConfigCacheDbPlanOutput) ToGetExadbVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheDbPlanOutput {
 	return o
 }
 
 // The database name. For the default `DbPlan`, the `dbName` is `default`.
-func (o GetExadbVmClusterIormConfigCachDbPlanOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCachDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+func (o GetExadbVmClusterIormConfigCacheDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCacheDbPlan) string { return v.DbName }).(pulumi.StringOutput)
 }
 
 // The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-func (o GetExadbVmClusterIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCachDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+func (o GetExadbVmClusterIormConfigCacheDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCacheDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
 }
 
 // The relative priority of this database.
-func (o GetExadbVmClusterIormConfigCachDbPlanOutput) Share() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadbVmClusterIormConfigCachDbPlan) int { return v.Share }).(pulumi.IntOutput)
+func (o GetExadbVmClusterIormConfigCacheDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClusterIormConfigCacheDbPlan) int { return v.Share }).(pulumi.IntOutput)
 }
 
-type GetExadbVmClusterIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+type GetExadbVmClusterIormConfigCacheDbPlanArrayOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClusterIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClusterIormConfigCacheDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClusterIormConfigCachDbPlanArrayOutput {
+func (o GetExadbVmClusterIormConfigCacheDbPlanArrayOutput) ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClusterIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCachDbPlanArrayOutput {
+func (o GetExadbVmClusterIormConfigCacheDbPlanArrayOutput) ToGetExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClusterIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClusterIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterIormConfigCachDbPlanOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterIormConfigCachDbPlan {
-		return vs[0].([]GetExadbVmClusterIormConfigCachDbPlan)[vs[1].(int)]
-	}).(GetExadbVmClusterIormConfigCachDbPlanOutput)
+func (o GetExadbVmClusterIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterIormConfigCacheDbPlan {
+		return vs[0].([]GetExadbVmClusterIormConfigCacheDbPlan)[vs[1].(int)]
+	}).(GetExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
 type GetExadbVmClusterNodeConfig struct {
@@ -23970,7 +23970,7 @@ type GetExadbVmClustersExadbVmCluster struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []GetExadbVmClustersExadbVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []GetExadbVmClustersExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -24073,7 +24073,7 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput `pulumi:"iormConfigCaches"`
+	IormConfigCaches GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringInput `pulumi:"lastUpdateHistoryEntryId"`
 	// The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -24268,10 +24268,10 @@ func (o GetExadbVmClustersExadbVmClusterOutput) Id() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o GetExadbVmClustersExadbVmClusterOutput) IormConfigCaches() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterIormConfigCach {
+func (o GetExadbVmClustersExadbVmClusterOutput) IormConfigCaches() GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterIormConfigCache {
 		return v.IormConfigCaches
-	}).(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput)
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
@@ -24544,9 +24544,9 @@ func (o GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput) Index(i
 	}).(GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCach struct {
+type GetExadbVmClustersExadbVmClusterIormConfigCache struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
-	DbPlans []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan `pulumi:"dbPlans"`
+	DbPlans []GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan `pulumi:"dbPlans"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
@@ -24555,20 +24555,20 @@ type GetExadbVmClustersExadbVmClusterIormConfigCach struct {
 	State string `pulumi:"state"`
 }
 
-// GetExadbVmClustersExadbVmClusterIormConfigCachInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachArgs and GetExadbVmClustersExadbVmClusterIormConfigCachOutput values.
-// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachInput` via:
+// GetExadbVmClustersExadbVmClusterIormConfigCacheInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCacheArgs and GetExadbVmClustersExadbVmClusterIormConfigCacheOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCacheInput` via:
 //
-//	GetExadbVmClustersExadbVmClusterIormConfigCachArgs{...}
-type GetExadbVmClustersExadbVmClusterIormConfigCachInput interface {
+//	GetExadbVmClustersExadbVmClusterIormConfigCacheArgs{...}
+type GetExadbVmClustersExadbVmClusterIormConfigCacheInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheOutput
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachArgs struct {
+type GetExadbVmClustersExadbVmClusterIormConfigCacheArgs struct {
 	// An array of IORM settings for all the database in the Exadata DB system.
-	DbPlans GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput `pulumi:"dbPlans"`
+	DbPlans GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput `pulumi:"dbPlans"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The current value for the IORM objective. The default is `AUTO`.
@@ -24577,100 +24577,100 @@ type GetExadbVmClustersExadbVmClusterIormConfigCachArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
-	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(context.Background())
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachOutput)
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCacheOutput)
 }
 
-// GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachArray and GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput values.
-// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput` via:
+// GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCacheArray and GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput` via:
 //
-//	GetExadbVmClustersExadbVmClusterIormConfigCachArray{ GetExadbVmClustersExadbVmClusterIormConfigCachArgs{...} }
-type GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput interface {
+//	GetExadbVmClustersExadbVmClusterIormConfigCacheArray{ GetExadbVmClustersExadbVmClusterIormConfigCacheArgs{...} }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachArray []GetExadbVmClustersExadbVmClusterIormConfigCachInput
+type GetExadbVmClustersExadbVmClusterIormConfigCacheArray []GetExadbVmClustersExadbVmClusterIormConfigCacheInput
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
-	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(context.Background())
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheArray) ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput)
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheArray) ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachOutput struct{ *pulumi.OutputState }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutput() GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheOutput {
 	return o
 }
 
 // An array of IORM settings for all the database in the Exadata DB system.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) DbPlans() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) DbPlans() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCache) []GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan {
 		return v.DbPlans
-	}).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput)
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput)
 }
 
 // Additional information about the current lifecycle state.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCache) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // The current value for the IORM objective. The default is `AUTO`.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) Objective() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.Objective }).(pulumi.StringOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCache) string { return v.Objective }).(pulumi.StringOutput)
 }
 
 // A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCach) string { return v.State }).(pulumi.StringOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCache) string { return v.State }).(pulumi.StringOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput struct{ *pulumi.OutputState }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCach)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCache)(nil)).Elem()
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCachOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCach {
-		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCach)[vs[1].(int)]
-	}).(GetExadbVmClustersExadbVmClusterIormConfigCachOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCacheOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCache {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCache)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan struct {
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan struct {
 	// The database name. For the default `DbPlan`, the `dbName` is `default`.
 	DbName string `pulumi:"dbName"`
 	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
@@ -24679,18 +24679,18 @@ type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan struct {
 	Share int `pulumi:"share"`
 }
 
-// GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs and GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput values.
-// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput` via:
+// GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs and GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput` via:
 //
-//	GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{...}
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput interface {
+//	GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs{...}
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs struct {
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs struct {
 	// The database name. For the default `DbPlan`, the `dbName` is `default`.
 	DbName pulumi.StringInput `pulumi:"dbName"`
 	// The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
@@ -24699,90 +24699,90 @@ type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs struct {
 	Share pulumi.IntInput `pulumi:"share"`
 }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
-	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(context.Background())
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput)
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
-// GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray and GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput values.
-// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput` via:
+// GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray and GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput` via:
 //
-//	GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray{ GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{...} }
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput interface {
+//	GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray{ GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs{...} }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput interface {
 	pulumi.Input
 
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput
-	ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput
+	ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray []GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray []GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(context.Background())
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Background())
 }
 
-func (i GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput)
+func (i GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput struct{ *pulumi.OutputState }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput {
 	return o
 }
 
 // The database name. For the default `DbPlan`, the `dbName` is `default`.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) DbName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan) string { return v.DbName }).(pulumi.StringOutput)
 }
 
 // The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
 }
 
 // The relative priority of this database.
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput) Share() pulumi.IntOutput {
-	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan) int { return v.Share }).(pulumi.IntOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan) int { return v.Share }).(pulumi.IntOutput)
 }
 
-type GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput struct{ *pulumi.OutputState }
+type GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput struct{ *pulumi.OutputState }
 
-func (GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)(nil)).Elem()
+func (GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)(nil)).Elem()
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput() GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput {
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput) ToGetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput {
 	return o
 }
 
-func (o GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan {
-		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCachDbPlan)[vs[1].(int)]
-	}).(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput)
+func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
 type GetExadbVmClustersExadbVmClusterNodeConfig struct {
@@ -45130,10 +45130,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOptionInput)(nil)).Elem(), GetDbSystemsDbSystemDbSystemOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemDbSystemOptionArrayInput)(nil)).Elem(), GetDbSystemsDbSystemDbSystemOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlanInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachDbPlanArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCachDbPlanArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCacheArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCacheArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheDbPlanInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCacheDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetDbSystemsDbSystemIormConfigCacheDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowArrayInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekArgs{})
@@ -45194,10 +45194,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataIormConfigDbPlanArrayInput)(nil)).Elem(), GetExadataIormConfigDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterDataCollectionOptionInput)(nil)).Elem(), GetExadbVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetExadbVmClusterDataCollectionOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCachInput)(nil)).Elem(), GetExadbVmClusterIormConfigCachArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCachArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCachArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), GetExadbVmClusterIormConfigCachDbPlanArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCachDbPlanArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeConfigInput)(nil)).Elem(), GetExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeConfigArrayInput)(nil)).Elem(), GetExadbVmClusterNodeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeResourceInput)(nil)).Elem(), GetExadbVmClusterNodeResourceArgs{})
@@ -45214,10 +45214,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOptionInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterDataCollectionOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResourceInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeResourceArgs{})
@@ -45740,10 +45740,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbSystemOptionOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemDbSystemOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachOutput{})
-	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachArrayOutput{})
-	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachDbPlanOutput{})
-	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCacheOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCacheArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCacheDbPlanOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemIormConfigCacheDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemMaintenanceWindowDaysOfWeekOutput{})
@@ -45804,10 +45804,10 @@ func init() {
 	pulumi.RegisterOutputType(GetExadataIormConfigDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterDataCollectionOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCachOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCachArrayOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCachDbPlanOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheDbPlanOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeConfigOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeResourceOutput{})
@@ -45824,10 +45824,10 @@ func init() {
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterDataCollectionOptionOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterDataCollectionOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachArrayOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanOutput{})
-	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeResourceOutput{})

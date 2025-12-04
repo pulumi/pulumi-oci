@@ -146,7 +146,7 @@ class _DbSystemsUpgradeState:
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]]] = None,
+                 iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheArgs']]]] = None,
                  is_snapshot_retention_days_force_updated: Optional[pulumi.Input[_builtins.bool]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -198,7 +198,7 @@ class _DbSystemsUpgradeState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: List of the Fault Domains in which this DB system is provisioned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -567,14 +567,14 @@ class _DbSystemsUpgradeState:
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]]]:
+    def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheArgs']]]]:
         """
         The IORM settings of the Exadata DB system.
         """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
-    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]]]):
+    def iorm_config_caches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCacheArgs']]]]):
         pulumi.set(self, "iorm_config_caches", value)
 
     @_builtins.property
@@ -1132,7 +1132,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCachArgs', 'DbSystemsUpgradeIormConfigCachArgsDict']]]]] = None,
+            iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCacheArgs', 'DbSystemsUpgradeIormConfigCacheArgsDict']]]]] = None,
             is_snapshot_retention_days_force_updated: Optional[pulumi.Input[_builtins.bool]] = None,
             kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1189,7 +1189,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: List of the Fault Domains in which this DB system is provisioned.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] hostname: The hostname for the DB system.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCachArgs', 'DbSystemsUpgradeIormConfigCachArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemsUpgradeIormConfigCacheArgs', 'DbSystemsUpgradeIormConfigCacheArgsDict']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param pulumi.Input[_builtins.bool] is_snapshot_retention_days_force_updated: If true, rollback time is updated even if operating system upgrade history contains errors.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1437,7 +1437,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.DbSystemsUpgradeIormConfigCach']]:
+    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.DbSystemsUpgradeIormConfigCache']]:
         """
         The IORM settings of the Exadata DB system.
         """

@@ -137,7 +137,7 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemsUpgradeIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemsUpgradeIormConfigCache[]>;
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */
@@ -473,7 +473,7 @@ export interface DbSystemsUpgradeState {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCach>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCache>[]>;
     /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      */

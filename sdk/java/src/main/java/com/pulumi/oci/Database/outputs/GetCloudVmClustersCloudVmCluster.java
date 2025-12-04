@@ -8,7 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail;
-import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -141,7 +141,7 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String id;
-    private List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
+    private List<GetCloudVmClustersCloudVmClusterIormConfigCache> iormConfigCaches;
     /**
      * @return If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
      * 
@@ -487,7 +487,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     public String id() {
         return this.id;
     }
-    public List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches() {
+    public List<GetCloudVmClustersCloudVmClusterIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**
@@ -767,7 +767,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String giVersion;
         private String hostname;
         private String id;
-        private List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches;
+        private List<GetCloudVmClustersCloudVmClusterIormConfigCache> iormConfigCaches;
         private Boolean isLocalBackupEnabled;
         private Boolean isSparseDiskgroupEnabled;
         private String lastUpdateHistoryEntryId;
@@ -1085,14 +1085,14 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetCloudVmClustersCloudVmClusterIormConfigCach> iormConfigCaches) {
+        public Builder iormConfigCaches(List<GetCloudVmClustersCloudVmClusterIormConfigCache> iormConfigCaches) {
             if (iormConfigCaches == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "iormConfigCaches");
             }
             this.iormConfigCaches = iormConfigCaches;
             return this;
         }
-        public Builder iormConfigCaches(GetCloudVmClustersCloudVmClusterIormConfigCach... iormConfigCaches) {
+        public Builder iormConfigCaches(GetCloudVmClustersCloudVmClusterIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter

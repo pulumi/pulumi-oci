@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Database
         /// The IORM settings of the Exadata DB system.
         /// </summary>
         [Output("iormConfigCaches")]
-        public Output<ImmutableArray<Outputs.CloudVmClusterIormConfigCach>> IormConfigCaches { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.CloudVmClusterIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
         /// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
@@ -1026,14 +1026,14 @@ namespace Pulumi.Oci.Database
         public Input<string>? Hostname { get; set; }
 
         [Input("iormConfigCaches")]
-        private InputList<Inputs.CloudVmClusterIormConfigCachGetArgs>? _iormConfigCaches;
+        private InputList<Inputs.CloudVmClusterIormConfigCacheGetArgs>? _iormConfigCaches;
 
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public InputList<Inputs.CloudVmClusterIormConfigCachGetArgs> IormConfigCaches
+        public InputList<Inputs.CloudVmClusterIormConfigCacheGetArgs> IormConfigCaches
         {
-            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.CloudVmClusterIormConfigCachGetArgs>());
+            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.CloudVmClusterIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
 

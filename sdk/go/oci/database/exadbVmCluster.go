@@ -131,7 +131,7 @@ type ExadbVmCluster struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches ExadbVmClusterIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
+	IormConfigCaches ExadbVmClusterIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringOutput `pulumi:"lastUpdateHistoryEntryId"`
 	// (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -292,7 +292,7 @@ type exadbVmClusterState struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []ExadbVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []ExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId *string `pulumi:"lastUpdateHistoryEntryId"`
 	// (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -391,7 +391,7 @@ type ExadbVmClusterState struct {
 	// **Note:** The hostname must be unique within the subnet. If it is not unique,  then the Exadata VM cluster on Exascale Infrastructure will fail to provision.
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches ExadbVmClusterIormConfigCachArrayInput
+	IormConfigCaches ExadbVmClusterIormConfigCacheArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
@@ -767,8 +767,8 @@ func (o ExadbVmClusterOutput) Hostname() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o ExadbVmClusterOutput) IormConfigCaches() ExadbVmClusterIormConfigCachArrayOutput {
-	return o.ApplyT(func(v *ExadbVmCluster) ExadbVmClusterIormConfigCachArrayOutput { return v.IormConfigCaches }).(ExadbVmClusterIormConfigCachArrayOutput)
+func (o ExadbVmClusterOutput) IormConfigCaches() ExadbVmClusterIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v *ExadbVmCluster) ExadbVmClusterIormConfigCacheArrayOutput { return v.IormConfigCaches }).(ExadbVmClusterIormConfigCacheArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.

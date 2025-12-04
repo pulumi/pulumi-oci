@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Database
         /// The IORM settings of the Exadata DB system.
         /// </summary>
         [Output("iormConfigCaches")]
-        public Output<ImmutableArray<Outputs.DbSystemsUpgradeIormConfigCach>> IormConfigCaches { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.DbSystemsUpgradeIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
         /// If true, rollback time is updated even if operating system upgrade history contains errors.
@@ -583,14 +583,14 @@ namespace Pulumi.Oci.Database
         public Input<string>? Hostname { get; set; }
 
         [Input("iormConfigCaches")]
-        private InputList<Inputs.DbSystemsUpgradeIormConfigCachGetArgs>? _iormConfigCaches;
+        private InputList<Inputs.DbSystemsUpgradeIormConfigCacheGetArgs>? _iormConfigCaches;
 
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public InputList<Inputs.DbSystemsUpgradeIormConfigCachGetArgs> IormConfigCaches
+        public InputList<Inputs.DbSystemsUpgradeIormConfigCacheGetArgs> IormConfigCaches
         {
-            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.DbSystemsUpgradeIormConfigCachGetArgs>());
+            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.DbSystemsUpgradeIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
 

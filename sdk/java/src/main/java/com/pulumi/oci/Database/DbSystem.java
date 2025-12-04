@@ -12,7 +12,7 @@ import com.pulumi.oci.Database.inputs.DbSystemState;
 import com.pulumi.oci.Database.outputs.DbSystemDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.DbSystemDbHome;
 import com.pulumi.oci.Database.outputs.DbSystemDbSystemOptions;
-import com.pulumi.oci.Database.outputs.DbSystemIormConfigCach;
+import com.pulumi.oci.Database.outputs.DbSystemIormConfigCache;
 import com.pulumi.oci.Database.outputs.DbSystemMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.DbSystemMaintenanceWindowDetails;
 import com.pulumi.oci.Utilities;
@@ -426,14 +426,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", refs={List.class,DbSystemIormConfigCach.class}, tree="[0,1]")
-    private Output<List<DbSystemIormConfigCach>> iormConfigCaches;
+    @Export(name="iormConfigCaches", refs={List.class,DbSystemIormConfigCache.class}, tree="[0,1]")
+    private Output<List<DbSystemIormConfigCache>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<DbSystemIormConfigCach>> iormConfigCaches() {
+    public Output<List<DbSystemIormConfigCache>> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**

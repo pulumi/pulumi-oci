@@ -91,7 +91,7 @@ type DbSystemsUpgrade struct {
 	// The hostname for the DB system.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches DbSystemsUpgradeIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
+	IormConfigCaches DbSystemsUpgradeIormConfigCacheArrayOutput `pulumi:"iormConfigCaches"`
 	// If true, rollback time is updated even if operating system upgrade history contains errors.
 	IsSnapshotRetentionDaysForceUpdated pulumi.BoolOutput `pulumi:"isSnapshotRetentionDaysForceUpdated"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -234,7 +234,7 @@ type dbSystemsUpgradeState struct {
 	// The hostname for the DB system.
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []DbSystemsUpgradeIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []DbSystemsUpgradeIormConfigCache `pulumi:"iormConfigCaches"`
 	// If true, rollback time is updated even if operating system upgrade history contains errors.
 	IsSnapshotRetentionDaysForceUpdated *bool `pulumi:"isSnapshotRetentionDaysForceUpdated"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -342,7 +342,7 @@ type DbSystemsUpgradeState struct {
 	// The hostname for the DB system.
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches DbSystemsUpgradeIormConfigCachArrayInput
+	IormConfigCaches DbSystemsUpgradeIormConfigCacheArrayInput
 	// If true, rollback time is updated even if operating system upgrade history contains errors.
 	IsSnapshotRetentionDaysForceUpdated pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -632,8 +632,8 @@ func (o DbSystemsUpgradeOutput) Hostname() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o DbSystemsUpgradeOutput) IormConfigCaches() DbSystemsUpgradeIormConfigCachArrayOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) DbSystemsUpgradeIormConfigCachArrayOutput { return v.IormConfigCaches }).(DbSystemsUpgradeIormConfigCachArrayOutput)
+func (o DbSystemsUpgradeOutput) IormConfigCaches() DbSystemsUpgradeIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) DbSystemsUpgradeIormConfigCacheArrayOutput { return v.IormConfigCaches }).(DbSystemsUpgradeIormConfigCacheArrayOutput)
 }
 
 // If true, rollback time is updated even if operating system upgrade history contains errors.

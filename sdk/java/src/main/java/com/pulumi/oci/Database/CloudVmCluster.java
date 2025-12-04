@@ -12,7 +12,7 @@ import com.pulumi.oci.Database.inputs.CloudVmClusterState;
 import com.pulumi.oci.Database.outputs.CloudVmClusterCloudAutomationUpdateDetails;
 import com.pulumi.oci.Database.outputs.CloudVmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.CloudVmClusterFileSystemConfigurationDetail;
-import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigCache;
 import com.pulumi.oci.Database.outputs.CloudVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -497,14 +497,14 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      * The IORM settings of the Exadata DB system.
      * 
      */
-    @Export(name="iormConfigCaches", refs={List.class,CloudVmClusterIormConfigCach.class}, tree="[0,1]")
-    private Output<List<CloudVmClusterIormConfigCach>> iormConfigCaches;
+    @Export(name="iormConfigCaches", refs={List.class,CloudVmClusterIormConfigCache.class}, tree="[0,1]")
+    private Output<List<CloudVmClusterIormConfigCache>> iormConfigCaches;
 
     /**
      * @return The IORM settings of the Exadata DB system.
      * 
      */
-    public Output<List<CloudVmClusterIormConfigCach>> iormConfigCaches() {
+    public Output<List<CloudVmClusterIormConfigCache>> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**

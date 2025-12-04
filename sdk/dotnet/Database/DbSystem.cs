@@ -212,7 +212,7 @@ namespace Pulumi.Oci.Database
         /// The IORM settings of the Exadata DB system.
         /// </summary>
         [Output("iormConfigCaches")]
-        public Output<ImmutableArray<Outputs.DbSystemIormConfigCach>> IormConfigCaches { get; private set; } = null!;
+        public Output<ImmutableArray<Outputs.DbSystemIormConfigCache>> IormConfigCaches { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -1021,14 +1021,14 @@ namespace Pulumi.Oci.Database
         public Input<string>? Hostname { get; set; }
 
         [Input("iormConfigCaches")]
-        private InputList<Inputs.DbSystemIormConfigCachGetArgs>? _iormConfigCaches;
+        private InputList<Inputs.DbSystemIormConfigCacheGetArgs>? _iormConfigCaches;
 
         /// <summary>
         /// The IORM settings of the Exadata DB system.
         /// </summary>
-        public InputList<Inputs.DbSystemIormConfigCachGetArgs> IormConfigCaches
+        public InputList<Inputs.DbSystemIormConfigCacheGetArgs> IormConfigCaches
         {
-            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.DbSystemIormConfigCachGetArgs>());
+            get => _iormConfigCaches ?? (_iormConfigCaches = new InputList<Inputs.DbSystemIormConfigCacheGetArgs>());
             set => _iormConfigCaches = value;
         }
 

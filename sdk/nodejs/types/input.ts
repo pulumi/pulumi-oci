@@ -30225,11 +30225,11 @@ export namespace Database {
         mountPoint?: pulumi.Input<string>;
     }
 
-    export interface CloudVmClusterIormConfigCach {
+    export interface CloudVmClusterIormConfigCache {
         /**
          * An array of IORM settings for all the database in the Exadata DB system.
          */
-        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigCachDbPlan>[]>;
+        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigCacheDbPlan>[]>;
         /**
          * Additional information about the current lifecycle state.
          */
@@ -30244,7 +30244,7 @@ export namespace Database {
         state?: pulumi.Input<string>;
     }
 
-    export interface CloudVmClusterIormConfigCachDbPlan {
+    export interface CloudVmClusterIormConfigCacheDbPlan {
         /**
          * The database name. For the default `DbPlan`, the `dbName` is `default`.
          */
@@ -31648,11 +31648,11 @@ export namespace Database {
         storageManagement?: pulumi.Input<string>;
     }
 
-    export interface DbSystemIormConfigCach {
+    export interface DbSystemIormConfigCache {
         /**
          * An array of IORM settings for all the database in the Exadata DB system.
          */
-        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCachDbPlan>[]>;
+        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCacheDbPlan>[]>;
         dbSystemId?: pulumi.Input<string>;
         /**
          * Additional information about the current lifecycle state.
@@ -31668,7 +31668,7 @@ export namespace Database {
         state?: pulumi.Input<string>;
     }
 
-    export interface DbSystemIormConfigCachDbPlan {
+    export interface DbSystemIormConfigCacheDbPlan {
         /**
          * The database name. For the default `DbPlan`, the `dbName` is `default`.
          */
@@ -31814,11 +31814,11 @@ export namespace Database {
         storageManagement?: pulumi.Input<string>;
     }
 
-    export interface DbSystemsUpgradeIormConfigCach {
+    export interface DbSystemsUpgradeIormConfigCache {
         /**
          * An array of IORM settings for all the database in the Exadata DB system.
          */
-        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCachDbPlan>[]>;
+        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemsUpgradeIormConfigCacheDbPlan>[]>;
         /**
          * Additional information about the current lifecycle state.
          */
@@ -31833,7 +31833,7 @@ export namespace Database {
         state?: pulumi.Input<string>;
     }
 
-    export interface DbSystemsUpgradeIormConfigCachDbPlan {
+    export interface DbSystemsUpgradeIormConfigCacheDbPlan {
         /**
          * The database name. For the default `DbPlan`, the `dbName` is `default`.
          */
@@ -32288,11 +32288,11 @@ export namespace Database {
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
-    export interface ExadbVmClusterIormConfigCach {
+    export interface ExadbVmClusterIormConfigCache {
         /**
          * An array of IORM settings for all the database in the Exadata DB system.
          */
-        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCachDbPlan>[]>;
+        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCacheDbPlan>[]>;
         /**
          * Additional information about the current lifecycle state.
          */
@@ -32307,7 +32307,7 @@ export namespace Database {
         state?: pulumi.Input<string>;
     }
 
-    export interface ExadbVmClusterIormConfigCachDbPlan {
+    export interface ExadbVmClusterIormConfigCacheDbPlan {
         /**
          * The database name. For the default `DbPlan`, the `dbName` is `default`.
          */

@@ -171,7 +171,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.ExadbVmClusterIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.ExadbVmClusterIormConfigCache[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */
@@ -499,7 +499,7 @@ export interface ExadbVmClusterState {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCach>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCache>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
      */

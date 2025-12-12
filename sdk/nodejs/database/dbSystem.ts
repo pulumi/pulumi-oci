@@ -189,7 +189,7 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemIormConfigCach[]>;
+    declare public /*out*/ readonly iormConfigCaches: pulumi.Output<outputs.Database.DbSystemIormConfigCache[]>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
@@ -645,7 +645,7 @@ export interface DbSystemState {
     /**
      * The IORM settings of the Exadata DB system.
      */
-    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCach>[]>;
+    iormConfigCaches?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemIormConfigCache>[]>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */

@@ -8,7 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbHome;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemDbSystemOption;
-import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemIormConfigCach;
+import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemIormConfigCache;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetDbSystemsDbSystemMaintenanceWindowDetail;
 import java.lang.Boolean;
@@ -131,7 +131,7 @@ public final class GetDbSystemsDbSystem {
      * 
      */
     private String id;
-    private List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
+    private List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -469,7 +469,7 @@ public final class GetDbSystemsDbSystem {
     public String id() {
         return this.id;
     }
-    public List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches() {
+    public List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches() {
         return this.iormConfigCaches;
     }
     /**
@@ -761,7 +761,7 @@ public final class GetDbSystemsDbSystem {
         private Map<String,String> freeformTags;
         private String hostname;
         private String id;
-        private List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches;
+        private List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lastMaintenanceRunId;
@@ -1069,14 +1069,14 @@ public final class GetDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
-        public Builder iormConfigCaches(List<GetDbSystemsDbSystemIormConfigCach> iormConfigCaches) {
+        public Builder iormConfigCaches(List<GetDbSystemsDbSystemIormConfigCache> iormConfigCaches) {
             if (iormConfigCaches == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "iormConfigCaches");
             }
             this.iormConfigCaches = iormConfigCaches;
             return this;
         }
-        public Builder iormConfigCaches(GetDbSystemsDbSystemIormConfigCach... iormConfigCaches) {
+        public Builder iormConfigCaches(GetDbSystemsDbSystemIormConfigCache... iormConfigCaches) {
             return iormConfigCaches(List.of(iormConfigCaches));
         }
         @CustomType.Setter

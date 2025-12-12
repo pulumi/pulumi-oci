@@ -307,7 +307,7 @@ class GetExadbVmClusterResult:
 
     @_builtins.property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> Sequence['outputs.GetExadbVmClusterIormConfigCachResult']:
+    def iorm_config_caches(self) -> Sequence['outputs.GetExadbVmClusterIormConfigCacheResult']:
         """
         The IORM settings of the Exadata DB system.
         """

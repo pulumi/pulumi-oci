@@ -109,7 +109,7 @@ type LookupCloudVmClusterResult struct {
 	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
-	IormConfigCaches []GetCloudVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
+	IormConfigCaches []GetCloudVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
 	// If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
 	IsLocalBackupEnabled bool `pulumi:"isLocalBackupEnabled"`
 	// If true, sparse disk group is configured for the cloud VM cluster. If false, sparse disk group is not created.
@@ -351,8 +351,8 @@ func (o LookupCloudVmClusterResultOutput) Id() pulumi.StringOutput {
 }
 
 // The IORM settings of the Exadata DB system.
-func (o LookupCloudVmClusterResultOutput) IormConfigCaches() GetCloudVmClusterIormConfigCachArrayOutput {
-	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterIormConfigCach { return v.IormConfigCaches }).(GetCloudVmClusterIormConfigCachArrayOutput)
+func (o LookupCloudVmClusterResultOutput) IormConfigCaches() GetCloudVmClusterIormConfigCacheArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterIormConfigCache { return v.IormConfigCaches }).(GetCloudVmClusterIormConfigCacheArrayOutput)
 }
 
 // If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.

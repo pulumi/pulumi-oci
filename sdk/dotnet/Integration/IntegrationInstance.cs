@@ -66,7 +66,31 @@ namespace Pulumi.Oci.Integration
     ///                     AllowlistedIps = integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps,
     ///                 },
     ///             },
+    ///             DesignTime = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs
+    ///             {
+    ///                 AllowlistedHttpIps = integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpIps,
+    ///                 AllowlistedHttpVcns = new[]
+    ///                 {
+    ///                     new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs
+    ///                     {
+    ///                         Id = integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsId,
+    ///                         AllowlistedIps = integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps,
+    ///                     },
+    ///                 },
+    ///             },
     ///             IsIntegrationVcnAllowlisted = integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
+    ///             Runtime = new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsRuntimeArgs
+    ///             {
+    ///                 AllowlistedHttpIps = integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps,
+    ///                 AllowlistedHttpVcns = new[]
+    ///                 {
+    ///                     new Oci.Integration.Inputs.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs
+    ///                     {
+    ///                         Id = integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsId,
+    ///                         AllowlistedIps = integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsAllowlistedIps,
+    ///                     },
+    ///                 },
+    ///             },
     ///         },
     ///         SecurityAttributes = 
     ///         {
@@ -116,6 +140,12 @@ namespace Pulumi.Oci.Integration
         public Output<string> ConsumptionModel { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        /// </summary>
+        [Output("convertInstanceTrigger")]
+        public Output<int?> ConvertInstanceTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Details for a custom endpoint for the integration instance (update).
         /// </summary>
         [Output("customEndpoint")]
@@ -125,13 +155,19 @@ namespace Pulumi.Oci.Integration
         /// Data retention period set for given integration instance
         /// </summary>
         [Output("dataRetentionPeriod")]
-        public Output<string> DataRetentionPeriod { get; private set; } = null!;
+        public Output<string?> DataRetentionPeriod { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Output("disableProcessAutomationTrigger")]
+        public Output<int?> DisableProcessAutomationTrigger { get; private set; } = null!;
 
         /// <summary>
         /// Disaster recovery details for the integration instance created in the region.
@@ -157,9 +193,6 @@ namespace Pulumi.Oci.Integration
         [Output("enableProcessAutomationTrigger")]
         public Output<int?> EnableProcessAutomationTrigger { get; private set; } = null!;
 
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        /// </summary>
         [Output("extendDataRetentionTrigger")]
         public Output<int?> ExtendDataRetentionTrigger { get; private set; } = null!;
 
@@ -231,6 +264,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given integration instance
+        /// </summary>
+        [Output("logGroupId")]
+        public Output<string?> LogGroupId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of configured message packs
@@ -374,10 +413,22 @@ namespace Pulumi.Oci.Integration
         public Input<string>? ConsumptionModel { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        /// </summary>
+        [Input("convertInstanceTrigger")]
+        public Input<int>? ConvertInstanceTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) Details for a custom endpoint for the integration instance (update).
         /// </summary>
         [Input("customEndpoint")]
         public Input<Inputs.IntegrationInstanceCustomEndpointArgs>? CustomEndpoint { get; set; }
+
+        /// <summary>
+        /// Data retention period set for given integration instance
+        /// </summary>
+        [Input("dataRetentionPeriod")]
+        public Input<string>? DataRetentionPeriod { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -390,6 +441,12 @@ namespace Pulumi.Oci.Integration
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Input("disableProcessAutomationTrigger")]
+        public Input<int>? DisableProcessAutomationTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) Integration Instance Identifier.
@@ -409,9 +466,6 @@ namespace Pulumi.Oci.Integration
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
 
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        /// </summary>
         [Input("extendDataRetentionTrigger")]
         public Input<int>? ExtendDataRetentionTrigger { get; set; }
 
@@ -478,6 +532,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("isVisualBuilderEnabled")]
         public Input<bool>? IsVisualBuilderEnabled { get; set; }
+
+        /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given integration instance
+        /// </summary>
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The number of configured message packs
@@ -567,6 +627,12 @@ namespace Pulumi.Oci.Integration
         public Input<string>? ConsumptionModel { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        /// </summary>
+        [Input("convertInstanceTrigger")]
+        public Input<int>? ConvertInstanceTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) Details for a custom endpoint for the integration instance (update).
         /// </summary>
         [Input("customEndpoint")]
@@ -589,6 +655,12 @@ namespace Pulumi.Oci.Integration
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        /// </summary>
+        [Input("disableProcessAutomationTrigger")]
+        public Input<int>? DisableProcessAutomationTrigger { get; set; }
 
         [Input("disasterRecoveryDetails")]
         private InputList<Inputs.IntegrationInstanceDisasterRecoveryDetailGetArgs>? _disasterRecoveryDetails;
@@ -620,9 +692,6 @@ namespace Pulumi.Oci.Integration
         [Input("enableProcessAutomationTrigger")]
         public Input<int>? EnableProcessAutomationTrigger { get; set; }
 
-        /// <summary>
-        /// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        /// </summary>
         [Input("extendDataRetentionTrigger")]
         public Input<int>? ExtendDataRetentionTrigger { get; set; }
 
@@ -716,6 +785,12 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given integration instance
+        /// </summary>
+        [Input("logGroupId")]
+        public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The number of configured message packs

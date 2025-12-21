@@ -117,6 +117,7 @@ import javax.annotation.Nullable;
  *                     .freeformTags(Map.of("Department", "Finance"))
  *                     .build())
  *                 .serviceLbConfig(ClusterOptionsServiceLbConfigArgs.builder()
+ *                     .backendNsgIds(clusterOptionsServiceLbConfigBackendNsgIds)
  *                     .definedTags(Map.of("Operations.CostCenter", "42"))
  *                     .freeformTags(Map.of("Department", "Finance"))
  *                     .build())

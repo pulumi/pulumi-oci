@@ -78,14 +78,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The userid on the instance to be used for executing the script or command.  Example: `opc`
+     * The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
      * 
      */
     @Import(name="runAsUser")
     private @Nullable Output<String> runAsUser;
 
     /**
-     * @return The userid on the instance to be used for executing the script or command.  Example: `opc`
+     * @return The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
      * 
      */
     public Optional<Output<String>> runAsUser() {
@@ -123,14 +123,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
     }
 
     /**
-     * The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+     * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
      * 
      */
     @Import(name="scriptCommand")
     private @Nullable Output<String> scriptCommand;
 
     /**
-     * @return The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+     * @return The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
      * 
      */
     public Optional<Output<String>> scriptCommand() {
@@ -279,7 +279,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runAsUser The userid on the instance to be used for executing the script or command.  Example: `opc`
+         * @param runAsUser The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param runAsUser The userid on the instance to be used for executing the script or command.  Example: `opc`
+         * @param runAsUser The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param scriptCommand The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+         * @param scriptCommand The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepArgs extends com.pulumi.res
         }
 
         /**
-         * @param scriptCommand The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+         * @param scriptCommand The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
          * 
          * @return builder
          * 

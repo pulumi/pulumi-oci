@@ -12,6 +12,18 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
 
     public sealed class ClusterOptionsServiceLbConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("backendNsgIds")]
+        private InputList<string>? _backendNsgIds;
+
+        /// <summary>
+        /// (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        /// </summary>
+        public InputList<string> BackendNsgIds
+        {
+            get => _backendNsgIds ?? (_backendNsgIds = new InputList<string>());
+            set => _backendNsgIds = value;
+        }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

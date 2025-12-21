@@ -12,10 +12,30 @@ import java.util.Objects;
 @CustomType
 public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     private String compartmentId;
+    /**
+     * @return The name assigned to the compartment during creation.
+     * 
+     */
+    private String compartmentName;
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    private Map<String,String> cspAdditionalProperties;
+    /**
+     * @return CSP resource anchor ID.
+     * 
+     */
+    private String cspResourceAnchorId;
+    /**
+     * @return CSP resource anchor name.
+     * 
+     */
+    private String cspResourceAnchorName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -42,12 +62,27 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return The current state of the ResourceAnchor.
      * 
      */
     private String lifecycleState;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+     * 
+     */
+    private String linkedCompartmentId;
+    /**
+     * @return The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * 
+     */
+    private String linkedCompartmentName;
+    /**
+     * @return Partner Cloud Account Identifier of the Cloud Service Provider.
+     * 
+     */
+    private String partnerCloudAccountIdentifier;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     private String subscriptionId;
@@ -69,11 +104,39 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
 
     private GetMulticloudResourceAnchorsResourceAnchorCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The name assigned to the compartment during creation.
+     * 
+     */
+    public String compartmentName() {
+        return this.compartmentName;
+    }
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    public Map<String,String> cspAdditionalProperties() {
+        return this.cspAdditionalProperties;
+    }
+    /**
+     * @return CSP resource anchor ID.
+     * 
+     */
+    public String cspResourceAnchorId() {
+        return this.cspResourceAnchorId;
+    }
+    /**
+     * @return CSP resource anchor name.
+     * 
+     */
+    public String cspResourceAnchorName() {
+        return this.cspResourceAnchorName;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -111,14 +174,35 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return The current state of the ResourceAnchor.
      * 
      */
     public String lifecycleState() {
         return this.lifecycleState;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+     * 
+     */
+    public String linkedCompartmentId() {
+        return this.linkedCompartmentId;
+    }
+    /**
+     * @return The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * 
+     */
+    public String linkedCompartmentName() {
+        return this.linkedCompartmentName;
+    }
+    /**
+     * @return Partner Cloud Account Identifier of the Cloud Service Provider.
+     * 
+     */
+    public String partnerCloudAccountIdentifier() {
+        return this.partnerCloudAccountIdentifier;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     public String subscriptionId() {
@@ -156,12 +240,19 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String compartmentName;
+        private Map<String,String> cspAdditionalProperties;
+        private String cspResourceAnchorId;
+        private String cspResourceAnchorName;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String lifecycleState;
+        private String linkedCompartmentId;
+        private String linkedCompartmentName;
+        private String partnerCloudAccountIdentifier;
         private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -170,12 +261,19 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
         public Builder(GetMulticloudResourceAnchorsResourceAnchorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentName = defaults.compartmentName;
+    	      this.cspAdditionalProperties = defaults.cspAdditionalProperties;
+    	      this.cspResourceAnchorId = defaults.cspResourceAnchorId;
+    	      this.cspResourceAnchorName = defaults.cspResourceAnchorName;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleState = defaults.lifecycleState;
+    	      this.linkedCompartmentId = defaults.linkedCompartmentId;
+    	      this.linkedCompartmentName = defaults.linkedCompartmentName;
+    	      this.partnerCloudAccountIdentifier = defaults.partnerCloudAccountIdentifier;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -188,6 +286,38 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentName(String compartmentName) {
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspAdditionalProperties(Map<String,String> cspAdditionalProperties) {
+            if (cspAdditionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "cspAdditionalProperties");
+            }
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspResourceAnchorId(String cspResourceAnchorId) {
+            if (cspResourceAnchorId == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "cspResourceAnchorId");
+            }
+            this.cspResourceAnchorId = cspResourceAnchorId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspResourceAnchorName(String cspResourceAnchorName) {
+            if (cspResourceAnchorName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "cspResourceAnchorName");
+            }
+            this.cspResourceAnchorName = cspResourceAnchorName;
             return this;
         }
         @CustomType.Setter
@@ -239,6 +369,30 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder linkedCompartmentId(String linkedCompartmentId) {
+            if (linkedCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "linkedCompartmentId");
+            }
+            this.linkedCompartmentId = linkedCompartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder linkedCompartmentName(String linkedCompartmentName) {
+            if (linkedCompartmentName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "linkedCompartmentName");
+            }
+            this.linkedCompartmentName = linkedCompartmentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder partnerCloudAccountIdentifier(String partnerCloudAccountIdentifier) {
+            if (partnerCloudAccountIdentifier == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "partnerCloudAccountIdentifier");
+            }
+            this.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             if (subscriptionId == null) {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResourceAnchorCollectionItem", "subscriptionId");
@@ -273,12 +427,19 @@ public final class GetMulticloudResourceAnchorsResourceAnchorCollectionItem {
         public GetMulticloudResourceAnchorsResourceAnchorCollectionItem build() {
             final var _resultValue = new GetMulticloudResourceAnchorsResourceAnchorCollectionItem();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
+            _resultValue.cspAdditionalProperties = cspAdditionalProperties;
+            _resultValue.cspResourceAnchorId = cspResourceAnchorId;
+            _resultValue.cspResourceAnchorName = cspResourceAnchorName;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lifecycleState = lifecycleState;
+            _resultValue.linkedCompartmentId = linkedCompartmentId;
+            _resultValue.linkedCompartmentName = linkedCompartmentName;
+            _resultValue.partnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

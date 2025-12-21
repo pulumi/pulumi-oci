@@ -6,6 +6,8 @@ package com.pulumi.oci.Integration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn;
+import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetailsDesignTime;
+import com.pulumi.oci.Integration.outputs.IntegrationInstanceNetworkEndpointDetailsRuntime;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -26,6 +28,11 @@ public final class IntegrationInstanceNetworkEndpointDetails {
      */
     private @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
     /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    private @Nullable IntegrationInstanceNetworkEndpointDetailsDesignTime designTime;
+    /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
@@ -35,6 +42,11 @@ public final class IntegrationInstanceNetworkEndpointDetails {
      * 
      */
     private String networkEndpointType;
+    /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    private @Nullable IntegrationInstanceNetworkEndpointDetailsRuntime runtime;
 
     private IntegrationInstanceNetworkEndpointDetails() {}
     /**
@@ -52,6 +64,13 @@ public final class IntegrationInstanceNetworkEndpointDetails {
         return this.allowlistedHttpVcns == null ? List.of() : this.allowlistedHttpVcns;
     }
     /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    public Optional<IntegrationInstanceNetworkEndpointDetailsDesignTime> designTime() {
+        return Optional.ofNullable(this.designTime);
+    }
+    /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
@@ -65,6 +84,13 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     public String networkEndpointType() {
         return this.networkEndpointType;
     }
+    /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    public Optional<IntegrationInstanceNetworkEndpointDetailsRuntime> runtime() {
+        return Optional.ofNullable(this.runtime);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -77,15 +103,19 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     public static final class Builder {
         private @Nullable List<String> allowlistedHttpIps;
         private @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
+        private @Nullable IntegrationInstanceNetworkEndpointDetailsDesignTime designTime;
         private @Nullable Boolean isIntegrationVcnAllowlisted;
         private String networkEndpointType;
+        private @Nullable IntegrationInstanceNetworkEndpointDetailsRuntime runtime;
         public Builder() {}
         public Builder(IntegrationInstanceNetworkEndpointDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.allowlistedHttpIps = defaults.allowlistedHttpIps;
     	      this.allowlistedHttpVcns = defaults.allowlistedHttpVcns;
+    	      this.designTime = defaults.designTime;
     	      this.isIntegrationVcnAllowlisted = defaults.isIntegrationVcnAllowlisted;
     	      this.networkEndpointType = defaults.networkEndpointType;
+    	      this.runtime = defaults.runtime;
         }
 
         @CustomType.Setter
@@ -107,6 +137,12 @@ public final class IntegrationInstanceNetworkEndpointDetails {
             return allowlistedHttpVcns(List.of(allowlistedHttpVcns));
         }
         @CustomType.Setter
+        public Builder designTime(@Nullable IntegrationInstanceNetworkEndpointDetailsDesignTime designTime) {
+
+            this.designTime = designTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isIntegrationVcnAllowlisted(@Nullable Boolean isIntegrationVcnAllowlisted) {
 
             this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
@@ -120,12 +156,20 @@ public final class IntegrationInstanceNetworkEndpointDetails {
             this.networkEndpointType = networkEndpointType;
             return this;
         }
+        @CustomType.Setter
+        public Builder runtime(@Nullable IntegrationInstanceNetworkEndpointDetailsRuntime runtime) {
+
+            this.runtime = runtime;
+            return this;
+        }
         public IntegrationInstanceNetworkEndpointDetails build() {
             final var _resultValue = new IntegrationInstanceNetworkEndpointDetails();
             _resultValue.allowlistedHttpIps = allowlistedHttpIps;
             _resultValue.allowlistedHttpVcns = allowlistedHttpVcns;
+            _resultValue.designTime = designTime;
             _resultValue.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             _resultValue.networkEndpointType = networkEndpointType;
+            _resultValue.runtime = runtime;
             return _resultValue;
         }
     }

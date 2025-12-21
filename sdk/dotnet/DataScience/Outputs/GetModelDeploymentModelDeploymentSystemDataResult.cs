@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int CurrentInstanceCount;
         /// <summary>
+        /// The type of the deployed model.
+        /// </summary>
+        public readonly string ModelType;
+        /// <summary>
         /// The infrastructure type of the model deployment.
         /// </summary>
         public readonly string SystemInfraType;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.DataScience.Outputs
         private GetModelDeploymentModelDeploymentSystemDataResult(
             int currentInstanceCount,
 
+            string modelType,
+
             string systemInfraType)
         {
             CurrentInstanceCount = currentInstanceCount;
+            ModelType = modelType;
             SystemInfraType = systemInfraType;
         }
     }

@@ -449,6 +449,12 @@ namespace Pulumi.Oci.Database
         [Output("isScheduleDbVersionUpgradeToEarliest")]
         public Output<bool> IsScheduleDbVersionUpgradeToEarliest { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `IsDedicated` is false.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Output("isShrinkOnly")]
         public Output<bool?> IsShrinkOnly { get; private set; } = null!;
 
@@ -697,6 +703,9 @@ namespace Pulumi.Oci.Database
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `IsDedicated` is true.
+        /// </summary>
         [Output("rotateKeyTrigger")]
         public Output<bool?> RotateKeyTrigger { get; private set; } = null!;
 
@@ -800,9 +809,15 @@ namespace Pulumi.Oci.Database
         [Output("supportedRegionsToCloneTos")]
         public Output<ImmutableArray<string>> SupportedRegionsToCloneTos { get; private set; } = null!;
 
+        /// <summary>
+        /// It is applicable only when `IsLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+        /// </summary>
         [Output("switchoverTo")]
         public Output<string?> SwitchoverTo { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) It is applicable only when `DataguardRegionType` and `Role` are set, and `IsDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+        /// </summary>
         [Output("switchoverToRemotePeerId")]
         public Output<string?> SwitchoverToRemotePeerId { get; private set; } = null!;
 
@@ -988,10 +1003,6 @@ namespace Pulumi.Oci.Database
         /// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("whitelistedIps")]
         public Output<ImmutableArray<string>> WhitelistedIps { get; private set; } = null!;
@@ -1398,6 +1409,12 @@ namespace Pulumi.Oci.Database
         [Input("isScheduleDbVersionUpgradeToEarliest")]
         public Input<bool>? IsScheduleDbVersionUpgradeToEarliest { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `IsDedicated` is false.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("isShrinkOnly")]
         public Input<bool>? IsShrinkOnly { get; set; }
 
@@ -1532,6 +1549,9 @@ namespace Pulumi.Oci.Database
         [Input("resourcePoolSummary")]
         public Input<Inputs.AutonomousDatabaseResourcePoolSummaryArgs>? ResourcePoolSummary { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `IsDedicated` is true.
+        /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
 
@@ -1635,9 +1655,15 @@ namespace Pulumi.Oci.Database
         [Input("subscriptionId")]
         public Input<string>? SubscriptionId { get; set; }
 
+        /// <summary>
+        /// It is applicable only when `IsLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+        /// </summary>
         [Input("switchoverTo")]
         public Input<string>? SwitchoverTo { get; set; }
 
+        /// <summary>
+        /// (Updatable) It is applicable only when `DataguardRegionType` and `Role` are set, and `IsDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+        /// </summary>
         [Input("switchoverToRemotePeerId")]
         public Input<string>? SwitchoverToRemotePeerId { get; set; }
 
@@ -1694,10 +1720,6 @@ namespace Pulumi.Oci.Database
         /// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> WhitelistedIps
         {
@@ -2221,6 +2243,12 @@ namespace Pulumi.Oci.Database
         [Input("isScheduleDbVersionUpgradeToEarliest")]
         public Input<bool>? IsScheduleDbVersionUpgradeToEarliest { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `IsDedicated` is false.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("isShrinkOnly")]
         public Input<bool>? IsShrinkOnly { get; set; }
 
@@ -2517,6 +2545,9 @@ namespace Pulumi.Oci.Database
         [Input("role")]
         public Input<string>? Role { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `IsDedicated` is true.
+        /// </summary>
         [Input("rotateKeyTrigger")]
         public Input<bool>? RotateKeyTrigger { get; set; }
 
@@ -2650,9 +2681,15 @@ namespace Pulumi.Oci.Database
             set => _supportedRegionsToCloneTos = value;
         }
 
+        /// <summary>
+        /// It is applicable only when `IsLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+        /// </summary>
         [Input("switchoverTo")]
         public Input<string>? SwitchoverTo { get; set; }
 
+        /// <summary>
+        /// (Updatable) It is applicable only when `DataguardRegionType` and `Role` are set, and `IsDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+        /// </summary>
         [Input("switchoverToRemotePeerId")]
         public Input<string>? SwitchoverToRemotePeerId { get; set; }
 
@@ -2859,10 +2896,6 @@ namespace Pulumi.Oci.Database
         /// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
         /// 
         /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public InputList<string> WhitelistedIps
         {

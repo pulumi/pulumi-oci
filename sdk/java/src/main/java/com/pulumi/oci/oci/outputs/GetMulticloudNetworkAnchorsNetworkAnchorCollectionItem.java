@@ -17,10 +17,20 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
      */
     private String clusterPlacementGroupId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     private String compartmentId;
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    private Map<String,String> cspAdditionalProperties;
+    /**
+     * @return Network Anchor Id in the Cloud Service Provider.
+     * 
+     */
+    private String cspNetworkAnchorId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -39,8 +49,6 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
-     * 
      */
     private String id;
     /**
@@ -49,15 +57,30 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
      */
     private String lifecycleDetails;
     /**
+     * @return Defines status of the Network Anchor.
+     * 
+     */
+    private String networkAnchorConnectionStatus;
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
     private String networkAnchorLifecycleState;
     /**
+     * @return CSP network anchor Uri
+     * 
+     */
+    private String networkAnchorUri;
+    /**
      * @return Oracle Cloud Infrastructure resource anchor Id (OCID).
      * 
      */
     private String resourceAnchorId;
+    /**
+     * @return Oracle Cloud Infrastructure Subscription Type.
+     * 
+     */
+    private String subscriptionType;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -78,6 +101,11 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
      * 
      */
     private String vcnId;
+    /**
+     * @return Name of the VCN associated to the Network Anchor.
+     * 
+     */
+    private String vcnName;
 
     private GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem() {}
     /**
@@ -88,11 +116,25 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         return this.clusterPlacementGroupId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    public Map<String,String> cspAdditionalProperties() {
+        return this.cspAdditionalProperties;
+    }
+    /**
+     * @return Network Anchor Id in the Cloud Service Provider.
+     * 
+     */
+    public String cspNetworkAnchorId() {
+        return this.cspNetworkAnchorId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -118,8 +160,6 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
-     * 
      */
     public String id() {
         return this.id;
@@ -132,6 +172,13 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return Defines status of the Network Anchor.
+     * 
+     */
+    public String networkAnchorConnectionStatus() {
+        return this.networkAnchorConnectionStatus;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -139,11 +186,25 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
         return this.networkAnchorLifecycleState;
     }
     /**
+     * @return CSP network anchor Uri
+     * 
+     */
+    public String networkAnchorUri() {
+        return this.networkAnchorUri;
+    }
+    /**
      * @return Oracle Cloud Infrastructure resource anchor Id (OCID).
      * 
      */
     public String resourceAnchorId() {
         return this.resourceAnchorId;
+    }
+    /**
+     * @return Oracle Cloud Infrastructure Subscription Type.
+     * 
+     */
+    public String subscriptionType() {
+        return this.subscriptionType;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -173,6 +234,13 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     public String vcnId() {
         return this.vcnId;
     }
+    /**
+     * @return Name of the VCN associated to the Network Anchor.
+     * 
+     */
+    public String vcnName() {
+        return this.vcnName;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -185,33 +253,45 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
     public static final class Builder {
         private String clusterPlacementGroupId;
         private String compartmentId;
+        private Map<String,String> cspAdditionalProperties;
+        private String cspNetworkAnchorId;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private String networkAnchorConnectionStatus;
         private String networkAnchorLifecycleState;
+        private String networkAnchorUri;
         private String resourceAnchorId;
+        private String subscriptionType;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String vcnId;
+        private String vcnName;
         public Builder() {}
         public Builder(GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.cspAdditionalProperties = defaults.cspAdditionalProperties;
+    	      this.cspNetworkAnchorId = defaults.cspNetworkAnchorId;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.networkAnchorConnectionStatus = defaults.networkAnchorConnectionStatus;
     	      this.networkAnchorLifecycleState = defaults.networkAnchorLifecycleState;
+    	      this.networkAnchorUri = defaults.networkAnchorUri;
     	      this.resourceAnchorId = defaults.resourceAnchorId;
+    	      this.subscriptionType = defaults.subscriptionType;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.vcnId = defaults.vcnId;
+    	      this.vcnName = defaults.vcnName;
         }
 
         @CustomType.Setter
@@ -228,6 +308,22 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
               throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspAdditionalProperties(Map<String,String> cspAdditionalProperties) {
+            if (cspAdditionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "cspAdditionalProperties");
+            }
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspNetworkAnchorId(String cspNetworkAnchorId) {
+            if (cspNetworkAnchorId == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "cspNetworkAnchorId");
+            }
+            this.cspNetworkAnchorId = cspNetworkAnchorId;
             return this;
         }
         @CustomType.Setter
@@ -271,6 +367,14 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder networkAnchorConnectionStatus(String networkAnchorConnectionStatus) {
+            if (networkAnchorConnectionStatus == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "networkAnchorConnectionStatus");
+            }
+            this.networkAnchorConnectionStatus = networkAnchorConnectionStatus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder networkAnchorLifecycleState(String networkAnchorLifecycleState) {
             if (networkAnchorLifecycleState == null) {
               throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "networkAnchorLifecycleState");
@@ -279,11 +383,27 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder networkAnchorUri(String networkAnchorUri) {
+            if (networkAnchorUri == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "networkAnchorUri");
+            }
+            this.networkAnchorUri = networkAnchorUri;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resourceAnchorId(String resourceAnchorId) {
             if (resourceAnchorId == null) {
               throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "resourceAnchorId");
             }
             this.resourceAnchorId = resourceAnchorId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionType(String subscriptionType) {
+            if (subscriptionType == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "subscriptionType");
+            }
+            this.subscriptionType = subscriptionType;
             return this;
         }
         @CustomType.Setter
@@ -318,21 +438,35 @@ public final class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vcnName(String vcnName) {
+            if (vcnName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem", "vcnName");
+            }
+            this.vcnName = vcnName;
+            return this;
+        }
         public GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem build() {
             final var _resultValue = new GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem();
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.cspAdditionalProperties = cspAdditionalProperties;
+            _resultValue.cspNetworkAnchorId = cspNetworkAnchorId;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkAnchorConnectionStatus = networkAnchorConnectionStatus;
             _resultValue.networkAnchorLifecycleState = networkAnchorLifecycleState;
+            _resultValue.networkAnchorUri = networkAnchorUri;
             _resultValue.resourceAnchorId = resourceAnchorId;
+            _resultValue.subscriptionType = subscriptionType;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.vcnId = vcnId;
+            _resultValue.vcnName = vcnName;
             return _resultValue;
         }
     }

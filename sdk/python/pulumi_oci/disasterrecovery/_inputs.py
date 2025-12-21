@@ -29,6 +29,18 @@ __all__ = [
     'DrPlanExecutionGroupExecutionStepExecutionLogLocationArgsDict',
     'DrPlanExecutionLogLocationArgs',
     'DrPlanExecutionLogLocationArgsDict',
+    'DrPlanExecutionStepStatusCountArgs',
+    'DrPlanExecutionStepStatusCountArgsDict',
+    'DrPlanExecutionStepStatusCountFailedStepArgs',
+    'DrPlanExecutionStepStatusCountFailedStepArgsDict',
+    'DrPlanExecutionStepStatusCountRemainingStepArgs',
+    'DrPlanExecutionStepStatusCountRemainingStepArgsDict',
+    'DrPlanExecutionStepStatusCountSkippedStepArgs',
+    'DrPlanExecutionStepStatusCountSkippedStepArgsDict',
+    'DrPlanExecutionStepStatusCountSuccessfulStepArgs',
+    'DrPlanExecutionStepStatusCountSuccessfulStepArgsDict',
+    'DrPlanExecutionStepStatusCountWarningStepArgs',
+    'DrPlanExecutionStepStatusCountWarningStepArgsDict',
     'DrPlanPlanGroupArgs',
     'DrPlanPlanGroupArgsDict',
     'DrPlanPlanGroupStepArgs',
@@ -83,6 +95,8 @@ __all__ = [
     'DrProtectionGroupMemberManagedNodePoolConfigArgsDict',
     'DrProtectionGroupMemberNetworkLoadBalancerMappingArgs',
     'DrProtectionGroupMemberNetworkLoadBalancerMappingArgsDict',
+    'DrProtectionGroupMemberResourceModifierMappingArgs',
+    'DrProtectionGroupMemberResourceModifierMappingArgsDict',
     'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs',
     'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict',
     'DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs',
@@ -899,6 +913,518 @@ class DrPlanExecutionLogLocationArgs:
 
 
 if not MYPY:
+    class DrPlanExecutionStepStatusCountArgsDict(TypedDict):
+        failed_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgsDict']]]]
+        """
+        A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+        """
+        remaining_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgsDict']]]]
+        """
+        A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+        """
+        skipped_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgsDict']]]]
+        """
+        A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+        """
+        successful_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgsDict']]]]
+        """
+        A summary of steps that completed successfully during a DR plan execution.
+        """
+        total_steps: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps in a DR plan execution.
+        """
+        warning_steps: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgsDict']]]]
+        """
+        A summary of steps that encountered warnings during a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountArgs:
+    def __init__(__self__, *,
+                 failed_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgs']]]] = None,
+                 remaining_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgs']]]] = None,
+                 skipped_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgs']]]] = None,
+                 successful_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgs']]]] = None,
+                 total_steps: Optional[pulumi.Input[_builtins.int]] = None,
+                 warning_steps: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgs']]] failed_steps: A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgs']]] remaining_steps: A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgs']]] skipped_steps: A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgs']]] successful_steps: A summary of steps that completed successfully during a DR plan execution.
+        :param pulumi.Input[_builtins.int] total_steps: The total number of steps in a DR plan execution.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgs']]] warning_steps: A summary of steps that encountered warnings during a DR plan execution.
+        """
+        if failed_steps is not None:
+            pulumi.set(__self__, "failed_steps", failed_steps)
+        if remaining_steps is not None:
+            pulumi.set(__self__, "remaining_steps", remaining_steps)
+        if skipped_steps is not None:
+            pulumi.set(__self__, "skipped_steps", skipped_steps)
+        if successful_steps is not None:
+            pulumi.set(__self__, "successful_steps", successful_steps)
+        if total_steps is not None:
+            pulumi.set(__self__, "total_steps", total_steps)
+        if warning_steps is not None:
+            pulumi.set(__self__, "warning_steps", warning_steps)
+
+    @_builtins.property
+    @pulumi.getter(name="failedSteps")
+    def failed_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgs']]]]:
+        """
+        A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+        """
+        return pulumi.get(self, "failed_steps")
+
+    @failed_steps.setter
+    def failed_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountFailedStepArgs']]]]):
+        pulumi.set(self, "failed_steps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remainingSteps")
+    def remaining_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgs']]]]:
+        """
+        A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+        """
+        return pulumi.get(self, "remaining_steps")
+
+    @remaining_steps.setter
+    def remaining_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountRemainingStepArgs']]]]):
+        pulumi.set(self, "remaining_steps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="skippedSteps")
+    def skipped_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgs']]]]:
+        """
+        A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+        """
+        return pulumi.get(self, "skipped_steps")
+
+    @skipped_steps.setter
+    def skipped_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSkippedStepArgs']]]]):
+        pulumi.set(self, "skipped_steps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="successfulSteps")
+    def successful_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgs']]]]:
+        """
+        A summary of steps that completed successfully during a DR plan execution.
+        """
+        return pulumi.get(self, "successful_steps")
+
+    @successful_steps.setter
+    def successful_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountSuccessfulStepArgs']]]]):
+        pulumi.set(self, "successful_steps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSteps")
+    def total_steps(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps in a DR plan execution.
+        """
+        return pulumi.get(self, "total_steps")
+
+    @total_steps.setter
+    def total_steps(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_steps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="warningSteps")
+    def warning_steps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgs']]]]:
+        """
+        A summary of steps that encountered warnings during a DR plan execution.
+        """
+        return pulumi.get(self, "warning_steps")
+
+    @warning_steps.setter
+    def warning_steps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountWarningStepArgs']]]]):
+        pulumi.set(self, "warning_steps", value)
+
+
+if not MYPY:
+    class DrPlanExecutionStepStatusCountFailedStepArgsDict(TypedDict):
+        failed: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of failed steps in a DR plan execution.
+        """
+        timed_out: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that timed out during a DR plan execution.
+        """
+        total_failed: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that failed during a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountFailedStepArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountFailedStepArgs:
+    def __init__(__self__, *,
+                 failed: Optional[pulumi.Input[_builtins.int]] = None,
+                 timed_out: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_failed: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] failed: The total number of failed steps in a DR plan execution.
+        :param pulumi.Input[_builtins.int] timed_out: The total number of steps that timed out during a DR plan execution.
+        :param pulumi.Input[_builtins.int] total_failed: The total number of steps that failed during a DR plan execution.
+        """
+        if failed is not None:
+            pulumi.set(__self__, "failed", failed)
+        if timed_out is not None:
+            pulumi.set(__self__, "timed_out", timed_out)
+        if total_failed is not None:
+            pulumi.set(__self__, "total_failed", total_failed)
+
+    @_builtins.property
+    @pulumi.getter
+    def failed(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of failed steps in a DR plan execution.
+        """
+        return pulumi.get(self, "failed")
+
+    @failed.setter
+    def failed(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "failed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timedOut")
+    def timed_out(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that timed out during a DR plan execution.
+        """
+        return pulumi.get(self, "timed_out")
+
+    @timed_out.setter
+    def timed_out(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "timed_out", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalFailed")
+    def total_failed(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that failed during a DR plan execution.
+        """
+        return pulumi.get(self, "total_failed")
+
+    @total_failed.setter
+    def total_failed(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_failed", value)
+
+
+if not MYPY:
+    class DrPlanExecutionStepStatusCountRemainingStepArgsDict(TypedDict):
+        in_progress: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps in progress during a DR plan execution.
+        """
+        paused: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of paused steps in a DR plan execution.
+        """
+        queued: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of queued steps in a DR plan execution.
+        """
+        total_remaining: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of remaining steps in a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountRemainingStepArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountRemainingStepArgs:
+    def __init__(__self__, *,
+                 in_progress: Optional[pulumi.Input[_builtins.int]] = None,
+                 paused: Optional[pulumi.Input[_builtins.int]] = None,
+                 queued: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_remaining: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] in_progress: The total number of steps in progress during a DR plan execution.
+        :param pulumi.Input[_builtins.int] paused: The total number of paused steps in a DR plan execution.
+        :param pulumi.Input[_builtins.int] queued: The total number of queued steps in a DR plan execution.
+        :param pulumi.Input[_builtins.int] total_remaining: The total number of remaining steps in a DR plan execution.
+        """
+        if in_progress is not None:
+            pulumi.set(__self__, "in_progress", in_progress)
+        if paused is not None:
+            pulumi.set(__self__, "paused", paused)
+        if queued is not None:
+            pulumi.set(__self__, "queued", queued)
+        if total_remaining is not None:
+            pulumi.set(__self__, "total_remaining", total_remaining)
+
+    @_builtins.property
+    @pulumi.getter(name="inProgress")
+    def in_progress(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps in progress during a DR plan execution.
+        """
+        return pulumi.get(self, "in_progress")
+
+    @in_progress.setter
+    def in_progress(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def paused(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of paused steps in a DR plan execution.
+        """
+        return pulumi.get(self, "paused")
+
+    @paused.setter
+    def paused(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "paused", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def queued(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of queued steps in a DR plan execution.
+        """
+        return pulumi.get(self, "queued")
+
+    @queued.setter
+    def queued(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "queued", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalRemaining")
+    def total_remaining(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of remaining steps in a DR plan execution.
+        """
+        return pulumi.get(self, "total_remaining")
+
+    @total_remaining.setter
+    def total_remaining(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_remaining", value)
+
+
+if not MYPY:
+    class DrPlanExecutionStepStatusCountSkippedStepArgsDict(TypedDict):
+        canceled: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of canceled steps in a DR plan execution.
+        """
+        disabled: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of disabled steps in a DR plan execution.
+        """
+        failed_ignored: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that failed but were ignored during a DR plan execution.
+        """
+        timed_out_ignored: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that timed out but were ignored during a DR plan execution.
+        """
+        total_skipped: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that were skipped during a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountSkippedStepArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountSkippedStepArgs:
+    def __init__(__self__, *,
+                 canceled: Optional[pulumi.Input[_builtins.int]] = None,
+                 disabled: Optional[pulumi.Input[_builtins.int]] = None,
+                 failed_ignored: Optional[pulumi.Input[_builtins.int]] = None,
+                 timed_out_ignored: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_skipped: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] canceled: The total number of canceled steps in a DR plan execution.
+        :param pulumi.Input[_builtins.int] disabled: The total number of disabled steps in a DR plan execution.
+        :param pulumi.Input[_builtins.int] failed_ignored: The total number of steps that failed but were ignored during a DR plan execution.
+        :param pulumi.Input[_builtins.int] timed_out_ignored: The total number of steps that timed out but were ignored during a DR plan execution.
+        :param pulumi.Input[_builtins.int] total_skipped: The total number of steps that were skipped during a DR plan execution.
+        """
+        if canceled is not None:
+            pulumi.set(__self__, "canceled", canceled)
+        if disabled is not None:
+            pulumi.set(__self__, "disabled", disabled)
+        if failed_ignored is not None:
+            pulumi.set(__self__, "failed_ignored", failed_ignored)
+        if timed_out_ignored is not None:
+            pulumi.set(__self__, "timed_out_ignored", timed_out_ignored)
+        if total_skipped is not None:
+            pulumi.set(__self__, "total_skipped", total_skipped)
+
+    @_builtins.property
+    @pulumi.getter
+    def canceled(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of canceled steps in a DR plan execution.
+        """
+        return pulumi.get(self, "canceled")
+
+    @canceled.setter
+    def canceled(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "canceled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def disabled(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of disabled steps in a DR plan execution.
+        """
+        return pulumi.get(self, "disabled")
+
+    @disabled.setter
+    def disabled(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "disabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="failedIgnored")
+    def failed_ignored(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that failed but were ignored during a DR plan execution.
+        """
+        return pulumi.get(self, "failed_ignored")
+
+    @failed_ignored.setter
+    def failed_ignored(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "failed_ignored", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timedOutIgnored")
+    def timed_out_ignored(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that timed out but were ignored during a DR plan execution.
+        """
+        return pulumi.get(self, "timed_out_ignored")
+
+    @timed_out_ignored.setter
+    def timed_out_ignored(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "timed_out_ignored", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSkipped")
+    def total_skipped(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that were skipped during a DR plan execution.
+        """
+        return pulumi.get(self, "total_skipped")
+
+    @total_skipped.setter
+    def total_skipped(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_skipped", value)
+
+
+if not MYPY:
+    class DrPlanExecutionStepStatusCountSuccessfulStepArgsDict(TypedDict):
+        succeeded: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that succeeded during a DR plan execution.
+        """
+        total_successful: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of successful steps in a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountSuccessfulStepArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountSuccessfulStepArgs:
+    def __init__(__self__, *,
+                 succeeded: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_successful: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] succeeded: The total number of steps that succeeded during a DR plan execution.
+        :param pulumi.Input[_builtins.int] total_successful: The total number of successful steps in a DR plan execution.
+        """
+        if succeeded is not None:
+            pulumi.set(__self__, "succeeded", succeeded)
+        if total_successful is not None:
+            pulumi.set(__self__, "total_successful", total_successful)
+
+    @_builtins.property
+    @pulumi.getter
+    def succeeded(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that succeeded during a DR plan execution.
+        """
+        return pulumi.get(self, "succeeded")
+
+    @succeeded.setter
+    def succeeded(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "succeeded", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSuccessful")
+    def total_successful(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of successful steps in a DR plan execution.
+        """
+        return pulumi.get(self, "total_successful")
+
+    @total_successful.setter
+    def total_successful(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_successful", value)
+
+
+if not MYPY:
+    class DrPlanExecutionStepStatusCountWarningStepArgsDict(TypedDict):
+        total_warnings: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps that encountered warnings in a DR plan execution.
+        """
+        warnings_ignored: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The total number of steps with warnings that were ignored during a DR plan execution.
+        """
+elif False:
+    DrPlanExecutionStepStatusCountWarningStepArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionStepStatusCountWarningStepArgs:
+    def __init__(__self__, *,
+                 total_warnings: Optional[pulumi.Input[_builtins.int]] = None,
+                 warnings_ignored: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] total_warnings: The total number of steps that encountered warnings in a DR plan execution.
+        :param pulumi.Input[_builtins.int] warnings_ignored: The total number of steps with warnings that were ignored during a DR plan execution.
+        """
+        if total_warnings is not None:
+            pulumi.set(__self__, "total_warnings", total_warnings)
+        if warnings_ignored is not None:
+            pulumi.set(__self__, "warnings_ignored", warnings_ignored)
+
+    @_builtins.property
+    @pulumi.getter(name="totalWarnings")
+    def total_warnings(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps that encountered warnings in a DR plan execution.
+        """
+        return pulumi.get(self, "total_warnings")
+
+    @total_warnings.setter
+    def total_warnings(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_warnings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="warningsIgnored")
+    def warnings_ignored(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The total number of steps with warnings that were ignored during a DR plan execution.
+        """
+        return pulumi.get(self, "warnings_ignored")
+
+    @warnings_ignored.setter
+    def warnings_ignored(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "warnings_ignored", value)
+
+
+if not MYPY:
     class DrPlanPlanGroupArgsDict(TypedDict):
         display_name: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1282,7 +1808,7 @@ if not MYPY:
         """
         run_as_user: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The userid on the instance to be used for executing the script or command.  Example: `opc`
+        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
         """
         run_on_instance_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1294,7 +1820,7 @@ if not MYPY:
         """
         script_command: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         """
         step_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1320,10 +1846,10 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
         :param pulumi.Input[_builtins.str] function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]] object_storage_script_locations: The details of an object storage script location for a user-defined step in a DR plan.
         :param pulumi.Input[_builtins.str] request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-        :param pulumi.Input[_builtins.str] run_as_user: The userid on the instance to be used for executing the script or command.  Example: `opc`
+        :param pulumi.Input[_builtins.str] run_as_user: The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
         :param pulumi.Input[_builtins.str] run_on_instance_id: The OCID of the instance on which this script or command should be executed.
         :param pulumi.Input[_builtins.str] run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-        :param pulumi.Input[_builtins.str] script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+        :param pulumi.Input[_builtins.str] script_command: The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         :param pulumi.Input[_builtins.str] step_type: The type of the user-defined step.
         """
         if function_id is not None:
@@ -1397,7 +1923,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="runAsUser")
     def run_as_user(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The userid on the instance to be used for executing the script or command.  Example: `opc`
+        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
         """
         return pulumi.get(self, "run_as_user")
 
@@ -1433,7 +1959,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="scriptCommand")
     def script_command(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         """
         return pulumi.get(self, "script_command")
 
@@ -1817,6 +2343,10 @@ if not MYPY:
         """
         (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
         """
+        resource_modifier_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgsDict']]]]
+        """
+        (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+        """
         source_volume_to_destination_encryption_key_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgsDict']]]]
         """
         (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -1884,6 +2414,7 @@ class DrProtectionGroupMemberArgs:
                  password_vault_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 resource_modifier_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]]] = None,
                  source_volume_to_destination_encryption_key_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs']]]] = None,
                  vault_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVaultMappingArgs']]]] = None,
                  virtual_node_pool_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberVirtualNodePoolConfigArgs']]]] = None,
@@ -1927,6 +2458,7 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[_builtins.str] password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_cluster_id: (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_db_system_id: (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]] resource_modifier_mappings: (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs']]] source_volume_to_destination_encryption_key_mappings: (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
                
                If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -2009,6 +2541,8 @@ class DrProtectionGroupMemberArgs:
             pulumi.set(__self__, "peer_cluster_id", peer_cluster_id)
         if peer_db_system_id is not None:
             pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
+        if resource_modifier_mappings is not None:
+            pulumi.set(__self__, "resource_modifier_mappings", resource_modifier_mappings)
         if source_volume_to_destination_encryption_key_mappings is not None:
             pulumi.set(__self__, "source_volume_to_destination_encryption_key_mappings", source_volume_to_destination_encryption_key_mappings)
         if vault_mappings is not None:
@@ -2463,6 +2997,18 @@ class DrProtectionGroupMemberArgs:
     @peer_db_system_id.setter
     def peer_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "peer_db_system_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceModifierMappings")
+    def resource_modifier_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]]]:
+        """
+        (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+        """
+        return pulumi.get(self, "resource_modifier_mappings")
+
+    @resource_modifier_mappings.setter
+    def resource_modifier_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]]]):
+        pulumi.set(self, "resource_modifier_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVolumeToDestinationEncryptionKeyMappings")
@@ -3729,6 +4275,58 @@ class DrProtectionGroupMemberNetworkLoadBalancerMappingArgs:
     @source_network_load_balancer_id.setter
     def source_network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "source_network_load_balancer_id", value)
+
+
+if not MYPY:
+    class DrProtectionGroupMemberResourceModifierMappingArgsDict(TypedDict):
+        config_map: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        """
+        namespace: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+        """
+elif False:
+    DrProtectionGroupMemberResourceModifierMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrProtectionGroupMemberResourceModifierMappingArgs:
+    def __init__(__self__, *,
+                 config_map: Optional[pulumi.Input[_builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] config_map: (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+        """
+        if config_map is not None:
+            pulumi.set(__self__, "config_map", config_map)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+
+    @_builtins.property
+    @pulumi.getter(name="configMap")
+    def config_map(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        """
+        return pulumi.get(self, "config_map")
+
+    @config_map.setter
+    def config_map(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "config_map", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
 
 
 if not MYPY:

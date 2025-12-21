@@ -19,6 +19,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSys
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberLoadBalancerMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberManagedNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberNetworkLoadBalancerMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberResourceModifierMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVaultMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVirtualNodePoolConfig;
@@ -192,7 +193,7 @@ public final class GetDrProtectionGroupMember {
      */
     private String memberType;
     /**
-     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
      * 
      */
     private String namespace;
@@ -216,6 +217,11 @@ public final class GetDrProtectionGroupMember {
      * 
      */
     private String peerDbSystemId;
+    /**
+     * @return The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings;
     /**
      * @return A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
@@ -468,7 +474,7 @@ public final class GetDrProtectionGroupMember {
         return this.memberType;
     }
     /**
-     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
      * 
      */
     public String namespace() {
@@ -501,6 +507,13 @@ public final class GetDrProtectionGroupMember {
      */
     public String peerDbSystemId() {
         return this.peerDbSystemId;
+    }
+    /**
+     * @return The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings() {
+        return this.resourceModifierMappings;
     }
     /**
      * @return A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -584,6 +597,7 @@ public final class GetDrProtectionGroupMember {
         private String passwordVaultSecretId;
         private String peerClusterId;
         private String peerDbSystemId;
+        private List<GetDrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings;
         private List<GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings;
         private List<GetDrProtectionGroupMemberVaultMapping> vaultMappings;
         private List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
@@ -629,6 +643,7 @@ public final class GetDrProtectionGroupMember {
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
     	      this.peerClusterId = defaults.peerClusterId;
     	      this.peerDbSystemId = defaults.peerDbSystemId;
+    	      this.resourceModifierMappings = defaults.resourceModifierMappings;
     	      this.sourceVolumeToDestinationEncryptionKeyMappings = defaults.sourceVolumeToDestinationEncryptionKeyMappings;
     	      this.vaultMappings = defaults.vaultMappings;
     	      this.virtualNodePoolConfigs = defaults.virtualNodePoolConfigs;
@@ -975,6 +990,17 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceModifierMappings(List<GetDrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings) {
+            if (resourceModifierMappings == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "resourceModifierMappings");
+            }
+            this.resourceModifierMappings = resourceModifierMappings;
+            return this;
+        }
+        public Builder resourceModifierMappings(GetDrProtectionGroupMemberResourceModifierMapping... resourceModifierMappings) {
+            return resourceModifierMappings(List.of(resourceModifierMappings));
+        }
+        @CustomType.Setter
         public Builder sourceVolumeToDestinationEncryptionKeyMappings(List<GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings) {
             if (sourceVolumeToDestinationEncryptionKeyMappings == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "sourceVolumeToDestinationEncryptionKeyMappings");
@@ -1068,6 +1094,7 @@ public final class GetDrProtectionGroupMember {
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
             _resultValue.peerClusterId = peerClusterId;
             _resultValue.peerDbSystemId = peerDbSystemId;
+            _resultValue.resourceModifierMappings = resourceModifierMappings;
             _resultValue.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             _resultValue.vaultMappings = vaultMappings;
             _resultValue.virtualNodePoolConfigs = virtualNodePoolConfigs;

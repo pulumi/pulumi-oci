@@ -27,7 +27,7 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, system_tags=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
         if attach_datastore_cluster_ids and not isinstance(attach_datastore_cluster_ids, list):
             raise TypeError("Expected argument 'attach_datastore_cluster_ids' to be a list")
         pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
@@ -124,6 +124,9 @@ class GetExsiHostResult:
         if swap_billing_host_id and not isinstance(swap_billing_host_id, str):
             raise TypeError("Expected argument 'swap_billing_host_id' to be a str")
         pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -391,6 +394,14 @@ class GetExsiHostResult:
         return pulumi.get(self, "swap_billing_host_id")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -461,6 +472,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             sddc_id=self.sddc_id,
             state=self.state,
             swap_billing_host_id=self.swap_billing_host_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             upgraded_replacement_esxi_host_id=self.upgraded_replacement_esxi_host_id,
@@ -524,6 +536,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'),
         swap_billing_host_id=pulumi.get(__ret__, 'swap_billing_host_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgraded_replacement_esxi_host_id=pulumi.get(__ret__, 'upgraded_replacement_esxi_host_id'),
@@ -584,6 +597,7 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         state=pulumi.get(__response__, 'state'),
         swap_billing_host_id=pulumi.get(__response__, 'swap_billing_host_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         upgraded_replacement_esxi_host_id=pulumi.get(__response__, 'upgraded_replacement_esxi_host_id'),

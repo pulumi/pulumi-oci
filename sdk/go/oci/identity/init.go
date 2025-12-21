@@ -79,6 +79,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsIdentitySetting{}
 	case "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting":
 		r = &DomainsKmsiSetting{}
+	case "oci:Identity/domainsMappedAttribute:DomainsMappedAttribute":
+		r = &DomainsMappedAttribute{}
 	case "oci:Identity/domainsMyApiKey:DomainsMyApiKey":
 		r = &DomainsMyApiKey{}
 	case "oci:Identity/domainsMyAuthToken:DomainsMyAuthToken":
@@ -313,6 +315,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsKmsiSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsMappedAttribute",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

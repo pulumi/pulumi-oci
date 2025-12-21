@@ -118,6 +118,11 @@ public final class GetClustersClusterCollectionItem {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -297,6 +302,13 @@ public final class GetClustersClusterCollectionItem {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -377,6 +389,7 @@ public final class GetClustersClusterCollectionItem {
         private List<GetClustersClusterCollectionItemNetworkConfiguration> networkConfigurations;
         private String sddcId;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private List<GetClustersClusterCollectionItemUpgradeLicense> upgradeLicenses;
@@ -409,6 +422,7 @@ public final class GetClustersClusterCollectionItem {
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.upgradeLicenses = defaults.upgradeLicenses;
@@ -610,6 +624,14 @@ public final class GetClustersClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetClustersClusterCollectionItem", "timeCreated");
@@ -695,6 +717,7 @@ public final class GetClustersClusterCollectionItem {
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.sddcId = sddcId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.upgradeLicenses = upgradeLicenses;

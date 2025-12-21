@@ -27,7 +27,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_host_ocpu_count=None, initial_host_shape_name=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, attach_datastore_cluster_ids=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, datastore_cluster_ids=None, datastores=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, id=None, initial_commitment=None, initial_host_ocpu_count=None, initial_host_shape_name=None, instance_display_name_prefix=None, is_shielded_instance_enabled=None, network_configurations=None, sddc_id=None, state=None, system_tags=None, time_created=None, time_updated=None, upgrade_licenses=None, vmware_software_version=None, vsphere_type=None, vsphere_upgrade_objects=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -97,6 +97,9 @@ class GetClusterResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -292,6 +295,14 @@ class GetClusterResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -377,6 +388,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             network_configurations=self.network_configurations,
             sddc_id=self.sddc_id,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             upgrade_licenses=self.upgrade_licenses,
@@ -434,6 +446,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         network_configurations=pulumi.get(__ret__, 'network_configurations'),
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_licenses=pulumi.get(__ret__, 'upgrade_licenses'),
@@ -488,6 +501,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
         network_configurations=pulumi.get(__response__, 'network_configurations'),
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         upgrade_licenses=pulumi.get(__response__, 'upgrade_licenses'),

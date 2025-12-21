@@ -14,7 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
     /**
-     * @return Cluster Placement Group OCID
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
+     * @return Cluster Placement Group OCID (deprecated representation)
      * 
      */
     private String cpgId;
@@ -24,7 +29,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
      */
     private Map<String,String> definedTags;
     /**
-     * @return External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+     * @return The Cloud Service Provider region.
      * 
      */
     private List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation> externalLocations;
@@ -49,6 +54,21 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
      */
     private String ociRegion;
     /**
+     * @return User friendly name of account name for customer&#39;s subscription
+     * 
+     */
+    private String partnerCloudAccountName;
+    /**
+     * @return Direct URL to partner cloud for customer&#39;s account
+     * 
+     */
+    private String partnerCloudAccountUrl;
+    /**
+     * @return Partner Cloud Name based on service name
+     * 
+     */
+    private String partnerCloudName;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -56,7 +76,14 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
 
     private GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem() {}
     /**
-     * @return Cluster Placement Group OCID
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
+    }
+    /**
+     * @return Cluster Placement Group OCID (deprecated representation)
      * 
      */
     public String cpgId() {
@@ -70,7 +97,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         return this.definedTags;
     }
     /**
-     * @return External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+     * @return The Cloud Service Provider region.
      * 
      */
     public List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation> externalLocations() {
@@ -105,6 +132,27 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         return this.ociRegion;
     }
     /**
+     * @return User friendly name of account name for customer&#39;s subscription
+     * 
+     */
+    public String partnerCloudAccountName() {
+        return this.partnerCloudAccountName;
+    }
+    /**
+     * @return Direct URL to partner cloud for customer&#39;s account
+     * 
+     */
+    public String partnerCloudAccountUrl() {
+        return this.partnerCloudAccountUrl;
+    }
+    /**
+     * @return Partner Cloud Name based on service name
+     * 
+     */
+    public String partnerCloudName() {
+        return this.partnerCloudName;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -121,6 +169,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
     }
     @CustomType.Builder
     public static final class Builder {
+        private String clusterPlacementGroupId;
         private String cpgId;
         private Map<String,String> definedTags;
         private List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation> externalLocations;
@@ -128,10 +177,14 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         private String ociLogicalAd;
         private String ociPhysicalAd;
         private String ociRegion;
+        private String partnerCloudAccountName;
+        private String partnerCloudAccountUrl;
+        private String partnerCloudName;
         private Map<String,String> systemTags;
         public Builder() {}
         public Builder(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.cpgId = defaults.cpgId;
     	      this.definedTags = defaults.definedTags;
     	      this.externalLocations = defaults.externalLocations;
@@ -139,9 +192,20 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
     	      this.ociLogicalAd = defaults.ociLogicalAd;
     	      this.ociPhysicalAd = defaults.ociPhysicalAd;
     	      this.ociRegion = defaults.ociRegion;
+    	      this.partnerCloudAccountName = defaults.partnerCloudAccountName;
+    	      this.partnerCloudAccountUrl = defaults.partnerCloudAccountUrl;
+    	      this.partnerCloudName = defaults.partnerCloudName;
     	      this.systemTags = defaults.systemTags;
         }
 
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
         @CustomType.Setter
         public Builder cpgId(String cpgId) {
             if (cpgId == null) {
@@ -202,6 +266,30 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
             return this;
         }
         @CustomType.Setter
+        public Builder partnerCloudAccountName(String partnerCloudAccountName) {
+            if (partnerCloudAccountName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem", "partnerCloudAccountName");
+            }
+            this.partnerCloudAccountName = partnerCloudAccountName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder partnerCloudAccountUrl(String partnerCloudAccountUrl) {
+            if (partnerCloudAccountUrl == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem", "partnerCloudAccountUrl");
+            }
+            this.partnerCloudAccountUrl = partnerCloudAccountUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder partnerCloudName(String partnerCloudName) {
+            if (partnerCloudName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem", "partnerCloudName");
+            }
+            this.partnerCloudName = partnerCloudName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem", "systemTags");
@@ -211,6 +299,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         }
         public GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem build() {
             final var _resultValue = new GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem();
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.cpgId = cpgId;
             _resultValue.definedTags = definedTags;
             _resultValue.externalLocations = externalLocations;
@@ -218,6 +307,9 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
             _resultValue.ociLogicalAd = ociLogicalAd;
             _resultValue.ociPhysicalAd = ociPhysicalAd;
             _resultValue.ociRegion = ociRegion;
+            _resultValue.partnerCloudAccountName = partnerCloudAccountName;
+            _resultValue.partnerCloudAccountUrl = partnerCloudAccountUrl;
+            _resultValue.partnerCloudName = partnerCloudName;
             _resultValue.systemTags = systemTags;
             return _resultValue;
         }

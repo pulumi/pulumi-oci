@@ -30,14 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetMulticloudResourceAnchors(ctx, &oci.GetMulticloudResourceAnchorsArgs{
-//				SubscriptionId:           subscriptionId,
-//				SubscriptionServiceName:  subscriptionServiceName,
-//				CompartmentId:            pulumi.StringRef(compartmentId),
-//				DisplayName:              pulumi.StringRef(resourceAnchorDisplayName),
-//				Id:                       pulumi.StringRef(resourceAnchorId),
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(resourceAnchorIsCompartmentIdInSubtree),
-//				LinkedCompartmentId:      pulumi.StringRef(linkedCompartmentId),
-//				LifecycleState:           pulumi.StringRef(resourceAnchorState),
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				LinkedCompartmentId:        pulumi.StringRef(linkedCompartmentId),
+//				LifecycleState:             pulumi.StringRef(lifecycleState),
+//				DisplayName:                pulumi.StringRef(resourceAnchorDisplayName),
+//				Id:                         pulumi.StringRef(resourceAnchorId),
+//				IsCompartmentIdInSubtree:   pulumi.BoolRef(isCompartmentIdInSubtree),
+//				ShouldFetchCompartmentName: pulumi.BoolRef(shouldFetchCompartmentName),
+//				SubscriptionServiceName:    pulumi.StringRef(subscriptionServiceName),
+//				SubscriptionId:             pulumi.StringRef(subscriptionId),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,7 +60,7 @@ func GetMulticloudResourceAnchors(ctx *pulumi.Context, args *GetMulticloudResour
 
 // A collection of arguments for invoking getMulticloudResourceAnchors.
 type GetMulticloudResourceAnchorsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string                              `pulumi:"displayName"`
@@ -68,15 +69,17 @@ type GetMulticloudResourceAnchorsArgs struct {
 	Id *string `pulumi:"id"`
 	// Check the sub-compartments of a given compartmentId
 	IsCompartmentIdInSubtree *bool `pulumi:"isCompartmentIdInSubtree"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// The current state of the ResourceAnchor.
 	LifecycleState *string `pulumi:"lifecycleState"`
 	Limit          *int    `pulumi:"limit"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
 	LinkedCompartmentId *string `pulumi:"linkedCompartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	ShouldFetchCompartmentName *bool `pulumi:"shouldFetchCompartmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// The subscription service name of the Cloud Service Provider.
+	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
 // A collection of values returned by getMulticloudResourceAnchors.
@@ -90,14 +93,16 @@ type GetMulticloudResourceAnchorsResult struct {
 	Id                       *string `pulumi:"id"`
 	IsCompartmentIdInSubtree *bool   `pulumi:"isCompartmentIdInSubtree"`
 	// The current state of the ResourceAnchor.
-	LifecycleState      *string `pulumi:"lifecycleState"`
-	Limit               *int    `pulumi:"limit"`
+	LifecycleState *string `pulumi:"lifecycleState"`
+	Limit          *int    `pulumi:"limit"`
+	// Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
 	LinkedCompartmentId *string `pulumi:"linkedCompartmentId"`
 	// The list of ResourceAnchorCollection.
-	ResourceAnchorCollections []GetMulticloudResourceAnchorsResourceAnchorCollection `pulumi:"resourceAnchorCollections"`
+	ResourceAnchorCollections  []GetMulticloudResourceAnchorsResourceAnchorCollection `pulumi:"resourceAnchorCollections"`
+	ShouldFetchCompartmentName *bool                                                  `pulumi:"shouldFetchCompartmentName"`
 	// Oracle Cloud Infrastructure Subscription Id
-	SubscriptionId          string `pulumi:"subscriptionId"`
-	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	SubscriptionId          *string `pulumi:"subscriptionId"`
+	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
 func GetMulticloudResourceAnchorsOutput(ctx *pulumi.Context, args GetMulticloudResourceAnchorsOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudResourceAnchorsResultOutput {
@@ -111,7 +116,7 @@ func GetMulticloudResourceAnchorsOutput(ctx *pulumi.Context, args GetMulticloudR
 
 // A collection of arguments for invoking getMulticloudResourceAnchors.
 type GetMulticloudResourceAnchorsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput                        `pulumi:"displayName"`
@@ -120,15 +125,17 @@ type GetMulticloudResourceAnchorsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Check the sub-compartments of a given compartmentId
 	IsCompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"isCompartmentIdInSubtree"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// The current state of the ResourceAnchor.
 	LifecycleState pulumi.StringPtrInput `pulumi:"lifecycleState"`
 	Limit          pulumi.IntPtrInput    `pulumi:"limit"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
 	LinkedCompartmentId pulumi.StringPtrInput `pulumi:"linkedCompartmentId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
+	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	ShouldFetchCompartmentName pulumi.BoolPtrInput `pulumi:"shouldFetchCompartmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
+	// The subscription service name of the Cloud Service Provider.
+	SubscriptionServiceName pulumi.StringPtrInput `pulumi:"subscriptionServiceName"`
 }
 
 func (GetMulticloudResourceAnchorsOutputArgs) ElementType() reflect.Type {
@@ -182,6 +189,7 @@ func (o GetMulticloudResourceAnchorsResultOutput) Limit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) *int { return v.Limit }).(pulumi.IntPtrOutput)
 }
 
+// Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
 func (o GetMulticloudResourceAnchorsResultOutput) LinkedCompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) *string { return v.LinkedCompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -193,13 +201,17 @@ func (o GetMulticloudResourceAnchorsResultOutput) ResourceAnchorCollections() Ge
 	}).(GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput)
 }
 
-// Oracle Cloud Infrastructure Subscription Id
-func (o GetMulticloudResourceAnchorsResultOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetMulticloudResourceAnchorsResultOutput) ShouldFetchCompartmentName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) *bool { return v.ShouldFetchCompartmentName }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetMulticloudResourceAnchorsResultOutput) SubscriptionServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) string { return v.SubscriptionServiceName }).(pulumi.StringOutput)
+// Oracle Cloud Infrastructure Subscription Id
+func (o GetMulticloudResourceAnchorsResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMulticloudResourceAnchorsResultOutput) SubscriptionServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResult) *string { return v.SubscriptionServiceName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -5,8 +5,11 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -29,14 +32,29 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * 
+     */
+    @Import(name="shouldFetchCompartmentName")
+    private @Nullable Boolean shouldFetchCompartmentName;
+
+    /**
+     * @return Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+     * 
+     */
+    public Optional<Boolean> shouldFetchCompartmentName() {
+        return Optional.ofNullable(this.shouldFetchCompartmentName);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     @Import(name="subscriptionId", required=true)
     private String subscriptionId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     public String subscriptionId() {
@@ -44,14 +62,14 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The subscription service name of the Cloud Service Provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private String subscriptionServiceName;
 
     /**
-     * @return The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * @return The subscription service name of the Cloud Service Provider.
      * 
      */
     public String subscriptionServiceName() {
@@ -62,6 +80,7 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
 
     private GetMulticloudResourceAnchorPlainArgs(GetMulticloudResourceAnchorPlainArgs $) {
         this.resourceAnchorId = $.resourceAnchorId;
+        this.shouldFetchCompartmentName = $.shouldFetchCompartmentName;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -96,7 +115,18 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldFetchCompartmentName(@Nullable Boolean shouldFetchCompartmentName) {
+            $.shouldFetchCompartmentName = shouldFetchCompartmentName;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
          * 
          * @return builder
          * 
@@ -107,7 +137,7 @@ public final class GetMulticloudResourceAnchorPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
          * 
          * @return builder
          * 

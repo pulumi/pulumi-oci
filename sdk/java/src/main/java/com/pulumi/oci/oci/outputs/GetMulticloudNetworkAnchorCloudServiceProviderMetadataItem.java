@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -17,6 +18,11 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
      * 
      */
     private List<String> cidrBlocks;
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    private Map<String,String> cspAdditionalProperties;
     /**
      * @return DNS domain ip mapping forwarding configuration
      * 
@@ -45,6 +51,13 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
      */
     public List<String> cidrBlocks() {
         return this.cidrBlocks;
+    }
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    public Map<String,String> cspAdditionalProperties() {
+        return this.cspAdditionalProperties;
     }
     /**
      * @return DNS domain ip mapping forwarding configuration
@@ -85,6 +98,7 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
     @CustomType.Builder
     public static final class Builder {
         private List<String> cidrBlocks;
+        private Map<String,String> cspAdditionalProperties;
         private List<Object> dnsForwardingConfigs;
         private String networkAnchorUri;
         private String odbNetworkId;
@@ -93,6 +107,7 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
         public Builder(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cidrBlocks = defaults.cidrBlocks;
+    	      this.cspAdditionalProperties = defaults.cspAdditionalProperties;
     	      this.dnsForwardingConfigs = defaults.dnsForwardingConfigs;
     	      this.networkAnchorUri = defaults.networkAnchorUri;
     	      this.odbNetworkId = defaults.odbNetworkId;
@@ -109,6 +124,14 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
         }
         public Builder cidrBlocks(String... cidrBlocks) {
             return cidrBlocks(List.of(cidrBlocks));
+        }
+        @CustomType.Setter
+        public Builder cspAdditionalProperties(Map<String,String> cspAdditionalProperties) {
+            if (cspAdditionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem", "cspAdditionalProperties");
+            }
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            return this;
         }
         @CustomType.Setter
         public Builder dnsForwardingConfigs(List<Object> dnsForwardingConfigs) {
@@ -148,6 +171,7 @@ public final class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem {
         public GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem build() {
             final var _resultValue = new GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem();
             _resultValue.cidrBlocks = cidrBlocks;
+            _resultValue.cspAdditionalProperties = cspAdditionalProperties;
             _resultValue.dnsForwardingConfigs = dnsForwardingConfigs;
             _resultValue.networkAnchorUri = networkAnchorUri;
             _resultValue.odbNetworkId = odbNetworkId;

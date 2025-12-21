@@ -10,17 +10,57 @@ import java.util.Objects;
 
 @CustomType
 public final class GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration {
+    /**
+     * @return The OCID for firmware bundle
+     * 
+     */
     private String firmwareBundleId;
+    /**
+     * @return Preferred recycle level for hosts associated with the reservation config.
+     * * `SKIP_RECYCLE` - Skips host wipe.
+     * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+     * 
+     */
     private String recycleLevel;
+    /**
+     * @return The lifecycle state of the host group
+     * 
+     */
+    private String state;
+    /**
+     * @return Either the platform name or compute shape that the configuration is targeting
+     * 
+     */
     private String target;
 
     private GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration() {}
+    /**
+     * @return The OCID for firmware bundle
+     * 
+     */
     public String firmwareBundleId() {
         return this.firmwareBundleId;
     }
+    /**
+     * @return Preferred recycle level for hosts associated with the reservation config.
+     * * `SKIP_RECYCLE` - Skips host wipe.
+     * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+     * 
+     */
     public String recycleLevel() {
         return this.recycleLevel;
     }
+    /**
+     * @return The lifecycle state of the host group
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
+     * @return Either the platform name or compute shape that the configuration is targeting
+     * 
+     */
     public String target() {
         return this.target;
     }
@@ -36,12 +76,14 @@ public final class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurati
     public static final class Builder {
         private String firmwareBundleId;
         private String recycleLevel;
+        private String state;
         private String target;
         public Builder() {}
         public Builder(GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.firmwareBundleId = defaults.firmwareBundleId;
     	      this.recycleLevel = defaults.recycleLevel;
+    	      this.state = defaults.state;
     	      this.target = defaults.target;
         }
 
@@ -62,6 +104,14 @@ public final class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurati
             return this;
         }
         @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
         public Builder target(String target) {
             if (target == null) {
               throw new MissingRequiredPropertyException("GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration", "target");
@@ -73,6 +123,7 @@ public final class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurati
             final var _resultValue = new GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration();
             _resultValue.firmwareBundleId = firmwareBundleId;
             _resultValue.recycleLevel = recycleLevel;
+            _resultValue.state = state;
             _resultValue.target = target;
             return _resultValue;
         }

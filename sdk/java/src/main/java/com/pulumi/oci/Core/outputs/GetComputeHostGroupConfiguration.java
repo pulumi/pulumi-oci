@@ -23,6 +23,11 @@ public final class GetComputeHostGroupConfiguration {
      */
     private String recycleLevel;
     /**
+     * @return The lifecycle state of the host group
+     * 
+     */
+    private String state;
+    /**
      * @return Either the platform name or compute shape that the configuration is targeting
      * 
      */
@@ -46,6 +51,13 @@ public final class GetComputeHostGroupConfiguration {
         return this.recycleLevel;
     }
     /**
+     * @return The lifecycle state of the host group
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
      * @return Either the platform name or compute shape that the configuration is targeting
      * 
      */
@@ -64,12 +76,14 @@ public final class GetComputeHostGroupConfiguration {
     public static final class Builder {
         private String firmwareBundleId;
         private String recycleLevel;
+        private String state;
         private String target;
         public Builder() {}
         public Builder(GetComputeHostGroupConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.firmwareBundleId = defaults.firmwareBundleId;
     	      this.recycleLevel = defaults.recycleLevel;
+    	      this.state = defaults.state;
     	      this.target = defaults.target;
         }
 
@@ -90,6 +104,14 @@ public final class GetComputeHostGroupConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostGroupConfiguration", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
         public Builder target(String target) {
             if (target == null) {
               throw new MissingRequiredPropertyException("GetComputeHostGroupConfiguration", "target");
@@ -101,6 +123,7 @@ public final class GetComputeHostGroupConfiguration {
             final var _resultValue = new GetComputeHostGroupConfiguration();
             _resultValue.firmwareBundleId = firmwareBundleId;
             _resultValue.recycleLevel = recycleLevel;
+            _resultValue.state = state;
             _resultValue.target = target;
             return _resultValue;
         }

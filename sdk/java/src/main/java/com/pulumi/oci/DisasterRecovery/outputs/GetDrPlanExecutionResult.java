@@ -9,6 +9,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionAutomaticExecut
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionExecutionOption;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionLogLocation;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionStepStatusCount;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -109,6 +110,11 @@ public final class GetDrPlanExecutionResult {
      * 
      */
     private String state;
+    /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    private List<GetDrPlanExecutionStepStatusCount> stepStatusCounts;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -266,6 +272,13 @@ public final class GetDrPlanExecutionResult {
         return this.state;
     }
     /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    public List<GetDrPlanExecutionStepStatusCount> stepStatusCounts() {
+        return this.stepStatusCounts;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -329,6 +342,7 @@ public final class GetDrPlanExecutionResult {
         private String planExecutionType;
         private String planId;
         private String state;
+        private List<GetDrPlanExecutionStepStatusCount> stepStatusCounts;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeEnded;
@@ -356,6 +370,7 @@ public final class GetDrPlanExecutionResult {
     	      this.planExecutionType = defaults.planExecutionType;
     	      this.planId = defaults.planId;
     	      this.state = defaults.state;
+    	      this.stepStatusCounts = defaults.stepStatusCounts;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeEnded = defaults.timeEnded;
@@ -528,6 +543,17 @@ public final class GetDrPlanExecutionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder stepStatusCounts(List<GetDrPlanExecutionStepStatusCount> stepStatusCounts) {
+            if (stepStatusCounts == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionResult", "stepStatusCounts");
+            }
+            this.stepStatusCounts = stepStatusCounts;
+            return this;
+        }
+        public Builder stepStatusCounts(GetDrPlanExecutionStepStatusCount... stepStatusCounts) {
+            return stepStatusCounts(List.of(stepStatusCounts));
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDrPlanExecutionResult", "systemTags");
@@ -588,6 +614,7 @@ public final class GetDrPlanExecutionResult {
             _resultValue.planExecutionType = planExecutionType;
             _resultValue.planId = planId;
             _resultValue.state = state;
+            _resultValue.stepStatusCounts = stepStatusCounts;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeEnded = timeEnded;

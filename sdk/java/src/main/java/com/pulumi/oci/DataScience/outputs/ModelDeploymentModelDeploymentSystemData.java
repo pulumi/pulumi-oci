@@ -18,6 +18,11 @@ public final class ModelDeploymentModelDeploymentSystemData {
      */
     private @Nullable Integer currentInstanceCount;
     /**
+     * @return The type of the deployed model.
+     * 
+     */
+    private @Nullable String modelType;
+    /**
      * @return The infrastructure type of the model deployment.
      * 
      */
@@ -30,6 +35,13 @@ public final class ModelDeploymentModelDeploymentSystemData {
      */
     public Optional<Integer> currentInstanceCount() {
         return Optional.ofNullable(this.currentInstanceCount);
+    }
+    /**
+     * @return The type of the deployed model.
+     * 
+     */
+    public Optional<String> modelType() {
+        return Optional.ofNullable(this.modelType);
     }
     /**
      * @return The infrastructure type of the model deployment.
@@ -49,11 +61,13 @@ public final class ModelDeploymentModelDeploymentSystemData {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer currentInstanceCount;
+        private @Nullable String modelType;
         private @Nullable String systemInfraType;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentSystemData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currentInstanceCount = defaults.currentInstanceCount;
+    	      this.modelType = defaults.modelType;
     	      this.systemInfraType = defaults.systemInfraType;
         }
 
@@ -61,6 +75,12 @@ public final class ModelDeploymentModelDeploymentSystemData {
         public Builder currentInstanceCount(@Nullable Integer currentInstanceCount) {
 
             this.currentInstanceCount = currentInstanceCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelType(@Nullable String modelType) {
+
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
@@ -72,6 +92,7 @@ public final class ModelDeploymentModelDeploymentSystemData {
         public ModelDeploymentModelDeploymentSystemData build() {
             final var _resultValue = new ModelDeploymentModelDeploymentSystemData();
             _resultValue.currentInstanceCount = currentInstanceCount;
+            _resultValue.modelType = modelType;
             _resultValue.systemInfraType = systemInfraType;
             return _resultValue;
         }

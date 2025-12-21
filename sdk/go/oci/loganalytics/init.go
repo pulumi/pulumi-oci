@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity":
 		r = &LogAnalyticsEntity{}
+	case "oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd":
+		r = &LogAnalyticsEntityAssociationsAdd{}
+	case "oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove":
+		r = &LogAnalyticsEntityAssociationsRemove{}
 	case "oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType":
 		r = &LogAnalyticsEntityType{}
 	case "oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent":
@@ -71,6 +75,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"LogAnalytics/logAnalyticsEntity",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/logAnalyticsEntityAssociationsAdd",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/logAnalyticsEntityAssociationsRemove",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

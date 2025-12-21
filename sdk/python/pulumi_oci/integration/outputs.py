@@ -24,6 +24,10 @@ __all__ = [
     'IntegrationInstanceIdcsInfo',
     'IntegrationInstanceNetworkEndpointDetails',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTime',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn',
+    'IntegrationInstanceNetworkEndpointDetailsRuntime',
+    'IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn',
     'IntegrationInstancePrivateEndpointOutboundConnection',
     'GetIntegrationInstanceAlternateCustomEndpointResult',
     'GetIntegrationInstanceAttachmentResult',
@@ -33,6 +37,10 @@ __all__ = [
     'GetIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
+    'GetIntegrationInstanceNetworkEndpointDetailDesignTimeResult',
+    'GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult',
+    'GetIntegrationInstanceNetworkEndpointDetailRuntimeResult',
+    'GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult',
     'GetIntegrationInstancePrivateEndpointOutboundConnectionResult',
     'GetIntegrationInstancesFilterResult',
     'GetIntegrationInstancesIntegrationInstanceResult',
@@ -44,6 +52,10 @@ __all__ = [
     'GetIntegrationInstancesIntegrationInstanceIdcsInfoResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult',
     'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult',
+    'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult',
+    'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult',
+    'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult',
+    'GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult',
     'GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult',
 ]
 
@@ -611,6 +623,8 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
             suggest = "allowlisted_http_ips"
         elif key == "allowlistedHttpVcns":
             suggest = "allowlisted_http_vcns"
+        elif key == "designTime":
+            suggest = "design_time"
         elif key == "isIntegrationVcnAllowlisted":
             suggest = "is_integration_vcn_allowlisted"
 
@@ -629,20 +643,28 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
                  network_endpoint_type: _builtins.str,
                  allowlisted_http_ips: Optional[Sequence[_builtins.str]] = None,
                  allowlisted_http_vcns: Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn']] = None,
-                 is_integration_vcn_allowlisted: Optional[_builtins.bool] = None):
+                 design_time: Optional['outputs.IntegrationInstanceNetworkEndpointDetailsDesignTime'] = None,
+                 is_integration_vcn_allowlisted: Optional[_builtins.bool] = None,
+                 runtime: Optional['outputs.IntegrationInstanceNetworkEndpointDetailsRuntime'] = None):
         """
         :param _builtins.str network_endpoint_type: The type of network endpoint.
         :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        :param 'IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs' design_time: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         :param _builtins.bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        :param 'IntegrationInstanceNetworkEndpointDetailsRuntimeArgs' runtime: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
             pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         if allowlisted_http_vcns is not None:
             pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        if design_time is not None:
+            pulumi.set(__self__, "design_time", design_time)
         if is_integration_vcn_allowlisted is not None:
             pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        if runtime is not None:
+            pulumi.set(__self__, "runtime", runtime)
 
     @_builtins.property
     @pulumi.getter(name="networkEndpointType")
@@ -669,12 +691,28 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
         return pulumi.get(self, "allowlisted_http_vcns")
 
     @_builtins.property
+    @pulumi.getter(name="designTime")
+    def design_time(self) -> Optional['outputs.IntegrationInstanceNetworkEndpointDetailsDesignTime']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "design_time")
+
+    @_builtins.property
     @pulumi.getter(name="isIntegrationVcnAllowlisted")
     def is_integration_vcn_allowlisted(self) -> Optional[_builtins.bool]:
         """
         The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         """
         return pulumi.get(self, "is_integration_vcn_allowlisted")
+
+    @_builtins.property
+    @pulumi.getter
+    def runtime(self) -> Optional['outputs.IntegrationInstanceNetworkEndpointDetailsRuntime']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "runtime")
 
 
 @pulumi.output_type
@@ -725,11 +763,207 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn(dict):
 
 
 @pulumi.output_type
+class IntegrationInstanceNetworkEndpointDetailsDesignTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowlistedHttpIps":
+            suggest = "allowlisted_http_ips"
+        elif key == "allowlistedHttpVcns":
+            suggest = "allowlisted_http_vcns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceNetworkEndpointDetailsDesignTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsDesignTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsDesignTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Optional[Sequence[_builtins.str]] = None,
+                 allowlisted_http_vcns: Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn']] = None):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        if allowlisted_http_ips is not None:
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        if allowlisted_http_vcns is not None:
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn']]:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowlistedIps":
+            suggest = "allowlisted_ips"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 allowlisted_ips: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        pulumi.set(__self__, "id", id)
+        if allowlisted_ips is not None:
+            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+
+@pulumi.output_type
+class IntegrationInstanceNetworkEndpointDetailsRuntime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowlistedHttpIps":
+            suggest = "allowlisted_http_ips"
+        elif key == "allowlistedHttpVcns":
+            suggest = "allowlisted_http_vcns"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceNetworkEndpointDetailsRuntime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsRuntime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsRuntime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Optional[Sequence[_builtins.str]] = None,
+                 allowlisted_http_vcns: Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn']] = None):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        if allowlisted_http_ips is not None:
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        if allowlisted_http_vcns is not None:
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn']]:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowlistedIps":
+            suggest = "allowlisted_ips"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 allowlisted_ips: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        pulumi.set(__self__, "id", id)
+        if allowlisted_ips is not None:
+            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+
+@pulumi.output_type
 class IntegrationInstancePrivateEndpointOutboundConnection(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "nsgIds":
+        if key == "isAllOutboundTrafficPrivate":
+            suggest = "is_all_outbound_traffic_private"
+        elif key == "nsgIds":
             suggest = "nsg_ids"
         elif key == "outboundConnectionType":
             suggest = "outbound_connection_type"
@@ -748,6 +982,7 @@ class IntegrationInstancePrivateEndpointOutboundConnection(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 is_all_outbound_traffic_private: Optional[_builtins.bool] = None,
                  nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  outbound_connection_type: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
@@ -756,12 +991,19 @@ class IntegrationInstancePrivateEndpointOutboundConnection(dict):
         :param _builtins.str outbound_connection_type: The type of Outbound Connection.
         :param _builtins.str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
         """
+        if is_all_outbound_traffic_private is not None:
+            pulumi.set(__self__, "is_all_outbound_traffic_private", is_all_outbound_traffic_private)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if outbound_connection_type is not None:
             pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllOutboundTrafficPrivate")
+    def is_all_outbound_traffic_private(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_all_outbound_traffic_private")
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
@@ -1174,18 +1416,24 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
     def __init__(__self__, *,
                  allowlisted_http_ips: Sequence[_builtins.str],
                  allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult'],
+                 design_times: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailDesignTimeResult'],
                  is_integration_vcn_allowlisted: _builtins.bool,
-                 network_endpoint_type: _builtins.str):
+                 network_endpoint_type: _builtins.str,
+                 runtimes: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailRuntimeResult']):
         """
         :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        :param Sequence['GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs'] design_times: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         :param _builtins.bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param _builtins.str network_endpoint_type: The type of network endpoint.
+        :param Sequence['GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs'] runtimes: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        pulumi.set(__self__, "design_times", design_times)
         pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "runtimes", runtimes)
 
     @_builtins.property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -1204,6 +1452,14 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         return pulumi.get(self, "allowlisted_http_vcns")
 
     @_builtins.property
+    @pulumi.getter(name="designTimes")
+    def design_times(self) -> Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailDesignTimeResult']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "design_times")
+
+    @_builtins.property
     @pulumi.getter(name="isIntegrationVcnAllowlisted")
     def is_integration_vcn_allowlisted(self) -> _builtins.bool:
         """
@@ -1218,6 +1474,14 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         The type of network endpoint.
         """
         return pulumi.get(self, "network_endpoint_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def runtimes(self) -> Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailRuntimeResult']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "runtimes")
 
 
 @pulumi.output_type
@@ -1250,42 +1514,157 @@ class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult(dict):
 
 
 @pulumi.output_type
+class GetIntegrationInstanceNetworkEndpointDetailDesignTimeResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Sequence[_builtins.str],
+                 allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult']):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult']:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_ips: Sequence[_builtins.str],
+                 id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        """
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetIntegrationInstanceNetworkEndpointDetailRuntimeResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Sequence[_builtins.str],
+                 allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult']):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult']:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_ips: Sequence[_builtins.str],
+                 id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        """
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
     def __init__(__self__, *,
+                 is_all_outbound_traffic_private: _builtins.bool,
                  nsg_ids: Sequence[_builtins.str],
                  outbound_connection_type: _builtins.str,
                  subnet_id: _builtins.str):
         """
-        :param Sequence[_builtins.str] nsg_ids: One or more Network security group Ids. This is an optional argument.
-        :param _builtins.str outbound_connection_type: The type of Outbound Connection.
-        :param _builtins.str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
+        :param _builtins.bool is_all_outbound_traffic_private: Indicates if all traffic should go through configured outbound connection
         """
+        pulumi.set(__self__, "is_all_outbound_traffic_private", is_all_outbound_traffic_private)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
         pulumi.set(__self__, "subnet_id", subnet_id)
 
     @_builtins.property
+    @pulumi.getter(name="isAllOutboundTrafficPrivate")
+    def is_all_outbound_traffic_private(self) -> _builtins.bool:
+        """
+        Indicates if all traffic should go through configured outbound connection
+        """
+        return pulumi.get(self, "is_all_outbound_traffic_private")
+
+    @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[_builtins.str]:
-        """
-        One or more Network security group Ids. This is an optional argument.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
     @pulumi.getter(name="outboundConnectionType")
     def outbound_connection_type(self) -> _builtins.str:
-        """
-        The type of Outbound Connection.
-        """
         return pulumi.get(self, "outbound_connection_type")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
-        """
-        Customer Private Network VCN Subnet OCID. This is a required argument.
-        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -1323,9 +1702,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  attachments: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult'],
                  compartment_id: _builtins.str,
                  consumption_model: _builtins.str,
+                 convert_instance_trigger: _builtins.int,
                  custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
                  data_retention_period: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
+                 disable_process_automation_trigger: _builtins.int,
                  disaster_recovery_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult'],
                  display_name: _builtins.str,
                  domain_id: _builtins.str,
@@ -1344,6 +1725,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  is_file_server_enabled: _builtins.bool,
                  is_visual_builder_enabled: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 log_group_id: _builtins.str,
                  message_packs: _builtins.int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
                  private_endpoint_outbound_connections: Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult'],
@@ -1374,6 +1756,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param _builtins.bool is_file_server_enabled: The file server is enabled or not.
         :param _builtins.bool is_visual_builder_enabled: Visual Builder is enabled or not.
         :param _builtins.str lifecycle_details: Additional details of lifecycleState or substates
+        :param _builtins.str log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param _builtins.int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -1392,9 +1775,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "attachments", attachments)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "consumption_model", consumption_model)
+        pulumi.set(__self__, "convert_instance_trigger", convert_instance_trigger)
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
         pulumi.set(__self__, "data_retention_period", data_retention_period)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "disable_process_automation_trigger", disable_process_automation_trigger)
         pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain_id", domain_id)
@@ -1413,6 +1798,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "log_group_id", log_group_id)
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
@@ -1457,6 +1843,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         return pulumi.get(self, "consumption_model")
 
     @_builtins.property
+    @pulumi.getter(name="convertInstanceTrigger")
+    def convert_instance_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "convert_instance_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="customEndpoints")
     def custom_endpoints(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult']:
         """
@@ -1479,6 +1870,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="disableProcessAutomationTrigger")
+    def disable_process_automation_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "disable_process_automation_trigger")
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryDetails")
@@ -1605,6 +2001,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Additional details of lifecycleState or substates
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+        """
+        return pulumi.get(self, "log_group_id")
 
     @_builtins.property
     @pulumi.getter(name="messagePacks")
@@ -2076,18 +2480,24 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
     def __init__(__self__, *,
                  allowlisted_http_ips: Sequence[_builtins.str],
                  allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult'],
+                 design_times: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult'],
                  is_integration_vcn_allowlisted: _builtins.bool,
-                 network_endpoint_type: _builtins.str):
+                 network_endpoint_type: _builtins.str,
+                 runtimes: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult']):
         """
         :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs'] design_times: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         :param _builtins.bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param _builtins.str network_endpoint_type: The type of network endpoint.
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs'] runtimes: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        pulumi.set(__self__, "design_times", design_times)
         pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        pulumi.set(__self__, "runtimes", runtimes)
 
     @_builtins.property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -2106,6 +2516,14 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         return pulumi.get(self, "allowlisted_http_vcns")
 
     @_builtins.property
+    @pulumi.getter(name="designTimes")
+    def design_times(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "design_times")
+
+    @_builtins.property
     @pulumi.getter(name="isIntegrationVcnAllowlisted")
     def is_integration_vcn_allowlisted(self) -> _builtins.bool:
         """
@@ -2120,6 +2538,14 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         The type of network endpoint.
         """
         return pulumi.get(self, "network_endpoint_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def runtimes(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult']:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "runtimes")
 
 
 @pulumi.output_type
@@ -2152,8 +2578,125 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlisted
 
 
 @pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Sequence[_builtins.str],
+                 allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult']):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult']:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_ips: Sequence[_builtins.str],
+                 id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        """
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Sequence[_builtins.str],
+                 allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult']):
+        """
+        :param Sequence[_builtins.str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult']:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+
+@pulumi.output_type
+class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnResult(dict):
+    def __init__(__self__, *,
+                 allowlisted_ips: Sequence[_builtins.str],
+                 id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param _builtins.str id: The Virtual Cloud Network OCID.
+        """
+        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Sequence[_builtins.str]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
     def __init__(__self__, *,
+                 is_all_outbound_traffic_private: _builtins.bool,
                  nsg_ids: Sequence[_builtins.str],
                  outbound_connection_type: _builtins.str,
                  subnet_id: _builtins.str):
@@ -2162,9 +2705,15 @@ class GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectio
         :param _builtins.str outbound_connection_type: The type of Outbound Connection.
         :param _builtins.str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
         """
+        pulumi.set(__self__, "is_all_outbound_traffic_private", is_all_outbound_traffic_private)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllOutboundTrafficPrivate")
+    def is_all_outbound_traffic_private(self) -> _builtins.bool:
+        return pulumi.get(self, "is_all_outbound_traffic_private")
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")

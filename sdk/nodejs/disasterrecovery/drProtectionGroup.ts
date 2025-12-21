@@ -137,6 +137,10 @@ import * as utilities from "../utilities";
  *         }],
  *         peerClusterId: testCluster.id,
  *         peerDbSystemId: testDbSystem.id,
+ *         resourceModifierMappings: [{
+ *             configMap: drProtectionGroupMembersResourceModifierMappingsConfigMap,
+ *             namespace: drProtectionGroupMembersResourceModifierMappingsNamespace,
+ *         }],
  *         sourceVolumeToDestinationEncryptionKeyMappings: [{
  *             destinationEncryptionKey: {
  *                 encryptionKeyId: testKey.id,

@@ -16,63 +16,31 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetModelsResult {
     private @Nullable List<String> capabilities;
-    /**
-     * @return The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-     * 
-     */
     private String compartmentId;
-    /**
-     * @return A user-friendly name.
-     * 
-     */
     private @Nullable String displayName;
     private @Nullable List<GetModelsFilter> filters;
-    /**
-     * @return An ID that uniquely identifies a pretrained or fine-tuned model.
-     * 
-     */
     private @Nullable String id;
     /**
      * @return The list of model_collection.
      * 
      */
     private List<GetModelsModelCollection> modelCollections;
-    /**
-     * @return The lifecycle state of the model.
-     * 
-     */
     private @Nullable String state;
-    /**
-     * @return The provider of the base model.
-     * 
-     */
     private @Nullable String vendor;
 
     private GetModelsResult() {}
     public List<String> capabilities() {
         return this.capabilities == null ? List.of() : this.capabilities;
     }
-    /**
-     * @return The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-     * 
-     */
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return A user-friendly name.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     public List<GetModelsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
-    /**
-     * @return An ID that uniquely identifies a pretrained or fine-tuned model.
-     * 
-     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
@@ -83,17 +51,9 @@ public final class GetModelsResult {
     public List<GetModelsModelCollection> modelCollections() {
         return this.modelCollections;
     }
-    /**
-     * @return The lifecycle state of the model.
-     * 
-     */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
-    /**
-     * @return The provider of the base model.
-     * 
-     */
     public Optional<String> vendor() {
         return Optional.ofNullable(this.vendor);
     }

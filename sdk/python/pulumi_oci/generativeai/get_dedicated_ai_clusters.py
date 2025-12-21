@@ -51,6 +51,9 @@ class GetDedicatedAiClustersResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The compartment OCID to create the dedicated AI cluster in.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property

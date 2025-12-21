@@ -62,17 +62,11 @@ class GetModelsResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
-        """
-        The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
-        """
-        A user-friendly name.
-        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -83,9 +77,6 @@ class GetModelsResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
-        """
-        An ID that uniquely identifies a pretrained or fine-tuned model.
-        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -99,17 +90,11 @@ class GetModelsResult:
     @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
-        """
-        The lifecycle state of the model.
-        """
         return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter
     def vendor(self) -> Optional[_builtins.str]:
-        """
-        The provider of the base model.
-        """
         return pulumi.get(self, "vendor")
 
 

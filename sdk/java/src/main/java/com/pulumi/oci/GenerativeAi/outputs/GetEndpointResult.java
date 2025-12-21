@@ -29,11 +29,27 @@ public final class GetEndpointResult {
      * 
      */
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the endpoint.
+     * 
+     */
     private String description;
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     private String displayName;
     private String endpointId;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     private Map<String,String> freeformTags;
     private String generativeAiPrivateEndpointId;
+    /**
+     * @return An OCID that uniquely identifies this endpoint resource.
+     * 
+     */
     private String id;
     /**
      * @return A message describing the current state of the endpoint in more detail that can provide actionable information.
@@ -41,7 +57,7 @@ public final class GetEndpointResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The OCID of the model used for the feature.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      */
     private String modelId;
@@ -55,7 +71,15 @@ public final class GetEndpointResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+     * 
+     */
     private String timeCreated;
+    /**
+     * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+     * 
+     */
     private String timeUpdated;
 
     private GetEndpointResult() {}
@@ -83,21 +107,37 @@ public final class GetEndpointResult {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the endpoint.
+     * 
+     */
     public String description() {
         return this.description;
     }
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
     public String endpointId() {
         return this.endpointId;
     }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String generativeAiPrivateEndpointId() {
         return this.generativeAiPrivateEndpointId;
     }
+    /**
+     * @return An OCID that uniquely identifies this endpoint resource.
+     * 
+     */
     public String id() {
         return this.id;
     }
@@ -109,7 +149,7 @@ public final class GetEndpointResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The OCID of the model used for the feature.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      */
     public String modelId() {
@@ -129,9 +169,17 @@ public final class GetEndpointResult {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+     * 
+     */
     public String timeUpdated() {
         return this.timeUpdated;
     }

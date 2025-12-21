@@ -24,6 +24,18 @@ namespace Pulumi.Oci.DataScience.Inputs
             set => _cmds = value;
         }
 
+        [Input("defaultEnvironmentVariables")]
+        private InputMap<string>? _defaultEnvironmentVariables;
+
+        /// <summary>
+        /// Service injected Environment variables set for the web server container and can not be set or modified by user.
+        /// </summary>
+        public InputMap<string> DefaultEnvironmentVariables
+        {
+            get => _defaultEnvironmentVariables ?? (_defaultEnvironmentVariables = new InputMap<string>());
+            set => _defaultEnvironmentVariables = value;
+        }
+
         [Input("entrypoints")]
         private InputList<string>? _entrypoints;
 
@@ -61,7 +73,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? HealthCheckPort { get; set; }
 
         /// <summary>
-        /// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+        /// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }

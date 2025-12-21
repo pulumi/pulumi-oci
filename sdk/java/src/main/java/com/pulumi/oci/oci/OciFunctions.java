@@ -31,6 +31,24 @@ import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestPlainArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchContextsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilePlainArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
@@ -129,6 +147,8 @@ import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataA
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
@@ -137,6 +157,8 @@ import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
@@ -212,6 +234,15 @@ import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlsResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestsResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchContextResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchContextShapesResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchContextsResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchJobPoolResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchJobPoolsResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchTaskEnvironmentsResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfileResult;
+import com.pulumi.oci.oci.outputs.GetBatchBatchTaskProfilesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorResult;
@@ -261,10 +292,12 @@ import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClustersResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationMappingMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationSummariesMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationsMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudMulticloudsubscriptionsResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorsResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudsMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMulticloudResourcesResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorsResult;
 import com.pulumi.oci.oci.outputs.GetPsaPrivateServiceAccessResult;
@@ -3274,6 +3307,2328 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetApiaccesscontrolPrivilegedApiRequestsResult> getApiaccesscontrolPrivilegedApiRequestsPlain(GetApiaccesscontrolPrivilegedApiRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getApiaccesscontrolPrivilegedApiRequests:getApiaccesscontrolPrivilegedApiRequests", TypeShape.of(GetApiaccesscontrolPrivilegedApiRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Context resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch context.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
+     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextResult> getBatchBatchContext(GetBatchBatchContextArgs args) {
+        return getBatchBatchContext(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Context resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch context.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
+     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextResult> getBatchBatchContextPlain(GetBatchBatchContextPlainArgs args) {
+        return getBatchBatchContextPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Context resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch context.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
+     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextResult> getBatchBatchContext(GetBatchBatchContextArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContext:getBatchBatchContext", TypeShape.of(GetBatchBatchContextResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Context resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch context.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
+     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextResult> getBatchBatchContext(GetBatchBatchContextArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContext:getBatchBatchContext", TypeShape.of(GetBatchBatchContextResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Context resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch context.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
+     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextResult> getBatchBatchContextPlain(GetBatchBatchContextPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchContext:getBatchBatchContext", TypeShape.of(GetBatchBatchContextResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the shapes allowed to be specified during batch context creation. Ordered by the shape name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextShapesResult> getBatchBatchContextShapes(GetBatchBatchContextShapesArgs args) {
+        return getBatchBatchContextShapes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the shapes allowed to be specified during batch context creation. Ordered by the shape name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextShapesResult> getBatchBatchContextShapesPlain(GetBatchBatchContextShapesPlainArgs args) {
+        return getBatchBatchContextShapesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the shapes allowed to be specified during batch context creation. Ordered by the shape name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextShapesResult> getBatchBatchContextShapes(GetBatchBatchContextShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes", TypeShape.of(GetBatchBatchContextShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the shapes allowed to be specified during batch context creation. Ordered by the shape name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextShapesResult> getBatchBatchContextShapes(GetBatchBatchContextShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes", TypeShape.of(GetBatchBatchContextShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the shapes allowed to be specified during batch context creation. Ordered by the shape name.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContextShapes = OciFunctions.getBatchBatchContextShapes(GetBatchBatchContextShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(batchContextShapeAvailabilityDomain)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextShapesResult> getBatchBatchContextShapesPlain(GetBatchBatchContextShapesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchContextShapes:getBatchBatchContextShapes", TypeShape.of(GetBatchBatchContextShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextsResult> getBatchBatchContexts() {
+        return getBatchBatchContexts(GetBatchBatchContextsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextsResult> getBatchBatchContextsPlain() {
+        return getBatchBatchContextsPlain(GetBatchBatchContextsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextsResult> getBatchBatchContexts(GetBatchBatchContextsArgs args) {
+        return getBatchBatchContexts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextsResult> getBatchBatchContextsPlain(GetBatchBatchContextsPlainArgs args) {
+        return getBatchBatchContextsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextsResult> getBatchBatchContexts(GetBatchBatchContextsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContexts:getBatchBatchContexts", TypeShape.of(GetBatchBatchContextsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchContextsResult> getBatchBatchContexts(GetBatchBatchContextsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchContexts:getBatchBatchContexts", TypeShape.of(GetBatchBatchContextsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch contexts by compartment or context [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchContext to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchContextsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchContexts = OciFunctions.getBatchBatchContexts(GetBatchBatchContextsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchContextDisplayName)
+     *             .id(batchContextId)
+     *             .state(batchContextState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchContextsResult> getBatchBatchContextsPlain(GetBatchBatchContextsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchContexts:getBatchBatchContexts", TypeShape.of(GetBatchBatchContextsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch job pool.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolResult> getBatchBatchJobPool(GetBatchBatchJobPoolArgs args) {
+        return getBatchBatchJobPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch job pool.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchJobPoolResult> getBatchBatchJobPoolPlain(GetBatchBatchJobPoolPlainArgs args) {
+        return getBatchBatchJobPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch job pool.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolResult> getBatchBatchJobPool(GetBatchBatchJobPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchJobPool:getBatchBatchJobPool", TypeShape.of(GetBatchBatchJobPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch job pool.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolResult> getBatchBatchJobPool(GetBatchBatchJobPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchJobPool:getBatchBatchJobPool", TypeShape.of(GetBatchBatchJobPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Job Pool resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch job pool.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchJobPoolResult> getBatchBatchJobPoolPlain(GetBatchBatchJobPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchJobPool:getBatchBatchJobPool", TypeShape.of(GetBatchBatchJobPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolsResult> getBatchBatchJobPools() {
+        return getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchJobPoolsResult> getBatchBatchJobPoolsPlain() {
+        return getBatchBatchJobPoolsPlain(GetBatchBatchJobPoolsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolsResult> getBatchBatchJobPools(GetBatchBatchJobPoolsArgs args) {
+        return getBatchBatchJobPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchJobPoolsResult> getBatchBatchJobPoolsPlain(GetBatchBatchJobPoolsPlainArgs args) {
+        return getBatchBatchJobPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolsResult> getBatchBatchJobPools(GetBatchBatchJobPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchJobPools:getBatchBatchJobPools", TypeShape.of(GetBatchBatchJobPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchJobPoolsResult> getBatchBatchJobPools(GetBatchBatchJobPoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchJobPools:getBatchBatchJobPools", TypeShape.of(GetBatchBatchJobPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Job Pools in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the batch job pools by compartment or job pool [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchJobPool to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchJobPoolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
+     *             .batchContextId(testBatchContext.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchJobPoolDisplayName)
+     *             .id(batchJobPoolId)
+     *             .state(batchJobPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchJobPoolsResult> getBatchBatchJobPoolsPlain(GetBatchBatchJobPoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchJobPools:getBatchBatchJobPools", TypeShape.of(GetBatchBatchJobPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task environment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentResult> getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs args) {
+        return getBatchBatchTaskEnvironment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task environment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskEnvironmentResult> getBatchBatchTaskEnvironmentPlain(GetBatchBatchTaskEnvironmentPlainArgs args) {
+        return getBatchBatchTaskEnvironmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task environment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentResult> getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskEnvironment:getBatchBatchTaskEnvironment", TypeShape.of(GetBatchBatchTaskEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task environment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentResult> getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskEnvironment:getBatchBatchTaskEnvironment", TypeShape.of(GetBatchBatchTaskEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task environment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskEnvironmentResult> getBatchBatchTaskEnvironmentPlain(GetBatchBatchTaskEnvironmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskEnvironment:getBatchBatchTaskEnvironment", TypeShape.of(GetBatchBatchTaskEnvironmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironments() {
+        return getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironmentsPlain() {
+        return getBatchBatchTaskEnvironmentsPlain(GetBatchBatchTaskEnvironmentsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs args) {
+        return getBatchBatchTaskEnvironments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironmentsPlain(GetBatchBatchTaskEnvironmentsPlainArgs args) {
+        return getBatchBatchTaskEnvironmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskEnvironments:getBatchBatchTaskEnvironments", TypeShape.of(GetBatchBatchTaskEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskEnvironments:getBatchBatchTaskEnvironments", TypeShape.of(GetBatchBatchTaskEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Environments in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task environments by compartment or environment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, display name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskEnvironment to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskEnvironmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskEnvironments = OciFunctions.getBatchBatchTaskEnvironments(GetBatchBatchTaskEnvironmentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskEnvironmentDisplayName)
+     *             .id(batchTaskEnvironmentId)
+     *             .state(batchTaskEnvironmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskEnvironmentsResult> getBatchBatchTaskEnvironmentsPlain(GetBatchBatchTaskEnvironmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskEnvironments:getBatchBatchTaskEnvironments", TypeShape.of(GetBatchBatchTaskEnvironmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfileResult> getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs args) {
+        return getBatchBatchTaskProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskProfileResult> getBatchBatchTaskProfilePlain(GetBatchBatchTaskProfilePlainArgs args) {
+        return getBatchBatchTaskProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfileResult> getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskProfile:getBatchBatchTaskProfile", TypeShape.of(GetBatchBatchTaskProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfileResult> getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskProfile:getBatchBatchTaskProfile", TypeShape.of(GetBatchBatchTaskProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Batch Task Profile resource in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Gets information about a batch task profile.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskProfileResult> getBatchBatchTaskProfilePlain(GetBatchBatchTaskProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskProfile:getBatchBatchTaskProfile", TypeShape.of(GetBatchBatchTaskProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfiles() {
+        return getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfilesPlain() {
+        return getBatchBatchTaskProfilesPlain(GetBatchBatchTaskProfilesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs args) {
+        return getBatchBatchTaskProfiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfilesPlain(GetBatchBatchTaskProfilesPlainArgs args) {
+        return getBatchBatchTaskProfilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskProfiles:getBatchBatchTaskProfiles", TypeShape.of(GetBatchBatchTaskProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getBatchBatchTaskProfiles:getBatchBatchTaskProfiles", TypeShape.of(GetBatchBatchTaskProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Batch Task Profiles in Oracle Cloud Infrastructure Batch service.
+     * 
+     * Lists the task profiles by compartment or profile [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). You can filter and sort them by various properties like lifecycle state, name and also ocid. All properties require an exact match. List operation only provides a summary information, use GetBatchTaskProfile to get the full details on a specific context
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetBatchBatchTaskProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBatchTaskProfiles = OciFunctions.getBatchBatchTaskProfiles(GetBatchBatchTaskProfilesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(batchTaskProfileDisplayName)
+     *             .id(batchTaskProfileId)
+     *             .state(batchTaskProfileState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetBatchBatchTaskProfilesResult> getBatchBatchTaskProfilesPlain(GetBatchBatchTaskProfilesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getBatchBatchTaskProfiles:getBatchBatchTaskProfiles", TypeShape.of(GetBatchBatchTaskProfilesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
@@ -14130,11 +16485,14 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .clusterPlacementGroupId(clusterPlacementGroupId)
+     *             .compartmentId(compartmentId)
      *             .entityType(externalLocationsMetadataEntityType)
+     *             .externalLocation(externalLocation)
      *             .linkedCompartmentId(linkedCompartmentId)
+     *             .logicalZone(logicalZone)
      *             .build());
      * 
      *     }
@@ -14176,11 +16534,14 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .clusterPlacementGroupId(clusterPlacementGroupId)
+     *             .compartmentId(compartmentId)
      *             .entityType(externalLocationsMetadataEntityType)
+     *             .externalLocation(externalLocation)
      *             .linkedCompartmentId(linkedCompartmentId)
+     *             .logicalZone(logicalZone)
      *             .build());
      * 
      *     }
@@ -14222,11 +16583,14 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .clusterPlacementGroupId(clusterPlacementGroupId)
+     *             .compartmentId(compartmentId)
      *             .entityType(externalLocationsMetadataEntityType)
+     *             .externalLocation(externalLocation)
      *             .linkedCompartmentId(linkedCompartmentId)
+     *             .logicalZone(logicalZone)
      *             .build());
      * 
      *     }
@@ -14268,11 +16632,14 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .clusterPlacementGroupId(clusterPlacementGroupId)
+     *             .compartmentId(compartmentId)
      *             .entityType(externalLocationsMetadataEntityType)
+     *             .externalLocation(externalLocation)
      *             .linkedCompartmentId(linkedCompartmentId)
+     *             .logicalZone(logicalZone)
      *             .build());
      * 
      *     }
@@ -14314,11 +16681,14 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
-     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .clusterPlacementGroupId(clusterPlacementGroupId)
+     *             .compartmentId(compartmentId)
      *             .entityType(externalLocationsMetadataEntityType)
+     *             .externalLocation(externalLocation)
      *             .linkedCompartmentId(linkedCompartmentId)
+     *             .logicalZone(logicalZone)
      *             .build());
      * 
      *     }
@@ -14329,6 +16699,221 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadataPlain(GetMulticloudExternalLocationsMetadataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", TypeShape.of(GetMulticloudExternalLocationsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudsubscriptions = OciFunctions.getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(displayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudsubscriptionsResult> getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs args) {
+        return getMulticloudMulticloudsubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudsubscriptions = OciFunctions.getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(displayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudsubscriptionsResult> getMulticloudMulticloudsubscriptionsPlain(GetMulticloudMulticloudsubscriptionsPlainArgs args) {
+        return getMulticloudMulticloudsubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudsubscriptions = OciFunctions.getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(displayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudsubscriptionsResult> getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudsubscriptions:getMulticloudMulticloudsubscriptions", TypeShape.of(GetMulticloudMulticloudsubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudsubscriptions = OciFunctions.getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(displayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudMulticloudsubscriptionsResult> getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudMulticloudsubscriptions:getMulticloudMulticloudsubscriptions", TypeShape.of(GetMulticloudMulticloudsubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multicloud subscriptions in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of Multicloud subscriptions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudMulticloudsubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMulticloudsubscriptions = OciFunctions.getMulticloudMulticloudsubscriptions(GetMulticloudMulticloudsubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(displayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudMulticloudsubscriptionsResult> getMulticloudMulticloudsubscriptionsPlain(GetMulticloudMulticloudsubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudMulticloudsubscriptions:getMulticloudMulticloudsubscriptions", TypeShape.of(GetMulticloudMulticloudsubscriptionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
@@ -14364,6 +16949,7 @@ public final class OciFunctions {
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
      *             .externalLocation(networkAnchorExternalLocation)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14409,6 +16995,7 @@ public final class OciFunctions {
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
      *             .externalLocation(networkAnchorExternalLocation)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14454,6 +17041,7 @@ public final class OciFunctions {
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
      *             .externalLocation(networkAnchorExternalLocation)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14499,6 +17087,7 @@ public final class OciFunctions {
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
      *             .externalLocation(networkAnchorExternalLocation)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14544,6 +17133,7 @@ public final class OciFunctions {
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
      *             .externalLocation(networkAnchorExternalLocation)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14585,15 +17175,121 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
-     *             .externalLocation(externalLocation)
+     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
-     *             .compartmentId(compartmentId)
      *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
      *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchors() {
+        return getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchorsPlain() {
+        return getMulticloudNetworkAnchorsPlain(GetMulticloudNetworkAnchorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14635,15 +17331,17 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
-     *             .externalLocation(externalLocation)
+     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
-     *             .compartmentId(compartmentId)
      *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
      *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14685,15 +17383,17 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
-     *             .externalLocation(externalLocation)
+     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
-     *             .compartmentId(compartmentId)
      *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
      *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14735,15 +17435,17 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
-     *             .externalLocation(externalLocation)
+     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
-     *             .compartmentId(compartmentId)
      *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
      *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -14785,15 +17487,17 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
-     *             .externalLocation(externalLocation)
+     *             .compartmentId(compartmentId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
-     *             .compartmentId(compartmentId)
      *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
      *             .displayName(displayName)
+     *             .externalLocation(externalLocation)
      *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .compartmentIdInSubtree(compartmentIdInSubtree)
      *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
      *             .id(id)
+     *             .shouldFetchVcnName(shouldFetchVcnName)
      *             .build());
      * 
      *     }
@@ -15021,7 +17725,8 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -15063,7 +17768,8 @@ public final class OciFunctions {
         return getMulticloudOmHubMultiCloudsMetadata(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -15105,7 +17811,8 @@ public final class OciFunctions {
         return getMulticloudOmHubMultiCloudsMetadataPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -15147,7 +17854,8 @@ public final class OciFunctions {
         return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -15189,7 +17897,8 @@ public final class OciFunctions {
         return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+     * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
      * 
@@ -15231,6 +17940,236 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs args) {
+        return getMulticloudOmHubMulticloudResources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResourcesPlain(GetMulticloudOmHubMulticloudResourcesPlainArgs args) {
+        return getMulticloudOmHubMulticloudResourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", TypeShape.of(GetMulticloudOmHubMulticloudResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", TypeShape.of(GetMulticloudOmHubMulticloudResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Om Hub Multicloud Resources in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud resources with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMulticloudResourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMulticloudResources = OciFunctions.getMulticloudOmHubMulticloudResources(GetMulticloudOmHubMulticloudResourcesArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .externalLocation(externalLocation)
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMulticloudResourcesResult> getMulticloudOmHubMulticloudResourcesPlain(GetMulticloudOmHubMulticloudResourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMulticloudResources:getMulticloudOmHubMulticloudResources", TypeShape.of(GetMulticloudOmHubMulticloudResourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
      * 
      * Gets information about a ResourceAnchor.
@@ -15263,6 +18202,7 @@ public final class OciFunctions {
      *             .resourceAnchorId(resourceAnchorId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
      *             .build());
      * 
      *     }
@@ -15307,6 +18247,7 @@ public final class OciFunctions {
      *             .resourceAnchorId(resourceAnchorId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
      *             .build());
      * 
      *     }
@@ -15351,6 +18292,7 @@ public final class OciFunctions {
      *             .resourceAnchorId(resourceAnchorId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
      *             .build());
      * 
      *     }
@@ -15395,6 +18337,7 @@ public final class OciFunctions {
      *             .resourceAnchorId(resourceAnchorId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
      *             .build());
      * 
      *     }
@@ -15439,6 +18382,7 @@ public final class OciFunctions {
      *             .resourceAnchorId(resourceAnchorId)
      *             .subscriptionId(subscriptionId)
      *             .subscriptionServiceName(subscriptionServiceName)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
      *             .build());
      * 
      *     }
@@ -15480,14 +18424,115 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
-     *             .subscriptionId(subscriptionId)
-     *             .subscriptionServiceName(subscriptionServiceName)
      *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
      *             .displayName(resourceAnchorDisplayName)
      *             .id(resourceAnchorId)
-     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchors() {
+        return getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .linkedCompartmentId(linkedCompartmentId)
-     *             .lifecycleState(resourceAnchorState)
+     *             .lifecycleState(lifecycleState)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchorsPlain() {
+        return getMulticloudResourceAnchorsPlain(GetMulticloudResourceAnchorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
      *             .build());
      * 
      *     }
@@ -15529,14 +18574,15 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
-     *             .subscriptionId(subscriptionId)
-     *             .subscriptionServiceName(subscriptionServiceName)
      *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
      *             .displayName(resourceAnchorDisplayName)
      *             .id(resourceAnchorId)
-     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
-     *             .linkedCompartmentId(linkedCompartmentId)
-     *             .lifecycleState(resourceAnchorState)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
      *             .build());
      * 
      *     }
@@ -15578,14 +18624,15 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
-     *             .subscriptionId(subscriptionId)
-     *             .subscriptionServiceName(subscriptionServiceName)
      *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
      *             .displayName(resourceAnchorDisplayName)
      *             .id(resourceAnchorId)
-     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
-     *             .linkedCompartmentId(linkedCompartmentId)
-     *             .lifecycleState(resourceAnchorState)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
      *             .build());
      * 
      *     }
@@ -15627,14 +18674,15 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
-     *             .subscriptionId(subscriptionId)
-     *             .subscriptionServiceName(subscriptionServiceName)
      *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
      *             .displayName(resourceAnchorDisplayName)
      *             .id(resourceAnchorId)
-     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
-     *             .linkedCompartmentId(linkedCompartmentId)
-     *             .lifecycleState(resourceAnchorState)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
      *             .build());
      * 
      *     }
@@ -15676,14 +18724,15 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
-     *             .subscriptionId(subscriptionId)
-     *             .subscriptionServiceName(subscriptionServiceName)
      *             .compartmentId(compartmentId)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(lifecycleState)
      *             .displayName(resourceAnchorDisplayName)
      *             .id(resourceAnchorId)
-     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
-     *             .linkedCompartmentId(linkedCompartmentId)
-     *             .lifecycleState(resourceAnchorState)
+     *             .isCompartmentIdInSubtree(isCompartmentIdInSubtree)
+     *             .shouldFetchCompartmentName(shouldFetchCompartmentName)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .subscriptionId(subscriptionId)
      *             .build());
      * 
      *     }

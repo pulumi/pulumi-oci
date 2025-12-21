@@ -27,6 +27,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? RecycleLevel { get; set; }
 
         /// <summary>
+        /// (Updatable) The state of the host group configuration.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
+        /// <summary>
         /// (Updatable) Either the platform name or compute shape that the configuration is targeting
         /// </summary>
         [Input("target")]

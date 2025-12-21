@@ -336,6 +336,10 @@ public final class GetSddcResult {
      * 
      */
     private String state;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
     private Map<String,String> systemTags;
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -863,6 +867,10 @@ public final class GetSddcResult {
     public String state() {
         return this.state;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }

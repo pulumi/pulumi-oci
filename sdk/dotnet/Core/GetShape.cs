@@ -41,6 +41,9 @@ namespace Pulumi.Oci.Core
         [Input("imageId")]
         public string? ImageId { get; set; }
 
+        [Input("shape")]
+        public string? Shape { get; set; }
+
         public GetShapeArgs()
         {
         }
@@ -66,6 +69,9 @@ namespace Pulumi.Oci.Core
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
+
         public GetShapeInvokeArgs()
         {
         }
@@ -84,6 +90,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         public readonly string? ImageId;
+        public readonly string? Shape;
         public readonly ImmutableArray<Outputs.GetShapeShapeResult> Shapes;
 
         [OutputConstructor]
@@ -98,6 +105,8 @@ namespace Pulumi.Oci.Core
 
             string? imageId,
 
+            string? shape,
+
             ImmutableArray<Outputs.GetShapeShapeResult> shapes)
         {
             AvailabilityDomain = availabilityDomain;
@@ -105,6 +114,7 @@ namespace Pulumi.Oci.Core
             Filters = filters;
             Id = id;
             ImageId = imageId;
+            Shape = shape;
             Shapes = shapes;
         }
     }

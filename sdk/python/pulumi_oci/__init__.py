@@ -4506,6 +4506,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "GenerativeAi/importedModel",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/importedModel:ImportedModel": "ImportedModel"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "GenerativeAi/model",
   "fqn": "pulumi_oci.generativeai",
   "classes": {
@@ -4854,6 +4862,14 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting": "DomainsKmsiSetting"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsMappedAttribute",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsMappedAttribute:DomainsMappedAttribute": "DomainsMappedAttribute"
   }
  },
  {
@@ -5470,6 +5486,22 @@ _utilities.register(
   "fqn": "pulumi_oci.loganalytics",
   "classes": {
    "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity": "LogAnalyticsEntity"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LogAnalytics/logAnalyticsEntityAssociationsAdd",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd": "LogAnalyticsEntityAssociationsAdd"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LogAnalytics/logAnalyticsEntityAssociationsRemove",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove": "LogAnalyticsEntityAssociationsRemove"
   }
  },
  {
@@ -7382,6 +7414,38 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest": "ApiaccesscontrolPrivilegedApiRequest"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/batchBatchContext",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/batchBatchContext:BatchBatchContext": "BatchBatchContext"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/batchBatchJobPool",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/batchBatchJobPool:BatchBatchJobPool": "BatchBatchJobPool"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/batchBatchTaskEnvironment",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment": "BatchBatchTaskEnvironment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/batchBatchTaskProfile",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile": "BatchBatchTaskProfile"
   }
  },
  {

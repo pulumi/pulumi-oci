@@ -27,7 +27,7 @@ class GetComputeHostResult:
     """
     A collection of values returned by getComputeHost.
     """
-    def __init__(__self__, additional_data=None, availability_domain=None, capacity_reservation_id=None, compartment_id=None, compute_host_group_id=None, compute_host_id=None, configuration_datas=None, configuration_state=None, defined_tags=None, display_name=None, fault_domain=None, freeform_tags=None, gpu_memory_fabric_id=None, health=None, hpc_island_id=None, id=None, impacted_component_details=None, instance_id=None, lifecycle_details=None, local_block_id=None, network_block_id=None, recycle_details=None, shape=None, state=None, time_configuration_check=None, time_created=None, time_updated=None):
+    def __init__(__self__, additional_data=None, availability_domain=None, capacity_reservation_id=None, compartment_id=None, compute_host_group_id=None, compute_host_id=None, configuration_datas=None, configuration_state=None, defined_tags=None, display_name=None, fault_domain=None, firmware_bundle_id=None, freeform_tags=None, gpu_memory_fabric_id=None, health=None, hpc_island_id=None, id=None, impacted_component_details=None, instance_id=None, lifecycle_details=None, local_block_id=None, network_block_id=None, platform=None, recycle_details=None, shape=None, state=None, time_configuration_check=None, time_created=None, time_updated=None):
         if additional_data and not isinstance(additional_data, str):
             raise TypeError("Expected argument 'additional_data' to be a str")
         pulumi.set(__self__, "additional_data", additional_data)
@@ -61,6 +61,9 @@ class GetComputeHostResult:
         if fault_domain and not isinstance(fault_domain, str):
             raise TypeError("Expected argument 'fault_domain' to be a str")
         pulumi.set(__self__, "fault_domain", fault_domain)
+        if firmware_bundle_id and not isinstance(firmware_bundle_id, str):
+            raise TypeError("Expected argument 'firmware_bundle_id' to be a str")
+        pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -91,6 +94,9 @@ class GetComputeHostResult:
         if network_block_id and not isinstance(network_block_id, str):
             raise TypeError("Expected argument 'network_block_id' to be a str")
         pulumi.set(__self__, "network_block_id", network_block_id)
+        if platform and not isinstance(platform, str):
+            raise TypeError("Expected argument 'platform' to be a str")
+        pulumi.set(__self__, "platform", platform)
         if recycle_details and not isinstance(recycle_details, list):
             raise TypeError("Expected argument 'recycle_details' to be a list")
         pulumi.set(__self__, "recycle_details", recycle_details)
@@ -196,6 +202,14 @@ class GetComputeHostResult:
         return pulumi.get(self, "fault_domain")
 
     @_builtins.property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -276,6 +290,14 @@ class GetComputeHostResult:
         return pulumi.get(self, "network_block_id")
 
     @_builtins.property
+    @pulumi.getter
+    def platform(self) -> _builtins.str:
+        """
+        The platform of the host
+        """
+        return pulumi.get(self, "platform")
+
+    @_builtins.property
     @pulumi.getter(name="recycleDetails")
     def recycle_details(self) -> Sequence['outputs.GetComputeHostRecycleDetailResult']:
         """
@@ -341,6 +363,7 @@ class AwaitableGetComputeHostResult(GetComputeHostResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             fault_domain=self.fault_domain,
+            firmware_bundle_id=self.firmware_bundle_id,
             freeform_tags=self.freeform_tags,
             gpu_memory_fabric_id=self.gpu_memory_fabric_id,
             health=self.health,
@@ -351,6 +374,7 @@ class AwaitableGetComputeHostResult(GetComputeHostResult):
             lifecycle_details=self.lifecycle_details,
             local_block_id=self.local_block_id,
             network_block_id=self.network_block_id,
+            platform=self.platform,
             recycle_details=self.recycle_details,
             shape=self.shape,
             state=self.state,
@@ -395,6 +419,7 @@ def get_compute_host(compute_host_id: Optional[_builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
+        firmware_bundle_id=pulumi.get(__ret__, 'firmware_bundle_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         gpu_memory_fabric_id=pulumi.get(__ret__, 'gpu_memory_fabric_id'),
         health=pulumi.get(__ret__, 'health'),
@@ -405,6 +430,7 @@ def get_compute_host(compute_host_id: Optional[_builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         local_block_id=pulumi.get(__ret__, 'local_block_id'),
         network_block_id=pulumi.get(__ret__, 'network_block_id'),
+        platform=pulumi.get(__ret__, 'platform'),
         recycle_details=pulumi.get(__ret__, 'recycle_details'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
@@ -446,6 +472,7 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[_builtins.str
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         fault_domain=pulumi.get(__response__, 'fault_domain'),
+        firmware_bundle_id=pulumi.get(__response__, 'firmware_bundle_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         gpu_memory_fabric_id=pulumi.get(__response__, 'gpu_memory_fabric_id'),
         health=pulumi.get(__response__, 'health'),
@@ -456,6 +483,7 @@ def get_compute_host_output(compute_host_id: Optional[pulumi.Input[_builtins.str
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         local_block_id=pulumi.get(__response__, 'local_block_id'),
         network_block_id=pulumi.get(__response__, 'network_block_id'),
+        platform=pulumi.get(__response__, 'platform'),
         recycle_details=pulumi.get(__response__, 'recycle_details'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),

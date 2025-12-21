@@ -59,6 +59,7 @@ export interface GetIntegrationInstanceResult {
      * The entitlement used for billing purposes.
      */
     readonly consumptionModel: string;
+    readonly convertInstanceTrigger: number;
     /**
      * Details for a custom endpoint for the integration instance.
      */
@@ -71,6 +72,7 @@ export interface GetIntegrationInstanceResult {
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: string};
+    readonly disableProcessAutomationTrigger: number;
     /**
      * Disaster recovery details for the integration instance created in the region.
      */
@@ -126,6 +128,10 @@ export interface GetIntegrationInstanceResult {
      * Additional details of lifecycleState or substates
      */
     readonly lifecycleDetails: string;
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     */
+    readonly logGroupId: string;
     /**
      * The number of configured message packs (if any)
      */

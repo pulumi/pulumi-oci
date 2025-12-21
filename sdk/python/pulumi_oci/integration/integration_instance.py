@@ -28,8 +28,11 @@ class IntegrationInstanceArgs:
                  message_packs: pulumi.Input[_builtins.int],
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
                  consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 convert_instance_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
+                 data_retention_period: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  domain_id: Optional[pulumi.Input[_builtins.str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  extend_data_retention_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -39,6 +42,7 @@ class IntegrationInstanceArgs:
                  is_disaster_recovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -52,17 +56,20 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+        :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[_builtins.int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[_builtins.int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[_builtins.bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"
@@ -84,10 +91,16 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
         if consumption_model is not None:
             pulumi.set(__self__, "consumption_model", consumption_model)
+        if convert_instance_trigger is not None:
+            pulumi.set(__self__, "convert_instance_trigger", convert_instance_trigger)
         if custom_endpoint is not None:
             pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+        if data_retention_period is not None:
+            pulumi.set(__self__, "data_retention_period", data_retention_period)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if disable_process_automation_trigger is not None:
+            pulumi.set(__self__, "disable_process_automation_trigger", disable_process_automation_trigger)
         if domain_id is not None:
             pulumi.set(__self__, "domain_id", domain_id)
         if enable_process_automation_trigger is not None:
@@ -106,6 +119,8 @@ class IntegrationInstanceArgs:
             pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled is not None:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
         if network_endpoint_details is not None:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if security_attributes is not None:
@@ -200,6 +215,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "consumption_model", value)
 
     @_builtins.property
+    @pulumi.getter(name="convertInstanceTrigger")
+    def convert_instance_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        """
+        return pulumi.get(self, "convert_instance_trigger")
+
+    @convert_instance_trigger.setter
+    def convert_instance_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "convert_instance_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']]:
         """
@@ -212,6 +239,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "custom_endpoint", value)
 
     @_builtins.property
+    @pulumi.getter(name="dataRetentionPeriod")
+    def data_retention_period(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Data retention period set for given integration instance
+        """
+        return pulumi.get(self, "data_retention_period")
+
+    @data_retention_period.setter
+    def data_retention_period(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "data_retention_period", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -222,6 +261,18 @@ class IntegrationInstanceArgs:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disableProcessAutomationTrigger")
+    def disable_process_automation_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "disable_process_automation_trigger")
+
+    @disable_process_automation_trigger.setter
+    def disable_process_automation_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "disable_process_automation_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="domainId")
@@ -250,9 +301,6 @@ class IntegrationInstanceArgs:
     @_builtins.property
     @pulumi.getter(name="extendDataRetentionTrigger")
     def extend_data_retention_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        """
         return pulumi.get(self, "extend_data_retention_trigger")
 
     @extend_data_retention_trigger.setter
@@ -332,6 +380,18 @@ class IntegrationInstanceArgs:
         pulumi.set(self, "is_visual_builder_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="networkEndpointDetails")
     def network_endpoint_details(self) -> Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']]:
         """
@@ -394,9 +454,11 @@ class _IntegrationInstanceState:
                  attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 convert_instance_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
                  data_retention_period: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  disaster_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -414,6 +476,7 @@ class _IntegrationInstanceState:
                  is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
                  private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] = None,
@@ -430,14 +493,15 @@ class _IntegrationInstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]] attachments: A list of associated attachments to other services
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+        :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceDisasterRecoveryDetailArgs']]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[_builtins.int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[_builtins.int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -449,6 +513,7 @@ class _IntegrationInstanceState:
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details of lifecycleState or substates
+        :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -475,12 +540,16 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if consumption_model is not None:
             pulumi.set(__self__, "consumption_model", consumption_model)
+        if convert_instance_trigger is not None:
+            pulumi.set(__self__, "convert_instance_trigger", convert_instance_trigger)
         if custom_endpoint is not None:
             pulumi.set(__self__, "custom_endpoint", custom_endpoint)
         if data_retention_period is not None:
             pulumi.set(__self__, "data_retention_period", data_retention_period)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if disable_process_automation_trigger is not None:
+            pulumi.set(__self__, "disable_process_automation_trigger", disable_process_automation_trigger)
         if disaster_recovery_details is not None:
             pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
         if display_name is not None:
@@ -515,6 +584,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_group_id is not None:
+            pulumi.set(__self__, "log_group_id", log_group_id)
         if message_packs is not None:
             pulumi.set(__self__, "message_packs", message_packs)
         if network_endpoint_details is not None:
@@ -585,6 +656,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "consumption_model", value)
 
     @_builtins.property
+    @pulumi.getter(name="convertInstanceTrigger")
+    def convert_instance_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        """
+        return pulumi.get(self, "convert_instance_trigger")
+
+    @convert_instance_trigger.setter
+    def convert_instance_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "convert_instance_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']]:
         """
@@ -619,6 +702,18 @@ class _IntegrationInstanceState:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="disableProcessAutomationTrigger")
+    def disable_process_automation_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "disable_process_automation_trigger")
+
+    @disable_process_automation_trigger.setter
+    def disable_process_automation_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "disable_process_automation_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryDetails")
@@ -671,9 +766,6 @@ class _IntegrationInstanceState:
     @_builtins.property
     @pulumi.getter(name="extendDataRetentionTrigger")
     def extend_data_retention_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        """
         return pulumi.get(self, "extend_data_retention_trigger")
 
     @extend_data_retention_trigger.setter
@@ -822,6 +914,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "log_group_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="messagePacks")
     def message_packs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -958,8 +1062,11 @@ class IntegrationInstance(pulumi.CustomResource):
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 convert_instance_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+                 data_retention_period: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain_id: Optional[pulumi.Input[_builtins.str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -972,6 +1079,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_disaster_recovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1018,7 +1126,21 @@ class IntegrationInstance(pulumi.CustomResource):
                     "id": integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
                     "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 }],
+                "design_time": {
+                    "allowlisted_http_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_ips,
+                    "allowlisted_http_vcns": [{
+                        "id": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_id,
+                        "allowlisted_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_allowlisted_ips,
+                    }],
+                },
                 "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+                "runtime": {
+                    "allowlisted_http_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_ips,
+                    "allowlisted_http_vcns": [{
+                        "id": integration_instance_network_endpoint_details_runtime_allowlisted_http_vcns_id,
+                        "allowlisted_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_vcns_allowlisted_ips,
+                    }],
+                },
             },
             security_attributes={
                 "oracle-zpr.sensitivity.value": "low",
@@ -1041,12 +1163,14 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+        :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
         :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
+        :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[_builtins.int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[_builtins.int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -1055,6 +1179,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_disaster_recovery_enabled: Is Disaster Recovery enabled or not.
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
+        :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
@@ -1114,7 +1239,21 @@ class IntegrationInstance(pulumi.CustomResource):
                     "id": integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
                     "allowlisted_ips": integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 }],
+                "design_time": {
+                    "allowlisted_http_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_ips,
+                    "allowlisted_http_vcns": [{
+                        "id": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_id,
+                        "allowlisted_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_allowlisted_ips,
+                    }],
+                },
                 "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+                "runtime": {
+                    "allowlisted_http_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_ips,
+                    "allowlisted_http_vcns": [{
+                        "id": integration_instance_network_endpoint_details_runtime_allowlisted_http_vcns_id,
+                        "allowlisted_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_vcns_allowlisted_ips,
+                    }],
+                },
             },
             security_attributes={
                 "oracle-zpr.sensitivity.value": "low",
@@ -1150,8 +1289,11 @@ class IntegrationInstance(pulumi.CustomResource):
                  alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 convert_instance_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
+                 data_retention_period: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 disable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain_id: Optional[pulumi.Input[_builtins.str]] = None,
                  enable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1164,6 +1306,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  is_disaster_recovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  message_packs: Optional[pulumi.Input[_builtins.int]] = None,
                  network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1183,8 +1326,11 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["consumption_model"] = consumption_model
+            __props__.__dict__["convert_instance_trigger"] = convert_instance_trigger
             __props__.__dict__["custom_endpoint"] = custom_endpoint
+            __props__.__dict__["data_retention_period"] = data_retention_period
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["disable_process_automation_trigger"] = disable_process_automation_trigger
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
@@ -1203,6 +1349,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["is_disaster_recovery_enabled"] = is_disaster_recovery_enabled
             __props__.__dict__["is_file_server_enabled"] = is_file_server_enabled
             __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
+            __props__.__dict__["log_group_id"] = log_group_id
             if message_packs is None and not opts.urn:
                 raise TypeError("Missing required property 'message_packs'")
             __props__.__dict__["message_packs"] = message_packs
@@ -1211,7 +1358,6 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
-            __props__.__dict__["data_retention_period"] = None
             __props__.__dict__["disaster_recovery_details"] = None
             __props__.__dict__["idcs_infos"] = None
             __props__.__dict__["instance_design_time_url"] = None
@@ -1238,9 +1384,11 @@ class IntegrationInstance(pulumi.CustomResource):
             attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
+            convert_instance_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             custom_endpoint: Optional[pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']]] = None,
             data_retention_period: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            disable_process_automation_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             disaster_recovery_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             domain_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1258,6 +1406,7 @@ class IntegrationInstance(pulumi.CustomResource):
             is_file_server_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             is_visual_builder_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             message_packs: Optional[pulumi.Input[_builtins.int]] = None,
             network_endpoint_details: Optional[pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
             private_endpoint_outbound_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
@@ -1279,14 +1428,15 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]] attachments: A list of associated attachments to other services
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier.
         :param pulumi.Input[_builtins.str] consumption_model: Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+        :param pulumi.Input[_builtins.int] convert_instance_trigger: (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
         :param pulumi.Input[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict']] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[_builtins.str] data_retention_period: Data retention period set for given integration instance
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] disable_process_automation_trigger: (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict']]]] disaster_recovery_details: Disaster recovery details for the integration instance created in the region.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[_builtins.str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
         :param pulumi.Input[_builtins.int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        :param pulumi.Input[_builtins.int] extend_data_retention_trigger: (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] failover_trigger: (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -1298,6 +1448,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[_builtins.bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details of lifecycleState or substates
+        :param pulumi.Input[_builtins.str] log_group_id: OCID of LogAnalytics LogGroup, enabled for given integration instance
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
@@ -1324,9 +1475,11 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
+        __props__.__dict__["convert_instance_trigger"] = convert_instance_trigger
         __props__.__dict__["custom_endpoint"] = custom_endpoint
         __props__.__dict__["data_retention_period"] = data_retention_period
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["disable_process_automation_trigger"] = disable_process_automation_trigger
         __props__.__dict__["disaster_recovery_details"] = disaster_recovery_details
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain_id"] = domain_id
@@ -1344,6 +1497,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["is_file_server_enabled"] = is_file_server_enabled
         __props__.__dict__["is_visual_builder_enabled"] = is_visual_builder_enabled
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["log_group_id"] = log_group_id
         __props__.__dict__["message_packs"] = message_packs
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["private_endpoint_outbound_connections"] = private_endpoint_outbound_connections
@@ -1389,6 +1543,14 @@ class IntegrationInstance(pulumi.CustomResource):
         return pulumi.get(self, "consumption_model")
 
     @_builtins.property
+    @pulumi.getter(name="convertInstanceTrigger")
+    def convert_instance_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+        """
+        return pulumi.get(self, "convert_instance_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="customEndpoint")
     def custom_endpoint(self) -> pulumi.Output['outputs.IntegrationInstanceCustomEndpoint']:
         """
@@ -1398,7 +1560,7 @@ class IntegrationInstance(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="dataRetentionPeriod")
-    def data_retention_period(self) -> pulumi.Output[_builtins.str]:
+    def data_retention_period(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Data retention period set for given integration instance
         """
@@ -1411,6 +1573,14 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="disableProcessAutomationTrigger")
+    def disable_process_automation_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+        """
+        return pulumi.get(self, "disable_process_automation_trigger")
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryDetails")
@@ -1447,9 +1617,6 @@ class IntegrationInstance(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="extendDataRetentionTrigger")
     def extend_data_retention_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
-        """
-        (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-        """
         return pulumi.get(self, "extend_data_retention_trigger")
 
     @_builtins.property
@@ -1544,6 +1711,14 @@ class IntegrationInstance(pulumi.CustomResource):
         Additional details of lifecycleState or substates
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+        """
+        return pulumi.get(self, "log_group_id")
 
     @_builtins.property
     @pulumi.getter(name="messagePacks")

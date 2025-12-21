@@ -43,6 +43,7 @@ public final class GetShapeShape {
     private List<GetShapeShapeOcpuOption> ocpuOptions;
     private Double ocpus;
     private List<GetShapeShapePlatformConfigOption> platformConfigOptions;
+    private List<String> platformNames;
     private String processorDescription;
     private List<String> quotaNames;
     private Integer rdmaBandwidthInGbps;
@@ -120,6 +121,9 @@ public final class GetShapeShape {
     public List<GetShapeShapePlatformConfigOption> platformConfigOptions() {
         return this.platformConfigOptions;
     }
+    public List<String> platformNames() {
+        return this.platformNames;
+    }
     public String processorDescription() {
         return this.processorDescription;
     }
@@ -171,6 +175,7 @@ public final class GetShapeShape {
         private List<GetShapeShapeOcpuOption> ocpuOptions;
         private Double ocpus;
         private List<GetShapeShapePlatformConfigOption> platformConfigOptions;
+        private List<String> platformNames;
         private String processorDescription;
         private List<String> quotaNames;
         private Integer rdmaBandwidthInGbps;
@@ -203,6 +208,7 @@ public final class GetShapeShape {
     	      this.ocpuOptions = defaults.ocpuOptions;
     	      this.ocpus = defaults.ocpus;
     	      this.platformConfigOptions = defaults.platformConfigOptions;
+    	      this.platformNames = defaults.platformNames;
     	      this.processorDescription = defaults.processorDescription;
     	      this.quotaNames = defaults.quotaNames;
     	      this.rdmaBandwidthInGbps = defaults.rdmaBandwidthInGbps;
@@ -414,6 +420,17 @@ public final class GetShapeShape {
             return platformConfigOptions(List.of(platformConfigOptions));
         }
         @CustomType.Setter
+        public Builder platformNames(List<String> platformNames) {
+            if (platformNames == null) {
+              throw new MissingRequiredPropertyException("GetShapeShape", "platformNames");
+            }
+            this.platformNames = platformNames;
+            return this;
+        }
+        public Builder platformNames(String... platformNames) {
+            return platformNames(List.of(platformNames));
+        }
+        @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
             if (processorDescription == null) {
               throw new MissingRequiredPropertyException("GetShapeShape", "processorDescription");
@@ -495,6 +512,7 @@ public final class GetShapeShape {
             _resultValue.ocpuOptions = ocpuOptions;
             _resultValue.ocpus = ocpus;
             _resultValue.platformConfigOptions = platformConfigOptions;
+            _resultValue.platformNames = platformNames;
             _resultValue.processorDescription = processorDescription;
             _resultValue.quotaNames = quotaNames;
             _resultValue.rdmaBandwidthInGbps = rdmaBandwidthInGbps;

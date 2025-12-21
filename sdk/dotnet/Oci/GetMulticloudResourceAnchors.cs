@@ -28,20 +28,21 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testResourceAnchors = Oci.Oci.GetMulticloudResourceAnchors.Invoke(new()
         ///     {
-        ///         SubscriptionId = subscriptionId,
-        ///         SubscriptionServiceName = subscriptionServiceName,
         ///         CompartmentId = compartmentId,
+        ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LifecycleState = lifecycleState,
         ///         DisplayName = resourceAnchorDisplayName,
         ///         Id = resourceAnchorId,
-        ///         IsCompartmentIdInSubtree = resourceAnchorIsCompartmentIdInSubtree,
-        ///         LinkedCompartmentId = linkedCompartmentId,
-        ///         LifecycleState = resourceAnchorState,
+        ///         IsCompartmentIdInSubtree = isCompartmentIdInSubtree,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
+        ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         SubscriptionId = subscriptionId,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Task<GetMulticloudResourceAnchorsResult> InvokeAsync(GetMulticloudResourceAnchorsArgs args, InvokeOptions? options = null)
+        public static Task<GetMulticloudResourceAnchorsResult> InvokeAsync(GetMulticloudResourceAnchorsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMulticloudResourceAnchorsResult>("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", args ?? new GetMulticloudResourceAnchorsArgs(), options.WithDefaults());
 
         /// <summary>
@@ -61,20 +62,21 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testResourceAnchors = Oci.Oci.GetMulticloudResourceAnchors.Invoke(new()
         ///     {
-        ///         SubscriptionId = subscriptionId,
-        ///         SubscriptionServiceName = subscriptionServiceName,
         ///         CompartmentId = compartmentId,
+        ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LifecycleState = lifecycleState,
         ///         DisplayName = resourceAnchorDisplayName,
         ///         Id = resourceAnchorId,
-        ///         IsCompartmentIdInSubtree = resourceAnchorIsCompartmentIdInSubtree,
-        ///         LinkedCompartmentId = linkedCompartmentId,
-        ///         LifecycleState = resourceAnchorState,
+        ///         IsCompartmentIdInSubtree = isCompartmentIdInSubtree,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
+        ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         SubscriptionId = subscriptionId,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Output<GetMulticloudResourceAnchorsResult> Invoke(GetMulticloudResourceAnchorsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetMulticloudResourceAnchorsResult> Invoke(GetMulticloudResourceAnchorsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMulticloudResourceAnchorsResult>("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", args ?? new GetMulticloudResourceAnchorsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -94,14 +96,15 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testResourceAnchors = Oci.Oci.GetMulticloudResourceAnchors.Invoke(new()
         ///     {
-        ///         SubscriptionId = subscriptionId,
-        ///         SubscriptionServiceName = subscriptionServiceName,
         ///         CompartmentId = compartmentId,
+        ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LifecycleState = lifecycleState,
         ///         DisplayName = resourceAnchorDisplayName,
         ///         Id = resourceAnchorId,
-        ///         IsCompartmentIdInSubtree = resourceAnchorIsCompartmentIdInSubtree,
-        ///         LinkedCompartmentId = linkedCompartmentId,
-        ///         LifecycleState = resourceAnchorState,
+        ///         IsCompartmentIdInSubtree = isCompartmentIdInSubtree,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
+        ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         SubscriptionId = subscriptionId,
         ///     });
         /// 
         /// });
@@ -115,7 +118,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -147,7 +150,7 @@ namespace Pulumi.Oci.Oci
         public bool? IsCompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        /// The current state of the ResourceAnchor.
         /// </summary>
         [Input("lifecycleState")]
         public string? LifecycleState { get; set; }
@@ -156,22 +159,28 @@ namespace Pulumi.Oci.Oci
         public int? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
         /// </summary>
         [Input("linkedCompartmentId")]
         public string? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public string SubscriptionId { get; set; } = null!;
+        [Input("shouldFetchCompartmentName")]
+        public bool? ShouldFetchCompartmentName { get; set; }
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public string SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The subscription service name of the Cloud Service Provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public string? SubscriptionServiceName { get; set; }
 
         public GetMulticloudResourceAnchorsArgs()
         {
@@ -182,7 +191,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudResourceAnchorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -214,7 +223,7 @@ namespace Pulumi.Oci.Oci
         public Input<bool>? IsCompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        /// The current state of the ResourceAnchor.
         /// </summary>
         [Input("lifecycleState")]
         public Input<string>? LifecycleState { get; set; }
@@ -223,22 +232,28 @@ namespace Pulumi.Oci.Oci
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
         /// </summary>
         [Input("linkedCompartmentId")]
         public Input<string>? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public Input<string> SubscriptionId { get; set; } = null!;
+        [Input("shouldFetchCompartmentName")]
+        public Input<bool>? ShouldFetchCompartmentName { get; set; }
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public Input<string> SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The subscription service name of the Cloud Service Provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public Input<string>? SubscriptionServiceName { get; set; }
 
         public GetMulticloudResourceAnchorsInvokeArgs()
         {
@@ -269,16 +284,20 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string? LifecycleState;
         public readonly int? Limit;
+        /// <summary>
+        /// Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
+        /// </summary>
         public readonly string? LinkedCompartmentId;
         /// <summary>
         /// The list of ResourceAnchorCollection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMulticloudResourceAnchorsResourceAnchorCollectionResult> ResourceAnchorCollections;
+        public readonly bool? ShouldFetchCompartmentName;
         /// <summary>
         /// Oracle Cloud Infrastructure Subscription Id
         /// </summary>
-        public readonly string SubscriptionId;
-        public readonly string SubscriptionServiceName;
+        public readonly string? SubscriptionId;
+        public readonly string? SubscriptionServiceName;
 
         [OutputConstructor]
         private GetMulticloudResourceAnchorsResult(
@@ -300,9 +319,11 @@ namespace Pulumi.Oci.Oci
 
             ImmutableArray<Outputs.GetMulticloudResourceAnchorsResourceAnchorCollectionResult> resourceAnchorCollections,
 
-            string subscriptionId,
+            bool? shouldFetchCompartmentName,
 
-            string subscriptionServiceName)
+            string? subscriptionId,
+
+            string? subscriptionServiceName)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -313,6 +334,7 @@ namespace Pulumi.Oci.Oci
             Limit = limit;
             LinkedCompartmentId = linkedCompartmentId;
             ResourceAnchorCollections = resourceAnchorCollections;
+            ShouldFetchCompartmentName = shouldFetchCompartmentName;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
         }

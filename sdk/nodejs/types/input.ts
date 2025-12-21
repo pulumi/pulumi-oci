@@ -11881,6 +11881,10 @@ export namespace ContainerEngine {
 
     export interface ClusterOptionsServiceLbConfig {
         /**
+         * (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         */
+        backendNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -13517,7 +13521,7 @@ export namespace Core {
          */
         configurationState?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
          */
         firmwareBundleId?: pulumi.Input<string>;
         /**
@@ -13543,6 +13547,10 @@ export namespace Core {
          * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
          */
         recycleLevel?: pulumi.Input<string>;
+        /**
+         * (Updatable) The state of the host group configuration.
+         */
+        state?: pulumi.Input<string>;
         /**
          * (Updatable) Either the platform name or compute shape that the configuration is targeting
          */
@@ -14525,6 +14533,18 @@ export namespace Core {
     }
 
     export interface GetFastConnectProviderServicesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFirmwareBundlesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFirmwareBundlesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -24744,6 +24764,24 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMlApplicationImplementationVersionsFilter {
+        /**
+         * ML Application Implementation name which is unique for given ML Application.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMlApplicationImplementationVersionsFilterArgs {
+        /**
+         * ML Application Implementation name which is unique for given ML Application.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMlApplicationImplementationsFilter {
         /**
          * A filter to return only resources that match the entire name given.
@@ -26108,6 +26146,10 @@ export namespace DataScience {
          */
         cmds?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * Service injected Environment variables set for the web server container and can not be set or modified by user.
+         */
+        defaultEnvironmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
          */
         entrypoints?: pulumi.Input<pulumi.Input<string>[]>;
@@ -26124,7 +26166,7 @@ export namespace DataScience {
          */
         healthCheckPort?: pulumi.Input<number>;
         /**
-         * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+         * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
          */
         image?: pulumi.Input<string>;
         /**
@@ -26159,7 +26201,7 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
         /**
-         * The shape used to launch the model deployment instances.
+         * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
         instanceShapeName: pulumi.Input<string>;
         /**
@@ -26327,7 +26369,7 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
         /**
-         * (Updatable) The shape used to launch the model deployment instances.
+         * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
         instanceShapeName?: pulumi.Input<string>;
         /**
@@ -26503,6 +26545,10 @@ export namespace DataScience {
          * This value is the current count of the model deployment instances.
          */
         currentInstanceCount?: pulumi.Input<number>;
+        /**
+         * The type of the deployed model.
+         */
+        modelType?: pulumi.Input<string>;
         /**
          * The infrastructure type of the model deployment.
          */
@@ -32735,6 +32781,18 @@ export namespace Database {
         /**
          * Name of the day of the week.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabasesEstimateCostSavingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousDatabasesEstimateCostSavingsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -41807,6 +41865,112 @@ export namespace DisasterRecovery {
         object?: pulumi.Input<string>;
     }
 
+    export interface DrPlanExecutionStepStatusCount {
+        /**
+         * A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+         */
+        failedSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCountFailedStep>[]>;
+        /**
+         * A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+         */
+        remainingSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCountRemainingStep>[]>;
+        /**
+         * A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+         */
+        skippedSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCountSkippedStep>[]>;
+        /**
+         * A summary of steps that completed successfully during a DR plan execution.
+         */
+        successfulSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCountSuccessfulStep>[]>;
+        /**
+         * The total number of steps in a DR plan execution.
+         */
+        totalSteps?: pulumi.Input<number>;
+        /**
+         * A summary of steps that encountered warnings during a DR plan execution.
+         */
+        warningSteps?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCountWarningStep>[]>;
+    }
+
+    export interface DrPlanExecutionStepStatusCountFailedStep {
+        /**
+         * The total number of failed steps in a DR plan execution.
+         */
+        failed?: pulumi.Input<number>;
+        /**
+         * The total number of steps that timed out during a DR plan execution.
+         */
+        timedOut?: pulumi.Input<number>;
+        /**
+         * The total number of steps that failed during a DR plan execution.
+         */
+        totalFailed?: pulumi.Input<number>;
+    }
+
+    export interface DrPlanExecutionStepStatusCountRemainingStep {
+        /**
+         * The total number of steps in progress during a DR plan execution.
+         */
+        inProgress?: pulumi.Input<number>;
+        /**
+         * The total number of paused steps in a DR plan execution.
+         */
+        paused?: pulumi.Input<number>;
+        /**
+         * The total number of queued steps in a DR plan execution.
+         */
+        queued?: pulumi.Input<number>;
+        /**
+         * The total number of remaining steps in a DR plan execution.
+         */
+        totalRemaining?: pulumi.Input<number>;
+    }
+
+    export interface DrPlanExecutionStepStatusCountSkippedStep {
+        /**
+         * The total number of canceled steps in a DR plan execution.
+         */
+        canceled?: pulumi.Input<number>;
+        /**
+         * The total number of disabled steps in a DR plan execution.
+         */
+        disabled?: pulumi.Input<number>;
+        /**
+         * The total number of steps that failed but were ignored during a DR plan execution.
+         */
+        failedIgnored?: pulumi.Input<number>;
+        /**
+         * The total number of steps that timed out but were ignored during a DR plan execution.
+         */
+        timedOutIgnored?: pulumi.Input<number>;
+        /**
+         * The total number of steps that were skipped during a DR plan execution.
+         */
+        totalSkipped?: pulumi.Input<number>;
+    }
+
+    export interface DrPlanExecutionStepStatusCountSuccessfulStep {
+        /**
+         * The total number of steps that succeeded during a DR plan execution.
+         */
+        succeeded?: pulumi.Input<number>;
+        /**
+         * The total number of successful steps in a DR plan execution.
+         */
+        totalSuccessful?: pulumi.Input<number>;
+    }
+
+    export interface DrPlanExecutionStepStatusCountWarningStep {
+        /**
+         * The total number of steps that encountered warnings in a DR plan execution.
+         */
+        totalWarnings?: pulumi.Input<number>;
+        /**
+         * The total number of steps with warnings that were ignored during a DR plan execution.
+         */
+        warningsIgnored?: pulumi.Input<number>;
+    }
+
     export interface DrPlanPlanGroup {
         /**
          * (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
@@ -41899,7 +42063,7 @@ export namespace DisasterRecovery {
          */
         requestBody?: pulumi.Input<string>;
         /**
-         * The userid on the instance to be used for executing the script or command.  Example: `opc`
+         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
          */
         runAsUser?: pulumi.Input<string>;
         /**
@@ -41911,7 +42075,7 @@ export namespace DisasterRecovery {
          */
         runOnInstanceRegion?: pulumi.Input<string>;
         /**
-         * The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
          */
         scriptCommand?: pulumi.Input<string>;
         /**
@@ -42114,6 +42278,10 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
          */
         peerDbSystemId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+         */
+        resourceModifierMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberResourceModifierMapping>[]>;
         /**
          * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
          *
@@ -42396,6 +42564,17 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the source Network Load Balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
          */
         sourceNetworkLoadBalancerId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberResourceModifierMapping {
+        /**
+         * (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+         */
+        configMap?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+         */
+        namespace?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping {
@@ -47869,6 +48048,18 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetImportedModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetImportedModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetModelsFilter {
         name: string;
         regex?: boolean;
@@ -47879,6 +48070,45 @@ export namespace GenerativeAi {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ImportedModelDataSource {
+        /**
+         * Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
+         */
+        accessToken?: pulumi.Input<string>;
+        /**
+         * The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
+         */
+        branch?: pulumi.Input<string>;
+        /**
+         * The name of the Object Storage bucket.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
+         */
+        commit?: pulumi.Input<string>;
+        /**
+         * The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
+         */
+        modelId?: pulumi.Input<string>;
+        /**
+         * The namespace of the Object Storage where the files are stored.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The prefix path (or folder) within the bucket where files are located.
+         */
+        prefixName?: pulumi.Input<string>;
+        /**
+         * The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * Specifies the source type for model import.
+         */
+        sourceType?: pulumi.Input<string>;
     }
 
     export interface ModelFineTuneDetails {
@@ -63421,6 +63651,300 @@ export namespace Identity {
         value: pulumi.Input<string>;
     }
 
+    export interface DomainsMappedAttributeAttributeMapping {
+        /**
+         * (Updatable) If specified, indicates a subset of mappedActions to which this attribute-mapping applies.If not specified, this attribute-mapping applies to all mappedActions that use mappedAttributes
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        appliesToActions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \"idcsResourceType\" attribute.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        idcsAttributeName: pulumi.Input<string>;
+        /**
+         * (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \"idcsName\" attribute in the schema of an Managed Object Class.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        managedObjectAttributeName: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \"required\" sub-attribute in the schema of an Managed Object Class.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         */
+        required?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates the format of the assertion attribute. Also stores AttributeNamespace for WSFed1.1.
+         *
+         * **Added In:** 17.4.2
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        samlFormat?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMappedAttributeIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMappedAttributeIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of resource, User or App, that modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsMappedAttributeMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsMappedAttributeTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
     export interface DomainsMyApiKeyIdcsCreatedBy {
         /**
          * The displayName of the User or App who created this Resource
@@ -76960,6 +77484,10 @@ export namespace Integration {
          */
         allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn>[]>;
         /**
+         * A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         */
+        designTime?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsDesignTime>;
+        /**
          * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
          */
         isIntegrationVcnAllowlisted?: pulumi.Input<boolean>;
@@ -76967,6 +77495,10 @@ export namespace Integration {
          * The type of network endpoint.
          */
         networkEndpointType: pulumi.Input<string>;
+        /**
+         * A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         */
+        runtime?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsRuntime>;
     }
 
     export interface IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn {
@@ -76980,7 +77512,52 @@ export namespace Integration {
         id: pulumi.Input<string>;
     }
 
+    export interface IntegrationInstanceNetworkEndpointDetailsDesignTime {
+        /**
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedHttpIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         */
+        allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn>[]>;
+    }
+
+    export interface IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn {
+        /**
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The Virtual Cloud Network OCID.
+         */
+        id: pulumi.Input<string>;
+    }
+
+    export interface IntegrationInstanceNetworkEndpointDetailsRuntime {
+        /**
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedHttpIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Virtual Cloud Networks allowed to access this network endpoint.
+         */
+        allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn>[]>;
+    }
+
+    export interface IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn {
+        /**
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
+        allowlistedIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The Virtual Cloud Network OCID.
+         */
+        id: pulumi.Input<string>;
+    }
+
     export interface IntegrationInstancePrivateEndpointOutboundConnection {
+        isAllOutboundTrafficPrivate?: pulumi.Input<boolean>;
         /**
          * One or more Network security group Ids. This is an optional argument.
          */
@@ -79410,6 +79987,24 @@ export namespace LogAnalytics {
     export interface GetLogAnalyticsEntitiesFilterArgs {
         /**
          * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetLogAnalyticsEntityAssociationsListFilter {
+        /**
+         * Log analytics entity name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetLogAnalyticsEntityAssociationsListFilterArgs {
+        /**
+         * Log analytics entity name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -96248,6 +96843,150 @@ export namespace oci {
         attributeNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface BatchBatchContextFleet {
+        /**
+         * A message that describes the current state of the service manage fleet configuration in more detail.
+         */
+        details?: pulumi.Input<string>;
+        /**
+         * Maximum number of concurrent tasks for the service managed fleet.
+         */
+        maxConcurrentTasks: pulumi.Input<number>;
+        /**
+         * Name of the service managed fleet.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Shape of the fleet. Describes hardware resources of each node in the fleet.
+         */
+        shape: pulumi.Input<inputs.oci.BatchBatchContextFleetShape>;
+        /**
+         * (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Type of the fleet. Also serves as a discriminator for sub-entities.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface BatchBatchContextFleetShape {
+        /**
+         * Amount of memory in GBs required by the shape.
+         */
+        memoryInGbs: pulumi.Input<number>;
+        /**
+         * Number of OCPUs required by the shape.
+         */
+        ocpus: pulumi.Input<number>;
+        /**
+         * The name of the shape.
+         */
+        shapeName: pulumi.Input<string>;
+    }
+
+    export interface BatchBatchContextJobPriorityConfiguration {
+        /**
+         * (Updatable) Name of the tag key.
+         */
+        tagKey: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the corresponding tag namespace.
+         */
+        tagNamespace: pulumi.Input<string>;
+        /**
+         * (Updatable) Mapping of tag value to its priority.
+         */
+        values: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+         */
+        weight: pulumi.Input<number>;
+    }
+
+    export interface BatchBatchContextLoggingConfiguration {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId: pulumi.Input<string>;
+        /**
+         * Discriminator for sub-entities.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface BatchBatchContextNetwork {
+        /**
+         * A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+         */
+        subnetId: pulumi.Input<string>;
+        /**
+         * A list of private endpoint's VNICs.
+         */
+        vnics?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchContextNetworkVnic>[]>;
+    }
+
+    export interface BatchBatchContextNetworkVnic {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+         */
+        sourceIps?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface BatchBatchTaskEnvironmentSecurityContext {
+        /**
+         * A special supplemental group ID that applies to all containers in a pod.
+         */
+        fsGroup?: pulumi.Input<number>;
+        /**
+         * Group ID for running processes inside the container.
+         */
+        runAsGroup?: pulumi.Input<number>;
+        /**
+         * User ID for running processes inside the container.
+         */
+        runAsUser?: pulumi.Input<number>;
+    }
+
+    export interface BatchBatchTaskEnvironmentVolume {
+        /**
+         * The local path to mount the NFS share to.
+         */
+        localMountDirectoryPath: pulumi.Input<string>;
+        /**
+         * The path to the directory on the NFS server to be mounted.
+         */
+        mountTargetExportPath: pulumi.Input<string>;
+        /**
+         * The FQDN of the NFS server to connect to.
+         */
+        mountTargetFqdn: pulumi.Input<string>;
+        /**
+         * The name of the NfsVolume.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * Discriminator for sub-entities.
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface DbmulticloudMultiCloudResourceDiscoveryResource {
         /**
          * The ID of the Discovered Resource.
@@ -96880,6 +97619,90 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetBatchBatchContextShapesFilter {
+        /**
+         * The name identifying the shape.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBatchBatchContextShapesFilterArgs {
+        /**
+         * The name identifying the shape.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBatchBatchContextsFilter {
+        /**
+         * Name of the service managed fleet.
+         */
+        name: string;
+        regex?: boolean;
+        /**
+         * Mapping of tag value to its priority.
+         */
+        values: string[];
+    }
+
+    export interface GetBatchBatchContextsFilterArgs {
+        /**
+         * Name of the service managed fleet.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * Mapping of tag value to its priority.
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBatchBatchJobPoolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBatchBatchJobPoolsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBatchBatchTaskEnvironmentsFilter {
+        /**
+         * The name of the NfsVolume.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBatchBatchTaskEnvironmentsFilterArgs {
+        /**
+         * The name of the NfsVolume.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBatchBatchTaskProfilesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBatchBatchTaskProfilesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDbmulticloudMultiCloudResourceDiscoveriesFilter {
         /**
          * Discovered Resource Name.
@@ -97187,6 +98010,30 @@ export namespace oci {
     }
 
     export interface GetMulticloudExternalLocationsMetadataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudMulticloudsubscriptionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudMulticloudsubscriptionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudOmHubMulticloudResourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudOmHubMulticloudResourcesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

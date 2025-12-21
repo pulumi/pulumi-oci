@@ -58,45 +58,27 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	BaseModelId  string   `pulumi:"baseModelId"`
-	Capabilities []string `pulumi:"capabilities"`
-	// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// An optional description of the model.
-	Description string `pulumi:"description"`
-	// A user-friendly name.
-	DisplayName string `pulumi:"displayName"`
-	// Details about fine-tuning a custom model.
-	FineTuneDetails []GetModelFineTuneDetail `pulumi:"fineTuneDetails"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// An ID that uniquely identifies a pretrained or fine-tuned model.
-	Id string `pulumi:"id"`
-	// Whether a model is supported long-term. Only applicable to base models.
-	IsLongTermSupported bool `pulumi:"isLongTermSupported"`
-	// A message describing the current state of the model in more detail that can provide actionable information.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ModelId          string `pulumi:"modelId"`
-	// Model metrics during the creation of a new model.
-	ModelMetrics []GetModelModelMetric `pulumi:"modelMetrics"`
-	// The lifecycle state of the model.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time that the model was created in the format of an RFC3339 datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
-	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
-	TimeDeprecated string `pulumi:"timeDeprecated"`
-	// The date and time that the model was updated in the format of an RFC3339 datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
-	// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-	Type string `pulumi:"type"`
-	// The provider of the base model.
-	Vendor string `pulumi:"vendor"`
-	// The version of the model.
-	Version string `pulumi:"version"`
+	BaseModelId         string                   `pulumi:"baseModelId"`
+	Capabilities        []string                 `pulumi:"capabilities"`
+	CompartmentId       string                   `pulumi:"compartmentId"`
+	DefinedTags         map[string]string        `pulumi:"definedTags"`
+	Description         string                   `pulumi:"description"`
+	DisplayName         string                   `pulumi:"displayName"`
+	FineTuneDetails     []GetModelFineTuneDetail `pulumi:"fineTuneDetails"`
+	FreeformTags        map[string]string        `pulumi:"freeformTags"`
+	Id                  string                   `pulumi:"id"`
+	IsLongTermSupported bool                     `pulumi:"isLongTermSupported"`
+	LifecycleDetails    string                   `pulumi:"lifecycleDetails"`
+	ModelId             string                   `pulumi:"modelId"`
+	ModelMetrics        []GetModelModelMetric    `pulumi:"modelMetrics"`
+	State               string                   `pulumi:"state"`
+	SystemTags          map[string]string        `pulumi:"systemTags"`
+	TimeCreated         string                   `pulumi:"timeCreated"`
+	TimeDeprecated      string                   `pulumi:"timeDeprecated"`
+	TimeUpdated         string                   `pulumi:"timeUpdated"`
+	Type                string                   `pulumi:"type"`
+	Vendor              string                   `pulumi:"vendor"`
+	Version             string                   `pulumi:"version"`
 }
 
 func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...pulumi.InvokeOption) LookupModelResultOutput {
@@ -141,47 +123,38 @@ func (o LookupModelResultOutput) Capabilities() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }
 
-// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// An optional description of the model.
 func (o LookupModelResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A user-friendly name.
 func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Details about fine-tuning a custom model.
 func (o LookupModelResultOutput) FineTuneDetails() GetModelFineTuneDetailArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []GetModelFineTuneDetail { return v.FineTuneDetails }).(GetModelFineTuneDetailArrayOutput)
 }
 
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupModelResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// An ID that uniquely identifies a pretrained or fine-tuned model.
 func (o LookupModelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Whether a model is supported long-term. Only applicable to base models.
 func (o LookupModelResultOutput) IsLongTermSupported() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupModelResult) bool { return v.IsLongTermSupported }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state of the model in more detail that can provide actionable information.
 func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -190,47 +163,38 @@ func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelId }).(pulumi.StringOutput)
 }
 
-// Model metrics during the creation of a new model.
 func (o LookupModelResultOutput) ModelMetrics() GetModelModelMetricArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []GetModelModelMetric { return v.ModelMetrics }).(GetModelModelMetricArrayOutput)
 }
 
-// The lifecycle state of the model.
 func (o LookupModelResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupModelResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time that the model was created in the format of an RFC3339 datetime string.
 func (o LookupModelResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
 func (o LookupModelResultOutput) TimeDeprecated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.TimeDeprecated }).(pulumi.StringOutput)
 }
 
-// The date and time that the model was updated in the format of an RFC3339 datetime string.
 func (o LookupModelResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
 func (o LookupModelResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// The provider of the base model.
 func (o LookupModelResultOutput) Vendor() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Vendor }).(pulumi.StringOutput)
 }
 
-// The version of the model.
 func (o LookupModelResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Version }).(pulumi.StringOutput)
 }

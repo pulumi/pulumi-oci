@@ -28,13 +28,19 @@ class GetMulticloudExternalLocationsMetadataResult:
     """
     A collection of values returned by getMulticloudExternalLocationsMetadata.
     """
-    def __init__(__self__, compartment_id=None, entity_type=None, external_locations_metadatum_collections=None, filters=None, id=None, limit=None, linked_compartment_id=None, subscription_id=None, subscription_service_name=None):
+    def __init__(__self__, cluster_placement_group_id=None, compartment_id=None, entity_type=None, external_location=None, external_locations_metadatum_collections=None, filters=None, id=None, limit=None, linked_compartment_id=None, logical_zone=None, subscription_id=None, subscription_service_name=None):
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if entity_type and not isinstance(entity_type, str):
             raise TypeError("Expected argument 'entity_type' to be a str")
         pulumi.set(__self__, "entity_type", entity_type)
+        if external_location and not isinstance(external_location, str):
+            raise TypeError("Expected argument 'external_location' to be a str")
+        pulumi.set(__self__, "external_location", external_location)
         if external_locations_metadatum_collections and not isinstance(external_locations_metadatum_collections, list):
             raise TypeError("Expected argument 'external_locations_metadatum_collections' to be a list")
         pulumi.set(__self__, "external_locations_metadatum_collections", external_locations_metadatum_collections)
@@ -50,6 +56,9 @@ class GetMulticloudExternalLocationsMetadataResult:
         if linked_compartment_id and not isinstance(linked_compartment_id, str):
             raise TypeError("Expected argument 'linked_compartment_id' to be a str")
         pulumi.set(__self__, "linked_compartment_id", linked_compartment_id)
+        if logical_zone and not isinstance(logical_zone, str):
+            raise TypeError("Expected argument 'logical_zone' to be a str")
+        pulumi.set(__self__, "logical_zone", logical_zone)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -58,14 +67,30 @@ class GetMulticloudExternalLocationsMetadataResult:
         pulumi.set(__self__, "subscription_service_name", subscription_service_name)
 
     @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[_builtins.str]:
+        """
+        Cluster Placement Group OCID
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "entity_type")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocation")
+    def external_location(self) -> Optional[_builtins.str]:
+        """
+        External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        """
+        return pulumi.get(self, "external_location")
 
     @_builtins.property
     @pulumi.getter(name="externalLocationsMetadatumCollections")
@@ -99,6 +124,11 @@ class GetMulticloudExternalLocationsMetadataResult:
         return pulumi.get(self, "linked_compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="logicalZone")
+    def logical_zone(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "logical_zone")
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> _builtins.str:
         return pulumi.get(self, "subscription_id")
@@ -115,22 +145,28 @@ class AwaitableGetMulticloudExternalLocationsMetadataResult(GetMulticloudExterna
         if False:
             yield self
         return GetMulticloudExternalLocationsMetadataResult(
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
             entity_type=self.entity_type,
+            external_location=self.external_location,
             external_locations_metadatum_collections=self.external_locations_metadatum_collections,
             filters=self.filters,
             id=self.id,
             limit=self.limit,
             linked_compartment_id=self.linked_compartment_id,
+            logical_zone=self.logical_zone,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name)
 
 
-def get_multicloud_external_locations_metadata(compartment_id: Optional[_builtins.str] = None,
+def get_multicloud_external_locations_metadata(cluster_placement_group_id: Optional[_builtins.str] = None,
+                                               compartment_id: Optional[_builtins.str] = None,
                                                entity_type: Optional[_builtins.str] = None,
+                                               external_location: Optional[_builtins.str] = None,
                                                filters: Optional[Sequence[Union['GetMulticloudExternalLocationsMetadataFilterArgs', 'GetMulticloudExternalLocationsMetadataFilterArgsDict']]] = None,
                                                limit: Optional[_builtins.int] = None,
                                                linked_compartment_id: Optional[_builtins.str] = None,
+                                               logical_zone: Optional[_builtins.str] = None,
                                                subscription_id: Optional[_builtins.str] = None,
                                                subscription_service_name: Optional[_builtins.str] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudExternalLocationsMetadataResult:
@@ -145,46 +181,61 @@ def get_multicloud_external_locations_metadata(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_external_locations_metadata = oci.oci.get_multicloud_external_locations_metadata(compartment_id=compartment_id,
-        subscription_id=subscription_id,
+    test_external_locations_metadata = oci.oci.get_multicloud_external_locations_metadata(subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
+        cluster_placement_group_id=cluster_placement_group_id,
+        compartment_id=compartment_id,
         entity_type=external_locations_metadata_entity_type,
-        linked_compartment_id=linked_compartment_id)
+        external_location=external_location,
+        linked_compartment_id=linked_compartment_id,
+        logical_zone=logical_zone)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
     :param _builtins.str entity_type: The resource type query (i.e. dbsystem, instance etc.)
-    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+    :param _builtins.str logical_zone: Oracle Cloud Infrastructure Logical AD to filter the response.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['entityType'] = entity_type
+    __args__['externalLocation'] = external_location
     __args__['filters'] = filters
     __args__['limit'] = limit
     __args__['linkedCompartmentId'] = linked_compartment_id
+    __args__['logicalZone'] = logical_zone
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata', __args__, opts=opts, typ=GetMulticloudExternalLocationsMetadataResult).value
 
     return AwaitableGetMulticloudExternalLocationsMetadataResult(
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         entity_type=pulumi.get(__ret__, 'entity_type'),
+        external_location=pulumi.get(__ret__, 'external_location'),
         external_locations_metadatum_collections=pulumi.get(__ret__, 'external_locations_metadatum_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         limit=pulumi.get(__ret__, 'limit'),
         linked_compartment_id=pulumi.get(__ret__, 'linked_compartment_id'),
+        logical_zone=pulumi.get(__ret__, 'logical_zone'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
-def get_multicloud_external_locations_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_external_locations_metadata_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                      compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                       entity_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                      external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudExternalLocationsMetadataFilterArgs', 'GetMulticloudExternalLocationsMetadataFilterArgsDict']]]]] = None,
                                                       limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                                       linked_compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                      logical_zone: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                       subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                       subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudExternalLocationsMetadataResult]:
@@ -199,37 +250,49 @@ def get_multicloud_external_locations_metadata_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_external_locations_metadata = oci.oci.get_multicloud_external_locations_metadata(compartment_id=compartment_id,
-        subscription_id=subscription_id,
+    test_external_locations_metadata = oci.oci.get_multicloud_external_locations_metadata(subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
+        cluster_placement_group_id=cluster_placement_group_id,
+        compartment_id=compartment_id,
         entity_type=external_locations_metadata_entity_type,
-        linked_compartment_id=linked_compartment_id)
+        external_location=external_location,
+        linked_compartment_id=linked_compartment_id,
+        logical_zone=logical_zone)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
     :param _builtins.str entity_type: The resource type query (i.e. dbsystem, instance etc.)
-    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str external_location: The Cloud Service Provider region.
+    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+    :param _builtins.str logical_zone: Oracle Cloud Infrastructure Logical AD to filter the response.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
+    __args__['clusterPlacementGroupId'] = cluster_placement_group_id
     __args__['compartmentId'] = compartment_id
     __args__['entityType'] = entity_type
+    __args__['externalLocation'] = external_location
     __args__['filters'] = filters
     __args__['limit'] = limit
     __args__['linkedCompartmentId'] = linked_compartment_id
+    __args__['logicalZone'] = logical_zone
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata', __args__, opts=opts, typ=GetMulticloudExternalLocationsMetadataResult)
     return __ret__.apply(lambda __response__: GetMulticloudExternalLocationsMetadataResult(
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         entity_type=pulumi.get(__response__, 'entity_type'),
+        external_location=pulumi.get(__response__, 'external_location'),
         external_locations_metadatum_collections=pulumi.get(__response__, 'external_locations_metadatum_collections'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         limit=pulumi.get(__response__, 'limit'),
         linked_compartment_id=pulumi.get(__response__, 'linked_compartment_id'),
+        logical_zone=pulumi.get(__response__, 'logical_zone'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name')))

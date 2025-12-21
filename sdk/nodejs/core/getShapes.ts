@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     imageId: testImage.id,
+ *     shape: shapeShape,
  * });
  * ```
  */
@@ -32,6 +33,7 @@ export function getShapes(args: GetShapesArgs, opts?: pulumi.InvokeOptions): Pro
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "imageId": args.imageId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -52,6 +54,10 @@ export interface GetShapesArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
      */
     imageId?: string;
+    /**
+     * Shape name.
+     */
+    shape?: string;
 }
 
 /**
@@ -66,6 +72,7 @@ export interface GetShapesResult {
      */
     readonly id: string;
     readonly imageId?: string;
+    readonly shape?: string;
     /**
      * The list of shapes.
      */
@@ -87,6 +94,7 @@ export interface GetShapesResult {
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     imageId: testImage.id,
+ *     shape: shapeShape,
  * });
  * ```
  */
@@ -97,6 +105,7 @@ export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeO
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "imageId": args.imageId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -117,4 +126,8 @@ export interface GetShapesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
      */
     imageId?: pulumi.Input<string>;
+    /**
+     * Shape name.
+     */
+    shape?: pulumi.Input<string>;
 }

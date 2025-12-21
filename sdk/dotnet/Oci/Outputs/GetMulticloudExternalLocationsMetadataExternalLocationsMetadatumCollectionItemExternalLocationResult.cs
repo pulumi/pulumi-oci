@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string CspLogicalAz;
         /// <summary>
+        /// User friendly display name for cspLogicalAZ
+        /// </summary>
+        public readonly string CspLogicalAzDisplayName;
+        /// <summary>
         /// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
         /// </summary>
         public readonly string CspPhysicalAz;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult(
             string cspLogicalAz,
 
+            string cspLogicalAzDisplayName,
+
             string cspPhysicalAz,
 
             string cspPhysicalAzDisplayName,
@@ -59,6 +65,7 @@ namespace Pulumi.Oci.Oci.Outputs
             string serviceName)
         {
             CspLogicalAz = cspLogicalAz;
+            CspLogicalAzDisplayName = cspLogicalAzDisplayName;
             CspPhysicalAz = cspPhysicalAz;
             CspPhysicalAzDisplayName = cspPhysicalAzDisplayName;
             CspRegion = cspRegion;

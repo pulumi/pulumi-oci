@@ -440,6 +440,11 @@ export const getAutonomousDatabasesClones: typeof import("./getAutonomousDatabas
 export const getAutonomousDatabasesClonesOutput: typeof import("./getAutonomousDatabasesClones").getAutonomousDatabasesClonesOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousDatabasesClones","getAutonomousDatabasesClonesOutput"], () => require("./getAutonomousDatabasesClones"));
 
+export { GetAutonomousDatabasesEstimateCostSavingsArgs, GetAutonomousDatabasesEstimateCostSavingsResult, GetAutonomousDatabasesEstimateCostSavingsOutputArgs } from "./getAutonomousDatabasesEstimateCostSavings";
+export const getAutonomousDatabasesEstimateCostSavings: typeof import("./getAutonomousDatabasesEstimateCostSavings").getAutonomousDatabasesEstimateCostSavings = null as any;
+export const getAutonomousDatabasesEstimateCostSavingsOutput: typeof import("./getAutonomousDatabasesEstimateCostSavings").getAutonomousDatabasesEstimateCostSavingsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabasesEstimateCostSavings","getAutonomousDatabasesEstimateCostSavingsOutput"], () => require("./getAutonomousDatabasesEstimateCostSavings"));
+
 export { GetAutonomousDbPreviewVersionsArgs, GetAutonomousDbPreviewVersionsResult, GetAutonomousDbPreviewVersionsOutputArgs } from "./getAutonomousDbPreviewVersions";
 export const getAutonomousDbPreviewVersions: typeof import("./getAutonomousDbPreviewVersions").getAutonomousDbPreviewVersions = null as any;
 export const getAutonomousDbPreviewVersionsOutput: typeof import("./getAutonomousDbPreviewVersions").getAutonomousDbPreviewVersionsOutput = null as any;

@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string FaultDomain;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        /// </summary>
+        public readonly string FirmwareBundleId;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -75,6 +79,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string NetworkBlockId;
         /// <summary>
+        /// The platform of the host
+        /// </summary>
+        public readonly string Platform;
+        /// <summary>
         /// The shape of host
         /// </summary>
         public readonly string Shape;
@@ -107,6 +115,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string faultDomain,
 
+            string firmwareBundleId,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string gpuMemoryFabricId,
@@ -125,6 +135,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string networkBlockId,
 
+            string platform,
+
             string shape,
 
             string state,
@@ -140,6 +152,7 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FaultDomain = faultDomain;
+            FirmwareBundleId = firmwareBundleId;
             FreeformTags = freeformTags;
             GpuMemoryFabricId = gpuMemoryFabricId;
             HasImpactedComponents = hasImpactedComponents;
@@ -149,6 +162,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceId = instanceId;
             LocalBlockId = localBlockId;
             NetworkBlockId = networkBlockId;
+            Platform = platform;
             Shape = shape;
             State = state;
             TimeCreated = timeCreated;

@@ -507,6 +507,8 @@ __all__ = [
     'GetDrgsFilterArgsDict',
     'GetFastConnectProviderServicesFilterArgs',
     'GetFastConnectProviderServicesFilterArgsDict',
+    'GetFirmwareBundlesFilterArgs',
+    'GetFirmwareBundlesFilterArgsDict',
     'GetImageShapesFilterArgs',
     'GetImageShapesFilterArgsDict',
     'GetImagesFilterArgs',
@@ -4009,7 +4011,7 @@ if not MYPY:
         """
         firmware_bundle_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         """
         recycle_level: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4033,7 +4035,7 @@ class ComputeHostConfigurationDataCheckDetailArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] configuration_state: Configuration state of the Compute Bare Metal Host.
-        :param pulumi.Input[_builtins.str] firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param pulumi.Input[_builtins.str] firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         :param pulumi.Input[_builtins.str] recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -4064,7 +4066,7 @@ class ComputeHostConfigurationDataCheckDetailArgs:
     @pulumi.getter(name="firmwareBundleId")
     def firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         """
         return pulumi.get(self, "firmware_bundle_id")
 
@@ -4111,6 +4113,10 @@ if not MYPY:
         * `SKIP_RECYCLE` - Skips host wipe.
         * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
         """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The state of the host group configuration.
+        """
         target: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) Either the platform name or compute shape that the configuration is targeting
@@ -4123,18 +4129,22 @@ class ComputeHostGroupConfigurationArgs:
     def __init__(__self__, *,
                  firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
                  recycle_level: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
                  target: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] firmware_bundle_id: (Updatable) The OCID for firmware bundle
         :param pulumi.Input[_builtins.str] recycle_level: (Updatable) Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The state of the host group configuration.
         :param pulumi.Input[_builtins.str] target: (Updatable) Either the platform name or compute shape that the configuration is targeting
         """
         if firmware_bundle_id is not None:
             pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         if recycle_level is not None:
             pulumi.set(__self__, "recycle_level", recycle_level)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
         if target is not None:
             pulumi.set(__self__, "target", target)
 
@@ -4163,6 +4173,18 @@ class ComputeHostGroupConfigurationArgs:
     @recycle_level.setter
     def recycle_level(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "recycle_level", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The state of the host group configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
@@ -23333,6 +23355,53 @@ elif False:
 
 @pulumi.input_type
 class GetFastConnectProviderServicesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFirmwareBundlesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFirmwareBundlesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFirmwareBundlesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

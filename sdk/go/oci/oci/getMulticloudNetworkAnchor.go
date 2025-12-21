@@ -34,6 +34,7 @@ import (
 //				SubscriptionId:          subscriptionId,
 //				SubscriptionServiceName: subscriptionServiceName,
 //				ExternalLocation:        pulumi.StringRef(networkAnchorExternalLocation),
+//				ShouldFetchVcnName:      pulumi.BoolRef(shouldFetchVcnName),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetMulticloudNetworkAnchorArgs struct {
 	ExternalLocation *string `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	NetworkAnchorId string `pulumi:"networkAnchorId"`
+	// Whether to fetch and include the vcn display name, which may introduce additional latency.
+	ShouldFetchVcnName *bool `pulumi:"shouldFetchVcnName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
@@ -93,8 +96,11 @@ type GetMulticloudNetworkAnchorResult struct {
 	ResourceAnchorId string `pulumi:"resourceAnchorId"`
 	// AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
 	SetupMode               string `pulumi:"setupMode"`
+	ShouldFetchVcnName      *bool  `pulumi:"shouldFetchVcnName"`
 	SubscriptionId          string `pulumi:"subscriptionId"`
 	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType string `pulumi:"subscriptionType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -118,6 +124,8 @@ type GetMulticloudNetworkAnchorOutputArgs struct {
 	ExternalLocation pulumi.StringPtrInput `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	NetworkAnchorId pulumi.StringInput `pulumi:"networkAnchorId"`
+	// Whether to fetch and include the vcn display name, which may introduce additional latency.
+	ShouldFetchVcnName pulumi.BoolPtrInput `pulumi:"shouldFetchVcnName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
@@ -215,12 +223,21 @@ func (o GetMulticloudNetworkAnchorResultOutput) SetupMode() pulumi.StringOutput 
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorResult) string { return v.SetupMode }).(pulumi.StringOutput)
 }
 
+func (o GetMulticloudNetworkAnchorResultOutput) ShouldFetchVcnName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorResult) *bool { return v.ShouldFetchVcnName }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetMulticloudNetworkAnchorResultOutput) SubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 func (o GetMulticloudNetworkAnchorResultOutput) SubscriptionServiceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorResult) string { return v.SubscriptionServiceName }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Subscription Type.
+func (o GetMulticloudNetworkAnchorResultOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorResult) string { return v.SubscriptionType }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

@@ -51,6 +51,7 @@ import javax.annotation.Nullable;
  *             .configurations(ComputeHostGroupConfigurationArgs.builder()
  *                 .firmwareBundleId(testFirmwareBundle.id())
  *                 .recycleLevel(computeHostGroupConfigurationsRecycleLevel)
+ *                 .state(computeHostGroupConfigurationsState)
  *                 .target(computeHostGroupConfigurationsTarget)
  *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

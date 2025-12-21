@@ -18,6 +18,18 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string AccountId;
         /// <summary>
+        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
+        /// <summary>
+        /// CSP resource anchor ID.
+        /// </summary>
+        public readonly string CspResourceAnchorId;
+        /// <summary>
+        /// CSP resource anchor name.
+        /// </summary>
+        public readonly string CspResourceAnchorName;
+        /// <summary>
         /// GCP project number that was used for creating this resource anchor resource.
         /// </summary>
         public readonly string ProjectNumber;
@@ -26,7 +38,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// CSP resource anchor ID or name.
+        /// Oracle Cloud Infrastructure resource anchor name.
         /// </summary>
         public readonly string ResourceAnchorName;
         /// <summary>
@@ -50,6 +62,12 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(
             string accountId,
 
+            ImmutableDictionary<string, string> cspAdditionalProperties,
+
+            string cspResourceAnchorId,
+
+            string cspResourceAnchorName,
+
             string projectNumber,
 
             string region,
@@ -65,6 +83,9 @@ namespace Pulumi.Oci.Oci.Outputs
             string subscriptionType)
         {
             AccountId = accountId;
+            CspAdditionalProperties = cspAdditionalProperties;
+            CspResourceAnchorId = cspResourceAnchorId;
+            CspResourceAnchorName = cspResourceAnchorName;
             ProjectNumber = projectNumber;
             Region = region;
             ResourceAnchorName = resourceAnchorName;

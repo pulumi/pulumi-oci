@@ -622,6 +622,9 @@ class GetSddcResult:
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property

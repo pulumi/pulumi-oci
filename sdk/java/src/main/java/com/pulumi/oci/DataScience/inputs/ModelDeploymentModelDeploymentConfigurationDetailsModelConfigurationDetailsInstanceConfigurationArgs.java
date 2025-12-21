@@ -17,14 +17,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs();
 
     /**
-     * (Updatable) The shape used to launch the model deployment instances.
+     * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     @Import(name="instanceShapeName")
     private @Nullable Output<String> instanceShapeName;
 
     /**
-     * @return (Updatable) The shape used to launch the model deployment instances.
+     * @return (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     public Optional<Output<String>> instanceShapeName() {
@@ -104,7 +104,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param instanceShapeName (Updatable) The shape used to launch the model deployment instances.
+         * @param instanceShapeName (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param instanceShapeName (Updatable) The shape used to launch the model deployment instances.
+         * @param instanceShapeName (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          * 
          * @return builder
          * 

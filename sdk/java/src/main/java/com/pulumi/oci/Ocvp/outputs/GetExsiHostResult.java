@@ -188,6 +188,11 @@ public final class GetExsiHostResult {
      */
     private String swapBillingHostId;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -446,6 +451,13 @@ public final class GetExsiHostResult {
         return this.swapBillingHostId;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
@@ -515,6 +527,7 @@ public final class GetExsiHostResult {
         private String sddcId;
         private String state;
         private String swapBillingHostId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String upgradedReplacementEsxiHostId;
@@ -554,6 +567,7 @@ public final class GetExsiHostResult {
     	      this.sddcId = defaults.sddcId;
     	      this.state = defaults.state;
     	      this.swapBillingHostId = defaults.swapBillingHostId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.upgradedReplacementEsxiHostId = defaults.upgradedReplacementEsxiHostId;
@@ -829,6 +843,14 @@ public final class GetExsiHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExsiHostResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExsiHostResult", "timeCreated");
@@ -894,6 +916,7 @@ public final class GetExsiHostResult {
             _resultValue.sddcId = sddcId;
             _resultValue.state = state;
             _resultValue.swapBillingHostId = swapBillingHostId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;

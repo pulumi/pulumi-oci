@@ -46,6 +46,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
@@ -69,6 +73,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelsResult;
 import com.pulumi.oci.Utilities;
@@ -4156,7 +4162,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4202,7 +4208,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4248,7 +4254,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4294,7 +4300,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4340,7 +4346,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
-     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
+     *             .generativeAiPrivateEndpointId(testPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4788,6 +4794,451 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpointsPlain(GetGenerativeAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", TypeShape.of(GetGenerativeAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about an imported model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelResult> getImportedModel(GetImportedModelArgs args) {
+        return getImportedModel(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about an imported model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetImportedModelResult> getImportedModelPlain(GetImportedModelPlainArgs args) {
+        return getImportedModelPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about an imported model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelResult> getImportedModel(GetImportedModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getImportedModel:getImportedModel", TypeShape.of(GetImportedModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about an imported model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelResult> getImportedModel(GetImportedModelArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getImportedModel:getImportedModel", TypeShape.of(GetImportedModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about an imported model.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModel = GenerativeAiFunctions.getImportedModel(GetImportedModelArgs.builder()
+     *             .importedModelId(testImportedModelOciGenerativeAiImportedModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetImportedModelResult> getImportedModelPlain(GetImportedModelPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getImportedModel:getImportedModel", TypeShape.of(GetImportedModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists imported models in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModels = GenerativeAiFunctions.getImportedModels(GetImportedModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capabilities(importedModelCapability)
+     *             .displayName(importedModelDisplayName)
+     *             .id(importedModelId)
+     *             .state(importedModelState)
+     *             .vendor(importedModelVendor)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelsResult> getImportedModels(GetImportedModelsArgs args) {
+        return getImportedModels(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists imported models in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModels = GenerativeAiFunctions.getImportedModels(GetImportedModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capabilities(importedModelCapability)
+     *             .displayName(importedModelDisplayName)
+     *             .id(importedModelId)
+     *             .state(importedModelState)
+     *             .vendor(importedModelVendor)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetImportedModelsResult> getImportedModelsPlain(GetImportedModelsPlainArgs args) {
+        return getImportedModelsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists imported models in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModels = GenerativeAiFunctions.getImportedModels(GetImportedModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capabilities(importedModelCapability)
+     *             .displayName(importedModelDisplayName)
+     *             .id(importedModelId)
+     *             .state(importedModelState)
+     *             .vendor(importedModelVendor)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelsResult> getImportedModels(GetImportedModelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getImportedModels:getImportedModels", TypeShape.of(GetImportedModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists imported models in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModels = GenerativeAiFunctions.getImportedModels(GetImportedModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capabilities(importedModelCapability)
+     *             .displayName(importedModelDisplayName)
+     *             .id(importedModelId)
+     *             .state(importedModelState)
+     *             .vendor(importedModelVendor)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetImportedModelsResult> getImportedModels(GetImportedModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getImportedModels:getImportedModels", TypeShape.of(GetImportedModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Imported Models in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists imported models in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testImportedModels = GenerativeAiFunctions.getImportedModels(GetImportedModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .capabilities(importedModelCapability)
+     *             .displayName(importedModelDisplayName)
+     *             .id(importedModelId)
+     *             .state(importedModelState)
+     *             .vendor(importedModelVendor)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetImportedModelsResult> getImportedModelsPlain(GetImportedModelsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getImportedModels:getImportedModels", TypeShape.of(GetImportedModelsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.

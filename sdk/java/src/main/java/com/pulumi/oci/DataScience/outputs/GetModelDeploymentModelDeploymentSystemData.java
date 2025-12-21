@@ -17,6 +17,11 @@ public final class GetModelDeploymentModelDeploymentSystemData {
      */
     private Integer currentInstanceCount;
     /**
+     * @return The type of the deployed model.
+     * 
+     */
+    private String modelType;
+    /**
      * @return The infrastructure type of the model deployment.
      * 
      */
@@ -29,6 +34,13 @@ public final class GetModelDeploymentModelDeploymentSystemData {
      */
     public Integer currentInstanceCount() {
         return this.currentInstanceCount;
+    }
+    /**
+     * @return The type of the deployed model.
+     * 
+     */
+    public String modelType() {
+        return this.modelType;
     }
     /**
      * @return The infrastructure type of the model deployment.
@@ -48,11 +60,13 @@ public final class GetModelDeploymentModelDeploymentSystemData {
     @CustomType.Builder
     public static final class Builder {
         private Integer currentInstanceCount;
+        private String modelType;
         private String systemInfraType;
         public Builder() {}
         public Builder(GetModelDeploymentModelDeploymentSystemData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currentInstanceCount = defaults.currentInstanceCount;
+    	      this.modelType = defaults.modelType;
     	      this.systemInfraType = defaults.systemInfraType;
         }
 
@@ -62,6 +76,14 @@ public final class GetModelDeploymentModelDeploymentSystemData {
               throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentSystemData", "currentInstanceCount");
             }
             this.currentInstanceCount = currentInstanceCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelType(String modelType) {
+            if (modelType == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentSystemData", "modelType");
+            }
+            this.modelType = modelType;
             return this;
         }
         @CustomType.Setter
@@ -75,6 +97,7 @@ public final class GetModelDeploymentModelDeploymentSystemData {
         public GetModelDeploymentModelDeploymentSystemData build() {
             final var _resultValue = new GetModelDeploymentModelDeploymentSystemData();
             _resultValue.currentInstanceCount = currentInstanceCount;
+            _resultValue.modelType = modelType;
             _resultValue.systemInfraType = systemInfraType;
             return _resultValue;
         }

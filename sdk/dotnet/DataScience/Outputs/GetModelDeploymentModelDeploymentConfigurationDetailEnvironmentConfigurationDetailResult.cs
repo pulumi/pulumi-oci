@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Cmds;
         /// <summary>
+        /// Service injected Environment variables set for the web server container and can not be set or modified by user.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DefaultEnvironmentVariables;
+        /// <summary>
         /// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         /// </summary>
         public readonly ImmutableArray<string> Entrypoints;
@@ -34,7 +38,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int HealthCheckPort;
         /// <summary>
-        /// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
+        /// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;@digest`
         /// </summary>
         public readonly string Image;
         /// <summary>
@@ -49,6 +53,8 @@ namespace Pulumi.Oci.DataScience.Outputs
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(
             ImmutableArray<string> cmds,
+
+            ImmutableDictionary<string, string> defaultEnvironmentVariables,
 
             ImmutableArray<string> entrypoints,
 
@@ -65,6 +71,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             int serverPort)
         {
             Cmds = cmds;
+            DefaultEnvironmentVariables = defaultEnvironmentVariables;
             Entrypoints = entrypoints;
             EnvironmentConfigurationType = environmentConfigurationType;
             EnvironmentVariables = environmentVariables;

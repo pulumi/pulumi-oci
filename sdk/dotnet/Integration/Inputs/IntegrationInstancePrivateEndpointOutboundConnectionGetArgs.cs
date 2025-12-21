@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Integration.Inputs
 
     public sealed class IntegrationInstancePrivateEndpointOutboundConnectionGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("isAllOutboundTrafficPrivate")]
+        public Input<bool>? IsAllOutboundTrafficPrivate { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 

@@ -161,6 +161,12 @@ namespace Pulumi.Oci.DisasterRecovery
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// A categorized summary of step execution statuses and their corresponding counts.
+        /// </summary>
+        [Output("stepStatusCounts")]
+        public Output<ImmutableArray<Outputs.DrPlanExecutionStepStatusCount>> StepStatusCounts { get; private set; } = null!;
+
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
@@ -425,6 +431,18 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("stepStatusCounts")]
+        private InputList<Inputs.DrPlanExecutionStepStatusCountGetArgs>? _stepStatusCounts;
+
+        /// <summary>
+        /// A categorized summary of step execution statuses and their corresponding counts.
+        /// </summary>
+        public InputList<Inputs.DrPlanExecutionStepStatusCountGetArgs> StepStatusCounts
+        {
+            get => _stepStatusCounts ?? (_stepStatusCounts = new InputList<Inputs.DrPlanExecutionStepStatusCountGetArgs>());
+            set => _stepStatusCounts = value;
+        }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

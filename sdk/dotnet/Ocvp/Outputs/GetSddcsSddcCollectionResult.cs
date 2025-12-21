@@ -165,6 +165,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The lifecycle state of the resource.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

@@ -5,6 +5,7 @@ package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -12,40 +13,28 @@ import java.util.Objects;
 @CustomType
 public final class GetIntegrationInstancePrivateEndpointOutboundConnection {
     /**
-     * @return One or more Network security group Ids. This is an optional argument.
+     * @return Indicates if all traffic should go through configured outbound connection
      * 
      */
+    private Boolean isAllOutboundTrafficPrivate;
     private List<String> nsgIds;
-    /**
-     * @return The type of Outbound Connection.
-     * 
-     */
     private String outboundConnectionType;
-    /**
-     * @return Customer Private Network VCN Subnet OCID. This is a required argument.
-     * 
-     */
     private String subnetId;
 
     private GetIntegrationInstancePrivateEndpointOutboundConnection() {}
     /**
-     * @return One or more Network security group Ids. This is an optional argument.
+     * @return Indicates if all traffic should go through configured outbound connection
      * 
      */
+    public Boolean isAllOutboundTrafficPrivate() {
+        return this.isAllOutboundTrafficPrivate;
+    }
     public List<String> nsgIds() {
         return this.nsgIds;
     }
-    /**
-     * @return The type of Outbound Connection.
-     * 
-     */
     public String outboundConnectionType() {
         return this.outboundConnectionType;
     }
-    /**
-     * @return Customer Private Network VCN Subnet OCID. This is a required argument.
-     * 
-     */
     public String subnetId() {
         return this.subnetId;
     }
@@ -59,17 +48,27 @@ public final class GetIntegrationInstancePrivateEndpointOutboundConnection {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Boolean isAllOutboundTrafficPrivate;
         private List<String> nsgIds;
         private String outboundConnectionType;
         private String subnetId;
         public Builder() {}
         public Builder(GetIntegrationInstancePrivateEndpointOutboundConnection defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isAllOutboundTrafficPrivate = defaults.isAllOutboundTrafficPrivate;
     	      this.nsgIds = defaults.nsgIds;
     	      this.outboundConnectionType = defaults.outboundConnectionType;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder isAllOutboundTrafficPrivate(Boolean isAllOutboundTrafficPrivate) {
+            if (isAllOutboundTrafficPrivate == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancePrivateEndpointOutboundConnection", "isAllOutboundTrafficPrivate");
+            }
+            this.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
+            return this;
+        }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
@@ -99,6 +98,7 @@ public final class GetIntegrationInstancePrivateEndpointOutboundConnection {
         }
         public GetIntegrationInstancePrivateEndpointOutboundConnection build() {
             final var _resultValue = new GetIntegrationInstancePrivateEndpointOutboundConnection();
+            _resultValue.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
             _resultValue.nsgIds = nsgIds;
             _resultValue.outboundConnectionType = outboundConnectionType;
             _resultValue.subnetId = subnetId;

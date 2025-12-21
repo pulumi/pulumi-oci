@@ -18,9 +18,17 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string ClusterPlacementGroupId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
+        /// <summary>
+        /// Network Anchor Id in the Cloud Service Provider.
+        /// </summary>
+        public readonly string CspNetworkAnchorId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -35,8 +43,6 @@ namespace Pulumi.Oci.Oci.Outputs
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-        /// 
-        /// Note: one of the arguments `CompartmentId` or `Id` must be specified.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -44,13 +50,25 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Defines status of the Network Anchor.
+        /// </summary>
+        public readonly string NetworkAnchorConnectionStatus;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string NetworkAnchorLifecycleState;
         /// <summary>
+        /// CSP network anchor Uri
+        /// </summary>
+        public readonly string NetworkAnchorUri;
+        /// <summary>
         /// Oracle Cloud Infrastructure resource anchor Id (OCID).
         /// </summary>
         public readonly string ResourceAnchorId;
+        /// <summary>
+        /// Oracle Cloud Infrastructure Subscription Type.
+        /// </summary>
+        public readonly string SubscriptionType;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
@@ -67,12 +85,20 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
         /// </summary>
         public readonly string VcnId;
+        /// <summary>
+        /// Name of the VCN associated to the Network Anchor.
+        /// </summary>
+        public readonly string VcnName;
 
         [OutputConstructor]
         private GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(
             string clusterPlacementGroupId,
 
             string compartmentId,
+
+            ImmutableDictionary<string, string> cspAdditionalProperties,
+
+            string cspNetworkAnchorId,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -84,9 +110,15 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string lifecycleDetails,
 
+            string networkAnchorConnectionStatus,
+
             string networkAnchorLifecycleState,
 
+            string networkAnchorUri,
+
             string resourceAnchorId,
+
+            string subscriptionType,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -94,21 +126,29 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string timeUpdated,
 
-            string vcnId)
+            string vcnId,
+
+            string vcnName)
         {
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
+            CspAdditionalProperties = cspAdditionalProperties;
+            CspNetworkAnchorId = cspNetworkAnchorId;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            NetworkAnchorConnectionStatus = networkAnchorConnectionStatus;
             NetworkAnchorLifecycleState = networkAnchorLifecycleState;
+            NetworkAnchorUri = networkAnchorUri;
             ResourceAnchorId = resourceAnchorId;
+            SubscriptionType = subscriptionType;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             VcnId = vcnId;
+            VcnName = vcnName;
         }
     }
 }

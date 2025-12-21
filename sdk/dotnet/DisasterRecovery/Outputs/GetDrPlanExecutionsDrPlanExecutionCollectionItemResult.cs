@@ -86,6 +86,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// A categorized summary of step execution statuses and their corresponding counts.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountResult> StepStatusCounts;
+        /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -144,6 +148,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string state,
 
+            ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountResult> stepStatusCounts,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
@@ -172,6 +178,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             PlanExecutionType = planExecutionType;
             PlanId = planId;
             State = state;
+            StepStatusCounts = stepStatusCounts;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeEnded = timeEnded;

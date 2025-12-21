@@ -139,6 +139,10 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * A categorized summary of step execution statuses and their corresponding counts.
+     */
+    declare public /*out*/ readonly stepStatusCounts: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionStepStatusCount[]>;
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
@@ -189,6 +193,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
             resourceInputs["planExecutionType"] = state?.planExecutionType;
             resourceInputs["planId"] = state?.planId;
             resourceInputs["state"] = state?.state;
+            resourceInputs["stepStatusCounts"] = state?.stepStatusCounts;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeEnded"] = state?.timeEnded;
@@ -219,6 +224,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
             resourceInputs["peerRegion"] = undefined /*out*/;
             resourceInputs["planExecutionType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["stepStatusCounts"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
@@ -306,6 +312,10 @@ export interface DrPlanExecutionState {
      * The current state of the DR plan execution.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A categorized summary of step execution statuses and their corresponding counts.
+     */
+    stepStatusCounts?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionStepStatusCount>[]>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */

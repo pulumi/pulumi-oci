@@ -42,6 +42,11 @@ __all__ = [
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult',
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult',
     'GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult',
+    'GetLogAnalyticsEntityAssociationsListFilterResult',
+    'GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionResult',
+    'GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemResult',
+    'GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataResult',
+    'GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemResult',
     'GetLogAnalyticsEntityMetadataResult',
     'GetLogAnalyticsEntityMetadataItemResult',
     'GetLogAnalyticsEntityTopologyFilterResult',
@@ -1953,6 +1958,331 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemResult(
     def name(self) -> _builtins.str:
         """
         A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The metadata type.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The metadata value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityAssociationsListFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Log analytics entity name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs'] items: An array of entity metadata.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemResult']:
+        """
+        An array of entity metadata.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 are_logs_collected: _builtins.bool,
+                 associated_sources_count: _builtins.int,
+                 cloud_resource_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 entity_type_internal_name: _builtins.str,
+                 entity_type_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 management_agent_id: _builtins.str,
+                 metadatas: Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataResult'],
+                 name: _builtins.str,
+                 source_id: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_discovered: _builtins.str,
+                 time_updated: _builtins.str,
+                 timezone_region: _builtins.str):
+        """
+        :param _builtins.bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+        :param _builtins.int associated_sources_count: The count of associated log sources for a given log analytics entity.
+        :param _builtins.str cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        :param _builtins.str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str entity_type_internal_name: Internal name for the log analytics entity type.
+        :param _builtins.str entity_type_name: Log analytics entity type name.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        :param _builtins.str lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+        :param _builtins.str management_agent_id: The OCID of the Management Agent.
+        :param Sequence['GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs'] metadatas: A collection of entity metadata information.
+        :param _builtins.str name: Log analytics entity name.
+        :param _builtins.str source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+        :param _builtins.str state: The current state of the log analytics entity.
+        :param _builtins.str time_created: The date and time the resource was created, in the format defined by RFC3339.
+        :param _builtins.str time_last_discovered: The date and time the resource was last discovered, in the format defined by RFC3339.
+        :param _builtins.str time_updated: The date and time the resource was last updated, in the format defined by RFC3339.
+        :param _builtins.str timezone_region: The timezone region of the log analytics entity.
+        """
+        pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+        pulumi.set(__self__, "associated_sources_count", associated_sources_count)
+        pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
+        pulumi.set(__self__, "entity_type_name", entity_type_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "metadatas", metadatas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_discovered", time_last_discovered)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timezone_region", timezone_region)
+
+    @_builtins.property
+    @pulumi.getter(name="areLogsCollected")
+    def are_logs_collected(self) -> _builtins.bool:
+        """
+        The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+        """
+        return pulumi.get(self, "are_logs_collected")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedSourcesCount")
+    def associated_sources_count(self) -> _builtins.int:
+        """
+        The count of associated log sources for a given log analytics entity.
+        """
+        return pulumi.get(self, "associated_sources_count")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudResourceId")
+    def cloud_resource_id(self) -> _builtins.str:
+        """
+        The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+        """
+        return pulumi.get(self, "cloud_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="entityTypeInternalName")
+    def entity_type_internal_name(self) -> _builtins.str:
+        """
+        Internal name for the log analytics entity type.
+        """
+        return pulumi.get(self, "entity_type_internal_name")
+
+    @_builtins.property
+    @pulumi.getter(name="entityTypeName")
+    def entity_type_name(self) -> _builtins.str:
+        """
+        Log analytics entity type name.
+        """
+        return pulumi.get(self, "entity_type_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The OCID of the Management Agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataResult']:
+        """
+        A collection of entity metadata information.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        """
+        This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+        """
+        return pulumi.get(self, "source_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the log analytics entity.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the resource was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastDiscovered")
+    def time_last_discovered(self) -> _builtins.str:
+        """
+        The date and time the resource was last discovered, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_discovered")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the resource was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="timezoneRegion")
+    def timezone_region(self) -> _builtins.str:
+        """
+        The timezone region of the log analytics entity.
+        """
+        return pulumi.get(self, "timezone_region")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemResult']):
+        """
+        :param Sequence['GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs'] items: An array of entity metadata.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemResult']:
+        """
+        An array of entity metadata.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: Log analytics entity name.
+        :param _builtins.str type: The metadata type.
+        :param _builtins.str value: The metadata value.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Log analytics entity name.
         """
         return pulumi.get(self, "name")
 

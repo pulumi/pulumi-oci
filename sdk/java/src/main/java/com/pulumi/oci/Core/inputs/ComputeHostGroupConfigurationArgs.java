@@ -50,6 +50,21 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
     }
 
     /**
+     * (Updatable) The state of the host group configuration.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The state of the host group configuration.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
+    /**
      * (Updatable) Either the platform name or compute shape that the configuration is targeting
      * 
      */
@@ -69,6 +84,7 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
     private ComputeHostGroupConfigurationArgs(ComputeHostGroupConfigurationArgs $) {
         this.firmwareBundleId = $.firmwareBundleId;
         this.recycleLevel = $.recycleLevel;
+        this.state = $.state;
         this.target = $.target;
     }
 
@@ -134,6 +150,27 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
          */
         public Builder recycleLevel(String recycleLevel) {
             return recycleLevel(Output.of(recycleLevel));
+        }
+
+        /**
+         * @param state (Updatable) The state of the host group configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The state of the host group configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         /**

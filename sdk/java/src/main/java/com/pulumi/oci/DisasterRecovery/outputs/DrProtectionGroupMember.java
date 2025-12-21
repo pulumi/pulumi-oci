@@ -19,6 +19,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberFileSystem
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberLoadBalancerMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberManagedNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberNetworkLoadBalancerMapping;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberResourceModifierMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberVaultMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberVirtualNodePoolConfig;
@@ -218,6 +219,11 @@ public final class DrProtectionGroupMember {
      * 
      */
     private @Nullable String peerDbSystemId;
+    /**
+     * @return (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    private @Nullable List<DrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings;
     /**
      * @return (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
@@ -509,6 +515,13 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.peerDbSystemId);
     }
     /**
+     * @return (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public List<DrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings() {
+        return this.resourceModifierMappings == null ? List.of() : this.resourceModifierMappings;
+    }
+    /**
      * @return (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
      * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
@@ -594,6 +607,7 @@ public final class DrProtectionGroupMember {
         private @Nullable String passwordVaultSecretId;
         private @Nullable String peerClusterId;
         private @Nullable String peerDbSystemId;
+        private @Nullable List<DrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings;
         private @Nullable List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings;
         private @Nullable List<DrProtectionGroupMemberVaultMapping> vaultMappings;
         private @Nullable List<DrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
@@ -639,6 +653,7 @@ public final class DrProtectionGroupMember {
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
     	      this.peerClusterId = defaults.peerClusterId;
     	      this.peerDbSystemId = defaults.peerDbSystemId;
+    	      this.resourceModifierMappings = defaults.resourceModifierMappings;
     	      this.sourceVolumeToDestinationEncryptionKeyMappings = defaults.sourceVolumeToDestinationEncryptionKeyMappings;
     	      this.vaultMappings = defaults.vaultMappings;
     	      this.virtualNodePoolConfigs = defaults.virtualNodePoolConfigs;
@@ -894,6 +909,15 @@ public final class DrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceModifierMappings(@Nullable List<DrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings) {
+
+            this.resourceModifierMappings = resourceModifierMappings;
+            return this;
+        }
+        public Builder resourceModifierMappings(DrProtectionGroupMemberResourceModifierMapping... resourceModifierMappings) {
+            return resourceModifierMappings(List.of(resourceModifierMappings));
+        }
+        @CustomType.Setter
         public Builder sourceVolumeToDestinationEncryptionKeyMappings(@Nullable List<DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings) {
 
             this.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
@@ -977,6 +1001,7 @@ public final class DrProtectionGroupMember {
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
             _resultValue.peerClusterId = peerClusterId;
             _resultValue.peerDbSystemId = peerDbSystemId;
+            _resultValue.resourceModifierMappings = resourceModifierMappings;
             _resultValue.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             _resultValue.vaultMappings = vaultMappings;
             _resultValue.virtualNodePoolConfigs = virtualNodePoolConfigs;

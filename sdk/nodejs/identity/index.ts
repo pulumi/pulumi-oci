@@ -150,6 +150,11 @@ export type DomainsKmsiSetting = import("./domainsKmsiSetting").DomainsKmsiSetti
 export const DomainsKmsiSetting: typeof import("./domainsKmsiSetting").DomainsKmsiSetting = null as any;
 utilities.lazyLoad(exports, ["DomainsKmsiSetting"], () => require("./domainsKmsiSetting"));
 
+export { DomainsMappedAttributeArgs, DomainsMappedAttributeState } from "./domainsMappedAttribute";
+export type DomainsMappedAttribute = import("./domainsMappedAttribute").DomainsMappedAttribute;
+export const DomainsMappedAttribute: typeof import("./domainsMappedAttribute").DomainsMappedAttribute = null as any;
+utilities.lazyLoad(exports, ["DomainsMappedAttribute"], () => require("./domainsMappedAttribute"));
+
 export { DomainsMyApiKeyArgs, DomainsMyApiKeyState } from "./domainsMyApiKey";
 export type DomainsMyApiKey = import("./domainsMyApiKey").DomainsMyApiKey;
 export const DomainsMyApiKey: typeof import("./domainsMyApiKey").DomainsMyApiKey = null as any;
@@ -569,6 +574,16 @@ export { GetDomainsKmsiSettingsArgs, GetDomainsKmsiSettingsResult, GetDomainsKms
 export const getDomainsKmsiSettings: typeof import("./getDomainsKmsiSettings").getDomainsKmsiSettings = null as any;
 export const getDomainsKmsiSettingsOutput: typeof import("./getDomainsKmsiSettings").getDomainsKmsiSettingsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsKmsiSettings","getDomainsKmsiSettingsOutput"], () => require("./getDomainsKmsiSettings"));
+
+export { GetDomainsMappedAttributeArgs, GetDomainsMappedAttributeResult, GetDomainsMappedAttributeOutputArgs } from "./getDomainsMappedAttribute";
+export const getDomainsMappedAttribute: typeof import("./getDomainsMappedAttribute").getDomainsMappedAttribute = null as any;
+export const getDomainsMappedAttributeOutput: typeof import("./getDomainsMappedAttribute").getDomainsMappedAttributeOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMappedAttribute","getDomainsMappedAttributeOutput"], () => require("./getDomainsMappedAttribute"));
+
+export { GetDomainsMappedAttributesArgs, GetDomainsMappedAttributesResult, GetDomainsMappedAttributesOutputArgs } from "./getDomainsMappedAttributes";
+export const getDomainsMappedAttributes: typeof import("./getDomainsMappedAttributes").getDomainsMappedAttributes = null as any;
+export const getDomainsMappedAttributesOutput: typeof import("./getDomainsMappedAttributes").getDomainsMappedAttributesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMappedAttributes","getDomainsMappedAttributesOutput"], () => require("./getDomainsMappedAttributes"));
 
 export { GetDomainsMyApiKeyArgs, GetDomainsMyApiKeyResult, GetDomainsMyApiKeyOutputArgs } from "./getDomainsMyApiKey";
 export const getDomainsMyApiKey: typeof import("./getDomainsMyApiKey").getDomainsMyApiKey = null as any;
@@ -1163,6 +1178,8 @@ const _module = {
                 return new DomainsIdentitySetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsKmsiSetting:DomainsKmsiSetting":
                 return new DomainsKmsiSetting(name, <any>undefined, { urn })
+            case "oci:Identity/domainsMappedAttribute:DomainsMappedAttribute":
+                return new DomainsMappedAttribute(name, <any>undefined, { urn })
             case "oci:Identity/domainsMyApiKey:DomainsMyApiKey":
                 return new DomainsMyApiKey(name, <any>undefined, { urn })
             case "oci:Identity/domainsMyAuthToken:DomainsMyAuthToken":
@@ -1275,6 +1292,7 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityPropagatio
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProvider", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentitySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsKmsiSetting", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsMappedAttribute", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyAuthToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyCustomerSecretKey", _module)

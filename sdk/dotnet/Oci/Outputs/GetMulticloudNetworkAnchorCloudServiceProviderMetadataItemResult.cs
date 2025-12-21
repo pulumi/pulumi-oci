@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<string> CidrBlocks;
         /// <summary>
+        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
+        /// <summary>
         /// DNS domain ip mapping forwarding configuration
         /// </summary>
         public readonly ImmutableArray<object> DnsForwardingConfigs;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult(
             ImmutableArray<string> cidrBlocks,
 
+            ImmutableDictionary<string, string> cspAdditionalProperties,
+
             ImmutableArray<object> dnsForwardingConfigs,
 
             string networkAnchorUri,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Oci.Outputs
             string region)
         {
             CidrBlocks = cidrBlocks;
+            CspAdditionalProperties = cspAdditionalProperties;
             DnsForwardingConfigs = dnsForwardingConfigs;
             NetworkAnchorUri = networkAnchorUri;
             OdbNetworkId = odbNetworkId;

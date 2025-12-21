@@ -184,6 +184,11 @@ type AutonomousDatabase struct {
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          pulumi.BoolOutput `pulumi:"isReplicateAutomaticBackups"`
 	IsScheduleDbVersionUpgradeToEarliest pulumi.BoolOutput `pulumi:"isScheduleDbVersionUpgradeToEarliest"`
+	// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly pulumi.BoolPtrOutput `pulumi:"isShrinkOnly"`
 	// Key History Entry.
@@ -276,7 +281,8 @@ type AutonomousDatabase struct {
 	// (Updatable) The configuration details for resource pool
 	ResourcePoolSummary AutonomousDatabaseResourcePoolSummaryOutput `pulumi:"resourcePoolSummary"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-	Role             pulumi.StringOutput  `pulumi:"role"`
+	Role pulumi.StringOutput `pulumi:"role"`
+	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
@@ -324,8 +330,10 @@ type AutonomousDatabase struct {
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
 	SupportedRegionsToCloneTos pulumi.StringArrayOutput `pulumi:"supportedRegionsToCloneTos"`
-	SwitchoverTo               pulumi.StringPtrOutput   `pulumi:"switchoverTo"`
-	SwitchoverToRemotePeerId   pulumi.StringPtrOutput   `pulumi:"switchoverToRemotePeerId"`
+	// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+	SwitchoverTo pulumi.StringPtrOutput `pulumi:"switchoverTo"`
+	// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+	SwitchoverToRemotePeerId pulumi.StringPtrOutput `pulumi:"switchoverToRemotePeerId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Autonomous AI Database was created.
@@ -391,9 +399,6 @@ type AutonomousDatabase struct {
 	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WhitelistedIps pulumi.StringArrayOutput `pulumi:"whitelistedIps"`
 }
 
@@ -600,6 +605,11 @@ type autonomousDatabaseState struct {
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          *bool `pulumi:"isReplicateAutomaticBackups"`
 	IsScheduleDbVersionUpgradeToEarliest *bool `pulumi:"isScheduleDbVersionUpgradeToEarliest"`
+	// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly *bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
@@ -692,8 +702,9 @@ type autonomousDatabaseState struct {
 	// (Updatable) The configuration details for resource pool
 	ResourcePoolSummary *AutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummary"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-	Role             *string `pulumi:"role"`
-	RotateKeyTrigger *bool   `pulumi:"rotateKeyTrigger"`
+	Role *string `pulumi:"role"`
+	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
+	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -740,8 +751,10 @@ type autonomousDatabaseState struct {
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
 	SupportedRegionsToCloneTos []string `pulumi:"supportedRegionsToCloneTos"`
-	SwitchoverTo               *string  `pulumi:"switchoverTo"`
-	SwitchoverToRemotePeerId   *string  `pulumi:"switchoverToRemotePeerId"`
+	// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+	SwitchoverTo *string `pulumi:"switchoverTo"`
+	// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+	SwitchoverToRemotePeerId *string `pulumi:"switchoverToRemotePeerId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Autonomous AI Database was created.
@@ -807,9 +820,6 @@ type autonomousDatabaseState struct {
 	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -974,6 +984,11 @@ type AutonomousDatabaseState struct {
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          pulumi.BoolPtrInput
 	IsScheduleDbVersionUpgradeToEarliest pulumi.BoolPtrInput
+	// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly pulumi.BoolPtrInput
 	// Key History Entry.
@@ -1066,7 +1081,8 @@ type AutonomousDatabaseState struct {
 	// (Updatable) The configuration details for resource pool
 	ResourcePoolSummary AutonomousDatabaseResourcePoolSummaryPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
-	Role             pulumi.StringPtrInput
+	Role pulumi.StringPtrInput
+	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
@@ -1114,8 +1130,10 @@ type AutonomousDatabaseState struct {
 	SubscriptionId pulumi.StringPtrInput
 	// The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
 	SupportedRegionsToCloneTos pulumi.StringArrayInput
-	SwitchoverTo               pulumi.StringPtrInput
-	SwitchoverToRemotePeerId   pulumi.StringPtrInput
+	// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+	SwitchoverTo pulumi.StringPtrInput
+	// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+	SwitchoverToRemotePeerId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput
 	// The date and time the Autonomous AI Database was created.
@@ -1181,9 +1199,6 @@ type AutonomousDatabaseState struct {
 	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WhitelistedIps pulumi.StringArrayInput
 }
 
@@ -1314,6 +1329,11 @@ type autonomousDatabaseArgs struct {
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          *bool `pulumi:"isReplicateAutomaticBackups"`
 	IsScheduleDbVersionUpgradeToEarliest *bool `pulumi:"isScheduleDbVersionUpgradeToEarliest"`
+	// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly *bool   `pulumi:"isShrinkOnly"`
 	KeyVersionId *string `pulumi:"keyVersionId"`
@@ -1365,7 +1385,8 @@ type autonomousDatabaseArgs struct {
 	ResourcePoolLeaderId *string `pulumi:"resourcePoolLeaderId"`
 	// (Updatable) The configuration details for resource pool
 	ResourcePoolSummary *AutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummary"`
-	RotateKeyTrigger    *bool                                  `pulumi:"rotateKeyTrigger"`
+	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
+	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1405,8 +1426,10 @@ type autonomousDatabaseArgs struct {
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-	SubscriptionId           *string `pulumi:"subscriptionId"`
-	SwitchoverTo             *string `pulumi:"switchoverTo"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+	SwitchoverTo *string `pulumi:"switchoverTo"`
+	// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
 	SwitchoverToRemotePeerId *string `pulumi:"switchoverToRemotePeerId"`
 	// (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 	TimeOfAutoRefreshStart *string `pulumi:"timeOfAutoRefreshStart"`
@@ -1427,9 +1450,6 @@ type autonomousDatabaseArgs struct {
 	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
 
@@ -1557,6 +1577,11 @@ type AutonomousDatabaseArgs struct {
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          pulumi.BoolPtrInput
 	IsScheduleDbVersionUpgradeToEarliest pulumi.BoolPtrInput
+	// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	//
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly pulumi.BoolPtrInput
 	KeyVersionId pulumi.StringPtrInput
@@ -1608,7 +1633,8 @@ type AutonomousDatabaseArgs struct {
 	ResourcePoolLeaderId pulumi.StringPtrInput
 	// (Updatable) The configuration details for resource pool
 	ResourcePoolSummary AutonomousDatabaseResourcePoolSummaryPtrInput
-	RotateKeyTrigger    pulumi.BoolPtrInput
+	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
+	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
@@ -1648,8 +1674,10 @@ type AutonomousDatabaseArgs struct {
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
 	SubnetId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-	SubscriptionId           pulumi.StringPtrInput
-	SwitchoverTo             pulumi.StringPtrInput
+	SubscriptionId pulumi.StringPtrInput
+	// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+	SwitchoverTo pulumi.StringPtrInput
+	// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
 	SwitchoverToRemotePeerId pulumi.StringPtrInput
 	// (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 	TimeOfAutoRefreshStart pulumi.StringPtrInput
@@ -1670,9 +1698,6 @@ type AutonomousDatabaseArgs struct {
 	// For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	WhitelistedIps pulumi.StringArrayInput
 }
 
@@ -2132,6 +2157,11 @@ func (o AutonomousDatabaseOutput) IsScheduleDbVersionUpgradeToEarliest() pulumi.
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolOutput { return v.IsScheduleDbVersionUpgradeToEarliest }).(pulumi.BoolOutput)
 }
 
+// (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+//
 // Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 func (o AutonomousDatabaseOutput) IsShrinkOnly() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolPtrOutput { return v.IsShrinkOnly }).(pulumi.BoolPtrOutput)
@@ -2354,6 +2384,7 @@ func (o AutonomousDatabaseOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 func (o AutonomousDatabaseOutput) RotateKeyTrigger() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.BoolPtrOutput { return v.RotateKeyTrigger }).(pulumi.BoolPtrOutput)
 }
@@ -2448,10 +2479,12 @@ func (o AutonomousDatabaseOutput) SupportedRegionsToCloneTos() pulumi.StringArra
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringArrayOutput { return v.SupportedRegionsToCloneTos }).(pulumi.StringArrayOutput)
 }
 
+// It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
 func (o AutonomousDatabaseOutput) SwitchoverTo() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringPtrOutput { return v.SwitchoverTo }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
 func (o AutonomousDatabaseOutput) SwitchoverToRemotePeerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringPtrOutput { return v.SwitchoverToRemotePeerId }).(pulumi.StringPtrOutput)
 }
@@ -2610,9 +2643,6 @@ func (o AutonomousDatabaseOutput) VaultId() pulumi.StringOutput {
 // For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 //
 // This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[""]`.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousDatabaseOutput) WhitelistedIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringArrayOutput { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }

@@ -16,7 +16,7 @@ public final class GetComputeHostConfigurationDataCheckDetail {
      */
     private String configurationState;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
      */
     private String firmwareBundleId;
@@ -42,7 +42,7 @@ public final class GetComputeHostConfigurationDataCheckDetail {
         return this.configurationState;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
      */
     public String firmwareBundleId() {

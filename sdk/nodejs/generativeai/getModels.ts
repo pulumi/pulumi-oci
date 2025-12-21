@@ -76,30 +76,15 @@ export interface GetModelsArgs {
  */
 export interface GetModelsResult {
     readonly capabilities?: string[];
-    /**
-     * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-     */
     readonly compartmentId: string;
-    /**
-     * A user-friendly name.
-     */
     readonly displayName?: string;
     readonly filters?: outputs.GenerativeAi.GetModelsFilter[];
-    /**
-     * An ID that uniquely identifies a pretrained or fine-tuned model.
-     */
     readonly id?: string;
     /**
      * The list of model_collection.
      */
     readonly modelCollections: outputs.GenerativeAi.GetModelsModelCollection[];
-    /**
-     * The lifecycle state of the model.
-     */
     readonly state?: string;
-    /**
-     * The provider of the base model.
-     */
     readonly vendor?: string;
 }
 /**

@@ -14,6 +14,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     private List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -25,16 +29,16 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
      * 
      */
     private Map<String,String> definedTags;
-    /**
-     * @return An optional description of the dedicated AI cluster.
-     * 
-     */
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
      * 
      */
     private String displayName;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
@@ -56,12 +60,20 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+     * 
+     */
     private String timeCreated;
     /**
      * @return The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+     * 
+     */
     private String type;
     /**
      * @return The number of dedicated units in this AI cluster.
@@ -75,6 +87,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     private String unitShape;
 
     private GetDedicatedAiClustersDedicatedAiClusterCollectionItem() {}
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     public List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities() {
         return this.capacities;
     }
@@ -92,10 +108,6 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
-    /**
-     * @return An optional description of the dedicated AI cluster.
-     * 
-     */
     public String description() {
         return this.description;
     }
@@ -106,6 +118,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
@@ -137,6 +153,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
@@ -147,6 +167,10 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+     * 
+     */
     public String type() {
         return this.type;
     }

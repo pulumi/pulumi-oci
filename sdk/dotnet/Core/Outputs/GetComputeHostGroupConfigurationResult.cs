@@ -24,6 +24,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string RecycleLevel;
         /// <summary>
+        /// The lifecycle state of the host group
+        /// </summary>
+        public readonly string State;
+        /// <summary>
         /// Either the platform name or compute shape that the configuration is targeting
         /// </summary>
         public readonly string Target;
@@ -34,10 +38,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             string recycleLevel,
 
+            string state,
+
             string target)
         {
             FirmwareBundleId = firmwareBundleId;
             RecycleLevel = recycleLevel;
+            State = state;
             Target = target;
         }
     }

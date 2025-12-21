@@ -40,6 +40,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Integration.inputs.IntegrationInstanceAlternateCustomEndpointArgs;
  * import com.pulumi.oci.Integration.inputs.IntegrationInstanceCustomEndpointArgs;
  * import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsArgs;
+ * import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs;
+ * import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsRuntimeArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -82,7 +84,21 @@ import javax.annotation.Nullable;
  *                     .id(integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsId)
  *                     .allowlistedIps(integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps)
  *                     .build())
+ *                 .designTime(IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs.builder()
+ *                     .allowlistedHttpIps(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpIps)
+ *                     .allowlistedHttpVcns(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs.builder()
+ *                         .id(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsId)
+ *                         .allowlistedIps(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps)
+ *                         .build())
+ *                     .build())
  *                 .isIntegrationVcnAllowlisted(integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted)
+ *                 .runtime(IntegrationInstanceNetworkEndpointDetailsRuntimeArgs.builder()
+ *                     .allowlistedHttpIps(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps)
+ *                     .allowlistedHttpVcns(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs.builder()
+ *                         .id(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsId)
+ *                         .allowlistedIps(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsAllowlistedIps)
+ *                         .build())
+ *                     .build())
  *                 .build())
  *             .securityAttributes(Map.ofEntries(
  *                 Map.entry("oracle-zpr.sensitivity.value", "low"),
@@ -165,6 +181,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.consumptionModel;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     * 
+     */
+    @Export(name="convertInstanceTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> convertInstanceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> convertInstanceTrigger() {
+        return Codegen.optional(this.convertInstanceTrigger);
+    }
+    /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      * 
      */
@@ -183,14 +213,14 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataRetentionPeriod", refs={String.class}, tree="[0]")
-    private Output<String> dataRetentionPeriod;
+    private Output</* @Nullable */ String> dataRetentionPeriod;
 
     /**
      * @return Data retention period set for given integration instance
      * 
      */
-    public Output<String> dataRetentionPeriod() {
-        return this.dataRetentionPeriod;
+    public Output<Optional<String>> dataRetentionPeriod() {
+        return Codegen.optional(this.dataRetentionPeriod);
     }
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -205,6 +235,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     * 
+     */
+    @Export(name="disableProcessAutomationTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> disableProcessAutomationTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> disableProcessAutomationTrigger() {
+        return Codegen.optional(this.disableProcessAutomationTrigger);
     }
     /**
      * Disaster recovery details for the integration instance created in the region.
@@ -262,17 +306,9 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     public Output<Optional<Integer>> enableProcessAutomationTrigger() {
         return Codegen.optional(this.enableProcessAutomationTrigger);
     }
-    /**
-     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     * 
-     */
     @Export(name="extendDataRetentionTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> extendDataRetentionTrigger;
 
-    /**
-     * @return (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     * 
-     */
     public Output<Optional<Integer>> extendDataRetentionTrigger() {
         return Codegen.optional(this.extendDataRetentionTrigger);
     }
@@ -435,6 +471,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    @Export(name="logGroupId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> logGroupId;
+
+    /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    public Output<Optional<String>> logGroupId() {
+        return Codegen.optional(this.logGroupId);
     }
     /**
      * (Updatable) The number of configured message packs

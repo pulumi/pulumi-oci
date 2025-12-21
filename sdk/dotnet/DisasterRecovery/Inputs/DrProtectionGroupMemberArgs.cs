@@ -286,6 +286,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("peerDbSystemId")]
         public Input<string>? PeerDbSystemId { get; set; }
 
+        [Input("resourceModifierMappings")]
+        private InputList<Inputs.DrProtectionGroupMemberResourceModifierMappingArgs>? _resourceModifierMappings;
+
+        /// <summary>
+        /// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public InputList<Inputs.DrProtectionGroupMemberResourceModifierMappingArgs> ResourceModifierMappings
+        {
+            get => _resourceModifierMappings ?? (_resourceModifierMappings = new InputList<Inputs.DrProtectionGroupMemberResourceModifierMappingArgs>());
+            set => _resourceModifierMappings = value;
+        }
+
         [Input("sourceVolumeToDestinationEncryptionKeyMappings")]
         private InputList<Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs>? _sourceVolumeToDestinationEncryptionKeyMappings;
 

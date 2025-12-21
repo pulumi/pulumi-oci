@@ -14,9 +14,25 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The name assigned to the compartment during creation.
+        /// </summary>
+        public readonly string CompartmentName;
+        /// <summary>
+        /// CSP Specific Additional Properties, AzureSubnetId for Azure
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> CspAdditionalProperties;
+        /// <summary>
+        /// CSP resource anchor ID.
+        /// </summary>
+        public readonly string CspResourceAnchorId;
+        /// <summary>
+        /// CSP resource anchor name.
+        /// </summary>
+        public readonly string CspResourceAnchorName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -38,11 +54,23 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        /// The current state of the ResourceAnchor.
         /// </summary>
         public readonly string LifecycleState;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+        /// </summary>
+        public readonly string LinkedCompartmentId;
+        /// <summary>
+        /// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        /// </summary>
+        public readonly string LinkedCompartmentName;
+        /// <summary>
+        /// Partner Cloud Account Identifier of the Cloud Service Provider.
+        /// </summary>
+        public readonly string PartnerCloudAccountIdentifier;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         public readonly string SubscriptionId;
         /// <summary>
@@ -62,6 +90,14 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(
             string compartmentId,
 
+            string compartmentName,
+
+            ImmutableDictionary<string, string> cspAdditionalProperties,
+
+            string cspResourceAnchorId,
+
+            string cspResourceAnchorName,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -74,6 +110,12 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string lifecycleState,
 
+            string linkedCompartmentId,
+
+            string linkedCompartmentName,
+
+            string partnerCloudAccountIdentifier,
+
             string subscriptionId,
 
             ImmutableDictionary<string, string> systemTags,
@@ -83,12 +125,19 @@ namespace Pulumi.Oci.Oci.Outputs
             string timeUpdated)
         {
             CompartmentId = compartmentId;
+            CompartmentName = compartmentName;
+            CspAdditionalProperties = cspAdditionalProperties;
+            CspResourceAnchorId = cspResourceAnchorId;
+            CspResourceAnchorName = cspResourceAnchorName;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             LifecycleState = lifecycleState;
+            LinkedCompartmentId = linkedCompartmentId;
+            LinkedCompartmentName = linkedCompartmentName;
+            PartnerCloudAccountIdentifier = partnerCloudAccountIdentifier;
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

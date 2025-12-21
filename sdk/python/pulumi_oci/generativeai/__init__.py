@@ -34,8 +34,11 @@ from .get_endpoint import *
 from .get_endpoints import *
 from .get_generative_ai_private_endpoint import *
 from .get_generative_ai_private_endpoints import *
+from .get_imported_model import *
+from .get_imported_models import *
 from .get_model import *
 from .get_models import *
+from .imported_model import *
 from .model import *
 from ._inputs import *
 from . import outputs

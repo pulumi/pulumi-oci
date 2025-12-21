@@ -70,6 +70,21 @@ public final class GetShapesArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.imageId);
     }
 
+    /**
+     * Shape name.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return Shape name.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
+    }
+
     private GetShapesArgs() {}
 
     private GetShapesArgs(GetShapesArgs $) {
@@ -77,6 +92,7 @@ public final class GetShapesArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.imageId = $.imageId;
+        this.shape = $.shape;
     }
 
     public static Builder builder() {
@@ -171,6 +187,27 @@ public final class GetShapesArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
+        }
+
+        /**
+         * @param shape Shape name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape Shape name.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         public GetShapesArgs build() {

@@ -30,6 +30,11 @@ export const getLogAnalyticsEntity: typeof import("./getLogAnalyticsEntity").get
 export const getLogAnalyticsEntityOutput: typeof import("./getLogAnalyticsEntity").getLogAnalyticsEntityOutput = null as any;
 utilities.lazyLoad(exports, ["getLogAnalyticsEntity","getLogAnalyticsEntityOutput"], () => require("./getLogAnalyticsEntity"));
 
+export { GetLogAnalyticsEntityAssociationsListArgs, GetLogAnalyticsEntityAssociationsListResult, GetLogAnalyticsEntityAssociationsListOutputArgs } from "./getLogAnalyticsEntityAssociationsList";
+export const getLogAnalyticsEntityAssociationsList: typeof import("./getLogAnalyticsEntityAssociationsList").getLogAnalyticsEntityAssociationsList = null as any;
+export const getLogAnalyticsEntityAssociationsListOutput: typeof import("./getLogAnalyticsEntityAssociationsList").getLogAnalyticsEntityAssociationsListOutput = null as any;
+utilities.lazyLoad(exports, ["getLogAnalyticsEntityAssociationsList","getLogAnalyticsEntityAssociationsListOutput"], () => require("./getLogAnalyticsEntityAssociationsList"));
+
 export { GetLogAnalyticsEntityTopologyArgs, GetLogAnalyticsEntityTopologyResult, GetLogAnalyticsEntityTopologyOutputArgs } from "./getLogAnalyticsEntityTopology";
 export const getLogAnalyticsEntityTopology: typeof import("./getLogAnalyticsEntityTopology").getLogAnalyticsEntityTopology = null as any;
 export const getLogAnalyticsEntityTopologyOutput: typeof import("./getLogAnalyticsEntityTopology").getLogAnalyticsEntityTopologyOutput = null as any;
@@ -195,6 +200,16 @@ export type LogAnalyticsEntity = import("./logAnalyticsEntity").LogAnalyticsEnti
 export const LogAnalyticsEntity: typeof import("./logAnalyticsEntity").LogAnalyticsEntity = null as any;
 utilities.lazyLoad(exports, ["LogAnalyticsEntity"], () => require("./logAnalyticsEntity"));
 
+export { LogAnalyticsEntityAssociationsAddArgs, LogAnalyticsEntityAssociationsAddState } from "./logAnalyticsEntityAssociationsAdd";
+export type LogAnalyticsEntityAssociationsAdd = import("./logAnalyticsEntityAssociationsAdd").LogAnalyticsEntityAssociationsAdd;
+export const LogAnalyticsEntityAssociationsAdd: typeof import("./logAnalyticsEntityAssociationsAdd").LogAnalyticsEntityAssociationsAdd = null as any;
+utilities.lazyLoad(exports, ["LogAnalyticsEntityAssociationsAdd"], () => require("./logAnalyticsEntityAssociationsAdd"));
+
+export { LogAnalyticsEntityAssociationsRemoveArgs, LogAnalyticsEntityAssociationsRemoveState } from "./logAnalyticsEntityAssociationsRemove";
+export type LogAnalyticsEntityAssociationsRemove = import("./logAnalyticsEntityAssociationsRemove").LogAnalyticsEntityAssociationsRemove;
+export const LogAnalyticsEntityAssociationsRemove: typeof import("./logAnalyticsEntityAssociationsRemove").LogAnalyticsEntityAssociationsRemove = null as any;
+utilities.lazyLoad(exports, ["LogAnalyticsEntityAssociationsRemove"], () => require("./logAnalyticsEntityAssociationsRemove"));
+
 export { LogAnalyticsEntityTypeArgs, LogAnalyticsEntityTypeState } from "./logAnalyticsEntityType";
 export type LogAnalyticsEntityType = import("./logAnalyticsEntityType").LogAnalyticsEntityType;
 export const LogAnalyticsEntityType: typeof import("./logAnalyticsEntityType").LogAnalyticsEntityType = null as any;
@@ -282,6 +297,10 @@ const _module = {
         switch (type) {
             case "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity":
                 return new LogAnalyticsEntity(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd":
+                return new LogAnalyticsEntityAssociationsAdd(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove":
+                return new LogAnalyticsEntityAssociationsRemove(name, <any>undefined, { urn })
             case "oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType":
                 return new LogAnalyticsEntityType(name, <any>undefined, { urn })
             case "oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent":
@@ -320,6 +339,8 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntity", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntityAssociationsAdd", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntityAssociationsRemove", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntityType", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsImportCustomContent", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsLogGroup", _module)

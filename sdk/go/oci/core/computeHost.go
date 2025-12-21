@@ -36,6 +36,8 @@ type ComputeHost struct {
 	ComputeHostGroupId pulumi.StringOutput `pulumi:"computeHostGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId pulumi.StringOutput `pulumi:"computeHostId"`
+	// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+	ConfigurationActionType pulumi.StringPtrOutput `pulumi:"configurationActionType"`
 	// Compute Host Configuration Data
 	ConfigurationDatas ComputeHostConfigurationDataArrayOutput `pulumi:"configurationDatas"`
 	// Configuration state of the Compute Bare Metal Host.
@@ -46,10 +48,9 @@ type ComputeHost struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+	FirmwareBundleId pulumi.StringOutput `pulumi:"firmwareBundleId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
 	GpuMemoryFabricId pulumi.StringOutput `pulumi:"gpuMemoryFabricId"`
@@ -67,6 +68,8 @@ type ComputeHost struct {
 	LocalBlockId pulumi.StringOutput `pulumi:"localBlockId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 	NetworkBlockId pulumi.StringOutput `pulumi:"networkBlockId"`
+	// The platform of the host
+	Platform pulumi.StringOutput `pulumi:"platform"`
 	// Shows details about the last recycle performed on this host.
 	RecycleDetails ComputeHostRecycleDetailArrayOutput `pulumi:"recycleDetails"`
 	// The shape of host
@@ -126,6 +129,8 @@ type computeHostState struct {
 	ComputeHostGroupId *string `pulumi:"computeHostGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId *string `pulumi:"computeHostId"`
+	// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+	ConfigurationActionType *string `pulumi:"configurationActionType"`
 	// Compute Host Configuration Data
 	ConfigurationDatas []ComputeHostConfigurationData `pulumi:"configurationDatas"`
 	// Configuration state of the Compute Bare Metal Host.
@@ -136,10 +141,9 @@ type computeHostState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain *string `pulumi:"faultDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+	FirmwareBundleId *string `pulumi:"firmwareBundleId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
 	GpuMemoryFabricId *string `pulumi:"gpuMemoryFabricId"`
@@ -157,6 +161,8 @@ type computeHostState struct {
 	LocalBlockId *string `pulumi:"localBlockId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 	NetworkBlockId *string `pulumi:"networkBlockId"`
+	// The platform of the host
+	Platform *string `pulumi:"platform"`
 	// Shows details about the last recycle performed on this host.
 	RecycleDetails []ComputeHostRecycleDetail `pulumi:"recycleDetails"`
 	// The shape of host
@@ -184,6 +190,8 @@ type ComputeHostState struct {
 	ComputeHostGroupId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId pulumi.StringPtrInput
+	// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+	ConfigurationActionType pulumi.StringPtrInput
 	// Compute Host Configuration Data
 	ConfigurationDatas ComputeHostConfigurationDataArrayInput
 	// Configuration state of the Compute Bare Metal Host.
@@ -194,10 +202,9 @@ type ComputeHostState struct {
 	DisplayName pulumi.StringPtrInput
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+	FirmwareBundleId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
 	GpuMemoryFabricId pulumi.StringPtrInput
@@ -215,6 +222,8 @@ type ComputeHostState struct {
 	LocalBlockId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 	NetworkBlockId pulumi.StringPtrInput
+	// The platform of the host
+	Platform pulumi.StringPtrInput
 	// Shows details about the last recycle performed on this host.
 	RecycleDetails ComputeHostRecycleDetailArrayInput
 	// The shape of host
@@ -238,6 +247,8 @@ type computeHostArgs struct {
 	ComputeHostGroupId *string `pulumi:"computeHostGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId string `pulumi:"computeHostId"`
+	// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+	ConfigurationActionType *string `pulumi:"configurationActionType"`
 }
 
 // The set of arguments for constructing a ComputeHost resource.
@@ -246,6 +257,8 @@ type ComputeHostArgs struct {
 	ComputeHostGroupId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId pulumi.StringInput
+	// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+	ConfigurationActionType pulumi.StringPtrInput
 }
 
 func (ComputeHostArgs) ElementType() reflect.Type {
@@ -365,6 +378,11 @@ func (o ComputeHostOutput) ComputeHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeHost) pulumi.StringOutput { return v.ComputeHostId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+func (o ComputeHostOutput) ConfigurationActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ComputeHost) pulumi.StringPtrOutput { return v.ConfigurationActionType }).(pulumi.StringPtrOutput)
+}
+
 // Compute Host Configuration Data
 func (o ComputeHostOutput) ConfigurationDatas() ComputeHostConfigurationDataArrayOutput {
 	return o.ApplyT(func(v *ComputeHost) ComputeHostConfigurationDataArrayOutput { return v.ConfigurationDatas }).(ComputeHostConfigurationDataArrayOutput)
@@ -390,10 +408,12 @@ func (o ComputeHostOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeHost) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+func (o ComputeHostOutput) FirmwareBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ComputeHost) pulumi.StringOutput { return v.FirmwareBundleId }).(pulumi.StringOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ComputeHostOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ComputeHost) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -436,6 +456,11 @@ func (o ComputeHostOutput) LocalBlockId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 func (o ComputeHostOutput) NetworkBlockId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeHost) pulumi.StringOutput { return v.NetworkBlockId }).(pulumi.StringOutput)
+}
+
+// The platform of the host
+func (o ComputeHostOutput) Platform() pulumi.StringOutput {
+	return o.ApplyT(func(v *ComputeHost) pulumi.StringOutput { return v.Platform }).(pulumi.StringOutput)
 }
 
 // Shows details about the last recycle performed on this host.

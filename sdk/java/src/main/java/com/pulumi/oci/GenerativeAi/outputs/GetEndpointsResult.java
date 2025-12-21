@@ -16,6 +16,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetEndpointsResult {
     private String compartmentId;
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     private @Nullable String displayName;
     /**
      * @return The list of endpoint_collection.
@@ -24,6 +28,10 @@ public final class GetEndpointsResult {
     private List<GetEndpointsEndpointCollection> endpointCollections;
     private @Nullable List<GetEndpointsFilter> filters;
     private @Nullable String generativeAiPrivateEndpointId;
+    /**
+     * @return An OCID that uniquely identifies this endpoint resource.
+     * 
+     */
     private @Nullable String id;
     /**
      * @return The current state of the endpoint.
@@ -35,6 +43,10 @@ public final class GetEndpointsResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -51,6 +63,10 @@ public final class GetEndpointsResult {
     public Optional<String> generativeAiPrivateEndpointId() {
         return Optional.ofNullable(this.generativeAiPrivateEndpointId);
     }
+    /**
+     * @return An OCID that uniquely identifies this endpoint resource.
+     * 
+     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }

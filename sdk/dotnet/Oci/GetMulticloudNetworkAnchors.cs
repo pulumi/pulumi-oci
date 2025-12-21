@@ -28,21 +28,23 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testNetworkAnchors = Oci.Oci.GetMulticloudNetworkAnchors.Invoke(new()
         ///     {
-        ///         ExternalLocation = externalLocation,
+        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
-        ///         CompartmentId = compartmentId,
         ///         NetworkAnchorLifecycleState = networkAnchorLifecycleState,
         ///         DisplayName = displayName,
+        ///         ExternalLocation = externalLocation,
         ///         NetworkAnchorOciSubnetId = networkAnchorOciSubnetId,
+        ///         CompartmentIdInSubtree = compartmentIdInSubtree,
         ///         NetworkAnchorOciVcnId = networkAnchorOciVcnId,
         ///         Id = id,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Task<GetMulticloudNetworkAnchorsResult> InvokeAsync(GetMulticloudNetworkAnchorsArgs args, InvokeOptions? options = null)
+        public static Task<GetMulticloudNetworkAnchorsResult> InvokeAsync(GetMulticloudNetworkAnchorsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMulticloudNetworkAnchorsResult>("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", args ?? new GetMulticloudNetworkAnchorsArgs(), options.WithDefaults());
 
         /// <summary>
@@ -62,21 +64,23 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testNetworkAnchors = Oci.Oci.GetMulticloudNetworkAnchors.Invoke(new()
         ///     {
-        ///         ExternalLocation = externalLocation,
+        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
-        ///         CompartmentId = compartmentId,
         ///         NetworkAnchorLifecycleState = networkAnchorLifecycleState,
         ///         DisplayName = displayName,
+        ///         ExternalLocation = externalLocation,
         ///         NetworkAnchorOciSubnetId = networkAnchorOciSubnetId,
+        ///         CompartmentIdInSubtree = compartmentIdInSubtree,
         ///         NetworkAnchorOciVcnId = networkAnchorOciVcnId,
         ///         Id = id,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Output<GetMulticloudNetworkAnchorsResult> Invoke(GetMulticloudNetworkAnchorsInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetMulticloudNetworkAnchorsResult> Invoke(GetMulticloudNetworkAnchorsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMulticloudNetworkAnchorsResult>("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", args ?? new GetMulticloudNetworkAnchorsInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -96,15 +100,17 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testNetworkAnchors = Oci.Oci.GetMulticloudNetworkAnchors.Invoke(new()
         ///     {
-        ///         ExternalLocation = externalLocation,
+        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
-        ///         CompartmentId = compartmentId,
         ///         NetworkAnchorLifecycleState = networkAnchorLifecycleState,
         ///         DisplayName = displayName,
+        ///         ExternalLocation = externalLocation,
         ///         NetworkAnchorOciSubnetId = networkAnchorOciSubnetId,
+        ///         CompartmentIdInSubtree = compartmentIdInSubtree,
         ///         NetworkAnchorOciVcnId = networkAnchorOciVcnId,
         ///         Id = id,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
@@ -118,10 +124,16 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudNetworkAnchorsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public bool? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -130,15 +142,13 @@ namespace Pulumi.Oci.Oci
         public string? DisplayName { get; set; }
 
         /// <summary>
-        /// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+        /// The Cloud Service Provider region.
         /// </summary>
-        [Input("externalLocation", required: true)]
-        public string ExternalLocation { get; set; } = null!;
+        [Input("externalLocation")]
+        public string? ExternalLocation { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-        /// 
-        /// Note: one of the arguments `CompartmentId` or `Id` must be specified.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -165,16 +175,24 @@ namespace Pulumi.Oci.Oci
         public string? NetworkAnchorOciVcnId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the vcn display name, which may introduce additional latency.
+        /// 
+        /// Note: one of the arguments `CompartmentId` or `Id` must be specified.
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public string SubscriptionId { get; set; } = null!;
+        [Input("shouldFetchVcnName")]
+        public bool? ShouldFetchVcnName { get; set; }
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public string SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public string? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The subscription service name of the Cloud Service Provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public string? SubscriptionServiceName { get; set; }
 
         public GetMulticloudNetworkAnchorsArgs()
         {
@@ -185,10 +203,16 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudNetworkAnchorsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -197,15 +221,13 @@ namespace Pulumi.Oci.Oci
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// OMHub Control Plane must know underlying CSP CP Region External Location Name.
+        /// The Cloud Service Provider region.
         /// </summary>
-        [Input("externalLocation", required: true)]
-        public Input<string> ExternalLocation { get; set; } = null!;
+        [Input("externalLocation")]
+        public Input<string>? ExternalLocation { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-        /// 
-        /// Note: one of the arguments `CompartmentId` or `Id` must be specified.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -232,16 +254,24 @@ namespace Pulumi.Oci.Oci
         public Input<string>? NetworkAnchorOciVcnId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the vcn display name, which may introduce additional latency.
+        /// 
+        /// Note: one of the arguments `CompartmentId` or `Id` must be specified.
         /// </summary>
-        [Input("subscriptionId", required: true)]
-        public Input<string> SubscriptionId { get; set; } = null!;
+        [Input("shouldFetchVcnName")]
+        public Input<bool>? ShouldFetchVcnName { get; set; }
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
-        [Input("subscriptionServiceName", required: true)]
-        public Input<string> SubscriptionServiceName { get; set; } = null!;
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
+        /// <summary>
+        /// The subscription service name of the Cloud Service Provider.
+        /// </summary>
+        [Input("subscriptionServiceName")]
+        public Input<string>? SubscriptionServiceName { get; set; }
 
         public GetMulticloudNetworkAnchorsInvokeArgs()
         {
@@ -257,11 +287,12 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string? CompartmentId;
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.
         /// </summary>
         public readonly string? DisplayName;
-        public readonly string ExternalLocation;
+        public readonly string? ExternalLocation;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
         /// </summary>
@@ -277,16 +308,19 @@ namespace Pulumi.Oci.Oci
         public readonly string? NetworkAnchorLifecycleState;
         public readonly string? NetworkAnchorOciSubnetId;
         public readonly string? NetworkAnchorOciVcnId;
-        public readonly string SubscriptionId;
-        public readonly string SubscriptionServiceName;
+        public readonly bool? ShouldFetchVcnName;
+        public readonly string? SubscriptionId;
+        public readonly string? SubscriptionServiceName;
 
         [OutputConstructor]
         private GetMulticloudNetworkAnchorsResult(
             string? compartmentId,
 
+            bool? compartmentIdInSubtree,
+
             string? displayName,
 
-            string externalLocation,
+            string? externalLocation,
 
             string? id,
 
@@ -300,11 +334,14 @@ namespace Pulumi.Oci.Oci
 
             string? networkAnchorOciVcnId,
 
-            string subscriptionId,
+            bool? shouldFetchVcnName,
 
-            string subscriptionServiceName)
+            string? subscriptionId,
+
+            string? subscriptionServiceName)
         {
             CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             DisplayName = displayName;
             ExternalLocation = externalLocation;
             Id = id;
@@ -313,6 +350,7 @@ namespace Pulumi.Oci.Oci
             NetworkAnchorLifecycleState = networkAnchorLifecycleState;
             NetworkAnchorOciSubnetId = networkAnchorOciSubnetId;
             NetworkAnchorOciVcnId = networkAnchorOciVcnId;
+            ShouldFetchVcnName = shouldFetchVcnName;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
         }

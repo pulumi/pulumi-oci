@@ -31,6 +31,14 @@ __all__ = [
     'IntegrationInstanceNetworkEndpointDetailsArgsDict',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs',
     'IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgsDict',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs',
+    'IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgsDict',
+    'IntegrationInstanceNetworkEndpointDetailsRuntimeArgs',
+    'IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict',
+    'IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs',
+    'IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgsDict',
     'IntegrationInstancePrivateEndpointOutboundConnectionArgs',
     'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict',
     'GetIntegrationInstancesFilterArgs',
@@ -751,9 +759,17 @@ if not MYPY:
         """
         Virtual Cloud Networks allowed to access this network endpoint.
         """
+        design_time: NotRequired[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict']]
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
         is_integration_vcn_allowlisted: NotRequired[pulumi.Input[_builtins.bool]]
         """
         The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        """
+        runtime: NotRequired[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict']]
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         """
 elif False:
     IntegrationInstanceNetworkEndpointDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -764,20 +780,28 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
                  network_endpoint_type: pulumi.Input[_builtins.str],
                  allowlisted_http_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  allowlisted_http_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]]] = None,
-                 is_integration_vcn_allowlisted: Optional[pulumi.Input[_builtins.bool]] = None):
+                 design_time: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs']] = None,
+                 is_integration_vcn_allowlisted: Optional[pulumi.Input[_builtins.bool]] = None,
+                 runtime: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] network_endpoint_type: The type of network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs']]] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs'] design_time: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         :param pulumi.Input[_builtins.bool] is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+        :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeArgs'] runtime: A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
             pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         if allowlisted_http_vcns is not None:
             pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+        if design_time is not None:
+            pulumi.set(__self__, "design_time", design_time)
         if is_integration_vcn_allowlisted is not None:
             pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        if runtime is not None:
+            pulumi.set(__self__, "runtime", runtime)
 
     @_builtins.property
     @pulumi.getter(name="networkEndpointType")
@@ -816,6 +840,18 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
         pulumi.set(self, "allowlisted_http_vcns", value)
 
     @_builtins.property
+    @pulumi.getter(name="designTime")
+    def design_time(self) -> Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs']]:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "design_time")
+
+    @design_time.setter
+    def design_time(self, value: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs']]):
+        pulumi.set(self, "design_time", value)
+
+    @_builtins.property
     @pulumi.getter(name="isIntegrationVcnAllowlisted")
     def is_integration_vcn_allowlisted(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -826,6 +862,18 @@ class IntegrationInstanceNetworkEndpointDetailsArgs:
     @is_integration_vcn_allowlisted.setter
     def is_integration_vcn_allowlisted(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_integration_vcn_allowlisted", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def runtime(self) -> Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeArgs']]:
+        """
+        A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        """
+        return pulumi.get(self, "runtime")
+
+    @runtime.setter
+    def runtime(self, value: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeArgs']]):
+        pulumi.set(self, "runtime", value)
 
 
 if not MYPY:
@@ -880,7 +928,214 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs:
 
 
 if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict(TypedDict):
+        allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgsDict']]]]
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsDesignTimeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs:
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowlisted_http_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs']]] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        if allowlisted_http_ips is not None:
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        if allowlisted_http_vcns is not None:
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @allowlisted_http_ips.setter
+    def allowlisted_http_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowlisted_http_ips", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs']]]]:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+    @allowlisted_http_vcns.setter
+    def allowlisted_http_vcns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs']]]]):
+        pulumi.set(self, "allowlisted_http_vcns", value)
+
+
+if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgsDict(TypedDict):
+        id: pulumi.Input[_builtins.str]
+        """
+        The Virtual Cloud Network OCID.
+        """
+        allowlisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str],
+                 allowlisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The Virtual Cloud Network OCID.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        pulumi.set(__self__, "id", id)
+        if allowlisted_ips is not None:
+            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @allowlisted_ips.setter
+    def allowlisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowlisted_ips", value)
+
+
+if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict(TypedDict):
+        allowlisted_http_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        allowlisted_http_vcns: NotRequired[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgsDict']]]]
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsRuntimeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceNetworkEndpointDetailsRuntimeArgs:
+    def __init__(__self__, *,
+                 allowlisted_http_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 allowlisted_http_vcns: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs']]] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        if allowlisted_http_ips is not None:
+            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+        if allowlisted_http_vcns is not None:
+            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpIps")
+    def allowlisted_http_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_http_ips")
+
+    @allowlisted_http_ips.setter
+    def allowlisted_http_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowlisted_http_ips", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedHttpVcns")
+    def allowlisted_http_vcns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs']]]]:
+        """
+        Virtual Cloud Networks allowed to access this network endpoint.
+        """
+        return pulumi.get(self, "allowlisted_http_vcns")
+
+    @allowlisted_http_vcns.setter
+    def allowlisted_http_vcns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs']]]]):
+        pulumi.set(self, "allowlisted_http_vcns", value)
+
+
+if not MYPY:
+    class IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgsDict(TypedDict):
+        id: pulumi.Input[_builtins.str]
+        """
+        The Virtual Cloud Network OCID.
+        """
+        allowlisted_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+elif False:
+    IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str],
+                 allowlisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The Virtual Cloud Network OCID.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        pulumi.set(__self__, "id", id)
+        if allowlisted_ips is not None:
+            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Virtual Cloud Network OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowlistedIps")
+    def allowlisted_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+        """
+        return pulumi.get(self, "allowlisted_ips")
+
+    @allowlisted_ips.setter
+    def allowlisted_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allowlisted_ips", value)
+
+
+if not MYPY:
     class IntegrationInstancePrivateEndpointOutboundConnectionArgsDict(TypedDict):
+        is_all_outbound_traffic_private: NotRequired[pulumi.Input[_builtins.bool]]
         nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
         One or more Network security group Ids. This is an optional argument.
@@ -899,6 +1154,7 @@ elif False:
 @pulumi.input_type
 class IntegrationInstancePrivateEndpointOutboundConnectionArgs:
     def __init__(__self__, *,
+                 is_all_outbound_traffic_private: Optional[pulumi.Input[_builtins.bool]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  outbound_connection_type: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
@@ -907,12 +1163,23 @@ class IntegrationInstancePrivateEndpointOutboundConnectionArgs:
         :param pulumi.Input[_builtins.str] outbound_connection_type: The type of Outbound Connection.
         :param pulumi.Input[_builtins.str] subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
         """
+        if is_all_outbound_traffic_private is not None:
+            pulumi.set(__self__, "is_all_outbound_traffic_private", is_all_outbound_traffic_private)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if outbound_connection_type is not None:
             pulumi.set(__self__, "outbound_connection_type", outbound_connection_type)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllOutboundTrafficPrivate")
+    def is_all_outbound_traffic_private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_all_outbound_traffic_private")
+
+    @is_all_outbound_traffic_private.setter
+    def is_all_outbound_traffic_private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_all_outbound_traffic_private", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")

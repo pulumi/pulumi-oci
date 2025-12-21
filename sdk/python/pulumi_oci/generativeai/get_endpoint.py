@@ -109,11 +109,17 @@ class GetEndpointResult:
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the endpoint.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -124,6 +130,9 @@ class GetEndpointResult:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -134,6 +143,9 @@ class GetEndpointResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
+        """
+        An OCID that uniquely identifies this endpoint resource.
+        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -148,7 +160,7 @@ class GetEndpointResult:
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model used for the feature.
+        The OCID of the model that's used to create this endpoint.
         """
         return pulumi.get(self, "model_id")
 
@@ -171,11 +183,17 @@ class GetEndpointResult:
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_updated")
 
 

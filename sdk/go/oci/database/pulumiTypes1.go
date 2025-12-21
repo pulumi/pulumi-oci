@@ -13,6 +13,670 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDataGuardAssociationsDataGuardAssociation struct {
+	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
+	ApplyLag string `pulumi:"applyLag"`
+	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
+	ApplyRate               string                                                             `pulumi:"applyRate"`
+	AvailabilityDomain      string                                                             `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds     []string                                                           `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId string                                                             `pulumi:"clusterPlacementGroupId"`
+	ComputeCount            int                                                                `pulumi:"computeCount"`
+	ComputeModel            string                                                             `pulumi:"computeModel"`
+	CpuCoreCount            int                                                                `pulumi:"cpuCoreCount"`
+	CreateAsync             bool                                                               `pulumi:"createAsync"`
+	CreationType            string                                                             `pulumi:"creationType"`
+	DataCollectionOptions   []GetDataGuardAssociationsDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
+	DatabaseAdminPassword   string                                                             `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags     map[string]string                                                  `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags    map[string]string                                                  `pulumi:"databaseFreeformTags"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId                  string            `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     string            `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         map[string]string `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DbSystemSecurityAttributes  map[string]string `pulumi:"dbSystemSecurityAttributes"`
+	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 string            `pulumi:"displayName"`
+	Domain                      string            `pulumi:"domain"`
+	FaultDomains                []string          `pulumi:"faultDomains"`
+	Hostname                    string            `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+	Id string `pulumi:"id"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled bool   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             string `pulumi:"licenseModel"`
+	// Additional information about the current lifecycleState, if available.
+	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	MigrateTrigger   int      `pulumi:"migrateTrigger"`
+	NodeCount        int      `pulumi:"nodeCount"`
+	NsgIds           []string `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+	PeerDataGuardAssociationId string `pulumi:"peerDataGuardAssociationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
+	PeerDatabaseId string `pulumi:"peerDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+	PeerDbHomeId string `pulumi:"peerDbHomeId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
+	PeerDbSystemId   string `pulumi:"peerDbSystemId"`
+	PeerDbUniqueName string `pulumi:"peerDbUniqueName"`
+	// The role of the peer database in this Data Guard association.
+	PeerRole        string `pulumi:"peerRole"`
+	PeerSidPrefix   string `pulumi:"peerSidPrefix"`
+	PeerVmClusterId string `pulumi:"peerVmClusterId"`
+	PrivateIp       string `pulumi:"privateIp"`
+	PrivateIpV6     string `pulumi:"privateIpV6"`
+	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode string `pulumi:"protectionMode"`
+	// The role of the reporting database in this Data Guard association.
+	Role  string `pulumi:"role"`
+	Shape string `pulumi:"shape"`
+	// The current state of the Data Guard association.
+	State                        string `pulumi:"state"`
+	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     string `pulumi:"subnetId"`
+	SubscriptionId               string `pulumi:"subscriptionId"`
+	// The date and time the Data Guard association was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	TimeZone    string `pulumi:"timeZone"`
+	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	TransportType string `pulumi:"transportType"`
+}
+
+// GetDataGuardAssociationsDataGuardAssociationInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationArgs and GetDataGuardAssociationsDataGuardAssociationOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationInput` via:
+//
+//	GetDataGuardAssociationsDataGuardAssociationArgs{...}
+type GetDataGuardAssociationsDataGuardAssociationInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsDataGuardAssociationOutput() GetDataGuardAssociationsDataGuardAssociationOutput
+	ToGetDataGuardAssociationsDataGuardAssociationOutputWithContext(context.Context) GetDataGuardAssociationsDataGuardAssociationOutput
+}
+
+type GetDataGuardAssociationsDataGuardAssociationArgs struct {
+	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
+	ApplyLag pulumi.StringInput `pulumi:"applyLag"`
+	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
+	ApplyRate               pulumi.StringInput                                                         `pulumi:"applyRate"`
+	AvailabilityDomain      pulumi.StringInput                                                         `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds     pulumi.StringArrayInput                                                    `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId pulumi.StringInput                                                         `pulumi:"clusterPlacementGroupId"`
+	ComputeCount            pulumi.IntInput                                                            `pulumi:"computeCount"`
+	ComputeModel            pulumi.StringInput                                                         `pulumi:"computeModel"`
+	CpuCoreCount            pulumi.IntInput                                                            `pulumi:"cpuCoreCount"`
+	CreateAsync             pulumi.BoolInput                                                           `pulumi:"createAsync"`
+	CreationType            pulumi.StringInput                                                         `pulumi:"creationType"`
+	DataCollectionOptions   GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayInput `pulumi:"dataCollectionOptions"`
+	DatabaseAdminPassword   pulumi.StringInput                                                         `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags     pulumi.StringMapInput                                                      `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags    pulumi.StringMapInput                                                      `pulumi:"databaseFreeformTags"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId                  pulumi.StringInput      `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     pulumi.StringInput      `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         pulumi.StringMapInput   `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        pulumi.StringMapInput   `pulumi:"dbSystemFreeformTags"`
+	DbSystemSecurityAttributes  pulumi.StringMapInput   `pulumi:"dbSystemSecurityAttributes"`
+	DeleteStandbyDbHomeOnDelete pulumi.StringInput      `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 pulumi.StringInput      `pulumi:"displayName"`
+	Domain                      pulumi.StringInput      `pulumi:"domain"`
+	FaultDomains                pulumi.StringArrayInput `pulumi:"faultDomains"`
+	Hostname                    pulumi.StringInput      `pulumi:"hostname"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+	Id pulumi.StringInput `pulumi:"id"`
+	// True if active Data Guard is enabled.
+	IsActiveDataGuardEnabled pulumi.BoolInput   `pulumi:"isActiveDataGuardEnabled"`
+	LicenseModel             pulumi.StringInput `pulumi:"licenseModel"`
+	// Additional information about the current lifecycleState, if available.
+	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	MigrateTrigger   pulumi.IntInput         `pulumi:"migrateTrigger"`
+	NodeCount        pulumi.IntInput         `pulumi:"nodeCount"`
+	NsgIds           pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+	PeerDataGuardAssociationId pulumi.StringInput `pulumi:"peerDataGuardAssociationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
+	PeerDatabaseId pulumi.StringInput `pulumi:"peerDatabaseId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+	PeerDbHomeId pulumi.StringInput `pulumi:"peerDbHomeId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
+	PeerDbSystemId   pulumi.StringInput `pulumi:"peerDbSystemId"`
+	PeerDbUniqueName pulumi.StringInput `pulumi:"peerDbUniqueName"`
+	// The role of the peer database in this Data Guard association.
+	PeerRole        pulumi.StringInput `pulumi:"peerRole"`
+	PeerSidPrefix   pulumi.StringInput `pulumi:"peerSidPrefix"`
+	PeerVmClusterId pulumi.StringInput `pulumi:"peerVmClusterId"`
+	PrivateIp       pulumi.StringInput `pulumi:"privateIp"`
+	PrivateIpV6     pulumi.StringInput `pulumi:"privateIpV6"`
+	// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+	ProtectionMode pulumi.StringInput `pulumi:"protectionMode"`
+	// The role of the reporting database in this Data Guard association.
+	Role  pulumi.StringInput `pulumi:"role"`
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The current state of the Data Guard association.
+	State                        pulumi.StringInput `pulumi:"state"`
+	StorageVolumePerformanceMode pulumi.StringInput `pulumi:"storageVolumePerformanceMode"`
+	SubnetId                     pulumi.StringInput `pulumi:"subnetId"`
+	SubscriptionId               pulumi.StringInput `pulumi:"subscriptionId"`
+	// The date and time the Data Guard association was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeZone    pulumi.StringInput `pulumi:"timeZone"`
+	// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+	TransportType pulumi.StringInput `pulumi:"transportType"`
+}
+
+func (GetDataGuardAssociationsDataGuardAssociationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociation)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationArgs) ToGetDataGuardAssociationsDataGuardAssociationOutput() GetDataGuardAssociationsDataGuardAssociationOutput {
+	return i.ToGetDataGuardAssociationsDataGuardAssociationOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationArgs) ToGetDataGuardAssociationsDataGuardAssociationOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsDataGuardAssociationOutput)
+}
+
+// GetDataGuardAssociationsDataGuardAssociationArrayInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationArray and GetDataGuardAssociationsDataGuardAssociationArrayOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationArrayInput` via:
+//
+//	GetDataGuardAssociationsDataGuardAssociationArray{ GetDataGuardAssociationsDataGuardAssociationArgs{...} }
+type GetDataGuardAssociationsDataGuardAssociationArrayInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsDataGuardAssociationArrayOutput() GetDataGuardAssociationsDataGuardAssociationArrayOutput
+	ToGetDataGuardAssociationsDataGuardAssociationArrayOutputWithContext(context.Context) GetDataGuardAssociationsDataGuardAssociationArrayOutput
+}
+
+type GetDataGuardAssociationsDataGuardAssociationArray []GetDataGuardAssociationsDataGuardAssociationInput
+
+func (GetDataGuardAssociationsDataGuardAssociationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsDataGuardAssociation)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationArray) ToGetDataGuardAssociationsDataGuardAssociationArrayOutput() GetDataGuardAssociationsDataGuardAssociationArrayOutput {
+	return i.ToGetDataGuardAssociationsDataGuardAssociationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationArray) ToGetDataGuardAssociationsDataGuardAssociationArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsDataGuardAssociationArrayOutput)
+}
+
+type GetDataGuardAssociationsDataGuardAssociationOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsDataGuardAssociationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociation)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ToGetDataGuardAssociationsDataGuardAssociationOutput() GetDataGuardAssociationsDataGuardAssociationOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ToGetDataGuardAssociationsDataGuardAssociationOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationOutput {
+	return o
+}
+
+// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ApplyLag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ApplyLag }).(pulumi.StringOutput)
+}
+
+// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ApplyRate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ApplyRate }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) CreateAsync() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.CreateAsync }).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DataCollectionOptions() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []GetDataGuardAssociationsDataGuardAssociationDataCollectionOption {
+		return v.DataCollectionOptions
+	}).(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]string { return v.DatabaseDefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]string { return v.DatabaseFreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DbSystemDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]string { return v.DbSystemDefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DbSystemFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]string { return v.DbSystemFreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DbSystemSecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) map[string]string {
+		return v.DbSystemSecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DeleteStandbyDbHomeOnDelete }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// True if active Data Guard is enabled.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycleState, if available.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) MigrateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.MigrateTrigger }).(pulumi.IntOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerDataGuardAssociationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerDataGuardAssociationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerDatabaseId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home containing the associated peer database.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerDbHomeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerDbHomeId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system containing the associated peer database.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerDbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerDbUniqueName }).(pulumi.StringOutput)
+}
+
+// The role of the peer database in this Data Guard association.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerRole }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerSidPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerSidPrefix }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PeerVmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PeerVmClusterId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) PrivateIpV6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.PrivateIpV6 }).(pulumi.StringOutput)
+}
+
+// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) ProtectionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.ProtectionMode }).(pulumi.StringOutput)
+}
+
+// The role of the reporting database in this Data Guard association.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.Role }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The current state of the Data Guard association.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.StorageVolumePerformanceMode }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// The date and time the Data Guard association was created.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+// The redo transport type used by this Data Guard association.  For more information, see [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400) in the Oracle Data Guard documentation.
+func (o GetDataGuardAssociationsDataGuardAssociationOutput) TransportType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociation) string { return v.TransportType }).(pulumi.StringOutput)
+}
+
+type GetDataGuardAssociationsDataGuardAssociationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsDataGuardAssociationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsDataGuardAssociation)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationArrayOutput) ToGetDataGuardAssociationsDataGuardAssociationArrayOutput() GetDataGuardAssociationsDataGuardAssociationArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationArrayOutput) ToGetDataGuardAssociationsDataGuardAssociationArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationArrayOutput) Index(i pulumi.IntInput) GetDataGuardAssociationsDataGuardAssociationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataGuardAssociationsDataGuardAssociation {
+		return vs[0].([]GetDataGuardAssociationsDataGuardAssociation)[vs[1].(int)]
+	}).(GetDataGuardAssociationsDataGuardAssociationOutput)
+}
+
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOption struct {
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	IsHealthMonitoringEnabled  bool `pulumi:"isHealthMonitoringEnabled"`
+	IsIncidentLogsEnabled      bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs and GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput` via:
+//
+//	GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs{...}
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput
+	ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutputWithContext(context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput
+}
+
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs struct {
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	IsHealthMonitoringEnabled  pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	IsIncidentLogsEnabled      pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput {
+	return i.ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput)
+}
+
+// GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayInput is an input type that accepts GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray and GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayInput` via:
+//
+//	GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray{ GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs{...} }
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput
+	ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutputWithContext(context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput
+}
+
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray []GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput
+
+func (GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput {
+	return i.ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput)
+}
+
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociationDataCollectionOption) bool {
+		return v.IsDiagnosticsEventsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociationDataCollectionOption) bool {
+		return v.IsHealthMonitoringEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsDataGuardAssociationDataCollectionOption) bool {
+		return v.IsIncidentLogsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput) ToGetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataGuardAssociationsDataGuardAssociationDataCollectionOption {
+		return vs[0].([]GetDataGuardAssociationsDataGuardAssociationDataCollectionOption)[vs[1].(int)]
+	}).(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput)
+}
+
+type GetDataGuardAssociationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDataGuardAssociationsFilterInput is an input type that accepts GetDataGuardAssociationsFilterArgs and GetDataGuardAssociationsFilterOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsFilterInput` via:
+//
+//	GetDataGuardAssociationsFilterArgs{...}
+type GetDataGuardAssociationsFilterInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsFilterOutput() GetDataGuardAssociationsFilterOutput
+	ToGetDataGuardAssociationsFilterOutputWithContext(context.Context) GetDataGuardAssociationsFilterOutput
+}
+
+type GetDataGuardAssociationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDataGuardAssociationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsFilterArgs) ToGetDataGuardAssociationsFilterOutput() GetDataGuardAssociationsFilterOutput {
+	return i.ToGetDataGuardAssociationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsFilterArgs) ToGetDataGuardAssociationsFilterOutputWithContext(ctx context.Context) GetDataGuardAssociationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsFilterOutput)
+}
+
+// GetDataGuardAssociationsFilterArrayInput is an input type that accepts GetDataGuardAssociationsFilterArray and GetDataGuardAssociationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationsFilterArrayInput` via:
+//
+//	GetDataGuardAssociationsFilterArray{ GetDataGuardAssociationsFilterArgs{...} }
+type GetDataGuardAssociationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationsFilterArrayOutput() GetDataGuardAssociationsFilterArrayOutput
+	ToGetDataGuardAssociationsFilterArrayOutputWithContext(context.Context) GetDataGuardAssociationsFilterArrayOutput
+}
+
+type GetDataGuardAssociationsFilterArray []GetDataGuardAssociationsFilterInput
+
+func (GetDataGuardAssociationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationsFilterArray) ToGetDataGuardAssociationsFilterArrayOutput() GetDataGuardAssociationsFilterArrayOutput {
+	return i.ToGetDataGuardAssociationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationsFilterArray) ToGetDataGuardAssociationsFilterArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationsFilterArrayOutput)
+}
+
+type GetDataGuardAssociationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsFilterOutput) ToGetDataGuardAssociationsFilterOutput() GetDataGuardAssociationsFilterOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsFilterOutput) ToGetDataGuardAssociationsFilterOutputWithContext(ctx context.Context) GetDataGuardAssociationsFilterOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDataGuardAssociationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDataGuardAssociationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDataGuardAssociationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationsFilterArrayOutput) ToGetDataGuardAssociationsFilterArrayOutput() GetDataGuardAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsFilterArrayOutput) ToGetDataGuardAssociationsFilterArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetDataGuardAssociationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataGuardAssociationsFilter {
+		return vs[0].([]GetDataGuardAssociationsFilter)[vs[1].(int)]
+	}).(GetDataGuardAssociationsFilterOutput)
+}
+
 type GetDatabaseConnectionString struct {
 	// All connection strings to use to connect to the Database.
 	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
@@ -44906,6 +45570,12 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationArrayInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsFilterInput)(nil)).Elem(), GetDataGuardAssociationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsFilterArrayInput)(nil)).Elem(), GetDataGuardAssociationsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseConnectionStringInput)(nil)).Elem(), GetDatabaseConnectionStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseConnectionStringArrayInput)(nil)).Elem(), GetDatabaseConnectionStringArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupInput)(nil)).Elem(), GetDatabaseDataGuardGroupArgs{})
@@ -45516,6 +46186,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationArrayOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsFilterOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseConnectionStringOutput{})
 	pulumi.RegisterOutputType(GetDatabaseConnectionStringArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupOutput{})

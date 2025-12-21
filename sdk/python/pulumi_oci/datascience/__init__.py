@@ -15,6 +15,8 @@ from .get_job_shapes import *
 from .get_jobs import *
 from .get_ml_application import *
 from .get_ml_application_implementation import *
+from .get_ml_application_implementation_version import *
+from .get_ml_application_implementation_versions import *
 from .get_ml_application_implementations import *
 from .get_ml_application_instance import *
 from .get_ml_application_instances import *

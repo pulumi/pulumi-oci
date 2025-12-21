@@ -28,7 +28,7 @@ class GetShapesResult:
     """
     A collection of values returned by getShapes.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, image_id=None, shapes=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, image_id=None, shape=None, shapes=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetShapesResult:
         if image_id and not isinstance(image_id, str):
             raise TypeError("Expected argument 'image_id' to be a str")
         pulumi.set(__self__, "image_id", image_id)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if shapes and not isinstance(shapes, list):
             raise TypeError("Expected argument 'shapes' to be a list")
         pulumi.set(__self__, "shapes", shapes)
@@ -78,6 +81,11 @@ class GetShapesResult:
 
     @_builtins.property
     @pulumi.getter
+    def shape(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter
     def shapes(self) -> Sequence['outputs.GetShapesShapeResult']:
         """
         The list of shapes.
@@ -96,6 +104,7 @@ class AwaitableGetShapesResult(GetShapesResult):
             filters=self.filters,
             id=self.id,
             image_id=self.image_id,
+            shape=self.shape,
             shapes=self.shapes)
 
 
@@ -103,6 +112,7 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
                compartment_id: Optional[_builtins.str] = None,
                filters: Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]] = None,
                image_id: Optional[_builtins.str] = None,
+               shape: Optional[_builtins.str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapesResult:
     """
     This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
@@ -118,19 +128,22 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
 
     test_shapes = oci.Core.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
-        image_id=test_image["id"])
+        image_id=test_image["id"],
+        shape=shape_shape)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    :param _builtins.str shape: Shape name.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['imageId'] = image_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Core/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult).value
 
@@ -140,11 +153,13 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
+        shape=pulumi.get(__ret__, 'shape'),
         shapes=pulumi.get(__ret__, 'shapes'))
 def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
                       image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                      shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Shapes in Oracle Cloud Infrastructure Core service.
@@ -160,19 +175,22 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_built
 
     test_shapes = oci.Core.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
-        image_id=test_image["id"])
+        image_id=test_image["id"],
+        shape=shape_shape)
     ```
 
 
     :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
+    :param _builtins.str shape: Shape name.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['imageId'] = image_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getShapes:getShapes', __args__, opts=opts, typ=GetShapesResult)
     return __ret__.apply(lambda __response__: GetShapesResult(
@@ -181,4 +199,5 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_built
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         image_id=pulumi.get(__response__, 'image_id'),
+        shape=pulumi.get(__response__, 'shape'),
         shapes=pulumi.get(__response__, 'shapes')))

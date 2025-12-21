@@ -24,6 +24,11 @@ public final class ComputeHostGroupConfiguration {
      */
     private @Nullable String recycleLevel;
     /**
+     * @return (Updatable) The state of the host group configuration.
+     * 
+     */
+    private @Nullable String state;
+    /**
      * @return (Updatable) Either the platform name or compute shape that the configuration is targeting
      * 
      */
@@ -47,6 +52,13 @@ public final class ComputeHostGroupConfiguration {
         return Optional.ofNullable(this.recycleLevel);
     }
     /**
+     * @return (Updatable) The state of the host group configuration.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
+    }
+    /**
      * @return (Updatable) Either the platform name or compute shape that the configuration is targeting
      * 
      */
@@ -65,12 +77,14 @@ public final class ComputeHostGroupConfiguration {
     public static final class Builder {
         private @Nullable String firmwareBundleId;
         private @Nullable String recycleLevel;
+        private @Nullable String state;
         private @Nullable String target;
         public Builder() {}
         public Builder(ComputeHostGroupConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.firmwareBundleId = defaults.firmwareBundleId;
     	      this.recycleLevel = defaults.recycleLevel;
+    	      this.state = defaults.state;
     	      this.target = defaults.target;
         }
 
@@ -87,6 +101,12 @@ public final class ComputeHostGroupConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
         public Builder target(@Nullable String target) {
 
             this.target = target;
@@ -96,6 +116,7 @@ public final class ComputeHostGroupConfiguration {
             final var _resultValue = new ComputeHostGroupConfiguration();
             _resultValue.firmwareBundleId = firmwareBundleId;
             _resultValue.recycleLevel = recycleLevel;
+            _resultValue.state = state;
             _resultValue.target = target;
             return _resultValue;
         }

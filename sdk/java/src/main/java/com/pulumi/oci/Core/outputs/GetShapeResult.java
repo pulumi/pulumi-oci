@@ -24,6 +24,7 @@ public final class GetShapeResult {
      */
     private String id;
     private @Nullable String imageId;
+    private @Nullable String shape;
     private List<GetShapeShape> shapes;
 
     private GetShapeResult() {}
@@ -46,6 +47,9 @@ public final class GetShapeResult {
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
+    public Optional<String> shape() {
+        return Optional.ofNullable(this.shape);
+    }
     public List<GetShapeShape> shapes() {
         return this.shapes;
     }
@@ -64,6 +68,7 @@ public final class GetShapeResult {
         private @Nullable List<GetShapeFilter> filters;
         private String id;
         private @Nullable String imageId;
+        private @Nullable String shape;
         private List<GetShapeShape> shapes;
         public Builder() {}
         public Builder(GetShapeResult defaults) {
@@ -73,6 +78,7 @@ public final class GetShapeResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.imageId = defaults.imageId;
+    	      this.shape = defaults.shape;
     	      this.shapes = defaults.shapes;
         }
 
@@ -114,6 +120,12 @@ public final class GetShapeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shape(@Nullable String shape) {
+
+            this.shape = shape;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shapes(List<GetShapeShape> shapes) {
             if (shapes == null) {
               throw new MissingRequiredPropertyException("GetShapeResult", "shapes");
@@ -131,6 +143,7 @@ public final class GetShapeResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.imageId = imageId;
+            _resultValue.shape = shape;
             _resultValue.shapes = shapes;
             return _resultValue;
         }

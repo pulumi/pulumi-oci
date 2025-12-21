@@ -16,8 +16,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMulticloudExternalLocationsMetadataResult {
-    private String compartmentId;
+    /**
+     * @return Cluster Placement Group OCID
+     * 
+     */
+    private @Nullable String clusterPlacementGroupId;
+    private @Nullable String compartmentId;
     private @Nullable String entityType;
+    /**
+     * @return External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+     * 
+     */
+    private @Nullable String externalLocation;
     /**
      * @return The list of ExternalLocationsMetadata.
      * 
@@ -31,15 +41,30 @@ public final class GetMulticloudExternalLocationsMetadataResult {
     private String id;
     private @Nullable Integer limit;
     private @Nullable String linkedCompartmentId;
+    private @Nullable String logicalZone;
     private String subscriptionId;
     private String subscriptionServiceName;
 
     private GetMulticloudExternalLocationsMetadataResult() {}
-    public String compartmentId() {
-        return this.compartmentId;
+    /**
+     * @return Cluster Placement Group OCID
+     * 
+     */
+    public Optional<String> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public Optional<String> entityType() {
         return Optional.ofNullable(this.entityType);
+    }
+    /**
+     * @return External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+     * 
+     */
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
     }
     /**
      * @return The list of ExternalLocationsMetadata.
@@ -64,6 +89,9 @@ public final class GetMulticloudExternalLocationsMetadataResult {
     public Optional<String> linkedCompartmentId() {
         return Optional.ofNullable(this.linkedCompartmentId);
     }
+    public Optional<String> logicalZone() {
+        return Optional.ofNullable(this.logicalZone);
+    }
     public String subscriptionId() {
         return this.subscriptionId;
     }
@@ -80,34 +108,44 @@ public final class GetMulticloudExternalLocationsMetadataResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String clusterPlacementGroupId;
+        private @Nullable String compartmentId;
         private @Nullable String entityType;
+        private @Nullable String externalLocation;
         private List<GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection> externalLocationsMetadatumCollections;
         private @Nullable List<GetMulticloudExternalLocationsMetadataFilter> filters;
         private String id;
         private @Nullable Integer limit;
         private @Nullable String linkedCompartmentId;
+        private @Nullable String logicalZone;
         private String subscriptionId;
         private String subscriptionServiceName;
         public Builder() {}
         public Builder(GetMulticloudExternalLocationsMetadataResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.entityType = defaults.entityType;
+    	      this.externalLocation = defaults.externalLocation;
     	      this.externalLocationsMetadatumCollections = defaults.externalLocationsMetadatumCollections;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.limit = defaults.limit;
     	      this.linkedCompartmentId = defaults.linkedCompartmentId;
+    	      this.logicalZone = defaults.logicalZone;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataResult", "compartmentId");
-            }
+        public Builder clusterPlacementGroupId(@Nullable String clusterPlacementGroupId) {
+
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }
@@ -115,6 +153,12 @@ public final class GetMulticloudExternalLocationsMetadataResult {
         public Builder entityType(@Nullable String entityType) {
 
             this.entityType = entityType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocation(@Nullable String externalLocation) {
+
+            this.externalLocation = externalLocation;
             return this;
         }
         @CustomType.Setter
@@ -158,6 +202,12 @@ public final class GetMulticloudExternalLocationsMetadataResult {
             return this;
         }
         @CustomType.Setter
+        public Builder logicalZone(@Nullable String logicalZone) {
+
+            this.logicalZone = logicalZone;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             if (subscriptionId == null) {
               throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataResult", "subscriptionId");
@@ -175,13 +225,16 @@ public final class GetMulticloudExternalLocationsMetadataResult {
         }
         public GetMulticloudExternalLocationsMetadataResult build() {
             final var _resultValue = new GetMulticloudExternalLocationsMetadataResult();
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.entityType = entityType;
+            _resultValue.externalLocation = externalLocation;
             _resultValue.externalLocationsMetadatumCollections = externalLocationsMetadatumCollections;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.limit = limit;
             _resultValue.linkedCompartmentId = linkedCompartmentId;
+            _resultValue.logicalZone = logicalZone;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
             return _resultValue;

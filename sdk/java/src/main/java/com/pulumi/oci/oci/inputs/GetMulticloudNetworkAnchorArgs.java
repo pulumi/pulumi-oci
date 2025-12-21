@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -47,6 +48,21 @@ public final class GetMulticloudNetworkAnchorArgs extends com.pulumi.resources.I
     }
 
     /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     * 
+     */
+    @Import(name="shouldFetchVcnName")
+    private @Nullable Output<Boolean> shouldFetchVcnName;
+
+    /**
+     * @return Whether to fetch and include the vcn display name, which may introduce additional latency.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldFetchVcnName() {
+        return Optional.ofNullable(this.shouldFetchVcnName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      * 
      */
@@ -81,6 +97,7 @@ public final class GetMulticloudNetworkAnchorArgs extends com.pulumi.resources.I
     private GetMulticloudNetworkAnchorArgs(GetMulticloudNetworkAnchorArgs $) {
         this.externalLocation = $.externalLocation;
         this.networkAnchorId = $.networkAnchorId;
+        this.shouldFetchVcnName = $.shouldFetchVcnName;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -143,6 +160,27 @@ public final class GetMulticloudNetworkAnchorArgs extends com.pulumi.resources.I
          */
         public Builder networkAnchorId(String networkAnchorId) {
             return networkAnchorId(Output.of(networkAnchorId));
+        }
+
+        /**
+         * @param shouldFetchVcnName Whether to fetch and include the vcn display name, which may introduce additional latency.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldFetchVcnName(@Nullable Output<Boolean> shouldFetchVcnName) {
+            $.shouldFetchVcnName = shouldFetchVcnName;
+            return this;
+        }
+
+        /**
+         * @param shouldFetchVcnName Whether to fetch and include the vcn display name, which may introduce additional latency.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldFetchVcnName(Boolean shouldFetchVcnName) {
+            return shouldFetchVcnName(Output.of(shouldFetchVcnName));
         }
 
         /**

@@ -570,6 +570,16 @@ export const getFastConnectProviderServices: typeof import("./getFastConnectProv
 export const getFastConnectProviderServicesOutput: typeof import("./getFastConnectProviderServices").getFastConnectProviderServicesOutput = null as any;
 utilities.lazyLoad(exports, ["getFastConnectProviderServices","getFastConnectProviderServicesOutput"], () => require("./getFastConnectProviderServices"));
 
+export { GetFirmwareBundleArgs, GetFirmwareBundleResult, GetFirmwareBundleOutputArgs } from "./getFirmwareBundle";
+export const getFirmwareBundle: typeof import("./getFirmwareBundle").getFirmwareBundle = null as any;
+export const getFirmwareBundleOutput: typeof import("./getFirmwareBundle").getFirmwareBundleOutput = null as any;
+utilities.lazyLoad(exports, ["getFirmwareBundle","getFirmwareBundleOutput"], () => require("./getFirmwareBundle"));
+
+export { GetFirmwareBundlesArgs, GetFirmwareBundlesResult, GetFirmwareBundlesOutputArgs } from "./getFirmwareBundles";
+export const getFirmwareBundles: typeof import("./getFirmwareBundles").getFirmwareBundles = null as any;
+export const getFirmwareBundlesOutput: typeof import("./getFirmwareBundles").getFirmwareBundlesOutput = null as any;
+utilities.lazyLoad(exports, ["getFirmwareBundles","getFirmwareBundlesOutput"], () => require("./getFirmwareBundles"));
+
 export { GetImageArgs, GetImageResult, GetImageOutputArgs } from "./getImage";
 export const getImage: typeof import("./getImage").getImage = null as any;
 export const getImageOutput: typeof import("./getImage").getImageOutput = null as any;

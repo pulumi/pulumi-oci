@@ -20,6 +20,7 @@ import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemO
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberLoadBalancerMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberManagedNodePoolConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberNetworkLoadBalancerMappingArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberResourceModifierMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVaultMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs;
@@ -593,6 +594,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    @Import(name="resourceModifierMappings")
+    private @Nullable Output<List<DrProtectionGroupMemberResourceModifierMappingArgs>> resourceModifierMappings;
+
+    /**
+     * @return (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+     * 
+     */
+    public Optional<Output<List<DrProtectionGroupMemberResourceModifierMappingArgs>>> resourceModifierMappings() {
+        return Optional.ofNullable(this.resourceModifierMappings);
+    }
+
+    /**
      * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
      * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
@@ -715,6 +731,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.passwordVaultSecretId = $.passwordVaultSecretId;
         this.peerClusterId = $.peerClusterId;
         this.peerDbSystemId = $.peerDbSystemId;
+        this.resourceModifierMappings = $.resourceModifierMappings;
         this.sourceVolumeToDestinationEncryptionKeyMappings = $.sourceVolumeToDestinationEncryptionKeyMappings;
         this.vaultMappings = $.vaultMappings;
         this.virtualNodePoolConfigs = $.virtualNodePoolConfigs;
@@ -1585,6 +1602,37 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder peerDbSystemId(String peerDbSystemId) {
             return peerDbSystemId(Output.of(peerDbSystemId));
+        }
+
+        /**
+         * @param resourceModifierMappings (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceModifierMappings(@Nullable Output<List<DrProtectionGroupMemberResourceModifierMappingArgs>> resourceModifierMappings) {
+            $.resourceModifierMappings = resourceModifierMappings;
+            return this;
+        }
+
+        /**
+         * @param resourceModifierMappings (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceModifierMappings(List<DrProtectionGroupMemberResourceModifierMappingArgs> resourceModifierMappings) {
+            return resourceModifierMappings(Output.of(resourceModifierMappings));
+        }
+
+        /**
+         * @param resourceModifierMappings (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceModifierMappings(DrProtectionGroupMemberResourceModifierMappingArgs... resourceModifierMappings) {
+            return resourceModifierMappings(List.of(resourceModifierMappings));
         }
 
         /**

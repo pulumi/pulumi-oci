@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The shape used to launch the model deployment instances.
+        /// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         /// </summary>
         [Input("instanceShapeName", required: true)]
         public Input<string> InstanceShapeName { get; set; } = null!;

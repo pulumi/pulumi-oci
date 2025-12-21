@@ -99,6 +99,7 @@ import (
 //						},
 //					},
 //					ServiceLbConfig: &containerengine.ClusterOptionsServiceLbConfigArgs{
+//						BackendNsgIds: pulumi.Any(clusterOptionsServiceLbConfigBackendNsgIds),
 //						DefinedTags: pulumi.StringMap{
 //							"Operations.CostCenter": pulumi.String("42"),
 //						},

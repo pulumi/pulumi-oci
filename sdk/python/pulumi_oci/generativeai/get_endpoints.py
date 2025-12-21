@@ -59,6 +59,9 @@ class GetEndpointsResult:
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -82,6 +85,9 @@ class GetEndpointsResult:
     @_builtins.property
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
+        """
+        An OCID that uniquely identifies this endpoint resource.
+        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -128,7 +134,7 @@ def get_endpoints(compartment_id: Optional[_builtins.str] = None,
 
     test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
         display_name=endpoint_display_name,
-        generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"],
+        generative_ai_private_endpoint_id=test_private_endpoint["id"],
         id=endpoint_id,
         state=endpoint_state)
     ```
@@ -178,7 +184,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
 
     test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
         display_name=endpoint_display_name,
-        generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"],
+        generative_ai_private_endpoint_id=test_private_endpoint["id"],
         id=endpoint_id,
         state=endpoint_state)
     ```

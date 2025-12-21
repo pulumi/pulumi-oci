@@ -119,6 +119,8 @@ from .get_drgs import *
 from .get_fast_connect_provider_service import *
 from .get_fast_connect_provider_service_key import *
 from .get_fast_connect_provider_services import *
+from .get_firmware_bundle import *
+from .get_firmware_bundles import *
 from .get_image import *
 from .get_image_shape import *
 from .get_image_shapes import *

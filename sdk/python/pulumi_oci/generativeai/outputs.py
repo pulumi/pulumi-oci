@@ -52,6 +52,7 @@ __all__ = [
     'AgentToolToolConfigTableAndColumnDescription',
     'DedicatedAiClusterCapacity',
     'EndpointContentModerationConfig',
+    'ImportedModelDataSource',
     'ModelFineTuneDetails',
     'ModelFineTuneDetailsTrainingConfig',
     'ModelFineTuneDetailsTrainingDataset',
@@ -155,6 +156,11 @@ __all__ = [
     'GetGenerativeAiPrivateEndpointsFilterResult',
     'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionResult',
     'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult',
+    'GetImportedModelDataSourceResult',
+    'GetImportedModelsFilterResult',
+    'GetImportedModelsImportedModelCollectionResult',
+    'GetImportedModelsImportedModelCollectionItemResult',
+    'GetImportedModelsImportedModelCollectionItemDataSourceResult',
     'GetModelFineTuneDetailResult',
     'GetModelFineTuneDetailTrainingConfigResult',
     'GetModelFineTuneDetailTrainingDatasetResult',
@@ -2366,6 +2372,144 @@ class EndpointContentModerationConfig(dict):
         (Updatable) The OCID of the model used for the feature.
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class ImportedModelDataSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessToken":
+            suggest = "access_token"
+        elif key == "modelId":
+            suggest = "model_id"
+        elif key == "prefixName":
+            suggest = "prefix_name"
+        elif key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ImportedModelDataSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ImportedModelDataSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ImportedModelDataSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 access_token: Optional[_builtins.str] = None,
+                 branch: Optional[_builtins.str] = None,
+                 bucket: Optional[_builtins.str] = None,
+                 commit: Optional[_builtins.str] = None,
+                 model_id: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 prefix_name: Optional[_builtins.str] = None,
+                 region: Optional[_builtins.str] = None,
+                 source_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str access_token: Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
+        :param _builtins.str branch: The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
+        :param _builtins.str bucket: The name of the Object Storage bucket.
+        :param _builtins.str commit: The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
+        :param _builtins.str model_id: The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
+        :param _builtins.str namespace: The namespace of the Object Storage where the files are stored.
+        :param _builtins.str prefix_name: The prefix path (or folder) within the bucket where files are located.
+        :param _builtins.str region: The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
+        :param _builtins.str source_type: Specifies the source type for model import.
+        """
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if branch is not None:
+            pulumi.set(__self__, "branch", branch)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if commit is not None:
+            pulumi.set(__self__, "commit", commit)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix_name is not None:
+            pulumi.set(__self__, "prefix_name", prefix_name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if source_type is not None:
+            pulumi.set(__self__, "source_type", source_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> Optional[_builtins.str]:
+        """
+        Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
+        """
+        return pulumi.get(self, "access_token")
+
+    @_builtins.property
+    @pulumi.getter
+    def branch(self) -> Optional[_builtins.str]:
+        """
+        The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
+        """
+        return pulumi.get(self, "branch")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        The name of the Object Storage bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def commit(self) -> Optional[_builtins.str]:
+        """
+        The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
+        """
+        return pulumi.get(self, "commit")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        The namespace of the Object Storage where the files are stored.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="prefixName")
+    def prefix_name(self) -> Optional[_builtins.str]:
+        """
+        The prefix path (or folder) within the bucket where files are located.
+        """
+        return pulumi.get(self, "prefix_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> Optional[_builtins.str]:
+        """
+        The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> Optional[_builtins.str]:
+        """
+        Specifies the source type for model import.
+        """
+        return pulumi.get(self, "source_type")
 
 
 @pulumi.output_type
@@ -6892,6 +7036,11 @@ class GetDedicatedAiClusterCapacityResult(dict):
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
+        """
+        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
+        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
+        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
+        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -6899,16 +7048,25 @@ class GetDedicatedAiClusterCapacityResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
+        """
+        The type of the dedicated AI cluster capacity.
+        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
+        """
+        The total number of endpoints that can be hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
+        """
+        The number of endpoints hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 
@@ -6943,15 +7101,18 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
                  unit_count: _builtins.int,
                  unit_shape: _builtins.str):
         """
+        :param Sequence['GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs'] capacities: The total capacity for a dedicated AI cluster.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str description: An optional description of the dedicated AI cluster.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
         :param _builtins.str lifecycle_details: A message describing the current state with detail that can provide actionable information.
         :param _builtins.str state: A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
         :param _builtins.str time_updated: The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+        :param _builtins.str type: The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
         :param _builtins.int unit_count: The number of dedicated units in this AI cluster.
         :param _builtins.str unit_shape: The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
         """
@@ -6974,6 +7135,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult']:
+        """
+        The total capacity for a dedicated AI cluster.
+        """
         return pulumi.get(self, "capacities")
 
     @_builtins.property
@@ -6995,9 +7159,6 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
-        """
-        An optional description of the dedicated AI cluster.
-        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -7011,6 +7172,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -7048,6 +7212,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
@@ -7061,6 +7228,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property
@@ -7086,6 +7256,11 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
+        """
+        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
+        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
+        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
+        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -7093,16 +7268,25 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
+        """
+        The type of the dedicated AI cluster capacity.
+        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
+        """
+        The total number of endpoints that can be hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
+        """
+        The number of endpoints hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 
@@ -7142,7 +7326,7 @@ class GetEndpointContentModerationConfigResult(dict):
         """
         :param _builtins.bool is_enabled: Whether to enable the content moderation feature.
         :param _builtins.str mode: Enum for the modes of operation for inference protection.
-        :param _builtins.str model_id: The OCID of the model used for the feature.
+        :param _builtins.str model_id: The OCID of the model that's used to create this endpoint.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "mode", mode)
@@ -7168,7 +7352,7 @@ class GetEndpointContentModerationConfigResult(dict):
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model used for the feature.
+        The OCID of the model that's used to create this endpoint.
         """
         return pulumi.get(self, "model_id")
 
@@ -7208,13 +7392,17 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         :param Sequence['GetEndpointsEndpointCollectionItemContentModerationConfigArgs'] content_moderation_configs: The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param _builtins.str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which the model will be deployed to.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the endpoint.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str generative_ai_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
         :param _builtins.str lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
-        :param _builtins.str model_id: The OCID of the model used for the feature.
+        :param _builtins.str model_id: The OCID of the model that's used to create this endpoint.
         :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+        :param _builtins.str time_updated: The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "content_moderation_configs", content_moderation_configs)
@@ -7267,6 +7455,9 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the endpoint.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -7280,6 +7471,9 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -7310,7 +7504,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model used for the feature.
+        The OCID of the model that's used to create this endpoint.
         """
         return pulumi.get(self, "model_id")
 
@@ -7333,11 +7527,17 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
+        """
+        The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+        """
         return pulumi.get(self, "time_updated")
 
 
@@ -7350,7 +7550,7 @@ class GetEndpointsEndpointCollectionItemContentModerationConfigResult(dict):
         """
         :param _builtins.bool is_enabled: Whether to enable the content moderation feature.
         :param _builtins.str mode: Enum for the modes of operation for inference protection.
-        :param _builtins.str model_id: The OCID of the model used for the feature.
+        :param _builtins.str model_id: The OCID of the model that's used to create this endpoint.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
         pulumi.set(__self__, "mode", mode)
@@ -7376,7 +7576,7 @@ class GetEndpointsEndpointCollectionItemContentModerationConfigResult(dict):
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model used for the feature.
+        The OCID of the model that's used to create this endpoint.
         """
         return pulumi.get(self, "model_id")
 
@@ -7610,16 +7810,325 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
 
 
 @pulumi.output_type
+class GetImportedModelDataSourceResult(dict):
+    def __init__(__self__, *,
+                 access_token: _builtins.str,
+                 branch: _builtins.str,
+                 bucket: _builtins.str,
+                 commit: _builtins.str,
+                 model_id: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix_name: _builtins.str,
+                 region: _builtins.str,
+                 source_type: _builtins.str):
+        pulumi.set(__self__, "access_token", access_token)
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "commit", commit)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix_name", prefix_name)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> _builtins.str:
+        return pulumi.get(self, "access_token")
+
+    @_builtins.property
+    @pulumi.getter
+    def branch(self) -> _builtins.str:
+        return pulumi.get(self, "branch")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def commit(self) -> _builtins.str:
+        return pulumi.get(self, "commit")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="prefixName")
+    def prefix_name(self) -> _builtins.str:
+        return pulumi.get(self, "prefix_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
+class GetImportedModelsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetImportedModelsImportedModelCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetImportedModelsImportedModelCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetImportedModelsImportedModelCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetImportedModelsImportedModelCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 capabilities: Sequence[_builtins.str],
+                 compartment_id: _builtins.str,
+                 data_sources: Sequence['outputs.GetImportedModelsImportedModelCollectionItemDataSourceResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 previous_state: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vendor: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str id: The ID of the importedModel.
+        :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param _builtins.str vendor: A filter to return only resources that match the entire vendor given.
+        """
+        pulumi.set(__self__, "capabilities", capabilities)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_sources", data_sources)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "previous_state", previous_state)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vendor", vendor)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "capabilities")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataSources")
+    def data_sources(self) -> Sequence['outputs.GetImportedModelsImportedModelCollectionItemDataSourceResult']:
+        return pulumi.get(self, "data_sources")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The ID of the importedModel.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="previousState")
+    def previous_state(self) -> _builtins.str:
+        return pulumi.get(self, "previous_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire vendor given.
+        """
+        return pulumi.get(self, "vendor")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetImportedModelsImportedModelCollectionItemDataSourceResult(dict):
+    def __init__(__self__, *,
+                 access_token: _builtins.str,
+                 branch: _builtins.str,
+                 bucket: _builtins.str,
+                 commit: _builtins.str,
+                 model_id: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix_name: _builtins.str,
+                 region: _builtins.str,
+                 source_type: _builtins.str):
+        pulumi.set(__self__, "access_token", access_token)
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "commit", commit)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix_name", prefix_name)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> _builtins.str:
+        return pulumi.get(self, "access_token")
+
+    @_builtins.property
+    @pulumi.getter
+    def branch(self) -> _builtins.str:
+        return pulumi.get(self, "branch")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def commit(self) -> _builtins.str:
+        return pulumi.get(self, "commit")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="prefixName")
+    def prefix_name(self) -> _builtins.str:
+        return pulumi.get(self, "prefix_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
 class GetModelFineTuneDetailResult(dict):
     def __init__(__self__, *,
                  dedicated_ai_cluster_id: _builtins.str,
                  training_configs: Sequence['outputs.GetModelFineTuneDetailTrainingConfigResult'],
                  training_datasets: Sequence['outputs.GetModelFineTuneDetailTrainingDatasetResult']):
-        """
-        :param _builtins.str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
-        :param Sequence['GetModelFineTuneDetailTrainingConfigArgs'] training_configs: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-        :param Sequence['GetModelFineTuneDetailTrainingDatasetArgs'] training_datasets: The dataset used to fine-tune the model.
-        """
         pulumi.set(__self__, "dedicated_ai_cluster_id", dedicated_ai_cluster_id)
         pulumi.set(__self__, "training_configs", training_configs)
         pulumi.set(__self__, "training_datasets", training_datasets)
@@ -7627,25 +8136,16 @@ class GetModelFineTuneDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="dedicatedAiClusterId")
     def dedicated_ai_cluster_id(self) -> _builtins.str:
-        """
-        The OCID of the dedicated AI cluster this fine-tuning runs on.
-        """
         return pulumi.get(self, "dedicated_ai_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="trainingConfigs")
     def training_configs(self) -> Sequence['outputs.GetModelFineTuneDetailTrainingConfigResult']:
-        """
-        The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-        """
         return pulumi.get(self, "training_configs")
 
     @_builtins.property
     @pulumi.getter(name="trainingDatasets")
     def training_datasets(self) -> Sequence['outputs.GetModelFineTuneDetailTrainingDatasetResult']:
-        """
-        The dataset used to fine-tune the model.
-        """
         return pulumi.get(self, "training_datasets")
 
 
@@ -7663,19 +8163,6 @@ class GetModelFineTuneDetailTrainingConfigResult(dict):
                  total_training_epochs: _builtins.int,
                  training_batch_size: _builtins.int,
                  training_config_type: _builtins.str):
-        """
-        :param _builtins.int early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        :param _builtins.float early_stopping_threshold: How much the loss must improve to prevent early stopping.
-        :param _builtins.float learning_rate: The initial learning rate to be used during training
-        :param _builtins.int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics.
-        :param _builtins.int lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
-        :param _builtins.float lora_dropout: This parameter indicates the dropout probability for LoRA layers.
-        :param _builtins.int lora_r: This parameter represents the LoRA rank of the update matrices.
-        :param _builtins.int num_of_last_layers: The number of last layers to be fine-tuned.
-        :param _builtins.int total_training_epochs: The maximum number of training epochs to run for.
-        :param _builtins.int training_batch_size: The batch size used during training.
-        :param _builtins.str training_config_type: The fine-tuning method for training a custom model.
-        """
         pulumi.set(__self__, "early_stopping_patience", early_stopping_patience)
         pulumi.set(__self__, "early_stopping_threshold", early_stopping_threshold)
         pulumi.set(__self__, "learning_rate", learning_rate)
@@ -7691,89 +8178,56 @@ class GetModelFineTuneDetailTrainingConfigResult(dict):
     @_builtins.property
     @pulumi.getter(name="earlyStoppingPatience")
     def early_stopping_patience(self) -> _builtins.int:
-        """
-        Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        """
         return pulumi.get(self, "early_stopping_patience")
 
     @_builtins.property
     @pulumi.getter(name="earlyStoppingThreshold")
     def early_stopping_threshold(self) -> _builtins.float:
-        """
-        How much the loss must improve to prevent early stopping.
-        """
         return pulumi.get(self, "early_stopping_threshold")
 
     @_builtins.property
     @pulumi.getter(name="learningRate")
     def learning_rate(self) -> _builtins.float:
-        """
-        The initial learning rate to be used during training
-        """
         return pulumi.get(self, "learning_rate")
 
     @_builtins.property
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
     def log_model_metrics_interval_in_steps(self) -> _builtins.int:
-        """
-        Determines how frequently to log model metrics.
-        """
         return pulumi.get(self, "log_model_metrics_interval_in_steps")
 
     @_builtins.property
     @pulumi.getter(name="loraAlpha")
     def lora_alpha(self) -> _builtins.int:
-        """
-        This parameter represents the scaling factor for the weight matrices in LoRA.
-        """
         return pulumi.get(self, "lora_alpha")
 
     @_builtins.property
     @pulumi.getter(name="loraDropout")
     def lora_dropout(self) -> _builtins.float:
-        """
-        This parameter indicates the dropout probability for LoRA layers.
-        """
         return pulumi.get(self, "lora_dropout")
 
     @_builtins.property
     @pulumi.getter(name="loraR")
     def lora_r(self) -> _builtins.int:
-        """
-        This parameter represents the LoRA rank of the update matrices.
-        """
         return pulumi.get(self, "lora_r")
 
     @_builtins.property
     @pulumi.getter(name="numOfLastLayers")
     def num_of_last_layers(self) -> _builtins.int:
-        """
-        The number of last layers to be fine-tuned.
-        """
         return pulumi.get(self, "num_of_last_layers")
 
     @_builtins.property
     @pulumi.getter(name="totalTrainingEpochs")
     def total_training_epochs(self) -> _builtins.int:
-        """
-        The maximum number of training epochs to run for.
-        """
         return pulumi.get(self, "total_training_epochs")
 
     @_builtins.property
     @pulumi.getter(name="trainingBatchSize")
     def training_batch_size(self) -> _builtins.int:
-        """
-        The batch size used during training.
-        """
         return pulumi.get(self, "training_batch_size")
 
     @_builtins.property
     @pulumi.getter(name="trainingConfigType")
     def training_config_type(self) -> _builtins.str:
-        """
-        The fine-tuning method for training a custom model.
-        """
         return pulumi.get(self, "training_config_type")
 
 
@@ -7784,12 +8238,6 @@ class GetModelFineTuneDetailTrainingDatasetResult(dict):
                  dataset_type: _builtins.str,
                  namespace: _builtins.str,
                  object: _builtins.str):
-        """
-        :param _builtins.str bucket: The Object Storage bucket name.
-        :param _builtins.str dataset_type: The type of the data asset.
-        :param _builtins.str namespace: The Object Storage namespace.
-        :param _builtins.str object: The Object Storage object name.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "dataset_type", dataset_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -7798,33 +8246,21 @@ class GetModelFineTuneDetailTrainingDatasetResult(dict):
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> _builtins.str:
-        """
-        The Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @_builtins.property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
-        """
-        The type of the data asset.
-        """
         return pulumi.get(self, "dataset_type")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
-        """
-        The Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
     @pulumi.getter
     def object(self) -> _builtins.str:
-        """
-        The Object Storage object name.
-        """
         return pulumi.get(self, "object")
 
 
@@ -7834,11 +8270,6 @@ class GetModelModelMetricResult(dict):
                  final_accuracy: _builtins.float,
                  final_loss: _builtins.float,
                  model_metrics_type: _builtins.str):
-        """
-        :param _builtins.float final_accuracy: Fine-tuned model accuracy.
-        :param _builtins.float final_loss: Fine-tuned model loss.
-        :param _builtins.str model_metrics_type: The type of the model metrics. Each type of model can expect a different set of model metrics.
-        """
         pulumi.set(__self__, "final_accuracy", final_accuracy)
         pulumi.set(__self__, "final_loss", final_loss)
         pulumi.set(__self__, "model_metrics_type", model_metrics_type)
@@ -7846,25 +8277,16 @@ class GetModelModelMetricResult(dict):
     @_builtins.property
     @pulumi.getter(name="finalAccuracy")
     def final_accuracy(self) -> _builtins.float:
-        """
-        Fine-tuned model accuracy.
-        """
         return pulumi.get(self, "final_accuracy")
 
     @_builtins.property
     @pulumi.getter(name="finalLoss")
     def final_loss(self) -> _builtins.float:
-        """
-        Fine-tuned model loss.
-        """
         return pulumi.get(self, "final_loss")
 
     @_builtins.property
     @pulumi.getter(name="modelMetricsType")
     def model_metrics_type(self) -> _builtins.str:
-        """
-        The type of the model metrics. Each type of model can expect a different set of model metrics.
-        """
         return pulumi.get(self, "model_metrics_type")
 
 
@@ -7932,23 +8354,10 @@ class GetModelsModelCollectionItemResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str description: An optional description of the model.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-        :param Sequence['GetModelsModelCollectionItemFineTuneDetailArgs'] fine_tune_details: Details about fine-tuning a custom model.
-        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The ID of the model.
-        :param _builtins.bool is_long_term_supported: Whether a model is supported long-term. Only applicable to base models.
-        :param _builtins.str lifecycle_details: A message describing the current state of the model in more detail that can provide actionable information.
-        :param Sequence['GetModelsModelCollectionItemModelMetricArgs'] model_metrics: Model metrics during the creation of a new model.
         :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time that the model was created in the format of an RFC3339 datetime string.
-        :param _builtins.str time_deprecated: Corresponds to the time when the custom model and its associated foundation model will be deprecated.
-        :param _builtins.str time_updated: The date and time that the model was updated in the format of an RFC3339 datetime string.
-        :param _builtins.str type: The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
         :param _builtins.str vendor: A filter to return only resources that match the entire vendor given.
-        :param _builtins.str version: The version of the model.
         """
         pulumi.set(__self__, "base_model_id", base_model_id)
         pulumi.set(__self__, "capabilities", capabilities)
@@ -7992,17 +8401,11 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
-        """
-        An optional description of the model.
-        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -8016,17 +8419,11 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="fineTuneDetails")
     def fine_tune_details(self) -> Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailResult']:
-        """
-        Details about fine-tuning a custom model.
-        """
         return pulumi.get(self, "fine_tune_details")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -8040,25 +8437,16 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="isLongTermSupported")
     def is_long_term_supported(self) -> _builtins.bool:
-        """
-        Whether a model is supported long-term. Only applicable to base models.
-        """
         return pulumi.get(self, "is_long_term_supported")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
-        """
-        A message describing the current state of the model in more detail that can provide actionable information.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
     @pulumi.getter(name="modelMetrics")
     def model_metrics(self) -> Sequence['outputs.GetModelsModelCollectionItemModelMetricResult']:
-        """
-        Model metrics during the creation of a new model.
-        """
         return pulumi.get(self, "model_metrics")
 
     @_builtins.property
@@ -8072,41 +8460,26 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
-        """
-        The date and time that the model was created in the format of an RFC3339 datetime string.
-        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeDeprecated")
     def time_deprecated(self) -> _builtins.str:
-        """
-        Corresponds to the time when the custom model and its associated foundation model will be deprecated.
-        """
         return pulumi.get(self, "time_deprecated")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
-        """
-        The date and time that the model was updated in the format of an RFC3339 datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
-        """
-        The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-        """
         return pulumi.get(self, "type")
 
     @_builtins.property
@@ -8120,9 +8493,6 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def version(self) -> _builtins.str:
-        """
-        The version of the model.
-        """
         return pulumi.get(self, "version")
 
 
@@ -8132,11 +8502,6 @@ class GetModelsModelCollectionItemFineTuneDetailResult(dict):
                  dedicated_ai_cluster_id: _builtins.str,
                  training_configs: Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult'],
                  training_datasets: Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult']):
-        """
-        :param _builtins.str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
-        :param Sequence['GetModelsModelCollectionItemFineTuneDetailTrainingConfigArgs'] training_configs: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-        :param Sequence['GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArgs'] training_datasets: The dataset used to fine-tune the model.
-        """
         pulumi.set(__self__, "dedicated_ai_cluster_id", dedicated_ai_cluster_id)
         pulumi.set(__self__, "training_configs", training_configs)
         pulumi.set(__self__, "training_datasets", training_datasets)
@@ -8144,25 +8509,16 @@ class GetModelsModelCollectionItemFineTuneDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="dedicatedAiClusterId")
     def dedicated_ai_cluster_id(self) -> _builtins.str:
-        """
-        The OCID of the dedicated AI cluster this fine-tuning runs on.
-        """
         return pulumi.get(self, "dedicated_ai_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="trainingConfigs")
     def training_configs(self) -> Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult']:
-        """
-        The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-        """
         return pulumi.get(self, "training_configs")
 
     @_builtins.property
     @pulumi.getter(name="trainingDatasets")
     def training_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult']:
-        """
-        The dataset used to fine-tune the model.
-        """
         return pulumi.get(self, "training_datasets")
 
 
@@ -8180,19 +8536,6 @@ class GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult(dict):
                  total_training_epochs: _builtins.int,
                  training_batch_size: _builtins.int,
                  training_config_type: _builtins.str):
-        """
-        :param _builtins.int early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        :param _builtins.float early_stopping_threshold: How much the loss must improve to prevent early stopping.
-        :param _builtins.float learning_rate: The initial learning rate to be used during training
-        :param _builtins.int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics.
-        :param _builtins.int lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
-        :param _builtins.float lora_dropout: This parameter indicates the dropout probability for LoRA layers.
-        :param _builtins.int lora_r: This parameter represents the LoRA rank of the update matrices.
-        :param _builtins.int num_of_last_layers: The number of last layers to be fine-tuned.
-        :param _builtins.int total_training_epochs: The maximum number of training epochs to run for.
-        :param _builtins.int training_batch_size: The batch size used during training.
-        :param _builtins.str training_config_type: The fine-tuning method for training a custom model.
-        """
         pulumi.set(__self__, "early_stopping_patience", early_stopping_patience)
         pulumi.set(__self__, "early_stopping_threshold", early_stopping_threshold)
         pulumi.set(__self__, "learning_rate", learning_rate)
@@ -8208,89 +8551,56 @@ class GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult(dict):
     @_builtins.property
     @pulumi.getter(name="earlyStoppingPatience")
     def early_stopping_patience(self) -> _builtins.int:
-        """
-        Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        """
         return pulumi.get(self, "early_stopping_patience")
 
     @_builtins.property
     @pulumi.getter(name="earlyStoppingThreshold")
     def early_stopping_threshold(self) -> _builtins.float:
-        """
-        How much the loss must improve to prevent early stopping.
-        """
         return pulumi.get(self, "early_stopping_threshold")
 
     @_builtins.property
     @pulumi.getter(name="learningRate")
     def learning_rate(self) -> _builtins.float:
-        """
-        The initial learning rate to be used during training
-        """
         return pulumi.get(self, "learning_rate")
 
     @_builtins.property
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
     def log_model_metrics_interval_in_steps(self) -> _builtins.int:
-        """
-        Determines how frequently to log model metrics.
-        """
         return pulumi.get(self, "log_model_metrics_interval_in_steps")
 
     @_builtins.property
     @pulumi.getter(name="loraAlpha")
     def lora_alpha(self) -> _builtins.int:
-        """
-        This parameter represents the scaling factor for the weight matrices in LoRA.
-        """
         return pulumi.get(self, "lora_alpha")
 
     @_builtins.property
     @pulumi.getter(name="loraDropout")
     def lora_dropout(self) -> _builtins.float:
-        """
-        This parameter indicates the dropout probability for LoRA layers.
-        """
         return pulumi.get(self, "lora_dropout")
 
     @_builtins.property
     @pulumi.getter(name="loraR")
     def lora_r(self) -> _builtins.int:
-        """
-        This parameter represents the LoRA rank of the update matrices.
-        """
         return pulumi.get(self, "lora_r")
 
     @_builtins.property
     @pulumi.getter(name="numOfLastLayers")
     def num_of_last_layers(self) -> _builtins.int:
-        """
-        The number of last layers to be fine-tuned.
-        """
         return pulumi.get(self, "num_of_last_layers")
 
     @_builtins.property
     @pulumi.getter(name="totalTrainingEpochs")
     def total_training_epochs(self) -> _builtins.int:
-        """
-        The maximum number of training epochs to run for.
-        """
         return pulumi.get(self, "total_training_epochs")
 
     @_builtins.property
     @pulumi.getter(name="trainingBatchSize")
     def training_batch_size(self) -> _builtins.int:
-        """
-        The batch size used during training.
-        """
         return pulumi.get(self, "training_batch_size")
 
     @_builtins.property
     @pulumi.getter(name="trainingConfigType")
     def training_config_type(self) -> _builtins.str:
-        """
-        The fine-tuning method for training a custom model.
-        """
         return pulumi.get(self, "training_config_type")
 
 
@@ -8301,12 +8611,6 @@ class GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult(dict):
                  dataset_type: _builtins.str,
                  namespace: _builtins.str,
                  object: _builtins.str):
-        """
-        :param _builtins.str bucket: The Object Storage bucket name.
-        :param _builtins.str dataset_type: The type of the data asset.
-        :param _builtins.str namespace: The Object Storage namespace.
-        :param _builtins.str object: The Object Storage object name.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "dataset_type", dataset_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -8315,33 +8619,21 @@ class GetModelsModelCollectionItemFineTuneDetailTrainingDatasetResult(dict):
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> _builtins.str:
-        """
-        The Object Storage bucket name.
-        """
         return pulumi.get(self, "bucket")
 
     @_builtins.property
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
-        """
-        The type of the data asset.
-        """
         return pulumi.get(self, "dataset_type")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
-        """
-        The Object Storage namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
     @pulumi.getter
     def object(self) -> _builtins.str:
-        """
-        The Object Storage object name.
-        """
         return pulumi.get(self, "object")
 
 
@@ -8351,11 +8643,6 @@ class GetModelsModelCollectionItemModelMetricResult(dict):
                  final_accuracy: _builtins.float,
                  final_loss: _builtins.float,
                  model_metrics_type: _builtins.str):
-        """
-        :param _builtins.float final_accuracy: Fine-tuned model accuracy.
-        :param _builtins.float final_loss: Fine-tuned model loss.
-        :param _builtins.str model_metrics_type: The type of the model metrics. Each type of model can expect a different set of model metrics.
-        """
         pulumi.set(__self__, "final_accuracy", final_accuracy)
         pulumi.set(__self__, "final_loss", final_loss)
         pulumi.set(__self__, "model_metrics_type", model_metrics_type)
@@ -8363,25 +8650,16 @@ class GetModelsModelCollectionItemModelMetricResult(dict):
     @_builtins.property
     @pulumi.getter(name="finalAccuracy")
     def final_accuracy(self) -> _builtins.float:
-        """
-        Fine-tuned model accuracy.
-        """
         return pulumi.get(self, "final_accuracy")
 
     @_builtins.property
     @pulumi.getter(name="finalLoss")
     def final_loss(self) -> _builtins.float:
-        """
-        Fine-tuned model loss.
-        """
         return pulumi.get(self, "final_loss")
 
     @_builtins.property
     @pulumi.getter(name="modelMetricsType")
     def model_metrics_type(self) -> _builtins.str:
-        """
-        The type of the model metrics. Each type of model can expect a different set of model metrics.
-        """
         return pulumi.get(self, "model_metrics_type")
 
 

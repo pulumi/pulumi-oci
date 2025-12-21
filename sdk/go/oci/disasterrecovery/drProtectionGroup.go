@@ -173,6 +173,12 @@ import (
 //						},
 //						PeerClusterId:  pulumi.Any(testCluster.Id),
 //						PeerDbSystemId: pulumi.Any(testDbSystem.Id),
+//						ResourceModifierMappings: disasterrecovery.DrProtectionGroupMemberResourceModifierMappingArray{
+//							&disasterrecovery.DrProtectionGroupMemberResourceModifierMappingArgs{
+//								ConfigMap: pulumi.Any(drProtectionGroupMembersResourceModifierMappingsConfigMap),
+//								Namespace: pulumi.Any(drProtectionGroupMembersResourceModifierMappingsNamespace),
+//							},
+//						},
 //						SourceVolumeToDestinationEncryptionKeyMappings: disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{
 //								DestinationEncryptionKey: &disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{

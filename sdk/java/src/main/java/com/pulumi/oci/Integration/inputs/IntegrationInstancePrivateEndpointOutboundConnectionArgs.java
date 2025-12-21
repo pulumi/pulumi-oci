@@ -5,6 +5,7 @@ package com.pulumi.oci.Integration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,13 @@ import javax.annotation.Nullable;
 public final class IntegrationInstancePrivateEndpointOutboundConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final IntegrationInstancePrivateEndpointOutboundConnectionArgs Empty = new IntegrationInstancePrivateEndpointOutboundConnectionArgs();
+
+    @Import(name="isAllOutboundTrafficPrivate")
+    private @Nullable Output<Boolean> isAllOutboundTrafficPrivate;
+
+    public Optional<Output<Boolean>> isAllOutboundTrafficPrivate() {
+        return Optional.ofNullable(this.isAllOutboundTrafficPrivate);
+    }
 
     /**
      * One or more Network security group Ids. This is an optional argument.
@@ -64,6 +72,7 @@ public final class IntegrationInstancePrivateEndpointOutboundConnectionArgs exte
     private IntegrationInstancePrivateEndpointOutboundConnectionArgs() {}
 
     private IntegrationInstancePrivateEndpointOutboundConnectionArgs(IntegrationInstancePrivateEndpointOutboundConnectionArgs $) {
+        this.isAllOutboundTrafficPrivate = $.isAllOutboundTrafficPrivate;
         this.nsgIds = $.nsgIds;
         this.outboundConnectionType = $.outboundConnectionType;
         this.subnetId = $.subnetId;
@@ -85,6 +94,15 @@ public final class IntegrationInstancePrivateEndpointOutboundConnectionArgs exte
 
         public Builder(IntegrationInstancePrivateEndpointOutboundConnectionArgs defaults) {
             $ = new IntegrationInstancePrivateEndpointOutboundConnectionArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder isAllOutboundTrafficPrivate(@Nullable Output<Boolean> isAllOutboundTrafficPrivate) {
+            $.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
+            return this;
+        }
+
+        public Builder isAllOutboundTrafficPrivate(Boolean isAllOutboundTrafficPrivate) {
+            return isAllOutboundTrafficPrivate(Output.of(isAllOutboundTrafficPrivate));
         }
 
         /**

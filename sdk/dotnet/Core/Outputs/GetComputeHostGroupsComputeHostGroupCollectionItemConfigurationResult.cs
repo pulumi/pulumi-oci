@@ -13,8 +13,23 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult
     {
+        /// <summary>
+        /// The OCID for firmware bundle
+        /// </summary>
         public readonly string FirmwareBundleId;
+        /// <summary>
+        /// Preferred recycle level for hosts associated with the reservation config.
+        /// * `SKIP_RECYCLE` - Skips host wipe.
+        /// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        /// </summary>
         public readonly string RecycleLevel;
+        /// <summary>
+        /// The lifecycle state of the host group
+        /// </summary>
+        public readonly string State;
+        /// <summary>
+        /// Either the platform name or compute shape that the configuration is targeting
+        /// </summary>
         public readonly string Target;
 
         [OutputConstructor]
@@ -23,10 +38,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             string recycleLevel,
 
+            string state,
+
             string target)
         {
             FirmwareBundleId = firmwareBundleId;
             RecycleLevel = recycleLevel;
+            State = state;
             Target = target;
         }
     }

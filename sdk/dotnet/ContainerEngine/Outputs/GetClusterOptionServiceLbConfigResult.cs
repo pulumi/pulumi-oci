@@ -14,6 +14,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class GetClusterOptionServiceLbConfigResult
     {
         /// <summary>
+        /// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        /// </summary>
+        public readonly ImmutableArray<string> BackendNsgIds;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private GetClusterOptionServiceLbConfigResult(
+            ImmutableArray<string> backendNsgIds,
+
             ImmutableDictionary<string, string> definedTags,
 
             ImmutableDictionary<string, string> freeformTags)
         {
+            BackendNsgIds = backendNsgIds;
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
         }

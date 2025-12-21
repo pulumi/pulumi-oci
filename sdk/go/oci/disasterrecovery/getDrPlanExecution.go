@@ -95,6 +95,8 @@ type LookupDrPlanExecutionResult struct {
 	PlanId string `pulumi:"planId"`
 	// The current state of the DR plan execution.
 	State string `pulumi:"state"`
+	// A categorized summary of step execution statuses and their corresponding counts.
+	StepStatusCounts []GetDrPlanExecutionStepStatusCount `pulumi:"stepStatusCounts"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -235,6 +237,11 @@ func (o LookupDrPlanExecutionResultOutput) PlanId() pulumi.StringOutput {
 // The current state of the DR plan execution.
 func (o LookupDrPlanExecutionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A categorized summary of step execution statuses and their corresponding counts.
+func (o LookupDrPlanExecutionResultOutput) StepStatusCounts() GetDrPlanExecutionStepStatusCountArrayOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionStepStatusCount { return v.StepStatusCounts }).(GetDrPlanExecutionStepStatusCountArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`

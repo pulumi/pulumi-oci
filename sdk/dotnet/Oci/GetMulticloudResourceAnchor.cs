@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Oci
         ///         ResourceAnchorId = resourceAnchorId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
         ///     });
         /// 
         /// });
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.Oci
         ///         ResourceAnchorId = resourceAnchorId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
         ///     });
         /// 
         /// });
@@ -87,6 +89,7 @@ namespace Pulumi.Oci.Oci
         ///         ResourceAnchorId = resourceAnchorId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ShouldFetchCompartmentName = shouldFetchCompartmentName,
         ///     });
         /// 
         /// });
@@ -106,13 +109,19 @@ namespace Pulumi.Oci.Oci
         public string ResourceAnchorId { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// </summary>
+        [Input("shouldFetchCompartmentName")]
+        public bool? ShouldFetchCompartmentName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public string SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The subscription service name of the Cloud Service Provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public string SubscriptionServiceName { get; set; } = null!;
@@ -132,13 +141,19 @@ namespace Pulumi.Oci.Oci
         public Input<string> ResourceAnchorId { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+        /// </summary>
+        [Input("shouldFetchCompartmentName")]
+        public Input<bool>? ShouldFetchCompartmentName { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The subscription service name of the Cloud Service Provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public Input<string> SubscriptionServiceName { get; set; } = null!;
@@ -161,6 +176,10 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The name assigned to the compartment during creation.
+        /// </summary>
+        public readonly string CompartmentName;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -190,6 +209,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string LinkedCompartmentId;
         /// <summary>
+        /// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        /// </summary>
+        public readonly string LinkedCompartmentName;
+        /// <summary>
         /// Oracle Cloud Infrastructure Region that resource is created.
         /// </summary>
         public readonly string Region;
@@ -202,6 +225,7 @@ namespace Pulumi.Oci.Oci
         /// AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
         /// </summary>
         public readonly string SetupMode;
+        public readonly bool? ShouldFetchCompartmentName;
         public readonly string SubscriptionId;
         public readonly string SubscriptionServiceName;
         /// <summary>
@@ -227,6 +251,8 @@ namespace Pulumi.Oci.Oci
 
             string compartmentId,
 
+            string compartmentName,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -241,6 +267,8 @@ namespace Pulumi.Oci.Oci
 
             string linkedCompartmentId,
 
+            string linkedCompartmentName,
+
             string region,
 
             string resourceAnchorId,
@@ -248,6 +276,8 @@ namespace Pulumi.Oci.Oci
             string resourceAnchorSubscriptionId,
 
             string setupMode,
+
+            bool? shouldFetchCompartmentName,
 
             string subscriptionId,
 
@@ -263,6 +293,7 @@ namespace Pulumi.Oci.Oci
         {
             CloudServiceProviderMetadataItems = cloudServiceProviderMetadataItems;
             CompartmentId = compartmentId;
+            CompartmentName = compartmentName;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
@@ -270,10 +301,12 @@ namespace Pulumi.Oci.Oci
             LifecycleDetails = lifecycleDetails;
             LifecycleState = lifecycleState;
             LinkedCompartmentId = linkedCompartmentId;
+            LinkedCompartmentName = linkedCompartmentName;
             Region = region;
             ResourceAnchorId = resourceAnchorId;
             ResourceAnchorSubscriptionId = resourceAnchorSubscriptionId;
             SetupMode = setupMode;
+            ShouldFetchCompartmentName = shouldFetchCompartmentName;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
             SubscriptionType = subscriptionType;

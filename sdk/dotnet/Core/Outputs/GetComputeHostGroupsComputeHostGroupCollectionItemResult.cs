@@ -21,6 +21,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// A list of HostGroupConfiguration objects
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult> Configurations;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

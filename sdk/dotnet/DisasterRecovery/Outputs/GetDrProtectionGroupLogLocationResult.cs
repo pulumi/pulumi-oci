@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
+        /// The OKE namespace where the config map resides. Example: `NamespaceString5`
         /// </summary>
         public readonly string Namespace;
         /// <summary>

@@ -27,7 +27,7 @@ class GetDrPlanExecutionResult:
     """
     A collection of values returned by getDrPlanExecution.
     """
-    def __init__(__self__, automatic_execution_details=None, compartment_id=None, defined_tags=None, display_name=None, dr_plan_execution_id=None, dr_protection_group_id=None, execution_duration_in_sec=None, execution_options=None, freeform_tags=None, group_executions=None, id=None, is_automatic=None, life_cycle_details=None, log_locations=None, peer_dr_protection_group_id=None, peer_region=None, plan_execution_type=None, plan_id=None, state=None, system_tags=None, time_created=None, time_ended=None, time_started=None, time_updated=None):
+    def __init__(__self__, automatic_execution_details=None, compartment_id=None, defined_tags=None, display_name=None, dr_plan_execution_id=None, dr_protection_group_id=None, execution_duration_in_sec=None, execution_options=None, freeform_tags=None, group_executions=None, id=None, is_automatic=None, life_cycle_details=None, log_locations=None, peer_dr_protection_group_id=None, peer_region=None, plan_execution_type=None, plan_id=None, state=None, step_status_counts=None, system_tags=None, time_created=None, time_ended=None, time_started=None, time_updated=None):
         if automatic_execution_details and not isinstance(automatic_execution_details, list):
             raise TypeError("Expected argument 'automatic_execution_details' to be a list")
         pulumi.set(__self__, "automatic_execution_details", automatic_execution_details)
@@ -85,6 +85,9 @@ class GetDrPlanExecutionResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if step_status_counts and not isinstance(step_status_counts, list):
+            raise TypeError("Expected argument 'step_status_counts' to be a list")
+        pulumi.set(__self__, "step_status_counts", step_status_counts)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -251,6 +254,14 @@ class GetDrPlanExecutionResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="stepStatusCounts")
+    def step_status_counts(self) -> Sequence['outputs.GetDrPlanExecutionStepStatusCountResult']:
+        """
+        A categorized summary of step execution statuses and their corresponding counts.
+        """
+        return pulumi.get(self, "step_status_counts")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -316,6 +327,7 @@ class AwaitableGetDrPlanExecutionResult(GetDrPlanExecutionResult):
             plan_execution_type=self.plan_execution_type,
             plan_id=self.plan_id,
             state=self.state,
+            step_status_counts=self.step_status_counts,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_ended=self.time_ended,
@@ -367,6 +379,7 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[_builtins.str] = None,
         plan_execution_type=pulumi.get(__ret__, 'plan_execution_type'),
         plan_id=pulumi.get(__ret__, 'plan_id'),
         state=pulumi.get(__ret__, 'state'),
+        step_status_counts=pulumi.get(__ret__, 'step_status_counts'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
@@ -415,6 +428,7 @@ def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[_bu
         plan_execution_type=pulumi.get(__response__, 'plan_execution_type'),
         plan_id=pulumi.get(__response__, 'plan_id'),
         state=pulumi.get(__response__, 'state'),
+        step_status_counts=pulumi.get(__response__, 'step_status_counts'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_ended=pulumi.get(__response__, 'time_ended'),

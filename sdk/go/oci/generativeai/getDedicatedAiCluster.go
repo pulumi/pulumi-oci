@@ -58,15 +58,17 @@ type LookupDedicatedAiClusterArgs struct {
 
 // A collection of values returned by getDedicatedAiCluster.
 type LookupDedicatedAiClusterResult struct {
-	Capacities           []GetDedicatedAiClusterCapacity `pulumi:"capacities"`
-	CompartmentId        string                          `pulumi:"compartmentId"`
-	DedicatedAiClusterId string                          `pulumi:"dedicatedAiClusterId"`
+	// The total capacity for a dedicated AI cluster.
+	Capacities []GetDedicatedAiClusterCapacity `pulumi:"capacities"`
+	// The compartment OCID to create the dedicated AI cluster in.
+	CompartmentId        string `pulumi:"compartmentId"`
+	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// An optional description of the dedicated AI cluster.
-	Description string `pulumi:"description"`
+	Description string            `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.
-	DisplayName  string            `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 	Id string `pulumi:"id"`
@@ -75,11 +77,13 @@ type LookupDedicatedAiClusterResult struct {
 	// The current state of the dedicated AI cluster.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags  map[string]string `pulumi:"systemTags"`
-	TimeCreated string            `pulumi:"timeCreated"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
 	TimeUpdated string `pulumi:"timeUpdated"`
-	Type        string `pulumi:"type"`
+	// The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+	Type string `pulumi:"type"`
 	// The number of dedicated units in this AI cluster.
 	UnitCount int `pulumi:"unitCount"`
 	// The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
@@ -120,10 +124,12 @@ func (o LookupDedicatedAiClusterResultOutput) ToLookupDedicatedAiClusterResultOu
 	return o
 }
 
+// The total capacity for a dedicated AI cluster.
 func (o LookupDedicatedAiClusterResultOutput) Capacities() GetDedicatedAiClusterCapacityArrayOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) []GetDedicatedAiClusterCapacity { return v.Capacities }).(GetDedicatedAiClusterCapacityArrayOutput)
 }
 
+// The compartment OCID to create the dedicated AI cluster in.
 func (o LookupDedicatedAiClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -137,7 +143,6 @@ func (o LookupDedicatedAiClusterResultOutput) DefinedTags() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// An optional description of the dedicated AI cluster.
 func (o LookupDedicatedAiClusterResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -147,6 +152,7 @@ func (o LookupDedicatedAiClusterResultOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupDedicatedAiClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -171,6 +177,7 @@ func (o LookupDedicatedAiClusterResultOutput) SystemTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
 func (o LookupDedicatedAiClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -180,6 +187,7 @@ func (o LookupDedicatedAiClusterResultOutput) TimeUpdated() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
 func (o LookupDedicatedAiClusterResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.Type }).(pulumi.StringOutput)
 }

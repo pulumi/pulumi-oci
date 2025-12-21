@@ -27,13 +27,16 @@ class GetMulticloudResourceAnchorResult:
     """
     A collection of values returned by getMulticloudResourceAnchor.
     """
-    def __init__(__self__, cloud_service_provider_metadata_items=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, lifecycle_state=None, linked_compartment_id=None, region=None, resource_anchor_id=None, resource_anchor_subscription_id=None, setup_mode=None, subscription_id=None, subscription_service_name=None, subscription_type=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cloud_service_provider_metadata_items=None, compartment_id=None, compartment_name=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, lifecycle_state=None, linked_compartment_id=None, linked_compartment_name=None, region=None, resource_anchor_id=None, resource_anchor_subscription_id=None, setup_mode=None, should_fetch_compartment_name=None, subscription_id=None, subscription_service_name=None, subscription_type=None, system_tags=None, time_created=None, time_updated=None):
         if cloud_service_provider_metadata_items and not isinstance(cloud_service_provider_metadata_items, list):
             raise TypeError("Expected argument 'cloud_service_provider_metadata_items' to be a list")
         pulumi.set(__self__, "cloud_service_provider_metadata_items", cloud_service_provider_metadata_items)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_name and not isinstance(compartment_name, str):
+            raise TypeError("Expected argument 'compartment_name' to be a str")
+        pulumi.set(__self__, "compartment_name", compartment_name)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -55,6 +58,9 @@ class GetMulticloudResourceAnchorResult:
         if linked_compartment_id and not isinstance(linked_compartment_id, str):
             raise TypeError("Expected argument 'linked_compartment_id' to be a str")
         pulumi.set(__self__, "linked_compartment_id", linked_compartment_id)
+        if linked_compartment_name and not isinstance(linked_compartment_name, str):
+            raise TypeError("Expected argument 'linked_compartment_name' to be a str")
+        pulumi.set(__self__, "linked_compartment_name", linked_compartment_name)
         if region and not isinstance(region, str):
             raise TypeError("Expected argument 'region' to be a str")
         pulumi.set(__self__, "region", region)
@@ -67,6 +73,9 @@ class GetMulticloudResourceAnchorResult:
         if setup_mode and not isinstance(setup_mode, str):
             raise TypeError("Expected argument 'setup_mode' to be a str")
         pulumi.set(__self__, "setup_mode", setup_mode)
+        if should_fetch_compartment_name and not isinstance(should_fetch_compartment_name, bool):
+            raise TypeError("Expected argument 'should_fetch_compartment_name' to be a bool")
+        pulumi.set(__self__, "should_fetch_compartment_name", should_fetch_compartment_name)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -101,6 +110,14 @@ class GetMulticloudResourceAnchorResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> _builtins.str:
+        """
+        The name assigned to the compartment during creation.
+        """
+        return pulumi.get(self, "compartment_name")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -159,6 +176,14 @@ class GetMulticloudResourceAnchorResult:
         return pulumi.get(self, "linked_compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="linkedCompartmentName")
+    def linked_compartment_name(self) -> _builtins.str:
+        """
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        """
+        return pulumi.get(self, "linked_compartment_name")
+
+    @_builtins.property
     @pulumi.getter
     def region(self) -> _builtins.str:
         """
@@ -186,6 +211,11 @@ class GetMulticloudResourceAnchorResult:
         AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
         """
         return pulumi.get(self, "setup_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldFetchCompartmentName")
+    def should_fetch_compartment_name(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_fetch_compartment_name")
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
@@ -238,6 +268,7 @@ class AwaitableGetMulticloudResourceAnchorResult(GetMulticloudResourceAnchorResu
         return GetMulticloudResourceAnchorResult(
             cloud_service_provider_metadata_items=self.cloud_service_provider_metadata_items,
             compartment_id=self.compartment_id,
+            compartment_name=self.compartment_name,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -245,10 +276,12 @@ class AwaitableGetMulticloudResourceAnchorResult(GetMulticloudResourceAnchorResu
             lifecycle_details=self.lifecycle_details,
             lifecycle_state=self.lifecycle_state,
             linked_compartment_id=self.linked_compartment_id,
+            linked_compartment_name=self.linked_compartment_name,
             region=self.region,
             resource_anchor_id=self.resource_anchor_id,
             resource_anchor_subscription_id=self.resource_anchor_subscription_id,
             setup_mode=self.setup_mode,
+            should_fetch_compartment_name=self.should_fetch_compartment_name,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name,
             subscription_type=self.subscription_type,
@@ -258,6 +291,7 @@ class AwaitableGetMulticloudResourceAnchorResult(GetMulticloudResourceAnchorResu
 
 
 def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] = None,
+                                   should_fetch_compartment_name: Optional[_builtins.bool] = None,
                                    subscription_id: Optional[_builtins.str] = None,
                                    subscription_service_name: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudResourceAnchorResult:
@@ -274,16 +308,19 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
 
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
-        subscription_service_name=subscription_service_name)
+        subscription_service_name=subscription_service_name,
+        should_fetch_compartment_name=should_fetch_compartment_name)
     ```
 
 
     :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['resourceAnchorId'] = resource_anchor_id
+    __args__['shouldFetchCompartmentName'] = should_fetch_compartment_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -292,6 +329,7 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
     return AwaitableGetMulticloudResourceAnchorResult(
         cloud_service_provider_metadata_items=pulumi.get(__ret__, 'cloud_service_provider_metadata_items'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_name=pulumi.get(__ret__, 'compartment_name'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -299,10 +337,12 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         lifecycle_state=pulumi.get(__ret__, 'lifecycle_state'),
         linked_compartment_id=pulumi.get(__ret__, 'linked_compartment_id'),
+        linked_compartment_name=pulumi.get(__ret__, 'linked_compartment_name'),
         region=pulumi.get(__ret__, 'region'),
         resource_anchor_id=pulumi.get(__ret__, 'resource_anchor_id'),
         resource_anchor_subscription_id=pulumi.get(__ret__, 'resource_anchor_subscription_id'),
         setup_mode=pulumi.get(__ret__, 'setup_mode'),
+        should_fetch_compartment_name=pulumi.get(__ret__, 'should_fetch_compartment_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'),
         subscription_type=pulumi.get(__ret__, 'subscription_type'),
@@ -310,6 +350,7 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                          should_fetch_compartment_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                           subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                                           subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudResourceAnchorResult]:
@@ -326,16 +367,19 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.In
 
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
-        subscription_service_name=subscription_service_name)
+        subscription_service_name=subscription_service_name,
+        should_fetch_compartment_name=should_fetch_compartment_name)
     ```
 
 
     :param _builtins.str resource_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['resourceAnchorId'] = resource_anchor_id
+    __args__['shouldFetchCompartmentName'] = should_fetch_compartment_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -343,6 +387,7 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.In
     return __ret__.apply(lambda __response__: GetMulticloudResourceAnchorResult(
         cloud_service_provider_metadata_items=pulumi.get(__response__, 'cloud_service_provider_metadata_items'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_name=pulumi.get(__response__, 'compartment_name'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
@@ -350,10 +395,12 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.In
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         lifecycle_state=pulumi.get(__response__, 'lifecycle_state'),
         linked_compartment_id=pulumi.get(__response__, 'linked_compartment_id'),
+        linked_compartment_name=pulumi.get(__response__, 'linked_compartment_name'),
         region=pulumi.get(__response__, 'region'),
         resource_anchor_id=pulumi.get(__response__, 'resource_anchor_id'),
         resource_anchor_subscription_id=pulumi.get(__response__, 'resource_anchor_subscription_id'),
         setup_mode=pulumi.get(__response__, 'setup_mode'),
+        should_fetch_compartment_name=pulumi.get(__response__, 'should_fetch_compartment_name'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name'),
         subscription_type=pulumi.get(__response__, 'subscription_type'),

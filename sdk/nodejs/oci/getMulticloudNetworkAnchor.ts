@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */
@@ -30,6 +31,7 @@ export function getMulticloudNetworkAnchor(args: GetMulticloudNetworkAnchorArgs,
     return pulumi.runtime.invoke("oci:oci/getMulticloudNetworkAnchor:getMulticloudNetworkAnchor", {
         "externalLocation": args.externalLocation,
         "networkAnchorId": args.networkAnchorId,
+        "shouldFetchVcnName": args.shouldFetchVcnName,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -47,6 +49,10 @@ export interface GetMulticloudNetworkAnchorArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      */
     networkAnchorId: string;
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    shouldFetchVcnName?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      */
@@ -111,8 +117,13 @@ export interface GetMulticloudNetworkAnchorResult {
      * AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
      */
     readonly setupMode: string;
+    readonly shouldFetchVcnName?: boolean;
     readonly subscriptionId: string;
     readonly subscriptionServiceName: string;
+    /**
+     * Oracle Cloud Infrastructure Subscription Type.
+     */
+    readonly subscriptionType: string;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
@@ -142,6 +153,7 @@ export interface GetMulticloudNetworkAnchorResult {
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
+ *     shouldFetchVcnName: shouldFetchVcnName,
  * });
  * ```
  */
@@ -150,6 +162,7 @@ export function getMulticloudNetworkAnchorOutput(args: GetMulticloudNetworkAncho
     return pulumi.runtime.invokeOutput("oci:oci/getMulticloudNetworkAnchor:getMulticloudNetworkAnchor", {
         "externalLocation": args.externalLocation,
         "networkAnchorId": args.networkAnchorId,
+        "shouldFetchVcnName": args.shouldFetchVcnName,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -167,6 +180,10 @@ export interface GetMulticloudNetworkAnchorOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      */
     networkAnchorId: pulumi.Input<string>;
+    /**
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     */
+    shouldFetchVcnName?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      */

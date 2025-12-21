@@ -3815,6 +3815,725 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArray
 	}).(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemOutput)
 }
 
+type GetLogAnalyticsEntityAssociationsListFilter struct {
+	// Log analytics entity name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetLogAnalyticsEntityAssociationsListFilterInput is an input type that accepts GetLogAnalyticsEntityAssociationsListFilterArgs and GetLogAnalyticsEntityAssociationsListFilterOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListFilterInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListFilterArgs{...}
+type GetLogAnalyticsEntityAssociationsListFilterInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListFilterOutput() GetLogAnalyticsEntityAssociationsListFilterOutput
+	ToGetLogAnalyticsEntityAssociationsListFilterOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListFilterOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListFilterArgs struct {
+	// Log analytics entity name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetLogAnalyticsEntityAssociationsListFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListFilter)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListFilterArgs) ToGetLogAnalyticsEntityAssociationsListFilterOutput() GetLogAnalyticsEntityAssociationsListFilterOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListFilterOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListFilterArgs) ToGetLogAnalyticsEntityAssociationsListFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListFilterOutput)
+}
+
+// GetLogAnalyticsEntityAssociationsListFilterArrayInput is an input type that accepts GetLogAnalyticsEntityAssociationsListFilterArray and GetLogAnalyticsEntityAssociationsListFilterArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListFilterArrayInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListFilterArray{ GetLogAnalyticsEntityAssociationsListFilterArgs{...} }
+type GetLogAnalyticsEntityAssociationsListFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListFilterArrayOutput() GetLogAnalyticsEntityAssociationsListFilterArrayOutput
+	ToGetLogAnalyticsEntityAssociationsListFilterArrayOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListFilterArrayOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListFilterArray []GetLogAnalyticsEntityAssociationsListFilterInput
+
+func (GetLogAnalyticsEntityAssociationsListFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListFilter)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListFilterArray) ToGetLogAnalyticsEntityAssociationsListFilterArrayOutput() GetLogAnalyticsEntityAssociationsListFilterArrayOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListFilterArray) ToGetLogAnalyticsEntityAssociationsListFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListFilterArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListFilterOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListFilter)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterOutput) ToGetLogAnalyticsEntityAssociationsListFilterOutput() GetLogAnalyticsEntityAssociationsListFilterOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterOutput) ToGetLogAnalyticsEntityAssociationsListFilterOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListFilterOutput {
+	return o
+}
+
+// Log analytics entity name.
+func (o GetLogAnalyticsEntityAssociationsListFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListFilter)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterArrayOutput) ToGetLogAnalyticsEntityAssociationsListFilterArrayOutput() GetLogAnalyticsEntityAssociationsListFilterArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterArrayOutput) ToGetLogAnalyticsEntityAssociationsListFilterArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListFilterArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListFilterArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityAssociationsListFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityAssociationsListFilter {
+		return vs[0].([]GetLogAnalyticsEntityAssociationsListFilter)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityAssociationsListFilterOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection struct {
+	// An array of entity metadata.
+	Items []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem `pulumi:"items"`
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs{...}
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs struct {
+	// An array of entity metadata.
+	Items GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput)
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray{ GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs{...} }
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionInput
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput {
+	return o
+}
+
+// An array of entity metadata.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput) Items() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection) []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem {
+		return v.Items
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection {
+		return vs[0].([]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollection)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem struct {
+	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+	AreLogsCollected bool `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount int `pulumi:"associatedSourcesCount"`
+	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	CloudResourceId string `pulumi:"cloudResourceId"`
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Internal name for the log analytics entity type.
+	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
+	// Log analytics entity type name.
+	EntityTypeName string `pulumi:"entityTypeName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id string `pulumi:"id"`
+	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The OCID of the Management Agent.
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// A collection of entity metadata information.
+	Metadatas []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata `pulumi:"metadatas"`
+	// Log analytics entity name.
+	Name string `pulumi:"name"`
+	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+	SourceId string `pulumi:"sourceId"`
+	// The current state of the log analytics entity.
+	State string `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered string `pulumi:"timeLastDiscovered"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The timezone region of the log analytics entity.
+	TimezoneRegion string `pulumi:"timezoneRegion"`
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs{...}
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs struct {
+	// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+	AreLogsCollected pulumi.BoolInput `pulumi:"areLogsCollected"`
+	// The count of associated log sources for a given log analytics entity.
+	AssociatedSourcesCount pulumi.IntInput `pulumi:"associatedSourcesCount"`
+	// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+	CloudResourceId pulumi.StringInput `pulumi:"cloudResourceId"`
+	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Internal name for the log analytics entity type.
+	EntityTypeInternalName pulumi.StringInput `pulumi:"entityTypeInternalName"`
+	// Log analytics entity type name.
+	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+	Id pulumi.StringInput `pulumi:"id"`
+	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The OCID of the Management Agent.
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// A collection of entity metadata information.
+	Metadatas GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// Log analytics entity name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// The current state of the log analytics entity.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the resource was last discovered, in the format defined by RFC3339.
+	TimeLastDiscovered pulumi.StringInput `pulumi:"timeLastDiscovered"`
+	// The date and time the resource was last updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The timezone region of the log analytics entity.
+	TimezoneRegion pulumi.StringInput `pulumi:"timezoneRegion"`
+}
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput)
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray{ GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs{...} }
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemInput
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput {
+	return o
+}
+
+// The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) AreLogsCollected() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) bool {
+		return v.AreLogsCollected
+	}).(pulumi.BoolOutput)
+}
+
+// The count of associated log sources for a given log analytics entity.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) AssociatedSourcesCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) int {
+		return v.AssociatedSourcesCount
+	}).(pulumi.IntOutput)
+}
+
+// The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) CloudResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.CloudResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Internal name for the log analytics entity type.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) EntityTypeInternalName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.EntityTypeInternalName
+	}).(pulumi.StringOutput)
+}
+
+// Log analytics entity type name.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) EntityTypeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.EntityTypeName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Management Agent.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.ManagementAgentId
+	}).(pulumi.StringOutput)
+}
+
+// A collection of entity metadata information.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) Metadatas() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput)
+}
+
+// Log analytics entity name.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.SourceId
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the log analytics entity.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was created, in the format defined by RFC3339.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last discovered, in the format defined by RFC3339.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) TimeLastDiscovered() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.TimeLastDiscovered
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the resource was last updated, in the format defined by RFC3339.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The timezone region of the log analytics entity.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput) TimezoneRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem) string {
+		return v.TimezoneRegion
+	}).(pulumi.StringOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem {
+		return vs[0].([]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItem)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata struct {
+	// An array of entity metadata.
+	Items []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem `pulumi:"items"`
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs{...}
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs struct {
+	// An array of entity metadata.
+	Items GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayInput `pulumi:"items"`
+}
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput)
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray{ GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs{...} }
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataInput
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput {
+	return o
+}
+
+// An array of entity metadata.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput) Items() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata) []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem {
+		return v.Items
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata {
+		return vs[0].([]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadata)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem struct {
+	// Log analytics entity name.
+	Name string `pulumi:"name"`
+	// The metadata type.
+	Type string `pulumi:"type"`
+	// The metadata value.
+	Value string `pulumi:"value"`
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs{...}
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs struct {
+	// Log analytics entity name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The metadata type.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The metadata value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput)
+}
+
+// GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayInput is an input type that accepts GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray and GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput values.
+// You can construct a concrete instance of `GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayInput` via:
+//
+//	GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray{ GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs{...} }
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput
+	ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutputWithContext(context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray []GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemInput
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem)(nil)).Elem()
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput {
+	return i.ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput {
+	return o
+}
+
+// Log analytics entity name.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The metadata type.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// The metadata value.
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem)(nil)).Elem()
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput() GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput) ToGetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutputWithContext(ctx context.Context) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput {
+	return o
+}
+
+func (o GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput) Index(i pulumi.IntInput) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem {
+		return vs[0].([]GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItem)[vs[1].(int)]
+	}).(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput)
+}
+
 type GetLogAnalyticsEntityMetadata struct {
 	// An array of entity metadata.
 	Items []GetLogAnalyticsEntityMetadataItem `pulumi:"items"`
@@ -14337,6 +15056,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArrayInput)(nil)).Elem(), GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemInput)(nil)).Elem(), GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArrayInput)(nil)).Elem(), GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListFilterInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListFilterArrayInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayInput)(nil)).Elem(), GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataArrayInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAnalyticsEntityMetadataItemInput)(nil)).Elem(), GetLogAnalyticsEntityMetadataItemArgs{})
@@ -14551,6 +15280,16 @@ func init() {
 	pulumi.RegisterOutputType(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataItemArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListFilterOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemOutput{})
+	pulumi.RegisterOutputType(GetLogAnalyticsEntityAssociationsListLogAnalyticsEntityCollectionItemMetadataItemArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetLogAnalyticsEntityMetadataItemOutput{})

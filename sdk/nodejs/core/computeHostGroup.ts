@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     configurations: [{
  *         firmwareBundleId: testFirmwareBundle.id,
  *         recycleLevel: computeHostGroupConfigurationsRecycleLevel,
+ *         state: computeHostGroupConfigurationsState,
  *         target: computeHostGroupConfigurationsTarget,
  *     }],
  *     definedTags: {

@@ -35,6 +35,21 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     }
 
     /**
+     * Service injected Environment variables set for the web server container and can not be set or modified by user.
+     * 
+     */
+    @Import(name="defaultEnvironmentVariables")
+    private @Nullable Output<Map<String,String>> defaultEnvironmentVariables;
+
+    /**
+     * @return Service injected Environment variables set for the web server container and can not be set or modified by user.
+     * 
+     */
+    public Optional<Output<Map<String,String>>> defaultEnvironmentVariables() {
+        return Optional.ofNullable(this.defaultEnvironmentVariables);
+    }
+
+    /**
      * (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
      * 
      */
@@ -95,14 +110,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     }
 
     /**
-     * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+     * (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     @Import(name="image")
     private @Nullable Output<String> image;
 
     /**
-     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     public Optional<Output<String>> image() {
@@ -143,6 +158,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
 
     private ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs $) {
         this.cmds = $.cmds;
+        this.defaultEnvironmentVariables = $.defaultEnvironmentVariables;
         this.entrypoints = $.entrypoints;
         this.environmentConfigurationType = $.environmentConfigurationType;
         this.environmentVariables = $.environmentVariables;
@@ -199,6 +215,27 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          */
         public Builder cmds(String... cmds) {
             return cmds(List.of(cmds));
+        }
+
+        /**
+         * @param defaultEnvironmentVariables Service injected Environment variables set for the web server container and can not be set or modified by user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultEnvironmentVariables(@Nullable Output<Map<String,String>> defaultEnvironmentVariables) {
+            $.defaultEnvironmentVariables = defaultEnvironmentVariables;
+            return this;
+        }
+
+        /**
+         * @param defaultEnvironmentVariables Service injected Environment variables set for the web server container and can not be set or modified by user.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultEnvironmentVariables(Map<String,String> defaultEnvironmentVariables) {
+            return defaultEnvironmentVariables(Output.of(defaultEnvironmentVariables));
         }
 
         /**
@@ -296,7 +333,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
 
         /**
-         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
          * 
          * @return builder
          * 
@@ -307,7 +344,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
 
         /**
-         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+         * @param image (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
          * 
          * @return builder
          * 

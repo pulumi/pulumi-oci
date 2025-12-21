@@ -22,7 +22,7 @@ public final class GetEndpointContentModerationConfig {
      */
     private String mode;
     /**
-     * @return The OCID of the model used for the feature.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      */
     private String modelId;
@@ -43,7 +43,7 @@ public final class GetEndpointContentModerationConfig {
         return this.mode;
     }
     /**
-     * @return The OCID of the model used for the feature.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      */
     public String modelId() {

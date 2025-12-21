@@ -6,10 +6,13 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorCloudServiceProviderMetadataItem;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMulticloudResourceAnchorResult {
@@ -23,6 +26,11 @@ public final class GetMulticloudResourceAnchorResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The name assigned to the compartment during creation.
+     * 
+     */
+    private String compartmentName;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -59,6 +67,11 @@ public final class GetMulticloudResourceAnchorResult {
      */
     private String linkedCompartmentId;
     /**
+     * @return The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * 
+     */
+    private String linkedCompartmentName;
+    /**
      * @return Oracle Cloud Infrastructure Region that resource is created.
      * 
      */
@@ -74,6 +87,7 @@ public final class GetMulticloudResourceAnchorResult {
      * 
      */
     private String setupMode;
+    private @Nullable Boolean shouldFetchCompartmentName;
     private String subscriptionId;
     private String subscriptionServiceName;
     /**
@@ -111,6 +125,13 @@ public final class GetMulticloudResourceAnchorResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The name assigned to the compartment during creation.
+     * 
+     */
+    public String compartmentName() {
+        return this.compartmentName;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -162,6 +183,13 @@ public final class GetMulticloudResourceAnchorResult {
         return this.linkedCompartmentId;
     }
     /**
+     * @return The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+     * 
+     */
+    public String linkedCompartmentName() {
+        return this.linkedCompartmentName;
+    }
+    /**
      * @return Oracle Cloud Infrastructure Region that resource is created.
      * 
      */
@@ -184,6 +212,9 @@ public final class GetMulticloudResourceAnchorResult {
      */
     public String setupMode() {
         return this.setupMode;
+    }
+    public Optional<Boolean> shouldFetchCompartmentName() {
+        return Optional.ofNullable(this.shouldFetchCompartmentName);
     }
     public String subscriptionId() {
         return this.subscriptionId;
@@ -231,6 +262,7 @@ public final class GetMulticloudResourceAnchorResult {
     public static final class Builder {
         private List<GetMulticloudResourceAnchorCloudServiceProviderMetadataItem> cloudServiceProviderMetadataItems;
         private String compartmentId;
+        private String compartmentName;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
@@ -238,10 +270,12 @@ public final class GetMulticloudResourceAnchorResult {
         private String lifecycleDetails;
         private String lifecycleState;
         private String linkedCompartmentId;
+        private String linkedCompartmentName;
         private String region;
         private String resourceAnchorId;
         private String resourceAnchorSubscriptionId;
         private String setupMode;
+        private @Nullable Boolean shouldFetchCompartmentName;
         private String subscriptionId;
         private String subscriptionServiceName;
         private String subscriptionType;
@@ -253,6 +287,7 @@ public final class GetMulticloudResourceAnchorResult {
     	      Objects.requireNonNull(defaults);
     	      this.cloudServiceProviderMetadataItems = defaults.cloudServiceProviderMetadataItems;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentName = defaults.compartmentName;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -260,10 +295,12 @@ public final class GetMulticloudResourceAnchorResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleState = defaults.lifecycleState;
     	      this.linkedCompartmentId = defaults.linkedCompartmentId;
+    	      this.linkedCompartmentName = defaults.linkedCompartmentName;
     	      this.region = defaults.region;
     	      this.resourceAnchorId = defaults.resourceAnchorId;
     	      this.resourceAnchorSubscriptionId = defaults.resourceAnchorSubscriptionId;
     	      this.setupMode = defaults.setupMode;
+    	      this.shouldFetchCompartmentName = defaults.shouldFetchCompartmentName;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
     	      this.subscriptionType = defaults.subscriptionType;
@@ -289,6 +326,14 @@ public final class GetMulticloudResourceAnchorResult {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentName(String compartmentName) {
+            if (compartmentName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorResult", "compartmentName");
+            }
+            this.compartmentName = compartmentName;
             return this;
         }
         @CustomType.Setter
@@ -348,6 +393,14 @@ public final class GetMulticloudResourceAnchorResult {
             return this;
         }
         @CustomType.Setter
+        public Builder linkedCompartmentName(String linkedCompartmentName) {
+            if (linkedCompartmentName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorResult", "linkedCompartmentName");
+            }
+            this.linkedCompartmentName = linkedCompartmentName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder region(String region) {
             if (region == null) {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorResult", "region");
@@ -377,6 +430,12 @@ public final class GetMulticloudResourceAnchorResult {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorResult", "setupMode");
             }
             this.setupMode = setupMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shouldFetchCompartmentName(@Nullable Boolean shouldFetchCompartmentName) {
+
+            this.shouldFetchCompartmentName = shouldFetchCompartmentName;
             return this;
         }
         @CustomType.Setter
@@ -431,6 +490,7 @@ public final class GetMulticloudResourceAnchorResult {
             final var _resultValue = new GetMulticloudResourceAnchorResult();
             _resultValue.cloudServiceProviderMetadataItems = cloudServiceProviderMetadataItems;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentName = compartmentName;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
@@ -438,10 +498,12 @@ public final class GetMulticloudResourceAnchorResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lifecycleState = lifecycleState;
             _resultValue.linkedCompartmentId = linkedCompartmentId;
+            _resultValue.linkedCompartmentName = linkedCompartmentName;
             _resultValue.region = region;
             _resultValue.resourceAnchorId = resourceAnchorId;
             _resultValue.resourceAnchorSubscriptionId = resourceAnchorSubscriptionId;
             _resultValue.setupMode = setupMode;
+            _resultValue.shouldFetchCompartmentName = shouldFetchCompartmentName;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
             _resultValue.subscriptionType = subscriptionType;

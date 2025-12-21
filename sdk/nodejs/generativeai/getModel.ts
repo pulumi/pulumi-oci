@@ -45,78 +45,24 @@ export interface GetModelArgs {
 export interface GetModelResult {
     readonly baseModelId: string;
     readonly capabilities: string[];
-    /**
-     * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-     */
     readonly compartmentId: string;
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-     */
     readonly definedTags: {[key: string]: string};
-    /**
-     * An optional description of the model.
-     */
     readonly description: string;
-    /**
-     * A user-friendly name.
-     */
     readonly displayName: string;
-    /**
-     * Details about fine-tuning a custom model.
-     */
     readonly fineTuneDetails: outputs.GenerativeAi.GetModelFineTuneDetail[];
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     */
     readonly freeformTags: {[key: string]: string};
-    /**
-     * An ID that uniquely identifies a pretrained or fine-tuned model.
-     */
     readonly id: string;
-    /**
-     * Whether a model is supported long-term. Only applicable to base models.
-     */
     readonly isLongTermSupported: boolean;
-    /**
-     * A message describing the current state of the model in more detail that can provide actionable information.
-     */
     readonly lifecycleDetails: string;
     readonly modelId: string;
-    /**
-     * Model metrics during the creation of a new model.
-     */
     readonly modelMetrics: outputs.GenerativeAi.GetModelModelMetric[];
-    /**
-     * The lifecycle state of the model.
-     */
     readonly state: string;
-    /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     */
     readonly systemTags: {[key: string]: string};
-    /**
-     * The date and time that the model was created in the format of an RFC3339 datetime string.
-     */
     readonly timeCreated: string;
-    /**
-     * Corresponds to the time when the custom model and its associated foundation model will be deprecated.
-     */
     readonly timeDeprecated: string;
-    /**
-     * The date and time that the model was updated in the format of an RFC3339 datetime string.
-     */
     readonly timeUpdated: string;
-    /**
-     * The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
-     */
     readonly type: string;
-    /**
-     * The provider of the base model.
-     */
     readonly vendor: string;
-    /**
-     * The version of the model.
-     */
     readonly version: string;
 }
 /**

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: endpointDisplayName,
- *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpoint.id,
+ *     generativeAiPrivateEndpointId: testPrivateEndpoint.id,
  *     id: endpointId,
  *     state: endpointState,
  * });
@@ -70,6 +70,9 @@ export interface GetEndpointsArgs {
  */
 export interface GetEndpointsResult {
     readonly compartmentId: string;
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     */
     readonly displayName?: string;
     /**
      * The list of endpoint_collection.
@@ -77,6 +80,9 @@ export interface GetEndpointsResult {
     readonly endpointCollections: outputs.GenerativeAi.GetEndpointsEndpointCollection[];
     readonly filters?: outputs.GenerativeAi.GetEndpointsFilter[];
     readonly generativeAiPrivateEndpointId?: string;
+    /**
+     * An OCID that uniquely identifies this endpoint resource.
+     */
     readonly id?: string;
     /**
      * The current state of the endpoint.
@@ -97,7 +103,7 @@ export interface GetEndpointsResult {
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: endpointDisplayName,
- *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpoint.id,
+ *     generativeAiPrivateEndpointId: testPrivateEndpoint.id,
  *     id: endpointId,
  *     state: endpointState,
  * });

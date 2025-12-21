@@ -176,6 +176,10 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly swapBillingHostId: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -235,6 +239,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["sddcId"] = state?.sddcId;
             resourceInputs["state"] = state?.state;
             resourceInputs["swapBillingHostId"] = state?.swapBillingHostId;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["upgradedReplacementEsxiHostId"] = state?.upgradedReplacementEsxiHostId;
@@ -258,6 +263,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["nextSku"] = args?.nextSku;
             resourceInputs["nonUpgradedEsxiHostId"] = args?.nonUpgradedEsxiHostId;
             resourceInputs["sddcId"] = args?.sddcId;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
@@ -418,6 +424,10 @@ export interface EsxiHostState {
      */
     swapBillingHostId?: pulumi.Input<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string>;
@@ -519,4 +529,8 @@ export interface EsxiHostArgs {
      * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */
     sddcId?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

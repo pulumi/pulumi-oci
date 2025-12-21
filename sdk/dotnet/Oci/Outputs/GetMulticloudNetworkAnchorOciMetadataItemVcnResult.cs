@@ -29,6 +29,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
         /// </summary>
         public readonly string VcnId;
+        /// <summary>
+        /// Name of the VCN associated to the Network Anchor.
+        /// </summary>
+        public readonly string VcnName;
 
         [OutputConstructor]
         private GetMulticloudNetworkAnchorOciMetadataItemVcnResult(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string dnsLabel,
 
-            string vcnId)
+            string vcnId,
+
+            string vcnName)
         {
             BackupCidrBlocks = backupCidrBlocks;
             CidrBlocks = cidrBlocks;
             DnsLabel = dnsLabel;
             VcnId = vcnId;
+            VcnName = vcnName;
         }
     }
 }

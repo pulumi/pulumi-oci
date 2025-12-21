@@ -69,6 +69,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     * 
+     */
+    @Import(name="convertInstanceTrigger")
+    private @Nullable Output<Integer> convertInstanceTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> convertInstanceTrigger() {
+        return Optional.ofNullable(this.convertInstanceTrigger);
+    }
+
+    /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      * 
      */
@@ -84,6 +99,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * Data retention period set for given integration instance
+     * 
+     */
+    @Import(name="dataRetentionPeriod")
+    private @Nullable Output<String> dataRetentionPeriod;
+
+    /**
+     * @return Data retention period set for given integration instance
+     * 
+     */
+    public Optional<Output<String>> dataRetentionPeriod() {
+        return Optional.ofNullable(this.dataRetentionPeriod);
+    }
+
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -96,6 +126,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     * 
+     */
+    @Import(name="disableProcessAutomationTrigger")
+    private @Nullable Output<Integer> disableProcessAutomationTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> disableProcessAutomationTrigger() {
+        return Optional.ofNullable(this.disableProcessAutomationTrigger);
     }
 
     /**
@@ -143,17 +188,9 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.enableProcessAutomationTrigger);
     }
 
-    /**
-     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     * 
-     */
     @Import(name="extendDataRetentionTrigger")
     private @Nullable Output<Integer> extendDataRetentionTrigger;
 
-    /**
-     * @return (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     * 
-     */
     public Optional<Output<Integer>> extendDataRetentionTrigger() {
         return Optional.ofNullable(this.extendDataRetentionTrigger);
     }
@@ -279,6 +316,21 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    @Import(name="logGroupId")
+    private @Nullable Output<String> logGroupId;
+
+    /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    public Optional<Output<String>> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
+    }
+
+    /**
      * (Updatable) The number of configured message packs
      * 
      */
@@ -371,8 +423,11 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
+        this.convertInstanceTrigger = $.convertInstanceTrigger;
         this.customEndpoint = $.customEndpoint;
+        this.dataRetentionPeriod = $.dataRetentionPeriod;
         this.definedTags = $.definedTags;
+        this.disableProcessAutomationTrigger = $.disableProcessAutomationTrigger;
         this.displayName = $.displayName;
         this.domainId = $.domainId;
         this.enableProcessAutomationTrigger = $.enableProcessAutomationTrigger;
@@ -385,6 +440,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         this.isDisasterRecoveryEnabled = $.isDisasterRecoveryEnabled;
         this.isFileServerEnabled = $.isFileServerEnabled;
         this.isVisualBuilderEnabled = $.isVisualBuilderEnabled;
+        this.logGroupId = $.logGroupId;
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
         this.securityAttributes = $.securityAttributes;
@@ -484,6 +540,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param convertInstanceTrigger (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder convertInstanceTrigger(@Nullable Output<Integer> convertInstanceTrigger) {
+            $.convertInstanceTrigger = convertInstanceTrigger;
+            return this;
+        }
+
+        /**
+         * @param convertInstanceTrigger (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder convertInstanceTrigger(Integer convertInstanceTrigger) {
+            return convertInstanceTrigger(Output.of(convertInstanceTrigger));
+        }
+
+        /**
          * @param customEndpoint (Updatable) Details for a custom endpoint for the integration instance (update).
          * 
          * @return builder
@@ -505,6 +582,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param dataRetentionPeriod Data retention period set for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataRetentionPeriod(@Nullable Output<String> dataRetentionPeriod) {
+            $.dataRetentionPeriod = dataRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * @param dataRetentionPeriod Data retention period set for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dataRetentionPeriod(String dataRetentionPeriod) {
+            return dataRetentionPeriod(Output.of(dataRetentionPeriod));
+        }
+
+        /**
          * @param definedTags (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -523,6 +621,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param disableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disableProcessAutomationTrigger(@Nullable Output<Integer> disableProcessAutomationTrigger) {
+            $.disableProcessAutomationTrigger = disableProcessAutomationTrigger;
+            return this;
+        }
+
+        /**
+         * @param disableProcessAutomationTrigger (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder disableProcessAutomationTrigger(Integer disableProcessAutomationTrigger) {
+            return disableProcessAutomationTrigger(Output.of(disableProcessAutomationTrigger));
         }
 
         /**
@@ -588,23 +707,11 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
             return enableProcessAutomationTrigger(Output.of(enableProcessAutomationTrigger));
         }
 
-        /**
-         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder extendDataRetentionTrigger(@Nullable Output<Integer> extendDataRetentionTrigger) {
             $.extendDataRetentionTrigger = extendDataRetentionTrigger;
             return this;
         }
 
-        /**
-         * @param extendDataRetentionTrigger (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder extendDataRetentionTrigger(Integer extendDataRetentionTrigger) {
             return extendDataRetentionTrigger(Output.of(extendDataRetentionTrigger));
         }
@@ -775,6 +882,27 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
          */
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             return isVisualBuilderEnabled(Output.of(isVisualBuilderEnabled));
+        }
+
+        /**
+         * @param logGroupId OCID of LogAnalytics LogGroup, enabled for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logGroupId(@Nullable Output<String> logGroupId) {
+            $.logGroupId = logGroupId;
+            return this;
+        }
+
+        /**
+         * @param logGroupId OCID of LogAnalytics LogGroup, enabled for given integration instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logGroupId(String logGroupId) {
+            return logGroupId(Output.of(logGroupId));
         }
 
         /**

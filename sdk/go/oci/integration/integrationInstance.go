@@ -63,7 +63,25 @@ import (
 //							AllowlistedIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps),
 //						},
 //					},
+//					DesignTime: &integration.IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs{
+//						AllowlistedHttpIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpIps),
+//						AllowlistedHttpVcns: integration.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray{
+//							&integration.IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs{
+//								Id:             pulumi.Any(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsId),
+//								AllowlistedIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps),
+//							},
+//						},
+//					},
 //					IsIntegrationVcnAllowlisted: pulumi.Any(integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted),
+//					Runtime: &integration.IntegrationInstanceNetworkEndpointDetailsRuntimeArgs{
+//						AllowlistedHttpIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps),
+//						AllowlistedHttpVcns: integration.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray{
+//							&integration.IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs{
+//								Id:             pulumi.Any(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsId),
+//								AllowlistedIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsAllowlistedIps),
+//							},
+//						},
+//					},
 //				},
 //				SecurityAttributes: pulumi.StringMap{
 //					"oracle-zpr.sensitivity.value": pulumi.String("low"),
@@ -99,12 +117,16 @@ type IntegrationInstance struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
 	ConsumptionModel pulumi.StringOutput `pulumi:"consumptionModel"`
+	// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+	ConvertInstanceTrigger pulumi.IntPtrOutput `pulumi:"convertInstanceTrigger"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointOutput `pulumi:"customEndpoint"`
 	// Data retention period set for given integration instance
-	DataRetentionPeriod pulumi.StringOutput `pulumi:"dataRetentionPeriod"`
+	DataRetentionPeriod pulumi.StringPtrOutput `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+	DisableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"disableProcessAutomationTrigger"`
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails IntegrationInstanceDisasterRecoveryDetailArrayOutput `pulumi:"disasterRecoveryDetails"`
 	// (Updatable) Integration Instance Identifier.
@@ -113,8 +135,7 @@ type IntegrationInstance struct {
 	DomainId pulumi.StringPtrOutput `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
-	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-	ExtendDataRetentionTrigger pulumi.IntPtrOutput `pulumi:"extendDataRetentionTrigger"`
+	ExtendDataRetentionTrigger     pulumi.IntPtrOutput `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrOutput `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -138,6 +159,8 @@ type IntegrationInstance struct {
 	IsVisualBuilderEnabled pulumi.BoolOutput `pulumi:"isVisualBuilderEnabled"`
 	// Additional details of lifecycleState or substates
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId pulumi.StringPtrOutput `pulumi:"logGroupId"`
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntOutput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -226,12 +249,16 @@ type integrationInstanceState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
 	ConsumptionModel *string `pulumi:"consumptionModel"`
+	// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+	ConvertInstanceTrigger *int `pulumi:"convertInstanceTrigger"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint *IntegrationInstanceCustomEndpoint `pulumi:"customEndpoint"`
 	// Data retention period set for given integration instance
 	DataRetentionPeriod *string `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+	DisableProcessAutomationTrigger *int `pulumi:"disableProcessAutomationTrigger"`
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails []IntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// (Updatable) Integration Instance Identifier.
@@ -240,8 +267,7 @@ type integrationInstanceState struct {
 	DomainId *string `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
-	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
+	ExtendDataRetentionTrigger     *int `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -265,6 +291,8 @@ type integrationInstanceState struct {
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
 	// Additional details of lifecycleState or substates
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) The number of configured message packs
 	MessagePacks *int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -302,12 +330,16 @@ type IntegrationInstanceState struct {
 	CompartmentId pulumi.StringPtrInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
 	ConsumptionModel pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+	ConvertInstanceTrigger pulumi.IntPtrInput
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointPtrInput
 	// Data retention period set for given integration instance
 	DataRetentionPeriod pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+	DisableProcessAutomationTrigger pulumi.IntPtrInput
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails IntegrationInstanceDisasterRecoveryDetailArrayInput
 	// (Updatable) Integration Instance Identifier.
@@ -316,8 +348,7 @@ type IntegrationInstanceState struct {
 	DomainId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
-	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-	ExtendDataRetentionTrigger pulumi.IntPtrInput
+	ExtendDataRetentionTrigger     pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -341,6 +372,8 @@ type IntegrationInstanceState struct {
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
 	// Additional details of lifecycleState or substates
 	LifecycleDetails pulumi.StringPtrInput
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId pulumi.StringPtrInput
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntPtrInput
 	// Base representation of a network endpoint.
@@ -380,18 +413,23 @@ type integrationInstanceArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
 	ConsumptionModel *string `pulumi:"consumptionModel"`
+	// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+	ConvertInstanceTrigger *int `pulumi:"convertInstanceTrigger"`
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint *IntegrationInstanceCustomEndpoint `pulumi:"customEndpoint"`
+	// Data retention period set for given integration instance
+	DataRetentionPeriod *string `pulumi:"dataRetentionPeriod"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+	DisableProcessAutomationTrigger *int `pulumi:"disableProcessAutomationTrigger"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId *string `pulumi:"domainId"`
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
-	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-	ExtendDataRetentionTrigger *int `pulumi:"extendDataRetentionTrigger"`
+	ExtendDataRetentionTrigger     *int `pulumi:"extendDataRetentionTrigger"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -408,6 +446,8 @@ type integrationInstanceArgs struct {
 	IsFileServerEnabled *bool `pulumi:"isFileServerEnabled"`
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled *bool `pulumi:"isVisualBuilderEnabled"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) The number of configured message packs
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -434,18 +474,23 @@ type IntegrationInstanceArgs struct {
 	CompartmentId pulumi.StringInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
 	ConsumptionModel pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+	ConvertInstanceTrigger pulumi.IntPtrInput
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointPtrInput
+	// Data retention period set for given integration instance
+	DataRetentionPeriod pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+	DisableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
-	// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-	ExtendDataRetentionTrigger pulumi.IntPtrInput
+	ExtendDataRetentionTrigger     pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -462,6 +507,8 @@ type IntegrationInstanceArgs struct {
 	IsFileServerEnabled pulumi.BoolPtrInput
 	// (Updatable) Visual Builder is enabled or not.
 	IsVisualBuilderEnabled pulumi.BoolPtrInput
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId pulumi.StringPtrInput
 	// (Updatable) The number of configured message packs
 	MessagePacks pulumi.IntInput
 	// Base representation of a network endpoint.
@@ -589,19 +636,29 @@ func (o IntegrationInstanceOutput) ConsumptionModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.ConsumptionModel }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+func (o IntegrationInstanceOutput) ConvertInstanceTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.ConvertInstanceTrigger }).(pulumi.IntPtrOutput)
+}
+
 // (Updatable) Details for a custom endpoint for the integration instance (update).
 func (o IntegrationInstanceOutput) CustomEndpoint() IntegrationInstanceCustomEndpointOutput {
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceCustomEndpointOutput { return v.CustomEndpoint }).(IntegrationInstanceCustomEndpointOutput)
 }
 
 // Data retention period set for given integration instance
-func (o IntegrationInstanceOutput) DataRetentionPeriod() pulumi.StringOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.DataRetentionPeriod }).(pulumi.StringOutput)
+func (o IntegrationInstanceOutput) DataRetentionPeriod() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.DataRetentionPeriod }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 func (o IntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+func (o IntegrationInstanceOutput) DisableProcessAutomationTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.DisableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
 }
 
 // Disaster recovery details for the integration instance created in the region.
@@ -626,7 +683,6 @@ func (o IntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPt
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
 func (o IntegrationInstanceOutput) ExtendDataRetentionTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.ExtendDataRetentionTrigger }).(pulumi.IntPtrOutput)
 }
@@ -688,6 +744,11 @@ func (o IntegrationInstanceOutput) IsVisualBuilderEnabled() pulumi.BoolOutput {
 // Additional details of lifecycleState or substates
 func (o IntegrationInstanceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given integration instance
+func (o IntegrationInstanceOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The number of configured message packs

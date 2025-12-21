@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs;
+import com.pulumi.oci.Integration.inputs.IntegrationInstanceNetworkEndpointDetailsRuntimeArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -50,6 +52,21 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
     }
 
     /**
+     * A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    @Import(name="designTime")
+    private @Nullable Output<IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs> designTime;
+
+    /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    public Optional<Output<IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs>> designTime() {
+        return Optional.ofNullable(this.designTime);
+    }
+
+    /**
      * The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
      * 
      */
@@ -79,13 +96,30 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         return this.networkEndpointType;
     }
 
+    /**
+     * A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    @Import(name="runtime")
+    private @Nullable Output<IntegrationInstanceNetworkEndpointDetailsRuntimeArgs> runtime;
+
+    /**
+     * @return A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+     * 
+     */
+    public Optional<Output<IntegrationInstanceNetworkEndpointDetailsRuntimeArgs>> runtime() {
+        return Optional.ofNullable(this.runtime);
+    }
+
     private IntegrationInstanceNetworkEndpointDetailsArgs() {}
 
     private IntegrationInstanceNetworkEndpointDetailsArgs(IntegrationInstanceNetworkEndpointDetailsArgs $) {
         this.allowlistedHttpIps = $.allowlistedHttpIps;
         this.allowlistedHttpVcns = $.allowlistedHttpVcns;
+        this.designTime = $.designTime;
         this.isIntegrationVcnAllowlisted = $.isIntegrationVcnAllowlisted;
         this.networkEndpointType = $.networkEndpointType;
+        this.runtime = $.runtime;
     }
 
     public static Builder builder() {
@@ -169,6 +203,27 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
         }
 
         /**
+         * @param designTime A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         * 
+         * @return builder
+         * 
+         */
+        public Builder designTime(@Nullable Output<IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs> designTime) {
+            $.designTime = designTime;
+            return this;
+        }
+
+        /**
+         * @param designTime A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         * 
+         * @return builder
+         * 
+         */
+        public Builder designTime(IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs designTime) {
+            return designTime(Output.of(designTime));
+        }
+
+        /**
          * @param isIntegrationVcnAllowlisted The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
          * 
          * @return builder
@@ -208,6 +263,27 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
          */
         public Builder networkEndpointType(String networkEndpointType) {
             return networkEndpointType(Output.of(networkEndpointType));
+        }
+
+        /**
+         * @param runtime A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtime(@Nullable Output<IntegrationInstanceNetworkEndpointDetailsRuntimeArgs> runtime) {
+            $.runtime = runtime;
+            return this;
+        }
+
+        /**
+         * @param runtime A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtime(IntegrationInstanceNetworkEndpointDetailsRuntimeArgs runtime) {
+            return runtime(Output.of(runtime));
         }
 
         public IntegrationInstanceNetworkEndpointDetailsArgs build() {

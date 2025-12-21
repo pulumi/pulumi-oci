@@ -25,6 +25,26 @@ export type ApiaccesscontrolPrivilegedApiRequest = import("./apiaccesscontrolPri
 export const ApiaccesscontrolPrivilegedApiRequest: typeof import("./apiaccesscontrolPrivilegedApiRequest").ApiaccesscontrolPrivilegedApiRequest = null as any;
 utilities.lazyLoad(exports, ["ApiaccesscontrolPrivilegedApiRequest"], () => require("./apiaccesscontrolPrivilegedApiRequest"));
 
+export { BatchBatchContextArgs, BatchBatchContextState } from "./batchBatchContext";
+export type BatchBatchContext = import("./batchBatchContext").BatchBatchContext;
+export const BatchBatchContext: typeof import("./batchBatchContext").BatchBatchContext = null as any;
+utilities.lazyLoad(exports, ["BatchBatchContext"], () => require("./batchBatchContext"));
+
+export { BatchBatchJobPoolArgs, BatchBatchJobPoolState } from "./batchBatchJobPool";
+export type BatchBatchJobPool = import("./batchBatchJobPool").BatchBatchJobPool;
+export const BatchBatchJobPool: typeof import("./batchBatchJobPool").BatchBatchJobPool = null as any;
+utilities.lazyLoad(exports, ["BatchBatchJobPool"], () => require("./batchBatchJobPool"));
+
+export { BatchBatchTaskEnvironmentArgs, BatchBatchTaskEnvironmentState } from "./batchBatchTaskEnvironment";
+export type BatchBatchTaskEnvironment = import("./batchBatchTaskEnvironment").BatchBatchTaskEnvironment;
+export const BatchBatchTaskEnvironment: typeof import("./batchBatchTaskEnvironment").BatchBatchTaskEnvironment = null as any;
+utilities.lazyLoad(exports, ["BatchBatchTaskEnvironment"], () => require("./batchBatchTaskEnvironment"));
+
+export { BatchBatchTaskProfileArgs, BatchBatchTaskProfileState } from "./batchBatchTaskProfile";
+export type BatchBatchTaskProfile = import("./batchBatchTaskProfile").BatchBatchTaskProfile;
+export const BatchBatchTaskProfile: typeof import("./batchBatchTaskProfile").BatchBatchTaskProfile = null as any;
+utilities.lazyLoad(exports, ["BatchBatchTaskProfile"], () => require("./batchBatchTaskProfile"));
+
 export { DbmulticloudMultiCloudResourceDiscoveryArgs, DbmulticloudMultiCloudResourceDiscoveryState } from "./dbmulticloudMultiCloudResourceDiscovery";
 export type DbmulticloudMultiCloudResourceDiscovery = import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery;
 export const DbmulticloudMultiCloudResourceDiscovery: typeof import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery = null as any;
@@ -134,6 +154,51 @@ export { GetApiaccesscontrolPrivilegedApiRequestsArgs, GetApiaccesscontrolPrivil
 export const getApiaccesscontrolPrivilegedApiRequests: typeof import("./getApiaccesscontrolPrivilegedApiRequests").getApiaccesscontrolPrivilegedApiRequests = null as any;
 export const getApiaccesscontrolPrivilegedApiRequestsOutput: typeof import("./getApiaccesscontrolPrivilegedApiRequests").getApiaccesscontrolPrivilegedApiRequestsOutput = null as any;
 utilities.lazyLoad(exports, ["getApiaccesscontrolPrivilegedApiRequests","getApiaccesscontrolPrivilegedApiRequestsOutput"], () => require("./getApiaccesscontrolPrivilegedApiRequests"));
+
+export { GetBatchBatchContextArgs, GetBatchBatchContextResult, GetBatchBatchContextOutputArgs } from "./getBatchBatchContext";
+export const getBatchBatchContext: typeof import("./getBatchBatchContext").getBatchBatchContext = null as any;
+export const getBatchBatchContextOutput: typeof import("./getBatchBatchContext").getBatchBatchContextOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchContext","getBatchBatchContextOutput"], () => require("./getBatchBatchContext"));
+
+export { GetBatchBatchContextShapesArgs, GetBatchBatchContextShapesResult, GetBatchBatchContextShapesOutputArgs } from "./getBatchBatchContextShapes";
+export const getBatchBatchContextShapes: typeof import("./getBatchBatchContextShapes").getBatchBatchContextShapes = null as any;
+export const getBatchBatchContextShapesOutput: typeof import("./getBatchBatchContextShapes").getBatchBatchContextShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchContextShapes","getBatchBatchContextShapesOutput"], () => require("./getBatchBatchContextShapes"));
+
+export { GetBatchBatchContextsArgs, GetBatchBatchContextsResult, GetBatchBatchContextsOutputArgs } from "./getBatchBatchContexts";
+export const getBatchBatchContexts: typeof import("./getBatchBatchContexts").getBatchBatchContexts = null as any;
+export const getBatchBatchContextsOutput: typeof import("./getBatchBatchContexts").getBatchBatchContextsOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchContexts","getBatchBatchContextsOutput"], () => require("./getBatchBatchContexts"));
+
+export { GetBatchBatchJobPoolArgs, GetBatchBatchJobPoolResult, GetBatchBatchJobPoolOutputArgs } from "./getBatchBatchJobPool";
+export const getBatchBatchJobPool: typeof import("./getBatchBatchJobPool").getBatchBatchJobPool = null as any;
+export const getBatchBatchJobPoolOutput: typeof import("./getBatchBatchJobPool").getBatchBatchJobPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchJobPool","getBatchBatchJobPoolOutput"], () => require("./getBatchBatchJobPool"));
+
+export { GetBatchBatchJobPoolsArgs, GetBatchBatchJobPoolsResult, GetBatchBatchJobPoolsOutputArgs } from "./getBatchBatchJobPools";
+export const getBatchBatchJobPools: typeof import("./getBatchBatchJobPools").getBatchBatchJobPools = null as any;
+export const getBatchBatchJobPoolsOutput: typeof import("./getBatchBatchJobPools").getBatchBatchJobPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchJobPools","getBatchBatchJobPoolsOutput"], () => require("./getBatchBatchJobPools"));
+
+export { GetBatchBatchTaskEnvironmentArgs, GetBatchBatchTaskEnvironmentResult, GetBatchBatchTaskEnvironmentOutputArgs } from "./getBatchBatchTaskEnvironment";
+export const getBatchBatchTaskEnvironment: typeof import("./getBatchBatchTaskEnvironment").getBatchBatchTaskEnvironment = null as any;
+export const getBatchBatchTaskEnvironmentOutput: typeof import("./getBatchBatchTaskEnvironment").getBatchBatchTaskEnvironmentOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchTaskEnvironment","getBatchBatchTaskEnvironmentOutput"], () => require("./getBatchBatchTaskEnvironment"));
+
+export { GetBatchBatchTaskEnvironmentsArgs, GetBatchBatchTaskEnvironmentsResult, GetBatchBatchTaskEnvironmentsOutputArgs } from "./getBatchBatchTaskEnvironments";
+export const getBatchBatchTaskEnvironments: typeof import("./getBatchBatchTaskEnvironments").getBatchBatchTaskEnvironments = null as any;
+export const getBatchBatchTaskEnvironmentsOutput: typeof import("./getBatchBatchTaskEnvironments").getBatchBatchTaskEnvironmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchTaskEnvironments","getBatchBatchTaskEnvironmentsOutput"], () => require("./getBatchBatchTaskEnvironments"));
+
+export { GetBatchBatchTaskProfileArgs, GetBatchBatchTaskProfileResult, GetBatchBatchTaskProfileOutputArgs } from "./getBatchBatchTaskProfile";
+export const getBatchBatchTaskProfile: typeof import("./getBatchBatchTaskProfile").getBatchBatchTaskProfile = null as any;
+export const getBatchBatchTaskProfileOutput: typeof import("./getBatchBatchTaskProfile").getBatchBatchTaskProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchTaskProfile","getBatchBatchTaskProfileOutput"], () => require("./getBatchBatchTaskProfile"));
+
+export { GetBatchBatchTaskProfilesArgs, GetBatchBatchTaskProfilesResult, GetBatchBatchTaskProfilesOutputArgs } from "./getBatchBatchTaskProfiles";
+export const getBatchBatchTaskProfiles: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfiles = null as any;
+export const getBatchBatchTaskProfilesOutput: typeof import("./getBatchBatchTaskProfiles").getBatchBatchTaskProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getBatchBatchTaskProfiles","getBatchBatchTaskProfilesOutput"], () => require("./getBatchBatchTaskProfiles"));
 
 export { GetDbmulticloudMultiCloudResourceDiscoveriesArgs, GetDbmulticloudMultiCloudResourceDiscoveriesResult, GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs } from "./getDbmulticloudMultiCloudResourceDiscoveries";
 export const getDbmulticloudMultiCloudResourceDiscoveries: typeof import("./getDbmulticloudMultiCloudResourceDiscoveries").getDbmulticloudMultiCloudResourceDiscoveries = null as any;
@@ -380,6 +445,11 @@ export const getMulticloudExternalLocationsMetadata: typeof import("./getMulticl
 export const getMulticloudExternalLocationsMetadataOutput: typeof import("./getMulticloudExternalLocationsMetadata").getMulticloudExternalLocationsMetadataOutput = null as any;
 utilities.lazyLoad(exports, ["getMulticloudExternalLocationsMetadata","getMulticloudExternalLocationsMetadataOutput"], () => require("./getMulticloudExternalLocationsMetadata"));
 
+export { GetMulticloudMulticloudsubscriptionsArgs, GetMulticloudMulticloudsubscriptionsResult, GetMulticloudMulticloudsubscriptionsOutputArgs } from "./getMulticloudMulticloudsubscriptions";
+export const getMulticloudMulticloudsubscriptions: typeof import("./getMulticloudMulticloudsubscriptions").getMulticloudMulticloudsubscriptions = null as any;
+export const getMulticloudMulticloudsubscriptionsOutput: typeof import("./getMulticloudMulticloudsubscriptions").getMulticloudMulticloudsubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudMulticloudsubscriptions","getMulticloudMulticloudsubscriptionsOutput"], () => require("./getMulticloudMulticloudsubscriptions"));
+
 export { GetMulticloudNetworkAnchorArgs, GetMulticloudNetworkAnchorResult, GetMulticloudNetworkAnchorOutputArgs } from "./getMulticloudNetworkAnchor";
 export const getMulticloudNetworkAnchor: typeof import("./getMulticloudNetworkAnchor").getMulticloudNetworkAnchor = null as any;
 export const getMulticloudNetworkAnchorOutput: typeof import("./getMulticloudNetworkAnchor").getMulticloudNetworkAnchorOutput = null as any;
@@ -399,6 +469,11 @@ export { GetMulticloudOmHubMultiCloudsMetadataArgs, GetMulticloudOmHubMultiCloud
 export const getMulticloudOmHubMultiCloudsMetadata: typeof import("./getMulticloudOmHubMultiCloudsMetadata").getMulticloudOmHubMultiCloudsMetadata = null as any;
 export const getMulticloudOmHubMultiCloudsMetadataOutput: typeof import("./getMulticloudOmHubMultiCloudsMetadata").getMulticloudOmHubMultiCloudsMetadataOutput = null as any;
 utilities.lazyLoad(exports, ["getMulticloudOmHubMultiCloudsMetadata","getMulticloudOmHubMultiCloudsMetadataOutput"], () => require("./getMulticloudOmHubMultiCloudsMetadata"));
+
+export { GetMulticloudOmHubMulticloudResourcesArgs, GetMulticloudOmHubMulticloudResourcesResult, GetMulticloudOmHubMulticloudResourcesOutputArgs } from "./getMulticloudOmHubMulticloudResources";
+export const getMulticloudOmHubMulticloudResources: typeof import("./getMulticloudOmHubMulticloudResources").getMulticloudOmHubMulticloudResources = null as any;
+export const getMulticloudOmHubMulticloudResourcesOutput: typeof import("./getMulticloudOmHubMulticloudResources").getMulticloudOmHubMulticloudResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudOmHubMulticloudResources","getMulticloudOmHubMulticloudResourcesOutput"], () => require("./getMulticloudOmHubMulticloudResources"));
 
 export { GetMulticloudResourceAnchorArgs, GetMulticloudResourceAnchorResult, GetMulticloudResourceAnchorOutputArgs } from "./getMulticloudResourceAnchor";
 export const getMulticloudResourceAnchor: typeof import("./getMulticloudResourceAnchor").getMulticloudResourceAnchor = null as any;
@@ -663,6 +738,14 @@ const _module = {
                 return new ApiaccesscontrolPrivilegedApiControl(name, <any>undefined, { urn })
             case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
                 return new ApiaccesscontrolPrivilegedApiRequest(name, <any>undefined, { urn })
+            case "oci:oci/batchBatchContext:BatchBatchContext":
+                return new BatchBatchContext(name, <any>undefined, { urn })
+            case "oci:oci/batchBatchJobPool:BatchBatchJobPool":
+                return new BatchBatchJobPool(name, <any>undefined, { urn })
+            case "oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment":
+                return new BatchBatchTaskEnvironment(name, <any>undefined, { urn })
+            case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
+                return new BatchBatchTaskProfile(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
                 return new DbmulticloudMultiCloudResourceDiscovery(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -730,6 +813,10 @@ pulumi.runtime.registerResourceModule("oci", "oci/aiDataPlatformAiDataPlatform",
 pulumi.runtime.registerResourceModule("oci", "oci/apiPlatformApiPlatformInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiControl", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiRequest", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/batchBatchContext", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/batchBatchJobPool", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskEnvironment", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/batchBatchTaskProfile", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKey", _module)

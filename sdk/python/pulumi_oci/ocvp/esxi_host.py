@@ -37,7 +37,8 @@ class EsxiHostArgs:
                  host_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  next_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a EsxiHost resource.
         :param pulumi.Input[_builtins.str] billing_donor_host_id: (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -62,6 +63,7 @@ class EsxiHostArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         if attach_datastore_cluster_ids is not None:
             pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
@@ -115,6 +117,8 @@ class EsxiHostArgs:
             pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
         if sddc_id is not None:
             pulumi.set(__self__, "sddc_id", sddc_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="attachDatastoreClusterIds")
@@ -325,6 +329,18 @@ class EsxiHostArgs:
     def sddc_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "sddc_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
 
 @pulumi.input_type
 class _EsxiHostState:
@@ -359,6 +375,7 @@ class _EsxiHostState:
                  sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  swap_billing_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  upgraded_replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -400,6 +417,7 @@ class _EsxiHostState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the ESXi host.
         :param pulumi.Input[_builtins.str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
@@ -483,6 +501,8 @@ class _EsxiHostState:
             pulumi.set(__self__, "state", state)
         if swap_billing_host_id is not None:
             pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -858,6 +878,18 @@ class _EsxiHostState:
         pulumi.set(self, "swap_billing_host_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -929,6 +961,7 @@ class EsxiHost(pulumi.CustomResource):
                  next_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         ## Import
@@ -963,6 +996,7 @@ class EsxiHost(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         ...
     @overload
@@ -1011,6 +1045,7 @@ class EsxiHost(pulumi.CustomResource):
                  next_sku: Optional[pulumi.Input[_builtins.str]] = None,
                  non_upgraded_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1037,6 +1072,7 @@ class EsxiHost(pulumi.CustomResource):
             __props__.__dict__["next_sku"] = next_sku
             __props__.__dict__["non_upgraded_esxi_host_id"] = non_upgraded_esxi_host_id
             __props__.__dict__["sddc_id"] = sddc_id
+            __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["billing_contract_end_date"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["compute_instance_id"] = None
@@ -1094,6 +1130,7 @@ class EsxiHost(pulumi.CustomResource):
             sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             swap_billing_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             upgraded_replacement_esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1140,6 +1177,7 @@ class EsxiHost(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the ESXi host.
         :param pulumi.Input[_builtins.str] swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
@@ -1179,6 +1217,7 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["sddc_id"] = sddc_id
         __props__.__dict__["state"] = state
         __props__.__dict__["swap_billing_host_id"] = swap_billing_host_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["upgraded_replacement_esxi_host_id"] = upgraded_replacement_esxi_host_id
@@ -1429,6 +1468,14 @@ class EsxiHost(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         return pulumi.get(self, "swap_billing_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

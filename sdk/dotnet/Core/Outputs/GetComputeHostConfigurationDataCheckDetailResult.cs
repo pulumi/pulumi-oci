@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string ConfigurationState;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         /// </summary>
         public readonly string FirmwareBundleId;
         /// <summary>

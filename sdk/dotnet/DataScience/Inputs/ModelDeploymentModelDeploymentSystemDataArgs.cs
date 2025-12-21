@@ -19,6 +19,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? CurrentInstanceCount { get; set; }
 
         /// <summary>
+        /// The type of the deployed model.
+        /// </summary>
+        [Input("modelType")]
+        public Input<string>? ModelType { get; set; }
+
+        /// <summary>
         /// The infrastructure type of the model deployment.
         /// </summary>
         [Input("systemInfraType")]

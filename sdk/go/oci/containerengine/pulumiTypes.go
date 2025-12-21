@@ -2539,6 +2539,8 @@ func (o ClusterOptionsPersistentVolumeConfigPtrOutput) FreeformTags() pulumi.Str
 }
 
 type ClusterOptionsServiceLbConfig struct {
+	// (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds []string `pulumi:"backendNsgIds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2557,6 +2559,8 @@ type ClusterOptionsServiceLbConfigInput interface {
 }
 
 type ClusterOptionsServiceLbConfigArgs struct {
+	// (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds pulumi.StringArrayInput `pulumi:"backendNsgIds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -2640,6 +2644,11 @@ func (o ClusterOptionsServiceLbConfigOutput) ToClusterOptionsServiceLbConfigPtrO
 	}).(ClusterOptionsServiceLbConfigPtrOutput)
 }
 
+// (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o ClusterOptionsServiceLbConfigOutput) BackendNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) []string { return v.BackendNsgIds }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o ClusterOptionsServiceLbConfigOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -2672,6 +2681,16 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) Elem() ClusterOptionsServiceLbCo
 		var ret ClusterOptionsServiceLbConfig
 		return ret
 	}).(ClusterOptionsServiceLbConfigOutput)
+}
+
+// (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o ClusterOptionsServiceLbConfigPtrOutput) BackendNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ClusterOptionsServiceLbConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.BackendNsgIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -11030,6 +11049,8 @@ func (o GetClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetClusterOptionServiceLbConfig struct {
+	// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds []string `pulumi:"backendNsgIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -11048,6 +11069,8 @@ type GetClusterOptionServiceLbConfigInput interface {
 }
 
 type GetClusterOptionServiceLbConfigArgs struct {
+	// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds pulumi.StringArrayInput `pulumi:"backendNsgIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -11103,6 +11126,11 @@ func (o GetClusterOptionServiceLbConfigOutput) ToGetClusterOptionServiceLbConfig
 
 func (o GetClusterOptionServiceLbConfigOutput) ToGetClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClusterOptionServiceLbConfigOutput {
 	return o
+}
+
+// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o GetClusterOptionServiceLbConfigOutput) BackendNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterOptionServiceLbConfig) []string { return v.BackendNsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -13405,6 +13433,8 @@ func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulum
 }
 
 type GetClustersClusterOptionServiceLbConfig struct {
+	// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds []string `pulumi:"backendNsgIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -13423,6 +13453,8 @@ type GetClustersClusterOptionServiceLbConfigInput interface {
 }
 
 type GetClustersClusterOptionServiceLbConfigArgs struct {
+	// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+	BackendNsgIds pulumi.StringArrayInput `pulumi:"backendNsgIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -13478,6 +13510,11 @@ func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptio
 
 func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptionServiceLbConfigOutputWithContext(ctx context.Context) GetClustersClusterOptionServiceLbConfigOutput {
 	return o
+}
+
+// A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+func (o GetClustersClusterOptionServiceLbConfigOutput) BackendNsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionServiceLbConfig) []string { return v.BackendNsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

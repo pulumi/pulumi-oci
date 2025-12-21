@@ -28,11 +28,14 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testExternalLocationsMetadata = Oci.Oci.GetMulticloudExternalLocationsMetadata.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ClusterPlacementGroupId = clusterPlacementGroupId,
+        ///         CompartmentId = compartmentId,
         ///         EntityType = externalLocationsMetadataEntityType,
+        ///         ExternalLocation = externalLocation,
         ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LogicalZone = logicalZone,
         ///     });
         /// 
         /// });
@@ -58,11 +61,14 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testExternalLocationsMetadata = Oci.Oci.GetMulticloudExternalLocationsMetadata.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ClusterPlacementGroupId = clusterPlacementGroupId,
+        ///         CompartmentId = compartmentId,
         ///         EntityType = externalLocationsMetadataEntityType,
+        ///         ExternalLocation = externalLocation,
         ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LogicalZone = logicalZone,
         ///     });
         /// 
         /// });
@@ -88,11 +94,14 @@ namespace Pulumi.Oci.Oci
         /// {
         ///     var testExternalLocationsMetadata = Oci.Oci.GetMulticloudExternalLocationsMetadata.Invoke(new()
         ///     {
-        ///         CompartmentId = compartmentId,
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
+        ///         ClusterPlacementGroupId = clusterPlacementGroupId,
+        ///         CompartmentId = compartmentId,
         ///         EntityType = externalLocationsMetadataEntityType,
+        ///         ExternalLocation = externalLocation,
         ///         LinkedCompartmentId = linkedCompartmentId,
+        ///         LogicalZone = logicalZone,
         ///     });
         /// 
         /// });
@@ -106,16 +115,28 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudExternalLocationsMetadataArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("clusterPlacementGroupId")]
+        public string? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// The resource type query (i.e. dbsystem, instance etc.)
         /// </summary>
         [Input("entityType")]
         public string? EntityType { get; set; }
+
+        /// <summary>
+        /// The Cloud Service Provider region.
+        /// </summary>
+        [Input("externalLocation")]
+        public string? ExternalLocation { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetMulticloudExternalLocationsMetadataFilterArgs>? _filters;
@@ -129,19 +150,25 @@ namespace Pulumi.Oci.Oci
         public int? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
         /// </summary>
         [Input("linkedCompartmentId")]
         public string? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Oracle Cloud Infrastructure Logical AD to filter the response.
+        /// </summary>
+        [Input("logicalZone")]
+        public string? LogicalZone { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public string SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The subscription service name of the Cloud Service Provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public string SubscriptionServiceName { get; set; } = null!;
@@ -155,16 +182,28 @@ namespace Pulumi.Oci.Oci
     public sealed class GetMulticloudExternalLocationsMetadataInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
         /// The resource type query (i.e. dbsystem, instance etc.)
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
+
+        /// <summary>
+        /// The Cloud Service Provider region.
+        /// </summary>
+        [Input("externalLocation")]
+        public Input<string>? ExternalLocation { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetMulticloudExternalLocationsMetadataFilterInputArgs>? _filters;
@@ -178,19 +217,25 @@ namespace Pulumi.Oci.Oci
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
         /// </summary>
         [Input("linkedCompartmentId")]
         public Input<string>? LinkedCompartmentId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        /// Oracle Cloud Infrastructure Logical AD to filter the response.
+        /// </summary>
+        [Input("logicalZone")]
+        public Input<string>? LogicalZone { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         /// </summary>
         [Input("subscriptionId", required: true)]
         public Input<string> SubscriptionId { get; set; } = null!;
 
         /// <summary>
-        /// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+        /// The subscription service name of the Cloud Service Provider.
         /// </summary>
         [Input("subscriptionServiceName", required: true)]
         public Input<string> SubscriptionServiceName { get; set; } = null!;
@@ -205,8 +250,16 @@ namespace Pulumi.Oci.Oci
     [OutputType]
     public sealed class GetMulticloudExternalLocationsMetadataResult
     {
-        public readonly string CompartmentId;
+        /// <summary>
+        /// Cluster Placement Group OCID
+        /// </summary>
+        public readonly string? ClusterPlacementGroupId;
+        public readonly string? CompartmentId;
         public readonly string? EntityType;
+        /// <summary>
+        /// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        /// </summary>
+        public readonly string? ExternalLocation;
         /// <summary>
         /// The list of ExternalLocationsMetadata.
         /// </summary>
@@ -218,14 +271,19 @@ namespace Pulumi.Oci.Oci
         public readonly string Id;
         public readonly int? Limit;
         public readonly string? LinkedCompartmentId;
+        public readonly string? LogicalZone;
         public readonly string SubscriptionId;
         public readonly string SubscriptionServiceName;
 
         [OutputConstructor]
         private GetMulticloudExternalLocationsMetadataResult(
-            string compartmentId,
+            string? clusterPlacementGroupId,
+
+            string? compartmentId,
 
             string? entityType,
+
+            string? externalLocation,
 
             ImmutableArray<Outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionResult> externalLocationsMetadatumCollections,
 
@@ -237,17 +295,22 @@ namespace Pulumi.Oci.Oci
 
             string? linkedCompartmentId,
 
+            string? logicalZone,
+
             string subscriptionId,
 
             string subscriptionServiceName)
         {
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             EntityType = entityType;
+            ExternalLocation = externalLocation;
             ExternalLocationsMetadatumCollections = externalLocationsMetadatumCollections;
             Filters = filters;
             Id = id;
             Limit = limit;
             LinkedCompartmentId = linkedCompartmentId;
+            LogicalZone = logicalZone;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
         }

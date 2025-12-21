@@ -136,12 +136,17 @@ public final class GetShapesShape {
      */
     private List<GetShapesShapePlatformConfigOption> platformConfigOptions;
     /**
+     * @return The list of platform names that can be used for this shape
+     * 
+     */
+    private List<String> platformNames;
+    /**
      * @return A short description of the shape&#39;s processor (CPU).
      * 
      */
     private String processorDescription;
     /**
-     * @return The list of of compartment quotas for the shape.
+     * @return The list of compartment quotas for the shape.
      * 
      */
     private List<String> quotaNames;
@@ -329,6 +334,13 @@ public final class GetShapesShape {
         return this.platformConfigOptions;
     }
     /**
+     * @return The list of platform names that can be used for this shape
+     * 
+     */
+    public List<String> platformNames() {
+        return this.platformNames;
+    }
+    /**
      * @return A short description of the shape&#39;s processor (CPU).
      * 
      */
@@ -336,7 +348,7 @@ public final class GetShapesShape {
         return this.processorDescription;
     }
     /**
-     * @return The list of of compartment quotas for the shape.
+     * @return The list of compartment quotas for the shape.
      * 
      */
     public List<String> quotaNames() {
@@ -403,6 +415,7 @@ public final class GetShapesShape {
         private List<GetShapesShapeOcpuOption> ocpuOptions;
         private Double ocpus;
         private List<GetShapesShapePlatformConfigOption> platformConfigOptions;
+        private List<String> platformNames;
         private String processorDescription;
         private List<String> quotaNames;
         private Integer rdmaBandwidthInGbps;
@@ -435,6 +448,7 @@ public final class GetShapesShape {
     	      this.ocpuOptions = defaults.ocpuOptions;
     	      this.ocpus = defaults.ocpus;
     	      this.platformConfigOptions = defaults.platformConfigOptions;
+    	      this.platformNames = defaults.platformNames;
     	      this.processorDescription = defaults.processorDescription;
     	      this.quotaNames = defaults.quotaNames;
     	      this.rdmaBandwidthInGbps = defaults.rdmaBandwidthInGbps;
@@ -646,6 +660,17 @@ public final class GetShapesShape {
             return platformConfigOptions(List.of(platformConfigOptions));
         }
         @CustomType.Setter
+        public Builder platformNames(List<String> platformNames) {
+            if (platformNames == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "platformNames");
+            }
+            this.platformNames = platformNames;
+            return this;
+        }
+        public Builder platformNames(String... platformNames) {
+            return platformNames(List.of(platformNames));
+        }
+        @CustomType.Setter
         public Builder processorDescription(String processorDescription) {
             if (processorDescription == null) {
               throw new MissingRequiredPropertyException("GetShapesShape", "processorDescription");
@@ -727,6 +752,7 @@ public final class GetShapesShape {
             _resultValue.ocpuOptions = ocpuOptions;
             _resultValue.ocpus = ocpus;
             _resultValue.platformConfigOptions = platformConfigOptions;
+            _resultValue.platformNames = platformNames;
             _resultValue.processorDescription = processorDescription;
             _resultValue.quotaNames = quotaNames;
             _resultValue.rdmaBandwidthInGbps = rdmaBandwidthInGbps;

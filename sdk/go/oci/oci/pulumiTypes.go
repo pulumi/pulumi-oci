@@ -570,6 +570,1115 @@ func (o ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayOutput) 
 	}).(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListOutput)
 }
 
+type BatchBatchContextFleet struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details *string `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks int `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name string `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shape BatchBatchContextFleetShape `pulumi:"shape"`
+	// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State *string `pulumi:"state"`
+	// Type of the fleet. Also serves as a discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// BatchBatchContextFleetInput is an input type that accepts BatchBatchContextFleetArgs and BatchBatchContextFleetOutput values.
+// You can construct a concrete instance of `BatchBatchContextFleetInput` via:
+//
+//	BatchBatchContextFleetArgs{...}
+type BatchBatchContextFleetInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextFleetOutput() BatchBatchContextFleetOutput
+	ToBatchBatchContextFleetOutputWithContext(context.Context) BatchBatchContextFleetOutput
+}
+
+type BatchBatchContextFleetArgs struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details pulumi.StringPtrInput `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks pulumi.IntInput `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shape BatchBatchContextFleetShapeInput `pulumi:"shape"`
+	// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Type of the fleet. Also serves as a discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (BatchBatchContextFleetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextFleet)(nil)).Elem()
+}
+
+func (i BatchBatchContextFleetArgs) ToBatchBatchContextFleetOutput() BatchBatchContextFleetOutput {
+	return i.ToBatchBatchContextFleetOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextFleetArgs) ToBatchBatchContextFleetOutputWithContext(ctx context.Context) BatchBatchContextFleetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextFleetOutput)
+}
+
+// BatchBatchContextFleetArrayInput is an input type that accepts BatchBatchContextFleetArray and BatchBatchContextFleetArrayOutput values.
+// You can construct a concrete instance of `BatchBatchContextFleetArrayInput` via:
+//
+//	BatchBatchContextFleetArray{ BatchBatchContextFleetArgs{...} }
+type BatchBatchContextFleetArrayInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextFleetArrayOutput() BatchBatchContextFleetArrayOutput
+	ToBatchBatchContextFleetArrayOutputWithContext(context.Context) BatchBatchContextFleetArrayOutput
+}
+
+type BatchBatchContextFleetArray []BatchBatchContextFleetInput
+
+func (BatchBatchContextFleetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextFleet)(nil)).Elem()
+}
+
+func (i BatchBatchContextFleetArray) ToBatchBatchContextFleetArrayOutput() BatchBatchContextFleetArrayOutput {
+	return i.ToBatchBatchContextFleetArrayOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextFleetArray) ToBatchBatchContextFleetArrayOutputWithContext(ctx context.Context) BatchBatchContextFleetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextFleetArrayOutput)
+}
+
+type BatchBatchContextFleetOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextFleetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextFleet)(nil)).Elem()
+}
+
+func (o BatchBatchContextFleetOutput) ToBatchBatchContextFleetOutput() BatchBatchContextFleetOutput {
+	return o
+}
+
+func (o BatchBatchContextFleetOutput) ToBatchBatchContextFleetOutputWithContext(ctx context.Context) BatchBatchContextFleetOutput {
+	return o
+}
+
+// A message that describes the current state of the service manage fleet configuration in more detail.
+func (o BatchBatchContextFleetOutput) Details() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) *string { return v.Details }).(pulumi.StringPtrOutput)
+}
+
+// Maximum number of concurrent tasks for the service managed fleet.
+func (o BatchBatchContextFleetOutput) MaxConcurrentTasks() pulumi.IntOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) int { return v.MaxConcurrentTasks }).(pulumi.IntOutput)
+}
+
+// Name of the service managed fleet.
+func (o BatchBatchContextFleetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Shape of the fleet. Describes hardware resources of each node in the fleet.
+func (o BatchBatchContextFleetOutput) Shape() BatchBatchContextFleetShapeOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) BatchBatchContextFleetShape { return v.Shape }).(BatchBatchContextFleetShapeOutput)
+}
+
+// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BatchBatchContextFleetOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Type of the fleet. Also serves as a discriminator for sub-entities.
+func (o BatchBatchContextFleetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextFleet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type BatchBatchContextFleetArrayOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextFleetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextFleet)(nil)).Elem()
+}
+
+func (o BatchBatchContextFleetArrayOutput) ToBatchBatchContextFleetArrayOutput() BatchBatchContextFleetArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextFleetArrayOutput) ToBatchBatchContextFleetArrayOutputWithContext(ctx context.Context) BatchBatchContextFleetArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextFleetArrayOutput) Index(i pulumi.IntInput) BatchBatchContextFleetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BatchBatchContextFleet {
+		return vs[0].([]BatchBatchContextFleet)[vs[1].(int)]
+	}).(BatchBatchContextFleetOutput)
+}
+
+type BatchBatchContextFleetShape struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus int `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// BatchBatchContextFleetShapeInput is an input type that accepts BatchBatchContextFleetShapeArgs and BatchBatchContextFleetShapeOutput values.
+// You can construct a concrete instance of `BatchBatchContextFleetShapeInput` via:
+//
+//	BatchBatchContextFleetShapeArgs{...}
+type BatchBatchContextFleetShapeInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextFleetShapeOutput() BatchBatchContextFleetShapeOutput
+	ToBatchBatchContextFleetShapeOutputWithContext(context.Context) BatchBatchContextFleetShapeOutput
+}
+
+type BatchBatchContextFleetShapeArgs struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (BatchBatchContextFleetShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (i BatchBatchContextFleetShapeArgs) ToBatchBatchContextFleetShapeOutput() BatchBatchContextFleetShapeOutput {
+	return i.ToBatchBatchContextFleetShapeOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextFleetShapeArgs) ToBatchBatchContextFleetShapeOutputWithContext(ctx context.Context) BatchBatchContextFleetShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextFleetShapeOutput)
+}
+
+type BatchBatchContextFleetShapeOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextFleetShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (o BatchBatchContextFleetShapeOutput) ToBatchBatchContextFleetShapeOutput() BatchBatchContextFleetShapeOutput {
+	return o
+}
+
+func (o BatchBatchContextFleetShapeOutput) ToBatchBatchContextFleetShapeOutputWithContext(ctx context.Context) BatchBatchContextFleetShapeOutput {
+	return o
+}
+
+// Amount of memory in GBs required by the shape.
+func (o BatchBatchContextFleetShapeOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v BatchBatchContextFleetShape) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// Number of OCPUs required by the shape.
+func (o BatchBatchContextFleetShapeOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v BatchBatchContextFleetShape) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// The name of the shape.
+func (o BatchBatchContextFleetShapeOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextFleetShape) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type BatchBatchContextJobPriorityConfiguration struct {
+	// (Updatable) Name of the tag key.
+	TagKey string `pulumi:"tagKey"`
+	// (Updatable) Name of the corresponding tag namespace.
+	TagNamespace string `pulumi:"tagNamespace"`
+	// (Updatable) Mapping of tag value to its priority.
+	Values map[string]string `pulumi:"values"`
+	// (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight int `pulumi:"weight"`
+}
+
+// BatchBatchContextJobPriorityConfigurationInput is an input type that accepts BatchBatchContextJobPriorityConfigurationArgs and BatchBatchContextJobPriorityConfigurationOutput values.
+// You can construct a concrete instance of `BatchBatchContextJobPriorityConfigurationInput` via:
+//
+//	BatchBatchContextJobPriorityConfigurationArgs{...}
+type BatchBatchContextJobPriorityConfigurationInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextJobPriorityConfigurationOutput() BatchBatchContextJobPriorityConfigurationOutput
+	ToBatchBatchContextJobPriorityConfigurationOutputWithContext(context.Context) BatchBatchContextJobPriorityConfigurationOutput
+}
+
+type BatchBatchContextJobPriorityConfigurationArgs struct {
+	// (Updatable) Name of the tag key.
+	TagKey pulumi.StringInput `pulumi:"tagKey"`
+	// (Updatable) Name of the corresponding tag namespace.
+	TagNamespace pulumi.StringInput `pulumi:"tagNamespace"`
+	// (Updatable) Mapping of tag value to its priority.
+	Values pulumi.StringMapInput `pulumi:"values"`
+	// (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (BatchBatchContextJobPriorityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i BatchBatchContextJobPriorityConfigurationArgs) ToBatchBatchContextJobPriorityConfigurationOutput() BatchBatchContextJobPriorityConfigurationOutput {
+	return i.ToBatchBatchContextJobPriorityConfigurationOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextJobPriorityConfigurationArgs) ToBatchBatchContextJobPriorityConfigurationOutputWithContext(ctx context.Context) BatchBatchContextJobPriorityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextJobPriorityConfigurationOutput)
+}
+
+// BatchBatchContextJobPriorityConfigurationArrayInput is an input type that accepts BatchBatchContextJobPriorityConfigurationArray and BatchBatchContextJobPriorityConfigurationArrayOutput values.
+// You can construct a concrete instance of `BatchBatchContextJobPriorityConfigurationArrayInput` via:
+//
+//	BatchBatchContextJobPriorityConfigurationArray{ BatchBatchContextJobPriorityConfigurationArgs{...} }
+type BatchBatchContextJobPriorityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextJobPriorityConfigurationArrayOutput() BatchBatchContextJobPriorityConfigurationArrayOutput
+	ToBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(context.Context) BatchBatchContextJobPriorityConfigurationArrayOutput
+}
+
+type BatchBatchContextJobPriorityConfigurationArray []BatchBatchContextJobPriorityConfigurationInput
+
+func (BatchBatchContextJobPriorityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i BatchBatchContextJobPriorityConfigurationArray) ToBatchBatchContextJobPriorityConfigurationArrayOutput() BatchBatchContextJobPriorityConfigurationArrayOutput {
+	return i.ToBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextJobPriorityConfigurationArray) ToBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) BatchBatchContextJobPriorityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextJobPriorityConfigurationArrayOutput)
+}
+
+type BatchBatchContextJobPriorityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextJobPriorityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o BatchBatchContextJobPriorityConfigurationOutput) ToBatchBatchContextJobPriorityConfigurationOutput() BatchBatchContextJobPriorityConfigurationOutput {
+	return o
+}
+
+func (o BatchBatchContextJobPriorityConfigurationOutput) ToBatchBatchContextJobPriorityConfigurationOutputWithContext(ctx context.Context) BatchBatchContextJobPriorityConfigurationOutput {
+	return o
+}
+
+// (Updatable) Name of the tag key.
+func (o BatchBatchContextJobPriorityConfigurationOutput) TagKey() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextJobPriorityConfiguration) string { return v.TagKey }).(pulumi.StringOutput)
+}
+
+// (Updatable) Name of the corresponding tag namespace.
+func (o BatchBatchContextJobPriorityConfigurationOutput) TagNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextJobPriorityConfiguration) string { return v.TagNamespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) Mapping of tag value to its priority.
+func (o BatchBatchContextJobPriorityConfigurationOutput) Values() pulumi.StringMapOutput {
+	return o.ApplyT(func(v BatchBatchContextJobPriorityConfiguration) map[string]string { return v.Values }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+func (o BatchBatchContextJobPriorityConfigurationOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v BatchBatchContextJobPriorityConfiguration) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type BatchBatchContextJobPriorityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextJobPriorityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o BatchBatchContextJobPriorityConfigurationArrayOutput) ToBatchBatchContextJobPriorityConfigurationArrayOutput() BatchBatchContextJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextJobPriorityConfigurationArrayOutput) ToBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) BatchBatchContextJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextJobPriorityConfigurationArrayOutput) Index(i pulumi.IntInput) BatchBatchContextJobPriorityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BatchBatchContextJobPriorityConfiguration {
+		return vs[0].([]BatchBatchContextJobPriorityConfiguration)[vs[1].(int)]
+	}).(BatchBatchContextJobPriorityConfigurationOutput)
+}
+
+type BatchBatchContextLoggingConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// BatchBatchContextLoggingConfigurationInput is an input type that accepts BatchBatchContextLoggingConfigurationArgs and BatchBatchContextLoggingConfigurationOutput values.
+// You can construct a concrete instance of `BatchBatchContextLoggingConfigurationInput` via:
+//
+//	BatchBatchContextLoggingConfigurationArgs{...}
+type BatchBatchContextLoggingConfigurationInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextLoggingConfigurationOutput() BatchBatchContextLoggingConfigurationOutput
+	ToBatchBatchContextLoggingConfigurationOutputWithContext(context.Context) BatchBatchContextLoggingConfigurationOutput
+}
+
+type BatchBatchContextLoggingConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (BatchBatchContextLoggingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (i BatchBatchContextLoggingConfigurationArgs) ToBatchBatchContextLoggingConfigurationOutput() BatchBatchContextLoggingConfigurationOutput {
+	return i.ToBatchBatchContextLoggingConfigurationOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextLoggingConfigurationArgs) ToBatchBatchContextLoggingConfigurationOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextLoggingConfigurationOutput)
+}
+
+func (i BatchBatchContextLoggingConfigurationArgs) ToBatchBatchContextLoggingConfigurationPtrOutput() BatchBatchContextLoggingConfigurationPtrOutput {
+	return i.ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextLoggingConfigurationArgs) ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextLoggingConfigurationOutput).ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(ctx)
+}
+
+// BatchBatchContextLoggingConfigurationPtrInput is an input type that accepts BatchBatchContextLoggingConfigurationArgs, BatchBatchContextLoggingConfigurationPtr and BatchBatchContextLoggingConfigurationPtrOutput values.
+// You can construct a concrete instance of `BatchBatchContextLoggingConfigurationPtrInput` via:
+//
+//	        BatchBatchContextLoggingConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type BatchBatchContextLoggingConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextLoggingConfigurationPtrOutput() BatchBatchContextLoggingConfigurationPtrOutput
+	ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(context.Context) BatchBatchContextLoggingConfigurationPtrOutput
+}
+
+type batchBatchContextLoggingConfigurationPtrType BatchBatchContextLoggingConfigurationArgs
+
+func BatchBatchContextLoggingConfigurationPtr(v *BatchBatchContextLoggingConfigurationArgs) BatchBatchContextLoggingConfigurationPtrInput {
+	return (*batchBatchContextLoggingConfigurationPtrType)(v)
+}
+
+func (*batchBatchContextLoggingConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (i *batchBatchContextLoggingConfigurationPtrType) ToBatchBatchContextLoggingConfigurationPtrOutput() BatchBatchContextLoggingConfigurationPtrOutput {
+	return i.ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *batchBatchContextLoggingConfigurationPtrType) ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextLoggingConfigurationPtrOutput)
+}
+
+type BatchBatchContextLoggingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextLoggingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (o BatchBatchContextLoggingConfigurationOutput) ToBatchBatchContextLoggingConfigurationOutput() BatchBatchContextLoggingConfigurationOutput {
+	return o
+}
+
+func (o BatchBatchContextLoggingConfigurationOutput) ToBatchBatchContextLoggingConfigurationOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationOutput {
+	return o
+}
+
+func (o BatchBatchContextLoggingConfigurationOutput) ToBatchBatchContextLoggingConfigurationPtrOutput() BatchBatchContextLoggingConfigurationPtrOutput {
+	return o.ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o BatchBatchContextLoggingConfigurationOutput) ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BatchBatchContextLoggingConfiguration) *BatchBatchContextLoggingConfiguration {
+		return &v
+	}).(BatchBatchContextLoggingConfigurationPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o BatchBatchContextLoggingConfigurationOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextLoggingConfiguration) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o BatchBatchContextLoggingConfigurationOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextLoggingConfiguration) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o BatchBatchContextLoggingConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextLoggingConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type BatchBatchContextLoggingConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextLoggingConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (o BatchBatchContextLoggingConfigurationPtrOutput) ToBatchBatchContextLoggingConfigurationPtrOutput() BatchBatchContextLoggingConfigurationPtrOutput {
+	return o
+}
+
+func (o BatchBatchContextLoggingConfigurationPtrOutput) ToBatchBatchContextLoggingConfigurationPtrOutputWithContext(ctx context.Context) BatchBatchContextLoggingConfigurationPtrOutput {
+	return o
+}
+
+func (o BatchBatchContextLoggingConfigurationPtrOutput) Elem() BatchBatchContextLoggingConfigurationOutput {
+	return o.ApplyT(func(v *BatchBatchContextLoggingConfiguration) BatchBatchContextLoggingConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret BatchBatchContextLoggingConfiguration
+		return ret
+	}).(BatchBatchContextLoggingConfigurationOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o BatchBatchContextLoggingConfigurationPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BatchBatchContextLoggingConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o BatchBatchContextLoggingConfigurationPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BatchBatchContextLoggingConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Discriminator for sub-entities.
+func (o BatchBatchContextLoggingConfigurationPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BatchBatchContextLoggingConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type BatchBatchContextNetwork struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics []BatchBatchContextNetworkVnic `pulumi:"vnics"`
+}
+
+// BatchBatchContextNetworkInput is an input type that accepts BatchBatchContextNetworkArgs and BatchBatchContextNetworkOutput values.
+// You can construct a concrete instance of `BatchBatchContextNetworkInput` via:
+//
+//	BatchBatchContextNetworkArgs{...}
+type BatchBatchContextNetworkInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextNetworkOutput() BatchBatchContextNetworkOutput
+	ToBatchBatchContextNetworkOutputWithContext(context.Context) BatchBatchContextNetworkOutput
+}
+
+type BatchBatchContextNetworkArgs struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics BatchBatchContextNetworkVnicArrayInput `pulumi:"vnics"`
+}
+
+func (BatchBatchContextNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (i BatchBatchContextNetworkArgs) ToBatchBatchContextNetworkOutput() BatchBatchContextNetworkOutput {
+	return i.ToBatchBatchContextNetworkOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextNetworkArgs) ToBatchBatchContextNetworkOutputWithContext(ctx context.Context) BatchBatchContextNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextNetworkOutput)
+}
+
+func (i BatchBatchContextNetworkArgs) ToBatchBatchContextNetworkPtrOutput() BatchBatchContextNetworkPtrOutput {
+	return i.ToBatchBatchContextNetworkPtrOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextNetworkArgs) ToBatchBatchContextNetworkPtrOutputWithContext(ctx context.Context) BatchBatchContextNetworkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextNetworkOutput).ToBatchBatchContextNetworkPtrOutputWithContext(ctx)
+}
+
+// BatchBatchContextNetworkPtrInput is an input type that accepts BatchBatchContextNetworkArgs, BatchBatchContextNetworkPtr and BatchBatchContextNetworkPtrOutput values.
+// You can construct a concrete instance of `BatchBatchContextNetworkPtrInput` via:
+//
+//	        BatchBatchContextNetworkArgs{...}
+//
+//	or:
+//
+//	        nil
+type BatchBatchContextNetworkPtrInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextNetworkPtrOutput() BatchBatchContextNetworkPtrOutput
+	ToBatchBatchContextNetworkPtrOutputWithContext(context.Context) BatchBatchContextNetworkPtrOutput
+}
+
+type batchBatchContextNetworkPtrType BatchBatchContextNetworkArgs
+
+func BatchBatchContextNetworkPtr(v *BatchBatchContextNetworkArgs) BatchBatchContextNetworkPtrInput {
+	return (*batchBatchContextNetworkPtrType)(v)
+}
+
+func (*batchBatchContextNetworkPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (i *batchBatchContextNetworkPtrType) ToBatchBatchContextNetworkPtrOutput() BatchBatchContextNetworkPtrOutput {
+	return i.ToBatchBatchContextNetworkPtrOutputWithContext(context.Background())
+}
+
+func (i *batchBatchContextNetworkPtrType) ToBatchBatchContextNetworkPtrOutputWithContext(ctx context.Context) BatchBatchContextNetworkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextNetworkPtrOutput)
+}
+
+type BatchBatchContextNetworkOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (o BatchBatchContextNetworkOutput) ToBatchBatchContextNetworkOutput() BatchBatchContextNetworkOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkOutput) ToBatchBatchContextNetworkOutputWithContext(ctx context.Context) BatchBatchContextNetworkOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkOutput) ToBatchBatchContextNetworkPtrOutput() BatchBatchContextNetworkPtrOutput {
+	return o.ToBatchBatchContextNetworkPtrOutputWithContext(context.Background())
+}
+
+func (o BatchBatchContextNetworkOutput) ToBatchBatchContextNetworkPtrOutputWithContext(ctx context.Context) BatchBatchContextNetworkPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BatchBatchContextNetwork) *BatchBatchContextNetwork {
+		return &v
+	}).(BatchBatchContextNetworkPtrOutput)
+}
+
+// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+func (o BatchBatchContextNetworkOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BatchBatchContextNetwork) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+func (o BatchBatchContextNetworkOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchContextNetwork) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// A list of private endpoint's VNICs.
+func (o BatchBatchContextNetworkOutput) Vnics() BatchBatchContextNetworkVnicArrayOutput {
+	return o.ApplyT(func(v BatchBatchContextNetwork) []BatchBatchContextNetworkVnic { return v.Vnics }).(BatchBatchContextNetworkVnicArrayOutput)
+}
+
+type BatchBatchContextNetworkPtrOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextNetworkPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (o BatchBatchContextNetworkPtrOutput) ToBatchBatchContextNetworkPtrOutput() BatchBatchContextNetworkPtrOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkPtrOutput) ToBatchBatchContextNetworkPtrOutputWithContext(ctx context.Context) BatchBatchContextNetworkPtrOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkPtrOutput) Elem() BatchBatchContextNetworkOutput {
+	return o.ApplyT(func(v *BatchBatchContextNetwork) BatchBatchContextNetwork {
+		if v != nil {
+			return *v
+		}
+		var ret BatchBatchContextNetwork
+		return ret
+	}).(BatchBatchContextNetworkOutput)
+}
+
+// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+func (o BatchBatchContextNetworkPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *BatchBatchContextNetwork) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+func (o BatchBatchContextNetworkPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BatchBatchContextNetwork) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of private endpoint's VNICs.
+func (o BatchBatchContextNetworkPtrOutput) Vnics() BatchBatchContextNetworkVnicArrayOutput {
+	return o.ApplyT(func(v *BatchBatchContextNetwork) []BatchBatchContextNetworkVnic {
+		if v == nil {
+			return nil
+		}
+		return v.Vnics
+	}).(BatchBatchContextNetworkVnicArrayOutput)
+}
+
+type BatchBatchContextNetworkVnic struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+	Id *string `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps []string `pulumi:"sourceIps"`
+}
+
+// BatchBatchContextNetworkVnicInput is an input type that accepts BatchBatchContextNetworkVnicArgs and BatchBatchContextNetworkVnicOutput values.
+// You can construct a concrete instance of `BatchBatchContextNetworkVnicInput` via:
+//
+//	BatchBatchContextNetworkVnicArgs{...}
+type BatchBatchContextNetworkVnicInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextNetworkVnicOutput() BatchBatchContextNetworkVnicOutput
+	ToBatchBatchContextNetworkVnicOutputWithContext(context.Context) BatchBatchContextNetworkVnicOutput
+}
+
+type BatchBatchContextNetworkVnicArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
+}
+
+func (BatchBatchContextNetworkVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (i BatchBatchContextNetworkVnicArgs) ToBatchBatchContextNetworkVnicOutput() BatchBatchContextNetworkVnicOutput {
+	return i.ToBatchBatchContextNetworkVnicOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextNetworkVnicArgs) ToBatchBatchContextNetworkVnicOutputWithContext(ctx context.Context) BatchBatchContextNetworkVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextNetworkVnicOutput)
+}
+
+// BatchBatchContextNetworkVnicArrayInput is an input type that accepts BatchBatchContextNetworkVnicArray and BatchBatchContextNetworkVnicArrayOutput values.
+// You can construct a concrete instance of `BatchBatchContextNetworkVnicArrayInput` via:
+//
+//	BatchBatchContextNetworkVnicArray{ BatchBatchContextNetworkVnicArgs{...} }
+type BatchBatchContextNetworkVnicArrayInput interface {
+	pulumi.Input
+
+	ToBatchBatchContextNetworkVnicArrayOutput() BatchBatchContextNetworkVnicArrayOutput
+	ToBatchBatchContextNetworkVnicArrayOutputWithContext(context.Context) BatchBatchContextNetworkVnicArrayOutput
+}
+
+type BatchBatchContextNetworkVnicArray []BatchBatchContextNetworkVnicInput
+
+func (BatchBatchContextNetworkVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (i BatchBatchContextNetworkVnicArray) ToBatchBatchContextNetworkVnicArrayOutput() BatchBatchContextNetworkVnicArrayOutput {
+	return i.ToBatchBatchContextNetworkVnicArrayOutputWithContext(context.Background())
+}
+
+func (i BatchBatchContextNetworkVnicArray) ToBatchBatchContextNetworkVnicArrayOutputWithContext(ctx context.Context) BatchBatchContextNetworkVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchContextNetworkVnicArrayOutput)
+}
+
+type BatchBatchContextNetworkVnicOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextNetworkVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (o BatchBatchContextNetworkVnicOutput) ToBatchBatchContextNetworkVnicOutput() BatchBatchContextNetworkVnicOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkVnicOutput) ToBatchBatchContextNetworkVnicOutputWithContext(ctx context.Context) BatchBatchContextNetworkVnicOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+func (o BatchBatchContextNetworkVnicOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BatchBatchContextNetworkVnic) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+func (o BatchBatchContextNetworkVnicOutput) SourceIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v BatchBatchContextNetworkVnic) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
+}
+
+type BatchBatchContextNetworkVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchContextNetworkVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (o BatchBatchContextNetworkVnicArrayOutput) ToBatchBatchContextNetworkVnicArrayOutput() BatchBatchContextNetworkVnicArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkVnicArrayOutput) ToBatchBatchContextNetworkVnicArrayOutputWithContext(ctx context.Context) BatchBatchContextNetworkVnicArrayOutput {
+	return o
+}
+
+func (o BatchBatchContextNetworkVnicArrayOutput) Index(i pulumi.IntInput) BatchBatchContextNetworkVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BatchBatchContextNetworkVnic {
+		return vs[0].([]BatchBatchContextNetworkVnic)[vs[1].(int)]
+	}).(BatchBatchContextNetworkVnicOutput)
+}
+
+type BatchBatchTaskEnvironmentSecurityContext struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup *int `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup *int `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser *int `pulumi:"runAsUser"`
+}
+
+// BatchBatchTaskEnvironmentSecurityContextInput is an input type that accepts BatchBatchTaskEnvironmentSecurityContextArgs and BatchBatchTaskEnvironmentSecurityContextOutput values.
+// You can construct a concrete instance of `BatchBatchTaskEnvironmentSecurityContextInput` via:
+//
+//	BatchBatchTaskEnvironmentSecurityContextArgs{...}
+type BatchBatchTaskEnvironmentSecurityContextInput interface {
+	pulumi.Input
+
+	ToBatchBatchTaskEnvironmentSecurityContextOutput() BatchBatchTaskEnvironmentSecurityContextOutput
+	ToBatchBatchTaskEnvironmentSecurityContextOutputWithContext(context.Context) BatchBatchTaskEnvironmentSecurityContextOutput
+}
+
+type BatchBatchTaskEnvironmentSecurityContextArgs struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup pulumi.IntPtrInput `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup pulumi.IntPtrInput `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser pulumi.IntPtrInput `pulumi:"runAsUser"`
+}
+
+func (BatchBatchTaskEnvironmentSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (i BatchBatchTaskEnvironmentSecurityContextArgs) ToBatchBatchTaskEnvironmentSecurityContextOutput() BatchBatchTaskEnvironmentSecurityContextOutput {
+	return i.ToBatchBatchTaskEnvironmentSecurityContextOutputWithContext(context.Background())
+}
+
+func (i BatchBatchTaskEnvironmentSecurityContextArgs) ToBatchBatchTaskEnvironmentSecurityContextOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchTaskEnvironmentSecurityContextOutput)
+}
+
+func (i BatchBatchTaskEnvironmentSecurityContextArgs) ToBatchBatchTaskEnvironmentSecurityContextPtrOutput() BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return i.ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i BatchBatchTaskEnvironmentSecurityContextArgs) ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchTaskEnvironmentSecurityContextOutput).ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(ctx)
+}
+
+// BatchBatchTaskEnvironmentSecurityContextPtrInput is an input type that accepts BatchBatchTaskEnvironmentSecurityContextArgs, BatchBatchTaskEnvironmentSecurityContextPtr and BatchBatchTaskEnvironmentSecurityContextPtrOutput values.
+// You can construct a concrete instance of `BatchBatchTaskEnvironmentSecurityContextPtrInput` via:
+//
+//	        BatchBatchTaskEnvironmentSecurityContextArgs{...}
+//
+//	or:
+//
+//	        nil
+type BatchBatchTaskEnvironmentSecurityContextPtrInput interface {
+	pulumi.Input
+
+	ToBatchBatchTaskEnvironmentSecurityContextPtrOutput() BatchBatchTaskEnvironmentSecurityContextPtrOutput
+	ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(context.Context) BatchBatchTaskEnvironmentSecurityContextPtrOutput
+}
+
+type batchBatchTaskEnvironmentSecurityContextPtrType BatchBatchTaskEnvironmentSecurityContextArgs
+
+func BatchBatchTaskEnvironmentSecurityContextPtr(v *BatchBatchTaskEnvironmentSecurityContextArgs) BatchBatchTaskEnvironmentSecurityContextPtrInput {
+	return (*batchBatchTaskEnvironmentSecurityContextPtrType)(v)
+}
+
+func (*batchBatchTaskEnvironmentSecurityContextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (i *batchBatchTaskEnvironmentSecurityContextPtrType) ToBatchBatchTaskEnvironmentSecurityContextPtrOutput() BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return i.ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i *batchBatchTaskEnvironmentSecurityContextPtrType) ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchTaskEnvironmentSecurityContextPtrOutput)
+}
+
+type BatchBatchTaskEnvironmentSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchTaskEnvironmentSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) ToBatchBatchTaskEnvironmentSecurityContextOutput() BatchBatchTaskEnvironmentSecurityContextOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) ToBatchBatchTaskEnvironmentSecurityContextOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) ToBatchBatchTaskEnvironmentSecurityContextPtrOutput() BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return o.ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BatchBatchTaskEnvironmentSecurityContext) *BatchBatchTaskEnvironmentSecurityContext {
+		return &v
+	}).(BatchBatchTaskEnvironmentSecurityContextPtrOutput)
+}
+
+// A special supplemental group ID that applies to all containers in a pod.
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) FsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentSecurityContext) *int { return v.FsGroup }).(pulumi.IntPtrOutput)
+}
+
+// Group ID for running processes inside the container.
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) RunAsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentSecurityContext) *int { return v.RunAsGroup }).(pulumi.IntPtrOutput)
+}
+
+// User ID for running processes inside the container.
+func (o BatchBatchTaskEnvironmentSecurityContextOutput) RunAsUser() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentSecurityContext) *int { return v.RunAsUser }).(pulumi.IntPtrOutput)
+}
+
+type BatchBatchTaskEnvironmentSecurityContextPtrOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchTaskEnvironmentSecurityContextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) ToBatchBatchTaskEnvironmentSecurityContextPtrOutput() BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) ToBatchBatchTaskEnvironmentSecurityContextPtrOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentSecurityContextPtrOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) Elem() BatchBatchTaskEnvironmentSecurityContextOutput {
+	return o.ApplyT(func(v *BatchBatchTaskEnvironmentSecurityContext) BatchBatchTaskEnvironmentSecurityContext {
+		if v != nil {
+			return *v
+		}
+		var ret BatchBatchTaskEnvironmentSecurityContext
+		return ret
+	}).(BatchBatchTaskEnvironmentSecurityContextOutput)
+}
+
+// A special supplemental group ID that applies to all containers in a pod.
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) FsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BatchBatchTaskEnvironmentSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FsGroup
+	}).(pulumi.IntPtrOutput)
+}
+
+// Group ID for running processes inside the container.
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) RunAsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BatchBatchTaskEnvironmentSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RunAsGroup
+	}).(pulumi.IntPtrOutput)
+}
+
+// User ID for running processes inside the container.
+func (o BatchBatchTaskEnvironmentSecurityContextPtrOutput) RunAsUser() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BatchBatchTaskEnvironmentSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RunAsUser
+	}).(pulumi.IntPtrOutput)
+}
+
+type BatchBatchTaskEnvironmentVolume struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath string `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath string `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn string `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name string `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// BatchBatchTaskEnvironmentVolumeInput is an input type that accepts BatchBatchTaskEnvironmentVolumeArgs and BatchBatchTaskEnvironmentVolumeOutput values.
+// You can construct a concrete instance of `BatchBatchTaskEnvironmentVolumeInput` via:
+//
+//	BatchBatchTaskEnvironmentVolumeArgs{...}
+type BatchBatchTaskEnvironmentVolumeInput interface {
+	pulumi.Input
+
+	ToBatchBatchTaskEnvironmentVolumeOutput() BatchBatchTaskEnvironmentVolumeOutput
+	ToBatchBatchTaskEnvironmentVolumeOutputWithContext(context.Context) BatchBatchTaskEnvironmentVolumeOutput
+}
+
+type BatchBatchTaskEnvironmentVolumeArgs struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath pulumi.StringInput `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath pulumi.StringInput `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn pulumi.StringInput `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (BatchBatchTaskEnvironmentVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (i BatchBatchTaskEnvironmentVolumeArgs) ToBatchBatchTaskEnvironmentVolumeOutput() BatchBatchTaskEnvironmentVolumeOutput {
+	return i.ToBatchBatchTaskEnvironmentVolumeOutputWithContext(context.Background())
+}
+
+func (i BatchBatchTaskEnvironmentVolumeArgs) ToBatchBatchTaskEnvironmentVolumeOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchTaskEnvironmentVolumeOutput)
+}
+
+// BatchBatchTaskEnvironmentVolumeArrayInput is an input type that accepts BatchBatchTaskEnvironmentVolumeArray and BatchBatchTaskEnvironmentVolumeArrayOutput values.
+// You can construct a concrete instance of `BatchBatchTaskEnvironmentVolumeArrayInput` via:
+//
+//	BatchBatchTaskEnvironmentVolumeArray{ BatchBatchTaskEnvironmentVolumeArgs{...} }
+type BatchBatchTaskEnvironmentVolumeArrayInput interface {
+	pulumi.Input
+
+	ToBatchBatchTaskEnvironmentVolumeArrayOutput() BatchBatchTaskEnvironmentVolumeArrayOutput
+	ToBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(context.Context) BatchBatchTaskEnvironmentVolumeArrayOutput
+}
+
+type BatchBatchTaskEnvironmentVolumeArray []BatchBatchTaskEnvironmentVolumeInput
+
+func (BatchBatchTaskEnvironmentVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (i BatchBatchTaskEnvironmentVolumeArray) ToBatchBatchTaskEnvironmentVolumeArrayOutput() BatchBatchTaskEnvironmentVolumeArrayOutput {
+	return i.ToBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i BatchBatchTaskEnvironmentVolumeArray) ToBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BatchBatchTaskEnvironmentVolumeArrayOutput)
+}
+
+type BatchBatchTaskEnvironmentVolumeOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchTaskEnvironmentVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (o BatchBatchTaskEnvironmentVolumeOutput) ToBatchBatchTaskEnvironmentVolumeOutput() BatchBatchTaskEnvironmentVolumeOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentVolumeOutput) ToBatchBatchTaskEnvironmentVolumeOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentVolumeOutput {
+	return o
+}
+
+// The local path to mount the NFS share to.
+func (o BatchBatchTaskEnvironmentVolumeOutput) LocalMountDirectoryPath() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentVolume) string { return v.LocalMountDirectoryPath }).(pulumi.StringOutput)
+}
+
+// The path to the directory on the NFS server to be mounted.
+func (o BatchBatchTaskEnvironmentVolumeOutput) MountTargetExportPath() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentVolume) string { return v.MountTargetExportPath }).(pulumi.StringOutput)
+}
+
+// The FQDN of the NFS server to connect to.
+func (o BatchBatchTaskEnvironmentVolumeOutput) MountTargetFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentVolume) string { return v.MountTargetFqdn }).(pulumi.StringOutput)
+}
+
+// The name of the NfsVolume.
+func (o BatchBatchTaskEnvironmentVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o BatchBatchTaskEnvironmentVolumeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v BatchBatchTaskEnvironmentVolume) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type BatchBatchTaskEnvironmentVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (BatchBatchTaskEnvironmentVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (o BatchBatchTaskEnvironmentVolumeArrayOutput) ToBatchBatchTaskEnvironmentVolumeArrayOutput() BatchBatchTaskEnvironmentVolumeArrayOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentVolumeArrayOutput) ToBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(ctx context.Context) BatchBatchTaskEnvironmentVolumeArrayOutput {
+	return o
+}
+
+func (o BatchBatchTaskEnvironmentVolumeArrayOutput) Index(i pulumi.IntInput) BatchBatchTaskEnvironmentVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BatchBatchTaskEnvironmentVolume {
+		return vs[0].([]BatchBatchTaskEnvironmentVolume)[vs[1].(int)]
+	}).(BatchBatchTaskEnvironmentVolumeOutput)
+}
+
 type DbmulticloudMultiCloudResourceDiscoveryResource struct {
 	// The ID of the Discovered Resource.
 	Id *string `pulumi:"id"`
@@ -10319,6 +11428,4349 @@ func (o GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionIt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationList {
 		return vs[0].([]GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationList)[vs[1].(int)]
 	}).(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListOutput)
+}
+
+type GetBatchBatchContextFleet struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details string `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks int `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name string `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shapes []GetBatchBatchContextFleetShape `pulumi:"shapes"`
+	// The current state of the batch context.
+	State string `pulumi:"state"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchContextFleetInput is an input type that accepts GetBatchBatchContextFleetArgs and GetBatchBatchContextFleetOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextFleetInput` via:
+//
+//	GetBatchBatchContextFleetArgs{...}
+type GetBatchBatchContextFleetInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextFleetOutput() GetBatchBatchContextFleetOutput
+	ToGetBatchBatchContextFleetOutputWithContext(context.Context) GetBatchBatchContextFleetOutput
+}
+
+type GetBatchBatchContextFleetArgs struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details pulumi.StringInput `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks pulumi.IntInput `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shapes GetBatchBatchContextFleetShapeArrayInput `pulumi:"shapes"`
+	// The current state of the batch context.
+	State pulumi.StringInput `pulumi:"state"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchContextFleetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextFleet)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextFleetArgs) ToGetBatchBatchContextFleetOutput() GetBatchBatchContextFleetOutput {
+	return i.ToGetBatchBatchContextFleetOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextFleetArgs) ToGetBatchBatchContextFleetOutputWithContext(ctx context.Context) GetBatchBatchContextFleetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextFleetOutput)
+}
+
+// GetBatchBatchContextFleetArrayInput is an input type that accepts GetBatchBatchContextFleetArray and GetBatchBatchContextFleetArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextFleetArrayInput` via:
+//
+//	GetBatchBatchContextFleetArray{ GetBatchBatchContextFleetArgs{...} }
+type GetBatchBatchContextFleetArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextFleetArrayOutput() GetBatchBatchContextFleetArrayOutput
+	ToGetBatchBatchContextFleetArrayOutputWithContext(context.Context) GetBatchBatchContextFleetArrayOutput
+}
+
+type GetBatchBatchContextFleetArray []GetBatchBatchContextFleetInput
+
+func (GetBatchBatchContextFleetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextFleet)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextFleetArray) ToGetBatchBatchContextFleetArrayOutput() GetBatchBatchContextFleetArrayOutput {
+	return i.ToGetBatchBatchContextFleetArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextFleetArray) ToGetBatchBatchContextFleetArrayOutputWithContext(ctx context.Context) GetBatchBatchContextFleetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextFleetArrayOutput)
+}
+
+type GetBatchBatchContextFleetOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextFleetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextFleet)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextFleetOutput) ToGetBatchBatchContextFleetOutput() GetBatchBatchContextFleetOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetOutput) ToGetBatchBatchContextFleetOutputWithContext(ctx context.Context) GetBatchBatchContextFleetOutput {
+	return o
+}
+
+// A message that describes the current state of the service manage fleet configuration in more detail.
+func (o GetBatchBatchContextFleetOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) string { return v.Details }).(pulumi.StringOutput)
+}
+
+// Maximum number of concurrent tasks for the service managed fleet.
+func (o GetBatchBatchContextFleetOutput) MaxConcurrentTasks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) int { return v.MaxConcurrentTasks }).(pulumi.IntOutput)
+}
+
+// Name of the service managed fleet.
+func (o GetBatchBatchContextFleetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Shape of the fleet. Describes hardware resources of each node in the fleet.
+func (o GetBatchBatchContextFleetOutput) Shapes() GetBatchBatchContextFleetShapeArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) []GetBatchBatchContextFleetShape { return v.Shapes }).(GetBatchBatchContextFleetShapeArrayOutput)
+}
+
+// The current state of the batch context.
+func (o GetBatchBatchContextFleetOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchContextFleetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextFleetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextFleetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextFleet)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextFleetArrayOutput) ToGetBatchBatchContextFleetArrayOutput() GetBatchBatchContextFleetArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetArrayOutput) ToGetBatchBatchContextFleetArrayOutputWithContext(ctx context.Context) GetBatchBatchContextFleetArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextFleetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextFleet {
+		return vs[0].([]GetBatchBatchContextFleet)[vs[1].(int)]
+	}).(GetBatchBatchContextFleetOutput)
+}
+
+type GetBatchBatchContextFleetShape struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus int `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetBatchBatchContextFleetShapeInput is an input type that accepts GetBatchBatchContextFleetShapeArgs and GetBatchBatchContextFleetShapeOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextFleetShapeInput` via:
+//
+//	GetBatchBatchContextFleetShapeArgs{...}
+type GetBatchBatchContextFleetShapeInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextFleetShapeOutput() GetBatchBatchContextFleetShapeOutput
+	ToGetBatchBatchContextFleetShapeOutputWithContext(context.Context) GetBatchBatchContextFleetShapeOutput
+}
+
+type GetBatchBatchContextFleetShapeArgs struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetBatchBatchContextFleetShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextFleetShapeArgs) ToGetBatchBatchContextFleetShapeOutput() GetBatchBatchContextFleetShapeOutput {
+	return i.ToGetBatchBatchContextFleetShapeOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextFleetShapeArgs) ToGetBatchBatchContextFleetShapeOutputWithContext(ctx context.Context) GetBatchBatchContextFleetShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextFleetShapeOutput)
+}
+
+// GetBatchBatchContextFleetShapeArrayInput is an input type that accepts GetBatchBatchContextFleetShapeArray and GetBatchBatchContextFleetShapeArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextFleetShapeArrayInput` via:
+//
+//	GetBatchBatchContextFleetShapeArray{ GetBatchBatchContextFleetShapeArgs{...} }
+type GetBatchBatchContextFleetShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextFleetShapeArrayOutput() GetBatchBatchContextFleetShapeArrayOutput
+	ToGetBatchBatchContextFleetShapeArrayOutputWithContext(context.Context) GetBatchBatchContextFleetShapeArrayOutput
+}
+
+type GetBatchBatchContextFleetShapeArray []GetBatchBatchContextFleetShapeInput
+
+func (GetBatchBatchContextFleetShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextFleetShapeArray) ToGetBatchBatchContextFleetShapeArrayOutput() GetBatchBatchContextFleetShapeArrayOutput {
+	return i.ToGetBatchBatchContextFleetShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextFleetShapeArray) ToGetBatchBatchContextFleetShapeArrayOutputWithContext(ctx context.Context) GetBatchBatchContextFleetShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextFleetShapeArrayOutput)
+}
+
+type GetBatchBatchContextFleetShapeOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextFleetShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextFleetShapeOutput) ToGetBatchBatchContextFleetShapeOutput() GetBatchBatchContextFleetShapeOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetShapeOutput) ToGetBatchBatchContextFleetShapeOutputWithContext(ctx context.Context) GetBatchBatchContextFleetShapeOutput {
+	return o
+}
+
+// Amount of memory in GBs required by the shape.
+func (o GetBatchBatchContextFleetShapeOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleetShape) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// Number of OCPUs required by the shape.
+func (o GetBatchBatchContextFleetShapeOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleetShape) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// The name of the shape.
+func (o GetBatchBatchContextFleetShapeOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextFleetShape) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextFleetShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextFleetShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextFleetShape)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextFleetShapeArrayOutput) ToGetBatchBatchContextFleetShapeArrayOutput() GetBatchBatchContextFleetShapeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetShapeArrayOutput) ToGetBatchBatchContextFleetShapeArrayOutputWithContext(ctx context.Context) GetBatchBatchContextFleetShapeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextFleetShapeArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextFleetShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextFleetShape {
+		return vs[0].([]GetBatchBatchContextFleetShape)[vs[1].(int)]
+	}).(GetBatchBatchContextFleetShapeOutput)
+}
+
+type GetBatchBatchContextJobPriorityConfiguration struct {
+	// Name of the tag key.
+	TagKey string `pulumi:"tagKey"`
+	// Name of the corresponding tag namespace.
+	TagNamespace string `pulumi:"tagNamespace"`
+	// Mapping of tag value to its priority.
+	Values map[string]string `pulumi:"values"`
+	// Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight int `pulumi:"weight"`
+}
+
+// GetBatchBatchContextJobPriorityConfigurationInput is an input type that accepts GetBatchBatchContextJobPriorityConfigurationArgs and GetBatchBatchContextJobPriorityConfigurationOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextJobPriorityConfigurationInput` via:
+//
+//	GetBatchBatchContextJobPriorityConfigurationArgs{...}
+type GetBatchBatchContextJobPriorityConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextJobPriorityConfigurationOutput() GetBatchBatchContextJobPriorityConfigurationOutput
+	ToGetBatchBatchContextJobPriorityConfigurationOutputWithContext(context.Context) GetBatchBatchContextJobPriorityConfigurationOutput
+}
+
+type GetBatchBatchContextJobPriorityConfigurationArgs struct {
+	// Name of the tag key.
+	TagKey pulumi.StringInput `pulumi:"tagKey"`
+	// Name of the corresponding tag namespace.
+	TagNamespace pulumi.StringInput `pulumi:"tagNamespace"`
+	// Mapping of tag value to its priority.
+	Values pulumi.StringMapInput `pulumi:"values"`
+	// Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetBatchBatchContextJobPriorityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextJobPriorityConfigurationArgs) ToGetBatchBatchContextJobPriorityConfigurationOutput() GetBatchBatchContextJobPriorityConfigurationOutput {
+	return i.ToGetBatchBatchContextJobPriorityConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextJobPriorityConfigurationArgs) ToGetBatchBatchContextJobPriorityConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextJobPriorityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextJobPriorityConfigurationOutput)
+}
+
+// GetBatchBatchContextJobPriorityConfigurationArrayInput is an input type that accepts GetBatchBatchContextJobPriorityConfigurationArray and GetBatchBatchContextJobPriorityConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextJobPriorityConfigurationArrayInput` via:
+//
+//	GetBatchBatchContextJobPriorityConfigurationArray{ GetBatchBatchContextJobPriorityConfigurationArgs{...} }
+type GetBatchBatchContextJobPriorityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextJobPriorityConfigurationArrayOutput() GetBatchBatchContextJobPriorityConfigurationArrayOutput
+	ToGetBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(context.Context) GetBatchBatchContextJobPriorityConfigurationArrayOutput
+}
+
+type GetBatchBatchContextJobPriorityConfigurationArray []GetBatchBatchContextJobPriorityConfigurationInput
+
+func (GetBatchBatchContextJobPriorityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextJobPriorityConfigurationArray) ToGetBatchBatchContextJobPriorityConfigurationArrayOutput() GetBatchBatchContextJobPriorityConfigurationArrayOutput {
+	return i.ToGetBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextJobPriorityConfigurationArray) ToGetBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextJobPriorityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextJobPriorityConfigurationArrayOutput)
+}
+
+type GetBatchBatchContextJobPriorityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextJobPriorityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) ToGetBatchBatchContextJobPriorityConfigurationOutput() GetBatchBatchContextJobPriorityConfigurationOutput {
+	return o
+}
+
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) ToGetBatchBatchContextJobPriorityConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextJobPriorityConfigurationOutput {
+	return o
+}
+
+// Name of the tag key.
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) TagKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextJobPriorityConfiguration) string { return v.TagKey }).(pulumi.StringOutput)
+}
+
+// Name of the corresponding tag namespace.
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) TagNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextJobPriorityConfiguration) string { return v.TagNamespace }).(pulumi.StringOutput)
+}
+
+// Mapping of tag value to its priority.
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) Values() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextJobPriorityConfiguration) map[string]string { return v.Values }).(pulumi.StringMapOutput)
+}
+
+// Weight associated with the tag key. Percentage point is the unit of measurement.
+func (o GetBatchBatchContextJobPriorityConfigurationOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextJobPriorityConfiguration) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetBatchBatchContextJobPriorityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextJobPriorityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextJobPriorityConfigurationArrayOutput) ToGetBatchBatchContextJobPriorityConfigurationArrayOutput() GetBatchBatchContextJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextJobPriorityConfigurationArrayOutput) ToGetBatchBatchContextJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextJobPriorityConfigurationArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextJobPriorityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextJobPriorityConfiguration {
+		return vs[0].([]GetBatchBatchContextJobPriorityConfiguration)[vs[1].(int)]
+	}).(GetBatchBatchContextJobPriorityConfigurationOutput)
+}
+
+type GetBatchBatchContextLoggingConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchContextLoggingConfigurationInput is an input type that accepts GetBatchBatchContextLoggingConfigurationArgs and GetBatchBatchContextLoggingConfigurationOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextLoggingConfigurationInput` via:
+//
+//	GetBatchBatchContextLoggingConfigurationArgs{...}
+type GetBatchBatchContextLoggingConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextLoggingConfigurationOutput() GetBatchBatchContextLoggingConfigurationOutput
+	ToGetBatchBatchContextLoggingConfigurationOutputWithContext(context.Context) GetBatchBatchContextLoggingConfigurationOutput
+}
+
+type GetBatchBatchContextLoggingConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchContextLoggingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextLoggingConfigurationArgs) ToGetBatchBatchContextLoggingConfigurationOutput() GetBatchBatchContextLoggingConfigurationOutput {
+	return i.ToGetBatchBatchContextLoggingConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextLoggingConfigurationArgs) ToGetBatchBatchContextLoggingConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextLoggingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextLoggingConfigurationOutput)
+}
+
+// GetBatchBatchContextLoggingConfigurationArrayInput is an input type that accepts GetBatchBatchContextLoggingConfigurationArray and GetBatchBatchContextLoggingConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextLoggingConfigurationArrayInput` via:
+//
+//	GetBatchBatchContextLoggingConfigurationArray{ GetBatchBatchContextLoggingConfigurationArgs{...} }
+type GetBatchBatchContextLoggingConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextLoggingConfigurationArrayOutput() GetBatchBatchContextLoggingConfigurationArrayOutput
+	ToGetBatchBatchContextLoggingConfigurationArrayOutputWithContext(context.Context) GetBatchBatchContextLoggingConfigurationArrayOutput
+}
+
+type GetBatchBatchContextLoggingConfigurationArray []GetBatchBatchContextLoggingConfigurationInput
+
+func (GetBatchBatchContextLoggingConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextLoggingConfigurationArray) ToGetBatchBatchContextLoggingConfigurationArrayOutput() GetBatchBatchContextLoggingConfigurationArrayOutput {
+	return i.ToGetBatchBatchContextLoggingConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextLoggingConfigurationArray) ToGetBatchBatchContextLoggingConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextLoggingConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextLoggingConfigurationArrayOutput)
+}
+
+type GetBatchBatchContextLoggingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextLoggingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextLoggingConfigurationOutput) ToGetBatchBatchContextLoggingConfigurationOutput() GetBatchBatchContextLoggingConfigurationOutput {
+	return o
+}
+
+func (o GetBatchBatchContextLoggingConfigurationOutput) ToGetBatchBatchContextLoggingConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextLoggingConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetBatchBatchContextLoggingConfigurationOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextLoggingConfiguration) string { return v.LogGroupId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetBatchBatchContextLoggingConfigurationOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextLoggingConfiguration) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchContextLoggingConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextLoggingConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextLoggingConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextLoggingConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextLoggingConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextLoggingConfigurationArrayOutput) ToGetBatchBatchContextLoggingConfigurationArrayOutput() GetBatchBatchContextLoggingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextLoggingConfigurationArrayOutput) ToGetBatchBatchContextLoggingConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextLoggingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextLoggingConfigurationArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextLoggingConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextLoggingConfiguration {
+		return vs[0].([]GetBatchBatchContextLoggingConfiguration)[vs[1].(int)]
+	}).(GetBatchBatchContextLoggingConfigurationOutput)
+}
+
+type GetBatchBatchContextNetwork struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics []GetBatchBatchContextNetworkVnic `pulumi:"vnics"`
+}
+
+// GetBatchBatchContextNetworkInput is an input type that accepts GetBatchBatchContextNetworkArgs and GetBatchBatchContextNetworkOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextNetworkInput` via:
+//
+//	GetBatchBatchContextNetworkArgs{...}
+type GetBatchBatchContextNetworkInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextNetworkOutput() GetBatchBatchContextNetworkOutput
+	ToGetBatchBatchContextNetworkOutputWithContext(context.Context) GetBatchBatchContextNetworkOutput
+}
+
+type GetBatchBatchContextNetworkArgs struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics GetBatchBatchContextNetworkVnicArrayInput `pulumi:"vnics"`
+}
+
+func (GetBatchBatchContextNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextNetworkArgs) ToGetBatchBatchContextNetworkOutput() GetBatchBatchContextNetworkOutput {
+	return i.ToGetBatchBatchContextNetworkOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextNetworkArgs) ToGetBatchBatchContextNetworkOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextNetworkOutput)
+}
+
+// GetBatchBatchContextNetworkArrayInput is an input type that accepts GetBatchBatchContextNetworkArray and GetBatchBatchContextNetworkArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextNetworkArrayInput` via:
+//
+//	GetBatchBatchContextNetworkArray{ GetBatchBatchContextNetworkArgs{...} }
+type GetBatchBatchContextNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextNetworkArrayOutput() GetBatchBatchContextNetworkArrayOutput
+	ToGetBatchBatchContextNetworkArrayOutputWithContext(context.Context) GetBatchBatchContextNetworkArrayOutput
+}
+
+type GetBatchBatchContextNetworkArray []GetBatchBatchContextNetworkInput
+
+func (GetBatchBatchContextNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextNetworkArray) ToGetBatchBatchContextNetworkArrayOutput() GetBatchBatchContextNetworkArrayOutput {
+	return i.ToGetBatchBatchContextNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextNetworkArray) ToGetBatchBatchContextNetworkArrayOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextNetworkArrayOutput)
+}
+
+type GetBatchBatchContextNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextNetworkOutput) ToGetBatchBatchContextNetworkOutput() GetBatchBatchContextNetworkOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkOutput) ToGetBatchBatchContextNetworkOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkOutput {
+	return o
+}
+
+// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+func (o GetBatchBatchContextNetworkOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextNetwork) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+func (o GetBatchBatchContextNetworkOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextNetwork) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// A list of private endpoint's VNICs.
+func (o GetBatchBatchContextNetworkOutput) Vnics() GetBatchBatchContextNetworkVnicArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextNetwork) []GetBatchBatchContextNetworkVnic { return v.Vnics }).(GetBatchBatchContextNetworkVnicArrayOutput)
+}
+
+type GetBatchBatchContextNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextNetwork)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextNetworkArrayOutput) ToGetBatchBatchContextNetworkArrayOutput() GetBatchBatchContextNetworkArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkArrayOutput) ToGetBatchBatchContextNetworkArrayOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextNetwork {
+		return vs[0].([]GetBatchBatchContextNetwork)[vs[1].(int)]
+	}).(GetBatchBatchContextNetworkOutput)
+}
+
+type GetBatchBatchContextNetworkVnic struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+	Id string `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps []string `pulumi:"sourceIps"`
+}
+
+// GetBatchBatchContextNetworkVnicInput is an input type that accepts GetBatchBatchContextNetworkVnicArgs and GetBatchBatchContextNetworkVnicOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextNetworkVnicInput` via:
+//
+//	GetBatchBatchContextNetworkVnicArgs{...}
+type GetBatchBatchContextNetworkVnicInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextNetworkVnicOutput() GetBatchBatchContextNetworkVnicOutput
+	ToGetBatchBatchContextNetworkVnicOutputWithContext(context.Context) GetBatchBatchContextNetworkVnicOutput
+}
+
+type GetBatchBatchContextNetworkVnicArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
+}
+
+func (GetBatchBatchContextNetworkVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextNetworkVnicArgs) ToGetBatchBatchContextNetworkVnicOutput() GetBatchBatchContextNetworkVnicOutput {
+	return i.ToGetBatchBatchContextNetworkVnicOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextNetworkVnicArgs) ToGetBatchBatchContextNetworkVnicOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextNetworkVnicOutput)
+}
+
+// GetBatchBatchContextNetworkVnicArrayInput is an input type that accepts GetBatchBatchContextNetworkVnicArray and GetBatchBatchContextNetworkVnicArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextNetworkVnicArrayInput` via:
+//
+//	GetBatchBatchContextNetworkVnicArray{ GetBatchBatchContextNetworkVnicArgs{...} }
+type GetBatchBatchContextNetworkVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextNetworkVnicArrayOutput() GetBatchBatchContextNetworkVnicArrayOutput
+	ToGetBatchBatchContextNetworkVnicArrayOutputWithContext(context.Context) GetBatchBatchContextNetworkVnicArrayOutput
+}
+
+type GetBatchBatchContextNetworkVnicArray []GetBatchBatchContextNetworkVnicInput
+
+func (GetBatchBatchContextNetworkVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextNetworkVnicArray) ToGetBatchBatchContextNetworkVnicArrayOutput() GetBatchBatchContextNetworkVnicArrayOutput {
+	return i.ToGetBatchBatchContextNetworkVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextNetworkVnicArray) ToGetBatchBatchContextNetworkVnicArrayOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextNetworkVnicArrayOutput)
+}
+
+type GetBatchBatchContextNetworkVnicOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextNetworkVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextNetworkVnicOutput) ToGetBatchBatchContextNetworkVnicOutput() GetBatchBatchContextNetworkVnicOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkVnicOutput) ToGetBatchBatchContextNetworkVnicOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkVnicOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+func (o GetBatchBatchContextNetworkVnicOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextNetworkVnic) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+func (o GetBatchBatchContextNetworkVnicOutput) SourceIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextNetworkVnic) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchContextNetworkVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextNetworkVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextNetworkVnic)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextNetworkVnicArrayOutput) ToGetBatchBatchContextNetworkVnicArrayOutput() GetBatchBatchContextNetworkVnicArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkVnicArrayOutput) ToGetBatchBatchContextNetworkVnicArrayOutputWithContext(ctx context.Context) GetBatchBatchContextNetworkVnicArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextNetworkVnicArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextNetworkVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextNetworkVnic {
+		return vs[0].([]GetBatchBatchContextNetworkVnic)[vs[1].(int)]
+	}).(GetBatchBatchContextNetworkVnicOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollection struct {
+	// List of shapes.
+	Items []GetBatchBatchContextShapesBatchContextShapeCollectionItem `pulumi:"items"`
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionArgs and GetBatchBatchContextShapesBatchContextShapeCollectionOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionArgs{...}
+type GetBatchBatchContextShapesBatchContextShapeCollectionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionArgs struct {
+	// List of shapes.
+	Items GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionOutput)
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionArrayInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionArray and GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionArrayInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionArray{ GetBatchBatchContextShapesBatchContextShapeCollectionArgs{...} }
+type GetBatchBatchContextShapesBatchContextShapeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionArray []GetBatchBatchContextShapesBatchContextShapeCollectionInput
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionOutput {
+	return o
+}
+
+// List of shapes.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionOutput) Items() GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollection) []GetBatchBatchContextShapesBatchContextShapeCollectionItem {
+		return v.Items
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesBatchContextShapeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesBatchContextShapeCollection {
+		return vs[0].([]GetBatchBatchContextShapesBatchContextShapeCollection)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItem struct {
+	// The amount of memory available for container instances that use this shape.
+	MemoryOptions []GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption `pulumi:"memoryOptions"`
+	// The name identifying the shape.
+	Name string `pulumi:"name"`
+	// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+	NetworkingBandwidthOptions []GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption `pulumi:"networkingBandwidthOptions"`
+	// For a flexible shape, the number of OCPUs available for container instances that use this shape.
+	OcpuOptions []GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption `pulumi:"ocpuOptions"`
+	// A short description of the container instance's processor (CPU).
+	ProcessorDescription string `pulumi:"processorDescription"`
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs and GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs{...}
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs struct {
+	// The amount of memory available for container instances that use this shape.
+	MemoryOptions GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayInput `pulumi:"memoryOptions"`
+	// The name identifying the shape.
+	Name pulumi.StringInput `pulumi:"name"`
+	// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+	NetworkingBandwidthOptions GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayInput `pulumi:"networkingBandwidthOptions"`
+	// For a flexible shape, the number of OCPUs available for container instances that use this shape.
+	OcpuOptions GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayInput `pulumi:"ocpuOptions"`
+	// A short description of the container instance's processor (CPU).
+	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+}
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput)
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemArray and GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemArray{ GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs{...} }
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemArray []GetBatchBatchContextShapesBatchContextShapeCollectionItemInput
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput {
+	return o
+}
+
+// The amount of memory available for container instances that use this shape.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) MemoryOptions() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItem) []GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption {
+		return v.MemoryOptions
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput)
+}
+
+// The name identifying the shape.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) NetworkingBandwidthOptions() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItem) []GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption {
+		return v.NetworkingBandwidthOptions
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput)
+}
+
+// For a flexible shape, the number of OCPUs available for container instances that use this shape.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) OcpuOptions() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItem) []GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption {
+		return v.OcpuOptions
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput)
+}
+
+// A short description of the container instance's processor (CPU).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput) ProcessorDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItem) string {
+		return v.ProcessorDescription
+	}).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesBatchContextShapeCollectionItem {
+		return vs[0].([]GetBatchBatchContextShapesBatchContextShapeCollectionItem)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption struct {
+	// The default amount of memory per OCPU available for this shape (GB).
+	DefaultPerOcpuInGbs float64 `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory (GB).
+	MaxInGbs float64 `pulumi:"maxInGbs"`
+	// For a flexible shape, the maximum amount of memory per OCPU available for this shape (GB).
+	MaxPerOcpuInGbs float64 `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory (GB).
+	MinInGbs float64 `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape (GB).
+	MinPerOcpuInGbs float64 `pulumi:"minPerOcpuInGbs"`
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs and GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs{...}
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs struct {
+	// The default amount of memory per OCPU available for this shape (GB).
+	DefaultPerOcpuInGbs pulumi.Float64Input `pulumi:"defaultPerOcpuInGbs"`
+	// The maximum amount of memory (GB).
+	MaxInGbs pulumi.Float64Input `pulumi:"maxInGbs"`
+	// For a flexible shape, the maximum amount of memory per OCPU available for this shape (GB).
+	MaxPerOcpuInGbs pulumi.Float64Input `pulumi:"maxPerOcpuInGbs"`
+	// The minimum amount of memory (GB).
+	MinInGbs pulumi.Float64Input `pulumi:"minInGbs"`
+	// The minimum amount of memory per OCPU available for this shape (GB).
+	MinPerOcpuInGbs pulumi.Float64Input `pulumi:"minPerOcpuInGbs"`
+}
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput)
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray and GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray{ GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs{...} }
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray []GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionInput
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput {
+	return o
+}
+
+// The default amount of memory per OCPU available for this shape (GB).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) DefaultPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption) float64 {
+		return v.DefaultPerOcpuInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The maximum amount of memory (GB).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) MaxInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption) float64 {
+		return v.MaxInGbs
+	}).(pulumi.Float64Output)
+}
+
+// For a flexible shape, the maximum amount of memory per OCPU available for this shape (GB).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) MaxPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption) float64 {
+		return v.MaxPerOcpuInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory (GB).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) MinInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption) float64 {
+		return v.MinInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The minimum amount of memory per OCPU available for this shape (GB).
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput) MinPerOcpuInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption) float64 {
+		return v.MinPerOcpuInGbs
+	}).(pulumi.Float64Output)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption {
+		return vs[0].([]GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOption)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps float64 `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps float64 `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps float64 `pulumi:"minInGbps"`
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs and GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs{...}
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs struct {
+	// The default amount of networking bandwidth per OCPU, in gigabits per second.
+	DefaultPerOcpuInGbps pulumi.Float64Input `pulumi:"defaultPerOcpuInGbps"`
+	// The maximum amount of networking bandwidth, in gigabits per second.
+	MaxInGbps pulumi.Float64Input `pulumi:"maxInGbps"`
+	// The minimum amount of networking bandwidth, in gigabits per second.
+	MinInGbps pulumi.Float64Input `pulumi:"minInGbps"`
+}
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput)
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray and GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray{ GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs{...} }
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray []GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionInput
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput {
+	return o
+}
+
+// The default amount of networking bandwidth per OCPU, in gigabits per second.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) DefaultPerOcpuInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption) float64 {
+		return v.DefaultPerOcpuInGbps
+	}).(pulumi.Float64Output)
+}
+
+// The maximum amount of networking bandwidth, in gigabits per second.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) MaxInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption) float64 {
+		return v.MaxInGbps
+	}).(pulumi.Float64Output)
+}
+
+// The minimum amount of networking bandwidth, in gigabits per second.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput) MinInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption) float64 {
+		return v.MinInGbps
+	}).(pulumi.Float64Output)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption {
+		return vs[0].([]GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOption)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption struct {
+	// The maximum number of OCPUs.
+	MaxOcpus float64 `pulumi:"maxOcpus"`
+	// The minimum number of OCPUs.
+	MinOcpus float64 `pulumi:"minOcpus"`
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs and GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs{...}
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs struct {
+	// The maximum number of OCPUs.
+	MaxOcpus pulumi.Float64Input `pulumi:"maxOcpus"`
+	// The minimum number of OCPUs.
+	MinOcpus pulumi.Float64Input `pulumi:"minOcpus"`
+}
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput)
+}
+
+// GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayInput is an input type that accepts GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray and GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayInput` via:
+//
+//	GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray{ GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs{...} }
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput
+	ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutputWithContext(context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray []GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionInput
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput {
+	return i.ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput {
+	return o
+}
+
+// The maximum number of OCPUs.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput) MaxOcpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption) float64 { return v.MaxOcpus }).(pulumi.Float64Output)
+}
+
+// The minimum number of OCPUs.
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput) MinOcpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption) float64 { return v.MinOcpus }).(pulumi.Float64Output)
+}
+
+type GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput() GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput) ToGetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption {
+		return vs[0].([]GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOption)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput)
+}
+
+type GetBatchBatchContextShapesFilter struct {
+	// The name identifying the shape.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBatchBatchContextShapesFilterInput is an input type that accepts GetBatchBatchContextShapesFilterArgs and GetBatchBatchContextShapesFilterOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesFilterInput` via:
+//
+//	GetBatchBatchContextShapesFilterArgs{...}
+type GetBatchBatchContextShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesFilterOutput() GetBatchBatchContextShapesFilterOutput
+	ToGetBatchBatchContextShapesFilterOutputWithContext(context.Context) GetBatchBatchContextShapesFilterOutput
+}
+
+type GetBatchBatchContextShapesFilterArgs struct {
+	// The name identifying the shape.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBatchBatchContextShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesFilterArgs) ToGetBatchBatchContextShapesFilterOutput() GetBatchBatchContextShapesFilterOutput {
+	return i.ToGetBatchBatchContextShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesFilterArgs) ToGetBatchBatchContextShapesFilterOutputWithContext(ctx context.Context) GetBatchBatchContextShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesFilterOutput)
+}
+
+// GetBatchBatchContextShapesFilterArrayInput is an input type that accepts GetBatchBatchContextShapesFilterArray and GetBatchBatchContextShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextShapesFilterArrayInput` via:
+//
+//	GetBatchBatchContextShapesFilterArray{ GetBatchBatchContextShapesFilterArgs{...} }
+type GetBatchBatchContextShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextShapesFilterArrayOutput() GetBatchBatchContextShapesFilterArrayOutput
+	ToGetBatchBatchContextShapesFilterArrayOutputWithContext(context.Context) GetBatchBatchContextShapesFilterArrayOutput
+}
+
+type GetBatchBatchContextShapesFilterArray []GetBatchBatchContextShapesFilterInput
+
+func (GetBatchBatchContextShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextShapesFilterArray) ToGetBatchBatchContextShapesFilterArrayOutput() GetBatchBatchContextShapesFilterArrayOutput {
+	return i.ToGetBatchBatchContextShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextShapesFilterArray) ToGetBatchBatchContextShapesFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextShapesFilterArrayOutput)
+}
+
+type GetBatchBatchContextShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextShapesFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesFilterOutput) ToGetBatchBatchContextShapesFilterOutput() GetBatchBatchContextShapesFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesFilterOutput) ToGetBatchBatchContextShapesFilterOutputWithContext(ctx context.Context) GetBatchBatchContextShapesFilterOutput {
+	return o
+}
+
+// The name identifying the shape.
+func (o GetBatchBatchContextShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchContextShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBatchBatchContextShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchContextShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextShapesFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextShapesFilterArrayOutput) ToGetBatchBatchContextShapesFilterArrayOutput() GetBatchBatchContextShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesFilterArrayOutput) ToGetBatchBatchContextShapesFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchContextShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextShapesFilterArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextShapesFilter {
+		return vs[0].([]GetBatchBatchContextShapesFilter)[vs[1].(int)]
+	}).(GetBatchBatchContextShapesFilterOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollection struct {
+	Items []GetBatchBatchContextsBatchContextCollectionItem `pulumi:"items"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionArgs and GetBatchBatchContextsBatchContextCollectionOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionArgs{...}
+type GetBatchBatchContextsBatchContextCollectionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionOutput() GetBatchBatchContextsBatchContextCollectionOutput
+	ToGetBatchBatchContextsBatchContextCollectionOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionArgs struct {
+	Items GetBatchBatchContextsBatchContextCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionArgs) ToGetBatchBatchContextsBatchContextCollectionOutput() GetBatchBatchContextsBatchContextCollectionOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionArgs) ToGetBatchBatchContextsBatchContextCollectionOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionArray and GetBatchBatchContextsBatchContextCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionArray{ GetBatchBatchContextsBatchContextCollectionArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionArrayOutput() GetBatchBatchContextsBatchContextCollectionArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionArray []GetBatchBatchContextsBatchContextCollectionInput
+
+func (GetBatchBatchContextsBatchContextCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionArray) ToGetBatchBatchContextsBatchContextCollectionArrayOutput() GetBatchBatchContextsBatchContextCollectionArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionArray) ToGetBatchBatchContextsBatchContextCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionOutput) ToGetBatchBatchContextsBatchContextCollectionOutput() GetBatchBatchContextsBatchContextCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionOutput) ToGetBatchBatchContextsBatchContextCollectionOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionOutput) Items() GetBatchBatchContextsBatchContextCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollection) []GetBatchBatchContextsBatchContextCollectionItem {
+		return v.Items
+	}).(GetBatchBatchContextsBatchContextCollectionItemArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionArrayOutput) ToGetBatchBatchContextsBatchContextCollectionArrayOutput() GetBatchBatchContextsBatchContextCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionArrayOutput) ToGetBatchBatchContextsBatchContextCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollection {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollection)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Summarized information about the batch context.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Mapping of concurrent/shared resources used in job tasks to their limits.
+	Entitlements map[string]string `pulumi:"entitlements"`
+	// List of fleet configurations related to the batch context.
+	Fleets []GetBatchBatchContextsBatchContextCollectionItemFleet `pulumi:"fleets"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	Id string `pulumi:"id"`
+	// List of job priority configurations related to the batch context.
+	JobPriorityConfigurations []GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration `pulumi:"jobPriorityConfigurations"`
+	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Logging configuration for batch context.
+	LoggingConfigurations []GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration `pulumi:"loggingConfigurations"`
+	// Network configuration of the batch context.
+	Networks []GetBatchBatchContextsBatchContextCollectionItemNetwork `pulumi:"networks"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemArgs and GetBatchBatchContextsBatchContextCollectionItemOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemOutput() GetBatchBatchContextsBatchContextCollectionItemOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Summarized information about the batch context.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Mapping of concurrent/shared resources used in job tasks to their limits.
+	Entitlements pulumi.StringMapInput `pulumi:"entitlements"`
+	// List of fleet configurations related to the batch context.
+	Fleets GetBatchBatchContextsBatchContextCollectionItemFleetArrayInput `pulumi:"fleets"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	Id pulumi.StringInput `pulumi:"id"`
+	// List of job priority configurations related to the batch context.
+	JobPriorityConfigurations GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayInput `pulumi:"jobPriorityConfigurations"`
+	// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Logging configuration for batch context.
+	LoggingConfigurations GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayInput `pulumi:"loggingConfigurations"`
+	// Network configuration of the batch context.
+	Networks GetBatchBatchContextsBatchContextCollectionItemNetworkArrayInput `pulumi:"networks"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemArgs) ToGetBatchBatchContextsBatchContextCollectionItemOutput() GetBatchBatchContextsBatchContextCollectionItemOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemArgs) ToGetBatchBatchContextsBatchContextCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemArray and GetBatchBatchContextsBatchContextCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemArray{ GetBatchBatchContextsBatchContextCollectionItemArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemArrayOutput() GetBatchBatchContextsBatchContextCollectionItemArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemArray []GetBatchBatchContextsBatchContextCollectionItemInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemArray) ToGetBatchBatchContextsBatchContextCollectionItemArrayOutput() GetBatchBatchContextsBatchContextCollectionItemArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemArray) ToGetBatchBatchContextsBatchContextCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) ToGetBatchBatchContextsBatchContextCollectionItemOutput() GetBatchBatchContextsBatchContextCollectionItemOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) ToGetBatchBatchContextsBatchContextCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Summarized information about the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Mapping of concurrent/shared resources used in job tasks to their limits.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) Entitlements() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) map[string]string { return v.Entitlements }).(pulumi.StringMapOutput)
+}
+
+// List of fleet configurations related to the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) Fleets() GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) []GetBatchBatchContextsBatchContextCollectionItemFleet {
+		return v.Fleets
+	}).(GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of job priority configurations related to the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) JobPriorityConfigurations() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) []GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration {
+		return v.JobPriorityConfigurations
+	}).(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput)
+}
+
+// A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Logging configuration for batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) LoggingConfigurations() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) []GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration {
+		return v.LoggingConfigurations
+	}).(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput)
+}
+
+// Network configuration of the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) Networks() GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) []GetBatchBatchContextsBatchContextCollectionItemNetwork {
+		return v.Networks
+	}).(GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchContextsBatchContextCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemArrayOutput() GetBatchBatchContextsBatchContextCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItem {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItem)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleet struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details string `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks int `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name string `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shapes []GetBatchBatchContextsBatchContextCollectionItemFleetShape `pulumi:"shapes"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemFleetInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemFleetArgs and GetBatchBatchContextsBatchContextCollectionItemFleetOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemFleetInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemFleetArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemFleetInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetOutput() GetBatchBatchContextsBatchContextCollectionItemFleetOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetArgs struct {
+	// A message that describes the current state of the service manage fleet configuration in more detail.
+	Details pulumi.StringInput `pulumi:"details"`
+	// Maximum number of concurrent tasks for the service managed fleet.
+	MaxConcurrentTasks pulumi.IntInput `pulumi:"maxConcurrentTasks"`
+	// Name of the service managed fleet.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Shape of the fleet. Describes hardware resources of each node in the fleet.
+	Shapes GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayInput `pulumi:"shapes"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleet)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetArgs) ToGetBatchBatchContextsBatchContextCollectionItemFleetOutput() GetBatchBatchContextsBatchContextCollectionItemFleetOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemFleetOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetArgs) ToGetBatchBatchContextsBatchContextCollectionItemFleetOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemFleetOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemFleetArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemFleetArray and GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemFleetArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemFleetArray{ GetBatchBatchContextsBatchContextCollectionItemFleetArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemFleetArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetArray []GetBatchBatchContextsBatchContextCollectionItemFleetInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemFleet)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetArray) ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetArray) ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleet)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetOutput() GetBatchBatchContextsBatchContextCollectionItemFleetOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetOutput {
+	return o
+}
+
+// A message that describes the current state of the service manage fleet configuration in more detail.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) string { return v.Details }).(pulumi.StringOutput)
+}
+
+// Maximum number of concurrent tasks for the service managed fleet.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) MaxConcurrentTasks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) int { return v.MaxConcurrentTasks }).(pulumi.IntOutput)
+}
+
+// Name of the service managed fleet.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Shape of the fleet. Describes hardware resources of each node in the fleet.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) Shapes() GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) []GetBatchBatchContextsBatchContextCollectionItemFleetShape {
+		return v.Shapes
+	}).(GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleet) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemFleet)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemFleetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemFleet {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemFleet)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemFleetOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetShape struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus int `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemFleetShapeInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs and GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemFleetShapeInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs struct {
+	// Amount of memory in GBs required by the shape.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// Number of OCPUs required by the shape.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// The name of the shape.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetShape)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray and GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray{ GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray []GetBatchBatchContextsBatchContextCollectionItemFleetShapeInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemFleetShape)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetShape)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput {
+	return o
+}
+
+// Amount of memory in GBs required by the shape.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleetShape) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// Number of OCPUs required by the shape.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleetShape) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// The name of the shape.
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemFleetShape) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemFleetShape)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput() GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemFleetShape {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemFleetShape)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration struct {
+	// Name of the tag key.
+	TagKey string `pulumi:"tagKey"`
+	// Name of the corresponding tag namespace.
+	TagNamespace string `pulumi:"tagNamespace"`
+	// Mapping of tag value to its priority.
+	Values map[string]string `pulumi:"values"`
+	// Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight int `pulumi:"weight"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs and GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs struct {
+	// Name of the tag key.
+	TagKey pulumi.StringInput `pulumi:"tagKey"`
+	// Name of the corresponding tag namespace.
+	TagNamespace pulumi.StringInput `pulumi:"tagNamespace"`
+	// Mapping of tag value to its priority.
+	Values pulumi.StringMapInput `pulumi:"values"`
+	// Weight associated with the tag key. Percentage point is the unit of measurement.
+	Weight pulumi.IntInput `pulumi:"weight"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray and GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray{ GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray []GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput {
+	return o
+}
+
+// Name of the tag key.
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) TagKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration) string {
+		return v.TagKey
+	}).(pulumi.StringOutput)
+}
+
+// Name of the corresponding tag namespace.
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) TagNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration) string {
+		return v.TagNamespace
+	}).(pulumi.StringOutput)
+}
+
+// Mapping of tag value to its priority.
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) Values() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration) map[string]string {
+		return v.Values
+	}).(pulumi.StringMapOutput)
+}
+
+// Weight associated with the tag key. Percentage point is the unit of measurement.
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput) Weight() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration) int { return v.Weight }).(pulumi.IntOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfiguration)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs and GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray and GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray{ GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray []GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput() GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemLoggingConfiguration)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetwork struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds []string `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics []GetBatchBatchContextsBatchContextCollectionItemNetworkVnic `pulumi:"vnics"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemNetworkInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemNetworkArgs and GetBatchBatchContextsBatchContextCollectionItemNetworkOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemNetworkInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemNetworkArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemNetworkInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkArgs struct {
+	// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// A list of private endpoint's VNICs.
+	Vnics GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayInput `pulumi:"vnics"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetwork)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkArgs) ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkArgs) ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemNetworkOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemNetworkArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemNetworkArray and GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemNetworkArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemNetworkArray{ GetBatchBatchContextsBatchContextCollectionItemNetworkArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkArray []GetBatchBatchContextsBatchContextCollectionItemNetworkInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemNetwork)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkArray) ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkArray) ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetwork)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkOutput {
+	return o
+}
+
+// A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemNetwork) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemNetwork) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// A list of private endpoint's VNICs.
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkOutput) Vnics() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemNetwork) []GetBatchBatchContextsBatchContextCollectionItemNetworkVnic {
+		return v.Vnics
+	}).(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemNetwork)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemNetwork {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemNetwork)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemNetworkOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnic struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	Id string `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps []string `pulumi:"sourceIps"`
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemNetworkVnicInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs and GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemNetworkVnicInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs{...}
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+	SourceIps pulumi.StringArrayInput `pulumi:"sourceIps"`
+}
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkVnic)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput)
+}
+
+// GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayInput is an input type that accepts GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray and GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayInput` via:
+//
+//	GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray{ GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs{...} }
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput
+	ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutputWithContext(context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray []GetBatchBatchContextsBatchContextCollectionItemNetworkVnicInput
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemNetworkVnic)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput {
+	return i.ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkVnic)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemNetworkVnic) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput) SourceIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsBatchContextCollectionItemNetworkVnic) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsBatchContextCollectionItemNetworkVnic)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput() GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput) ToGetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsBatchContextCollectionItemNetworkVnic {
+		return vs[0].([]GetBatchBatchContextsBatchContextCollectionItemNetworkVnic)[vs[1].(int)]
+	}).(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput)
+}
+
+type GetBatchBatchContextsFilter struct {
+	// Name of the service managed fleet.
+	Name  string `pulumi:"name"`
+	Regex *bool  `pulumi:"regex"`
+	// Mapping of tag value to its priority.
+	Values []string `pulumi:"values"`
+}
+
+// GetBatchBatchContextsFilterInput is an input type that accepts GetBatchBatchContextsFilterArgs and GetBatchBatchContextsFilterOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsFilterInput` via:
+//
+//	GetBatchBatchContextsFilterArgs{...}
+type GetBatchBatchContextsFilterInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsFilterOutput() GetBatchBatchContextsFilterOutput
+	ToGetBatchBatchContextsFilterOutputWithContext(context.Context) GetBatchBatchContextsFilterOutput
+}
+
+type GetBatchBatchContextsFilterArgs struct {
+	// Name of the service managed fleet.
+	Name  pulumi.StringInput  `pulumi:"name"`
+	Regex pulumi.BoolPtrInput `pulumi:"regex"`
+	// Mapping of tag value to its priority.
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBatchBatchContextsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsFilterArgs) ToGetBatchBatchContextsFilterOutput() GetBatchBatchContextsFilterOutput {
+	return i.ToGetBatchBatchContextsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsFilterArgs) ToGetBatchBatchContextsFilterOutputWithContext(ctx context.Context) GetBatchBatchContextsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsFilterOutput)
+}
+
+// GetBatchBatchContextsFilterArrayInput is an input type that accepts GetBatchBatchContextsFilterArray and GetBatchBatchContextsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchContextsFilterArrayInput` via:
+//
+//	GetBatchBatchContextsFilterArray{ GetBatchBatchContextsFilterArgs{...} }
+type GetBatchBatchContextsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchContextsFilterArrayOutput() GetBatchBatchContextsFilterArrayOutput
+	ToGetBatchBatchContextsFilterArrayOutputWithContext(context.Context) GetBatchBatchContextsFilterArrayOutput
+}
+
+type GetBatchBatchContextsFilterArray []GetBatchBatchContextsFilterInput
+
+func (GetBatchBatchContextsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchContextsFilterArray) ToGetBatchBatchContextsFilterArrayOutput() GetBatchBatchContextsFilterArrayOutput {
+	return i.ToGetBatchBatchContextsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchContextsFilterArray) ToGetBatchBatchContextsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchContextsFilterArrayOutput)
+}
+
+type GetBatchBatchContextsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchContextsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsFilterOutput) ToGetBatchBatchContextsFilterOutput() GetBatchBatchContextsFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsFilterOutput) ToGetBatchBatchContextsFilterOutputWithContext(ctx context.Context) GetBatchBatchContextsFilterOutput {
+	return o
+}
+
+// Name of the service managed fleet.
+func (o GetBatchBatchContextsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchContextsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+// Mapping of tag value to its priority.
+func (o GetBatchBatchContextsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchContextsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchContextsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchContextsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchContextsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchContextsFilterArrayOutput) ToGetBatchBatchContextsFilterArrayOutput() GetBatchBatchContextsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsFilterArrayOutput) ToGetBatchBatchContextsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchContextsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchContextsFilterArrayOutput) Index(i pulumi.IntInput) GetBatchBatchContextsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchContextsFilter {
+		return vs[0].([]GetBatchBatchContextsFilter)[vs[1].(int)]
+	}).(GetBatchBatchContextsFilterOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollection struct {
+	Items []GetBatchBatchJobPoolsBatchJobPoolCollectionItem `pulumi:"items"`
+}
+
+// GetBatchBatchJobPoolsBatchJobPoolCollectionInput is an input type that accepts GetBatchBatchJobPoolsBatchJobPoolCollectionArgs and GetBatchBatchJobPoolsBatchJobPoolCollectionOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsBatchJobPoolCollectionInput` via:
+//
+//	GetBatchBatchJobPoolsBatchJobPoolCollectionArgs{...}
+type GetBatchBatchJobPoolsBatchJobPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionOutput
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutputWithContext(context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionOutput
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionArgs struct {
+	Items GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionArgs) ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionOutput {
+	return i.ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionArgs) ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsBatchJobPoolCollectionOutput)
+}
+
+// GetBatchBatchJobPoolsBatchJobPoolCollectionArrayInput is an input type that accepts GetBatchBatchJobPoolsBatchJobPoolCollectionArray and GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsBatchJobPoolCollectionArrayInput` via:
+//
+//	GetBatchBatchJobPoolsBatchJobPoolCollectionArray{ GetBatchBatchJobPoolsBatchJobPoolCollectionArgs{...} }
+type GetBatchBatchJobPoolsBatchJobPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutputWithContext(context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionArray []GetBatchBatchJobPoolsBatchJobPoolCollectionInput
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsBatchJobPoolCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionArray) ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput {
+	return i.ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionArray) ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionOutput) Items() GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollection) []GetBatchBatchJobPoolsBatchJobPoolCollectionItem {
+		return v.Items
+	}).(GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsBatchJobPoolCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchJobPoolsBatchJobPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchJobPoolsBatchJobPoolCollection {
+		return vs[0].([]GetBatchBatchJobPoolsBatchJobPoolCollection)[vs[1].(int)]
+	}).(GetBatchBatchJobPoolsBatchJobPoolCollectionOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	BatchContextId string `pulumi:"batchContextId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Summarized information about the batch job pool.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch job pool.
+	Id string `pulumi:"id"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the batch job pool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the batch job pool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBatchBatchJobPoolsBatchJobPoolCollectionItemInput is an input type that accepts GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs and GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsBatchJobPoolCollectionItemInput` via:
+//
+//	GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs{...}
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutputWithContext(context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+	BatchContextId pulumi.StringInput `pulumi:"batchContextId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Summarized information about the batch job pool.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch job pool.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the batch job pool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the batch job pool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput {
+	return i.ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput)
+}
+
+// GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayInput is an input type that accepts GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray and GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayInput` via:
+//
+//	GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray{ GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs{...} }
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput
+	ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutputWithContext(context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray []GetBatchBatchJobPoolsBatchJobPoolCollectionItemInput
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsBatchJobPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput {
+	return i.ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) BatchContextId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.BatchContextId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Summarized information about the batch job pool.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch job pool.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the batch job pool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the batch job pool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsBatchJobPoolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsBatchJobPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput() GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput) ToGetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchJobPoolsBatchJobPoolCollectionItem {
+		return vs[0].([]GetBatchBatchJobPoolsBatchJobPoolCollectionItem)[vs[1].(int)]
+	}).(GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput)
+}
+
+type GetBatchBatchJobPoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBatchBatchJobPoolsFilterInput is an input type that accepts GetBatchBatchJobPoolsFilterArgs and GetBatchBatchJobPoolsFilterOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsFilterInput` via:
+//
+//	GetBatchBatchJobPoolsFilterArgs{...}
+type GetBatchBatchJobPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsFilterOutput() GetBatchBatchJobPoolsFilterOutput
+	ToGetBatchBatchJobPoolsFilterOutputWithContext(context.Context) GetBatchBatchJobPoolsFilterOutput
+}
+
+type GetBatchBatchJobPoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBatchBatchJobPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsFilterArgs) ToGetBatchBatchJobPoolsFilterOutput() GetBatchBatchJobPoolsFilterOutput {
+	return i.ToGetBatchBatchJobPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsFilterArgs) ToGetBatchBatchJobPoolsFilterOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsFilterOutput)
+}
+
+// GetBatchBatchJobPoolsFilterArrayInput is an input type that accepts GetBatchBatchJobPoolsFilterArray and GetBatchBatchJobPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchJobPoolsFilterArrayInput` via:
+//
+//	GetBatchBatchJobPoolsFilterArray{ GetBatchBatchJobPoolsFilterArgs{...} }
+type GetBatchBatchJobPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchJobPoolsFilterArrayOutput() GetBatchBatchJobPoolsFilterArrayOutput
+	ToGetBatchBatchJobPoolsFilterArrayOutputWithContext(context.Context) GetBatchBatchJobPoolsFilterArrayOutput
+}
+
+type GetBatchBatchJobPoolsFilterArray []GetBatchBatchJobPoolsFilterInput
+
+func (GetBatchBatchJobPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchJobPoolsFilterArray) ToGetBatchBatchJobPoolsFilterArrayOutput() GetBatchBatchJobPoolsFilterArrayOutput {
+	return i.ToGetBatchBatchJobPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchJobPoolsFilterArray) ToGetBatchBatchJobPoolsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchJobPoolsFilterArrayOutput)
+}
+
+type GetBatchBatchJobPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchJobPoolsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsFilterOutput) ToGetBatchBatchJobPoolsFilterOutput() GetBatchBatchJobPoolsFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsFilterOutput) ToGetBatchBatchJobPoolsFilterOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchJobPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBatchBatchJobPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchJobPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchJobPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchJobPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchJobPoolsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchJobPoolsFilterArrayOutput) ToGetBatchBatchJobPoolsFilterArrayOutput() GetBatchBatchJobPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsFilterArrayOutput) ToGetBatchBatchJobPoolsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchJobPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchJobPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetBatchBatchJobPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchJobPoolsFilter {
+		return vs[0].([]GetBatchBatchJobPoolsFilter)[vs[1].(int)]
+	}).(GetBatchBatchJobPoolsFilterOutput)
+}
+
+type GetBatchBatchTaskEnvironmentSecurityContext struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup int `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup int `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser int `pulumi:"runAsUser"`
+}
+
+// GetBatchBatchTaskEnvironmentSecurityContextInput is an input type that accepts GetBatchBatchTaskEnvironmentSecurityContextArgs and GetBatchBatchTaskEnvironmentSecurityContextOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentSecurityContextInput` via:
+//
+//	GetBatchBatchTaskEnvironmentSecurityContextArgs{...}
+type GetBatchBatchTaskEnvironmentSecurityContextInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentSecurityContextOutput() GetBatchBatchTaskEnvironmentSecurityContextOutput
+	ToGetBatchBatchTaskEnvironmentSecurityContextOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentSecurityContextOutput
+}
+
+type GetBatchBatchTaskEnvironmentSecurityContextArgs struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup pulumi.IntInput `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup pulumi.IntInput `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser pulumi.IntInput `pulumi:"runAsUser"`
+}
+
+func (GetBatchBatchTaskEnvironmentSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentSecurityContextArgs) ToGetBatchBatchTaskEnvironmentSecurityContextOutput() GetBatchBatchTaskEnvironmentSecurityContextOutput {
+	return i.ToGetBatchBatchTaskEnvironmentSecurityContextOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentSecurityContextArgs) ToGetBatchBatchTaskEnvironmentSecurityContextOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentSecurityContextOutput)
+}
+
+// GetBatchBatchTaskEnvironmentSecurityContextArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentSecurityContextArray and GetBatchBatchTaskEnvironmentSecurityContextArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentSecurityContextArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentSecurityContextArray{ GetBatchBatchTaskEnvironmentSecurityContextArgs{...} }
+type GetBatchBatchTaskEnvironmentSecurityContextArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentSecurityContextArrayOutput
+	ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentSecurityContextArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentSecurityContextArray []GetBatchBatchTaskEnvironmentSecurityContextInput
+
+func (GetBatchBatchTaskEnvironmentSecurityContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentSecurityContextArray) ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentSecurityContextArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentSecurityContextArray) ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentSecurityContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentSecurityContextArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentSecurityContextOutput) ToGetBatchBatchTaskEnvironmentSecurityContextOutput() GetBatchBatchTaskEnvironmentSecurityContextOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentSecurityContextOutput) ToGetBatchBatchTaskEnvironmentSecurityContextOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentSecurityContextOutput {
+	return o
+}
+
+// A special supplemental group ID that applies to all containers in a pod.
+func (o GetBatchBatchTaskEnvironmentSecurityContextOutput) FsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentSecurityContext) int { return v.FsGroup }).(pulumi.IntOutput)
+}
+
+// Group ID for running processes inside the container.
+func (o GetBatchBatchTaskEnvironmentSecurityContextOutput) RunAsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentSecurityContext) int { return v.RunAsGroup }).(pulumi.IntOutput)
+}
+
+// User ID for running processes inside the container.
+func (o GetBatchBatchTaskEnvironmentSecurityContextOutput) RunAsUser() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentSecurityContext) int { return v.RunAsUser }).(pulumi.IntOutput)
+}
+
+type GetBatchBatchTaskEnvironmentSecurityContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentSecurityContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentSecurityContext)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentSecurityContextArrayOutput) ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentSecurityContextArrayOutput) ToGetBatchBatchTaskEnvironmentSecurityContextArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentSecurityContextArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentSecurityContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentSecurityContext {
+		return vs[0].([]GetBatchBatchTaskEnvironmentSecurityContext)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentSecurityContextOutput)
+}
+
+type GetBatchBatchTaskEnvironmentVolume struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath string `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath string `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn string `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name string `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchTaskEnvironmentVolumeInput is an input type that accepts GetBatchBatchTaskEnvironmentVolumeArgs and GetBatchBatchTaskEnvironmentVolumeOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentVolumeInput` via:
+//
+//	GetBatchBatchTaskEnvironmentVolumeArgs{...}
+type GetBatchBatchTaskEnvironmentVolumeInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentVolumeOutput() GetBatchBatchTaskEnvironmentVolumeOutput
+	ToGetBatchBatchTaskEnvironmentVolumeOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentVolumeOutput
+}
+
+type GetBatchBatchTaskEnvironmentVolumeArgs struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath pulumi.StringInput `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath pulumi.StringInput `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn pulumi.StringInput `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchTaskEnvironmentVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentVolumeArgs) ToGetBatchBatchTaskEnvironmentVolumeOutput() GetBatchBatchTaskEnvironmentVolumeOutput {
+	return i.ToGetBatchBatchTaskEnvironmentVolumeOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentVolumeArgs) ToGetBatchBatchTaskEnvironmentVolumeOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentVolumeOutput)
+}
+
+// GetBatchBatchTaskEnvironmentVolumeArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentVolumeArray and GetBatchBatchTaskEnvironmentVolumeArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentVolumeArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentVolumeArray{ GetBatchBatchTaskEnvironmentVolumeArgs{...} }
+type GetBatchBatchTaskEnvironmentVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentVolumeArrayOutput() GetBatchBatchTaskEnvironmentVolumeArrayOutput
+	ToGetBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentVolumeArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentVolumeArray []GetBatchBatchTaskEnvironmentVolumeInput
+
+func (GetBatchBatchTaskEnvironmentVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentVolumeArray) ToGetBatchBatchTaskEnvironmentVolumeArrayOutput() GetBatchBatchTaskEnvironmentVolumeArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentVolumeArray) ToGetBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentVolumeArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) ToGetBatchBatchTaskEnvironmentVolumeOutput() GetBatchBatchTaskEnvironmentVolumeOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) ToGetBatchBatchTaskEnvironmentVolumeOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentVolumeOutput {
+	return o
+}
+
+// The local path to mount the NFS share to.
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) LocalMountDirectoryPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentVolume) string { return v.LocalMountDirectoryPath }).(pulumi.StringOutput)
+}
+
+// The path to the directory on the NFS server to be mounted.
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) MountTargetExportPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentVolume) string { return v.MountTargetExportPath }).(pulumi.StringOutput)
+}
+
+// The FQDN of the NFS server to connect to.
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) MountTargetFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentVolume) string { return v.MountTargetFqdn }).(pulumi.StringOutput)
+}
+
+// The name of the NfsVolume.
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchTaskEnvironmentVolumeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentVolume) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchTaskEnvironmentVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentVolume)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentVolumeArrayOutput) ToGetBatchBatchTaskEnvironmentVolumeArrayOutput() GetBatchBatchTaskEnvironmentVolumeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentVolumeArrayOutput) ToGetBatchBatchTaskEnvironmentVolumeArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentVolumeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentVolumeArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentVolume {
+		return vs[0].([]GetBatchBatchTaskEnvironmentVolume)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentVolumeOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection struct {
+	Items []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem `pulumi:"items"`
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs{...}
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs struct {
+	Items GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput)
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray{ GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs{...} }
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionInput
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput) Items() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection) []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem {
+		return v.Items
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection {
+		return vs[0].([]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollection)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The batch task environment description.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task environment.
+	Id string `pulumi:"id"`
+	// The URL of the ocir image.
+	ImageUrl string `pulumi:"imageUrl"`
+	// Security context for container runtime configuration.
+	SecurityContexts []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext `pulumi:"securityContexts"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+	Volumes []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume `pulumi:"volumes"`
+	// Container's working directory.
+	WorkingDirectory string `pulumi:"workingDirectory"`
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs{...}
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The batch task environment description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task environment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The URL of the ocir image.
+	ImageUrl pulumi.StringInput `pulumi:"imageUrl"`
+	// Security context for container runtime configuration.
+	SecurityContexts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayInput `pulumi:"securityContexts"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+	Volumes GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayInput `pulumi:"volumes"`
+	// Container's working directory.
+	WorkingDirectory pulumi.StringInput `pulumi:"workingDirectory"`
+}
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput)
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray{ GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs{...} }
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemInput
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The batch task environment description.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task environment.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The URL of the ocir image.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) ImageUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.ImageUrl }).(pulumi.StringOutput)
+}
+
+// Security context for container runtime configuration.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) SecurityContexts() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext {
+		return v.SecurityContexts
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) Volumes() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume {
+		return v.Volumes
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput)
+}
+
+// Container's working directory.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput) WorkingDirectory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem) string {
+		return v.WorkingDirectory
+	}).(pulumi.StringOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem {
+		return vs[0].([]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItem)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup int `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup int `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser int `pulumi:"runAsUser"`
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs{...}
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs struct {
+	// A special supplemental group ID that applies to all containers in a pod.
+	FsGroup pulumi.IntInput `pulumi:"fsGroup"`
+	// Group ID for running processes inside the container.
+	RunAsGroup pulumi.IntInput `pulumi:"runAsGroup"`
+	// User ID for running processes inside the container.
+	RunAsUser pulumi.IntInput `pulumi:"runAsUser"`
+}
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput)
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray{ GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs{...} }
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextInput
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput {
+	return o
+}
+
+// A special supplemental group ID that applies to all containers in a pod.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) FsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext) int {
+		return v.FsGroup
+	}).(pulumi.IntOutput)
+}
+
+// Group ID for running processes inside the container.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) RunAsGroup() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext) int {
+		return v.RunAsGroup
+	}).(pulumi.IntOutput)
+}
+
+// User ID for running processes inside the container.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput) RunAsUser() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext) int {
+		return v.RunAsUser
+	}).(pulumi.IntOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext {
+		return vs[0].([]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContext)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath string `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath string `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn string `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name string `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type string `pulumi:"type"`
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs{...}
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs struct {
+	// The local path to mount the NFS share to.
+	LocalMountDirectoryPath pulumi.StringInput `pulumi:"localMountDirectoryPath"`
+	// The path to the directory on the NFS server to be mounted.
+	MountTargetExportPath pulumi.StringInput `pulumi:"mountTargetExportPath"`
+	// The FQDN of the NFS server to connect to.
+	MountTargetFqdn pulumi.StringInput `pulumi:"mountTargetFqdn"`
+	// The name of the NfsVolume.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Discriminator for sub-entities.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput)
+}
+
+// GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray and GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray{ GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs{...} }
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput
+	ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray []GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeInput
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput {
+	return o
+}
+
+// The local path to mount the NFS share to.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) LocalMountDirectoryPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume) string {
+		return v.LocalMountDirectoryPath
+	}).(pulumi.StringOutput)
+}
+
+// The path to the directory on the NFS server to be mounted.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) MountTargetExportPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume) string {
+		return v.MountTargetExportPath
+	}).(pulumi.StringOutput)
+}
+
+// The FQDN of the NFS server to connect to.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) MountTargetFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume) string {
+		return v.MountTargetFqdn
+	}).(pulumi.StringOutput)
+}
+
+// The name of the NfsVolume.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Discriminator for sub-entities.
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput() GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput) ToGetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume {
+		return vs[0].([]GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolume)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsFilter struct {
+	// The name of the NfsVolume.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBatchBatchTaskEnvironmentsFilterInput is an input type that accepts GetBatchBatchTaskEnvironmentsFilterArgs and GetBatchBatchTaskEnvironmentsFilterOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsFilterInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsFilterArgs{...}
+type GetBatchBatchTaskEnvironmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsFilterOutput() GetBatchBatchTaskEnvironmentsFilterOutput
+	ToGetBatchBatchTaskEnvironmentsFilterOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsFilterOutput
+}
+
+type GetBatchBatchTaskEnvironmentsFilterArgs struct {
+	// The name of the NfsVolume.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBatchBatchTaskEnvironmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsFilterArgs) ToGetBatchBatchTaskEnvironmentsFilterOutput() GetBatchBatchTaskEnvironmentsFilterOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsFilterArgs) ToGetBatchBatchTaskEnvironmentsFilterOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsFilterOutput)
+}
+
+// GetBatchBatchTaskEnvironmentsFilterArrayInput is an input type that accepts GetBatchBatchTaskEnvironmentsFilterArray and GetBatchBatchTaskEnvironmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskEnvironmentsFilterArrayInput` via:
+//
+//	GetBatchBatchTaskEnvironmentsFilterArray{ GetBatchBatchTaskEnvironmentsFilterArgs{...} }
+type GetBatchBatchTaskEnvironmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskEnvironmentsFilterArrayOutput() GetBatchBatchTaskEnvironmentsFilterArrayOutput
+	ToGetBatchBatchTaskEnvironmentsFilterArrayOutputWithContext(context.Context) GetBatchBatchTaskEnvironmentsFilterArrayOutput
+}
+
+type GetBatchBatchTaskEnvironmentsFilterArray []GetBatchBatchTaskEnvironmentsFilterInput
+
+func (GetBatchBatchTaskEnvironmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskEnvironmentsFilterArray) ToGetBatchBatchTaskEnvironmentsFilterArrayOutput() GetBatchBatchTaskEnvironmentsFilterArrayOutput {
+	return i.ToGetBatchBatchTaskEnvironmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskEnvironmentsFilterArray) ToGetBatchBatchTaskEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskEnvironmentsFilterArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterOutput) ToGetBatchBatchTaskEnvironmentsFilterOutput() GetBatchBatchTaskEnvironmentsFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterOutput) ToGetBatchBatchTaskEnvironmentsFilterOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsFilterOutput {
+	return o
+}
+
+// The name of the NfsVolume.
+func (o GetBatchBatchTaskEnvironmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskEnvironmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchTaskEnvironmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskEnvironmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskEnvironmentsFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterArrayOutput) ToGetBatchBatchTaskEnvironmentsFilterArrayOutput() GetBatchBatchTaskEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterArrayOutput) ToGetBatchBatchTaskEnvironmentsFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskEnvironmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskEnvironmentsFilterArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskEnvironmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskEnvironmentsFilter {
+		return vs[0].([]GetBatchBatchTaskEnvironmentsFilter)[vs[1].(int)]
+	}).(GetBatchBatchTaskEnvironmentsFilterOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollection struct {
+	Items []GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem `pulumi:"items"`
+}
+
+// GetBatchBatchTaskProfilesBatchTaskProfileCollectionInput is an input type that accepts GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs and GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesBatchTaskProfileCollectionInput` via:
+//
+//	GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs{...}
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutputWithContext(context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs struct {
+	Items GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput {
+	return i.ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput)
+}
+
+// GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayInput is an input type that accepts GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray and GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayInput` via:
+//
+//	GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray{ GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs{...} }
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutputWithContext(context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray []GetBatchBatchTaskProfilesBatchTaskProfileCollectionInput
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesBatchTaskProfileCollection)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput {
+	return i.ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput) Items() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollection) []GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
+		return v.Items
+	}).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesBatchTaskProfileCollection)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskProfilesBatchTaskProfileCollection {
+		return vs[0].([]GetBatchBatchTaskProfilesBatchTaskProfileCollection)[vs[1].(int)]
+	}).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The batch task profile description.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
+	Id string `pulumi:"id"`
+	// The minimum required memory.
+	MinMemoryInGbs int `pulumi:"minMemoryInGbs"`
+	// The minimum required OCPUs.
+	MinOcpus int `pulumi:"minOcpus"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the batch task profile was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the batch task profile was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemInput is an input type that accepts GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs and GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemInput` via:
+//
+//	GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs{...}
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutputWithContext(context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The batch task profile description.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The minimum required memory.
+	MinMemoryInGbs pulumi.IntInput `pulumi:"minMemoryInGbs"`
+	// The minimum required OCPUs.
+	MinOcpus pulumi.IntInput `pulumi:"minOcpus"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the batch task profile was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the batch task profile was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput {
+	return i.ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput)
+}
+
+// GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayInput is an input type that accepts GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray and GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayInput` via:
+//
+//	GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray{ GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs{...} }
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput
+	ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutputWithContext(context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray []GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemInput
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput {
+	return i.ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The batch task profile description.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The minimum required memory.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) MinMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) int { return v.MinMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The minimum required OCPUs.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) MinOcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) int { return v.MinOcpus }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the batch task profile was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the batch task profile was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput() GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput) ToGetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem {
+		return vs[0].([]GetBatchBatchTaskProfilesBatchTaskProfileCollectionItem)[vs[1].(int)]
+	}).(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput)
+}
+
+type GetBatchBatchTaskProfilesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBatchBatchTaskProfilesFilterInput is an input type that accepts GetBatchBatchTaskProfilesFilterArgs and GetBatchBatchTaskProfilesFilterOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesFilterInput` via:
+//
+//	GetBatchBatchTaskProfilesFilterArgs{...}
+type GetBatchBatchTaskProfilesFilterInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesFilterOutput() GetBatchBatchTaskProfilesFilterOutput
+	ToGetBatchBatchTaskProfilesFilterOutputWithContext(context.Context) GetBatchBatchTaskProfilesFilterOutput
+}
+
+type GetBatchBatchTaskProfilesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBatchBatchTaskProfilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesFilterArgs) ToGetBatchBatchTaskProfilesFilterOutput() GetBatchBatchTaskProfilesFilterOutput {
+	return i.ToGetBatchBatchTaskProfilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesFilterArgs) ToGetBatchBatchTaskProfilesFilterOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesFilterOutput)
+}
+
+// GetBatchBatchTaskProfilesFilterArrayInput is an input type that accepts GetBatchBatchTaskProfilesFilterArray and GetBatchBatchTaskProfilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetBatchBatchTaskProfilesFilterArrayInput` via:
+//
+//	GetBatchBatchTaskProfilesFilterArray{ GetBatchBatchTaskProfilesFilterArgs{...} }
+type GetBatchBatchTaskProfilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBatchBatchTaskProfilesFilterArrayOutput() GetBatchBatchTaskProfilesFilterArrayOutput
+	ToGetBatchBatchTaskProfilesFilterArrayOutputWithContext(context.Context) GetBatchBatchTaskProfilesFilterArrayOutput
+}
+
+type GetBatchBatchTaskProfilesFilterArray []GetBatchBatchTaskProfilesFilterInput
+
+func (GetBatchBatchTaskProfilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesFilter)(nil)).Elem()
+}
+
+func (i GetBatchBatchTaskProfilesFilterArray) ToGetBatchBatchTaskProfilesFilterArrayOutput() GetBatchBatchTaskProfilesFilterArrayOutput {
+	return i.ToGetBatchBatchTaskProfilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBatchBatchTaskProfilesFilterArray) ToGetBatchBatchTaskProfilesFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBatchBatchTaskProfilesFilterArrayOutput)
+}
+
+type GetBatchBatchTaskProfilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBatchBatchTaskProfilesFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesFilterOutput) ToGetBatchBatchTaskProfilesFilterOutput() GetBatchBatchTaskProfilesFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesFilterOutput) ToGetBatchBatchTaskProfilesFilterOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesFilterOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBatchBatchTaskProfilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBatchBatchTaskProfilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBatchBatchTaskProfilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBatchBatchTaskProfilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBatchBatchTaskProfilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBatchBatchTaskProfilesFilter)(nil)).Elem()
+}
+
+func (o GetBatchBatchTaskProfilesFilterArrayOutput) ToGetBatchBatchTaskProfilesFilterArrayOutput() GetBatchBatchTaskProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesFilterArrayOutput) ToGetBatchBatchTaskProfilesFilterArrayOutputWithContext(ctx context.Context) GetBatchBatchTaskProfilesFilterArrayOutput {
+	return o
+}
+
+func (o GetBatchBatchTaskProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetBatchBatchTaskProfilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBatchBatchTaskProfilesFilter {
+		return vs[0].([]GetBatchBatchTaskProfilesFilter)[vs[1].(int)]
+	}).(GetBatchBatchTaskProfilesFilterOutput)
 }
 
 type GetDbmulticloudMultiCloudResourceDiscoveriesFilter struct {
@@ -30179,11 +35631,13 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 }
 
 type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem struct {
-	// Cluster Placement Group OCID
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// Cluster Placement Group OCID (deprecated representation)
 	CpgId string `pulumi:"cpgId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+	// The Cloud Service Provider region.
 	ExternalLocations []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation `pulumi:"externalLocations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -30193,6 +35647,12 @@ type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionI
 	OciPhysicalAd string `pulumi:"ociPhysicalAd"`
 	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 	OciRegion string `pulumi:"ociRegion"`
+	// User friendly name of account name for customer's subscription
+	PartnerCloudAccountName string `pulumi:"partnerCloudAccountName"`
+	// Direct URL to partner cloud for customer's account
+	PartnerCloudAccountUrl string `pulumi:"partnerCloudAccountUrl"`
+	// Partner Cloud Name based on service name
+	PartnerCloudName string `pulumi:"partnerCloudName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 }
@@ -30209,11 +35669,13 @@ type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionI
 }
 
 type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs struct {
-	// Cluster Placement Group OCID
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// Cluster Placement Group OCID (deprecated representation)
 	CpgId pulumi.StringInput `pulumi:"cpgId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+	// The Cloud Service Provider region.
 	ExternalLocations GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
@@ -30223,6 +35685,12 @@ type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionI
 	OciPhysicalAd pulumi.StringInput `pulumi:"ociPhysicalAd"`
 	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
 	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// User friendly name of account name for customer's subscription
+	PartnerCloudAccountName pulumi.StringInput `pulumi:"partnerCloudAccountName"`
+	// Direct URL to partner cloud for customer's account
+	PartnerCloudAccountUrl pulumi.StringInput `pulumi:"partnerCloudAccountUrl"`
+	// Partner Cloud Name based on service name
+	PartnerCloudName pulumi.StringInput `pulumi:"partnerCloudName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
@@ -30278,7 +35746,14 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 	return o
 }
 
-// Cluster Placement Group OCID
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// Cluster Placement Group OCID (deprecated representation)
 func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) CpgId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
 		return v.CpgId
@@ -30292,7 +35767,7 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 	}).(pulumi.StringMapOutput)
 }
 
-// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+// The Cloud Service Provider region.
 func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
 	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation {
 		return v.ExternalLocations
@@ -30327,6 +35802,27 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 	}).(pulumi.StringOutput)
 }
 
+// User friendly name of account name for customer's subscription
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudAccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudAccountName
+	}).(pulumi.StringOutput)
+}
+
+// Direct URL to partner cloud for customer's account
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudAccountUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudAccountUrl
+	}).(pulumi.StringOutput)
+}
+
+// Partner Cloud Name based on service name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudName
+	}).(pulumi.StringOutput)
+}
+
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
@@ -30357,6 +35853,8 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation struct {
 	// A mapping of CSP physical availability zone to CSP logical availability zone.
 	CspLogicalAz string `pulumi:"cspLogicalAz"`
+	// User friendly display name for cspLogicalAZ
+	CspLogicalAzDisplayName string `pulumi:"cspLogicalAzDisplayName"`
 	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
 	CspPhysicalAz string `pulumi:"cspPhysicalAz"`
 	// User friendly display name for cspPhysicalAZ
@@ -30385,6 +35883,8 @@ type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionI
 type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs struct {
 	// A mapping of CSP physical availability zone to CSP logical availability zone.
 	CspLogicalAz pulumi.StringInput `pulumi:"cspLogicalAz"`
+	// User friendly display name for cspLogicalAZ
+	CspLogicalAzDisplayName pulumi.StringInput `pulumi:"cspLogicalAzDisplayName"`
 	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
 	CspPhysicalAz pulumi.StringInput `pulumi:"cspPhysicalAz"`
 	// User friendly display name for cspPhysicalAZ
@@ -30454,6 +35954,13 @@ func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollecti
 func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspLogicalAz() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
 		return v.CspLogicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspLogicalAZ
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspLogicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspLogicalAzDisplayName
 	}).(pulumi.StringOutput)
 }
 
@@ -30735,9 +36242,469 @@ func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) Index(i pulumi.
 	}).(GetMulticloudExternalLocationsMetadataFilterOutput)
 }
 
+type GetMulticloudMulticloudsubscriptionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudMulticloudsubscriptionsFilterInput is an input type that accepts GetMulticloudMulticloudsubscriptionsFilterArgs and GetMulticloudMulticloudsubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsFilterInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsFilterArgs{...}
+type GetMulticloudMulticloudsubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput
+	ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArgs) ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArgs) ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsFilterOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsFilterArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsFilterArray and GetMulticloudMulticloudsubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsFilterArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsFilterArray{ GetMulticloudMulticloudsubscriptionsFilterArgs{...} }
+type GetMulticloudMulticloudsubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArray []GetMulticloudMulticloudsubscriptionsFilterInput
+
+func (GetMulticloudMulticloudsubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArray) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsFilterArray) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsFilterArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) ToGetMulticloudMulticloudsubscriptionsFilterOutput() GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) ToGetMulticloudMulticloudsubscriptionsFilterOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutput() GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) ToGetMulticloudMulticloudsubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsFilter {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsFilter)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsFilterOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection struct {
+	// List of MulticloudSubscriptionSummary.
+	Items []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{...}
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs struct {
+	// List of MulticloudSubscriptionSummary.
+	Items GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray{ GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{...} }
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return o
+}
+
+// List of MulticloudSubscriptionSummary.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput) Items() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection) []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem {
+		return v.Items
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollection)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem struct {
+	// Total value for the subscription.
+	ActiveCommitment string `pulumi:"activeCommitment"`
+	// Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+	ClassicSubscriptionId string `pulumi:"classicSubscriptionId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the subscription.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// The partner cloud account ID.
+	PartnerCloudAccountIdentifier string `pulumi:"partnerCloudAccountIdentifier"`
+	// Payment plan for the subscription.
+	PaymentPlan string `pulumi:"paymentPlan"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName string `pulumi:"serviceName"`
+	// URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEndDate string `pulumi:"timeEndDate"`
+	// The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLinkedDate string `pulumi:"timeLinkedDate"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{...}
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs struct {
+	// Total value for the subscription.
+	ActiveCommitment pulumi.StringInput `pulumi:"activeCommitment"`
+	// Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+	ClassicSubscriptionId pulumi.StringInput `pulumi:"classicSubscriptionId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the subscription.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// The partner cloud account ID.
+	PartnerCloudAccountIdentifier pulumi.StringInput `pulumi:"partnerCloudAccountIdentifier"`
+	// Payment plan for the subscription.
+	PaymentPlan pulumi.StringInput `pulumi:"paymentPlan"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeEndDate pulumi.StringInput `pulumi:"timeEndDate"`
+	// The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeLinkedDate pulumi.StringInput `pulumi:"timeLinkedDate"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput)
+}
+
+// GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput is an input type that accepts GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray and GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput` via:
+//
+//	GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray{ GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{...} }
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput
+	ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray []GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return i.ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return o
+}
+
+// Total value for the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ActiveCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ActiveCommitment
+	}).(pulumi.StringOutput)
+}
+
+// Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ClassicSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ClassicSubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// The partner cloud account ID.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) PartnerCloudAccountIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.PartnerCloudAccountIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// Payment plan for the subscription.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) PaymentPlan() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.PaymentPlan
+	}).(pulumi.StringOutput)
+}
+
+// The serviceName that externalLocation map object belongs to.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeEndDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeEndDate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeLinkedDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeLinkedDate
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput() GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) ToGetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem {
+		return vs[0].([]GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput)
+}
+
 type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem struct {
 	// An Azure/GCP/AWS cidrBlocks
 	CidrBlocks []string `pulumi:"cidrBlocks"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
 	// DNS domain ip mapping forwarding configuration
 	DnsForwardingConfigs []interface{} `pulumi:"dnsForwardingConfigs"`
 	// CSP network anchor Uri
@@ -30762,6 +36729,8 @@ type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput interface {
 type GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs struct {
 	// An Azure/GCP/AWS cidrBlocks
 	CidrBlocks pulumi.StringArrayInput `pulumi:"cidrBlocks"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
 	// DNS domain ip mapping forwarding configuration
 	DnsForwardingConfigs pulumi.ArrayInput `pulumi:"dnsForwardingConfigs"`
 	// CSP network anchor Uri
@@ -30826,6 +36795,13 @@ func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) ToGetM
 // An Azure/GCP/AWS cidrBlocks
 func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) CidrBlocks() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) []string { return v.CidrBlocks }).(pulumi.StringArrayOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
 }
 
 // DNS domain ip mapping forwarding configuration
@@ -31248,6 +37224,8 @@ type GetMulticloudNetworkAnchorOciMetadataItemVcn struct {
 	DnsLabel string `pulumi:"dnsLabel"`
 	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 	VcnId string `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName string `pulumi:"vcnName"`
 }
 
 // GetMulticloudNetworkAnchorOciMetadataItemVcnInput is an input type that accepts GetMulticloudNetworkAnchorOciMetadataItemVcnArgs and GetMulticloudNetworkAnchorOciMetadataItemVcnOutput values.
@@ -31270,6 +37248,8 @@ type GetMulticloudNetworkAnchorOciMetadataItemVcnArgs struct {
 	DnsLabel pulumi.StringInput `pulumi:"dnsLabel"`
 	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
 }
 
 func (GetMulticloudNetworkAnchorOciMetadataItemVcnArgs) ElementType() reflect.Type {
@@ -31341,6 +37321,11 @@ func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) DnsLabel() pulumi.St
 // Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Name of the VCN associated to the Network Anchor.
+func (o GetMulticloudNetworkAnchorOciMetadataItemVcnOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorOciMetadataItemVcn) string { return v.VcnName }).(pulumi.StringOutput)
 }
 
 type GetMulticloudNetworkAnchorOciMetadataItemVcnArrayOutput struct{ *pulumi.OutputState }
@@ -31465,8 +37450,12 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionArrayOutput) Index(i p
 type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
 	// The CPG ID in which Network Anchor will be created.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId string `pulumi:"compartmentId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Network Anchor Id in the Cloud Service Provider.
+	CspNetworkAnchorId string `pulumi:"cspNetworkAnchorId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -31474,15 +37463,19 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	Id string `pulumi:"id"`
 	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Defines status of the Network Anchor.
+	NetworkAnchorConnectionStatus string `pulumi:"networkAnchorConnectionStatus"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	NetworkAnchorLifecycleState string `pulumi:"networkAnchorLifecycleState"`
+	// CSP network anchor Uri
+	NetworkAnchorUri string `pulumi:"networkAnchorUri"`
 	// Oracle Cloud Infrastructure resource anchor Id (OCID).
 	ResourceAnchorId string `pulumi:"resourceAnchorId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType string `pulumi:"subscriptionType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -31491,6 +37484,8 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 	VcnId string `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName string `pulumi:"vcnName"`
 }
 
 // GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput is an input type that accepts GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs and GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput values.
@@ -31507,8 +37502,12 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemInput interface {
 type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
 	// The CPG ID in which Network Anchor will be created.
 	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Network Anchor Id in the Cloud Service Provider.
+	CspNetworkAnchorId pulumi.StringInput `pulumi:"cspNetworkAnchorId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -31516,15 +37515,19 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Defines status of the Network Anchor.
+	NetworkAnchorConnectionStatus pulumi.StringInput `pulumi:"networkAnchorConnectionStatus"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	NetworkAnchorLifecycleState pulumi.StringInput `pulumi:"networkAnchorLifecycleState"`
+	// CSP network anchor Uri
+	NetworkAnchorUri pulumi.StringInput `pulumi:"networkAnchorUri"`
 	// Oracle Cloud Infrastructure resource anchor Id (OCID).
 	ResourceAnchorId pulumi.StringInput `pulumi:"resourceAnchorId"`
+	// Oracle Cloud Infrastructure Subscription Type.
+	SubscriptionType pulumi.StringInput `pulumi:"subscriptionType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -31533,6 +37536,8 @@ type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Name of the VCN associated to the Network Anchor.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
 }
 
 func (GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs) ElementType() reflect.Type {
@@ -31593,9 +37598,21 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ClusterPla
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Network Anchor Id in the Cloud Service Provider.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) CspNetworkAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.CspNetworkAnchorId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -31616,8 +37633,6 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) FreeformTa
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-//
-// Note: one of the arguments `compartmentId` or `id` must be specified.
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -31627,6 +37642,13 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) LifecycleD
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Defines status of the Network Anchor.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorConnectionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
+		return v.NetworkAnchorConnectionStatus
+	}).(pulumi.StringOutput)
+}
+
 // A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorLifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string {
@@ -31634,9 +37656,19 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnc
 	}).(pulumi.StringOutput)
 }
 
+// CSP network anchor Uri
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) NetworkAnchorUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.NetworkAnchorUri }).(pulumi.StringOutput)
+}
+
 // Oracle Cloud Infrastructure resource anchor Id (OCID).
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) ResourceAnchorId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.ResourceAnchorId }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Subscription Type.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) SubscriptionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.SubscriptionType }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -31657,6 +37689,11 @@ func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) TimeUpdate
 // Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
 func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Name of the VCN associated to the Network Anchor.
+func (o GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsNetworkAnchorCollectionItem) string { return v.VcnName }).(pulumi.StringOutput)
 }
 
 type GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -31932,14 +37969,496 @@ func (o GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArr
 	}).(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput)
 }
 
+type GetMulticloudOmHubMulticloudResourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesFilterInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesFilterArgs and GetMulticloudOmHubMulticloudResourcesFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesFilterInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesFilterArgs{...}
+type GetMulticloudOmHubMulticloudResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput
+	ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArgs) ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArgs) ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesFilterOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesFilterArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesFilterArray and GetMulticloudOmHubMulticloudResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesFilterArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesFilterArray{ GetMulticloudOmHubMulticloudResourcesFilterArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArray []GetMulticloudOmHubMulticloudResourcesFilterInput
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArray) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesFilterArray) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesFilterArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) ToGetMulticloudOmHubMulticloudResourcesFilterOutput() GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) ToGetMulticloudOmHubMulticloudResourcesFilterOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutput() GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) ToGetMulticloudOmHubMulticloudResourcesFilterArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesFilter {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesFilter)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesFilterOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection struct {
+	// List of MulticloudResourceSummary.
+	Items []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{...}
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs struct {
+	// List of MulticloudResourceSummary.
+	Items GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray{ GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return o
+}
+
+// List of MulticloudResourceSummary.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput) Items() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection) []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem {
+		return v.Items
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollection)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Compartment name associated the resource.
+	CompartmentName string `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// Resource Id that comes from the Multi Cloud Control Plane
+	CspResourceId string `pulumi:"cspResourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The current state of the multicloud resource.
+	LifecycleState string `pulumi:"lifecycleState"`
+	// OCID of the Network Anchor
+	NetworkAnchorId string `pulumi:"networkAnchorId"`
+	// Name of the network anchor associated to the resource.
+	NetworkAnchorName string `pulumi:"networkAnchorName"`
+	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	ResourceDisplayName string `pulumi:"resourceDisplayName"`
+	// The Id of the multicloud resource.
+	ResourceId string `pulumi:"resourceId"`
+	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	ResourceType string `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Id of the Virtual Cloud Network associated to the resource.
+	VcnId string `pulumi:"vcnId"`
+	// Resource Anchor name.
+	VcnName string `pulumi:"vcnName"`
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{...}
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Compartment name associated the resource.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// Resource Id that comes from the Multi Cloud Control Plane
+	CspResourceId pulumi.StringInput `pulumi:"cspResourceId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The current state of the multicloud resource.
+	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
+	// OCID of the Network Anchor
+	NetworkAnchorId pulumi.StringInput `pulumi:"networkAnchorId"`
+	// Name of the network anchor associated to the resource.
+	NetworkAnchorName pulumi.StringInput `pulumi:"networkAnchorName"`
+	// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+	ResourceDisplayName pulumi.StringInput `pulumi:"resourceDisplayName"`
+	// The Id of the multicloud resource.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Id of the Virtual Cloud Network associated to the resource.
+	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	// Resource Anchor name.
+	VcnName pulumi.StringInput `pulumi:"vcnName"`
+}
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput)
+}
+
+// GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput is an input type that accepts GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray and GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput` via:
+//
+//	GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray{ GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{...} }
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput
+	ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray []GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return i.ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Compartment name associated the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CompartmentName
+	}).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// Resource Id that comes from the Multi Cloud Control Plane
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) CspResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.CspResourceId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The current state of the multicloud resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) LifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.LifecycleState
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the Network Anchor
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.NetworkAnchorId
+	}).(pulumi.StringOutput)
+}
+
+// Name of the network anchor associated to the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) NetworkAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.NetworkAnchorName
+	}).(pulumi.StringOutput)
+}
+
+// Endpoint used to retrieve displayName and lifeCycleState of the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The Id of the multicloud resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceId
+	}).(pulumi.StringOutput)
+}
+
+// What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Id of the Virtual Cloud Network associated to the resource.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnId }).(pulumi.StringOutput)
+}
+
+// Resource Anchor name.
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput) VcnName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem) string { return v.VcnName }).(pulumi.StringOutput)
+}
+
+type GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput() GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) ToGetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem {
+		return vs[0].([]GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput)
+}
+
 type GetMulticloudResourceAnchorCloudServiceProviderMetadataItem struct {
 	// AWS accountId that was used for creating this resource anchor resource.
 	AccountId string `pulumi:"accountId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId string `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName string `pulumi:"cspResourceAnchorName"`
 	// GCP project number that was used for creating this resource anchor resource.
 	ProjectNumber string `pulumi:"projectNumber"`
 	// Oracle Cloud Infrastructure Region that resource is created.
 	Region string `pulumi:"region"`
-	// CSP resource anchor ID or name.
+	// Oracle Cloud Infrastructure resource anchor name.
 	ResourceAnchorName string `pulumi:"resourceAnchorName"`
 	// CSP resource anchor Uri.
 	ResourceAnchorUri string `pulumi:"resourceAnchorUri"`
@@ -31965,11 +38484,17 @@ type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput interface 
 type GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs struct {
 	// AWS accountId that was used for creating this resource anchor resource.
 	AccountId pulumi.StringInput `pulumi:"accountId"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId pulumi.StringInput `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName pulumi.StringInput `pulumi:"cspResourceAnchorName"`
 	// GCP project number that was used for creating this resource anchor resource.
 	ProjectNumber pulumi.StringInput `pulumi:"projectNumber"`
 	// Oracle Cloud Infrastructure Region that resource is created.
 	Region pulumi.StringInput `pulumi:"region"`
-	// CSP resource anchor ID or name.
+	// Oracle Cloud Infrastructure resource anchor name.
 	ResourceAnchorName pulumi.StringInput `pulumi:"resourceAnchorName"`
 	// CSP resource anchor Uri.
 	ResourceAnchorUri pulumi.StringInput `pulumi:"resourceAnchorUri"`
@@ -32037,6 +38562,27 @@ func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Accou
 	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.AccountId }).(pulumi.StringOutput)
 }
 
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// CSP resource anchor ID.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.CspResourceAnchorId
+	}).(pulumi.StringOutput)
+}
+
+// CSP resource anchor name.
+func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) CspResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
+		return v.CspResourceAnchorName
+	}).(pulumi.StringOutput)
+}
+
 // GCP project number that was used for creating this resource anchor resource.
 func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ProjectNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.ProjectNumber }).(pulumi.StringOutput)
@@ -32047,7 +38593,7 @@ func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) Regio
 	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// CSP resource anchor ID or name.
+// Oracle Cloud Infrastructure resource anchor name.
 func (o GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput) ResourceAnchorName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorCloudServiceProviderMetadataItem) string {
 		return v.ResourceAnchorName
@@ -32300,8 +38846,16 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionArrayOutput) Index(i
 }
 
 type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId string `pulumi:"compartmentId"`
+	// The name assigned to the compartment during creation.
+	CompartmentName string `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties map[string]string `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId string `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName string `pulumi:"cspResourceAnchorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -32312,9 +38866,15 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// The current state of the ResourceAnchor.
 	LifecycleState string `pulumi:"lifecycleState"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+	LinkedCompartmentId string `pulumi:"linkedCompartmentId"`
+	// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+	LinkedCompartmentName string `pulumi:"linkedCompartmentName"`
+	// Partner Cloud Account Identifier of the Cloud Service Provider.
+	PartnerCloudAccountIdentifier string `pulumi:"partnerCloudAccountIdentifier"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -32336,8 +38896,16 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItemInput interface {
 }
 
 type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The name assigned to the compartment during creation.
+	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
+	// CSP Specific Additional Properties, AzureSubnetId for Azure
+	CspAdditionalProperties pulumi.StringMapInput `pulumi:"cspAdditionalProperties"`
+	// CSP resource anchor ID.
+	CspResourceAnchorId pulumi.StringInput `pulumi:"cspResourceAnchorId"`
+	// CSP resource anchor name.
+	CspResourceAnchorName pulumi.StringInput `pulumi:"cspResourceAnchorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
@@ -32348,9 +38916,15 @@ type GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// The current state of the ResourceAnchor.
 	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+	LinkedCompartmentId pulumi.StringInput `pulumi:"linkedCompartmentId"`
+	// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+	LinkedCompartmentName pulumi.StringInput `pulumi:"linkedCompartmentName"`
+	// Partner Cloud Account Identifier of the Cloud Service Provider.
+	PartnerCloudAccountIdentifier pulumi.StringInput `pulumi:"partnerCloudAccountIdentifier"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
@@ -32411,9 +38985,33 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) ToGetMul
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name assigned to the compartment during creation.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CompartmentName }).(pulumi.StringOutput)
+}
+
+// CSP Specific Additional Properties, AzureSubnetId for Azure
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspAdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) map[string]string {
+		return v.CspAdditionalProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// CSP resource anchor ID.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspResourceAnchorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.CspResourceAnchorId }).(pulumi.StringOutput)
+}
+
+// CSP resource anchor name.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) CspResourceAnchorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.CspResourceAnchorName
+	}).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -32445,12 +39043,31 @@ func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) Lifecycl
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+// The current state of the ResourceAnchor.
 func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LifecycleState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LifecycleState }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LinkedCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.LinkedCompartmentId }).(pulumi.StringOutput)
+}
+
+// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) LinkedCompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.LinkedCompartmentName
+	}).(pulumi.StringOutput)
+}
+
+// Partner Cloud Account Identifier of the Cloud Service Provider.
+func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) PartnerCloudAccountIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string {
+		return v.PartnerCloudAccountIdentifier
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 func (o GetMulticloudResourceAnchorsResourceAnchorCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorsResourceAnchorCollectionItem) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
@@ -40716,6 +47333,21 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestApproverDetailArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextFleetInput)(nil)).Elem(), BatchBatchContextFleetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextFleetArrayInput)(nil)).Elem(), BatchBatchContextFleetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextFleetShapeInput)(nil)).Elem(), BatchBatchContextFleetShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextJobPriorityConfigurationInput)(nil)).Elem(), BatchBatchContextJobPriorityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextJobPriorityConfigurationArrayInput)(nil)).Elem(), BatchBatchContextJobPriorityConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextLoggingConfigurationInput)(nil)).Elem(), BatchBatchContextLoggingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextLoggingConfigurationPtrInput)(nil)).Elem(), BatchBatchContextLoggingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextNetworkInput)(nil)).Elem(), BatchBatchContextNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextNetworkPtrInput)(nil)).Elem(), BatchBatchContextNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextNetworkVnicInput)(nil)).Elem(), BatchBatchContextNetworkVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchContextNetworkVnicArrayInput)(nil)).Elem(), BatchBatchContextNetworkVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchTaskEnvironmentSecurityContextInput)(nil)).Elem(), BatchBatchTaskEnvironmentSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchTaskEnvironmentSecurityContextPtrInput)(nil)).Elem(), BatchBatchTaskEnvironmentSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchTaskEnvironmentVolumeInput)(nil)).Elem(), BatchBatchTaskEnvironmentVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BatchBatchTaskEnvironmentVolumeArrayInput)(nil)).Elem(), BatchBatchTaskEnvironmentVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs{})
@@ -40852,6 +47484,74 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextFleetInput)(nil)).Elem(), GetBatchBatchContextFleetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextFleetArrayInput)(nil)).Elem(), GetBatchBatchContextFleetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextFleetShapeInput)(nil)).Elem(), GetBatchBatchContextFleetShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextFleetShapeArrayInput)(nil)).Elem(), GetBatchBatchContextFleetShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextJobPriorityConfigurationInput)(nil)).Elem(), GetBatchBatchContextJobPriorityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextJobPriorityConfigurationArrayInput)(nil)).Elem(), GetBatchBatchContextJobPriorityConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextLoggingConfigurationInput)(nil)).Elem(), GetBatchBatchContextLoggingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextLoggingConfigurationArrayInput)(nil)).Elem(), GetBatchBatchContextLoggingConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextNetworkInput)(nil)).Elem(), GetBatchBatchContextNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextNetworkArrayInput)(nil)).Elem(), GetBatchBatchContextNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextNetworkVnicInput)(nil)).Elem(), GetBatchBatchContextNetworkVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextNetworkVnicArrayInput)(nil)).Elem(), GetBatchBatchContextNetworkVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionArrayInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayInput)(nil)).Elem(), GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesFilterInput)(nil)).Elem(), GetBatchBatchContextShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextShapesFilterArrayInput)(nil)).Elem(), GetBatchBatchContextShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemFleetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemFleetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetShapeInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemFleetShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkVnicInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayInput)(nil)).Elem(), GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsFilterInput)(nil)).Elem(), GetBatchBatchContextsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchContextsFilterArrayInput)(nil)).Elem(), GetBatchBatchContextsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionInput)(nil)).Elem(), GetBatchBatchJobPoolsBatchJobPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionArrayInput)(nil)).Elem(), GetBatchBatchJobPoolsBatchJobPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionItemInput)(nil)).Elem(), GetBatchBatchJobPoolsBatchJobPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayInput)(nil)).Elem(), GetBatchBatchJobPoolsBatchJobPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsFilterInput)(nil)).Elem(), GetBatchBatchJobPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchJobPoolsFilterArrayInput)(nil)).Elem(), GetBatchBatchJobPoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentSecurityContextInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentSecurityContextArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentSecurityContextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentVolumeInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentVolumeArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsFilterInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskEnvironmentsFilterArrayInput)(nil)).Elem(), GetBatchBatchTaskEnvironmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionInput)(nil)).Elem(), GetBatchBatchTaskProfilesBatchTaskProfileCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayInput)(nil)).Elem(), GetBatchBatchTaskProfilesBatchTaskProfileCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemInput)(nil)).Elem(), GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayInput)(nil)).Elem(), GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesFilterInput)(nil)).Elem(), GetBatchBatchTaskProfilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBatchBatchTaskProfilesFilterArrayInput)(nil)).Elem(), GetBatchBatchTaskProfilesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs{})
@@ -41154,6 +47854,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilterInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsFilterArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayInput)(nil)).Elem(), GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudNetworkAnchorOciMetadataItemInput)(nil)).Elem(), GetMulticloudNetworkAnchorOciMetadataItemArgs{})
@@ -41172,6 +47878,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayInput)(nil)).Elem(), GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilterInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesFilterArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayInput)(nil)).Elem(), GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayInput)(nil)).Elem(), GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudResourceAnchorsFilterInput)(nil)).Elem(), GetMulticloudResourceAnchorsFilterArgs{})
@@ -41320,6 +48032,21 @@ func init() {
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextFleetOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextFleetArrayOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextFleetShapeOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextJobPriorityConfigurationOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextJobPriorityConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextLoggingConfigurationOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextLoggingConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextNetworkOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextNetworkPtrOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextNetworkVnicOutput{})
+	pulumi.RegisterOutputType(BatchBatchContextNetworkVnicArrayOutput{})
+	pulumi.RegisterOutputType(BatchBatchTaskEnvironmentSecurityContextOutput{})
+	pulumi.RegisterOutputType(BatchBatchTaskEnvironmentSecurityContextPtrOutput{})
+	pulumi.RegisterOutputType(BatchBatchTaskEnvironmentVolumeOutput{})
+	pulumi.RegisterOutputType(BatchBatchTaskEnvironmentVolumeArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceOutput{})
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailOutput{})
@@ -41456,6 +48183,74 @@ func init() {
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextFleetOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextFleetArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextFleetShapeOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextFleetShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextJobPriorityConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextJobPriorityConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextLoggingConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextLoggingConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextNetworkOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextNetworkVnicOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextNetworkVnicArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemFleetOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemFleetArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemFleetShapeOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemFleetShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemNetworkOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsFilterOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchContextsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsBatchJobPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsBatchJobPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsBatchJobPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsBatchJobPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchJobPoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentSecurityContextOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentSecurityContextArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentVolumeOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskEnvironmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesBatchTaskProfileCollectionOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesBatchTaskProfileCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesFilterOutput{})
+	pulumi.RegisterOutputType(GetBatchBatchTaskProfilesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput{})
@@ -41758,6 +48553,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterOutput{})
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudNetworkAnchorOciMetadataItemOutput{})
@@ -41776,6 +48577,12 @@ func init() {
 	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemOutput{})
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorCloudServiceProviderMetadataItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudResourceAnchorsFilterOutput{})

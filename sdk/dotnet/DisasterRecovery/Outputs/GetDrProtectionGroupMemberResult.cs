@@ -142,7 +142,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
+        /// The OKE namespace where the config map resides. Example: `NamespaceString5`
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -161,6 +161,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDbSystemId;
+        /// <summary>
+        /// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberResourceModifierMappingResult> ResourceModifierMappings;
         /// <summary>
         /// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         /// </summary>
@@ -258,6 +262,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string peerDbSystemId,
 
+            ImmutableArray<Outputs.GetDrProtectionGroupMemberResourceModifierMappingResult> resourceModifierMappings,
+
             ImmutableArray<Outputs.GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingResult> sourceVolumeToDestinationEncryptionKeyMappings,
 
             ImmutableArray<Outputs.GetDrProtectionGroupMemberVaultMappingResult> vaultMappings,
@@ -305,6 +311,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             PasswordVaultSecretId = passwordVaultSecretId;
             PeerClusterId = peerClusterId;
             PeerDbSystemId = peerDbSystemId;
+            ResourceModifierMappings = resourceModifierMappings;
             SourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             VaultMappings = vaultMappings;
             VirtualNodePoolConfigs = virtualNodePoolConfigs;

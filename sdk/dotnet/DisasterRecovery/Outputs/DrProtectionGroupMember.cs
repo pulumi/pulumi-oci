@@ -162,6 +162,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? PeerDbSystemId;
         /// <summary>
+        /// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DrProtectionGroupMemberResourceModifierMapping> ResourceModifierMappings;
+        /// <summary>
         /// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
         /// 
         /// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -262,6 +266,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? peerDbSystemId,
 
+            ImmutableArray<Outputs.DrProtectionGroupMemberResourceModifierMapping> resourceModifierMappings,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberVaultMapping> vaultMappings,
@@ -309,6 +315,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             PasswordVaultSecretId = passwordVaultSecretId;
             PeerClusterId = peerClusterId;
             PeerDbSystemId = peerDbSystemId;
+            ResourceModifierMappings = resourceModifierMappings;
             SourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             VaultMappings = vaultMappings;
             VirtualNodePoolConfigs = virtualNodePoolConfigs;

@@ -68,6 +68,7 @@ type GetDedicatedAiClustersArgs struct {
 
 // A collection of values returned by getDedicatedAiClusters.
 type GetDedicatedAiClustersResult struct {
+	// The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of dedicated_ai_cluster_collection.
 	DedicatedAiClusterCollections []GetDedicatedAiClustersDedicatedAiClusterCollection `pulumi:"dedicatedAiClusterCollections"`
@@ -121,6 +122,7 @@ func (o GetDedicatedAiClustersResultOutput) ToGetDedicatedAiClustersResultOutput
 	return o
 }
 
+// The compartment OCID to create the dedicated AI cluster in.
 func (o GetDedicatedAiClustersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

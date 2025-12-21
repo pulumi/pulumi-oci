@@ -25,6 +25,22 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict',
+    'BatchBatchContextFleetArgs',
+    'BatchBatchContextFleetArgsDict',
+    'BatchBatchContextFleetShapeArgs',
+    'BatchBatchContextFleetShapeArgsDict',
+    'BatchBatchContextJobPriorityConfigurationArgs',
+    'BatchBatchContextJobPriorityConfigurationArgsDict',
+    'BatchBatchContextLoggingConfigurationArgs',
+    'BatchBatchContextLoggingConfigurationArgsDict',
+    'BatchBatchContextNetworkArgs',
+    'BatchBatchContextNetworkArgsDict',
+    'BatchBatchContextNetworkVnicArgs',
+    'BatchBatchContextNetworkVnicArgsDict',
+    'BatchBatchTaskEnvironmentSecurityContextArgs',
+    'BatchBatchTaskEnvironmentSecurityContextArgsDict',
+    'BatchBatchTaskEnvironmentVolumeArgs',
+    'BatchBatchTaskEnvironmentVolumeArgsDict',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs',
@@ -115,6 +131,16 @@ __all__ = [
     'GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict',
     'GetApiaccesscontrolPrivilegedApiRequestsFilterArgs',
     'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict',
+    'GetBatchBatchContextShapesFilterArgs',
+    'GetBatchBatchContextShapesFilterArgsDict',
+    'GetBatchBatchContextsFilterArgs',
+    'GetBatchBatchContextsFilterArgsDict',
+    'GetBatchBatchJobPoolsFilterArgs',
+    'GetBatchBatchJobPoolsFilterArgsDict',
+    'GetBatchBatchTaskEnvironmentsFilterArgs',
+    'GetBatchBatchTaskEnvironmentsFilterArgsDict',
+    'GetBatchBatchTaskProfilesFilterArgs',
+    'GetBatchBatchTaskProfilesFilterArgsDict',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs',
@@ -165,6 +191,10 @@ __all__ = [
     'GetMulticloudExternalLocationSummariesMetadataFilterArgsDict',
     'GetMulticloudExternalLocationsMetadataFilterArgs',
     'GetMulticloudExternalLocationsMetadataFilterArgsDict',
+    'GetMulticloudMulticloudsubscriptionsFilterArgs',
+    'GetMulticloudMulticloudsubscriptionsFilterArgsDict',
+    'GetMulticloudOmHubMulticloudResourcesFilterArgs',
+    'GetMulticloudOmHubMulticloudResourcesFilterArgsDict',
     'GetMulticloudResourceAnchorsFilterArgs',
     'GetMulticloudResourceAnchorsFilterArgsDict',
     'GetPsaPrivateServiceAccessesFilterArgs',
@@ -525,6 +555,674 @@ class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs:
     @attribute_names.setter
     def attribute_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_names", value)
+
+
+if not MYPY:
+    class BatchBatchContextFleetArgsDict(TypedDict):
+        max_concurrent_tasks: pulumi.Input[_builtins.int]
+        """
+        Maximum number of concurrent tasks for the service managed fleet.
+        """
+        name: pulumi.Input[_builtins.str]
+        """
+        Name of the service managed fleet.
+        """
+        shape: pulumi.Input['BatchBatchContextFleetShapeArgsDict']
+        """
+        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        Type of the fleet. Also serves as a discriminator for sub-entities.
+        """
+        details: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message that describes the current state of the service manage fleet configuration in more detail.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    BatchBatchContextFleetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextFleetArgs:
+    def __init__(__self__, *,
+                 max_concurrent_tasks: pulumi.Input[_builtins.int],
+                 name: pulumi.Input[_builtins.str],
+                 shape: pulumi.Input['BatchBatchContextFleetShapeArgs'],
+                 type: pulumi.Input[_builtins.str],
+                 details: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] max_concurrent_tasks: Maximum number of concurrent tasks for the service managed fleet.
+        :param pulumi.Input[_builtins.str] name: Name of the service managed fleet.
+        :param pulumi.Input['BatchBatchContextFleetShapeArgs'] shape: Shape of the fleet. Describes hardware resources of each node in the fleet.
+        :param pulumi.Input[_builtins.str] type: Type of the fleet. Also serves as a discriminator for sub-entities.
+        :param pulumi.Input[_builtins.str] details: A message that describes the current state of the service manage fleet configuration in more detail.
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "max_concurrent_tasks", max_concurrent_tasks)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "type", type)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="maxConcurrentTasks")
+    def max_concurrent_tasks(self) -> pulumi.Input[_builtins.int]:
+        """
+        Maximum number of concurrent tasks for the service managed fleet.
+        """
+        return pulumi.get(self, "max_concurrent_tasks")
+
+    @max_concurrent_tasks.setter
+    def max_concurrent_tasks(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "max_concurrent_tasks", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> pulumi.Input['BatchBatchContextFleetShapeArgs']:
+        """
+        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: pulumi.Input['BatchBatchContextFleetShapeArgs']):
+        pulumi.set(self, "shape", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the fleet. Also serves as a discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message that describes the current state of the service manage fleet configuration in more detail.
+        """
+        return pulumi.get(self, "details")
+
+    @details.setter
+    def details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+if not MYPY:
+    class BatchBatchContextFleetShapeArgsDict(TypedDict):
+        memory_in_gbs: pulumi.Input[_builtins.int]
+        """
+        Amount of memory in GBs required by the shape.
+        """
+        ocpus: pulumi.Input[_builtins.int]
+        """
+        Number of OCPUs required by the shape.
+        """
+        shape_name: pulumi.Input[_builtins.str]
+        """
+        The name of the shape.
+        """
+elif False:
+    BatchBatchContextFleetShapeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextFleetShapeArgs:
+    def __init__(__self__, *,
+                 memory_in_gbs: pulumi.Input[_builtins.int],
+                 ocpus: pulumi.Input[_builtins.int],
+                 shape_name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.int] memory_in_gbs: Amount of memory in GBs required by the shape.
+        :param pulumi.Input[_builtins.int] ocpus: Number of OCPUs required by the shape.
+        :param pulumi.Input[_builtins.str] shape_name: The name of the shape.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> pulumi.Input[_builtins.int]:
+        """
+        Amount of memory in GBs required by the shape.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> pulumi.Input[_builtins.int]:
+        """
+        Number of OCPUs required by the shape.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @ocpus.setter
+    def ocpus(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the shape.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @shape_name.setter
+    def shape_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "shape_name", value)
+
+
+if not MYPY:
+    class BatchBatchContextJobPriorityConfigurationArgsDict(TypedDict):
+        tag_key: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Name of the tag key.
+        """
+        tag_namespace: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Name of the corresponding tag namespace.
+        """
+        values: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) Mapping of tag value to its priority.
+        """
+        weight: pulumi.Input[_builtins.int]
+        """
+        (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+elif False:
+    BatchBatchContextJobPriorityConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextJobPriorityConfigurationArgs:
+    def __init__(__self__, *,
+                 tag_key: pulumi.Input[_builtins.str],
+                 tag_namespace: pulumi.Input[_builtins.str],
+                 values: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
+                 weight: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[_builtins.str] tag_key: (Updatable) Name of the tag key.
+        :param pulumi.Input[_builtins.str] tag_namespace: (Updatable) Name of the corresponding tag namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] values: (Updatable) Mapping of tag value to its priority.
+        :param pulumi.Input[_builtins.int] weight: (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "tag_namespace", tag_namespace)
+        pulumi.set(__self__, "values", values)
+        pulumi.set(__self__, "weight", weight)
+
+    @_builtins.property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Name of the tag key.
+        """
+        return pulumi.get(self, "tag_key")
+
+    @tag_key.setter
+    def tag_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "tag_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tagNamespace")
+    def tag_namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Name of the corresponding tag namespace.
+        """
+        return pulumi.get(self, "tag_namespace")
+
+    @tag_namespace.setter
+    def tag_namespace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "tag_namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def weight(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        return pulumi.get(self, "weight")
+
+    @weight.setter
+    def weight(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "weight", value)
+
+
+if not MYPY:
+    class BatchBatchContextLoggingConfigurationArgsDict(TypedDict):
+        log_group_id: pulumi.Input[_builtins.str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        log_id: pulumi.Input[_builtins.str]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        Discriminator for sub-entities.
+        """
+elif False:
+    BatchBatchContextLoggingConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextLoggingConfigurationArgs:
+    def __init__(__self__, *,
+                 log_group_id: pulumi.Input[_builtins.str],
+                 log_id: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[_builtins.str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        :param pulumi.Input[_builtins.str] type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "log_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "log_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class BatchBatchContextNetworkArgsDict(TypedDict):
+        subnet_id: pulumi.Input[_builtins.str]
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        """
+        vnics: NotRequired[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgsDict']]]]
+        """
+        A list of private endpoint's VNICs.
+        """
+elif False:
+    BatchBatchContextNetworkArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextNetworkArgs:
+    def __init__(__self__, *,
+                 subnet_id: pulumi.Input[_builtins.str],
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vnics: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        :param pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgs']]] vnics: A list of private endpoint's VNICs.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if vnics is not None:
+            pulumi.set(__self__, "vnics", vnics)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vnics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgs']]]]:
+        """
+        A list of private endpoint's VNICs.
+        """
+        return pulumi.get(self, "vnics")
+
+    @vnics.setter
+    def vnics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BatchBatchContextNetworkVnicArgs']]]]):
+        pulumi.set(self, "vnics", value)
+
+
+if not MYPY:
+    class BatchBatchContextNetworkVnicArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        """
+        source_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+elif False:
+    BatchBatchContextNetworkVnicArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchContextNetworkVnicArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] source_ips: A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if source_ips is not None:
+            pulumi.set(__self__, "source_ips", source_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIps")
+    def source_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        return pulumi.get(self, "source_ips")
+
+    @source_ips.setter
+    def source_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "source_ips", value)
+
+
+if not MYPY:
+    class BatchBatchTaskEnvironmentSecurityContextArgsDict(TypedDict):
+        fs_group: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        A special supplemental group ID that applies to all containers in a pod.
+        """
+        run_as_group: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Group ID for running processes inside the container.
+        """
+        run_as_user: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        User ID for running processes inside the container.
+        """
+elif False:
+    BatchBatchTaskEnvironmentSecurityContextArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchTaskEnvironmentSecurityContextArgs:
+    def __init__(__self__, *,
+                 fs_group: Optional[pulumi.Input[_builtins.int]] = None,
+                 run_as_group: Optional[pulumi.Input[_builtins.int]] = None,
+                 run_as_user: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] fs_group: A special supplemental group ID that applies to all containers in a pod.
+        :param pulumi.Input[_builtins.int] run_as_group: Group ID for running processes inside the container.
+        :param pulumi.Input[_builtins.int] run_as_user: User ID for running processes inside the container.
+        """
+        if fs_group is not None:
+            pulumi.set(__self__, "fs_group", fs_group)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        A special supplemental group ID that applies to all containers in a pod.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @fs_group.setter
+    def fs_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "fs_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Group ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @run_as_group.setter
+    def run_as_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "run_as_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        User ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_user")
+
+    @run_as_user.setter
+    def run_as_user(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "run_as_user", value)
+
+
+if not MYPY:
+    class BatchBatchTaskEnvironmentVolumeArgsDict(TypedDict):
+        local_mount_directory_path: pulumi.Input[_builtins.str]
+        """
+        The local path to mount the NFS share to.
+        """
+        mount_target_export_path: pulumi.Input[_builtins.str]
+        """
+        The path to the directory on the NFS server to be mounted.
+        """
+        mount_target_fqdn: pulumi.Input[_builtins.str]
+        """
+        The FQDN of the NFS server to connect to.
+        """
+        name: pulumi.Input[_builtins.str]
+        """
+        The name of the NfsVolume.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        Discriminator for sub-entities.
+        """
+elif False:
+    BatchBatchTaskEnvironmentVolumeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BatchBatchTaskEnvironmentVolumeArgs:
+    def __init__(__self__, *,
+                 local_mount_directory_path: pulumi.Input[_builtins.str],
+                 mount_target_export_path: pulumi.Input[_builtins.str],
+                 mount_target_fqdn: pulumi.Input[_builtins.str],
+                 name: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] local_mount_directory_path: The local path to mount the NFS share to.
+        :param pulumi.Input[_builtins.str] mount_target_export_path: The path to the directory on the NFS server to be mounted.
+        :param pulumi.Input[_builtins.str] mount_target_fqdn: The FQDN of the NFS server to connect to.
+        :param pulumi.Input[_builtins.str] name: The name of the NfsVolume.
+        :param pulumi.Input[_builtins.str] type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "local_mount_directory_path", local_mount_directory_path)
+        pulumi.set(__self__, "mount_target_export_path", mount_target_export_path)
+        pulumi.set(__self__, "mount_target_fqdn", mount_target_fqdn)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="localMountDirectoryPath")
+    def local_mount_directory_path(self) -> pulumi.Input[_builtins.str]:
+        """
+        The local path to mount the NFS share to.
+        """
+        return pulumi.get(self, "local_mount_directory_path")
+
+    @local_mount_directory_path.setter
+    def local_mount_directory_path(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "local_mount_directory_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetExportPath")
+    def mount_target_export_path(self) -> pulumi.Input[_builtins.str]:
+        """
+        The path to the directory on the NFS server to be mounted.
+        """
+        return pulumi.get(self, "mount_target_export_path")
+
+    @mount_target_export_path.setter
+    def mount_target_export_path(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "mount_target_export_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetFqdn")
+    def mount_target_fqdn(self) -> pulumi.Input[_builtins.str]:
+        """
+        The FQDN of the NFS server to connect to.
+        """
+        return pulumi.get(self, "mount_target_fqdn")
+
+    @mount_target_fqdn.setter
+    def mount_target_fqdn(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "mount_target_fqdn", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
 
 
 if not MYPY:
@@ -4348,6 +5046,275 @@ class GetApiaccesscontrolPrivilegedApiRequestsFilterArgs:
 
 
 if not MYPY:
+    class GetBatchBatchContextShapesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The name identifying the shape.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetBatchBatchContextShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBatchBatchContextShapesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name identifying the shape.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name identifying the shape.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBatchBatchContextsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        Name of the service managed fleet.
+        """
+        values: Sequence[_builtins.str]
+        """
+        Mapping of tag value to its priority.
+        """
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetBatchBatchContextsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBatchBatchContextsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the service managed fleet.
+        :param Sequence[_builtins.str] values: Mapping of tag value to its priority.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBatchBatchJobPoolsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetBatchBatchJobPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBatchBatchJobPoolsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBatchBatchTaskEnvironmentsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The name of the NfsVolume.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetBatchBatchTaskEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBatchBatchTaskEnvironmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the NfsVolume.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBatchBatchTaskProfilesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetBatchBatchTaskProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBatchBatchTaskProfilesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict(TypedDict):
         name: _builtins.str
         """
@@ -5503,6 +6470,100 @@ elif False:
 
 @pulumi.input_type
 class GetMulticloudExternalLocationsMetadataFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudMulticloudsubscriptionsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudMulticloudsubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudMulticloudsubscriptionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetMulticloudOmHubMulticloudResourcesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetMulticloudOmHubMulticloudResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetMulticloudOmHubMulticloudResourcesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

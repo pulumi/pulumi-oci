@@ -405,6 +405,9 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesClonesFilterResult',
+    'GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionResult',
+    'GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionItemResult',
+    'GetAutonomousDatabasesEstimateCostSavingsFilterResult',
     'GetAutonomousDatabasesFilterResult',
     'GetAutonomousDbPreviewVersionsAutonomousDbPreviewVersionResult',
     'GetAutonomousDbPreviewVersionsFilterResult',
@@ -34620,6 +34623,124 @@ class GetAutonomousDatabasesClonesFilterResult(dict):
         """
         Name of the day of the week.
         """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionItemArgs'] items: List of estimate cost saving summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionItemResult']:
+        """
+        List of estimate cost saving summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesEstimateCostSavingsEstimateCostSavingsSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cost_savings_with_elastic_pool: _builtins.float,
+                 estimated_usage_without_elastic_pool: _builtins.str,
+                 is_cpu_autoscale: _builtins.bool,
+                 time_ended: _builtins.str,
+                 time_started: _builtins.str,
+                 usage_with_elastic_pool: _builtins.str):
+        """
+        :param _builtins.float cost_savings_with_elastic_pool: Estimated cost savings in percentage with elastic pool utilization.
+        :param _builtins.str estimated_usage_without_elastic_pool: CPU cost for a given time period under regular billing plan, in ECPU hours.
+        :param _builtins.bool is_cpu_autoscale: If provided as true, cost estimate with cpu autoscaling.
+        :param _builtins.str time_ended: The epoch time at which cost aggregation ends.
+        :param _builtins.str time_started: The epoch time at which cost aggregation starts.
+        :param _builtins.str usage_with_elastic_pool: CPU cost for a given time period under elastic pool billing plan, in ECPU hours.
+        """
+        pulumi.set(__self__, "cost_savings_with_elastic_pool", cost_savings_with_elastic_pool)
+        pulumi.set(__self__, "estimated_usage_without_elastic_pool", estimated_usage_without_elastic_pool)
+        pulumi.set(__self__, "is_cpu_autoscale", is_cpu_autoscale)
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "usage_with_elastic_pool", usage_with_elastic_pool)
+
+    @_builtins.property
+    @pulumi.getter(name="costSavingsWithElasticPool")
+    def cost_savings_with_elastic_pool(self) -> _builtins.float:
+        """
+        Estimated cost savings in percentage with elastic pool utilization.
+        """
+        return pulumi.get(self, "cost_savings_with_elastic_pool")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedUsageWithoutElasticPool")
+    def estimated_usage_without_elastic_pool(self) -> _builtins.str:
+        """
+        CPU cost for a given time period under regular billing plan, in ECPU hours.
+        """
+        return pulumi.get(self, "estimated_usage_without_elastic_pool")
+
+    @_builtins.property
+    @pulumi.getter(name="isCpuAutoscale")
+    def is_cpu_autoscale(self) -> _builtins.bool:
+        """
+        If provided as true, cost estimate with cpu autoscaling.
+        """
+        return pulumi.get(self, "is_cpu_autoscale")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> _builtins.str:
+        """
+        The epoch time at which cost aggregation ends.
+        """
+        return pulumi.get(self, "time_ended")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The epoch time at which cost aggregation starts.
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="usageWithElasticPool")
+    def usage_with_elastic_pool(self) -> _builtins.str:
+        """
+        CPU cost for a given time period under elastic pool billing plan, in ECPU hours.
+        """
+        return pulumi.get(self, "usage_with_elastic_pool")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesEstimateCostSavingsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @_builtins.property

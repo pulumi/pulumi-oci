@@ -114,6 +114,7 @@ namespace Pulumi.Oci.ContainerEngine
     ///             },
     ///             ServiceLbConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsServiceLbConfigArgs
     ///             {
+    ///                 BackendNsgIds = clusterOptionsServiceLbConfigBackendNsgIds,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },

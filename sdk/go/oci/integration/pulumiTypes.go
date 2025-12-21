@@ -944,10 +944,14 @@ type IntegrationInstanceNetworkEndpointDetails struct {
 	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTime *IntegrationInstanceNetworkEndpointDetailsDesignTime `pulumi:"designTime"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted *bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtime *IntegrationInstanceNetworkEndpointDetailsRuntime `pulumi:"runtime"`
 }
 
 // IntegrationInstanceNetworkEndpointDetailsInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsArgs and IntegrationInstanceNetworkEndpointDetailsOutput values.
@@ -966,10 +970,14 @@ type IntegrationInstanceNetworkEndpointDetailsArgs struct {
 	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTime IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput `pulumi:"designTime"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolPtrInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtime IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput `pulumi:"runtime"`
 }
 
 func (IntegrationInstanceNetworkEndpointDetailsArgs) ElementType() reflect.Type {
@@ -1061,6 +1069,13 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) AllowlistedHttpVcns() I
 	}).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
 }
 
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o IntegrationInstanceNetworkEndpointDetailsOutput) DesignTime() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetailsDesignTime {
+		return v.DesignTime
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput)
+}
+
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 func (o IntegrationInstanceNetworkEndpointDetailsOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) *bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolPtrOutput)
@@ -1069,6 +1084,13 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) IsIntegrationVcnAllowli
 // The type of network endpoint.
 func (o IntegrationInstanceNetworkEndpointDetailsOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
+}
+
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o IntegrationInstanceNetworkEndpointDetailsOutput) Runtime() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetailsRuntime {
+		return v.Runtime
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput)
 }
 
 type IntegrationInstanceNetworkEndpointDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -1115,6 +1137,16 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) AllowlistedHttpVcns(
 	}).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput)
 }
 
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) DesignTime() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetailsDesignTime {
+		if v == nil {
+			return nil
+		}
+		return v.DesignTime
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput)
+}
+
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetails) *bool {
@@ -1133,6 +1165,16 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) NetworkEndpointType(
 		}
 		return &v.NetworkEndpointType
 	}).(pulumi.StringPtrOutput)
+}
+
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) Runtime() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetails) *IntegrationInstanceNetworkEndpointDetailsRuntime {
+		if v == nil {
+			return nil
+		}
+		return v.Runtime
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput)
 }
 
 type IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn struct {
@@ -1241,7 +1283,540 @@ func (o IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput) 
 	}).(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput)
 }
 
+type IntegrationInstanceNetworkEndpointDetailsDesignTime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// IntegrationInstanceNetworkEndpointDetailsDesignTimeInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs and IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsDesignTimeInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs{...}
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTime)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput)
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput).ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(ctx)
+}
+
+// IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs, IntegrationInstanceNetworkEndpointDetailsDesignTimePtr and IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput` via:
+//
+//	        IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs{...}
+//
+//	or:
+//
+//	        nil
+type IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput
+}
+
+type integrationInstanceNetworkEndpointDetailsDesignTimePtrType IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs
+
+func IntegrationInstanceNetworkEndpointDetailsDesignTimePtr(v *IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput {
+	return (*integrationInstanceNetworkEndpointDetailsDesignTimePtrType)(v)
+}
+
+func (*integrationInstanceNetworkEndpointDetailsDesignTimePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IntegrationInstanceNetworkEndpointDetailsDesignTime)(nil)).Elem()
+}
+
+func (i *integrationInstanceNetworkEndpointDetailsDesignTimePtrType) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(context.Background())
+}
+
+func (i *integrationInstanceNetworkEndpointDetailsDesignTimePtrType) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTime)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o.ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(context.Background())
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceNetworkEndpointDetailsDesignTime) *IntegrationInstanceNetworkEndpointDetailsDesignTime {
+		return &v
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput)
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsDesignTime) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput) AllowlistedHttpVcns() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsDesignTime) []IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IntegrationInstanceNetworkEndpointDetailsDesignTime)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) Elem() IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsDesignTime) IntegrationInstanceNetworkEndpointDetailsDesignTime {
+		if v != nil {
+			return *v
+		}
+		var ret IntegrationInstanceNetworkEndpointDetailsDesignTime
+		return ret
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput)
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsDesignTime) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput) AllowlistedHttpVcns() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsDesignTime) []IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpVcns
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs and IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs{...}
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput)
+}
+
+// IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray and IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray{ IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs{...} }
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput
+	ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray []IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnInput
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput) ToIntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn {
+		return vs[0].([]IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// IntegrationInstanceNetworkEndpointDetailsRuntimeInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsRuntimeArgs and IntegrationInstanceNetworkEndpointDetailsRuntimeOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsRuntimeInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsRuntimeArgs{...}
+type IntegrationInstanceNetworkEndpointDetailsRuntimeInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeOutput
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntime)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsRuntimeOutput)
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsRuntimeOutput).ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(ctx)
+}
+
+// IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsRuntimeArgs, IntegrationInstanceNetworkEndpointDetailsRuntimePtr and IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput` via:
+//
+//	        IntegrationInstanceNetworkEndpointDetailsRuntimeArgs{...}
+//
+//	or:
+//
+//	        nil
+type IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput
+}
+
+type integrationInstanceNetworkEndpointDetailsRuntimePtrType IntegrationInstanceNetworkEndpointDetailsRuntimeArgs
+
+func IntegrationInstanceNetworkEndpointDetailsRuntimePtr(v *IntegrationInstanceNetworkEndpointDetailsRuntimeArgs) IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput {
+	return (*integrationInstanceNetworkEndpointDetailsRuntimePtrType)(v)
+}
+
+func (*integrationInstanceNetworkEndpointDetailsRuntimePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**IntegrationInstanceNetworkEndpointDetailsRuntime)(nil)).Elem()
+}
+
+func (i *integrationInstanceNetworkEndpointDetailsRuntimePtrType) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(context.Background())
+}
+
+func (i *integrationInstanceNetworkEndpointDetailsRuntimePtrType) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntime)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o.ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(context.Background())
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v IntegrationInstanceNetworkEndpointDetailsRuntime) *IntegrationInstanceNetworkEndpointDetailsRuntime {
+		return &v
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput)
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsRuntime) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeOutput) AllowlistedHttpVcns() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsRuntime) []IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**IntegrationInstanceNetworkEndpointDetailsRuntime)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput() IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimePtrOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) Elem() IntegrationInstanceNetworkEndpointDetailsRuntimeOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsRuntime) IntegrationInstanceNetworkEndpointDetailsRuntime {
+		if v != nil {
+			return *v
+		}
+		var ret IntegrationInstanceNetworkEndpointDetailsRuntime
+		return ret
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimeOutput)
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsRuntime) []string {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput) AllowlistedHttpVcns() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetailsRuntime) []IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn {
+		if v == nil {
+			return nil
+		}
+		return v.AllowlistedHttpVcns
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs and IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs{...}
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput)
+}
+
+// IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayInput is an input type that accepts IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray and IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayInput` via:
+//
+//	IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray{ IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs{...} }
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput
+	ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray []IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnInput
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return i.ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput() IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput) ToIntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn {
+		return vs[0].([]IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput)
+}
+
 type IntegrationInstancePrivateEndpointOutboundConnection struct {
+	IsAllOutboundTrafficPrivate *bool `pulumi:"isAllOutboundTrafficPrivate"`
 	// One or more Network security group Ids. This is an optional argument.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The type of Outbound Connection.
@@ -1262,6 +1837,7 @@ type IntegrationInstancePrivateEndpointOutboundConnectionInput interface {
 }
 
 type IntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
+	IsAllOutboundTrafficPrivate pulumi.BoolPtrInput `pulumi:"isAllOutboundTrafficPrivate"`
 	// One or more Network security group Ids. This is an optional argument.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The type of Outbound Connection.
@@ -1319,6 +1895,12 @@ func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) ToIntegratio
 
 func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) ToIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) IntegrationInstancePrivateEndpointOutboundConnectionOutput {
 	return o
+}
+
+func (o IntegrationInstancePrivateEndpointOutboundConnectionOutput) IsAllOutboundTrafficPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v IntegrationInstancePrivateEndpointOutboundConnection) *bool {
+		return v.IsAllOutboundTrafficPrivate
+	}).(pulumi.BoolPtrOutput)
 }
 
 // One or more Network security group Ids. This is an optional argument.
@@ -2181,10 +2763,14 @@ type GetIntegrationInstanceNetworkEndpointDetail struct {
 	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTimes []GetIntegrationInstanceNetworkEndpointDetailDesignTime `pulumi:"designTimes"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtimes []GetIntegrationInstanceNetworkEndpointDetailRuntime `pulumi:"runtimes"`
 }
 
 // GetIntegrationInstanceNetworkEndpointDetailInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailArgs and GetIntegrationInstanceNetworkEndpointDetailOutput values.
@@ -2203,10 +2789,14 @@ type GetIntegrationInstanceNetworkEndpointDetailArgs struct {
 	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTimes GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput `pulumi:"designTimes"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtimes GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput `pulumi:"runtimes"`
 }
 
 func (GetIntegrationInstanceNetworkEndpointDetailArgs) ElementType() reflect.Type {
@@ -2272,6 +2862,13 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) AllowlistedHttpVcns()
 	}).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o GetIntegrationInstanceNetworkEndpointDetailOutput) DesignTimes() GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) []GetIntegrationInstanceNetworkEndpointDetailDesignTime {
+		return v.DesignTimes
+	}).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput)
+}
+
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolOutput)
@@ -2280,6 +2877,13 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllow
 // The type of network endpoint.
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
+}
+
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o GetIntegrationInstanceNetworkEndpointDetailOutput) Runtimes() GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) []GetIntegrationInstanceNetworkEndpointDetailRuntime {
+		return v.Runtimes
+	}).(GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput)
 }
 
 type GetIntegrationInstanceNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
@@ -2410,13 +3014,444 @@ func (o GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput
 	}).(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
+type GetIntegrationInstanceNetworkEndpointDetailDesignTime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailDesignTimeInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs and GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailDesignTimeInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{...}
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput)
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray and GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray{ GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{...} }
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray []GetIntegrationInstanceNetworkEndpointDetailDesignTimeInput
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailDesignTime) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) AllowlistedHttpVcns() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailDesignTime) []GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetailDesignTime {
+		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetailDesignTime)[vs[1].(int)]
+	}).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs and GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{...}
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput)
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray and GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray{ GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{...} }
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray []GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn {
+		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailRuntimeInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs and GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailRuntimeInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs{...}
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput)
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailRuntimeArray and GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailRuntimeArray{ GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs{...} }
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeArray []GetIntegrationInstanceNetworkEndpointDetailRuntimeInput
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeArray) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeArray) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailRuntime) []string { return v.AllowlistedHttpIps }).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput) AllowlistedHttpVcns() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailRuntime) []GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetailRuntime {
+		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetailRuntime)[vs[1].(int)]
+	}).(GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs and GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{...}
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput)
+}
+
+// GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray and GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput` via:
+//
+//	GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray{ GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{...} }
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput
+	ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray []GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return i.ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn {
+		return vs[0].([]GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput)
+}
+
 type GetIntegrationInstancePrivateEndpointOutboundConnection struct {
-	// One or more Network security group Ids. This is an optional argument.
-	NsgIds []string `pulumi:"nsgIds"`
-	// The type of Outbound Connection.
-	OutboundConnectionType string `pulumi:"outboundConnectionType"`
-	// Customer Private Network VCN Subnet OCID. This is a required argument.
-	SubnetId string `pulumi:"subnetId"`
+	// Indicates if all traffic should go through configured outbound connection
+	IsAllOutboundTrafficPrivate bool     `pulumi:"isAllOutboundTrafficPrivate"`
+	NsgIds                      []string `pulumi:"nsgIds"`
+	OutboundConnectionType      string   `pulumi:"outboundConnectionType"`
+	SubnetId                    string   `pulumi:"subnetId"`
 }
 
 // GetIntegrationInstancePrivateEndpointOutboundConnectionInput is an input type that accepts GetIntegrationInstancePrivateEndpointOutboundConnectionArgs and GetIntegrationInstancePrivateEndpointOutboundConnectionOutput values.
@@ -2431,12 +3466,11 @@ type GetIntegrationInstancePrivateEndpointOutboundConnectionInput interface {
 }
 
 type GetIntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
-	// One or more Network security group Ids. This is an optional argument.
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// The type of Outbound Connection.
-	OutboundConnectionType pulumi.StringInput `pulumi:"outboundConnectionType"`
-	// Customer Private Network VCN Subnet OCID. This is a required argument.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Indicates if all traffic should go through configured outbound connection
+	IsAllOutboundTrafficPrivate pulumi.BoolInput        `pulumi:"isAllOutboundTrafficPrivate"`
+	NsgIds                      pulumi.StringArrayInput `pulumi:"nsgIds"`
+	OutboundConnectionType      pulumi.StringInput      `pulumi:"outboundConnectionType"`
+	SubnetId                    pulumi.StringInput      `pulumi:"subnetId"`
 }
 
 func (GetIntegrationInstancePrivateEndpointOutboundConnectionArgs) ElementType() reflect.Type {
@@ -2490,19 +3524,23 @@ func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetInte
 	return o
 }
 
-// One or more Network security group Ids. This is an optional argument.
+// Indicates if all traffic should go through configured outbound connection
+func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) IsAllOutboundTrafficPrivate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) bool {
+		return v.IsAllOutboundTrafficPrivate
+	}).(pulumi.BoolOutput)
+}
+
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// The type of Outbound Connection.
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) OutboundConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string {
 		return v.OutboundConnectionType
 	}).(pulumi.StringOutput)
 }
 
-// Customer Private Network VCN Subnet OCID. This is a required argument.
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -2641,13 +3679,15 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel       string `pulumi:"consumptionModel"`
+	ConvertInstanceTrigger int    `pulumi:"convertInstanceTrigger"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstancesIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Data retention period set for given integration instance
 	DataRetentionPeriod string `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags                     map[string]string `pulumi:"definedTags"`
+	DisableProcessAutomationTrigger int               `pulumi:"disableProcessAutomationTrigger"`
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails []GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -2678,6 +3718,8 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
 	// Additional details of lifecycleState or substates
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId string `pulumi:"logGroupId"`
 	// The number of configured message packs (if any)
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -2722,13 +3764,15 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel pulumi.StringInput `pulumi:"consumptionModel"`
+	ConsumptionModel       pulumi.StringInput `pulumi:"consumptionModel"`
+	ConvertInstanceTrigger pulumi.IntInput    `pulumi:"convertInstanceTrigger"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayInput `pulumi:"customEndpoints"`
 	// Data retention period set for given integration instance
 	DataRetentionPeriod pulumi.StringInput `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	DefinedTags                     pulumi.StringMapInput `pulumi:"definedTags"`
+	DisableProcessAutomationTrigger pulumi.IntInput       `pulumi:"disableProcessAutomationTrigger"`
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailArrayInput `pulumi:"disasterRecoveryDetails"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -2759,6 +3803,8 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	IsVisualBuilderEnabled pulumi.BoolInput `pulumi:"isVisualBuilderEnabled"`
 	// Additional details of lifecycleState or substates
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
 	// The number of configured message packs (if any)
 	MessagePacks pulumi.IntInput `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -2859,6 +3905,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) ConsumptionModel() pul
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.ConsumptionModel }).(pulumi.StringOutput)
 }
 
+func (o GetIntegrationInstancesIntegrationInstanceOutput) ConvertInstanceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.ConvertInstanceTrigger }).(pulumi.IntOutput)
+}
+
 // Details for a custom endpoint for the integration instance.
 func (o GetIntegrationInstancesIntegrationInstanceOutput) CustomEndpoints() GetIntegrationInstancesIntegrationInstanceCustomEndpointArrayOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstanceCustomEndpoint {
@@ -2874,6 +3924,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) DataRetentionPeriod() 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetIntegrationInstancesIntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceOutput) DisableProcessAutomationTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) int { return v.DisableProcessAutomationTrigger }).(pulumi.IntOutput)
 }
 
 // Disaster recovery details for the integration instance created in the region.
@@ -2962,6 +4016,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) IsVisualBuilderEnabled
 // Additional details of lifecycleState or substates
 func (o GetIntegrationInstancesIntegrationInstanceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given integration instance
+func (o GetIntegrationInstancesIntegrationInstanceOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
 // The number of configured message packs (if any)
@@ -3874,10 +4933,14 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail struct {
 	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTimes []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime `pulumi:"designTimes"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtimes []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime `pulumi:"runtimes"`
 }
 
 // GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput values.
@@ -3896,10 +4959,14 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs struct 
 	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	DesignTimes GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput `pulumi:"designTimes"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+	Runtimes GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput `pulumi:"runtimes"`
 }
 
 func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs) ElementType() reflect.Type {
@@ -3967,6 +5034,13 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) A
 	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput)
 }
 
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) DesignTimes() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime {
+		return v.DesignTimes
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput)
+}
+
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllowlisted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) bool {
@@ -3979,6 +5053,13 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) N
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) string {
 		return v.NetworkEndpointType
 	}).(pulumi.StringOutput)
+}
+
+// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) Runtimes() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime {
+		return v.Runtimes
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput)
 }
 
 type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4111,7 +5192,448 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlist
 	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput)
 }
 
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{...}
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray{ GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeInput
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime) []string {
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput) AllowlistedHttpVcns() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime) []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTime)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{...}
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray{ GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps []string `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs{...}
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedHttpIps pulumi.StringArrayInput `pulumi:"allowlistedHttpIps"`
+	// Virtual Cloud Networks allowed to access this network endpoint.
+	AllowlistedHttpVcns GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray{ GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeInput
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput) AllowlistedHttpIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime) []string {
+		return v.AllowlistedHttpIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// Virtual Cloud Networks allowed to access this network endpoint.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput) AllowlistedHttpVcns() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime) []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn {
+		return v.AllowlistedHttpVcns
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntime)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps []string `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id string `pulumi:"id"`
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{...}
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs struct {
+	// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+	AllowlistedIps pulumi.StringArrayInput `pulumi:"allowlistedIps"`
+	// The Virtual Cloud Network OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput)
+}
+
+// GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput is an input type that accepts GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray and GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput` via:
+//
+//	GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray{ GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{...} }
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput
+	ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return i.ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return o
+}
+
+// Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) AllowlistedIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn) []string {
+		return v.AllowlistedIps
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Virtual Cloud Network OCID.
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)(nil)).Elem()
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput() GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) ToGetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput {
+	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput) Index(i pulumi.IntInput) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn {
+		return vs[0].([]GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcn)[vs[1].(int)]
+	}).(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput)
+}
+
 type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection struct {
+	IsAllOutboundTrafficPrivate bool `pulumi:"isAllOutboundTrafficPrivate"`
 	// One or more Network security group Ids. This is an optional argument.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The type of Outbound Connection.
@@ -4132,6 +5654,7 @@ type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection
 }
 
 type GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
+	IsAllOutboundTrafficPrivate pulumi.BoolInput `pulumi:"isAllOutboundTrafficPrivate"`
 	// One or more Network security group Ids. This is an optional argument.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The type of Outbound Connection.
@@ -4189,6 +5712,12 @@ func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnect
 
 func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) ToGetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutputWithContext(ctx context.Context) GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput {
 	return o
+}
+
+func (o GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput) IsAllOutboundTrafficPrivate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection) bool {
+		return v.IsAllOutboundTrafficPrivate
+	}).(pulumi.BoolOutput)
 }
 
 // One or more Network security group Ids. This is an optional argument.
@@ -4249,6 +5778,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsPtrInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimeInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimePtrInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimeInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsRuntimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimePtrInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsRuntimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), IntegrationInstancePrivateEndpointOutboundConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), IntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceAlternateCustomEndpointInput)(nil)).Elem(), GetIntegrationInstanceAlternateCustomEndpointArgs{})
@@ -4267,6 +5804,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailDesignTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailRuntimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailRuntimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), GetIntegrationInstancePrivateEndpointOutboundConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), GetIntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesFilterInput)(nil)).Elem(), GetIntegrationInstancesFilterArgs{})
@@ -4289,6 +5834,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput)(nil)).Elem(), GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArray{})
 	pulumi.RegisterOutputType(IntegrationInstanceAlternateCustomEndpointOutput{})
@@ -4307,6 +5860,14 @@ func init() {
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsPtrOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsDesignTimeOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsDesignTimePtrOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsRuntimeOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsRuntimePtrOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(IntegrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnArrayOutput{})
 	pulumi.RegisterOutputType(IntegrationInstancePrivateEndpointOutboundConnectionOutput{})
 	pulumi.RegisterOutputType(IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceAlternateCustomEndpointOutput{})
@@ -4325,6 +5886,14 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailDesignTimeOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailRuntimeOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancePrivateEndpointOutboundConnectionOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesFilterOutput{})
@@ -4347,6 +5916,14 @@ func init() {
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeAllowlistedHttpVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnOutput{})
+	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArrayOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionOutput{})
 	pulumi.RegisterOutputType(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput{})
 }

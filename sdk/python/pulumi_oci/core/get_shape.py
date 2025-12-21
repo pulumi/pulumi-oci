@@ -28,7 +28,7 @@ class GetShapeResult:
     """
     A collection of values returned by getShape.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, image_id=None, shapes=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, id=None, image_id=None, shape=None, shapes=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetShapeResult:
         if image_id and not isinstance(image_id, str):
             raise TypeError("Expected argument 'image_id' to be a str")
         pulumi.set(__self__, "image_id", image_id)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if shapes and not isinstance(shapes, list):
             raise TypeError("Expected argument 'shapes' to be a list")
         pulumi.set(__self__, "shapes", shapes)
@@ -78,6 +81,11 @@ class GetShapeResult:
 
     @_builtins.property
     @pulumi.getter
+    def shape(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter
     def shapes(self) -> Sequence['outputs.GetShapeShapeResult']:
         return pulumi.get(self, "shapes")
 
@@ -93,6 +101,7 @@ class AwaitableGetShapeResult(GetShapeResult):
             filters=self.filters,
             id=self.id,
             image_id=self.image_id,
+            shape=self.shape,
             shapes=self.shapes)
 
 
@@ -100,6 +109,7 @@ def get_shape(availability_domain: Optional[_builtins.str] = None,
               compartment_id: Optional[_builtins.str] = None,
               filters: Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]] = None,
               image_id: Optional[_builtins.str] = None,
+              shape: Optional[_builtins.str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetShapeResult:
     """
     Use this data source to access information about an existing resource.
@@ -109,6 +119,7 @@ def get_shape(availability_domain: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['imageId'] = image_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Core/getShape:getShape', __args__, opts=opts, typ=GetShapeResult).value
 
@@ -118,11 +129,13 @@ def get_shape(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
+        shape=pulumi.get(__ret__, 'shape'),
         shapes=pulumi.get(__ret__, 'shapes'))
 def get_shape_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapeFilterArgs', 'GetShapeFilterArgsDict']]]]] = None,
                      image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                     shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapeResult]:
     """
     Use this data source to access information about an existing resource.
@@ -132,6 +145,7 @@ def get_shape_output(availability_domain: Optional[pulumi.Input[Optional[_builti
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['imageId'] = image_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getShape:getShape', __args__, opts=opts, typ=GetShapeResult)
     return __ret__.apply(lambda __response__: GetShapeResult(
@@ -140,4 +154,5 @@ def get_shape_output(availability_domain: Optional[pulumi.Input[Optional[_builti
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         image_id=pulumi.get(__response__, 'image_id'),
+        shape=pulumi.get(__response__, 'shape'),
         shapes=pulumi.get(__response__, 'shapes')))

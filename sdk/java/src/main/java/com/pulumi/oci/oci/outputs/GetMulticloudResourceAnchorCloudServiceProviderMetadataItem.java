@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +16,21 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
      * 
      */
     private String accountId;
+    /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    private Map<String,String> cspAdditionalProperties;
+    /**
+     * @return CSP resource anchor ID.
+     * 
+     */
+    private String cspResourceAnchorId;
+    /**
+     * @return CSP resource anchor name.
+     * 
+     */
+    private String cspResourceAnchorName;
     /**
      * @return GCP project number that was used for creating this resource anchor resource.
      * 
@@ -26,7 +42,7 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
      */
     private String region;
     /**
-     * @return CSP resource anchor ID or name.
+     * @return Oracle Cloud Infrastructure resource anchor name.
      * 
      */
     private String resourceAnchorName;
@@ -60,6 +76,27 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
         return this.accountId;
     }
     /**
+     * @return CSP Specific Additional Properties, AzureSubnetId for Azure
+     * 
+     */
+    public Map<String,String> cspAdditionalProperties() {
+        return this.cspAdditionalProperties;
+    }
+    /**
+     * @return CSP resource anchor ID.
+     * 
+     */
+    public String cspResourceAnchorId() {
+        return this.cspResourceAnchorId;
+    }
+    /**
+     * @return CSP resource anchor name.
+     * 
+     */
+    public String cspResourceAnchorName() {
+        return this.cspResourceAnchorName;
+    }
+    /**
      * @return GCP project number that was used for creating this resource anchor resource.
      * 
      */
@@ -74,7 +111,7 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
         return this.region;
     }
     /**
-     * @return CSP resource anchor ID or name.
+     * @return Oracle Cloud Infrastructure resource anchor name.
      * 
      */
     public String resourceAnchorName() {
@@ -119,6 +156,9 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
     @CustomType.Builder
     public static final class Builder {
         private String accountId;
+        private Map<String,String> cspAdditionalProperties;
+        private String cspResourceAnchorId;
+        private String cspResourceAnchorName;
         private String projectNumber;
         private String region;
         private String resourceAnchorName;
@@ -130,6 +170,9 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
         public Builder(GetMulticloudResourceAnchorCloudServiceProviderMetadataItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.accountId = defaults.accountId;
+    	      this.cspAdditionalProperties = defaults.cspAdditionalProperties;
+    	      this.cspResourceAnchorId = defaults.cspResourceAnchorId;
+    	      this.cspResourceAnchorName = defaults.cspResourceAnchorName;
     	      this.projectNumber = defaults.projectNumber;
     	      this.region = defaults.region;
     	      this.resourceAnchorName = defaults.resourceAnchorName;
@@ -145,6 +188,30 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
               throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorCloudServiceProviderMetadataItem", "accountId");
             }
             this.accountId = accountId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspAdditionalProperties(Map<String,String> cspAdditionalProperties) {
+            if (cspAdditionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorCloudServiceProviderMetadataItem", "cspAdditionalProperties");
+            }
+            this.cspAdditionalProperties = cspAdditionalProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspResourceAnchorId(String cspResourceAnchorId) {
+            if (cspResourceAnchorId == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorCloudServiceProviderMetadataItem", "cspResourceAnchorId");
+            }
+            this.cspResourceAnchorId = cspResourceAnchorId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspResourceAnchorName(String cspResourceAnchorName) {
+            if (cspResourceAnchorName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorCloudServiceProviderMetadataItem", "cspResourceAnchorName");
+            }
+            this.cspResourceAnchorName = cspResourceAnchorName;
             return this;
         }
         @CustomType.Setter
@@ -206,6 +273,9 @@ public final class GetMulticloudResourceAnchorCloudServiceProviderMetadataItem {
         public GetMulticloudResourceAnchorCloudServiceProviderMetadataItem build() {
             final var _resultValue = new GetMulticloudResourceAnchorCloudServiceProviderMetadataItem();
             _resultValue.accountId = accountId;
+            _resultValue.cspAdditionalProperties = cspAdditionalProperties;
+            _resultValue.cspResourceAnchorId = cspResourceAnchorId;
+            _resultValue.cspResourceAnchorName = cspResourceAnchorName;
             _resultValue.projectNumber = projectNumber;
             _resultValue.region = region;
             _resultValue.resourceAnchorName = resourceAnchorName;

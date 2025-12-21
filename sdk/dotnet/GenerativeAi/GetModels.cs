@@ -227,30 +227,15 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class GetModelsResult
     {
         public readonly ImmutableArray<string> Capabilities;
-        /// <summary>
-        /// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-        /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// A user-friendly name.
-        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetModelsFilterResult> Filters;
-        /// <summary>
-        /// An ID that uniquely identifies a pretrained or fine-tuned model.
-        /// </summary>
         public readonly string? Id;
         /// <summary>
         /// The list of model_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionResult> ModelCollections;
-        /// <summary>
-        /// The lifecycle state of the model.
-        /// </summary>
         public readonly string? State;
-        /// <summary>
-        /// The provider of the base model.
-        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

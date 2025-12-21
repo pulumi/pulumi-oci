@@ -36,6 +36,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetShapeShapeOcpuOptionResult> OcpuOptions;
         public readonly double Ocpus;
         public readonly ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionResult> PlatformConfigOptions;
+        public readonly ImmutableArray<string> PlatformNames;
         public readonly string ProcessorDescription;
         public readonly ImmutableArray<string> QuotaNames;
         public readonly int RdmaBandwidthInGbps;
@@ -91,6 +92,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapeShapePlatformConfigOptionResult> platformConfigOptions,
 
+            ImmutableArray<string> platformNames,
+
             string processorDescription,
 
             ImmutableArray<string> quotaNames,
@@ -126,6 +129,7 @@ namespace Pulumi.Oci.Core.Outputs
             OcpuOptions = ocpuOptions;
             Ocpus = ocpus;
             PlatformConfigOptions = platformConfigOptions;
+            PlatformNames = platformNames;
             ProcessorDescription = processorDescription;
             QuotaNames = quotaNames;
             RdmaBandwidthInGbps = rdmaBandwidthInGbps;

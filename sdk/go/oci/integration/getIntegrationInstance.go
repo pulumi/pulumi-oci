@@ -65,13 +65,15 @@ type LookupIntegrationInstanceResult struct {
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The entitlement used for billing purposes.
-	ConsumptionModel string `pulumi:"consumptionModel"`
+	ConsumptionModel       string `pulumi:"consumptionModel"`
+	ConvertInstanceTrigger int    `pulumi:"convertInstanceTrigger"`
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Data retention period set for given integration instance
 	DataRetentionPeriod string `pulumi:"dataRetentionPeriod"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags                     map[string]string `pulumi:"definedTags"`
+	DisableProcessAutomationTrigger int               `pulumi:"disableProcessAutomationTrigger"`
 	// Disaster recovery details for the integration instance created in the region.
 	DisasterRecoveryDetails []GetIntegrationInstanceDisasterRecoveryDetail `pulumi:"disasterRecoveryDetails"`
 	// Integration Instance Identifier, can be renamed.
@@ -103,6 +105,8 @@ type LookupIntegrationInstanceResult struct {
 	IsVisualBuilderEnabled bool `pulumi:"isVisualBuilderEnabled"`
 	// Additional details of lifecycleState or substates
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// OCID of LogAnalytics LogGroup, enabled for given integration instance
+	LogGroupId string `pulumi:"logGroupId"`
 	// The number of configured message packs (if any)
 	MessagePacks int `pulumi:"messagePacks"`
 	// Base representation of a network endpoint.
@@ -185,6 +189,10 @@ func (o LookupIntegrationInstanceResultOutput) ConsumptionModel() pulumi.StringO
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.ConsumptionModel }).(pulumi.StringOutput)
 }
 
+func (o LookupIntegrationInstanceResultOutput) ConvertInstanceTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.ConvertInstanceTrigger }).(pulumi.IntOutput)
+}
+
 // Details for a custom endpoint for the integration instance.
 func (o LookupIntegrationInstanceResultOutput) CustomEndpoints() GetIntegrationInstanceCustomEndpointArrayOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceCustomEndpoint {
@@ -200,6 +208,10 @@ func (o LookupIntegrationInstanceResultOutput) DataRetentionPeriod() pulumi.Stri
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o LookupIntegrationInstanceResultOutput) DisableProcessAutomationTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) int { return v.DisableProcessAutomationTrigger }).(pulumi.IntOutput)
 }
 
 // Disaster recovery details for the integration instance created in the region.
@@ -290,6 +302,11 @@ func (o LookupIntegrationInstanceResultOutput) IsVisualBuilderEnabled() pulumi.B
 // Additional details of lifecycleState or substates
 func (o LookupIntegrationInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given integration instance
+func (o LookupIntegrationInstanceResultOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
 // The number of configured message packs (if any)

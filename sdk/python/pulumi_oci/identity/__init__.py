@@ -35,6 +35,7 @@ from .domains_identity_propagation_trust import *
 from .domains_identity_provider import *
 from .domains_identity_setting import *
 from .domains_kmsi_setting import *
+from .domains_mapped_attribute import *
 from .domains_my_api_key import *
 from .domains_my_auth_token import *
 from .domains_my_customer_secret_key import *
@@ -119,6 +120,8 @@ from .get_domains_identity_setting import *
 from .get_domains_identity_settings import *
 from .get_domains_kmsi_setting import *
 from .get_domains_kmsi_settings import *
+from .get_domains_mapped_attribute import *
+from .get_domains_mapped_attributes import *
 from .get_domains_my_api_key import *
 from .get_domains_my_api_keys import *
 from .get_domains_my_apps import *

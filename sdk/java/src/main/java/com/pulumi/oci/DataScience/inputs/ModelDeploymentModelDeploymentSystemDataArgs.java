@@ -32,6 +32,21 @@ public final class ModelDeploymentModelDeploymentSystemDataArgs extends com.pulu
     }
 
     /**
+     * The type of the deployed model.
+     * 
+     */
+    @Import(name="modelType")
+    private @Nullable Output<String> modelType;
+
+    /**
+     * @return The type of the deployed model.
+     * 
+     */
+    public Optional<Output<String>> modelType() {
+        return Optional.ofNullable(this.modelType);
+    }
+
+    /**
      * The infrastructure type of the model deployment.
      * 
      */
@@ -50,6 +65,7 @@ public final class ModelDeploymentModelDeploymentSystemDataArgs extends com.pulu
 
     private ModelDeploymentModelDeploymentSystemDataArgs(ModelDeploymentModelDeploymentSystemDataArgs $) {
         this.currentInstanceCount = $.currentInstanceCount;
+        this.modelType = $.modelType;
         this.systemInfraType = $.systemInfraType;
     }
 
@@ -90,6 +106,27 @@ public final class ModelDeploymentModelDeploymentSystemDataArgs extends com.pulu
          */
         public Builder currentInstanceCount(Integer currentInstanceCount) {
             return currentInstanceCount(Output.of(currentInstanceCount));
+        }
+
+        /**
+         * @param modelType The type of the deployed model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelType(@Nullable Output<String> modelType) {
+            $.modelType = modelType;
+            return this;
+        }
+
+        /**
+         * @param modelType The type of the deployed model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelType(String modelType) {
+            return modelType(Output.of(modelType));
         }
 
         /**

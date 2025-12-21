@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
     /**
-     * @return (Updatable) The shape used to launch the model deployment instances.
+     * @return (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     private @Nullable String instanceShapeName;
@@ -35,7 +35,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration() {}
     /**
-     * @return (Updatable) The shape used to launch the model deployment instances.
+     * @return (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     public Optional<String> instanceShapeName() {

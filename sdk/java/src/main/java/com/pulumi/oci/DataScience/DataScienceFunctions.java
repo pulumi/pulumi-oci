@@ -25,6 +25,10 @@ import com.pulumi.oci.DataScience.inputs.GetJobsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
@@ -102,6 +106,8 @@ import com.pulumi.oci.DataScience.outputs.GetJobRunsResult;
 import com.pulumi.oci.DataScience.outputs.GetJobShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetJobsResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationVersionResult;
+import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationVersionsResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationImplementationsResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstanceResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstancesResult;
@@ -2206,6 +2212,431 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetMlApplicationImplementationResult> getMlApplicationImplementationPlain(GetMlApplicationImplementationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationImplementation:getMlApplicationImplementation", TypeShape.of(GetMlApplicationImplementationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementationVersion by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionResult> getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs args) {
+        return getMlApplicationImplementationVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementationVersion by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationVersionResult> getMlApplicationImplementationVersionPlain(GetMlApplicationImplementationVersionPlainArgs args) {
+        return getMlApplicationImplementationVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementationVersion by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionResult> getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementationVersion:getMlApplicationImplementationVersion", TypeShape.of(GetMlApplicationImplementationVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementationVersion by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionResult> getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementationVersion:getMlApplicationImplementationVersion", TypeShape.of(GetMlApplicationImplementationVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets a MlApplicationImplementationVersion by identifier
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersion = DataScienceFunctions.getMlApplicationImplementationVersion(GetMlApplicationImplementationVersionArgs.builder()
+     *             .mlApplicationImplementationVersionId(testMlApplicationImplementationVersionOciDatascienceMlApplicationImplementationVersion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationVersionResult> getMlApplicationImplementationVersionPlain(GetMlApplicationImplementationVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationImplementationVersion:getMlApplicationImplementationVersion", TypeShape.of(GetMlApplicationImplementationVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementationVersions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .state(mlApplicationImplementationVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionsResult> getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs args) {
+        return getMlApplicationImplementationVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementationVersions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .state(mlApplicationImplementationVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationVersionsResult> getMlApplicationImplementationVersionsPlain(GetMlApplicationImplementationVersionsPlainArgs args) {
+        return getMlApplicationImplementationVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementationVersions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .state(mlApplicationImplementationVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionsResult> getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementationVersions:getMlApplicationImplementationVersions", TypeShape.of(GetMlApplicationImplementationVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementationVersions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .state(mlApplicationImplementationVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMlApplicationImplementationVersionsResult> getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getMlApplicationImplementationVersions:getMlApplicationImplementationVersions", TypeShape.of(GetMlApplicationImplementationVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Returns a list of MlApplicationImplementationVersions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMlApplicationImplementationVersions = DataScienceFunctions.getMlApplicationImplementationVersions(GetMlApplicationImplementationVersionsArgs.builder()
+     *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+     *             .state(mlApplicationImplementationVersionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMlApplicationImplementationVersionsResult> getMlApplicationImplementationVersionsPlain(GetMlApplicationImplementationVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getMlApplicationImplementationVersions:getMlApplicationImplementationVersions", TypeShape.of(GetMlApplicationImplementationVersionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.

@@ -63,6 +63,9 @@ export interface GetDedicatedAiClustersArgs {
  * A collection of values returned by getDedicatedAiClusters.
  */
 export interface GetDedicatedAiClustersResult {
+    /**
+     * The compartment OCID to create the dedicated AI cluster in.
+     */
     readonly compartmentId: string;
     /**
      * The list of dedicated_ai_cluster_collection.

@@ -70,6 +70,10 @@ export class ComputeHost extends pulumi.CustomResource {
      */
     declare public readonly computeHostId: pulumi.Output<string>;
     /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     */
+    declare public readonly configurationActionType: pulumi.Output<string | undefined>;
+    /**
      * Compute Host Configuration Data
      */
     declare public /*out*/ readonly configurationDatas: pulumi.Output<outputs.Core.ComputeHostConfigurationData[]>;
@@ -90,11 +94,11 @@ export class ComputeHost extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly faultDomain: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     */
+    declare public /*out*/ readonly firmwareBundleId: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public /*out*/ readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
@@ -129,6 +133,10 @@ export class ComputeHost extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
     declare public /*out*/ readonly networkBlockId: pulumi.Output<string>;
+    /**
+     * The platform of the host
+     */
+    declare public /*out*/ readonly platform: pulumi.Output<string>;
     /**
      * Shows details about the last recycle performed on this host.
      */
@@ -173,11 +181,13 @@ export class ComputeHost extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeHostGroupId"] = state?.computeHostGroupId;
             resourceInputs["computeHostId"] = state?.computeHostId;
+            resourceInputs["configurationActionType"] = state?.configurationActionType;
             resourceInputs["configurationDatas"] = state?.configurationDatas;
             resourceInputs["configurationState"] = state?.configurationState;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["faultDomain"] = state?.faultDomain;
+            resourceInputs["firmwareBundleId"] = state?.firmwareBundleId;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["gpuMemoryFabricId"] = state?.gpuMemoryFabricId;
             resourceInputs["health"] = state?.health;
@@ -187,6 +197,7 @@ export class ComputeHost extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["localBlockId"] = state?.localBlockId;
             resourceInputs["networkBlockId"] = state?.networkBlockId;
+            resourceInputs["platform"] = state?.platform;
             resourceInputs["recycleDetails"] = state?.recycleDetails;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
@@ -200,6 +211,7 @@ export class ComputeHost extends pulumi.CustomResource {
             }
             resourceInputs["computeHostGroupId"] = args?.computeHostGroupId;
             resourceInputs["computeHostId"] = args?.computeHostId;
+            resourceInputs["configurationActionType"] = args?.configurationActionType;
             resourceInputs["additionalData"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["capacityReservationId"] = undefined /*out*/;
@@ -209,6 +221,7 @@ export class ComputeHost extends pulumi.CustomResource {
             resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["faultDomain"] = undefined /*out*/;
+            resourceInputs["firmwareBundleId"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["gpuMemoryFabricId"] = undefined /*out*/;
             resourceInputs["health"] = undefined /*out*/;
@@ -218,6 +231,7 @@ export class ComputeHost extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["localBlockId"] = undefined /*out*/;
             resourceInputs["networkBlockId"] = undefined /*out*/;
+            resourceInputs["platform"] = undefined /*out*/;
             resourceInputs["recycleDetails"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -259,6 +273,10 @@ export interface ComputeHostState {
      */
     computeHostId?: pulumi.Input<string>;
     /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     */
+    configurationActionType?: pulumi.Input<string>;
+    /**
      * Compute Host Configuration Data
      */
     configurationDatas?: pulumi.Input<pulumi.Input<inputs.Core.ComputeHostConfigurationData>[]>;
@@ -279,11 +297,11 @@ export interface ComputeHostState {
      */
     faultDomain?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     */
+    firmwareBundleId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -318,6 +336,10 @@ export interface ComputeHostState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
     networkBlockId?: pulumi.Input<string>;
+    /**
+     * The platform of the host
+     */
+    platform?: pulumi.Input<string>;
     /**
      * Shows details about the last recycle performed on this host.
      */
@@ -356,4 +378,8 @@ export interface ComputeHostArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
      */
     computeHostId: pulumi.Input<string>;
+    /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     */
+    configurationActionType?: pulumi.Input<string>;
 }

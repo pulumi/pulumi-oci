@@ -132,6 +132,7 @@ class _DrPlanExecutionState:
                  plan_execution_type: Optional[pulumi.Input[_builtins.str]] = None,
                  plan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 step_status_counts: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountArgs']]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_ended: Optional[pulumi.Input[_builtins.str]] = None,
@@ -160,6 +161,7 @@ class _DrPlanExecutionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the DR plan execution.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountArgs']]] step_status_counts: A categorized summary of step execution statuses and their corresponding counts.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -200,6 +202,8 @@ class _DrPlanExecutionState:
             pulumi.set(__self__, "plan_id", plan_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if step_status_counts is not None:
+            pulumi.set(__self__, "step_status_counts", step_status_counts)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -420,6 +424,18 @@ class _DrPlanExecutionState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="stepStatusCounts")
+    def step_status_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountArgs']]]]:
+        """
+        A categorized summary of step execution statuses and their corresponding counts.
+        """
+        return pulumi.get(self, "step_status_counts")
+
+    @step_status_counts.setter
+    def step_status_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionStepStatusCountArgs']]]]):
+        pulumi.set(self, "step_status_counts", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -622,6 +638,7 @@ class DrPlanExecution(pulumi.CustomResource):
             __props__.__dict__["peer_region"] = None
             __props__.__dict__["plan_execution_type"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["step_status_counts"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_ended"] = None
@@ -654,6 +671,7 @@ class DrPlanExecution(pulumi.CustomResource):
             plan_execution_type: Optional[pulumi.Input[_builtins.str]] = None,
             plan_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            step_status_counts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_ended: Optional[pulumi.Input[_builtins.str]] = None,
@@ -687,6 +705,7 @@ class DrPlanExecution(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the DR plan execution.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict']]]] step_status_counts: A categorized summary of step execution statuses and their corresponding counts.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -714,6 +733,7 @@ class DrPlanExecution(pulumi.CustomResource):
         __props__.__dict__["plan_execution_type"] = plan_execution_type
         __props__.__dict__["plan_id"] = plan_id
         __props__.__dict__["state"] = state
+        __props__.__dict__["step_status_counts"] = step_status_counts
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_ended"] = time_ended
@@ -860,6 +880,14 @@ class DrPlanExecution(pulumi.CustomResource):
         The current state of the DR plan execution.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="stepStatusCounts")
+    def step_status_counts(self) -> pulumi.Output[Sequence['outputs.DrPlanExecutionStepStatusCount']]:
+        """
+        A categorized summary of step execution statuses and their corresponding counts.
+        """
+        return pulumi.get(self, "step_status_counts")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

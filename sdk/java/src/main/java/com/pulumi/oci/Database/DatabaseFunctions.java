@@ -57,6 +57,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsPlainArgs;
@@ -341,6 +343,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImageResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImagesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseWalletResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesEstimateCostSavingsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDbPreviewVersionsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDbVersionsResult;
@@ -6438,6 +6441,221 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabasesClonesResult> getAutonomousDatabasesClonesPlain(GetAutonomousDatabasesClonesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabasesClones:getAutonomousDatabasesClones", TypeShape.of(GetAutonomousDatabasesClonesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Estimate Cost Savings in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the estimate cost savings of the Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesEstimateCostSavings = DatabaseFunctions.getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .isCpuAutoscale(autonomousDatabasesEstimateCostSavingIsCpuAutoscale)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabasesEstimateCostSavingsResult> getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs args) {
+        return getAutonomousDatabasesEstimateCostSavings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Estimate Cost Savings in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the estimate cost savings of the Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesEstimateCostSavings = DatabaseFunctions.getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .isCpuAutoscale(autonomousDatabasesEstimateCostSavingIsCpuAutoscale)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabasesEstimateCostSavingsResult> getAutonomousDatabasesEstimateCostSavingsPlain(GetAutonomousDatabasesEstimateCostSavingsPlainArgs args) {
+        return getAutonomousDatabasesEstimateCostSavingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Estimate Cost Savings in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the estimate cost savings of the Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesEstimateCostSavings = DatabaseFunctions.getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .isCpuAutoscale(autonomousDatabasesEstimateCostSavingIsCpuAutoscale)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabasesEstimateCostSavingsResult> getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasesEstimateCostSavings:getAutonomousDatabasesEstimateCostSavings", TypeShape.of(GetAutonomousDatabasesEstimateCostSavingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Estimate Cost Savings in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the estimate cost savings of the Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesEstimateCostSavings = DatabaseFunctions.getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .isCpuAutoscale(autonomousDatabasesEstimateCostSavingIsCpuAutoscale)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousDatabasesEstimateCostSavingsResult> getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasesEstimateCostSavings:getAutonomousDatabasesEstimateCostSavings", TypeShape.of(GetAutonomousDatabasesEstimateCostSavingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Databases Estimate Cost Savings in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the estimate cost savings of the Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasesEstimateCostSavings = DatabaseFunctions.getAutonomousDatabasesEstimateCostSavings(GetAutonomousDatabasesEstimateCostSavingsArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .isCpuAutoscale(autonomousDatabasesEstimateCostSavingIsCpuAutoscale)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabasesEstimateCostSavingsResult> getAutonomousDatabasesEstimateCostSavingsPlain(GetAutonomousDatabasesEstimateCostSavingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabasesEstimateCostSavings:getAutonomousDatabasesEstimateCostSavings", TypeShape.of(GetAutonomousDatabasesEstimateCostSavingsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Autonomous Db Preview Versions in Oracle Cloud Infrastructure Database service.

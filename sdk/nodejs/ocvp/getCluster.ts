@@ -124,6 +124,10 @@ export interface GetClusterResult {
      */
     readonly state: string;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;

@@ -15,6 +15,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedAiClustersResult {
+    /**
+     * @return The compartment OCID to create the dedicated AI cluster in.
+     * 
+     */
     private String compartmentId;
     /**
      * @return The list of dedicated_ai_cluster_collection.
@@ -39,6 +43,10 @@ public final class GetDedicatedAiClustersResult {
     private @Nullable String state;
 
     private GetDedicatedAiClustersResult() {}
+    /**
+     * @return The compartment OCID to create the dedicated AI cluster in.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }

@@ -13,6 +13,7 @@ export function getShape(args: GetShapeArgs, opts?: pulumi.InvokeOptions): Promi
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "imageId": args.imageId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -24,6 +25,7 @@ export interface GetShapeArgs {
     compartmentId: string;
     filters?: inputs.Core.GetShapeFilter[];
     imageId?: string;
+    shape?: string;
 }
 
 /**
@@ -38,6 +40,7 @@ export interface GetShapeResult {
      */
     readonly id: string;
     readonly imageId?: string;
+    readonly shape?: string;
     readonly shapes: outputs.Core.GetShapeShape[];
 }
 export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetShapeResult> {
@@ -47,6 +50,7 @@ export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOut
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "imageId": args.imageId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -58,4 +62,5 @@ export interface GetShapeOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Core.GetShapeFilterArgs>[]>;
     imageId?: pulumi.Input<string>;
+    shape?: pulumi.Input<string>;
 }

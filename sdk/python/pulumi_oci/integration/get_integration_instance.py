@@ -27,7 +27,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, disaster_recovery_details=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, failover_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_design_time_url=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_disaster_recovery_enabled=None, is_file_server_enabled=None, is_visual_builder_enabled=None, lifecycle_details=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, security_attributes=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, convert_instance_trigger=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, disable_process_automation_trigger=None, disaster_recovery_details=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, failover_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_design_time_url=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_disaster_recovery_enabled=None, is_file_server_enabled=None, is_visual_builder_enabled=None, lifecycle_details=None, log_group_id=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, security_attributes=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -40,6 +40,9 @@ class GetIntegrationInstanceResult:
         if consumption_model and not isinstance(consumption_model, str):
             raise TypeError("Expected argument 'consumption_model' to be a str")
         pulumi.set(__self__, "consumption_model", consumption_model)
+        if convert_instance_trigger and not isinstance(convert_instance_trigger, int):
+            raise TypeError("Expected argument 'convert_instance_trigger' to be a int")
+        pulumi.set(__self__, "convert_instance_trigger", convert_instance_trigger)
         if custom_endpoints and not isinstance(custom_endpoints, list):
             raise TypeError("Expected argument 'custom_endpoints' to be a list")
         pulumi.set(__self__, "custom_endpoints", custom_endpoints)
@@ -49,6 +52,9 @@ class GetIntegrationInstanceResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if disable_process_automation_trigger and not isinstance(disable_process_automation_trigger, int):
+            raise TypeError("Expected argument 'disable_process_automation_trigger' to be a int")
+        pulumi.set(__self__, "disable_process_automation_trigger", disable_process_automation_trigger)
         if disaster_recovery_details and not isinstance(disaster_recovery_details, list):
             raise TypeError("Expected argument 'disaster_recovery_details' to be a list")
         pulumi.set(__self__, "disaster_recovery_details", disaster_recovery_details)
@@ -106,6 +112,9 @@ class GetIntegrationInstanceResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if log_group_id and not isinstance(log_group_id, str):
+            raise TypeError("Expected argument 'log_group_id' to be a str")
+        pulumi.set(__self__, "log_group_id", log_group_id)
         if message_packs and not isinstance(message_packs, int):
             raise TypeError("Expected argument 'message_packs' to be a int")
         pulumi.set(__self__, "message_packs", message_packs)
@@ -170,6 +179,11 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "consumption_model")
 
     @_builtins.property
+    @pulumi.getter(name="convertInstanceTrigger")
+    def convert_instance_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "convert_instance_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="customEndpoints")
     def custom_endpoints(self) -> Sequence['outputs.GetIntegrationInstanceCustomEndpointResult']:
         """
@@ -192,6 +206,11 @@ class GetIntegrationInstanceResult:
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="disableProcessAutomationTrigger")
+    def disable_process_automation_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "disable_process_automation_trigger")
 
     @_builtins.property
     @pulumi.getter(name="disasterRecoveryDetails")
@@ -325,6 +344,14 @@ class GetIntegrationInstanceResult:
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given integration instance
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="messagePacks")
     def message_packs(self) -> _builtins.int:
         """
@@ -419,9 +446,11 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             attachments=self.attachments,
             compartment_id=self.compartment_id,
             consumption_model=self.consumption_model,
+            convert_instance_trigger=self.convert_instance_trigger,
             custom_endpoints=self.custom_endpoints,
             data_retention_period=self.data_retention_period,
             defined_tags=self.defined_tags,
+            disable_process_automation_trigger=self.disable_process_automation_trigger,
             disaster_recovery_details=self.disaster_recovery_details,
             display_name=self.display_name,
             domain_id=self.domain_id,
@@ -441,6 +470,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             is_file_server_enabled=self.is_file_server_enabled,
             is_visual_builder_enabled=self.is_visual_builder_enabled,
             lifecycle_details=self.lifecycle_details,
+            log_group_id=self.log_group_id,
             message_packs=self.message_packs,
             network_endpoint_details=self.network_endpoint_details,
             private_endpoint_outbound_connections=self.private_endpoint_outbound_connections,
@@ -482,9 +512,11 @@ def get_integration_instance(integration_instance_id: Optional[_builtins.str] = 
         attachments=pulumi.get(__ret__, 'attachments'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         consumption_model=pulumi.get(__ret__, 'consumption_model'),
+        convert_instance_trigger=pulumi.get(__ret__, 'convert_instance_trigger'),
         custom_endpoints=pulumi.get(__ret__, 'custom_endpoints'),
         data_retention_period=pulumi.get(__ret__, 'data_retention_period'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        disable_process_automation_trigger=pulumi.get(__ret__, 'disable_process_automation_trigger'),
         disaster_recovery_details=pulumi.get(__ret__, 'disaster_recovery_details'),
         display_name=pulumi.get(__ret__, 'display_name'),
         domain_id=pulumi.get(__ret__, 'domain_id'),
@@ -504,6 +536,7 @@ def get_integration_instance(integration_instance_id: Optional[_builtins.str] = 
         is_file_server_enabled=pulumi.get(__ret__, 'is_file_server_enabled'),
         is_visual_builder_enabled=pulumi.get(__ret__, 'is_visual_builder_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        log_group_id=pulumi.get(__ret__, 'log_group_id'),
         message_packs=pulumi.get(__ret__, 'message_packs'),
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__ret__, 'private_endpoint_outbound_connections'),
@@ -542,9 +575,11 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
         attachments=pulumi.get(__response__, 'attachments'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         consumption_model=pulumi.get(__response__, 'consumption_model'),
+        convert_instance_trigger=pulumi.get(__response__, 'convert_instance_trigger'),
         custom_endpoints=pulumi.get(__response__, 'custom_endpoints'),
         data_retention_period=pulumi.get(__response__, 'data_retention_period'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        disable_process_automation_trigger=pulumi.get(__response__, 'disable_process_automation_trigger'),
         disaster_recovery_details=pulumi.get(__response__, 'disaster_recovery_details'),
         display_name=pulumi.get(__response__, 'display_name'),
         domain_id=pulumi.get(__response__, 'domain_id'),
@@ -564,6 +599,7 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
         is_file_server_enabled=pulumi.get(__response__, 'is_file_server_enabled'),
         is_visual_builder_enabled=pulumi.get(__response__, 'is_visual_builder_enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        log_group_id=pulumi.get(__response__, 'log_group_id'),
         message_packs=pulumi.get(__response__, 'message_packs'),
         network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__response__, 'private_endpoint_outbound_connections'),

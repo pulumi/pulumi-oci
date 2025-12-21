@@ -28,7 +28,7 @@ class GetMulticloudResourceAnchorsResult:
     """
     A collection of values returned by getMulticloudResourceAnchors.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, is_compartment_id_in_subtree=None, lifecycle_state=None, limit=None, linked_compartment_id=None, resource_anchor_collections=None, subscription_id=None, subscription_service_name=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, is_compartment_id_in_subtree=None, lifecycle_state=None, limit=None, linked_compartment_id=None, resource_anchor_collections=None, should_fetch_compartment_name=None, subscription_id=None, subscription_service_name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -56,6 +56,9 @@ class GetMulticloudResourceAnchorsResult:
         if resource_anchor_collections and not isinstance(resource_anchor_collections, list):
             raise TypeError("Expected argument 'resource_anchor_collections' to be a list")
         pulumi.set(__self__, "resource_anchor_collections", resource_anchor_collections)
+        if should_fetch_compartment_name and not isinstance(should_fetch_compartment_name, bool):
+            raise TypeError("Expected argument 'should_fetch_compartment_name' to be a bool")
+        pulumi.set(__self__, "should_fetch_compartment_name", should_fetch_compartment_name)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -113,6 +116,9 @@ class GetMulticloudResourceAnchorsResult:
     @_builtins.property
     @pulumi.getter(name="linkedCompartmentId")
     def linked_compartment_id(self) -> Optional[_builtins.str]:
+        """
+        Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
+        """
         return pulumi.get(self, "linked_compartment_id")
 
     @_builtins.property
@@ -124,8 +130,13 @@ class GetMulticloudResourceAnchorsResult:
         return pulumi.get(self, "resource_anchor_collections")
 
     @_builtins.property
+    @pulumi.getter(name="shouldFetchCompartmentName")
+    def should_fetch_compartment_name(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_fetch_compartment_name")
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> _builtins.str:
+    def subscription_id(self) -> Optional[_builtins.str]:
         """
         Oracle Cloud Infrastructure Subscription Id
         """
@@ -133,7 +144,7 @@ class GetMulticloudResourceAnchorsResult:
 
     @_builtins.property
     @pulumi.getter(name="subscriptionServiceName")
-    def subscription_service_name(self) -> _builtins.str:
+    def subscription_service_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subscription_service_name")
 
 
@@ -152,6 +163,7 @@ class AwaitableGetMulticloudResourceAnchorsResult(GetMulticloudResourceAnchorsRe
             limit=self.limit,
             linked_compartment_id=self.linked_compartment_id,
             resource_anchor_collections=self.resource_anchor_collections,
+            should_fetch_compartment_name=self.should_fetch_compartment_name,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name)
 
@@ -164,6 +176,7 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
                                     lifecycle_state: Optional[_builtins.str] = None,
                                     limit: Optional[_builtins.int] = None,
                                     linked_compartment_id: Optional[_builtins.str] = None,
+                                    should_fetch_compartment_name: Optional[_builtins.bool] = None,
                                     subscription_id: Optional[_builtins.str] = None,
                                     subscription_service_name: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudResourceAnchorsResult:
@@ -178,25 +191,27 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_anchors = oci.oci.get_multicloud_resource_anchors(subscription_id=subscription_id,
-        subscription_service_name=subscription_service_name,
-        compartment_id=compartment_id,
+    test_resource_anchors = oci.oci.get_multicloud_resource_anchors(compartment_id=compartment_id,
+        linked_compartment_id=linked_compartment_id,
+        lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=resource_anchor_is_compartment_id_in_subtree,
-        linked_compartment_id=linked_compartment_id,
-        lifecycle_state=resource_anchor_state)
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
+        should_fetch_compartment_name=should_fetch_compartment_name,
+        subscription_service_name=subscription_service_name,
+        subscription_id=subscription_id)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
     :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given compartmentId
-    :param _builtins.str lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
+    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -207,6 +222,7 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
     __args__['lifecycleState'] = lifecycle_state
     __args__['limit'] = limit
     __args__['linkedCompartmentId'] = linked_compartment_id
+    __args__['shouldFetchCompartmentName'] = should_fetch_compartment_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -222,6 +238,7 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
         limit=pulumi.get(__ret__, 'limit'),
         linked_compartment_id=pulumi.get(__ret__, 'linked_compartment_id'),
         resource_anchor_collections=pulumi.get(__ret__, 'resource_anchor_collections'),
+        should_fetch_compartment_name=pulumi.get(__ret__, 'should_fetch_compartment_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -232,8 +249,9 @@ def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input
                                            lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                            linked_compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+                                           should_fetch_compartment_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                                           subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                           subscription_service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudResourceAnchorsResult]:
     """
     This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
@@ -246,25 +264,27 @@ def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_anchors = oci.oci.get_multicloud_resource_anchors(subscription_id=subscription_id,
-        subscription_service_name=subscription_service_name,
-        compartment_id=compartment_id,
+    test_resource_anchors = oci.oci.get_multicloud_resource_anchors(compartment_id=compartment_id,
+        linked_compartment_id=linked_compartment_id,
+        lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=resource_anchor_is_compartment_id_in_subtree,
-        linked_compartment_id=linked_compartment_id,
-        lifecycle_state=resource_anchor_state)
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
+        should_fetch_compartment_name=should_fetch_compartment_name,
+        subscription_service_name=subscription_service_name,
+        subscription_id=subscription_id)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
     :param _builtins.bool is_compartment_id_in_subtree: Check the sub-compartments of a given compartmentId
-    :param _builtins.str lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
+    :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+    :param _builtins.bool should_fetch_compartment_name: Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -275,6 +295,7 @@ def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input
     __args__['lifecycleState'] = lifecycle_state
     __args__['limit'] = limit
     __args__['linkedCompartmentId'] = linked_compartment_id
+    __args__['shouldFetchCompartmentName'] = should_fetch_compartment_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -289,5 +310,6 @@ def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input
         limit=pulumi.get(__response__, 'limit'),
         linked_compartment_id=pulumi.get(__response__, 'linked_compartment_id'),
         resource_anchor_collections=pulumi.get(__response__, 'resource_anchor_collections'),
+        should_fetch_compartment_name=pulumi.get(__response__, 'should_fetch_compartment_name'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name')))

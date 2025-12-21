@@ -12,7 +12,8 @@ namespace Pulumi.Oci.Oci
     public static class GetMulticloudOmHubMultiCloudsMetadata
     {
         /// <summary>
-        /// This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+        /// This data source provides information about the Multicloud base compartment for a given tenancy Id.
+        /// A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// 
         /// Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
         /// 
@@ -38,7 +39,8 @@ namespace Pulumi.Oci.Oci
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMulticloudOmHubMultiCloudsMetadataResult>("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", args ?? new GetMulticloudOmHubMultiCloudsMetadataArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+        /// This data source provides information about the Multicloud base compartment for a given tenancy Id.
+        /// A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// 
         /// Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
         /// 
@@ -64,7 +66,8 @@ namespace Pulumi.Oci.Oci
             => global::Pulumi.Deployment.Instance.Invoke<GetMulticloudOmHubMultiCloudsMetadataResult>("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", args ?? new GetMulticloudOmHubMultiCloudsMetadataInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+        /// This data source provides information about the Multicloud base compartment for a given tenancy Id.
+        /// A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         /// 
         /// Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
         /// 

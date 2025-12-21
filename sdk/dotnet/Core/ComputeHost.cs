@@ -60,6 +60,12 @@ namespace Pulumi.Oci.Core
         public Output<string> ComputeHostId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        /// </summary>
+        [Output("configurationActionType")]
+        public Output<string?> ConfigurationActionType { get; private set; } = null!;
+
+        /// <summary>
         /// Compute Host Configuration Data
         /// </summary>
         [Output("configurationDatas")]
@@ -90,11 +96,13 @@ namespace Pulumi.Oci.Core
         public Output<string> FaultDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        /// </summary>
+        [Output("firmwareBundleId")]
+        public Output<string> FirmwareBundleId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -146,6 +154,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("networkBlockId")]
         public Output<string> NetworkBlockId { get; private set; } = null!;
+
+        /// <summary>
+        /// The platform of the host
+        /// </summary>
+        [Output("platform")]
+        public Output<string> Platform { get; private set; } = null!;
 
         /// <summary>
         /// Shows details about the last recycle performed on this host.
@@ -241,6 +255,12 @@ namespace Pulumi.Oci.Core
         [Input("computeHostId", required: true)]
         public Input<string> ComputeHostId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        /// </summary>
+        [Input("configurationActionType")]
+        public Input<string>? ConfigurationActionType { get; set; }
+
         public ComputeHostArgs()
         {
         }
@@ -285,6 +305,12 @@ namespace Pulumi.Oci.Core
         [Input("computeHostId")]
         public Input<string>? ComputeHostId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        /// </summary>
+        [Input("configurationActionType")]
+        public Input<string>? ConfigurationActionType { get; set; }
+
         [Input("configurationDatas")]
         private InputList<Inputs.ComputeHostConfigurationDataGetArgs>? _configurationDatas;
 
@@ -327,15 +353,17 @@ namespace Pulumi.Oci.Core
         [Input("faultDomain")]
         public Input<string>? FaultDomain { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        /// </summary>
+        [Input("firmwareBundleId")]
+        public Input<string>? FirmwareBundleId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -396,6 +424,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("networkBlockId")]
         public Input<string>? NetworkBlockId { get; set; }
+
+        /// <summary>
+        /// The platform of the host
+        /// </summary>
+        [Input("platform")]
+        public Input<string>? Platform { get; set; }
 
         [Input("recycleDetails")]
         private InputList<Inputs.ComputeHostRecycleDetailGetArgs>? _recycleDetails;

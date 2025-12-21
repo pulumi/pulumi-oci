@@ -18,18 +18,20 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAnchors = oci.oci.getMulticloudResourceAnchors({
- *     subscriptionId: subscriptionId,
- *     subscriptionServiceName: subscriptionServiceName,
  *     compartmentId: compartmentId,
+ *     linkedCompartmentId: linkedCompartmentId,
+ *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: resourceAnchorIsCompartmentIdInSubtree,
- *     linkedCompartmentId: linkedCompartmentId,
- *     lifecycleState: resourceAnchorState,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     subscriptionServiceName: subscriptionServiceName,
+ *     subscriptionId: subscriptionId,
  * });
  * ```
  */
-export function getMulticloudResourceAnchors(args: GetMulticloudResourceAnchorsArgs, opts?: pulumi.InvokeOptions): Promise<GetMulticloudResourceAnchorsResult> {
+export function getMulticloudResourceAnchors(args?: GetMulticloudResourceAnchorsArgs, opts?: pulumi.InvokeOptions): Promise<GetMulticloudResourceAnchorsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", {
         "compartmentId": args.compartmentId,
@@ -40,6 +42,7 @@ export function getMulticloudResourceAnchors(args: GetMulticloudResourceAnchorsA
         "lifecycleState": args.lifecycleState,
         "limit": args.limit,
         "linkedCompartmentId": args.linkedCompartmentId,
+        "shouldFetchCompartmentName": args.shouldFetchCompartmentName,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -50,7 +53,7 @@ export function getMulticloudResourceAnchors(args: GetMulticloudResourceAnchorsA
  */
 export interface GetMulticloudResourceAnchorsArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      */
     compartmentId?: string;
     /**
@@ -67,22 +70,26 @@ export interface GetMulticloudResourceAnchorsArgs {
      */
     isCompartmentIdInSubtree?: boolean;
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * The current state of the ResourceAnchor.
      */
     lifecycleState?: string;
     limit?: number;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      */
     linkedCompartmentId?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      */
-    subscriptionId: string;
+    shouldFetchCompartmentName?: boolean;
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionServiceName: string;
+    subscriptionId?: string;
+    /**
+     * The subscription service name of the Cloud Service Provider.
+     */
+    subscriptionServiceName?: string;
 }
 
 /**
@@ -108,16 +115,20 @@ export interface GetMulticloudResourceAnchorsResult {
      */
     readonly lifecycleState?: string;
     readonly limit?: number;
+    /**
+     * Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
+     */
     readonly linkedCompartmentId?: string;
     /**
      * The list of ResourceAnchorCollection.
      */
     readonly resourceAnchorCollections: outputs.oci.GetMulticloudResourceAnchorsResourceAnchorCollection[];
+    readonly shouldFetchCompartmentName?: boolean;
     /**
      * Oracle Cloud Infrastructure Subscription Id
      */
-    readonly subscriptionId: string;
-    readonly subscriptionServiceName: string;
+    readonly subscriptionId?: string;
+    readonly subscriptionServiceName?: string;
 }
 /**
  * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
@@ -131,18 +142,20 @@ export interface GetMulticloudResourceAnchorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAnchors = oci.oci.getMulticloudResourceAnchors({
- *     subscriptionId: subscriptionId,
- *     subscriptionServiceName: subscriptionServiceName,
  *     compartmentId: compartmentId,
+ *     linkedCompartmentId: linkedCompartmentId,
+ *     lifecycleState: lifecycleState,
  *     displayName: resourceAnchorDisplayName,
  *     id: resourceAnchorId,
- *     isCompartmentIdInSubtree: resourceAnchorIsCompartmentIdInSubtree,
- *     linkedCompartmentId: linkedCompartmentId,
- *     lifecycleState: resourceAnchorState,
+ *     isCompartmentIdInSubtree: isCompartmentIdInSubtree,
+ *     shouldFetchCompartmentName: shouldFetchCompartmentName,
+ *     subscriptionServiceName: subscriptionServiceName,
+ *     subscriptionId: subscriptionId,
  * });
  * ```
  */
-export function getMulticloudResourceAnchorsOutput(args: GetMulticloudResourceAnchorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMulticloudResourceAnchorsResult> {
+export function getMulticloudResourceAnchorsOutput(args?: GetMulticloudResourceAnchorsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMulticloudResourceAnchorsResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", {
         "compartmentId": args.compartmentId,
@@ -153,6 +166,7 @@ export function getMulticloudResourceAnchorsOutput(args: GetMulticloudResourceAn
         "lifecycleState": args.lifecycleState,
         "limit": args.limit,
         "linkedCompartmentId": args.linkedCompartmentId,
+        "shouldFetchCompartmentName": args.shouldFetchCompartmentName,
         "subscriptionId": args.subscriptionId,
         "subscriptionServiceName": args.subscriptionServiceName,
     }, opts);
@@ -163,7 +177,7 @@ export function getMulticloudResourceAnchorsOutput(args: GetMulticloudResourceAn
  */
 export interface GetMulticloudResourceAnchorsOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -180,20 +194,24 @@ export interface GetMulticloudResourceAnchorsOutputArgs {
      */
     isCompartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * The current state of the ResourceAnchor.
      */
     lifecycleState?: pulumi.Input<string>;
     limit?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      */
     linkedCompartmentId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      */
-    subscriptionId: pulumi.Input<string>;
+    shouldFetchCompartmentName?: pulumi.Input<boolean>;
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      */
-    subscriptionServiceName: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string>;
+    /**
+     * The subscription service name of the Cloud Service Provider.
+     */
+    subscriptionServiceName?: pulumi.Input<string>;
 }

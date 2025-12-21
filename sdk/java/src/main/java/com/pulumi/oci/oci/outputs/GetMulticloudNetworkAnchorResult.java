@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorCloudServiceProviderMetadataItem;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorOciMetadataItem;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -78,8 +79,14 @@ public final class GetMulticloudNetworkAnchorResult {
      * 
      */
     private String setupMode;
+    private @Nullable Boolean shouldFetchVcnName;
     private String subscriptionId;
     private String subscriptionServiceName;
+    /**
+     * @return Oracle Cloud Infrastructure Subscription Type.
+     * 
+     */
+    private String subscriptionType;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -187,11 +194,21 @@ public final class GetMulticloudNetworkAnchorResult {
     public String setupMode() {
         return this.setupMode;
     }
+    public Optional<Boolean> shouldFetchVcnName() {
+        return Optional.ofNullable(this.shouldFetchVcnName);
+    }
     public String subscriptionId() {
         return this.subscriptionId;
     }
     public String subscriptionServiceName() {
         return this.subscriptionServiceName;
+    }
+    /**
+     * @return Oracle Cloud Infrastructure Subscription Type.
+     * 
+     */
+    public String subscriptionType() {
+        return this.subscriptionType;
     }
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
@@ -238,8 +255,10 @@ public final class GetMulticloudNetworkAnchorResult {
         private List<GetMulticloudNetworkAnchorOciMetadataItem> ociMetadataItems;
         private String resourceAnchorId;
         private String setupMode;
+        private @Nullable Boolean shouldFetchVcnName;
         private String subscriptionId;
         private String subscriptionServiceName;
+        private String subscriptionType;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
@@ -260,8 +279,10 @@ public final class GetMulticloudNetworkAnchorResult {
     	      this.ociMetadataItems = defaults.ociMetadataItems;
     	      this.resourceAnchorId = defaults.resourceAnchorId;
     	      this.setupMode = defaults.setupMode;
+    	      this.shouldFetchVcnName = defaults.shouldFetchVcnName;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
+    	      this.subscriptionType = defaults.subscriptionType;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -384,6 +405,12 @@ public final class GetMulticloudNetworkAnchorResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shouldFetchVcnName(@Nullable Boolean shouldFetchVcnName) {
+
+            this.shouldFetchVcnName = shouldFetchVcnName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subscriptionId(String subscriptionId) {
             if (subscriptionId == null) {
               throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorResult", "subscriptionId");
@@ -397,6 +424,14 @@ public final class GetMulticloudNetworkAnchorResult {
               throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorResult", "subscriptionServiceName");
             }
             this.subscriptionServiceName = subscriptionServiceName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionType(String subscriptionType) {
+            if (subscriptionType == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorResult", "subscriptionType");
+            }
+            this.subscriptionType = subscriptionType;
             return this;
         }
         @CustomType.Setter
@@ -439,8 +474,10 @@ public final class GetMulticloudNetworkAnchorResult {
             _resultValue.ociMetadataItems = ociMetadataItems;
             _resultValue.resourceAnchorId = resourceAnchorId;
             _resultValue.setupMode = setupMode;
+            _resultValue.shouldFetchVcnName = shouldFetchVcnName;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
+            _resultValue.subscriptionType = subscriptionType;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

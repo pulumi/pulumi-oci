@@ -358,6 +358,7 @@ class _ClusterState:
                  network_configuration: Optional[pulumi.Input['ClusterNetworkConfigurationArgs']] = None,
                  sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterUpgradeLicenseArgs']]]] = None,
@@ -389,6 +390,7 @@ class _ClusterState:
         :param pulumi.Input['ClusterNetworkConfigurationArgs'] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[_builtins.str] state: The current state of the Cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input['ClusterUpgradeLicenseArgs']]] upgrade_licenses: The vSphere licenses to use when upgrading the Cluster.
@@ -443,6 +445,8 @@ class _ClusterState:
             pulumi.set(__self__, "sddc_id", sddc_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -704,6 +708,18 @@ class _ClusterState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -1038,6 +1054,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["datastore_cluster_ids"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["upgrade_licenses"] = None
@@ -1074,6 +1091,7 @@ class Cluster(pulumi.CustomResource):
             network_configuration: Optional[pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']]] = None,
             sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterUpgradeLicenseArgs', 'ClusterUpgradeLicenseArgsDict']]]]] = None,
@@ -1110,6 +1128,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[_builtins.str] state: The current state of the Cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterUpgradeLicenseArgs', 'ClusterUpgradeLicenseArgsDict']]]] upgrade_licenses: The vSphere licenses to use when upgrading the Cluster.
@@ -1147,6 +1166,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["network_configuration"] = network_configuration
         __props__.__dict__["sddc_id"] = sddc_id
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["upgrade_licenses"] = upgrade_licenses
@@ -1318,6 +1338,14 @@ class Cluster(pulumi.CustomResource):
         The current state of the Cluster.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

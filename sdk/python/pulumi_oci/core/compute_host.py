@@ -22,15 +22,19 @@ __all__ = ['ComputeHostArgs', 'ComputeHost']
 class ComputeHostArgs:
     def __init__(__self__, *,
                  compute_host_id: pulumi.Input[_builtins.str],
-                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ComputeHost resource.
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         """
         pulumi.set(__self__, "compute_host_id", compute_host_id)
         if compute_host_group_id is not None:
             pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        if configuration_action_type is not None:
+            pulumi.set(__self__, "configuration_action_type", configuration_action_type)
 
     @_builtins.property
     @pulumi.getter(name="computeHostId")
@@ -56,6 +60,18 @@ class ComputeHostArgs:
     def compute_host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compute_host_group_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="configurationActionType")
+    def configuration_action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        """
+        return pulumi.get(self, "configuration_action_type")
+
+    @configuration_action_type.setter
+    def configuration_action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "configuration_action_type", value)
+
 
 @pulumi.input_type
 class _ComputeHostState:
@@ -66,11 +82,13 @@ class _ComputeHostState:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
                  configuration_datas: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]] = None,
                  configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
                  health: Optional[pulumi.Input[_builtins.str]] = None,
@@ -80,6 +98,7 @@ class _ComputeHostState:
                  lifecycle_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 platform: Optional[pulumi.Input[_builtins.str]] = None,
                  recycle_details: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]] = None,
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -94,16 +113,14 @@ class _ComputeHostState:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
+        :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         :param pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]] configuration_datas: Compute Host Configuration Data
         :param pulumi.Input[_builtins.str] configuration_state: Configuration state of the Compute Bare Metal Host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
         :param pulumi.Input[_builtins.str] health: The heathy state of the host
         :param pulumi.Input[_builtins.str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -112,6 +129,7 @@ class _ComputeHostState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] lifecycle_details: A free-form description detailing why the host is in its current state.
         :param pulumi.Input[_builtins.str] local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param pulumi.Input[_builtins.str] network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param pulumi.Input[_builtins.str] platform: The platform of the host
         :param pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]] recycle_details: Shows details about the last recycle performed on this host.
         :param pulumi.Input[_builtins.str] shape: The shape of host
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the host
@@ -131,6 +149,8 @@ class _ComputeHostState:
             pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
         if compute_host_id is not None:
             pulumi.set(__self__, "compute_host_id", compute_host_id)
+        if configuration_action_type is not None:
+            pulumi.set(__self__, "configuration_action_type", configuration_action_type)
         if configuration_datas is not None:
             pulumi.set(__self__, "configuration_datas", configuration_datas)
         if configuration_state is not None:
@@ -141,6 +161,8 @@ class _ComputeHostState:
             pulumi.set(__self__, "display_name", display_name)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
+        if firmware_bundle_id is not None:
+            pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gpu_memory_fabric_id is not None:
@@ -159,6 +181,8 @@ class _ComputeHostState:
             pulumi.set(__self__, "local_block_id", local_block_id)
         if network_block_id is not None:
             pulumi.set(__self__, "network_block_id", network_block_id)
+        if platform is not None:
+            pulumi.set(__self__, "platform", platform)
         if recycle_details is not None:
             pulumi.set(__self__, "recycle_details", recycle_details)
         if shape is not None:
@@ -245,6 +269,18 @@ class _ComputeHostState:
         pulumi.set(self, "compute_host_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="configurationActionType")
+    def configuration_action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        """
+        return pulumi.get(self, "configuration_action_type")
+
+    @configuration_action_type.setter
+    def configuration_action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "configuration_action_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="configurationDatas")
     def configuration_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]]:
         """
@@ -305,14 +341,22 @@ class _ComputeHostState:
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @firmware_bundle_id.setter
+    def firmware_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "firmware_bundle_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -417,6 +461,18 @@ class _ComputeHostState:
         pulumi.set(self, "network_block_id", value)
 
     @_builtins.property
+    @pulumi.getter
+    def platform(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The platform of the host
+        """
+        return pulumi.get(self, "platform")
+
+    @platform.setter
+    def platform(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "platform", value)
+
+    @_builtins.property
     @pulumi.getter(name="recycleDetails")
     def recycle_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]]:
         """
@@ -497,6 +553,7 @@ class ComputeHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -513,6 +570,7 @@ class ComputeHost(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
+        :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         """
         ...
     @overload
@@ -548,6 +606,7 @@ class ComputeHost(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -561,6 +620,7 @@ class ComputeHost(pulumi.CustomResource):
             if compute_host_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compute_host_id'")
             __props__.__dict__["compute_host_id"] = compute_host_id
+            __props__.__dict__["configuration_action_type"] = configuration_action_type
             __props__.__dict__["additional_data"] = None
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["capacity_reservation_id"] = None
@@ -570,6 +630,7 @@ class ComputeHost(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = None
             __props__.__dict__["display_name"] = None
             __props__.__dict__["fault_domain"] = None
+            __props__.__dict__["firmware_bundle_id"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["gpu_memory_fabric_id"] = None
             __props__.__dict__["health"] = None
@@ -579,6 +640,7 @@ class ComputeHost(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["local_block_id"] = None
             __props__.__dict__["network_block_id"] = None
+            __props__.__dict__["platform"] = None
             __props__.__dict__["recycle_details"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
@@ -601,11 +663,13 @@ class ComputeHost(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+            configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
             configuration_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]]] = None,
             configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
+            firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
             health: Optional[pulumi.Input[_builtins.str]] = None,
@@ -615,6 +679,7 @@ class ComputeHost(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
             network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
+            platform: Optional[pulumi.Input[_builtins.str]] = None,
             recycle_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]]] = None,
             shape: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -634,16 +699,14 @@ class ComputeHost(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         :param pulumi.Input[_builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         :param pulumi.Input[_builtins.str] compute_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
+        :param pulumi.Input[_builtins.str] configuration_action_type: (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]] configuration_datas: Compute Host Configuration Data
         :param pulumi.Input[_builtins.str] configuration_state: Configuration state of the Compute Bare Metal Host.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
         :param pulumi.Input[_builtins.str] health: The heathy state of the host
         :param pulumi.Input[_builtins.str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
@@ -652,6 +715,7 @@ class ComputeHost(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] lifecycle_details: A free-form description detailing why the host is in its current state.
         :param pulumi.Input[_builtins.str] local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param pulumi.Input[_builtins.str] network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param pulumi.Input[_builtins.str] platform: The platform of the host
         :param pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]] recycle_details: Shows details about the last recycle performed on this host.
         :param pulumi.Input[_builtins.str] shape: The shape of host
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the host
@@ -669,11 +733,13 @@ class ComputeHost(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_host_group_id"] = compute_host_group_id
         __props__.__dict__["compute_host_id"] = compute_host_id
+        __props__.__dict__["configuration_action_type"] = configuration_action_type
         __props__.__dict__["configuration_datas"] = configuration_datas
         __props__.__dict__["configuration_state"] = configuration_state
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fault_domain"] = fault_domain
+        __props__.__dict__["firmware_bundle_id"] = firmware_bundle_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gpu_memory_fabric_id"] = gpu_memory_fabric_id
         __props__.__dict__["health"] = health
@@ -683,6 +749,7 @@ class ComputeHost(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["local_block_id"] = local_block_id
         __props__.__dict__["network_block_id"] = network_block_id
+        __props__.__dict__["platform"] = platform
         __props__.__dict__["recycle_details"] = recycle_details
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
@@ -740,6 +807,14 @@ class ComputeHost(pulumi.CustomResource):
         return pulumi.get(self, "compute_host_id")
 
     @_builtins.property
+    @pulumi.getter(name="configurationActionType")
+    def configuration_action_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+        """
+        return pulumi.get(self, "configuration_action_type")
+
+    @_builtins.property
     @pulumi.getter(name="configurationDatas")
     def configuration_datas(self) -> pulumi.Output[Sequence['outputs.ComputeHostConfigurationData']]:
         """
@@ -780,14 +855,18 @@ class ComputeHost(pulumi.CustomResource):
         return pulumi.get(self, "fault_domain")
 
     @_builtins.property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -854,6 +933,14 @@ class ComputeHost(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
         """
         return pulumi.get(self, "network_block_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def platform(self) -> pulumi.Output[_builtins.str]:
+        """
+        The platform of the host
+        """
+        return pulumi.get(self, "platform")
 
     @_builtins.property
     @pulumi.getter(name="recycleDetails")

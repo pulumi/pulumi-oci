@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Integration.Inputs
         }
 
         /// <summary>
+        /// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        /// </summary>
+        [Input("designTime")]
+        public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsDesignTimeArgs>? DesignTime { get; set; }
+
+        /// <summary>
         /// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         /// </summary>
         [Input("isIntegrationVcnAllowlisted")]
@@ -47,6 +53,12 @@ namespace Pulumi.Oci.Integration.Inputs
         /// </summary>
         [Input("networkEndpointType", required: true)]
         public Input<string> NetworkEndpointType { get; set; } = null!;
+
+        /// <summary>
+        /// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        /// </summary>
+        [Input("runtime")]
+        public Input<Inputs.IntegrationInstanceNetworkEndpointDetailsRuntimeArgs>? Runtime { get; set; }
 
         public IntegrationInstanceNetworkEndpointDetailsArgs()
         {

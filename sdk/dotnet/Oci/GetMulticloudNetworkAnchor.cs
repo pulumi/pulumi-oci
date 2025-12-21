@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Oci
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
         ///         ExternalLocation = networkAnchorExternalLocation,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
@@ -61,6 +62,7 @@ namespace Pulumi.Oci.Oci
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
         ///         ExternalLocation = networkAnchorExternalLocation,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
@@ -90,6 +92,7 @@ namespace Pulumi.Oci.Oci
         ///         SubscriptionId = subscriptionId,
         ///         SubscriptionServiceName = subscriptionServiceName,
         ///         ExternalLocation = networkAnchorExternalLocation,
+        ///         ShouldFetchVcnName = shouldFetchVcnName,
         ///     });
         /// 
         /// });
@@ -113,6 +116,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("networkAnchorId", required: true)]
         public string NetworkAnchorId { get; set; } = null!;
+
+        /// <summary>
+        /// Whether to fetch and include the vcn display name, which may introduce additional latency.
+        /// </summary>
+        [Input("shouldFetchVcnName")]
+        public bool? ShouldFetchVcnName { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
@@ -145,6 +154,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("networkAnchorId", required: true)]
         public Input<string> NetworkAnchorId { get; set; } = null!;
+
+        /// <summary>
+        /// Whether to fetch and include the vcn display name, which may introduce additional latency.
+        /// </summary>
+        [Input("shouldFetchVcnName")]
+        public Input<bool>? ShouldFetchVcnName { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
@@ -218,8 +233,13 @@ namespace Pulumi.Oci.Oci
         /// AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
         /// </summary>
         public readonly string SetupMode;
+        public readonly bool? ShouldFetchVcnName;
         public readonly string SubscriptionId;
         public readonly string SubscriptionServiceName;
+        /// <summary>
+        /// Oracle Cloud Infrastructure Subscription Type.
+        /// </summary>
+        public readonly string SubscriptionType;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
@@ -263,9 +283,13 @@ namespace Pulumi.Oci.Oci
 
             string setupMode,
 
+            bool? shouldFetchVcnName,
+
             string subscriptionId,
 
             string subscriptionServiceName,
+
+            string subscriptionType,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -287,8 +311,10 @@ namespace Pulumi.Oci.Oci
             OciMetadataItems = ociMetadataItems;
             ResourceAnchorId = resourceAnchorId;
             SetupMode = setupMode;
+            ShouldFetchVcnName = shouldFetchVcnName;
             SubscriptionId = subscriptionId;
             SubscriptionServiceName = subscriptionServiceName;
+            SubscriptionType = subscriptionType;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

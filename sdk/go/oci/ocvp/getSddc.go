@@ -195,7 +195,8 @@ type LookupSddcResult struct {
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
 	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
@@ -563,6 +564,7 @@ func (o LookupSddcResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o LookupSddcResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSddcResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

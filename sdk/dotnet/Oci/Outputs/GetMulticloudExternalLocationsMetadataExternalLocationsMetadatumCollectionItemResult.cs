@@ -14,7 +14,11 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult
     {
         /// <summary>
-        /// Cluster Placement Group OCID
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
+        /// Cluster Placement Group OCID (deprecated representation)
         /// </summary>
         public readonly string CpgId;
         /// <summary>
@@ -22,7 +26,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        /// The Cloud Service Provider region.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult> ExternalLocations;
         /// <summary>
@@ -42,12 +46,26 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string OciRegion;
         /// <summary>
+        /// User friendly name of account name for customer's subscription
+        /// </summary>
+        public readonly string PartnerCloudAccountName;
+        /// <summary>
+        /// Direct URL to partner cloud for customer's account
+        /// </summary>
+        public readonly string PartnerCloudAccountUrl;
+        /// <summary>
+        /// Partner Cloud Name based on service name
+        /// </summary>
+        public readonly string PartnerCloudName;
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
 
         [OutputConstructor]
         private GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult(
+            string clusterPlacementGroupId,
+
             string cpgId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -62,8 +80,15 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string ociRegion,
 
+            string partnerCloudAccountName,
+
+            string partnerCloudAccountUrl,
+
+            string partnerCloudName,
+
             ImmutableDictionary<string, string> systemTags)
         {
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CpgId = cpgId;
             DefinedTags = definedTags;
             ExternalLocations = externalLocations;
@@ -71,6 +96,9 @@ namespace Pulumi.Oci.Oci.Outputs
             OciLogicalAd = ociLogicalAd;
             OciPhysicalAd = ociPhysicalAd;
             OciRegion = ociRegion;
+            PartnerCloudAccountName = partnerCloudAccountName;
+            PartnerCloudAccountUrl = partnerCloudAccountUrl;
+            PartnerCloudName = partnerCloudName;
             SystemTags = systemTags;
         }
     }

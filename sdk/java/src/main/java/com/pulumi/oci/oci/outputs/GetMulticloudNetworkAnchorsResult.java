@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorsNetworkAnchorCollection;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -20,12 +21,13 @@ public final class GetMulticloudNetworkAnchorsResult {
      * 
      */
     private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
      * 
      */
     private @Nullable String displayName;
-    private String externalLocation;
+    private @Nullable String externalLocation;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      * 
@@ -44,8 +46,9 @@ public final class GetMulticloudNetworkAnchorsResult {
     private @Nullable String networkAnchorLifecycleState;
     private @Nullable String networkAnchorOciSubnetId;
     private @Nullable String networkAnchorOciVcnId;
-    private String subscriptionId;
-    private String subscriptionServiceName;
+    private @Nullable Boolean shouldFetchVcnName;
+    private @Nullable String subscriptionId;
+    private @Nullable String subscriptionServiceName;
 
     private GetMulticloudNetworkAnchorsResult() {}
     /**
@@ -55,6 +58,9 @@ public final class GetMulticloudNetworkAnchorsResult {
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
      * 
@@ -62,8 +68,8 @@ public final class GetMulticloudNetworkAnchorsResult {
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
-    public String externalLocation() {
-        return this.externalLocation;
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
@@ -95,11 +101,14 @@ public final class GetMulticloudNetworkAnchorsResult {
     public Optional<String> networkAnchorOciVcnId() {
         return Optional.ofNullable(this.networkAnchorOciVcnId);
     }
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<Boolean> shouldFetchVcnName() {
+        return Optional.ofNullable(this.shouldFetchVcnName);
     }
-    public String subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+    public Optional<String> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     public static Builder builder() {
@@ -112,20 +121,23 @@ public final class GetMulticloudNetworkAnchorsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable String displayName;
-        private String externalLocation;
+        private @Nullable String externalLocation;
         private @Nullable String id;
         private @Nullable Integer limit;
         private List<GetMulticloudNetworkAnchorsNetworkAnchorCollection> networkAnchorCollections;
         private @Nullable String networkAnchorLifecycleState;
         private @Nullable String networkAnchorOciSubnetId;
         private @Nullable String networkAnchorOciVcnId;
-        private String subscriptionId;
-        private String subscriptionServiceName;
+        private @Nullable Boolean shouldFetchVcnName;
+        private @Nullable String subscriptionId;
+        private @Nullable String subscriptionServiceName;
         public Builder() {}
         public Builder(GetMulticloudNetworkAnchorsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.displayName = defaults.displayName;
     	      this.externalLocation = defaults.externalLocation;
     	      this.id = defaults.id;
@@ -134,6 +146,7 @@ public final class GetMulticloudNetworkAnchorsResult {
     	      this.networkAnchorLifecycleState = defaults.networkAnchorLifecycleState;
     	      this.networkAnchorOciSubnetId = defaults.networkAnchorOciSubnetId;
     	      this.networkAnchorOciVcnId = defaults.networkAnchorOciVcnId;
+    	      this.shouldFetchVcnName = defaults.shouldFetchVcnName;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
         }
@@ -145,16 +158,20 @@ public final class GetMulticloudNetworkAnchorsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
 
             this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder externalLocation(String externalLocation) {
-            if (externalLocation == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsResult", "externalLocation");
-            }
+        public Builder externalLocation(@Nullable String externalLocation) {
+
             this.externalLocation = externalLocation;
             return this;
         }
@@ -200,24 +217,27 @@ public final class GetMulticloudNetworkAnchorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            if (subscriptionId == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsResult", "subscriptionId");
-            }
+        public Builder shouldFetchVcnName(@Nullable Boolean shouldFetchVcnName) {
+
+            this.shouldFetchVcnName = shouldFetchVcnName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionServiceName(String subscriptionServiceName) {
-            if (subscriptionServiceName == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsResult", "subscriptionServiceName");
-            }
+        public Builder subscriptionServiceName(@Nullable String subscriptionServiceName) {
+
             this.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
         public GetMulticloudNetworkAnchorsResult build() {
             final var _resultValue = new GetMulticloudNetworkAnchorsResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.displayName = displayName;
             _resultValue.externalLocation = externalLocation;
             _resultValue.id = id;
@@ -226,6 +246,7 @@ public final class GetMulticloudNetworkAnchorsResult {
             _resultValue.networkAnchorLifecycleState = networkAnchorLifecycleState;
             _resultValue.networkAnchorOciSubnetId = networkAnchorOciSubnetId;
             _resultValue.networkAnchorOciVcnId = networkAnchorOciVcnId;
+            _resultValue.shouldFetchVcnName = shouldFetchVcnName;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
             return _resultValue;

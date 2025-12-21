@@ -85,6 +85,10 @@ export interface GetComputeHostResult {
      */
     readonly faultDomain: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     */
+    readonly firmwareBundleId: string;
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};
@@ -124,6 +128,10 @@ export interface GetComputeHostResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
     readonly networkBlockId: string;
+    /**
+     * The platform of the host
+     */
+    readonly platform: string;
     /**
      * Shows details about the last recycle performed on this host.
      */

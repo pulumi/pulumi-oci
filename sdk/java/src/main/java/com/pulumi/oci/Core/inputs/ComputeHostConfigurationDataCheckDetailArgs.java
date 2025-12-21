@@ -31,14 +31,14 @@ public final class ComputeHostConfigurationDataCheckDetailArgs extends com.pulum
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
      */
     @Import(name="firmwareBundleId")
     private @Nullable Output<String> firmwareBundleId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
      */
     public Optional<Output<String>> firmwareBundleId() {
@@ -128,7 +128,7 @@ public final class ComputeHostConfigurationDataCheckDetailArgs extends com.pulum
         }
 
         /**
-         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class ComputeHostConfigurationDataCheckDetailArgs extends com.pulum
         }
 
         /**
-         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
          * 
          * @return builder
          * 

@@ -12,137 +12,49 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelFineTuneDetailTrainingConfig {
-    /**
-     * @return Stop training if the loss metric does not improve beyond &#39;early_stopping_threshold&#39; for this many times of evaluation.
-     * 
-     */
     private Integer earlyStoppingPatience;
-    /**
-     * @return How much the loss must improve to prevent early stopping.
-     * 
-     */
     private Double earlyStoppingThreshold;
-    /**
-     * @return The initial learning rate to be used during training
-     * 
-     */
     private Double learningRate;
-    /**
-     * @return Determines how frequently to log model metrics.
-     * 
-     */
     private Integer logModelMetricsIntervalInSteps;
-    /**
-     * @return This parameter represents the scaling factor for the weight matrices in LoRA.
-     * 
-     */
     private Integer loraAlpha;
-    /**
-     * @return This parameter indicates the dropout probability for LoRA layers.
-     * 
-     */
     private Double loraDropout;
-    /**
-     * @return This parameter represents the LoRA rank of the update matrices.
-     * 
-     */
     private Integer loraR;
-    /**
-     * @return The number of last layers to be fine-tuned.
-     * 
-     */
     private Integer numOfLastLayers;
-    /**
-     * @return The maximum number of training epochs to run for.
-     * 
-     */
     private Integer totalTrainingEpochs;
-    /**
-     * @return The batch size used during training.
-     * 
-     */
     private Integer trainingBatchSize;
-    /**
-     * @return The fine-tuning method for training a custom model.
-     * 
-     */
     private String trainingConfigType;
 
     private GetModelFineTuneDetailTrainingConfig() {}
-    /**
-     * @return Stop training if the loss metric does not improve beyond &#39;early_stopping_threshold&#39; for this many times of evaluation.
-     * 
-     */
     public Integer earlyStoppingPatience() {
         return this.earlyStoppingPatience;
     }
-    /**
-     * @return How much the loss must improve to prevent early stopping.
-     * 
-     */
     public Double earlyStoppingThreshold() {
         return this.earlyStoppingThreshold;
     }
-    /**
-     * @return The initial learning rate to be used during training
-     * 
-     */
     public Double learningRate() {
         return this.learningRate;
     }
-    /**
-     * @return Determines how frequently to log model metrics.
-     * 
-     */
     public Integer logModelMetricsIntervalInSteps() {
         return this.logModelMetricsIntervalInSteps;
     }
-    /**
-     * @return This parameter represents the scaling factor for the weight matrices in LoRA.
-     * 
-     */
     public Integer loraAlpha() {
         return this.loraAlpha;
     }
-    /**
-     * @return This parameter indicates the dropout probability for LoRA layers.
-     * 
-     */
     public Double loraDropout() {
         return this.loraDropout;
     }
-    /**
-     * @return This parameter represents the LoRA rank of the update matrices.
-     * 
-     */
     public Integer loraR() {
         return this.loraR;
     }
-    /**
-     * @return The number of last layers to be fine-tuned.
-     * 
-     */
     public Integer numOfLastLayers() {
         return this.numOfLastLayers;
     }
-    /**
-     * @return The maximum number of training epochs to run for.
-     * 
-     */
     public Integer totalTrainingEpochs() {
         return this.totalTrainingEpochs;
     }
-    /**
-     * @return The batch size used during training.
-     * 
-     */
     public Integer trainingBatchSize() {
         return this.trainingBatchSize;
     }
-    /**
-     * @return The fine-tuning method for training a custom model.
-     * 
-     */
     public String trainingConfigType() {
         return this.trainingConfigType;
     }

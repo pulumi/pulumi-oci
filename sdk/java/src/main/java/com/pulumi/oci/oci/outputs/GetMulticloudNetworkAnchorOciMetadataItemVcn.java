@@ -31,6 +31,11 @@ public final class GetMulticloudNetworkAnchorOciMetadataItemVcn {
      * 
      */
     private String vcnId;
+    /**
+     * @return Name of the VCN associated to the Network Anchor.
+     * 
+     */
+    private String vcnName;
 
     private GetMulticloudNetworkAnchorOciMetadataItemVcn() {}
     /**
@@ -61,6 +66,13 @@ public final class GetMulticloudNetworkAnchorOciMetadataItemVcn {
     public String vcnId() {
         return this.vcnId;
     }
+    /**
+     * @return Name of the VCN associated to the Network Anchor.
+     * 
+     */
+    public String vcnName() {
+        return this.vcnName;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -75,6 +87,7 @@ public final class GetMulticloudNetworkAnchorOciMetadataItemVcn {
         private List<String> cidrBlocks;
         private String dnsLabel;
         private String vcnId;
+        private String vcnName;
         public Builder() {}
         public Builder(GetMulticloudNetworkAnchorOciMetadataItemVcn defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +95,7 @@ public final class GetMulticloudNetworkAnchorOciMetadataItemVcn {
     	      this.cidrBlocks = defaults.cidrBlocks;
     	      this.dnsLabel = defaults.dnsLabel;
     	      this.vcnId = defaults.vcnId;
+    	      this.vcnName = defaults.vcnName;
         }
 
         @CustomType.Setter
@@ -122,12 +136,21 @@ public final class GetMulticloudNetworkAnchorOciMetadataItemVcn {
             this.vcnId = vcnId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vcnName(String vcnName) {
+            if (vcnName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorOciMetadataItemVcn", "vcnName");
+            }
+            this.vcnName = vcnName;
+            return this;
+        }
         public GetMulticloudNetworkAnchorOciMetadataItemVcn build() {
             final var _resultValue = new GetMulticloudNetworkAnchorOciMetadataItemVcn();
             _resultValue.backupCidrBlocks = backupCidrBlocks;
             _resultValue.cidrBlocks = cidrBlocks;
             _resultValue.dnsLabel = dnsLabel;
             _resultValue.vcnId = vcnId;
+            _resultValue.vcnName = vcnName;
             return _resultValue;
         }
     }

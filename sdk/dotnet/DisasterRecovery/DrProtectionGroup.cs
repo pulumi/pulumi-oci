@@ -199,6 +199,14 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                 },
     ///                 PeerClusterId = testCluster.Id,
     ///                 PeerDbSystemId = testDbSystem.Id,
+    ///                 ResourceModifierMappings = new[]
+    ///                 {
+    ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberResourceModifierMappingArgs
+    ///                     {
+    ///                         ConfigMap = drProtectionGroupMembersResourceModifierMappingsConfigMap,
+    ///                         Namespace = drProtectionGroupMembersResourceModifierMappingsNamespace,
+    ///                     },
+    ///                 },
     ///                 SourceVolumeToDestinationEncryptionKeyMappings = new[]
     ///                 {
     ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs

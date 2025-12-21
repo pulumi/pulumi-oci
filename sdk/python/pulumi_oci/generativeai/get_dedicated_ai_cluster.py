@@ -80,11 +80,17 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClusterCapacityResult']:
+        """
+        The total capacity for a dedicated AI cluster.
+        """
         return pulumi.get(self, "capacities")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The compartment OCID to create the dedicated AI cluster in.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
@@ -103,9 +109,6 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
-        """
-        An optional description of the dedicated AI cluster.
-        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -119,6 +122,9 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
@@ -156,6 +162,9 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
@@ -169,6 +178,9 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property

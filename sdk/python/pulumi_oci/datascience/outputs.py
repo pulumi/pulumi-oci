@@ -249,6 +249,17 @@ __all__ = [
     'GetMlApplicationImplementationLoggingTriggerLogResult',
     'GetMlApplicationImplementationMlApplicationPackageArgumentResult',
     'GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult',
+    'GetMlApplicationImplementationVersionApplicationComponentResult',
+    'GetMlApplicationImplementationVersionConfigurationSchemaResult',
+    'GetMlApplicationImplementationVersionMlApplicationPackageArgumentResult',
+    'GetMlApplicationImplementationVersionMlApplicationPackageArgumentArgumentResult',
+    'GetMlApplicationImplementationVersionsFilterResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemApplicationComponentResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemConfigurationSchemaResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentResult',
+    'GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgumentResult',
     'GetMlApplicationImplementationsFilterResult',
     'GetMlApplicationImplementationsMlApplicationImplementationCollectionResult',
     'GetMlApplicationImplementationsMlApplicationImplementationCollectionItemResult',
@@ -4761,6 +4772,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         suggest = None
         if key == "environmentConfigurationType":
             suggest = "environment_configuration_type"
+        elif key == "defaultEnvironmentVariables":
+            suggest = "default_environment_variables"
         elif key == "environmentVariables":
             suggest = "environment_variables"
         elif key == "healthCheckPort":
@@ -4784,6 +4797,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     def __init__(__self__, *,
                  environment_configuration_type: _builtins.str,
                  cmds: Optional[Sequence[_builtins.str]] = None,
+                 default_environment_variables: Optional[Mapping[str, _builtins.str]] = None,
                  entrypoints: Optional[Sequence[_builtins.str]] = None,
                  environment_variables: Optional[Mapping[str, _builtins.str]] = None,
                  health_check_port: Optional[_builtins.int] = None,
@@ -4793,16 +4807,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         """
         :param _builtins.str environment_configuration_type: (Updatable) The environment configuration type
         :param Sequence[_builtins.str] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Mapping[str, _builtins.str] default_environment_variables: Service injected Environment variables set for the web server container and can not be set or modified by user.
         :param Sequence[_builtins.str] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param Mapping[str, _builtins.str] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param _builtins.int health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param _builtins.str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param _builtins.int server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         if cmds is not None:
             pulumi.set(__self__, "cmds", cmds)
+        if default_environment_variables is not None:
+            pulumi.set(__self__, "default_environment_variables", default_environment_variables)
         if entrypoints is not None:
             pulumi.set(__self__, "entrypoints", entrypoints)
         if environment_variables is not None:
@@ -4833,6 +4850,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         return pulumi.get(self, "cmds")
 
     @_builtins.property
+    @pulumi.getter(name="defaultEnvironmentVariables")
+    def default_environment_variables(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Service injected Environment variables set for the web server container and can not be set or modified by user.
+        """
+        return pulumi.get(self, "default_environment_variables")
+
+    @_builtins.property
     @pulumi.getter
     def entrypoints(self) -> Optional[Sequence[_builtins.str]]:
         """
@@ -4860,7 +4885,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
     @pulumi.getter
     def image(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         """
         return pulumi.get(self, "image")
 
@@ -4998,7 +5023,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -5015,7 +5040,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the model deployment instances.
+        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -5656,7 +5681,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -5674,7 +5699,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The shape used to launch the model deployment instances.
+        (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -6277,6 +6302,8 @@ class ModelDeploymentModelDeploymentSystemData(dict):
         suggest = None
         if key == "currentInstanceCount":
             suggest = "current_instance_count"
+        elif key == "modelType":
+            suggest = "model_type"
         elif key == "systemInfraType":
             suggest = "system_infra_type"
 
@@ -6293,13 +6320,17 @@ class ModelDeploymentModelDeploymentSystemData(dict):
 
     def __init__(__self__, *,
                  current_instance_count: Optional[_builtins.int] = None,
+                 model_type: Optional[_builtins.str] = None,
                  system_infra_type: Optional[_builtins.str] = None):
         """
         :param _builtins.int current_instance_count: This value is the current count of the model deployment instances.
+        :param _builtins.str model_type: The type of the deployed model.
         :param _builtins.str system_infra_type: The infrastructure type of the model deployment.
         """
         if current_instance_count is not None:
             pulumi.set(__self__, "current_instance_count", current_instance_count)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
         if system_infra_type is not None:
             pulumi.set(__self__, "system_infra_type", system_infra_type)
 
@@ -6310,6 +6341,14 @@ class ModelDeploymentModelDeploymentSystemData(dict):
         This value is the current count of the model deployment instances.
         """
         return pulumi.get(self, "current_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[_builtins.str]:
+        """
+        The type of the deployed model.
+        """
+        return pulumi.get(self, "model_type")
 
     @_builtins.property
     @pulumi.getter(name="systemInfraType")
@@ -17614,6 +17653,785 @@ class GetMlApplicationImplementationMlApplicationPackageArgumentArgumentResult(d
 
 
 @pulumi.output_type
+class GetMlApplicationImplementationVersionApplicationComponentResult(dict):
+    def __init__(__self__, *,
+                 application_id: _builtins.str,
+                 component_name: _builtins.str,
+                 id: _builtins.str,
+                 job_id: _builtins.str,
+                 model_id: _builtins.str,
+                 name: _builtins.str,
+                 pipeline_id: _builtins.str,
+                 resource_type: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str application_id: OCID of Data Flow Application
+        :param _builtins.str component_name: Name of application component
+        :param _builtins.str id: The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        :param _builtins.str job_id: OCID of Data Science Job
+        :param _builtins.str model_id: OCID of Data Science Model
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param _builtins.str pipeline_id: OCID of Data Science Pipeline
+        :param _builtins.str resource_type: Type of the resource
+        :param _builtins.str type: type of the argument
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> _builtins.str:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionConfigurationSchemaResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 is_mandatory: _builtins.bool,
+                 key_name: _builtins.str,
+                 sample_value: _builtins.str,
+                 validation_regexp: _builtins.str,
+                 value_type: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param _builtins.str description: short description of the argument
+        :param _builtins.bool is_mandatory: argument is mandatory or not
+        :param _builtins.str key_name: Name of key (parameter name)
+        :param _builtins.str sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param _builtins.str validation_regexp: A regular expression will be used for the validation of property value.
+        :param _builtins.str value_type: Type of value
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "sample_value", sample_value)
+        pulumi.set(__self__, "validation_regexp", validation_regexp)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> _builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> _builtins.str:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @_builtins.property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> _builtins.str:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @_builtins.property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> _builtins.str:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionMlApplicationPackageArgumentResult(dict):
+    def __init__(__self__, *,
+                 arguments: Sequence['outputs.GetMlApplicationImplementationVersionMlApplicationPackageArgumentArgumentResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationVersionMlApplicationPackageArgumentArgumentArgs'] arguments: Array of the ML Application package arguments
+        """
+        pulumi.set(__self__, "arguments", arguments)
+
+    @_builtins.property
+    @pulumi.getter
+    def arguments(self) -> Sequence['outputs.GetMlApplicationImplementationVersionMlApplicationPackageArgumentArgumentResult']:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionMlApplicationPackageArgumentArgumentResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 is_mandatory: _builtins.bool,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: short description of the argument
+        :param _builtins.bool is_mandatory: argument is mandatory or not
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param _builtins.str type: type of the argument
+        :param _builtins.str value: Argument value
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> _builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 allowed_migration_destinations: Sequence[_builtins.str],
+                 application_components: Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemApplicationComponentResult'],
+                 configuration_schemas: Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemConfigurationSchemaResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 ml_application_id: _builtins.str,
+                 ml_application_implementation_id: _builtins.str,
+                 ml_application_name: _builtins.str,
+                 ml_application_package_arguments: Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentResult'],
+                 name: _builtins.str,
+                 package_version: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allowed_migration_destinations: List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+        :param Sequence['GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemApplicationComponentArgs'] application_components: List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+        :param Sequence['GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemConfigurationSchemaArgs'] configuration_schemas: Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: short description of the argument
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param _builtins.str ml_application_id: The OCID of the ML Application implemented by this ML Application Implementation.
+        :param _builtins.str ml_application_implementation_id: unique MlApplicationImplementation identifier
+        :param _builtins.str ml_application_name: The name of ML Application (based on mlApplicationId)
+        :param Sequence['GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgs'] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param _builtins.str package_version: The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+        :param _builtins.str state: A filter to return only resources matching the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Creation time of MlApplicationImplementationVersion in the format defined by RFC 3339.
+        """
+        pulumi.set(__self__, "allowed_migration_destinations", allowed_migration_destinations)
+        pulumi.set(__self__, "application_components", application_components)
+        pulumi.set(__self__, "configuration_schemas", configuration_schemas)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "ml_application_id", ml_application_id)
+        pulumi.set(__self__, "ml_application_implementation_id", ml_application_implementation_id)
+        pulumi.set(__self__, "ml_application_name", ml_application_name)
+        pulumi.set(__self__, "ml_application_package_arguments", ml_application_package_arguments)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "package_version", package_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedMigrationDestinations")
+    def allowed_migration_destinations(self) -> Sequence[_builtins.str]:
+        """
+        List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
+        """
+        return pulumi.get(self, "allowed_migration_destinations")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationComponents")
+    def application_components(self) -> Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemApplicationComponentResult']:
+        """
+        List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
+        """
+        return pulumi.get(self, "application_components")
+
+    @_builtins.property
+    @pulumi.getter(name="configurationSchemas")
+    def configuration_schemas(self) -> Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemConfigurationSchemaResult']:
+        """
+        Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
+        """
+        return pulumi.get(self, "configuration_schemas")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="mlApplicationId")
+    def ml_application_id(self) -> _builtins.str:
+        """
+        The OCID of the ML Application implemented by this ML Application Implementation.
+        """
+        return pulumi.get(self, "ml_application_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mlApplicationImplementationId")
+    def ml_application_implementation_id(self) -> _builtins.str:
+        """
+        unique MlApplicationImplementation identifier
+        """
+        return pulumi.get(self, "ml_application_implementation_id")
+
+    @_builtins.property
+    @pulumi.getter(name="mlApplicationName")
+    def ml_application_name(self) -> _builtins.str:
+        """
+        The name of ML Application (based on mlApplicationId)
+        """
+        return pulumi.get(self, "ml_application_name")
+
+    @_builtins.property
+    @pulumi.getter(name="mlApplicationPackageArguments")
+    def ml_application_package_arguments(self) -> Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentResult']:
+        """
+        List of ML Application package arguments provided during ML Application package upload.
+        """
+        return pulumi.get(self, "ml_application_package_arguments")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="packageVersion")
+    def package_version(self) -> _builtins.str:
+        """
+        The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
+        """
+        return pulumi.get(self, "package_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Creation time of MlApplicationImplementationVersion in the format defined by RFC 3339.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemApplicationComponentResult(dict):
+    def __init__(__self__, *,
+                 application_id: _builtins.str,
+                 component_name: _builtins.str,
+                 id: _builtins.str,
+                 job_id: _builtins.str,
+                 model_id: _builtins.str,
+                 name: _builtins.str,
+                 pipeline_id: _builtins.str,
+                 resource_type: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str application_id: OCID of Data Flow Application
+        :param _builtins.str component_name: Name of application component
+        :param _builtins.str id: The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        :param _builtins.str job_id: OCID of Data Science Job
+        :param _builtins.str model_id: OCID of Data Science Model
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param _builtins.str pipeline_id: OCID of Data Science Pipeline
+        :param _builtins.str resource_type: Type of the resource
+        :param _builtins.str type: type of the argument
+        """
+        pulumi.set(__self__, "application_id", application_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "job_id", job_id)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pipeline_id", pipeline_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationId")
+    def application_id(self) -> _builtins.str:
+        """
+        OCID of Data Flow Application
+        """
+        return pulumi.get(self, "application_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        Name of application component
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the MlApplicationImplementationVersion. Unique identifier that is immutable after creation.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobId")
+    def job_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Job
+        """
+        return pulumi.get(self, "job_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Model
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="pipelineId")
+    def pipeline_id(self) -> _builtins.str:
+        """
+        OCID of Data Science Pipeline
+        """
+        return pulumi.get(self, "pipeline_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Type of the resource
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemConfigurationSchemaResult(dict):
+    def __init__(__self__, *,
+                 default_value: _builtins.str,
+                 description: _builtins.str,
+                 is_mandatory: _builtins.bool,
+                 key_name: _builtins.str,
+                 sample_value: _builtins.str,
+                 validation_regexp: _builtins.str,
+                 value_type: _builtins.str):
+        """
+        :param _builtins.str default_value: The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        :param _builtins.str description: short description of the argument
+        :param _builtins.bool is_mandatory: argument is mandatory or not
+        :param _builtins.str key_name: Name of key (parameter name)
+        :param _builtins.str sample_value: Sample property value (it must match validationRegexp if it is specified)
+        :param _builtins.str validation_regexp: A regular expression will be used for the validation of property value.
+        :param _builtins.str value_type: Type of value
+        """
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "sample_value", sample_value)
+        pulumi.set(__self__, "validation_regexp", validation_regexp)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value for the optional configuration property (it must not be specified for mandatory configuration properties)
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> _builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        Name of key (parameter name)
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sampleValue")
+    def sample_value(self) -> _builtins.str:
+        """
+        Sample property value (it must match validationRegexp if it is specified)
+        """
+        return pulumi.get(self, "sample_value")
+
+    @_builtins.property
+    @pulumi.getter(name="validationRegexp")
+    def validation_regexp(self) -> _builtins.str:
+        """
+        A regular expression will be used for the validation of property value.
+        """
+        return pulumi.get(self, "validation_regexp")
+
+    @_builtins.property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> _builtins.str:
+        """
+        Type of value
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentResult(dict):
+    def __init__(__self__, *,
+                 arguments: Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgumentResult']):
+        """
+        :param Sequence['GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgumentArgs'] arguments: Array of the ML Application package arguments
+        """
+        pulumi.set(__self__, "arguments", arguments)
+
+    @_builtins.property
+    @pulumi.getter
+    def arguments(self) -> Sequence['outputs.GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgumentResult']:
+        """
+        Array of the ML Application package arguments
+        """
+        return pulumi.get(self, "arguments")
+
+
+@pulumi.output_type
+class GetMlApplicationImplementationVersionsMlApplicationImplementationVersionCollectionItemMlApplicationPackageArgumentArgumentResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 is_mandatory: _builtins.bool,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str description: short description of the argument
+        :param _builtins.bool is_mandatory: argument is mandatory or not
+        :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
+        :param _builtins.str type: type of the argument
+        :param _builtins.str value: Argument value
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_mandatory", is_mandatory)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        short description of the argument
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isMandatory")
+    def is_mandatory(self) -> _builtins.bool:
+        """
+        argument is mandatory or not
+        """
+        return pulumi.get(self, "is_mandatory")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        ML Application Implementation name which is unique for given ML Application.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        type of the argument
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Argument value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetMlApplicationImplementationsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -19427,6 +20245,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
 class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  cmds: Sequence[_builtins.str],
+                 default_environment_variables: Mapping[str, _builtins.str],
                  entrypoints: Sequence[_builtins.str],
                  environment_configuration_type: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
@@ -19436,15 +20255,17 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
                  server_port: _builtins.int):
         """
         :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Mapping[str, _builtins.str] default_environment_variables: Service injected Environment variables set for the web server container and can not be set or modified by user.
         :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param _builtins.str environment_configuration_type: The environment configuration type
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param _builtins.int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param _builtins.int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "default_environment_variables", default_environment_variables)
         pulumi.set(__self__, "entrypoints", entrypoints)
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         pulumi.set(__self__, "environment_variables", environment_variables)
@@ -19460,6 +20281,14 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         """
         return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultEnvironmentVariables")
+    def default_environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Service injected Environment variables set for the web server container and can not be set or modified by user.
+        """
+        return pulumi.get(self, "default_environment_variables")
 
     @_builtins.property
     @pulumi.getter
@@ -19497,7 +20326,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
     @pulumi.getter
     def image(self) -> _builtins.str:
         """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         """
         return pulumi.get(self, "image")
 
@@ -19588,7 +20417,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
-        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -19602,7 +20431,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the model deployment instances.
+        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -20040,7 +20869,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
-        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -20054,7 +20883,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the model deployment instances.
+        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -20444,12 +21273,15 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfiguratio
 class GetModelDeploymentModelDeploymentSystemDataResult(dict):
     def __init__(__self__, *,
                  current_instance_count: _builtins.int,
+                 model_type: _builtins.str,
                  system_infra_type: _builtins.str):
         """
         :param _builtins.int current_instance_count: This value is the current count of the model deployment instances.
+        :param _builtins.str model_type: The type of the deployed model.
         :param _builtins.str system_infra_type: The infrastructure type of the model deployment.
         """
         pulumi.set(__self__, "current_instance_count", current_instance_count)
+        pulumi.set(__self__, "model_type", model_type)
         pulumi.set(__self__, "system_infra_type", system_infra_type)
 
     @_builtins.property
@@ -20459,6 +21291,14 @@ class GetModelDeploymentModelDeploymentSystemDataResult(dict):
         This value is the current count of the model deployment instances.
         """
         return pulumi.get(self, "current_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        The type of the deployed model.
+        """
+        return pulumi.get(self, "model_type")
 
     @_builtins.property
     @pulumi.getter(name="systemInfraType")
@@ -21034,6 +21874,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  cmds: Sequence[_builtins.str],
+                 default_environment_variables: Mapping[str, _builtins.str],
                  entrypoints: Sequence[_builtins.str],
                  environment_configuration_type: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
@@ -21043,15 +21884,17 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
                  server_port: _builtins.int):
         """
         :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Mapping[str, _builtins.str] default_environment_variables: Service injected Environment variables set for the web server container and can not be set or modified by user.
         :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param _builtins.str environment_configuration_type: The environment configuration type
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param _builtins.int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
-        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param _builtins.int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
         pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "default_environment_variables", default_environment_variables)
         pulumi.set(__self__, "entrypoints", entrypoints)
         pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
         pulumi.set(__self__, "environment_variables", environment_variables)
@@ -21067,6 +21910,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         """
         return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultEnvironmentVariables")
+    def default_environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Service injected Environment variables set for the web server container and can not be set or modified by user.
+        """
+        return pulumi.get(self, "default_environment_variables")
 
     @_builtins.property
     @pulumi.getter
@@ -21104,7 +21955,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
     @pulumi.getter
     def image(self) -> _builtins.str:
         """
-        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         """
         return pulumi.get(self, "image")
 
@@ -21195,7 +22046,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
-        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -21209,7 +22060,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the model deployment instances.
+        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -21647,7 +22498,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  private_endpoint_id: _builtins.str,
                  subnet_id: _builtins.str):
         """
-        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
@@ -21661,7 +22512,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter(name="instanceShapeName")
     def instance_shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the model deployment instances.
+        The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
 
@@ -22051,12 +22902,15 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelG
 class GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult(dict):
     def __init__(__self__, *,
                  current_instance_count: _builtins.int,
+                 model_type: _builtins.str,
                  system_infra_type: _builtins.str):
         """
         :param _builtins.int current_instance_count: This value is the current count of the model deployment instances.
+        :param _builtins.str model_type: The type of the deployed model.
         :param _builtins.str system_infra_type: The infrastructure type of the model deployment.
         """
         pulumi.set(__self__, "current_instance_count", current_instance_count)
+        pulumi.set(__self__, "model_type", model_type)
         pulumi.set(__self__, "system_infra_type", system_infra_type)
 
     @_builtins.property
@@ -22066,6 +22920,14 @@ class GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult(dict):
         This value is the current count of the model deployment instances.
         """
         return pulumi.get(self, "current_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        The type of the deployed model.
+        """
+        return pulumi.get(self, "model_type")
 
     @_builtins.property
     @pulumi.getter(name="systemInfraType")

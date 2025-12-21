@@ -13,49 +13,16 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelsModelCollectionItemFineTuneDetailTrainingConfigResult
     {
-        /// <summary>
-        /// Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        /// </summary>
         public readonly int EarlyStoppingPatience;
-        /// <summary>
-        /// How much the loss must improve to prevent early stopping.
-        /// </summary>
         public readonly double EarlyStoppingThreshold;
-        /// <summary>
-        /// The initial learning rate to be used during training
-        /// </summary>
         public readonly double LearningRate;
-        /// <summary>
-        /// Determines how frequently to log model metrics.
-        /// </summary>
         public readonly int LogModelMetricsIntervalInSteps;
-        /// <summary>
-        /// This parameter represents the scaling factor for the weight matrices in LoRA.
-        /// </summary>
         public readonly int LoraAlpha;
-        /// <summary>
-        /// This parameter indicates the dropout probability for LoRA layers.
-        /// </summary>
         public readonly double LoraDropout;
-        /// <summary>
-        /// This parameter represents the LoRA rank of the update matrices.
-        /// </summary>
         public readonly int LoraR;
-        /// <summary>
-        /// The number of last layers to be fine-tuned.
-        /// </summary>
         public readonly int NumOfLastLayers;
-        /// <summary>
-        /// The maximum number of training epochs to run for.
-        /// </summary>
         public readonly int TotalTrainingEpochs;
-        /// <summary>
-        /// The batch size used during training.
-        /// </summary>
         public readonly int TrainingBatchSize;
-        /// <summary>
-        /// The fine-tuning method for training a custom model.
-        /// </summary>
         public readonly string TrainingConfigType;
 
         [OutputConstructor]

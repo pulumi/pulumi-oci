@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Core
     ///             {
     ///                 FirmwareBundleId = testFirmwareBundle.Id,
     ///                 RecycleLevel = computeHostGroupConfigurationsRecycleLevel,
+    ///                 State = computeHostGroupConfigurationsState,
     ///                 Target = computeHostGroupConfigurationsTarget,
     ///             },
     ///         },

@@ -110,6 +110,21 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    @Import(name="configurationActionType")
+    private @Nullable Output<String> configurationActionType;
+
+    /**
+     * @return (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    public Optional<Output<String>> configurationActionType() {
+        return Optional.ofNullable(this.configurationActionType);
+    }
+
+    /**
      * Compute Host Configuration Data
      * 
      */
@@ -185,10 +200,22 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="firmwareBundleId")
+    private @Nullable Output<String> firmwareBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     * 
+     */
+    public Optional<Output<String>> firmwareBundleId() {
+        return Optional.ofNullable(this.firmwareBundleId);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Import(name="freeformTags")
@@ -196,9 +223,6 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -326,6 +350,21 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The platform of the host
+     * 
+     */
+    @Import(name="platform")
+    private @Nullable Output<String> platform;
+
+    /**
+     * @return The platform of the host
+     * 
+     */
+    public Optional<Output<String>> platform() {
+        return Optional.ofNullable(this.platform);
+    }
+
+    /**
      * Shows details about the last recycle performed on this host.
      * 
      */
@@ -424,11 +463,13 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.computeHostGroupId = $.computeHostGroupId;
         this.computeHostId = $.computeHostId;
+        this.configurationActionType = $.configurationActionType;
         this.configurationDatas = $.configurationDatas;
         this.configurationState = $.configurationState;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.faultDomain = $.faultDomain;
+        this.firmwareBundleId = $.firmwareBundleId;
         this.freeformTags = $.freeformTags;
         this.gpuMemoryFabricId = $.gpuMemoryFabricId;
         this.health = $.health;
@@ -438,6 +479,7 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.localBlockId = $.localBlockId;
         this.networkBlockId = $.networkBlockId;
+        this.platform = $.platform;
         this.recycleDetails = $.recycleDetails;
         this.shape = $.shape;
         this.state = $.state;
@@ -591,6 +633,27 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param configurationActionType (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationActionType(@Nullable Output<String> configurationActionType) {
+            $.configurationActionType = configurationActionType;
+            return this;
+        }
+
+        /**
+         * @param configurationActionType (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationActionType(String configurationActionType) {
+            return configurationActionType(Output.of(configurationActionType));
+        }
+
+        /**
          * @param configurationDatas Compute Host Configuration Data
          * 
          * @return builder
@@ -706,10 +769,28 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder firmwareBundleId(@Nullable Output<String> firmwareBundleId) {
+            $.firmwareBundleId = firmwareBundleId;
+            return this;
+        }
+
+        /**
+         * @param firmwareBundleId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder firmwareBundleId(String firmwareBundleId) {
+            return firmwareBundleId(Output.of(firmwareBundleId));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
          * 
@@ -721,9 +802,6 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -898,6 +976,27 @@ public final class ComputeHostState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder networkBlockId(String networkBlockId) {
             return networkBlockId(Output.of(networkBlockId));
+        }
+
+        /**
+         * @param platform The platform of the host
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platform(@Nullable Output<String> platform) {
+            $.platform = platform;
+            return this;
+        }
+
+        /**
+         * @param platform The platform of the host
+         * 
+         * @return builder
+         * 
+         */
+        public Builder platform(String platform) {
+            return platform(Output.of(platform));
         }
 
         /**

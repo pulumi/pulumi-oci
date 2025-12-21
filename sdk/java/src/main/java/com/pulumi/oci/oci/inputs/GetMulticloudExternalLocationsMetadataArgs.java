@@ -20,18 +20,33 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     public static final GetMulticloudExternalLocationsMetadataArgs Empty = new GetMulticloudExternalLocationsMetadataArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     /**
@@ -49,6 +64,21 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         return Optional.ofNullable(this.entityType);
     }
 
+    /**
+     * The Cloud Service Provider region.
+     * 
+     */
+    @Import(name="externalLocation")
+    private @Nullable Output<String> externalLocation;
+
+    /**
+     * @return The Cloud Service Provider region.
+     * 
+     */
+    public Optional<Output<String>> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetMulticloudExternalLocationsMetadataFilterArgs>> filters;
 
@@ -64,14 +94,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      * 
      */
     @Import(name="linkedCompartmentId")
     private @Nullable Output<String> linkedCompartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      * 
      */
     public Optional<Output<String>> linkedCompartmentId() {
@@ -79,14 +109,29 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Oracle Cloud Infrastructure Logical AD to filter the response.
+     * 
+     */
+    @Import(name="logicalZone")
+    private @Nullable Output<String> logicalZone;
+
+    /**
+     * @return Oracle Cloud Infrastructure Logical AD to filter the response.
+     * 
+     */
+    public Optional<Output<String>> logicalZone() {
+        return Optional.ofNullable(this.logicalZone);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     @Import(name="subscriptionId", required=true)
     private Output<String> subscriptionId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
     public Output<String> subscriptionId() {
@@ -94,14 +139,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     }
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The subscription service name of the Cloud Service Provider.
      * 
      */
     @Import(name="subscriptionServiceName", required=true)
     private Output<String> subscriptionServiceName;
 
     /**
-     * @return The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * @return The subscription service name of the Cloud Service Provider.
      * 
      */
     public Output<String> subscriptionServiceName() {
@@ -111,11 +156,14 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
     private GetMulticloudExternalLocationsMetadataArgs() {}
 
     private GetMulticloudExternalLocationsMetadataArgs(GetMulticloudExternalLocationsMetadataArgs $) {
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.entityType = $.entityType;
+        this.externalLocation = $.externalLocation;
         this.filters = $.filters;
         this.limit = $.limit;
         this.linkedCompartmentId = $.linkedCompartmentId;
+        this.logicalZone = $.logicalZone;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -139,18 +187,39 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
          * 
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
          * 
          * @return builder
          * 
@@ -180,6 +249,27 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
             return entityType(Output.of(entityType));
         }
 
+        /**
+         * @param externalLocation The Cloud Service Provider region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(@Nullable Output<String> externalLocation) {
+            $.externalLocation = externalLocation;
+            return this;
+        }
+
+        /**
+         * @param externalLocation The Cloud Service Provider region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocation(String externalLocation) {
+            return externalLocation(Output.of(externalLocation));
+        }
+
         public Builder filters(@Nullable Output<List<GetMulticloudExternalLocationsMetadataFilterArgs>> filters) {
             $.filters = filters;
             return this;
@@ -203,7 +293,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
          * 
          * @return builder
          * 
@@ -214,7 +304,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
          * 
          * @return builder
          * 
@@ -224,7 +314,28 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param logicalZone Oracle Cloud Infrastructure Logical AD to filter the response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logicalZone(@Nullable Output<String> logicalZone) {
+            $.logicalZone = logicalZone;
+            return this;
+        }
+
+        /**
+         * @param logicalZone Oracle Cloud Infrastructure Logical AD to filter the response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder logicalZone(String logicalZone) {
+            return logicalZone(Output.of(logicalZone));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
          * 
          * @return builder
          * 
@@ -235,7 +346,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
          * 
          * @return builder
          * 
@@ -245,7 +356,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
          * 
          * @return builder
          * 
@@ -256,7 +367,7 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
          * 
          * @return builder
          * 
@@ -266,9 +377,6 @@ public final class GetMulticloudExternalLocationsMetadataArgs extends com.pulumi
         }
 
         public GetMulticloudExternalLocationsMetadataArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataArgs", "compartmentId");
-            }
             if ($.subscriptionId == null) {
                 throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataArgs", "subscriptionId");
             }

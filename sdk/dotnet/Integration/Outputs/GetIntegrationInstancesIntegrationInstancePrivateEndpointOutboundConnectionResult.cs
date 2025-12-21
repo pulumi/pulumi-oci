@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Integration.Outputs
     [OutputType]
     public sealed class GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult
     {
+        public readonly bool IsAllOutboundTrafficPrivate;
         /// <summary>
         /// One or more Network security group Ids. This is an optional argument.
         /// </summary>
@@ -28,12 +29,15 @@ namespace Pulumi.Oci.Integration.Outputs
 
         [OutputConstructor]
         private GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult(
+            bool isAllOutboundTrafficPrivate,
+
             ImmutableArray<string> nsgIds,
 
             string outboundConnectionType,
 
             string subnetId)
         {
+            IsAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
             NsgIds = nsgIds;
             OutboundConnectionType = outboundConnectionType;
             SubnetId = subnetId;

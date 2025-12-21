@@ -1017,6 +1017,742 @@ func (o DrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) DrPlanEx
 	}).(DrPlanExecutionLogLocationOutput)
 }
 
+type DrPlanExecutionStepStatusCount struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps []DrPlanExecutionStepStatusCountFailedStep `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps []DrPlanExecutionStepStatusCountRemainingStep `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps []DrPlanExecutionStepStatusCountSkippedStep `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps []DrPlanExecutionStepStatusCountSuccessfulStep `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps *int `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps []DrPlanExecutionStepStatusCountWarningStep `pulumi:"warningSteps"`
+}
+
+// DrPlanExecutionStepStatusCountInput is an input type that accepts DrPlanExecutionStepStatusCountArgs and DrPlanExecutionStepStatusCountOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountInput` via:
+//
+//	DrPlanExecutionStepStatusCountArgs{...}
+type DrPlanExecutionStepStatusCountInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountOutput() DrPlanExecutionStepStatusCountOutput
+	ToDrPlanExecutionStepStatusCountOutputWithContext(context.Context) DrPlanExecutionStepStatusCountOutput
+}
+
+type DrPlanExecutionStepStatusCountArgs struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps DrPlanExecutionStepStatusCountFailedStepArrayInput `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps DrPlanExecutionStepStatusCountRemainingStepArrayInput `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps DrPlanExecutionStepStatusCountSkippedStepArrayInput `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps DrPlanExecutionStepStatusCountSuccessfulStepArrayInput `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps pulumi.IntPtrInput `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps DrPlanExecutionStepStatusCountWarningStepArrayInput `pulumi:"warningSteps"`
+}
+
+func (DrPlanExecutionStepStatusCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountArgs) ToDrPlanExecutionStepStatusCountOutput() DrPlanExecutionStepStatusCountOutput {
+	return i.ToDrPlanExecutionStepStatusCountOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountArgs) ToDrPlanExecutionStepStatusCountOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountOutput)
+}
+
+// DrPlanExecutionStepStatusCountArrayInput is an input type that accepts DrPlanExecutionStepStatusCountArray and DrPlanExecutionStepStatusCountArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountArray{ DrPlanExecutionStepStatusCountArgs{...} }
+type DrPlanExecutionStepStatusCountArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountArrayOutput() DrPlanExecutionStepStatusCountArrayOutput
+	ToDrPlanExecutionStepStatusCountArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountArray []DrPlanExecutionStepStatusCountInput
+
+func (DrPlanExecutionStepStatusCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountArray) ToDrPlanExecutionStepStatusCountArrayOutput() DrPlanExecutionStepStatusCountArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountArray) ToDrPlanExecutionStepStatusCountArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountOutput) ToDrPlanExecutionStepStatusCountOutput() DrPlanExecutionStepStatusCountOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountOutput) ToDrPlanExecutionStepStatusCountOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountOutput {
+	return o
+}
+
+// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+func (o DrPlanExecutionStepStatusCountOutput) FailedSteps() DrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) []DrPlanExecutionStepStatusCountFailedStep {
+		return v.FailedSteps
+	}).(DrPlanExecutionStepStatusCountFailedStepArrayOutput)
+}
+
+// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+func (o DrPlanExecutionStepStatusCountOutput) RemainingSteps() DrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) []DrPlanExecutionStepStatusCountRemainingStep {
+		return v.RemainingSteps
+	}).(DrPlanExecutionStepStatusCountRemainingStepArrayOutput)
+}
+
+// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+func (o DrPlanExecutionStepStatusCountOutput) SkippedSteps() DrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) []DrPlanExecutionStepStatusCountSkippedStep {
+		return v.SkippedSteps
+	}).(DrPlanExecutionStepStatusCountSkippedStepArrayOutput)
+}
+
+// A summary of steps that completed successfully during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountOutput) SuccessfulSteps() DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) []DrPlanExecutionStepStatusCountSuccessfulStep {
+		return v.SuccessfulSteps
+	}).(DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput)
+}
+
+// The total number of steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountOutput) TotalSteps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) *int { return v.TotalSteps }).(pulumi.IntPtrOutput)
+}
+
+// A summary of steps that encountered warnings during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountOutput) WarningSteps() DrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCount) []DrPlanExecutionStepStatusCountWarningStep {
+		return v.WarningSteps
+	}).(DrPlanExecutionStepStatusCountWarningStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountArrayOutput) ToDrPlanExecutionStepStatusCountArrayOutput() DrPlanExecutionStepStatusCountArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountArrayOutput) ToDrPlanExecutionStepStatusCountArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCount {
+		return vs[0].([]DrPlanExecutionStepStatusCount)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountOutput)
+}
+
+type DrPlanExecutionStepStatusCountFailedStep struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed *int `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut *int `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed *int `pulumi:"totalFailed"`
+}
+
+// DrPlanExecutionStepStatusCountFailedStepInput is an input type that accepts DrPlanExecutionStepStatusCountFailedStepArgs and DrPlanExecutionStepStatusCountFailedStepOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountFailedStepInput` via:
+//
+//	DrPlanExecutionStepStatusCountFailedStepArgs{...}
+type DrPlanExecutionStepStatusCountFailedStepInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountFailedStepOutput() DrPlanExecutionStepStatusCountFailedStepOutput
+	ToDrPlanExecutionStepStatusCountFailedStepOutputWithContext(context.Context) DrPlanExecutionStepStatusCountFailedStepOutput
+}
+
+type DrPlanExecutionStepStatusCountFailedStepArgs struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed pulumi.IntPtrInput `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut pulumi.IntPtrInput `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed pulumi.IntPtrInput `pulumi:"totalFailed"`
+}
+
+func (DrPlanExecutionStepStatusCountFailedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountFailedStepArgs) ToDrPlanExecutionStepStatusCountFailedStepOutput() DrPlanExecutionStepStatusCountFailedStepOutput {
+	return i.ToDrPlanExecutionStepStatusCountFailedStepOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountFailedStepArgs) ToDrPlanExecutionStepStatusCountFailedStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountFailedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountFailedStepOutput)
+}
+
+// DrPlanExecutionStepStatusCountFailedStepArrayInput is an input type that accepts DrPlanExecutionStepStatusCountFailedStepArray and DrPlanExecutionStepStatusCountFailedStepArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountFailedStepArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountFailedStepArray{ DrPlanExecutionStepStatusCountFailedStepArgs{...} }
+type DrPlanExecutionStepStatusCountFailedStepArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountFailedStepArrayOutput() DrPlanExecutionStepStatusCountFailedStepArrayOutput
+	ToDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountFailedStepArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountFailedStepArray []DrPlanExecutionStepStatusCountFailedStepInput
+
+func (DrPlanExecutionStepStatusCountFailedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountFailedStepArray) ToDrPlanExecutionStepStatusCountFailedStepArrayOutput() DrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountFailedStepArray) ToDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountFailedStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountFailedStepOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountFailedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountFailedStepOutput) ToDrPlanExecutionStepStatusCountFailedStepOutput() DrPlanExecutionStepStatusCountFailedStepOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountFailedStepOutput) ToDrPlanExecutionStepStatusCountFailedStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountFailedStepOutput {
+	return o
+}
+
+// The total number of failed steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountFailedStepOutput) Failed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountFailedStep) *int { return v.Failed }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps that timed out during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountFailedStepOutput) TimedOut() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountFailedStep) *int { return v.TimedOut }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps that failed during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountFailedStepOutput) TotalFailed() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountFailedStep) *int { return v.TotalFailed }).(pulumi.IntPtrOutput)
+}
+
+type DrPlanExecutionStepStatusCountFailedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountFailedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountFailedStepArrayOutput) ToDrPlanExecutionStepStatusCountFailedStepArrayOutput() DrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountFailedStepArrayOutput) ToDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountFailedStepArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountFailedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCountFailedStep {
+		return vs[0].([]DrPlanExecutionStepStatusCountFailedStep)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountFailedStepOutput)
+}
+
+type DrPlanExecutionStepStatusCountRemainingStep struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress *int `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused *int `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued *int `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining *int `pulumi:"totalRemaining"`
+}
+
+// DrPlanExecutionStepStatusCountRemainingStepInput is an input type that accepts DrPlanExecutionStepStatusCountRemainingStepArgs and DrPlanExecutionStepStatusCountRemainingStepOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountRemainingStepInput` via:
+//
+//	DrPlanExecutionStepStatusCountRemainingStepArgs{...}
+type DrPlanExecutionStepStatusCountRemainingStepInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountRemainingStepOutput() DrPlanExecutionStepStatusCountRemainingStepOutput
+	ToDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(context.Context) DrPlanExecutionStepStatusCountRemainingStepOutput
+}
+
+type DrPlanExecutionStepStatusCountRemainingStepArgs struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress pulumi.IntPtrInput `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused pulumi.IntPtrInput `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued pulumi.IntPtrInput `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining pulumi.IntPtrInput `pulumi:"totalRemaining"`
+}
+
+func (DrPlanExecutionStepStatusCountRemainingStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountRemainingStepArgs) ToDrPlanExecutionStepStatusCountRemainingStepOutput() DrPlanExecutionStepStatusCountRemainingStepOutput {
+	return i.ToDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountRemainingStepArgs) ToDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountRemainingStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountRemainingStepOutput)
+}
+
+// DrPlanExecutionStepStatusCountRemainingStepArrayInput is an input type that accepts DrPlanExecutionStepStatusCountRemainingStepArray and DrPlanExecutionStepStatusCountRemainingStepArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountRemainingStepArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountRemainingStepArray{ DrPlanExecutionStepStatusCountRemainingStepArgs{...} }
+type DrPlanExecutionStepStatusCountRemainingStepArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountRemainingStepArrayOutput() DrPlanExecutionStepStatusCountRemainingStepArrayOutput
+	ToDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountRemainingStepArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountRemainingStepArray []DrPlanExecutionStepStatusCountRemainingStepInput
+
+func (DrPlanExecutionStepStatusCountRemainingStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountRemainingStepArray) ToDrPlanExecutionStepStatusCountRemainingStepArrayOutput() DrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountRemainingStepArray) ToDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountRemainingStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountRemainingStepOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountRemainingStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) ToDrPlanExecutionStepStatusCountRemainingStepOutput() DrPlanExecutionStepStatusCountRemainingStepOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) ToDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountRemainingStepOutput {
+	return o
+}
+
+// The total number of steps in progress during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) InProgress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountRemainingStep) *int { return v.InProgress }).(pulumi.IntPtrOutput)
+}
+
+// The total number of paused steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) Paused() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountRemainingStep) *int { return v.Paused }).(pulumi.IntPtrOutput)
+}
+
+// The total number of queued steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) Queued() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountRemainingStep) *int { return v.Queued }).(pulumi.IntPtrOutput)
+}
+
+// The total number of remaining steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountRemainingStepOutput) TotalRemaining() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountRemainingStep) *int { return v.TotalRemaining }).(pulumi.IntPtrOutput)
+}
+
+type DrPlanExecutionStepStatusCountRemainingStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountRemainingStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountRemainingStepArrayOutput) ToDrPlanExecutionStepStatusCountRemainingStepArrayOutput() DrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountRemainingStepArrayOutput) ToDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountRemainingStepArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountRemainingStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCountRemainingStep {
+		return vs[0].([]DrPlanExecutionStepStatusCountRemainingStep)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountRemainingStepOutput)
+}
+
+type DrPlanExecutionStepStatusCountSkippedStep struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled *int `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled *int `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored *int `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored *int `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped *int `pulumi:"totalSkipped"`
+}
+
+// DrPlanExecutionStepStatusCountSkippedStepInput is an input type that accepts DrPlanExecutionStepStatusCountSkippedStepArgs and DrPlanExecutionStepStatusCountSkippedStepOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountSkippedStepInput` via:
+//
+//	DrPlanExecutionStepStatusCountSkippedStepArgs{...}
+type DrPlanExecutionStepStatusCountSkippedStepInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountSkippedStepOutput() DrPlanExecutionStepStatusCountSkippedStepOutput
+	ToDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(context.Context) DrPlanExecutionStepStatusCountSkippedStepOutput
+}
+
+type DrPlanExecutionStepStatusCountSkippedStepArgs struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled pulumi.IntPtrInput `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled pulumi.IntPtrInput `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored pulumi.IntPtrInput `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored pulumi.IntPtrInput `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped pulumi.IntPtrInput `pulumi:"totalSkipped"`
+}
+
+func (DrPlanExecutionStepStatusCountSkippedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountSkippedStepArgs) ToDrPlanExecutionStepStatusCountSkippedStepOutput() DrPlanExecutionStepStatusCountSkippedStepOutput {
+	return i.ToDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountSkippedStepArgs) ToDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSkippedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountSkippedStepOutput)
+}
+
+// DrPlanExecutionStepStatusCountSkippedStepArrayInput is an input type that accepts DrPlanExecutionStepStatusCountSkippedStepArray and DrPlanExecutionStepStatusCountSkippedStepArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountSkippedStepArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountSkippedStepArray{ DrPlanExecutionStepStatusCountSkippedStepArgs{...} }
+type DrPlanExecutionStepStatusCountSkippedStepArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountSkippedStepArrayOutput() DrPlanExecutionStepStatusCountSkippedStepArrayOutput
+	ToDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountSkippedStepArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountSkippedStepArray []DrPlanExecutionStepStatusCountSkippedStepInput
+
+func (DrPlanExecutionStepStatusCountSkippedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountSkippedStepArray) ToDrPlanExecutionStepStatusCountSkippedStepArrayOutput() DrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountSkippedStepArray) ToDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountSkippedStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountSkippedStepOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountSkippedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) ToDrPlanExecutionStepStatusCountSkippedStepOutput() DrPlanExecutionStepStatusCountSkippedStepOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) ToDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSkippedStepOutput {
+	return o
+}
+
+// The total number of canceled steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) Canceled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSkippedStep) *int { return v.Canceled }).(pulumi.IntPtrOutput)
+}
+
+// The total number of disabled steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) Disabled() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSkippedStep) *int { return v.Disabled }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps that failed but were ignored during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) FailedIgnored() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSkippedStep) *int { return v.FailedIgnored }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps that timed out but were ignored during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) TimedOutIgnored() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSkippedStep) *int { return v.TimedOutIgnored }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps that were skipped during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSkippedStepOutput) TotalSkipped() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSkippedStep) *int { return v.TotalSkipped }).(pulumi.IntPtrOutput)
+}
+
+type DrPlanExecutionStepStatusCountSkippedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountSkippedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountSkippedStepArrayOutput) ToDrPlanExecutionStepStatusCountSkippedStepArrayOutput() DrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSkippedStepArrayOutput) ToDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSkippedStepArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountSkippedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCountSkippedStep {
+		return vs[0].([]DrPlanExecutionStepStatusCountSkippedStep)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountSkippedStepOutput)
+}
+
+type DrPlanExecutionStepStatusCountSuccessfulStep struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded *int `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful *int `pulumi:"totalSuccessful"`
+}
+
+// DrPlanExecutionStepStatusCountSuccessfulStepInput is an input type that accepts DrPlanExecutionStepStatusCountSuccessfulStepArgs and DrPlanExecutionStepStatusCountSuccessfulStepOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountSuccessfulStepInput` via:
+//
+//	DrPlanExecutionStepStatusCountSuccessfulStepArgs{...}
+type DrPlanExecutionStepStatusCountSuccessfulStepInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountSuccessfulStepOutput() DrPlanExecutionStepStatusCountSuccessfulStepOutput
+	ToDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(context.Context) DrPlanExecutionStepStatusCountSuccessfulStepOutput
+}
+
+type DrPlanExecutionStepStatusCountSuccessfulStepArgs struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded pulumi.IntPtrInput `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful pulumi.IntPtrInput `pulumi:"totalSuccessful"`
+}
+
+func (DrPlanExecutionStepStatusCountSuccessfulStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountSuccessfulStepArgs) ToDrPlanExecutionStepStatusCountSuccessfulStepOutput() DrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return i.ToDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountSuccessfulStepArgs) ToDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountSuccessfulStepOutput)
+}
+
+// DrPlanExecutionStepStatusCountSuccessfulStepArrayInput is an input type that accepts DrPlanExecutionStepStatusCountSuccessfulStepArray and DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountSuccessfulStepArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountSuccessfulStepArray{ DrPlanExecutionStepStatusCountSuccessfulStepArgs{...} }
+type DrPlanExecutionStepStatusCountSuccessfulStepArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput
+	ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountSuccessfulStepArray []DrPlanExecutionStepStatusCountSuccessfulStepInput
+
+func (DrPlanExecutionStepStatusCountSuccessfulStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountSuccessfulStepArray) ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountSuccessfulStepArray) ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountSuccessfulStepOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountSuccessfulStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountSuccessfulStepOutput) ToDrPlanExecutionStepStatusCountSuccessfulStepOutput() DrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSuccessfulStepOutput) ToDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+// The total number of steps that succeeded during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSuccessfulStepOutput) Succeeded() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSuccessfulStep) *int { return v.Succeeded }).(pulumi.IntPtrOutput)
+}
+
+// The total number of successful steps in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountSuccessfulStepOutput) TotalSuccessful() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountSuccessfulStep) *int { return v.TotalSuccessful }).(pulumi.IntPtrOutput)
+}
+
+type DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ToDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCountSuccessfulStep {
+		return vs[0].([]DrPlanExecutionStepStatusCountSuccessfulStep)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountSuccessfulStepOutput)
+}
+
+type DrPlanExecutionStepStatusCountWarningStep struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings *int `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored *int `pulumi:"warningsIgnored"`
+}
+
+// DrPlanExecutionStepStatusCountWarningStepInput is an input type that accepts DrPlanExecutionStepStatusCountWarningStepArgs and DrPlanExecutionStepStatusCountWarningStepOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountWarningStepInput` via:
+//
+//	DrPlanExecutionStepStatusCountWarningStepArgs{...}
+type DrPlanExecutionStepStatusCountWarningStepInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountWarningStepOutput() DrPlanExecutionStepStatusCountWarningStepOutput
+	ToDrPlanExecutionStepStatusCountWarningStepOutputWithContext(context.Context) DrPlanExecutionStepStatusCountWarningStepOutput
+}
+
+type DrPlanExecutionStepStatusCountWarningStepArgs struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings pulumi.IntPtrInput `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored pulumi.IntPtrInput `pulumi:"warningsIgnored"`
+}
+
+func (DrPlanExecutionStepStatusCountWarningStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountWarningStepArgs) ToDrPlanExecutionStepStatusCountWarningStepOutput() DrPlanExecutionStepStatusCountWarningStepOutput {
+	return i.ToDrPlanExecutionStepStatusCountWarningStepOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountWarningStepArgs) ToDrPlanExecutionStepStatusCountWarningStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountWarningStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountWarningStepOutput)
+}
+
+// DrPlanExecutionStepStatusCountWarningStepArrayInput is an input type that accepts DrPlanExecutionStepStatusCountWarningStepArray and DrPlanExecutionStepStatusCountWarningStepArrayOutput values.
+// You can construct a concrete instance of `DrPlanExecutionStepStatusCountWarningStepArrayInput` via:
+//
+//	DrPlanExecutionStepStatusCountWarningStepArray{ DrPlanExecutionStepStatusCountWarningStepArgs{...} }
+type DrPlanExecutionStepStatusCountWarningStepArrayInput interface {
+	pulumi.Input
+
+	ToDrPlanExecutionStepStatusCountWarningStepArrayOutput() DrPlanExecutionStepStatusCountWarningStepArrayOutput
+	ToDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(context.Context) DrPlanExecutionStepStatusCountWarningStepArrayOutput
+}
+
+type DrPlanExecutionStepStatusCountWarningStepArray []DrPlanExecutionStepStatusCountWarningStepInput
+
+func (DrPlanExecutionStepStatusCountWarningStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i DrPlanExecutionStepStatusCountWarningStepArray) ToDrPlanExecutionStepStatusCountWarningStepArrayOutput() DrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return i.ToDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(context.Background())
+}
+
+func (i DrPlanExecutionStepStatusCountWarningStepArray) ToDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrPlanExecutionStepStatusCountWarningStepArrayOutput)
+}
+
+type DrPlanExecutionStepStatusCountWarningStepOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountWarningStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountWarningStepOutput) ToDrPlanExecutionStepStatusCountWarningStepOutput() DrPlanExecutionStepStatusCountWarningStepOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountWarningStepOutput) ToDrPlanExecutionStepStatusCountWarningStepOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountWarningStepOutput {
+	return o
+}
+
+// The total number of steps that encountered warnings in a DR plan execution.
+func (o DrPlanExecutionStepStatusCountWarningStepOutput) TotalWarnings() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountWarningStep) *int { return v.TotalWarnings }).(pulumi.IntPtrOutput)
+}
+
+// The total number of steps with warnings that were ignored during a DR plan execution.
+func (o DrPlanExecutionStepStatusCountWarningStepOutput) WarningsIgnored() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrPlanExecutionStepStatusCountWarningStep) *int { return v.WarningsIgnored }).(pulumi.IntPtrOutput)
+}
+
+type DrPlanExecutionStepStatusCountWarningStepArrayOutput struct{ *pulumi.OutputState }
+
+func (DrPlanExecutionStepStatusCountWarningStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o DrPlanExecutionStepStatusCountWarningStepArrayOutput) ToDrPlanExecutionStepStatusCountWarningStepArrayOutput() DrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountWarningStepArrayOutput) ToDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) DrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o DrPlanExecutionStepStatusCountWarningStepArrayOutput) Index(i pulumi.IntInput) DrPlanExecutionStepStatusCountWarningStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrPlanExecutionStepStatusCountWarningStep {
+		return vs[0].([]DrPlanExecutionStepStatusCountWarningStep)[vs[1].(int)]
+	}).(DrPlanExecutionStepStatusCountWarningStepOutput)
+}
+
 type DrPlanPlanGroup struct {
 	// (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`
 	DisplayName *string `pulumi:"displayName"`
@@ -1355,13 +2091,13 @@ type DrPlanPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody *string `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser *string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand *string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType *string `pulumi:"stepType"`
@@ -1387,13 +2123,13 @@ type DrPlanPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringPtrInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringPtrInput `pulumi:"stepType"`
@@ -1472,7 +2208,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringPtr
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RequestBody }).(pulumi.StringPtrOutput)
 }
 
-// The userid on the instance to be used for executing the script or command.  Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
@@ -1487,7 +2223,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.S
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceRegion }).(pulumi.StringPtrOutput)
 }
 
-// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.ScriptCommand }).(pulumi.StringPtrOutput)
 }
@@ -2057,6 +2793,8 @@ type DrProtectionGroupMember struct {
 	PeerClusterId *string `pulumi:"peerClusterId"`
 	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId *string `pulumi:"peerDbSystemId"`
+	// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings []DrProtectionGroupMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
 	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	//
 	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -2159,6 +2897,8 @@ type DrProtectionGroupMemberArgs struct {
 	PeerClusterId pulumi.StringPtrInput `pulumi:"peerClusterId"`
 	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringPtrInput `pulumi:"peerDbSystemId"`
+	// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings DrProtectionGroupMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
 	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	//
 	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -2431,6 +3171,13 @@ func (o DrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringPtrOutput {
 // (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerDbSystemId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+func (o DrProtectionGroupMemberOutput) ResourceModifierMappings() DrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberResourceModifierMapping {
+		return v.ResourceModifierMappings
+	}).(DrProtectionGroupMemberResourceModifierMappingArrayOutput)
 }
 
 // (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -5298,6 +6045,112 @@ func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i pu
 	}).(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
 }
 
+type DrProtectionGroupMemberResourceModifierMapping struct {
+	// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap *string `pulumi:"configMap"`
+	// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace *string `pulumi:"namespace"`
+}
+
+// DrProtectionGroupMemberResourceModifierMappingInput is an input type that accepts DrProtectionGroupMemberResourceModifierMappingArgs and DrProtectionGroupMemberResourceModifierMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberResourceModifierMappingInput` via:
+//
+//	DrProtectionGroupMemberResourceModifierMappingArgs{...}
+type DrProtectionGroupMemberResourceModifierMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberResourceModifierMappingOutput() DrProtectionGroupMemberResourceModifierMappingOutput
+	ToDrProtectionGroupMemberResourceModifierMappingOutputWithContext(context.Context) DrProtectionGroupMemberResourceModifierMappingOutput
+}
+
+type DrProtectionGroupMemberResourceModifierMappingArgs struct {
+	// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap pulumi.StringPtrInput `pulumi:"configMap"`
+	// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+}
+
+func (DrProtectionGroupMemberResourceModifierMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberResourceModifierMappingArgs) ToDrProtectionGroupMemberResourceModifierMappingOutput() DrProtectionGroupMemberResourceModifierMappingOutput {
+	return i.ToDrProtectionGroupMemberResourceModifierMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberResourceModifierMappingArgs) ToDrProtectionGroupMemberResourceModifierMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberResourceModifierMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberResourceModifierMappingOutput)
+}
+
+// DrProtectionGroupMemberResourceModifierMappingArrayInput is an input type that accepts DrProtectionGroupMemberResourceModifierMappingArray and DrProtectionGroupMemberResourceModifierMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberResourceModifierMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberResourceModifierMappingArray{ DrProtectionGroupMemberResourceModifierMappingArgs{...} }
+type DrProtectionGroupMemberResourceModifierMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberResourceModifierMappingArrayOutput() DrProtectionGroupMemberResourceModifierMappingArrayOutput
+	ToDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberResourceModifierMappingArrayOutput
+}
+
+type DrProtectionGroupMemberResourceModifierMappingArray []DrProtectionGroupMemberResourceModifierMappingInput
+
+func (DrProtectionGroupMemberResourceModifierMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberResourceModifierMappingArray) ToDrProtectionGroupMemberResourceModifierMappingArrayOutput() DrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberResourceModifierMappingArray) ToDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberResourceModifierMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberResourceModifierMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberResourceModifierMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberResourceModifierMappingOutput) ToDrProtectionGroupMemberResourceModifierMappingOutput() DrProtectionGroupMemberResourceModifierMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberResourceModifierMappingOutput) ToDrProtectionGroupMemberResourceModifierMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberResourceModifierMappingOutput {
+	return o
+}
+
+// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+func (o DrProtectionGroupMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberResourceModifierMapping) *string { return v.ConfigMap }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+func (o DrProtectionGroupMemberResourceModifierMappingOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberResourceModifierMapping) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberResourceModifierMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberResourceModifierMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberResourceModifierMappingArrayOutput) ToDrProtectionGroupMemberResourceModifierMappingArrayOutput() DrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberResourceModifierMappingArrayOutput) ToDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberResourceModifierMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberResourceModifierMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberResourceModifierMapping {
+		return vs[0].([]DrProtectionGroupMemberResourceModifierMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberResourceModifierMappingOutput)
+}
+
 type DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
 	// (Updatable) Create properties for a customer-managed vault and encryption key in the destination region.  The customer-managed encryption key in this will be used to encrypt the resource or containing resources after they  move to the destination region.
 	DestinationEncryptionKey *DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKey"`
@@ -7471,6 +8324,742 @@ func (o GetDrPlanExecutionLogLocationArrayOutput) Index(i pulumi.IntInput) GetDr
 	}).(GetDrPlanExecutionLogLocationOutput)
 }
 
+type GetDrPlanExecutionStepStatusCount struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps []GetDrPlanExecutionStepStatusCountFailedStep `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps []GetDrPlanExecutionStepStatusCountRemainingStep `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps []GetDrPlanExecutionStepStatusCountSkippedStep `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps []GetDrPlanExecutionStepStatusCountSuccessfulStep `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps int `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps []GetDrPlanExecutionStepStatusCountWarningStep `pulumi:"warningSteps"`
+}
+
+// GetDrPlanExecutionStepStatusCountInput is an input type that accepts GetDrPlanExecutionStepStatusCountArgs and GetDrPlanExecutionStepStatusCountOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountArgs{...}
+type GetDrPlanExecutionStepStatusCountInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountOutput() GetDrPlanExecutionStepStatusCountOutput
+	ToGetDrPlanExecutionStepStatusCountOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountOutput
+}
+
+type GetDrPlanExecutionStepStatusCountArgs struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps GetDrPlanExecutionStepStatusCountFailedStepArrayInput `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps GetDrPlanExecutionStepStatusCountRemainingStepArrayInput `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps GetDrPlanExecutionStepStatusCountSkippedStepArrayInput `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps GetDrPlanExecutionStepStatusCountSuccessfulStepArrayInput `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps pulumi.IntInput `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps GetDrPlanExecutionStepStatusCountWarningStepArrayInput `pulumi:"warningSteps"`
+}
+
+func (GetDrPlanExecutionStepStatusCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountArgs) ToGetDrPlanExecutionStepStatusCountOutput() GetDrPlanExecutionStepStatusCountOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountArgs) ToGetDrPlanExecutionStepStatusCountOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountArray and GetDrPlanExecutionStepStatusCountArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountArray{ GetDrPlanExecutionStepStatusCountArgs{...} }
+type GetDrPlanExecutionStepStatusCountArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountArrayOutput() GetDrPlanExecutionStepStatusCountArrayOutput
+	ToGetDrPlanExecutionStepStatusCountArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountArray []GetDrPlanExecutionStepStatusCountInput
+
+func (GetDrPlanExecutionStepStatusCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountArray) ToGetDrPlanExecutionStepStatusCountArrayOutput() GetDrPlanExecutionStepStatusCountArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountArray) ToGetDrPlanExecutionStepStatusCountArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountOutput) ToGetDrPlanExecutionStepStatusCountOutput() GetDrPlanExecutionStepStatusCountOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountOutput) ToGetDrPlanExecutionStepStatusCountOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountOutput {
+	return o
+}
+
+// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+func (o GetDrPlanExecutionStepStatusCountOutput) FailedSteps() GetDrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) []GetDrPlanExecutionStepStatusCountFailedStep {
+		return v.FailedSteps
+	}).(GetDrPlanExecutionStepStatusCountFailedStepArrayOutput)
+}
+
+// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+func (o GetDrPlanExecutionStepStatusCountOutput) RemainingSteps() GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) []GetDrPlanExecutionStepStatusCountRemainingStep {
+		return v.RemainingSteps
+	}).(GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput)
+}
+
+// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+func (o GetDrPlanExecutionStepStatusCountOutput) SkippedSteps() GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) []GetDrPlanExecutionStepStatusCountSkippedStep {
+		return v.SkippedSteps
+	}).(GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput)
+}
+
+// A summary of steps that completed successfully during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountOutput) SuccessfulSteps() GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) []GetDrPlanExecutionStepStatusCountSuccessfulStep {
+		return v.SuccessfulSteps
+	}).(GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput)
+}
+
+// The total number of steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountOutput) TotalSteps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) int { return v.TotalSteps }).(pulumi.IntOutput)
+}
+
+// A summary of steps that encountered warnings during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountOutput) WarningSteps() GetDrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCount) []GetDrPlanExecutionStepStatusCountWarningStep {
+		return v.WarningSteps
+	}).(GetDrPlanExecutionStepStatusCountWarningStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCount)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountArrayOutput) ToGetDrPlanExecutionStepStatusCountArrayOutput() GetDrPlanExecutionStepStatusCountArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountArrayOutput) ToGetDrPlanExecutionStepStatusCountArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCount {
+		return vs[0].([]GetDrPlanExecutionStepStatusCount)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountFailedStep struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed int `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut int `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed int `pulumi:"totalFailed"`
+}
+
+// GetDrPlanExecutionStepStatusCountFailedStepInput is an input type that accepts GetDrPlanExecutionStepStatusCountFailedStepArgs and GetDrPlanExecutionStepStatusCountFailedStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountFailedStepInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountFailedStepArgs{...}
+type GetDrPlanExecutionStepStatusCountFailedStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountFailedStepOutput() GetDrPlanExecutionStepStatusCountFailedStepOutput
+	ToGetDrPlanExecutionStepStatusCountFailedStepOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountFailedStepOutput
+}
+
+type GetDrPlanExecutionStepStatusCountFailedStepArgs struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed pulumi.IntInput `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut pulumi.IntInput `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed pulumi.IntInput `pulumi:"totalFailed"`
+}
+
+func (GetDrPlanExecutionStepStatusCountFailedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountFailedStepArgs) ToGetDrPlanExecutionStepStatusCountFailedStepOutput() GetDrPlanExecutionStepStatusCountFailedStepOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountFailedStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountFailedStepArgs) ToGetDrPlanExecutionStepStatusCountFailedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountFailedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountFailedStepOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountFailedStepArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountFailedStepArray and GetDrPlanExecutionStepStatusCountFailedStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountFailedStepArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountFailedStepArray{ GetDrPlanExecutionStepStatusCountFailedStepArgs{...} }
+type GetDrPlanExecutionStepStatusCountFailedStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionStepStatusCountFailedStepArrayOutput
+	ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountFailedStepArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountFailedStepArray []GetDrPlanExecutionStepStatusCountFailedStepInput
+
+func (GetDrPlanExecutionStepStatusCountFailedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountFailedStepArray) ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountFailedStepArray) ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountFailedStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountFailedStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountFailedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountFailedStepOutput) ToGetDrPlanExecutionStepStatusCountFailedStepOutput() GetDrPlanExecutionStepStatusCountFailedStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountFailedStepOutput) ToGetDrPlanExecutionStepStatusCountFailedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountFailedStepOutput {
+	return o
+}
+
+// The total number of failed steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountFailedStepOutput) Failed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountFailedStep) int { return v.Failed }).(pulumi.IntOutput)
+}
+
+// The total number of steps that timed out during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountFailedStepOutput) TimedOut() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountFailedStep) int { return v.TimedOut }).(pulumi.IntOutput)
+}
+
+// The total number of steps that failed during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountFailedStepOutput) TotalFailed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountFailedStep) int { return v.TotalFailed }).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountFailedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountFailedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountFailedStepArrayOutput) ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountFailedStepArrayOutput) ToGetDrPlanExecutionStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountFailedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountFailedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCountFailedStep {
+		return vs[0].([]GetDrPlanExecutionStepStatusCountFailedStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountFailedStepOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountRemainingStep struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress int `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused int `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued int `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining int `pulumi:"totalRemaining"`
+}
+
+// GetDrPlanExecutionStepStatusCountRemainingStepInput is an input type that accepts GetDrPlanExecutionStepStatusCountRemainingStepArgs and GetDrPlanExecutionStepStatusCountRemainingStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountRemainingStepInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountRemainingStepArgs{...}
+type GetDrPlanExecutionStepStatusCountRemainingStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountRemainingStepOutput() GetDrPlanExecutionStepStatusCountRemainingStepOutput
+	ToGetDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountRemainingStepOutput
+}
+
+type GetDrPlanExecutionStepStatusCountRemainingStepArgs struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress pulumi.IntInput `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused pulumi.IntInput `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued pulumi.IntInput `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining pulumi.IntInput `pulumi:"totalRemaining"`
+}
+
+func (GetDrPlanExecutionStepStatusCountRemainingStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountRemainingStepArgs) ToGetDrPlanExecutionStepStatusCountRemainingStepOutput() GetDrPlanExecutionStepStatusCountRemainingStepOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountRemainingStepArgs) ToGetDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountRemainingStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountRemainingStepOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountRemainingStepArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountRemainingStepArray and GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountRemainingStepArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountRemainingStepArray{ GetDrPlanExecutionStepStatusCountRemainingStepArgs{...} }
+type GetDrPlanExecutionStepStatusCountRemainingStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput
+	ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountRemainingStepArray []GetDrPlanExecutionStepStatusCountRemainingStepInput
+
+func (GetDrPlanExecutionStepStatusCountRemainingStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountRemainingStepArray) ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountRemainingStepArray) ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountRemainingStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountRemainingStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) ToGetDrPlanExecutionStepStatusCountRemainingStepOutput() GetDrPlanExecutionStepStatusCountRemainingStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) ToGetDrPlanExecutionStepStatusCountRemainingStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountRemainingStepOutput {
+	return o
+}
+
+// The total number of steps in progress during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) InProgress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountRemainingStep) int { return v.InProgress }).(pulumi.IntOutput)
+}
+
+// The total number of paused steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) Paused() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountRemainingStep) int { return v.Paused }).(pulumi.IntOutput)
+}
+
+// The total number of queued steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) Queued() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountRemainingStep) int { return v.Queued }).(pulumi.IntOutput)
+}
+
+// The total number of remaining steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountRemainingStepOutput) TotalRemaining() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountRemainingStep) int { return v.TotalRemaining }).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput) ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput) ToGetDrPlanExecutionStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountRemainingStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCountRemainingStep {
+		return vs[0].([]GetDrPlanExecutionStepStatusCountRemainingStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountRemainingStepOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSkippedStep struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled int `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled int `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored int `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored int `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped int `pulumi:"totalSkipped"`
+}
+
+// GetDrPlanExecutionStepStatusCountSkippedStepInput is an input type that accepts GetDrPlanExecutionStepStatusCountSkippedStepArgs and GetDrPlanExecutionStepStatusCountSkippedStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountSkippedStepInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountSkippedStepArgs{...}
+type GetDrPlanExecutionStepStatusCountSkippedStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountSkippedStepOutput() GetDrPlanExecutionStepStatusCountSkippedStepOutput
+	ToGetDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountSkippedStepOutput
+}
+
+type GetDrPlanExecutionStepStatusCountSkippedStepArgs struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled pulumi.IntInput `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored pulumi.IntInput `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored pulumi.IntInput `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped pulumi.IntInput `pulumi:"totalSkipped"`
+}
+
+func (GetDrPlanExecutionStepStatusCountSkippedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountSkippedStepArgs) ToGetDrPlanExecutionStepStatusCountSkippedStepOutput() GetDrPlanExecutionStepStatusCountSkippedStepOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountSkippedStepArgs) ToGetDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSkippedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountSkippedStepOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountSkippedStepArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountSkippedStepArray and GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountSkippedStepArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountSkippedStepArray{ GetDrPlanExecutionStepStatusCountSkippedStepArgs{...} }
+type GetDrPlanExecutionStepStatusCountSkippedStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput
+	ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountSkippedStepArray []GetDrPlanExecutionStepStatusCountSkippedStepInput
+
+func (GetDrPlanExecutionStepStatusCountSkippedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountSkippedStepArray) ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountSkippedStepArray) ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSkippedStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountSkippedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) ToGetDrPlanExecutionStepStatusCountSkippedStepOutput() GetDrPlanExecutionStepStatusCountSkippedStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) ToGetDrPlanExecutionStepStatusCountSkippedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSkippedStepOutput {
+	return o
+}
+
+// The total number of canceled steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) Canceled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSkippedStep) int { return v.Canceled }).(pulumi.IntOutput)
+}
+
+// The total number of disabled steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSkippedStep) int { return v.Disabled }).(pulumi.IntOutput)
+}
+
+// The total number of steps that failed but were ignored during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) FailedIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSkippedStep) int { return v.FailedIgnored }).(pulumi.IntOutput)
+}
+
+// The total number of steps that timed out but were ignored during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) TimedOutIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSkippedStep) int { return v.TimedOutIgnored }).(pulumi.IntOutput)
+}
+
+// The total number of steps that were skipped during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSkippedStepOutput) TotalSkipped() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSkippedStep) int { return v.TotalSkipped }).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput) ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput) ToGetDrPlanExecutionStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountSkippedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCountSkippedStep {
+		return vs[0].([]GetDrPlanExecutionStepStatusCountSkippedStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountSkippedStepOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSuccessfulStep struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded int `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful int `pulumi:"totalSuccessful"`
+}
+
+// GetDrPlanExecutionStepStatusCountSuccessfulStepInput is an input type that accepts GetDrPlanExecutionStepStatusCountSuccessfulStepArgs and GetDrPlanExecutionStepStatusCountSuccessfulStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountSuccessfulStepInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountSuccessfulStepArgs{...}
+type GetDrPlanExecutionStepStatusCountSuccessfulStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepOutput
+	ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepOutput
+}
+
+type GetDrPlanExecutionStepStatusCountSuccessfulStepArgs struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded pulumi.IntInput `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful pulumi.IntInput `pulumi:"totalSuccessful"`
+}
+
+func (GetDrPlanExecutionStepStatusCountSuccessfulStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountSuccessfulStepArgs) ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountSuccessfulStepArgs) ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountSuccessfulStepOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountSuccessfulStepArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountSuccessfulStepArray and GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountSuccessfulStepArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountSuccessfulStepArray{ GetDrPlanExecutionStepStatusCountSuccessfulStepArgs{...} }
+type GetDrPlanExecutionStepStatusCountSuccessfulStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput
+	ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountSuccessfulStepArray []GetDrPlanExecutionStepStatusCountSuccessfulStepInput
+
+func (GetDrPlanExecutionStepStatusCountSuccessfulStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountSuccessfulStepArray) ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountSuccessfulStepArray) ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSuccessfulStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountSuccessfulStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepOutput) ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepOutput) ToGetDrPlanExecutionStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+// The total number of steps that succeeded during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepOutput) Succeeded() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSuccessfulStep) int { return v.Succeeded }).(pulumi.IntOutput)
+}
+
+// The total number of successful steps in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepOutput) TotalSuccessful() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountSuccessfulStep) int { return v.TotalSuccessful }).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) ToGetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountSuccessfulStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCountSuccessfulStep {
+		return vs[0].([]GetDrPlanExecutionStepStatusCountSuccessfulStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountSuccessfulStepOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountWarningStep struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings int `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored int `pulumi:"warningsIgnored"`
+}
+
+// GetDrPlanExecutionStepStatusCountWarningStepInput is an input type that accepts GetDrPlanExecutionStepStatusCountWarningStepArgs and GetDrPlanExecutionStepStatusCountWarningStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountWarningStepInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountWarningStepArgs{...}
+type GetDrPlanExecutionStepStatusCountWarningStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountWarningStepOutput() GetDrPlanExecutionStepStatusCountWarningStepOutput
+	ToGetDrPlanExecutionStepStatusCountWarningStepOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountWarningStepOutput
+}
+
+type GetDrPlanExecutionStepStatusCountWarningStepArgs struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings pulumi.IntInput `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored pulumi.IntInput `pulumi:"warningsIgnored"`
+}
+
+func (GetDrPlanExecutionStepStatusCountWarningStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountWarningStepArgs) ToGetDrPlanExecutionStepStatusCountWarningStepOutput() GetDrPlanExecutionStepStatusCountWarningStepOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountWarningStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountWarningStepArgs) ToGetDrPlanExecutionStepStatusCountWarningStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountWarningStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountWarningStepOutput)
+}
+
+// GetDrPlanExecutionStepStatusCountWarningStepArrayInput is an input type that accepts GetDrPlanExecutionStepStatusCountWarningStepArray and GetDrPlanExecutionStepStatusCountWarningStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionStepStatusCountWarningStepArrayInput` via:
+//
+//	GetDrPlanExecutionStepStatusCountWarningStepArray{ GetDrPlanExecutionStepStatusCountWarningStepArgs{...} }
+type GetDrPlanExecutionStepStatusCountWarningStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionStepStatusCountWarningStepArrayOutput
+	ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(context.Context) GetDrPlanExecutionStepStatusCountWarningStepArrayOutput
+}
+
+type GetDrPlanExecutionStepStatusCountWarningStepArray []GetDrPlanExecutionStepStatusCountWarningStepInput
+
+func (GetDrPlanExecutionStepStatusCountWarningStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionStepStatusCountWarningStepArray) ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return i.ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionStepStatusCountWarningStepArray) ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionStepStatusCountWarningStepArrayOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountWarningStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountWarningStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountWarningStepOutput) ToGetDrPlanExecutionStepStatusCountWarningStepOutput() GetDrPlanExecutionStepStatusCountWarningStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountWarningStepOutput) ToGetDrPlanExecutionStepStatusCountWarningStepOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountWarningStepOutput {
+	return o
+}
+
+// The total number of steps that encountered warnings in a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountWarningStepOutput) TotalWarnings() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountWarningStep) int { return v.TotalWarnings }).(pulumi.IntOutput)
+}
+
+// The total number of steps with warnings that were ignored during a DR plan execution.
+func (o GetDrPlanExecutionStepStatusCountWarningStepOutput) WarningsIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionStepStatusCountWarningStep) int { return v.WarningsIgnored }).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionStepStatusCountWarningStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionStepStatusCountWarningStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionStepStatusCountWarningStepArrayOutput) ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountWarningStepArrayOutput) ToGetDrPlanExecutionStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionStepStatusCountWarningStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionStepStatusCountWarningStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionStepStatusCountWarningStep {
+		return vs[0].([]GetDrPlanExecutionStepStatusCountWarningStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionStepStatusCountWarningStepOutput)
+}
+
 type GetDrPlanExecutionsDrPlanExecutionCollection struct {
 	Items []GetDrPlanExecutionsDrPlanExecutionCollectionItem `pulumi:"items"`
 }
@@ -7604,6 +9193,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	PlanId string `pulumi:"planId"`
 	// A filter to return only DR plan executions that match the given lifecycle state.
 	State string `pulumi:"state"`
+	// A categorized summary of step execution statuses and their corresponding counts.
+	StepStatusCounts []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount `pulumi:"stepStatusCounts"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -7664,6 +9255,8 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	PlanId pulumi.StringInput `pulumi:"planId"`
 	// A filter to return only DR plan executions that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
+	// A categorized summary of step execution statuses and their corresponding counts.
+	StepStatusCounts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayInput `pulumi:"stepStatusCounts"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -7823,6 +9416,13 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) PlanId() pulumi.
 // A filter to return only DR plan executions that match the given lifecycle state.
 func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A categorized summary of step execution statuses and their corresponding counts.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) StepStatusCounts() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount {
+		return v.StepStatusCounts
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -8719,6 +10319,772 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput) 
 	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput)
 }
 
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps int `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep `pulumi:"warningSteps"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs struct {
+	// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+	FailedSteps GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayInput `pulumi:"failedSteps"`
+	// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+	RemainingSteps GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayInput `pulumi:"remainingSteps"`
+	// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+	SkippedSteps GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayInput `pulumi:"skippedSteps"`
+	// A summary of steps that completed successfully during a DR plan execution.
+	SuccessfulSteps GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayInput `pulumi:"successfulSteps"`
+	// The total number of steps in a DR plan execution.
+	TotalSteps pulumi.IntInput `pulumi:"totalSteps"`
+	// A summary of steps that encountered warnings during a DR plan execution.
+	WarningSteps GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayInput `pulumi:"warningSteps"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput {
+	return o
+}
+
+// A summary of steps that failed during a DR plan execution, including failed and timed out steps.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) FailedSteps() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep {
+		return v.FailedSteps
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput)
+}
+
+// A summary of remaining steps in a DR plan execution, including queued, paused, and in-progress steps.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) RemainingSteps() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep {
+		return v.RemainingSteps
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput)
+}
+
+// A summary of steps that were skipped during a DR plan execution, including disabled, failed but ignored, timed out but ignored, and canceled steps.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) SkippedSteps() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep {
+		return v.SkippedSteps
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput)
+}
+
+// A summary of steps that completed successfully during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) SuccessfulSteps() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep {
+		return v.SuccessfulSteps
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput)
+}
+
+// The total number of steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) TotalSteps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) int { return v.TotalSteps }).(pulumi.IntOutput)
+}
+
+// A summary of steps that encountered warnings during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput) WarningSteps() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount) []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep {
+		return v.WarningSteps
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed int `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut int `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed int `pulumi:"totalFailed"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs struct {
+	// The total number of failed steps in a DR plan execution.
+	Failed pulumi.IntInput `pulumi:"failed"`
+	// The total number of steps that timed out during a DR plan execution.
+	TimedOut pulumi.IntInput `pulumi:"timedOut"`
+	// The total number of steps that failed during a DR plan execution.
+	TotalFailed pulumi.IntInput `pulumi:"totalFailed"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput {
+	return o
+}
+
+// The total number of failed steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) Failed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep) int { return v.Failed }).(pulumi.IntOutput)
+}
+
+// The total number of steps that timed out during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) TimedOut() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep) int {
+		return v.TimedOut
+	}).(pulumi.IntOutput)
+}
+
+// The total number of steps that failed during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput) TotalFailed() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep) int {
+		return v.TotalFailed
+	}).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress int `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused int `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued int `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining int `pulumi:"totalRemaining"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs struct {
+	// The total number of steps in progress during a DR plan execution.
+	InProgress pulumi.IntInput `pulumi:"inProgress"`
+	// The total number of paused steps in a DR plan execution.
+	Paused pulumi.IntInput `pulumi:"paused"`
+	// The total number of queued steps in a DR plan execution.
+	Queued pulumi.IntInput `pulumi:"queued"`
+	// The total number of remaining steps in a DR plan execution.
+	TotalRemaining pulumi.IntInput `pulumi:"totalRemaining"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput {
+	return o
+}
+
+// The total number of steps in progress during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) InProgress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep) int {
+		return v.InProgress
+	}).(pulumi.IntOutput)
+}
+
+// The total number of paused steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) Paused() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep) int {
+		return v.Paused
+	}).(pulumi.IntOutput)
+}
+
+// The total number of queued steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) Queued() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep) int {
+		return v.Queued
+	}).(pulumi.IntOutput)
+}
+
+// The total number of remaining steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput) TotalRemaining() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep) int {
+		return v.TotalRemaining
+	}).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled int `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled int `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored int `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored int `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped int `pulumi:"totalSkipped"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs struct {
+	// The total number of canceled steps in a DR plan execution.
+	Canceled pulumi.IntInput `pulumi:"canceled"`
+	// The total number of disabled steps in a DR plan execution.
+	Disabled pulumi.IntInput `pulumi:"disabled"`
+	// The total number of steps that failed but were ignored during a DR plan execution.
+	FailedIgnored pulumi.IntInput `pulumi:"failedIgnored"`
+	// The total number of steps that timed out but were ignored during a DR plan execution.
+	TimedOutIgnored pulumi.IntInput `pulumi:"timedOutIgnored"`
+	// The total number of steps that were skipped during a DR plan execution.
+	TotalSkipped pulumi.IntInput `pulumi:"totalSkipped"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput {
+	return o
+}
+
+// The total number of canceled steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) Canceled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep) int {
+		return v.Canceled
+	}).(pulumi.IntOutput)
+}
+
+// The total number of disabled steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) Disabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep) int {
+		return v.Disabled
+	}).(pulumi.IntOutput)
+}
+
+// The total number of steps that failed but were ignored during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) FailedIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep) int {
+		return v.FailedIgnored
+	}).(pulumi.IntOutput)
+}
+
+// The total number of steps that timed out but were ignored during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) TimedOutIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep) int {
+		return v.TimedOutIgnored
+	}).(pulumi.IntOutput)
+}
+
+// The total number of steps that were skipped during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput) TotalSkipped() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep) int {
+		return v.TotalSkipped
+	}).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded int `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful int `pulumi:"totalSuccessful"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs struct {
+	// The total number of steps that succeeded during a DR plan execution.
+	Succeeded pulumi.IntInput `pulumi:"succeeded"`
+	// The total number of successful steps in a DR plan execution.
+	TotalSuccessful pulumi.IntInput `pulumi:"totalSuccessful"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput {
+	return o
+}
+
+// The total number of steps that succeeded during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput) Succeeded() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep) int {
+		return v.Succeeded
+	}).(pulumi.IntOutput)
+}
+
+// The total number of successful steps in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput) TotalSuccessful() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep) int {
+		return v.TotalSuccessful
+	}).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings int `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored int `pulumi:"warningsIgnored"`
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs{...}
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs struct {
+	// The total number of steps that encountered warnings in a DR plan execution.
+	TotalWarnings pulumi.IntInput `pulumi:"totalWarnings"`
+	// The total number of steps with warnings that were ignored during a DR plan execution.
+	WarningsIgnored pulumi.IntInput `pulumi:"warningsIgnored"`
+}
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput)
+}
+
+// GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayInput is an input type that accepts GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray and GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput values.
+// You can construct a concrete instance of `GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayInput` via:
+//
+//	GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray{ GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs{...} }
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayInput interface {
+	pulumi.Input
+
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput
+	ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutputWithContext(context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray []GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepInput
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput {
+	return i.ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput {
+	return o
+}
+
+// The total number of steps that encountered warnings in a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput) TotalWarnings() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep) int {
+		return v.TotalWarnings
+	}).(pulumi.IntOutput)
+}
+
+// The total number of steps with warnings that were ignored during a DR plan execution.
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput) WarningsIgnored() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep) int {
+		return v.WarningsIgnored
+	}).(pulumi.IntOutput)
+}
+
+type GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep)(nil)).Elem()
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput() GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput) ToGetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutputWithContext(ctx context.Context) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput {
+	return o
+}
+
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput) Index(i pulumi.IntInput) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep {
+		return vs[0].([]GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStep)[vs[1].(int)]
+	}).(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput)
+}
+
 type GetDrPlanExecutionsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -9163,13 +11529,13 @@ type GetDrPlanPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
@@ -9195,13 +11561,13 @@ type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
@@ -9280,7 +11646,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.String
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
 }
 
-// The userid on the instance to be used for executing the script or command.  Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
@@ -9295,7 +11661,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulum
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceRegion }).(pulumi.StringOutput)
 }
 
-// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
@@ -10129,13 +12495,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
@@ -10161,13 +12527,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
-	// The userid on the instance to be used for executing the script or command.  Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
-	// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
@@ -10246,7 +12612,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) Reques
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
 }
 
-// The userid on the instance to be used for executing the script or command.  Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
@@ -10263,7 +12629,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnI
 	}).(pulumi.StringOutput)
 }
 
-// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
@@ -10638,7 +13004,7 @@ func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) Get
 type GetDrProtectionGroupLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -10658,7 +13024,7 @@ type GetDrProtectionGroupLogLocationInput interface {
 type GetDrProtectionGroupLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -10720,7 +13086,7 @@ func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -10815,7 +13181,7 @@ type GetDrProtectionGroupMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings []GetDrProtectionGroupMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
@@ -10825,6 +13191,8 @@ type GetDrProtectionGroupMember struct {
 	PeerClusterId string `pulumi:"peerClusterId"`
 	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId string `pulumi:"peerDbSystemId"`
+	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings []GetDrProtectionGroupMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -10913,7 +13281,7 @@ type GetDrProtectionGroupMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
@@ -10923,6 +13291,8 @@ type GetDrProtectionGroupMemberArgs struct {
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
 	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
+	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings GetDrProtectionGroupMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -11168,7 +13538,7 @@ func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupMemberOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -11193,6 +13563,13 @@ func (o GetDrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringOutput {
 // The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
+}
+
+// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupMemberOutput) ResourceModifierMappings() GetDrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberResourceModifierMapping {
+		return v.ResourceModifierMappings
+	}).(GetDrProtectionGroupMemberResourceModifierMappingArrayOutput)
 }
 
 // A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -11504,7 +13881,7 @@ func (o GetDrProtectionGroupMemberBackupConfigArrayOutput) Index(i pulumi.IntInp
 type GetDrProtectionGroupMemberBackupLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -11524,7 +13901,7 @@ type GetDrProtectionGroupMemberBackupLocationInput interface {
 type GetDrProtectionGroupMemberBackupLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -11586,7 +13963,7 @@ func (o GetDrProtectionGroupMemberBackupLocationOutput) Bucket() pulumi.StringOu
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -13440,6 +15817,112 @@ func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i
 	}).(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput)
 }
 
+type GetDrProtectionGroupMemberResourceModifierMapping struct {
+	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap string `pulumi:"configMap"`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetDrProtectionGroupMemberResourceModifierMappingInput is an input type that accepts GetDrProtectionGroupMemberResourceModifierMappingArgs and GetDrProtectionGroupMemberResourceModifierMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberResourceModifierMappingInput` via:
+//
+//	GetDrProtectionGroupMemberResourceModifierMappingArgs{...}
+type GetDrProtectionGroupMemberResourceModifierMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberResourceModifierMappingOutput() GetDrProtectionGroupMemberResourceModifierMappingOutput
+	ToGetDrProtectionGroupMemberResourceModifierMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberResourceModifierMappingOutput
+}
+
+type GetDrProtectionGroupMemberResourceModifierMappingArgs struct {
+	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap pulumi.StringInput `pulumi:"configMap"`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetDrProtectionGroupMemberResourceModifierMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberResourceModifierMappingArgs) ToGetDrProtectionGroupMemberResourceModifierMappingOutput() GetDrProtectionGroupMemberResourceModifierMappingOutput {
+	return i.ToGetDrProtectionGroupMemberResourceModifierMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberResourceModifierMappingArgs) ToGetDrProtectionGroupMemberResourceModifierMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberResourceModifierMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberResourceModifierMappingOutput)
+}
+
+// GetDrProtectionGroupMemberResourceModifierMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberResourceModifierMappingArray and GetDrProtectionGroupMemberResourceModifierMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberResourceModifierMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberResourceModifierMappingArray{ GetDrProtectionGroupMemberResourceModifierMappingArgs{...} }
+type GetDrProtectionGroupMemberResourceModifierMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupMemberResourceModifierMappingArrayOutput
+	ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberResourceModifierMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberResourceModifierMappingArray []GetDrProtectionGroupMemberResourceModifierMappingInput
+
+func (GetDrProtectionGroupMemberResourceModifierMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberResourceModifierMappingArray) ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberResourceModifierMappingArray) ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberResourceModifierMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberResourceModifierMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberResourceModifierMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) ToGetDrProtectionGroupMemberResourceModifierMappingOutput() GetDrProtectionGroupMemberResourceModifierMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) ToGetDrProtectionGroupMemberResourceModifierMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberResourceModifierMappingOutput {
+	return o
+}
+
+// The name of the config map containing resource modification details. Example: `resource-modifier`
+func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberResourceModifierMapping) string { return v.ConfigMap }).(pulumi.StringOutput)
+}
+
+// The OKE namespace where the config map resides. Example: `namespaceString5`
+func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberResourceModifierMapping) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberResourceModifierMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberResourceModifierMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberResourceModifierMappingArrayOutput) ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberResourceModifierMappingArrayOutput) ToGetDrProtectionGroupMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberResourceModifierMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberResourceModifierMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberResourceModifierMapping {
+		return vs[0].([]GetDrProtectionGroupMemberResourceModifierMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberResourceModifierMappingOutput)
+}
+
 type GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
 	// The OCID of a vault and customer-managed encryption key in the destination region.
 	DestinationEncryptionKeys []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
@@ -14489,7 +16972,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -14509,7 +16992,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -14571,7 +17054,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) B
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -14665,7 +17148,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
@@ -14675,6 +17158,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	PeerClusterId string `pulumi:"peerClusterId"`
 	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId string `pulumi:"peerDbSystemId"`
+	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -14762,7 +17247,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
@@ -14772,6 +17257,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
 	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
+	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+	ResourceModifierMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -15044,7 +17531,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Member
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -15071,6 +17558,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerCl
 // The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
+}
+
+// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ResourceModifierMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping {
+		return v.ResourceModifierMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput)
 }
 
 // A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -15406,7 +17900,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigAr
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -15426,7 +17920,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInp
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -15490,7 +17984,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation
 	}).(pulumi.StringOutput)
 }
 
-// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+// The OKE namespace where the config map resides. Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
 		return v.Namespace
@@ -17394,6 +19888,116 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBal
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping struct {
+	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap string `pulumi:"configMap"`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs struct {
+	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	ConfigMap pulumi.StringInput `pulumi:"configMap"`
+	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput {
+	return o
+}
+
+// The name of the config map containing resource modification details. Example: `resource-modifier`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping) string {
+		return v.ConfigMap
+	}).(pulumi.StringOutput)
+}
+
+// The OKE namespace where the config map resides. Example: `namespaceString5`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping struct {
 	// The OCID of a vault and customer-managed encryption key in the destination region.
 	DestinationEncryptionKeys []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKey `pulumi:"destinationEncryptionKeys"`
@@ -18120,6 +20724,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput)(nil)).Elem(), DrPlanExecutionGroupExecutionStepExecutionLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionLogLocationInput)(nil)).Elem(), DrPlanExecutionLogLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionLogLocationArrayInput)(nil)).Elem(), DrPlanExecutionLogLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountInput)(nil)).Elem(), DrPlanExecutionStepStatusCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountFailedStepInput)(nil)).Elem(), DrPlanExecutionStepStatusCountFailedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountFailedStepArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountFailedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountRemainingStepInput)(nil)).Elem(), DrPlanExecutionStepStatusCountRemainingStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountRemainingStepArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountRemainingStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountSkippedStepInput)(nil)).Elem(), DrPlanExecutionStepStatusCountSkippedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountSkippedStepArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountSkippedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountSuccessfulStepInput)(nil)).Elem(), DrPlanExecutionStepStatusCountSuccessfulStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountSuccessfulStepArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountSuccessfulStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountWarningStepInput)(nil)).Elem(), DrPlanExecutionStepStatusCountWarningStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanExecutionStepStatusCountWarningStepArrayInput)(nil)).Elem(), DrPlanExecutionStepStatusCountWarningStepArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanPlanGroupInput)(nil)).Elem(), DrPlanPlanGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanPlanGroupArrayInput)(nil)).Elem(), DrPlanPlanGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrPlanPlanGroupStepInput)(nil)).Elem(), DrPlanPlanGroupStepArgs{})
@@ -18174,6 +20790,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), DrProtectionGroupMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberResourceModifierMappingInput)(nil)).Elem(), DrProtectionGroupMemberResourceModifierMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberResourceModifierMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberResourceModifierMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
@@ -18206,6 +20824,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayInput)(nil)).Elem(), GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionLogLocationInput)(nil)).Elem(), GetDrPlanExecutionLogLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionLogLocationArrayInput)(nil)).Elem(), GetDrPlanExecutionLogLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountFailedStepInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountFailedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountFailedStepArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountFailedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountRemainingStepInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountRemainingStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountRemainingStepArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountRemainingStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSkippedStepInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountSkippedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSkippedStepArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountSkippedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSuccessfulStepInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountSuccessfulStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountSuccessfulStepArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountSuccessfulStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountWarningStepInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountWarningStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionStepStatusCountWarningStepArrayInput)(nil)).Elem(), GetDrPlanExecutionStepStatusCountWarningStepArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs{})
@@ -18222,6 +20852,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayInput)(nil)).Elem(), GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsFilterInput)(nil)).Elem(), GetDrPlanExecutionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanExecutionsFilterArrayInput)(nil)).Elem(), GetDrPlanExecutionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrPlanPlanGroupInput)(nil)).Elem(), GetDrPlanPlanGroupArgs{})
@@ -18292,6 +20934,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberResourceModifierMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberResourceModifierMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberResourceModifierMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberResourceModifierMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
@@ -18352,6 +20996,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{})
@@ -18378,6 +21024,18 @@ func init() {
 	pulumi.RegisterOutputType(DrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(DrPlanExecutionLogLocationOutput{})
 	pulumi.RegisterOutputType(DrPlanExecutionLogLocationArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountFailedStepOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountFailedStepArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountRemainingStepOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountRemainingStepArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountSkippedStepOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountSkippedStepArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountSuccessfulStepOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountSuccessfulStepArrayOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountWarningStepOutput{})
+	pulumi.RegisterOutputType(DrPlanExecutionStepStatusCountWarningStepArrayOutput{})
 	pulumi.RegisterOutputType(DrPlanPlanGroupOutput{})
 	pulumi.RegisterOutputType(DrPlanPlanGroupArrayOutput{})
 	pulumi.RegisterOutputType(DrPlanPlanGroupStepOutput{})
@@ -18432,6 +21090,8 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberResourceModifierMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberResourceModifierMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})
@@ -18464,6 +21124,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDrPlanExecutionGroupExecutionStepExecutionLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionLogLocationOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionLogLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountFailedStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountFailedStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountRemainingStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountRemainingStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountSkippedStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountSkippedStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountSuccessfulStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountSuccessfulStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountWarningStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionStepStatusCountWarningStepArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput{})
@@ -18480,6 +21152,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountFailedStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountRemainingStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSkippedStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountSuccessfulStepArrayOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepOutput{})
+	pulumi.RegisterOutputType(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCountWarningStepArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsFilterOutput{})
 	pulumi.RegisterOutputType(GetDrPlanExecutionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDrPlanPlanGroupOutput{})
@@ -18550,6 +21234,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberResourceModifierMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberResourceModifierMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})
@@ -18610,6 +21296,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberManagedNodePoolConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyOutput{})

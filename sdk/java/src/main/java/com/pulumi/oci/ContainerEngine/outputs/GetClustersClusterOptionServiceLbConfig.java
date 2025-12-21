@@ -6,11 +6,17 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetClustersClusterOptionServiceLbConfig {
+    /**
+     * @return A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * 
+     */
+    private List<String> backendNsgIds;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -23,6 +29,13 @@ public final class GetClustersClusterOptionServiceLbConfig {
     private Map<String,String> freeformTags;
 
     private GetClustersClusterOptionServiceLbConfig() {}
+    /**
+     * @return A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * 
+     */
+    public List<String> backendNsgIds() {
+        return this.backendNsgIds;
+    }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -47,15 +60,28 @@ public final class GetClustersClusterOptionServiceLbConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> backendNsgIds;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
         public Builder() {}
         public Builder(GetClustersClusterOptionServiceLbConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backendNsgIds = defaults.backendNsgIds;
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
         }
 
+        @CustomType.Setter
+        public Builder backendNsgIds(List<String> backendNsgIds) {
+            if (backendNsgIds == null) {
+              throw new MissingRequiredPropertyException("GetClustersClusterOptionServiceLbConfig", "backendNsgIds");
+            }
+            this.backendNsgIds = backendNsgIds;
+            return this;
+        }
+        public Builder backendNsgIds(String... backendNsgIds) {
+            return backendNsgIds(List.of(backendNsgIds));
+        }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
@@ -74,6 +100,7 @@ public final class GetClustersClusterOptionServiceLbConfig {
         }
         public GetClustersClusterOptionServiceLbConfig build() {
             final var _resultValue = new GetClustersClusterOptionServiceLbConfig();
+            _resultValue.backendNsgIds = backendNsgIds;
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             return _resultValue;

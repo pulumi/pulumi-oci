@@ -46,11 +46,27 @@ public final class ComputeHostArgs extends com.pulumi.resources.ResourceArgs {
         return this.computeHostId;
     }
 
+    /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    @Import(name="configurationActionType")
+    private @Nullable Output<String> configurationActionType;
+
+    /**
+     * @return (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    public Optional<Output<String>> configurationActionType() {
+        return Optional.ofNullable(this.configurationActionType);
+    }
+
     private ComputeHostArgs() {}
 
     private ComputeHostArgs(ComputeHostArgs $) {
         this.computeHostGroupId = $.computeHostGroupId;
         this.computeHostId = $.computeHostId;
+        this.configurationActionType = $.configurationActionType;
     }
 
     public static Builder builder() {
@@ -111,6 +127,27 @@ public final class ComputeHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder computeHostId(String computeHostId) {
             return computeHostId(Output.of(computeHostId));
+        }
+
+        /**
+         * @param configurationActionType (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationActionType(@Nullable Output<String> configurationActionType) {
+            $.configurationActionType = configurationActionType;
+            return this;
+        }
+
+        /**
+         * @param configurationActionType (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationActionType(String configurationActionType) {
+            return configurationActionType(Output.of(configurationActionType));
         }
 
         public ComputeHostArgs build() {

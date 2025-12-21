@@ -6,6 +6,7 @@ package com.pulumi.oci.ContainerEngine.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class ClusterOptionsServiceLbConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterOptionsServiceLbConfigArgs Empty = new ClusterOptionsServiceLbConfigArgs();
+
+    /**
+     * (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * 
+     */
+    @Import(name="backendNsgIds")
+    private @Nullable Output<List<String>> backendNsgIds;
+
+    /**
+     * @return (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+     * 
+     */
+    public Optional<Output<List<String>>> backendNsgIds() {
+        return Optional.ofNullable(this.backendNsgIds);
+    }
 
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -49,6 +65,7 @@ public final class ClusterOptionsServiceLbConfigArgs extends com.pulumi.resource
     private ClusterOptionsServiceLbConfigArgs() {}
 
     private ClusterOptionsServiceLbConfigArgs(ClusterOptionsServiceLbConfigArgs $) {
+        this.backendNsgIds = $.backendNsgIds;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
     }
@@ -69,6 +86,37 @@ public final class ClusterOptionsServiceLbConfigArgs extends com.pulumi.resource
 
         public Builder(ClusterOptionsServiceLbConfigArgs defaults) {
             $ = new ClusterOptionsServiceLbConfigArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param backendNsgIds (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendNsgIds(@Nullable Output<List<String>> backendNsgIds) {
+            $.backendNsgIds = backendNsgIds;
+            return this;
+        }
+
+        /**
+         * @param backendNsgIds (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendNsgIds(List<String> backendNsgIds) {
+            return backendNsgIds(Output.of(backendNsgIds));
+        }
+
+        /**
+         * @param backendNsgIds (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backendNsgIds(String... backendNsgIds) {
+            return backendNsgIds(List.of(backendNsgIds));
         }
 
         /**

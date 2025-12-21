@@ -117,6 +117,10 @@ export interface GetDrPlanExecutionResult {
      */
     readonly state: string;
     /**
+     * A categorized summary of step execution statuses and their corresponding counts.
+     */
+    readonly stepStatusCounts: outputs.DisasterRecovery.GetDrPlanExecutionStepStatusCount[];
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};

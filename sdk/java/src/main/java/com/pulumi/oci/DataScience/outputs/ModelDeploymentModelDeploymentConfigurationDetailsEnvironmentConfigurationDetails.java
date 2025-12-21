@@ -21,6 +21,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     private @Nullable List<String> cmds;
     /**
+     * @return Service injected Environment variables set for the web server container and can not be set or modified by user.
+     * 
+     */
+    private @Nullable Map<String,String> defaultEnvironmentVariables;
+    /**
      * @return (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
      * 
      */
@@ -41,7 +46,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     private @Nullable Integer healthCheckPort;
     /**
-     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     private @Nullable String image;
@@ -63,6 +68,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      */
     public List<String> cmds() {
         return this.cmds == null ? List.of() : this.cmds;
+    }
+    /**
+     * @return Service injected Environment variables set for the web server container and can not be set or modified by user.
+     * 
+     */
+    public Map<String,String> defaultEnvironmentVariables() {
+        return this.defaultEnvironmentVariables == null ? Map.of() : this.defaultEnvironmentVariables;
     }
     /**
      * @return (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
@@ -93,7 +105,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         return Optional.ofNullable(this.healthCheckPort);
     }
     /**
-     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
+     * @return (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. The container image is optional while using service managed open source foundation model. Acceptable format: `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;` `&lt;region&gt;.ocir.io/&lt;registry&gt;/&lt;image&gt;:&lt;tag&gt;{@literal @}digest`
      * 
      */
     public Optional<String> image() {
@@ -124,6 +136,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> cmds;
+        private @Nullable Map<String,String> defaultEnvironmentVariables;
         private @Nullable List<String> entrypoints;
         private String environmentConfigurationType;
         private @Nullable Map<String,String> environmentVariables;
@@ -135,6 +148,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cmds = defaults.cmds;
+    	      this.defaultEnvironmentVariables = defaults.defaultEnvironmentVariables;
     	      this.entrypoints = defaults.entrypoints;
     	      this.environmentConfigurationType = defaults.environmentConfigurationType;
     	      this.environmentVariables = defaults.environmentVariables;
@@ -152,6 +166,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         }
         public Builder cmds(String... cmds) {
             return cmds(List.of(cmds));
+        }
+        @CustomType.Setter
+        public Builder defaultEnvironmentVariables(@Nullable Map<String,String> defaultEnvironmentVariables) {
+
+            this.defaultEnvironmentVariables = defaultEnvironmentVariables;
+            return this;
         }
         @CustomType.Setter
         public Builder entrypoints(@Nullable List<String> entrypoints) {
@@ -203,6 +223,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         public ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails();
             _resultValue.cmds = cmds;
+            _resultValue.defaultEnvironmentVariables = defaultEnvironmentVariables;
             _resultValue.entrypoints = entrypoints;
             _resultValue.environmentConfigurationType = environmentConfigurationType;
             _resultValue.environmentVariables = environmentVariables;

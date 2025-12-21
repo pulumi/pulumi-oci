@@ -170,6 +170,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -236,6 +240,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["networkConfiguration"] = state?.networkConfiguration;
             resourceInputs["sddcId"] = state?.sddcId;
             resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["upgradeLicenses"] = state?.upgradeLicenses;
@@ -280,6 +285,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["datastoreClusterIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["upgradeLicenses"] = undefined /*out*/;
@@ -374,6 +380,10 @@ export interface ClusterState {
      * The current state of the Cluster.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

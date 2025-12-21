@@ -46,7 +46,21 @@ import * as utilities from "../utilities";
  *             id: integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsId,
  *             allowlistedIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps,
  *         }],
+ *         designTime: {
+ *             allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpIps,
+ *             allowlistedHttpVcns: [{
+ *                 id: integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsId,
+ *                 allowlistedIps: integrationInstanceNetworkEndpointDetailsDesignTimeAllowlistedHttpVcnsAllowlistedIps,
+ *             }],
+ *         },
  *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
+ *         runtime: {
+ *             allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpIps,
+ *             allowlistedHttpVcns: [{
+ *                 id: integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsId,
+ *                 allowlistedIps: integrationInstanceNetworkEndpointDetailsRuntimeAllowlistedHttpVcnsAllowlistedIps,
+ *             }],
+ *         },
  *     },
  *     securityAttributes: {
  *         "oracle-zpr.sensitivity.value": "low",
@@ -110,17 +124,25 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     declare public readonly consumptionModel: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     */
+    declare public readonly convertInstanceTrigger: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
     declare public readonly customEndpoint: pulumi.Output<outputs.Integration.IntegrationInstanceCustomEndpoint>;
     /**
      * Data retention period set for given integration instance
      */
-    declare public /*out*/ readonly dataRetentionPeriod: pulumi.Output<string>;
+    declare public readonly dataRetentionPeriod: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     */
+    declare public readonly disableProcessAutomationTrigger: pulumi.Output<number | undefined>;
     /**
      * Disaster recovery details for the integration instance created in the region.
      */
@@ -137,9 +159,6 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
     declare public readonly enableProcessAutomationTrigger: pulumi.Output<number | undefined>;
-    /**
-     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     */
     declare public readonly extendDataRetentionTrigger: pulumi.Output<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
@@ -186,6 +205,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * Additional details of lifecycleState or substates
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     */
+    declare public readonly logGroupId: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -251,9 +274,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["attachments"] = state?.attachments;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["consumptionModel"] = state?.consumptionModel;
+            resourceInputs["convertInstanceTrigger"] = state?.convertInstanceTrigger;
             resourceInputs["customEndpoint"] = state?.customEndpoint;
             resourceInputs["dataRetentionPeriod"] = state?.dataRetentionPeriod;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["disableProcessAutomationTrigger"] = state?.disableProcessAutomationTrigger;
             resourceInputs["disasterRecoveryDetails"] = state?.disasterRecoveryDetails;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["domainId"] = state?.domainId;
@@ -271,6 +296,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isFileServerEnabled"] = state?.isFileServerEnabled;
             resourceInputs["isVisualBuilderEnabled"] = state?.isVisualBuilderEnabled;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["logGroupId"] = state?.logGroupId;
             resourceInputs["messagePacks"] = state?.messagePacks;
             resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
             resourceInputs["privateEndpointOutboundConnections"] = state?.privateEndpointOutboundConnections;
@@ -301,8 +327,11 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["alternateCustomEndpoints"] = args?.alternateCustomEndpoints;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["consumptionModel"] = args?.consumptionModel;
+            resourceInputs["convertInstanceTrigger"] = args?.convertInstanceTrigger;
             resourceInputs["customEndpoint"] = args?.customEndpoint;
+            resourceInputs["dataRetentionPeriod"] = args?.dataRetentionPeriod;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["disableProcessAutomationTrigger"] = args?.disableProcessAutomationTrigger;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["domainId"] = args?.domainId;
             resourceInputs["enableProcessAutomationTrigger"] = args?.enableProcessAutomationTrigger;
@@ -315,13 +344,13 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isDisasterRecoveryEnabled"] = args?.isDisasterRecoveryEnabled;
             resourceInputs["isFileServerEnabled"] = args?.isFileServerEnabled;
             resourceInputs["isVisualBuilderEnabled"] = args?.isVisualBuilderEnabled;
+            resourceInputs["logGroupId"] = args?.logGroupId;
             resourceInputs["messagePacks"] = args?.messagePacks;
             resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["state"] = args?.state;
             resourceInputs["attachments"] = undefined /*out*/;
-            resourceInputs["dataRetentionPeriod"] = undefined /*out*/;
             resourceInputs["disasterRecoveryDetails"] = undefined /*out*/;
             resourceInputs["idcsInfos"] = undefined /*out*/;
             resourceInputs["instanceDesignTimeUrl"] = undefined /*out*/;
@@ -361,6 +390,10 @@ export interface IntegrationInstanceState {
      */
     consumptionModel?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     */
+    convertInstanceTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
     customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint>;
@@ -372,6 +405,10 @@ export interface IntegrationInstanceState {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     */
+    disableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
      * Disaster recovery details for the integration instance created in the region.
      */
@@ -388,9 +425,6 @@ export interface IntegrationInstanceState {
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
-    /**
-     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     */
     extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
@@ -437,6 +471,10 @@ export interface IntegrationInstanceState {
      * Additional details of lifecycleState or substates
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     */
+    logGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of configured message packs
      */
@@ -503,13 +541,25 @@ export interface IntegrationInstanceArgs {
      */
     consumptionModel?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Convert Instance. Could be set to any integer value.
+     */
+    convertInstanceTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) Details for a custom endpoint for the integration instance (update).
      */
     customEndpoint?: pulumi.Input<inputs.Integration.IntegrationInstanceCustomEndpoint>;
     /**
+     * Data retention period set for given integration instance
+     */
+    dataRetentionPeriod?: pulumi.Input<string>;
+    /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Disable Process Automation. Could be set to any integer value.
+     */
+    disableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Integration Instance Identifier.
      */
@@ -522,9 +572,6 @@ export interface IntegrationInstanceArgs {
      * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
      */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
-    /**
-     * (Updatable) An optional property when incremented triggers Extend Data Retention. Could be set to any integer value.
-     */
     extendDataRetentionTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
@@ -558,6 +605,10 @@ export interface IntegrationInstanceArgs {
      * (Updatable) Visual Builder is enabled or not.
      */
     isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given integration instance
+     */
+    logGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of configured message packs
      */

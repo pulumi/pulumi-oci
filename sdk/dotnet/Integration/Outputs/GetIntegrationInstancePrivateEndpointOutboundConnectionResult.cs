@@ -14,26 +14,24 @@ namespace Pulumi.Oci.Integration.Outputs
     public sealed class GetIntegrationInstancePrivateEndpointOutboundConnectionResult
     {
         /// <summary>
-        /// One or more Network security group Ids. This is an optional argument.
+        /// Indicates if all traffic should go through configured outbound connection
         /// </summary>
+        public readonly bool IsAllOutboundTrafficPrivate;
         public readonly ImmutableArray<string> NsgIds;
-        /// <summary>
-        /// The type of Outbound Connection.
-        /// </summary>
         public readonly string OutboundConnectionType;
-        /// <summary>
-        /// Customer Private Network VCN Subnet OCID. This is a required argument.
-        /// </summary>
         public readonly string SubnetId;
 
         [OutputConstructor]
         private GetIntegrationInstancePrivateEndpointOutboundConnectionResult(
+            bool isAllOutboundTrafficPrivate,
+
             ImmutableArray<string> nsgIds,
 
             string outboundConnectionType,
 
             string subnetId)
         {
+            IsAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
             NsgIds = nsgIds;
             OutboundConnectionType = outboundConnectionType;
             SubnetId = subnetId;

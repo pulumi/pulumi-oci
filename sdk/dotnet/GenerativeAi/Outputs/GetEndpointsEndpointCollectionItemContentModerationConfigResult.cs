@@ -22,7 +22,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string Mode;
         /// <summary>
-        /// The OCID of the model used for the feature.
+        /// The OCID of the model that's used to create this endpoint.
         /// </summary>
         public readonly string ModelId;
 

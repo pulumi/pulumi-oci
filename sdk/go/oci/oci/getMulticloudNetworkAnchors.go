@@ -30,15 +30,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetMulticloudNetworkAnchors(ctx, &oci.GetMulticloudNetworkAnchorsArgs{
-//				ExternalLocation:            externalLocation,
-//				SubscriptionId:              subscriptionId,
-//				SubscriptionServiceName:     subscriptionServiceName,
 //				CompartmentId:               pulumi.StringRef(compartmentId),
+//				SubscriptionId:              pulumi.StringRef(subscriptionId),
+//				SubscriptionServiceName:     pulumi.StringRef(subscriptionServiceName),
 //				NetworkAnchorLifecycleState: pulumi.StringRef(networkAnchorLifecycleState),
 //				DisplayName:                 pulumi.StringRef(displayName),
+//				ExternalLocation:            pulumi.StringRef(externalLocation),
 //				NetworkAnchorOciSubnetId:    pulumi.StringRef(networkAnchorOciSubnetId),
+//				CompartmentIdInSubtree:      pulumi.BoolRef(compartmentIdInSubtree),
 //				NetworkAnchorOciVcnId:       pulumi.StringRef(networkAnchorOciVcnId),
 //				Id:                          pulumi.StringRef(id),
+//				ShouldFetchVcnName:          pulumi.BoolRef(shouldFetchVcnName),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,15 +62,15 @@ func GetMulticloudNetworkAnchors(ctx *pulumi.Context, args *GetMulticloudNetwork
 
 // A collection of arguments for invoking getMulticloudNetworkAnchors.
 type GetMulticloudNetworkAnchorsArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId *string `pulumi:"compartmentId"`
+	// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName *string `pulumi:"displayName"`
-	// OMHub Control Plane must know underlying CSP CP Region External Location Name.
-	ExternalLocation string `pulumi:"externalLocation"`
+	// The Cloud Service Provider region.
+	ExternalLocation *string `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	Id    *string `pulumi:"id"`
 	Limit *int    `pulumi:"limit"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -77,19 +79,24 @@ type GetMulticloudNetworkAnchorsArgs struct {
 	NetworkAnchorOciSubnetId *string `pulumi:"networkAnchorOciSubnetId"`
 	// A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
 	NetworkAnchorOciVcnId *string `pulumi:"networkAnchorOciVcnId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	// Whether to fetch and include the vcn display name, which may introduce additional latency.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
+	ShouldFetchVcnName *bool `pulumi:"shouldFetchVcnName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// The subscription service name of the Cloud Service Provider.
+	SubscriptionServiceName *string `pulumi:"subscriptionServiceName"`
 }
 
 // A collection of values returned by getMulticloudNetworkAnchors.
 type GetMulticloudNetworkAnchorsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId *string `pulumi:"compartmentId"`
+	CompartmentId          *string `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName      *string `pulumi:"displayName"`
-	ExternalLocation string  `pulumi:"externalLocation"`
+	ExternalLocation *string `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
 	Id    *string `pulumi:"id"`
 	Limit *int    `pulumi:"limit"`
@@ -99,8 +106,9 @@ type GetMulticloudNetworkAnchorsResult struct {
 	NetworkAnchorLifecycleState *string `pulumi:"networkAnchorLifecycleState"`
 	NetworkAnchorOciSubnetId    *string `pulumi:"networkAnchorOciSubnetId"`
 	NetworkAnchorOciVcnId       *string `pulumi:"networkAnchorOciVcnId"`
-	SubscriptionId              string  `pulumi:"subscriptionId"`
-	SubscriptionServiceName     string  `pulumi:"subscriptionServiceName"`
+	ShouldFetchVcnName          *bool   `pulumi:"shouldFetchVcnName"`
+	SubscriptionId              *string `pulumi:"subscriptionId"`
+	SubscriptionServiceName     *string `pulumi:"subscriptionServiceName"`
 }
 
 func GetMulticloudNetworkAnchorsOutput(ctx *pulumi.Context, args GetMulticloudNetworkAnchorsOutputArgs, opts ...pulumi.InvokeOption) GetMulticloudNetworkAnchorsResultOutput {
@@ -114,15 +122,15 @@ func GetMulticloudNetworkAnchorsOutput(ctx *pulumi.Context, args GetMulticloudNe
 
 // A collection of arguments for invoking getMulticloudNetworkAnchors.
 type GetMulticloudNetworkAnchorsOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// OMHub Control Plane must know underlying CSP CP Region External Location Name.
-	ExternalLocation pulumi.StringInput `pulumi:"externalLocation"`
+	// The Cloud Service Provider region.
+	ExternalLocation pulumi.StringPtrInput `pulumi:"externalLocation"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-	//
-	// Note: one of the arguments `compartmentId` or `id` must be specified.
 	Id    pulumi.StringPtrInput `pulumi:"id"`
 	Limit pulumi.IntPtrInput    `pulumi:"limit"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -131,10 +139,14 @@ type GetMulticloudNetworkAnchorsOutputArgs struct {
 	NetworkAnchorOciSubnetId pulumi.StringPtrInput `pulumi:"networkAnchorOciSubnetId"`
 	// A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
 	NetworkAnchorOciVcnId pulumi.StringPtrInput `pulumi:"networkAnchorOciVcnId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
-	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
+	// Whether to fetch and include the vcn display name, which may introduce additional latency.
+	//
+	// Note: one of the arguments `compartmentId` or `id` must be specified.
+	ShouldFetchVcnName pulumi.BoolPtrInput `pulumi:"shouldFetchVcnName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+	SubscriptionId pulumi.StringPtrInput `pulumi:"subscriptionId"`
+	// The subscription service name of the Cloud Service Provider.
+	SubscriptionServiceName pulumi.StringPtrInput `pulumi:"subscriptionServiceName"`
 }
 
 func (GetMulticloudNetworkAnchorsOutputArgs) ElementType() reflect.Type {
@@ -161,13 +173,17 @@ func (o GetMulticloudNetworkAnchorsResultOutput) CompartmentId() pulumi.StringPt
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
+func (o GetMulticloudNetworkAnchorsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
 // A user-friendly name. Does not have to be unique, and it's changeable.
 func (o GetMulticloudNetworkAnchorsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMulticloudNetworkAnchorsResultOutput) ExternalLocation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) string { return v.ExternalLocation }).(pulumi.StringOutput)
+func (o GetMulticloudNetworkAnchorsResultOutput) ExternalLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.ExternalLocation }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
@@ -199,12 +215,16 @@ func (o GetMulticloudNetworkAnchorsResultOutput) NetworkAnchorOciVcnId() pulumi.
 	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.NetworkAnchorOciVcnId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetMulticloudNetworkAnchorsResultOutput) SubscriptionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+func (o GetMulticloudNetworkAnchorsResultOutput) ShouldFetchVcnName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *bool { return v.ShouldFetchVcnName }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetMulticloudNetworkAnchorsResultOutput) SubscriptionServiceName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) string { return v.SubscriptionServiceName }).(pulumi.StringOutput)
+func (o GetMulticloudNetworkAnchorsResultOutput) SubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.SubscriptionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetMulticloudNetworkAnchorsResultOutput) SubscriptionServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMulticloudNetworkAnchorsResult) *string { return v.SubscriptionServiceName }).(pulumi.StringPtrOutput)
 }
 
 func init() {

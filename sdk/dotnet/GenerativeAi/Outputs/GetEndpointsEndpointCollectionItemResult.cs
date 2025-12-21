@@ -29,11 +29,17 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// An optional description of the endpoint.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
@@ -48,7 +54,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The OCID of the model used for the feature.
+        /// The OCID of the model that's used to create this endpoint.
         /// </summary>
         public readonly string ModelId;
         /// <summary>
@@ -59,7 +65,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]

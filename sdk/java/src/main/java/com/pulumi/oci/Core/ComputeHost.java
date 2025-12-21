@@ -15,6 +15,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -116,6 +117,20 @@ public class ComputeHost extends com.pulumi.resources.CustomResource {
         return this.computeHostId;
     }
     /**
+     * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    @Export(name="configurationActionType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> configurationActionType;
+
+    /**
+     * @return (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
+     * 
+     */
+    public Output<Optional<String>> configurationActionType() {
+        return Codegen.optional(this.configurationActionType);
+    }
+    /**
      * Compute Host Configuration Data
      * 
      */
@@ -186,10 +201,21 @@ public class ComputeHost extends com.pulumi.resources.CustomResource {
         return this.faultDomain;
     }
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="firmwareBundleId", refs={String.class}, tree="[0]")
+    private Output<String> firmwareBundleId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     * 
+     */
+    public Output<String> firmwareBundleId() {
+        return this.firmwareBundleId;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
@@ -197,9 +223,6 @@ public class ComputeHost extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,String>> freeformTags() {
@@ -316,6 +339,20 @@ public class ComputeHost extends com.pulumi.resources.CustomResource {
      */
     public Output<String> networkBlockId() {
         return this.networkBlockId;
+    }
+    /**
+     * The platform of the host
+     * 
+     */
+    @Export(name="platform", refs={String.class}, tree="[0]")
+    private Output<String> platform;
+
+    /**
+     * @return The platform of the host
+     * 
+     */
+    public Output<String> platform() {
+        return this.platform;
     }
     /**
      * Shows details about the last recycle performed on this host.

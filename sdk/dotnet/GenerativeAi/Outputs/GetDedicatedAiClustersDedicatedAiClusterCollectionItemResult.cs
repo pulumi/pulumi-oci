@@ -13,6 +13,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult
     {
+        /// <summary>
+        /// The total capacity for a dedicated AI cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult> Capacities;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -22,14 +25,14 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
-        /// <summary>
-        /// An optional description of the dedicated AI cluster.
-        /// </summary>
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
@@ -47,11 +50,17 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
+        /// </summary>
         public readonly string TimeCreated;
         /// <summary>
         /// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
+        /// </summary>
         public readonly string Type;
         /// <summary>
         /// The number of dedicated units in this AI cluster.

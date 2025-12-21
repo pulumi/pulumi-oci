@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration {
     /**
-     * @return The shape used to launch the model deployment instances.
+     * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     private String instanceShapeName;
@@ -35,7 +35,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailInfrastru
 
     private GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration() {}
     /**
-     * @return The shape used to launch the model deployment instances.
+     * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
      */
     public String instanceShapeName() {

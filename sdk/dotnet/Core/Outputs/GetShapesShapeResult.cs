@@ -106,11 +106,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionResult> PlatformConfigOptions;
         /// <summary>
+        /// The list of platform names that can be used for this shape
+        /// </summary>
+        public readonly ImmutableArray<string> PlatformNames;
+        /// <summary>
         /// A short description of the shape's processor (CPU).
         /// </summary>
         public readonly string ProcessorDescription;
         /// <summary>
-        /// The list of of compartment quotas for the shape.
+        /// The list of compartment quotas for the shape.
         /// </summary>
         public readonly ImmutableArray<string> QuotaNames;
         /// <summary>
@@ -178,6 +182,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapesShapePlatformConfigOptionResult> platformConfigOptions,
 
+            ImmutableArray<string> platformNames,
+
             string processorDescription,
 
             ImmutableArray<string> quotaNames,
@@ -213,6 +219,7 @@ namespace Pulumi.Oci.Core.Outputs
             OcpuOptions = ocpuOptions;
             Ocpus = ocpus;
             PlatformConfigOptions = platformConfigOptions;
+            PlatformNames = platformNames;
             ProcessorDescription = processorDescription;
             QuotaNames = quotaNames;
             RdmaBandwidthInGbps = rdmaBandwidthInGbps;

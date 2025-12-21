@@ -93,6 +93,7 @@ from .get_autonomous_database_software_images import *
 from .get_autonomous_database_wallet import *
 from .get_autonomous_databases import *
 from .get_autonomous_databases_clones import *
+from .get_autonomous_databases_estimate_cost_savings import *
 from .get_autonomous_db_preview_versions import *
 from .get_autonomous_db_versions import *
 from .get_autonomous_exadata_infrastructure import *

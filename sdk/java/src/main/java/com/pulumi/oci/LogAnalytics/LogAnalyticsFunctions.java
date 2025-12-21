@@ -17,6 +17,8 @@ import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntitiesSummaryPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityTopologyPlainArgs;
@@ -86,6 +88,7 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsCategoriesListResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsCategoryResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesSummaryResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityAssociationsListResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTopologyResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityTypeResult;
@@ -1292,6 +1295,226 @@ public final class LogAnalyticsFunctions {
      */
     public static CompletableFuture<GetLogAnalyticsEntityResult> getLogAnalyticsEntityPlain(GetLogAnalyticsEntityPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntity:getLogAnalyticsEntity", TypeShape.of(GetLogAnalyticsEntityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities associated with input source log analytics entity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityAssociationsListNamespace)
+     *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityAssociationsListResult> getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs args) {
+        return getLogAnalyticsEntityAssociationsList(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities associated with input source log analytics entity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityAssociationsListNamespace)
+     *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityAssociationsListResult> getLogAnalyticsEntityAssociationsListPlain(GetLogAnalyticsEntityAssociationsListPlainArgs args) {
+        return getLogAnalyticsEntityAssociationsListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities associated with input source log analytics entity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityAssociationsListNamespace)
+     *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityAssociationsListResult> getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityAssociationsList:getLogAnalyticsEntityAssociationsList", TypeShape.of(GetLogAnalyticsEntityAssociationsListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities associated with input source log analytics entity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityAssociationsListNamespace)
+     *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetLogAnalyticsEntityAssociationsListResult> getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getLogAnalyticsEntityAssociationsList:getLogAnalyticsEntityAssociationsList", TypeShape.of(GetLogAnalyticsEntityAssociationsListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Return a list of log analytics entities associated with input source log analytics entity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsEntityAssociationsListArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityAssociationsListNamespace)
+     *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetLogAnalyticsEntityAssociationsListResult> getLogAnalyticsEntityAssociationsListPlain(GetLogAnalyticsEntityAssociationsListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getLogAnalyticsEntityAssociationsList:getLogAnalyticsEntityAssociationsList", TypeShape.of(GetLogAnalyticsEntityAssociationsListResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Log Analytics Entity Topology resource in Oracle Cloud Infrastructure Log Analytics service.

@@ -13,6 +13,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionAutomaticExecution
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionExecutionOptions;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionLogLocation;
+import com.pulumi.oci.DisasterRecovery.outputs.DrPlanExecutionStepStatusCount;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -318,6 +319,20 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    @Export(name="stepStatusCounts", refs={List.class,DrPlanExecutionStepStatusCount.class}, tree="[0,1]")
+    private Output<List<DrPlanExecutionStepStatusCount>> stepStatusCounts;
+
+    /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    public Output<List<DrPlanExecutionStepStatusCount>> stepStatusCounts() {
+        return this.stepStatusCounts;
     }
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`

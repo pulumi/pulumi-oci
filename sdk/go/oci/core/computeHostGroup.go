@@ -35,6 +35,7 @@ import (
 //					&core.ComputeHostGroupConfigurationArgs{
 //						FirmwareBundleId: pulumi.Any(testFirmwareBundle.Id),
 //						RecycleLevel:     pulumi.Any(computeHostGroupConfigurationsRecycleLevel),
+//						State:            pulumi.Any(computeHostGroupConfigurationsState),
 //						Target:           pulumi.Any(computeHostGroupConfigurationsTarget),
 //					},
 //				},

@@ -436,6 +436,15 @@ __all__ = [
     'GetDrgsFilterResult',
     'GetFastConnectProviderServicesFastConnectProviderServiceResult',
     'GetFastConnectProviderServicesFilterResult',
+    'GetFirmwareBundleAllowableTransitionResult',
+    'GetFirmwareBundlePlatformResult',
+    'GetFirmwareBundlePlatformVersionResult',
+    'GetFirmwareBundlesFilterResult',
+    'GetFirmwareBundlesFirmwareBundlesCollectionResult',
+    'GetFirmwareBundlesFirmwareBundlesCollectionItemResult',
+    'GetFirmwareBundlesFirmwareBundlesCollectionItemAllowableTransitionResult',
+    'GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformResult',
+    'GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformVersionResult',
     'GetImageAgentFeatureResult',
     'GetImageImageSourceDetailResult',
     'GetImageLaunchOptionResult',
@@ -3551,7 +3560,7 @@ class ComputeHostConfigurationDataCheckDetail(dict):
                  type: Optional[_builtins.str] = None):
         """
         :param _builtins.str configuration_state: Configuration state of the Compute Bare Metal Host.
-        :param _builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param _builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -3578,7 +3587,7 @@ class ComputeHostConfigurationDataCheckDetail(dict):
     @pulumi.getter(name="firmwareBundleId")
     def firmware_bundle_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         """
         return pulumi.get(self, "firmware_bundle_id")
 
@@ -3625,18 +3634,22 @@ class ComputeHostGroupConfiguration(dict):
     def __init__(__self__, *,
                  firmware_bundle_id: Optional[_builtins.str] = None,
                  recycle_level: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None,
                  target: Optional[_builtins.str] = None):
         """
         :param _builtins.str firmware_bundle_id: (Updatable) The OCID for firmware bundle
         :param _builtins.str recycle_level: (Updatable) Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param _builtins.str state: (Updatable) The state of the host group configuration.
         :param _builtins.str target: (Updatable) Either the platform name or compute shape that the configuration is targeting
         """
         if firmware_bundle_id is not None:
             pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         if recycle_level is not None:
             pulumi.set(__self__, "recycle_level", recycle_level)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
         if target is not None:
             pulumi.set(__self__, "target", target)
 
@@ -3657,6 +3670,14 @@ class ComputeHostGroupConfiguration(dict):
         * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
         """
         return pulumi.get(self, "recycle_level")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The state of the host group configuration.
+        """
+        return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter
@@ -24889,7 +24910,7 @@ class GetComputeHostConfigurationDataCheckDetailResult(dict):
                  type: _builtins.str):
         """
         :param _builtins.str configuration_state: Configuration state of the Compute Bare Metal Host.
-        :param _builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param _builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -24912,7 +24933,7 @@ class GetComputeHostConfigurationDataCheckDetailResult(dict):
     @pulumi.getter(name="firmwareBundleId")
     def firmware_bundle_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         """
         return pulumi.get(self, "firmware_bundle_id")
 
@@ -24940,16 +24961,19 @@ class GetComputeHostGroupConfigurationResult(dict):
     def __init__(__self__, *,
                  firmware_bundle_id: _builtins.str,
                  recycle_level: _builtins.str,
+                 state: _builtins.str,
                  target: _builtins.str):
         """
         :param _builtins.str firmware_bundle_id: The OCID for firmware bundle
         :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param _builtins.str state: The lifecycle state of the host group
         :param _builtins.str target: Either the platform name or compute shape that the configuration is targeting
         """
         pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         pulumi.set(__self__, "recycle_level", recycle_level)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target", target)
 
     @_builtins.property
@@ -24969,6 +24993,14 @@ class GetComputeHostGroupConfigurationResult(dict):
         * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
         """
         return pulumi.get(self, "recycle_level")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the host group
+        """
+        return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter
@@ -25009,6 +25041,7 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemResult(dict):
         """
         :param _builtins.str availability_domain: The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArgs'] configurations: A list of HostGroupConfiguration objects
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -25051,6 +25084,9 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def configurations(self) -> Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult']:
+        """
+        A list of HostGroupConfiguration objects
+        """
         return pulumi.get(self, "configurations")
 
     @_builtins.property
@@ -25131,24 +25167,53 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict
     def __init__(__self__, *,
                  firmware_bundle_id: _builtins.str,
                  recycle_level: _builtins.str,
+                 state: _builtins.str,
                  target: _builtins.str):
+        """
+        :param _builtins.str firmware_bundle_id: The OCID for firmware bundle
+        :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param _builtins.str state: The lifecycle state of the host group
+        :param _builtins.str target: Either the platform name or compute shape that the configuration is targeting
+        """
         pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         pulumi.set(__self__, "recycle_level", recycle_level)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target", target)
 
     @_builtins.property
     @pulumi.getter(name="firmwareBundleId")
     def firmware_bundle_id(self) -> _builtins.str:
+        """
+        The OCID for firmware bundle
+        """
         return pulumi.get(self, "firmware_bundle_id")
 
     @_builtins.property
     @pulumi.getter(name="recycleLevel")
     def recycle_level(self) -> _builtins.str:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
         return pulumi.get(self, "recycle_level")
 
     @_builtins.property
     @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the host group
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
     def target(self) -> _builtins.str:
+        """
+        Either the platform name or compute shape that the configuration is targeting
+        """
         return pulumi.get(self, "target")
 
 
@@ -25234,6 +25299,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  fault_domain: _builtins.str,
+                 firmware_bundle_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  gpu_memory_fabric_id: _builtins.str,
                  has_impacted_components: _builtins.bool,
@@ -25243,6 +25309,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
                  instance_id: _builtins.str,
                  local_block_id: _builtins.str,
                  network_block_id: _builtins.str,
+                 platform: _builtins.str,
                  shape: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -25255,6 +25322,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+        :param _builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
         :param _builtins.str health: The heathy state of the host
@@ -25263,6 +25331,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         :param _builtins.str instance_id: The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
         :param _builtins.str local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param _builtins.str network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
+        :param _builtins.str platform: The platform of the host
         :param _builtins.str shape: The shape of host
         :param _builtins.str state: The lifecycle state of the host
         :param _builtins.str time_created: The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -25275,6 +25344,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gpu_memory_fabric_id", gpu_memory_fabric_id)
         pulumi.set(__self__, "has_impacted_components", has_impacted_components)
@@ -25284,6 +25354,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "local_block_id", local_block_id)
         pulumi.set(__self__, "network_block_id", network_block_id)
+        pulumi.set(__self__, "platform", platform)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -25344,6 +25415,14 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         """
         return pulumi.get(self, "fault_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -25413,6 +25492,14 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
         """
         return pulumi.get(self, "network_block_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def platform(self) -> _builtins.str:
+        """
+        The platform of the host
+        """
+        return pulumi.get(self, "platform")
 
     @_builtins.property
     @pulumi.getter
@@ -29162,6 +29249,321 @@ class GetFastConnectProviderServicesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFirmwareBundleAllowableTransitionResult(dict):
+    def __init__(__self__, *,
+                 downgrades: Sequence[_builtins.str],
+                 upgrades: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] downgrades: An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle downgrades.
+        :param Sequence[_builtins.str] upgrades: An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle upgrades.
+        """
+        pulumi.set(__self__, "downgrades", downgrades)
+        pulumi.set(__self__, "upgrades", upgrades)
+
+    @_builtins.property
+    @pulumi.getter
+    def downgrades(self) -> Sequence[_builtins.str]:
+        """
+        An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle downgrades.
+        """
+        return pulumi.get(self, "downgrades")
+
+    @_builtins.property
+    @pulumi.getter
+    def upgrades(self) -> Sequence[_builtins.str]:
+        """
+        An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle upgrades.
+        """
+        return pulumi.get(self, "upgrades")
+
+
+@pulumi.output_type
+class GetFirmwareBundlePlatformResult(dict):
+    def __init__(__self__, *,
+                 platform: _builtins.str,
+                 versions: Sequence['outputs.GetFirmwareBundlePlatformVersionResult']):
+        """
+        :param _builtins.str platform: The name of the platform supported by this bundle.
+        :param Sequence['GetFirmwareBundlePlatformVersionArgs'] versions: An array of pinned components and their respective firmware versions.
+        """
+        pulumi.set(__self__, "platform", platform)
+        pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter
+    def platform(self) -> _builtins.str:
+        """
+        The name of the platform supported by this bundle.
+        """
+        return pulumi.get(self, "platform")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence['outputs.GetFirmwareBundlePlatformVersionResult']:
+        """
+        An array of pinned components and their respective firmware versions.
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetFirmwareBundlePlatformVersionResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 versions: Sequence[_builtins.str]):
+        """
+        :param _builtins.str component_type: The type of component.
+        :param Sequence[_builtins.str] versions: A list of firmware versions associated with this component type.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The type of component.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence[_builtins.str]:
+        """
+        A list of firmware versions associated with this component type.
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFirmwareBundlesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFirmwareBundlesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 allowable_transitions: Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemAllowableTransitionResult'],
+                 compartment_id: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 platforms: Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformResult'],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence['GetFirmwareBundlesFirmwareBundlesCollectionItemAllowableTransitionArgs'] allowable_transitions: A map of firmware bundle upgrades/downgrades validated by OCI.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str description: A brief description or metadata about this firmware bundle.
+        :param _builtins.str display_name: The user-friendly name of this firmware bundle.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this firmware bundle.
+        :param Sequence['GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformArgs'] platforms: A map of platforms to pinned firmware versions.
+        :param _builtins.str time_created: The date and time the firmware bundle was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the firmware bundle was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "allowable_transitions", allowable_transitions)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "platforms", platforms)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="allowableTransitions")
+    def allowable_transitions(self) -> Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemAllowableTransitionResult']:
+        """
+        A map of firmware bundle upgrades/downgrades validated by OCI.
+        """
+        return pulumi.get(self, "allowable_transitions")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A brief description or metadata about this firmware bundle.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name of this firmware bundle.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this firmware bundle.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter
+    def platforms(self) -> Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformResult']:
+        """
+        A map of platforms to pinned firmware versions.
+        """
+        return pulumi.get(self, "platforms")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the firmware bundle was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the firmware bundle was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFirmwareBundlesCollectionItemAllowableTransitionResult(dict):
+    def __init__(__self__, *,
+                 downgrades: Sequence[_builtins.str],
+                 upgrades: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] downgrades: An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle downgrades.
+        :param Sequence[_builtins.str] upgrades: An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle upgrades.
+        """
+        pulumi.set(__self__, "downgrades", downgrades)
+        pulumi.set(__self__, "upgrades", upgrades)
+
+    @_builtins.property
+    @pulumi.getter
+    def downgrades(self) -> Sequence[_builtins.str]:
+        """
+        An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle downgrades.
+        """
+        return pulumi.get(self, "downgrades")
+
+    @_builtins.property
+    @pulumi.getter
+    def upgrades(self) -> Sequence[_builtins.str]:
+        """
+        An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of validated firmware bundle upgrades.
+        """
+        return pulumi.get(self, "upgrades")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformResult(dict):
+    def __init__(__self__, *,
+                 platform: _builtins.str,
+                 versions: Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformVersionResult']):
+        """
+        :param _builtins.str platform: platform name
+        :param Sequence['GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformVersionArgs'] versions: An array of pinned components and their respective firmware versions.
+        """
+        pulumi.set(__self__, "platform", platform)
+        pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter
+    def platform(self) -> _builtins.str:
+        """
+        platform name
+        """
+        return pulumi.get(self, "platform")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence['outputs.GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformVersionResult']:
+        """
+        An array of pinned components and their respective firmware versions.
+        """
+        return pulumi.get(self, "versions")
+
+
+@pulumi.output_type
+class GetFirmwareBundlesFirmwareBundlesCollectionItemPlatformVersionResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 versions: Sequence[_builtins.str]):
+        """
+        :param _builtins.str component_type: The type of component.
+        :param Sequence[_builtins.str] versions: A list of firmware versions associated with this component type.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The type of component.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> Sequence[_builtins.str]:
+        """
+        A list of firmware versions associated with this component type.
+        """
+        return pulumi.get(self, "versions")
 
 
 @pulumi.output_type
@@ -47640,6 +48042,7 @@ class GetShapeShapeResult(dict):
                  ocpu_options: Sequence['outputs.GetShapeShapeOcpuOptionResult'],
                  ocpus: _builtins.float,
                  platform_config_options: Sequence['outputs.GetShapeShapePlatformConfigOptionResult'],
+                 platform_names: Sequence[_builtins.str],
                  processor_description: _builtins.str,
                  quota_names: Sequence[_builtins.str],
                  rdma_bandwidth_in_gbps: _builtins.int,
@@ -47669,6 +48072,7 @@ class GetShapeShapeResult(dict):
         pulumi.set(__self__, "ocpu_options", ocpu_options)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "platform_config_options", platform_config_options)
+        pulumi.set(__self__, "platform_names", platform_names)
         pulumi.set(__self__, "processor_description", processor_description)
         pulumi.set(__self__, "quota_names", quota_names)
         pulumi.set(__self__, "rdma_bandwidth_in_gbps", rdma_bandwidth_in_gbps)
@@ -47790,6 +48194,11 @@ class GetShapeShapeResult(dict):
     @pulumi.getter(name="platformConfigOptions")
     def platform_config_options(self) -> Sequence['outputs.GetShapeShapePlatformConfigOptionResult']:
         return pulumi.get(self, "platform_config_options")
+
+    @_builtins.property
+    @pulumi.getter(name="platformNames")
+    def platform_names(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "platform_names")
 
     @_builtins.property
     @pulumi.getter(name="processorDescription")
@@ -48297,6 +48706,7 @@ class GetShapesShapeResult(dict):
                  ocpu_options: Sequence['outputs.GetShapesShapeOcpuOptionResult'],
                  ocpus: _builtins.float,
                  platform_config_options: Sequence['outputs.GetShapesShapePlatformConfigOptionResult'],
+                 platform_names: Sequence[_builtins.str],
                  processor_description: _builtins.str,
                  quota_names: Sequence[_builtins.str],
                  rdma_bandwidth_in_gbps: _builtins.int,
@@ -48327,8 +48737,9 @@ class GetShapesShapeResult(dict):
         :param Sequence['GetShapesShapeOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for instances that use this shape.
         :param _builtins.float ocpus: The default number of OCPUs available for this shape.
         :param Sequence['GetShapesShapePlatformConfigOptionArgs'] platform_config_options: The list of supported platform configuration options for this shape.
+        :param Sequence[_builtins.str] platform_names: The list of platform names that can be used for this shape
         :param _builtins.str processor_description: A short description of the shape's processor (CPU).
-        :param Sequence[_builtins.str] quota_names: The list of of compartment quotas for the shape.
+        :param Sequence[_builtins.str] quota_names: The list of compartment quotas for the shape.
         :param _builtins.int rdma_bandwidth_in_gbps: The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in gigabits per second.
         :param _builtins.int rdma_ports: The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
         :param Sequence['GetShapesShapeRecommendedAlternativeArgs'] recommended_alternatives: The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
@@ -48357,6 +48768,7 @@ class GetShapesShapeResult(dict):
         pulumi.set(__self__, "ocpu_options", ocpu_options)
         pulumi.set(__self__, "ocpus", ocpus)
         pulumi.set(__self__, "platform_config_options", platform_config_options)
+        pulumi.set(__self__, "platform_names", platform_names)
         pulumi.set(__self__, "processor_description", processor_description)
         pulumi.set(__self__, "quota_names", quota_names)
         pulumi.set(__self__, "rdma_bandwidth_in_gbps", rdma_bandwidth_in_gbps)
@@ -48549,6 +48961,14 @@ class GetShapesShapeResult(dict):
         return pulumi.get(self, "platform_config_options")
 
     @_builtins.property
+    @pulumi.getter(name="platformNames")
+    def platform_names(self) -> Sequence[_builtins.str]:
+        """
+        The list of platform names that can be used for this shape
+        """
+        return pulumi.get(self, "platform_names")
+
+    @_builtins.property
     @pulumi.getter(name="processorDescription")
     def processor_description(self) -> _builtins.str:
         """
@@ -48560,7 +48980,7 @@ class GetShapesShapeResult(dict):
     @pulumi.getter(name="quotaNames")
     def quota_names(self) -> Sequence[_builtins.str]:
         """
-        The list of of compartment quotas for the shape.
+        The list of compartment quotas for the shape.
         """
         return pulumi.get(self, "quota_names")
 

@@ -7,7 +7,8 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+ * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+ * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
  *
  * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
  *
@@ -60,7 +61,8 @@ export interface GetMulticloudOmHubMultiCloudsMetadataResult {
     readonly multiCloudMetadataCollections: outputs.oci.GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollection[];
 }
 /**
- * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+ * This data source provides information about the Multicloud base compartment for a given tenancy Id.
+ * A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
  *
  * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
  *

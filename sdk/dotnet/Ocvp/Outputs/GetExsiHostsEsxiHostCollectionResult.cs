@@ -132,6 +132,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string SwapBillingHostId;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
@@ -212,6 +216,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string swapBillingHostId,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeUpdated,
@@ -251,6 +257,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             SddcId = sddcId;
             State = state;
             SwapBillingHostId = swapBillingHostId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             UpgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;

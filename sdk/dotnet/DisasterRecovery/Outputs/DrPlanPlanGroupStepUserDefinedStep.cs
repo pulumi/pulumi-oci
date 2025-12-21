@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? RequestBody;
         /// <summary>
-        /// The userid on the instance to be used for executing the script or command.  Example: `Opc`
+        /// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `Opc`
         /// </summary>
         public readonly string? RunAsUser;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? RunOnInstanceRegion;
         /// <summary>
-        /// The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
+        /// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         /// </summary>
         public readonly string? ScriptCommand;
         /// <summary>

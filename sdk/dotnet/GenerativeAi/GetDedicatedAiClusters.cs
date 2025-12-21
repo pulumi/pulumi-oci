@@ -184,6 +184,9 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetDedicatedAiClustersResult
     {
+        /// <summary>
+        /// The compartment OCID to create the dedicated AI cluster in.
+        /// </summary>
         public readonly string CompartmentId;
         /// <summary>
         /// The list of dedicated_ai_cluster_collection.

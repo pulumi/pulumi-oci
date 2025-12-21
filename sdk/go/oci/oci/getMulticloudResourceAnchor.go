@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.GetMulticloudResourceAnchor(ctx, &oci.GetMulticloudResourceAnchorArgs{
-//				ResourceAnchorId:        resourceAnchorId,
-//				SubscriptionId:          subscriptionId,
-//				SubscriptionServiceName: subscriptionServiceName,
+//				ResourceAnchorId:           resourceAnchorId,
+//				SubscriptionId:             subscriptionId,
+//				SubscriptionServiceName:    subscriptionServiceName,
+//				ShouldFetchCompartmentName: pulumi.BoolRef(shouldFetchCompartmentName),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,9 +57,11 @@ func GetMulticloudResourceAnchor(ctx *pulumi.Context, args *GetMulticloudResourc
 type GetMulticloudResourceAnchorArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
 	ResourceAnchorId string `pulumi:"resourceAnchorId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	ShouldFetchCompartmentName *bool `pulumi:"shouldFetchCompartmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId string `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+	// The subscription service name of the Cloud Service Provider.
 	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
 }
 
@@ -68,6 +71,8 @@ type GetMulticloudResourceAnchorResult struct {
 	CloudServiceProviderMetadataItems []GetMulticloudResourceAnchorCloudServiceProviderMetadataItem `pulumi:"cloudServiceProviderMetadataItems"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The name assigned to the compartment during creation.
+	CompartmentName string `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.
@@ -82,15 +87,18 @@ type GetMulticloudResourceAnchorResult struct {
 	LifecycleState string `pulumi:"lifecycleState"`
 	// Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
 	LinkedCompartmentId string `pulumi:"linkedCompartmentId"`
+	// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+	LinkedCompartmentName string `pulumi:"linkedCompartmentName"`
 	// Oracle Cloud Infrastructure Region that resource is created.
 	Region           string `pulumi:"region"`
 	ResourceAnchorId string `pulumi:"resourceAnchorId"`
 	// Oracle Cloud Infrastructure Subscription Id
 	ResourceAnchorSubscriptionId string `pulumi:"resourceAnchorSubscriptionId"`
 	// AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
-	SetupMode               string `pulumi:"setupMode"`
-	SubscriptionId          string `pulumi:"subscriptionId"`
-	SubscriptionServiceName string `pulumi:"subscriptionServiceName"`
+	SetupMode                  string `pulumi:"setupMode"`
+	ShouldFetchCompartmentName *bool  `pulumi:"shouldFetchCompartmentName"`
+	SubscriptionId             string `pulumi:"subscriptionId"`
+	SubscriptionServiceName    string `pulumi:"subscriptionServiceName"`
 	// subscription type
 	SubscriptionType string `pulumi:"subscriptionType"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -114,9 +122,11 @@ func GetMulticloudResourceAnchorOutput(ctx *pulumi.Context, args GetMulticloudRe
 type GetMulticloudResourceAnchorOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
 	ResourceAnchorId pulumi.StringInput `pulumi:"resourceAnchorId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+	// Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
+	ShouldFetchCompartmentName pulumi.BoolPtrInput `pulumi:"shouldFetchCompartmentName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
 	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
-	// The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+	// The subscription service name of the Cloud Service Provider.
 	SubscriptionServiceName pulumi.StringInput `pulumi:"subscriptionServiceName"`
 }
 
@@ -149,6 +159,11 @@ func (o GetMulticloudResourceAnchorResultOutput) CloudServiceProviderMetadataIte
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetMulticloudResourceAnchorResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The name assigned to the compartment during creation.
+func (o GetMulticloudResourceAnchorResultOutput) CompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.CompartmentName }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -186,6 +201,11 @@ func (o GetMulticloudResourceAnchorResultOutput) LinkedCompartmentId() pulumi.St
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.LinkedCompartmentId }).(pulumi.StringOutput)
 }
 
+// The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+func (o GetMulticloudResourceAnchorResultOutput) LinkedCompartmentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.LinkedCompartmentName }).(pulumi.StringOutput)
+}
+
 // Oracle Cloud Infrastructure Region that resource is created.
 func (o GetMulticloudResourceAnchorResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.Region }).(pulumi.StringOutput)
@@ -203,6 +223,10 @@ func (o GetMulticloudResourceAnchorResultOutput) ResourceAnchorSubscriptionId() 
 // AUTO_BIND - when passed compartment will be created on-behalf of customer and bind to this resource anchor NO_AUTO_BIND - compartment will not be created and later customer can bind existing compartment.  to this resource anchor. This is for future use only
 func (o GetMulticloudResourceAnchorResultOutput) SetupMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) string { return v.SetupMode }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudResourceAnchorResultOutput) ShouldFetchCompartmentName() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudResourceAnchorResult) *bool { return v.ShouldFetchCompartmentName }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetMulticloudResourceAnchorResultOutput) SubscriptionId() pulumi.StringOutput {

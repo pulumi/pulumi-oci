@@ -9,6 +9,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutio
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -108,6 +109,11 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
      * 
      */
     private String state;
+    /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount> stepStatusCounts;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
@@ -262,6 +268,13 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         return this.state;
     }
     /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    public List<GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount> stepStatusCounts() {
+        return this.stepStatusCounts;
+    }
+    /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -324,6 +337,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
         private String planExecutionType;
         private String planId;
         private String state;
+        private List<GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount> stepStatusCounts;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeEnded;
@@ -350,6 +364,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
     	      this.planExecutionType = defaults.planExecutionType;
     	      this.planId = defaults.planId;
     	      this.state = defaults.state;
+    	      this.stepStatusCounts = defaults.stepStatusCounts;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeEnded = defaults.timeEnded;
@@ -514,6 +529,17 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder stepStatusCounts(List<GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount> stepStatusCounts) {
+            if (stepStatusCounts == null) {
+              throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "stepStatusCounts");
+            }
+            this.stepStatusCounts = stepStatusCounts;
+            return this;
+        }
+        public Builder stepStatusCounts(GetDrPlanExecutionsDrPlanExecutionCollectionItemStepStatusCount... stepStatusCounts) {
+            return stepStatusCounts(List.of(stepStatusCounts));
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDrPlanExecutionsDrPlanExecutionCollectionItem", "systemTags");
@@ -573,6 +599,7 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItem {
             _resultValue.planExecutionType = planExecutionType;
             _resultValue.planId = planId;
             _resultValue.state = state;
+            _resultValue.stepStatusCounts = stepStatusCounts;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeEnded = timeEnded;

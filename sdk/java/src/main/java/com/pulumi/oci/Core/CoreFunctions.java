@@ -168,6 +168,10 @@ import com.pulumi.oci.Core.inputs.GetFastConnectProviderServiceKeyPlainArgs;
 import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicePlainArgs;
 import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesArgs;
 import com.pulumi.oci.Core.inputs.GetFastConnectProviderServicesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+import com.pulumi.oci.Core.inputs.GetFirmwareBundlePlainArgs;
+import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+import com.pulumi.oci.Core.inputs.GetFirmwareBundlesPlainArgs;
 import com.pulumi.oci.Core.inputs.GetImageArgs;
 import com.pulumi.oci.Core.inputs.GetImagePlainArgs;
 import com.pulumi.oci.Core.inputs.GetImageShapeArgs;
@@ -414,6 +418,8 @@ import com.pulumi.oci.Core.outputs.GetDrgsResult;
 import com.pulumi.oci.Core.outputs.GetFastConnectProviderServiceKeyResult;
 import com.pulumi.oci.Core.outputs.GetFastConnectProviderServiceResult;
 import com.pulumi.oci.Core.outputs.GetFastConnectProviderServicesResult;
+import com.pulumi.oci.Core.outputs.GetFirmwareBundleResult;
+import com.pulumi.oci.Core.outputs.GetFirmwareBundlesResult;
 import com.pulumi.oci.Core.outputs.GetImageResult;
 import com.pulumi.oci.Core.outputs.GetImageShapeResult;
 import com.pulumi.oci.Core.outputs.GetImageShapesResult;
@@ -18679,6 +18685,276 @@ public final class CoreFunctions {
         return Deployment.getInstance().invokeAsync("oci:Core/getFastConnectProviderServices:getFastConnectProviderServices", TypeShape.of(GetFastConnectProviderServicesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFirmwareBundleResult> getFirmwareBundle(GetFirmwareBundleArgs args) {
+        return getFirmwareBundle(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFirmwareBundleResult> getFirmwareBundlePlain(GetFirmwareBundlePlainArgs args) {
+        return getFirmwareBundlePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFirmwareBundleResult> getFirmwareBundle(GetFirmwareBundleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFirmwareBundle:getFirmwareBundle", TypeShape.of(GetFirmwareBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFirmwareBundleResult> getFirmwareBundle(GetFirmwareBundleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFirmwareBundle:getFirmwareBundle", TypeShape.of(GetFirmwareBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Returns the Firmware Bundle matching the provided firmwareBundleId.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundle = CoreFunctions.getFirmwareBundle(GetFirmwareBundleArgs.builder()
+     *             .firmwareBundleId(testFirmwareBundleOciCoreFirmwareBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFirmwareBundleResult> getFirmwareBundlePlain(GetFirmwareBundlePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getFirmwareBundle:getFirmwareBundle", TypeShape.of(GetFirmwareBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args) {
+        return getFirmwareBundles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetFirmwareBundlesResult> getFirmwareBundlesPlain(GetFirmwareBundlesPlainArgs args) {
+        return getFirmwareBundlesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFirmwareBundles:getFirmwareBundles", TypeShape.of(GetFirmwareBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getFirmwareBundles:getFirmwareBundles", TypeShape.of(GetFirmwareBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
+     * only the default (recommended) Firmware Bundle for the given platform.
+     * 
+     * ## Example Usage
+     * 
+     */
+    public static CompletableFuture<GetFirmwareBundlesResult> getFirmwareBundlesPlain(GetFirmwareBundlesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getFirmwareBundles:getFirmwareBundles", TypeShape.of(GetFirmwareBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Image resource in Oracle Cloud Infrastructure Core service.
      * 
      * Gets the specified image.
@@ -32288,6 +32564,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
      *             .imageId(testImage.id())
+     *             .shape(shapeShape)
      *             .build());
      * 
      *     }
@@ -32333,6 +32610,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
      *             .imageId(testImage.id())
+     *             .shape(shapeShape)
      *             .build());
      * 
      *     }
@@ -32378,6 +32656,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
      *             .imageId(testImage.id())
+     *             .shape(shapeShape)
      *             .build());
      * 
      *     }
@@ -32423,6 +32702,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
      *             .imageId(testImage.id())
+     *             .shape(shapeShape)
      *             .build());
      * 
      *     }
@@ -32468,6 +32748,7 @@ public final class CoreFunctions {
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(shapeAvailabilityDomain)
      *             .imageId(testImage.id())
+     *             .shape(shapeShape)
      *             .build());
      * 
      *     }

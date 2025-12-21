@@ -18,6 +18,11 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
      */
     private String cspLogicalAz;
     /**
+     * @return User friendly display name for cspLogicalAZ
+     * 
+     */
+    private String cspLogicalAzDisplayName;
+    /**
      * @return A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
      * 
      */
@@ -55,6 +60,13 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
      */
     public String cspLogicalAz() {
         return this.cspLogicalAz;
+    }
+    /**
+     * @return User friendly display name for cspLogicalAZ
+     * 
+     */
+    public String cspLogicalAzDisplayName() {
+        return this.cspLogicalAzDisplayName;
     }
     /**
      * @return A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
@@ -109,6 +121,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
     @CustomType.Builder
     public static final class Builder {
         private String cspLogicalAz;
+        private String cspLogicalAzDisplayName;
         private String cspPhysicalAz;
         private String cspPhysicalAzDisplayName;
         private String cspRegion;
@@ -119,6 +132,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         public Builder(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cspLogicalAz = defaults.cspLogicalAz;
+    	      this.cspLogicalAzDisplayName = defaults.cspLogicalAzDisplayName;
     	      this.cspPhysicalAz = defaults.cspPhysicalAz;
     	      this.cspPhysicalAzDisplayName = defaults.cspPhysicalAzDisplayName;
     	      this.cspRegion = defaults.cspRegion;
@@ -133,6 +147,14 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
               throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation", "cspLogicalAz");
             }
             this.cspLogicalAz = cspLogicalAz;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cspLogicalAzDisplayName(String cspLogicalAzDisplayName) {
+            if (cspLogicalAzDisplayName == null) {
+              throw new MissingRequiredPropertyException("GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation", "cspLogicalAzDisplayName");
+            }
+            this.cspLogicalAzDisplayName = cspLogicalAzDisplayName;
             return this;
         }
         @CustomType.Setter
@@ -189,6 +211,7 @@ public final class GetMulticloudExternalLocationsMetadataExternalLocationsMetada
         public GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation build() {
             final var _resultValue = new GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation();
             _resultValue.cspLogicalAz = cspLogicalAz;
+            _resultValue.cspLogicalAzDisplayName = cspLogicalAzDisplayName;
             _resultValue.cspPhysicalAz = cspPhysicalAz;
             _resultValue.cspPhysicalAzDisplayName = cspPhysicalAzDisplayName;
             _resultValue.cspRegion = cspRegion;

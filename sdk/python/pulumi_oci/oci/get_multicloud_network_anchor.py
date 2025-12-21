@@ -27,7 +27,7 @@ class GetMulticloudNetworkAnchorResult:
     """
     A collection of values returned by getMulticloudNetworkAnchor.
     """
-    def __init__(__self__, cloud_service_provider_metadata_items=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, external_location=None, freeform_tags=None, id=None, lifecycle_details=None, network_anchor_id=None, network_anchor_lifecycle_state=None, oci_metadata_items=None, resource_anchor_id=None, setup_mode=None, subscription_id=None, subscription_service_name=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cloud_service_provider_metadata_items=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, display_name=None, external_location=None, freeform_tags=None, id=None, lifecycle_details=None, network_anchor_id=None, network_anchor_lifecycle_state=None, oci_metadata_items=None, resource_anchor_id=None, setup_mode=None, should_fetch_vcn_name=None, subscription_id=None, subscription_service_name=None, subscription_type=None, system_tags=None, time_created=None, time_updated=None):
         if cloud_service_provider_metadata_items and not isinstance(cloud_service_provider_metadata_items, list):
             raise TypeError("Expected argument 'cloud_service_provider_metadata_items' to be a list")
         pulumi.set(__self__, "cloud_service_provider_metadata_items", cloud_service_provider_metadata_items)
@@ -70,12 +70,18 @@ class GetMulticloudNetworkAnchorResult:
         if setup_mode and not isinstance(setup_mode, str):
             raise TypeError("Expected argument 'setup_mode' to be a str")
         pulumi.set(__self__, "setup_mode", setup_mode)
+        if should_fetch_vcn_name and not isinstance(should_fetch_vcn_name, bool):
+            raise TypeError("Expected argument 'should_fetch_vcn_name' to be a bool")
+        pulumi.set(__self__, "should_fetch_vcn_name", should_fetch_vcn_name)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
         if subscription_service_name and not isinstance(subscription_service_name, str):
             raise TypeError("Expected argument 'subscription_service_name' to be a str")
         pulumi.set(__self__, "subscription_service_name", subscription_service_name)
+        if subscription_type and not isinstance(subscription_type, str):
+            raise TypeError("Expected argument 'subscription_type' to be a str")
+        pulumi.set(__self__, "subscription_type", subscription_type)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -193,6 +199,11 @@ class GetMulticloudNetworkAnchorResult:
         return pulumi.get(self, "setup_mode")
 
     @_builtins.property
+    @pulumi.getter(name="shouldFetchVcnName")
+    def should_fetch_vcn_name(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_fetch_vcn_name")
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> _builtins.str:
         return pulumi.get(self, "subscription_id")
@@ -201,6 +212,14 @@ class GetMulticloudNetworkAnchorResult:
     @pulumi.getter(name="subscriptionServiceName")
     def subscription_service_name(self) -> _builtins.str:
         return pulumi.get(self, "subscription_service_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionType")
+    def subscription_type(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Subscription Type.
+        """
+        return pulumi.get(self, "subscription_type")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -247,8 +266,10 @@ class AwaitableGetMulticloudNetworkAnchorResult(GetMulticloudNetworkAnchorResult
             oci_metadata_items=self.oci_metadata_items,
             resource_anchor_id=self.resource_anchor_id,
             setup_mode=self.setup_mode,
+            should_fetch_vcn_name=self.should_fetch_vcn_name,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name,
+            subscription_type=self.subscription_type,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -256,6 +277,7 @@ class AwaitableGetMulticloudNetworkAnchorResult(GetMulticloudNetworkAnchorResult
 
 def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = None,
                                   network_anchor_id: Optional[_builtins.str] = None,
+                                  should_fetch_vcn_name: Optional[_builtins.bool] = None,
                                   subscription_id: Optional[_builtins.str] = None,
                                   subscription_service_name: Optional[_builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudNetworkAnchorResult:
@@ -273,18 +295,21 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
     test_network_anchor = oci.oci.get_multicloud_network_anchor(network_anchor_id=network_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        external_location=network_anchor_external_location)
+        external_location=network_anchor_external_location,
+        should_fetch_vcn_name=should_fetch_vcn_name)
     ```
 
 
     :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
     :param _builtins.str network_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+    :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
     :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
     """
     __args__ = dict()
     __args__['externalLocation'] = external_location
     __args__['networkAnchorId'] = network_anchor_id
+    __args__['shouldFetchVcnName'] = should_fetch_vcn_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -305,13 +330,16 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
         oci_metadata_items=pulumi.get(__ret__, 'oci_metadata_items'),
         resource_anchor_id=pulumi.get(__ret__, 'resource_anchor_id'),
         setup_mode=pulumi.get(__ret__, 'setup_mode'),
+        should_fetch_vcn_name=pulumi.get(__ret__, 'should_fetch_vcn_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'),
+        subscription_type=pulumi.get(__ret__, 'subscription_type'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                          network_anchor_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                         should_fetch_vcn_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                          subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                                          subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudNetworkAnchorResult]:
@@ -329,18 +357,21 @@ def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Inpu
     test_network_anchor = oci.oci.get_multicloud_network_anchor(network_anchor_id=network_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        external_location=network_anchor_external_location)
+        external_location=network_anchor_external_location,
+        should_fetch_vcn_name=should_fetch_vcn_name)
     ```
 
 
     :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
     :param _builtins.str network_anchor_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+    :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
     :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
     :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
     """
     __args__ = dict()
     __args__['externalLocation'] = external_location
     __args__['networkAnchorId'] = network_anchor_id
+    __args__['shouldFetchVcnName'] = should_fetch_vcn_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -360,8 +391,10 @@ def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Inpu
         oci_metadata_items=pulumi.get(__response__, 'oci_metadata_items'),
         resource_anchor_id=pulumi.get(__response__, 'resource_anchor_id'),
         setup_mode=pulumi.get(__response__, 'setup_mode'),
+        should_fetch_vcn_name=pulumi.get(__response__, 'should_fetch_vcn_name'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name'),
+        subscription_type=pulumi.get(__response__, 'subscription_type'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

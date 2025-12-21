@@ -40,18 +40,23 @@ public final class GetMulticloudResourceAnchorsResult {
      */
     private @Nullable String lifecycleState;
     private @Nullable Integer limit;
+    /**
+     * @return Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
+     * 
+     */
     private @Nullable String linkedCompartmentId;
     /**
      * @return The list of ResourceAnchorCollection.
      * 
      */
     private List<GetMulticloudResourceAnchorsResourceAnchorCollection> resourceAnchorCollections;
+    private @Nullable Boolean shouldFetchCompartmentName;
     /**
      * @return Oracle Cloud Infrastructure Subscription Id
      * 
      */
-    private String subscriptionId;
-    private String subscriptionServiceName;
+    private @Nullable String subscriptionId;
+    private @Nullable String subscriptionServiceName;
 
     private GetMulticloudResourceAnchorsResult() {}
     /**
@@ -91,6 +96,10 @@ public final class GetMulticloudResourceAnchorsResult {
     public Optional<Integer> limit() {
         return Optional.ofNullable(this.limit);
     }
+    /**
+     * @return Optional - Oracle Cloud Infrastructure compartment Id (OCID) which was created or linked by customer with resource anchor.  This compartmentId is different from where resource Anchor live.
+     * 
+     */
     public Optional<String> linkedCompartmentId() {
         return Optional.ofNullable(this.linkedCompartmentId);
     }
@@ -101,15 +110,18 @@ public final class GetMulticloudResourceAnchorsResult {
     public List<GetMulticloudResourceAnchorsResourceAnchorCollection> resourceAnchorCollections() {
         return this.resourceAnchorCollections;
     }
+    public Optional<Boolean> shouldFetchCompartmentName() {
+        return Optional.ofNullable(this.shouldFetchCompartmentName);
+    }
     /**
      * @return Oracle Cloud Infrastructure Subscription Id
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
-    public String subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<String> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     public static Builder builder() {
@@ -130,8 +142,9 @@ public final class GetMulticloudResourceAnchorsResult {
         private @Nullable Integer limit;
         private @Nullable String linkedCompartmentId;
         private List<GetMulticloudResourceAnchorsResourceAnchorCollection> resourceAnchorCollections;
-        private String subscriptionId;
-        private String subscriptionServiceName;
+        private @Nullable Boolean shouldFetchCompartmentName;
+        private @Nullable String subscriptionId;
+        private @Nullable String subscriptionServiceName;
         public Builder() {}
         public Builder(GetMulticloudResourceAnchorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -144,6 +157,7 @@ public final class GetMulticloudResourceAnchorsResult {
     	      this.limit = defaults.limit;
     	      this.linkedCompartmentId = defaults.linkedCompartmentId;
     	      this.resourceAnchorCollections = defaults.resourceAnchorCollections;
+    	      this.shouldFetchCompartmentName = defaults.shouldFetchCompartmentName;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.subscriptionServiceName = defaults.subscriptionServiceName;
         }
@@ -211,18 +225,20 @@ public final class GetMulticloudResourceAnchorsResult {
             return resourceAnchorCollections(List.of(resourceAnchorCollections));
         }
         @CustomType.Setter
-        public Builder subscriptionId(String subscriptionId) {
-            if (subscriptionId == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResult", "subscriptionId");
-            }
+        public Builder shouldFetchCompartmentName(@Nullable Boolean shouldFetchCompartmentName) {
+
+            this.shouldFetchCompartmentName = shouldFetchCompartmentName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionId(@Nullable String subscriptionId) {
+
             this.subscriptionId = subscriptionId;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionServiceName(String subscriptionServiceName) {
-            if (subscriptionServiceName == null) {
-              throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsResult", "subscriptionServiceName");
-            }
+        public Builder subscriptionServiceName(@Nullable String subscriptionServiceName) {
+
             this.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
@@ -237,6 +253,7 @@ public final class GetMulticloudResourceAnchorsResult {
             _resultValue.limit = limit;
             _resultValue.linkedCompartmentId = linkedCompartmentId;
             _resultValue.resourceAnchorCollections = resourceAnchorCollections;
+            _resultValue.shouldFetchCompartmentName = shouldFetchCompartmentName;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.subscriptionServiceName = subscriptionServiceName;
             return _resultValue;

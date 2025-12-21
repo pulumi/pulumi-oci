@@ -1713,6 +1713,7 @@ class GetClustersClusterCollectionItemResult(dict):
                  network_configurations: Sequence['outputs.GetClustersClusterCollectionItemNetworkConfigurationResult'],
                  sddc_id: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  upgrade_licenses: Sequence['outputs.GetClustersClusterCollectionItemUpgradeLicenseResult'],
@@ -1740,6 +1741,7 @@ class GetClustersClusterCollectionItemResult(dict):
         :param Sequence['GetClustersClusterCollectionItemNetworkConfigurationArgs'] network_configurations: The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         :param _builtins.str state: The lifecycle state of the resource.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param Sequence['GetClustersClusterCollectionItemUpgradeLicenseArgs'] upgrade_licenses: The vSphere licenses to use when upgrading the Cluster.
@@ -1770,6 +1772,7 @@ class GetClustersClusterCollectionItemResult(dict):
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
@@ -1944,6 +1947,14 @@ class GetClustersClusterCollectionItemResult(dict):
         The lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -2944,6 +2955,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
                  sddc_id: _builtins.str,
                  state: _builtins.str,
                  swap_billing_host_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  upgraded_replacement_esxi_host_id: _builtins.str,
@@ -2978,6 +2990,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         :param _builtins.str state: The lifecycle state of the resource.
         :param _builtins.str swap_billing_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
@@ -3014,6 +3027,7 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         pulumi.set(__self__, "sddc_id", sddc_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
@@ -3266,6 +3280,14 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
         """
         return pulumi.get(self, "swap_billing_host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -4004,6 +4026,7 @@ class GetSddcsSddcCollectionResult(dict):
         :param _builtins.str provisioning_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
         :param _builtins.str replication_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
         :param _builtins.str state: The lifecycle state of the resource.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str vcenter_fqdn: The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -4444,6 +4467,9 @@ class GetSddcsSddcCollectionResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property

@@ -79,6 +79,8 @@ type LookupComputeHostResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+	FirmwareBundleId string `pulumi:"firmwareBundleId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
@@ -99,6 +101,8 @@ type LookupComputeHostResult struct {
 	LocalBlockId string `pulumi:"localBlockId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 	NetworkBlockId string `pulumi:"networkBlockId"`
+	// The platform of the host
+	Platform string `pulumi:"platform"`
 	// Shows details about the last recycle performed on this host.
 	RecycleDetails []GetComputeHostRecycleDetail `pulumi:"recycleDetails"`
 	// The shape of host
@@ -201,6 +205,11 @@ func (o LookupComputeHostResultOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeHostResult) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+func (o LookupComputeHostResultOutput) FirmwareBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.FirmwareBundleId }).(pulumi.StringOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupComputeHostResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupComputeHostResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -249,6 +258,11 @@ func (o LookupComputeHostResultOutput) LocalBlockId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 func (o LookupComputeHostResultOutput) NetworkBlockId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeHostResult) string { return v.NetworkBlockId }).(pulumi.StringOutput)
+}
+
+// The platform of the host
+func (o LookupComputeHostResultOutput) Platform() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.Platform }).(pulumi.StringOutput)
 }
 
 // Shows details about the last recycle performed on this host.

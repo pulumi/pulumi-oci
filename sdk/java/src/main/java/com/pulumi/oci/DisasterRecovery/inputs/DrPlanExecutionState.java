@@ -9,6 +9,7 @@ import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionAutomaticExecutionD
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionExecutionOptionsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionGroupExecutionArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionLogLocationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrPlanExecutionStepStatusCountArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -285,6 +286,21 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    @Import(name="stepStatusCounts")
+    private @Nullable Output<List<DrPlanExecutionStepStatusCountArgs>> stepStatusCounts;
+
+    /**
+     * @return A categorized summary of step execution statuses and their corresponding counts.
+     * 
+     */
+    public Optional<Output<List<DrPlanExecutionStepStatusCountArgs>>> stepStatusCounts() {
+        return Optional.ofNullable(this.stepStatusCounts);
+    }
+
+    /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
@@ -379,6 +395,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         this.planExecutionType = $.planExecutionType;
         this.planId = $.planId;
         this.state = $.state;
+        this.stepStatusCounts = $.stepStatusCounts;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeEnded = $.timeEnded;
@@ -795,6 +812,37 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param stepStatusCounts A categorized summary of step execution statuses and their corresponding counts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStatusCounts(@Nullable Output<List<DrPlanExecutionStepStatusCountArgs>> stepStatusCounts) {
+            $.stepStatusCounts = stepStatusCounts;
+            return this;
+        }
+
+        /**
+         * @param stepStatusCounts A categorized summary of step execution statuses and their corresponding counts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStatusCounts(List<DrPlanExecutionStepStatusCountArgs> stepStatusCounts) {
+            return stepStatusCounts(Output.of(stepStatusCounts));
+        }
+
+        /**
+         * @param stepStatusCounts A categorized summary of step execution statuses and their corresponding counts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStatusCounts(DrPlanExecutionStepStatusCountArgs... stepStatusCounts) {
+            return stepStatusCounts(List.of(stepStatusCounts));
         }
 
         /**

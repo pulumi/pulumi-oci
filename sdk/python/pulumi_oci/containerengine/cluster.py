@@ -636,6 +636,7 @@ class Cluster(pulumi.CustomResource):
                     },
                 },
                 "service_lb_config": {
+                    "backend_nsg_ids": cluster_options_service_lb_config_backend_nsg_ids,
                     "defined_tags": {
                         "Operations.CostCenter": "42",
                     },
@@ -755,6 +756,7 @@ class Cluster(pulumi.CustomResource):
                     },
                 },
                 "service_lb_config": {
+                    "backend_nsg_ids": cluster_options_service_lb_config_backend_nsg_ids,
                     "defined_tags": {
                         "Operations.CostCenter": "42",
                     },

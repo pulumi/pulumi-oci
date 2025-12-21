@@ -56,18 +56,30 @@ export interface GetEndpointResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
+    /**
+     * An optional description of the endpoint.
+     */
     readonly description: string;
+    /**
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     */
     readonly displayName: string;
     readonly endpointId: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
     readonly freeformTags: {[key: string]: string};
     readonly generativeAiPrivateEndpointId: string;
+    /**
+     * An OCID that uniquely identifies this endpoint resource.
+     */
     readonly id: string;
     /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      */
     readonly lifecycleDetails: string;
     /**
-     * The OCID of the model used for the feature.
+     * The OCID of the model that's used to create this endpoint.
      */
     readonly modelId: string;
     /**
@@ -78,7 +90,13 @@ export interface GetEndpointResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+     */
     readonly timeCreated: string;
+    /**
+     * The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+     */
     readonly timeUpdated: string;
 }
 /**

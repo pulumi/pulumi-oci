@@ -1254,7 +1254,9 @@ class ClusterOptionsServiceLbConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "definedTags":
+        if key == "backendNsgIds":
+            suggest = "backend_nsg_ids"
+        elif key == "definedTags":
             suggest = "defined_tags"
         elif key == "freeformTags":
             suggest = "freeform_tags"
@@ -1271,16 +1273,28 @@ class ClusterOptionsServiceLbConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 backend_nsg_ids: Optional[Sequence[_builtins.str]] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None):
         """
+        :param Sequence[_builtins.str] backend_nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
+        if backend_nsg_ids is not None:
+            pulumi.set(__self__, "backend_nsg_ids", backend_nsg_ids)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="backendNsgIds")
+    def backend_nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "backend_nsg_ids")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -5233,14 +5247,25 @@ class GetClusterOptionPersistentVolumeConfigResult(dict):
 @pulumi.output_type
 class GetClusterOptionServiceLbConfigResult(dict):
     def __init__(__self__, *,
+                 backend_nsg_ids: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str]):
         """
+        :param Sequence[_builtins.str] backend_nsg_ids: A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
+        pulumi.set(__self__, "backend_nsg_ids", backend_nsg_ids)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="backendNsgIds")
+    def backend_nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "backend_nsg_ids")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -6292,14 +6317,25 @@ class GetClustersClusterOptionPersistentVolumeConfigResult(dict):
 @pulumi.output_type
 class GetClustersClusterOptionServiceLbConfigResult(dict):
     def __init__(__self__, *,
+                 backend_nsg_ids: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
                  freeform_tags: Mapping[str, _builtins.str]):
         """
+        :param Sequence[_builtins.str] backend_nsg_ids: A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
+        pulumi.set(__self__, "backend_nsg_ids", backend_nsg_ids)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="backendNsgIds")
+    def backend_nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
+        """
+        return pulumi.get(self, "backend_nsg_ids")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

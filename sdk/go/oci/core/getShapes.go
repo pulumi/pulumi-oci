@@ -34,6 +34,7 @@ import (
 //				CompartmentId:      compartmentId,
 //				AvailabilityDomain: pulumi.StringRef(shapeAvailabilityDomain),
 //				ImageId:            pulumi.StringRef(testImage.Id),
+//				Shape:              pulumi.StringRef(shapeShape),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -62,6 +63,8 @@ type GetShapesArgs struct {
 	Filters       []GetShapesFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
 	ImageId *string `pulumi:"imageId"`
+	// Shape name.
+	Shape *string `pulumi:"shape"`
 }
 
 // A collection of values returned by getShapes.
@@ -72,6 +75,7 @@ type GetShapesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id      string  `pulumi:"id"`
 	ImageId *string `pulumi:"imageId"`
+	Shape   *string `pulumi:"shape"`
 	// The list of shapes.
 	Shapes []GetShapesShape `pulumi:"shapes"`
 }
@@ -94,6 +98,8 @@ type GetShapesOutputArgs struct {
 	Filters       GetShapesFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
+	// Shape name.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
 
 func (GetShapesOutputArgs) ElementType() reflect.Type {
@@ -134,6 +140,10 @@ func (o GetShapesResultOutput) Id() pulumi.StringOutput {
 
 func (o GetShapesResultOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetShapesResult) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetShapesResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapesResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The list of shapes.

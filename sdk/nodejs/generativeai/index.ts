@@ -145,6 +145,16 @@ export const getGenerativeAiPrivateEndpoints: typeof import("./getGenerativeAiPr
 export const getGenerativeAiPrivateEndpointsOutput: typeof import("./getGenerativeAiPrivateEndpoints").getGenerativeAiPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getGenerativeAiPrivateEndpoints","getGenerativeAiPrivateEndpointsOutput"], () => require("./getGenerativeAiPrivateEndpoints"));
 
+export { GetImportedModelArgs, GetImportedModelResult, GetImportedModelOutputArgs } from "./getImportedModel";
+export const getImportedModel: typeof import("./getImportedModel").getImportedModel = null as any;
+export const getImportedModelOutput: typeof import("./getImportedModel").getImportedModelOutput = null as any;
+utilities.lazyLoad(exports, ["getImportedModel","getImportedModelOutput"], () => require("./getImportedModel"));
+
+export { GetImportedModelsArgs, GetImportedModelsResult, GetImportedModelsOutputArgs } from "./getImportedModels";
+export const getImportedModels: typeof import("./getImportedModels").getImportedModels = null as any;
+export const getImportedModelsOutput: typeof import("./getImportedModels").getImportedModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getImportedModels","getImportedModelsOutput"], () => require("./getImportedModels"));
+
 export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
 export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
@@ -154,6 +164,11 @@ export { GetModelsArgs, GetModelsResult, GetModelsOutputArgs } from "./getModels
 export const getModels: typeof import("./getModels").getModels = null as any;
 export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
 utilities.lazyLoad(exports, ["getModels","getModelsOutput"], () => require("./getModels"));
+
+export { ImportedModelArgs, ImportedModelState } from "./importedModel";
+export type ImportedModel = import("./importedModel").ImportedModel;
+export const ImportedModel: typeof import("./importedModel").ImportedModel = null as any;
+utilities.lazyLoad(exports, ["ImportedModel"], () => require("./importedModel"));
 
 export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
@@ -183,6 +198,8 @@ const _module = {
                 return new Endpoint(name, <any>undefined, { urn })
             case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
                 return new GenerativeAiPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/importedModel:ImportedModel":
+                return new ImportedModel(name, <any>undefined, { urn })
             case "oci:GenerativeAi/model:Model":
                 return new Model(name, <any>undefined, { urn })
             default:
@@ -199,4 +216,5 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/generativeAiPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/importedModel", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)

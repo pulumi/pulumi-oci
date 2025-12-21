@@ -4,7 +4,7 @@
 package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -17,18 +17,33 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     public static final GetMulticloudNetworkAnchorsPlainArgs Empty = new GetMulticloudNetworkAnchorsPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Boolean compartmentIdInSubtree;
+
+    /**
+     * @return If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
     /**
@@ -47,24 +62,22 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * The Cloud Service Provider region.
      * 
      */
-    @Import(name="externalLocation", required=true)
-    private String externalLocation;
+    @Import(name="externalLocation")
+    private @Nullable String externalLocation;
 
     /**
-     * @return OMHub Control Plane must know underlying CSP CP Region External Location Name.
+     * @return The Cloud Service Provider region.
      * 
      */
-    public String externalLocation() {
-        return this.externalLocation;
+    public Optional<String> externalLocation() {
+        return Optional.ofNullable(this.externalLocation);
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-     * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
     @Import(name="id")
@@ -72,8 +85,6 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-     * 
-     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
     public Optional<String> id() {
@@ -133,39 +144,59 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Whether to fetch and include the vcn display name, which may introduce additional latency.
+     * 
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
-    @Import(name="subscriptionId", required=true)
-    private String subscriptionId;
+    @Import(name="shouldFetchVcnName")
+    private @Nullable Boolean shouldFetchVcnName;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return Whether to fetch and include the vcn display name, which may introduce additional latency.
+     * 
+     * Note: one of the arguments `compartmentId` or `id` must be specified.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<Boolean> shouldFetchVcnName() {
+        return Optional.ofNullable(this.shouldFetchVcnName);
     }
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    @Import(name="subscriptionServiceName", required=true)
-    private String subscriptionServiceName;
+    @Import(name="subscriptionId")
+    private @Nullable String subscriptionId;
 
     /**
-     * @return The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    public String subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
+     * The subscription service name of the Cloud Service Provider.
+     * 
+     */
+    @Import(name="subscriptionServiceName")
+    private @Nullable String subscriptionServiceName;
+
+    /**
+     * @return The subscription service name of the Cloud Service Provider.
+     * 
+     */
+    public Optional<String> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     private GetMulticloudNetworkAnchorsPlainArgs() {}
 
     private GetMulticloudNetworkAnchorsPlainArgs(GetMulticloudNetworkAnchorsPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.displayName = $.displayName;
         this.externalLocation = $.externalLocation;
         this.id = $.id;
@@ -173,6 +204,7 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         this.networkAnchorLifecycleState = $.networkAnchorLifecycleState;
         this.networkAnchorOciSubnetId = $.networkAnchorOciSubnetId;
         this.networkAnchorOciVcnId = $.networkAnchorOciVcnId;
+        this.shouldFetchVcnName = $.shouldFetchVcnName;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -196,13 +228,24 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
          * 
          * @return builder
          * 
          */
         public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 
@@ -218,20 +261,18 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param externalLocation OMHub Control Plane must know underlying CSP CP Region External Location Name.
+         * @param externalLocation The Cloud Service Provider region.
          * 
          * @return builder
          * 
          */
-        public Builder externalLocation(String externalLocation) {
+        public Builder externalLocation(@Nullable String externalLocation) {
             $.externalLocation = externalLocation;
             return this;
         }
 
         /**
          * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-         * 
-         * Note: one of the arguments `compartmentId` or `id` must be specified.
          * 
          * @return builder
          * 
@@ -280,37 +321,41 @@ public final class GetMulticloudNetworkAnchorsPlainArgs extends com.pulumi.resou
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param shouldFetchVcnName Whether to fetch and include the vcn display name, which may introduce additional latency.
+         * 
+         * Note: one of the arguments `compartmentId` or `id` must be specified.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionId(String subscriptionId) {
+        public Builder shouldFetchVcnName(@Nullable Boolean shouldFetchVcnName) {
+            $.shouldFetchVcnName = shouldFetchVcnName;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable String subscriptionId) {
             $.subscriptionId = subscriptionId;
             return this;
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionServiceName(String subscriptionServiceName) {
+        public Builder subscriptionServiceName(@Nullable String subscriptionServiceName) {
             $.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
 
         public GetMulticloudNetworkAnchorsPlainArgs build() {
-            if ($.externalLocation == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsPlainArgs", "externalLocation");
-            }
-            if ($.subscriptionId == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsPlainArgs", "subscriptionId");
-            }
-            if ($.subscriptionServiceName == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudNetworkAnchorsPlainArgs", "subscriptionServiceName");
-            }
             return $;
         }
     }

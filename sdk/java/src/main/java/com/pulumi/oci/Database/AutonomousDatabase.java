@@ -1032,6 +1032,11 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isScheduleDbVersionUpgradeToEarliest;
     }
     /**
+     * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
@@ -1040,6 +1045,13 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     @Export(name="isShrinkOnly", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isShrinkOnly;
 
+    /**
+     * @return (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<Optional<Boolean>> isShrinkOnly() {
         return Codegen.optional(this.isShrinkOnly);
     }
@@ -1607,9 +1619,17 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<String> role() {
         return this.role;
     }
+    /**
+     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
+     * 
+     */
     @Export(name="rotateKeyTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
+    /**
+     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
+     * 
+     */
     public Output<Optional<Boolean>> rotateKeyTrigger() {
         return Codegen.optional(this.rotateKeyTrigger);
     }
@@ -1839,15 +1859,31 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<List<String>> supportedRegionsToCloneTos() {
         return this.supportedRegionsToCloneTos;
     }
+    /**
+     * It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+     * 
+     */
     @Export(name="switchoverTo", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> switchoverTo;
 
+    /**
+     * @return It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
+     * 
+     */
     public Output<Optional<String>> switchoverTo() {
         return Codegen.optional(this.switchoverTo);
     }
+    /**
+     * (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+     * 
+     */
     @Export(name="switchoverToRemotePeerId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> switchoverToRemotePeerId;
 
+    /**
+     * @return (Updatable) It is applicable only when `dataguardRegionType` and `role` are set, and `isDedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+     * 
+     */
     public Output<Optional<String>> switchoverToRemotePeerId() {
         return Codegen.optional(this.switchoverToRemotePeerId);
     }
@@ -2266,9 +2302,6 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="whitelistedIps", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> whitelistedIps;
@@ -2281,9 +2314,6 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. To remove all whitelisted IPs, set the field to a list with an empty string `[&#34;&#34;]`.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Optional<List<String>>> whitelistedIps() {

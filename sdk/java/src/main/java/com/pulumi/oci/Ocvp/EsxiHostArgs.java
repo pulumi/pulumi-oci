@@ -315,6 +315,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sddcId);
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
     private EsxiHostArgs() {}
 
     private EsxiHostArgs(EsxiHostArgs $) {
@@ -335,6 +350,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.nextSku = $.nextSku;
         this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.sddcId = $.sddcId;
+        this.systemTags = $.systemTags;
     }
 
     public static Builder builder() {
@@ -752,6 +768,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
         public Builder sddcId(String sddcId) {
             return sddcId(Output.of(sddcId));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         public EsxiHostArgs build() {

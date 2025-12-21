@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult> AllowlistedHttpVcns;
         /// <summary>
+        /// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult> DesignTimes;
+        /// <summary>
         /// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         /// </summary>
         public readonly bool IsIntegrationVcnAllowlisted;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// The type of network endpoint.
         /// </summary>
         public readonly string NetworkEndpointType;
+        /// <summary>
+        /// A collection of AllowListedIps and AllowListedVcns for a specific OIC component: global, RT, or DT
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult> Runtimes;
 
         [OutputConstructor]
         private GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(
@@ -36,14 +44,20 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult> allowlistedHttpVcns,
 
+            ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailDesignTimeResult> designTimes,
+
             bool isIntegrationVcnAllowlisted,
 
-            string networkEndpointType)
+            string networkEndpointType,
+
+            ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailRuntimeResult> runtimes)
         {
             AllowlistedHttpIps = allowlistedHttpIps;
             AllowlistedHttpVcns = allowlistedHttpVcns;
+            DesignTimes = designTimes;
             IsIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             NetworkEndpointType = networkEndpointType;
+            Runtimes = runtimes;
         }
     }
 }

@@ -41,6 +41,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private String consumptionModel;
+    private Integer convertInstanceTrigger;
     /**
      * @return Details for a custom endpoint for the integration instance.
      * 
@@ -56,6 +57,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private Map<String,String> definedTags;
+    private Integer disableProcessAutomationTrigger;
     /**
      * @return Disaster recovery details for the integration instance created in the region.
      * 
@@ -122,6 +124,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    private String logGroupId;
     /**
      * @return The number of configured message packs (if any)
      * 
@@ -205,6 +212,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
     public String consumptionModel() {
         return this.consumptionModel;
     }
+    public Integer convertInstanceTrigger() {
+        return this.convertInstanceTrigger;
+    }
     /**
      * @return Details for a custom endpoint for the integration instance.
      * 
@@ -225,6 +235,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    public Integer disableProcessAutomationTrigger() {
+        return this.disableProcessAutomationTrigger;
     }
     /**
      * @return Disaster recovery details for the integration instance created in the region.
@@ -329,6 +342,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.lifecycleDetails;
     }
     /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given integration instance
+     * 
+     */
+    public String logGroupId() {
+        return this.logGroupId;
+    }
+    /**
      * @return The number of configured message packs (if any)
      * 
      */
@@ -415,9 +435,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
+        private Integer convertInstanceTrigger;
         private List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints;
         private String dataRetentionPeriod;
         private Map<String,String> definedTags;
+        private Integer disableProcessAutomationTrigger;
         private List<GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetail> disasterRecoveryDetails;
         private String displayName;
         private String domainId;
@@ -436,6 +458,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private Boolean isFileServerEnabled;
         private Boolean isVisualBuilderEnabled;
         private String lifecycleDetails;
+        private String logGroupId;
         private Integer messagePacks;
         private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
         private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
@@ -453,9 +476,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
+    	      this.convertInstanceTrigger = defaults.convertInstanceTrigger;
     	      this.customEndpoints = defaults.customEndpoints;
     	      this.dataRetentionPeriod = defaults.dataRetentionPeriod;
     	      this.definedTags = defaults.definedTags;
+    	      this.disableProcessAutomationTrigger = defaults.disableProcessAutomationTrigger;
     	      this.disasterRecoveryDetails = defaults.disasterRecoveryDetails;
     	      this.displayName = defaults.displayName;
     	      this.domainId = defaults.domainId;
@@ -474,6 +499,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.isFileServerEnabled = defaults.isFileServerEnabled;
     	      this.isVisualBuilderEnabled = defaults.isVisualBuilderEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.logGroupId = defaults.logGroupId;
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.privateEndpointOutboundConnections = defaults.privateEndpointOutboundConnections;
@@ -525,6 +551,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder convertInstanceTrigger(Integer convertInstanceTrigger) {
+            if (convertInstanceTrigger == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "convertInstanceTrigger");
+            }
+            this.convertInstanceTrigger = convertInstanceTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder customEndpoints(List<GetIntegrationInstancesIntegrationInstanceCustomEndpoint> customEndpoints) {
             if (customEndpoints == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "customEndpoints");
@@ -549,6 +583,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder disableProcessAutomationTrigger(Integer disableProcessAutomationTrigger) {
+            if (disableProcessAutomationTrigger == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "disableProcessAutomationTrigger");
+            }
+            this.disableProcessAutomationTrigger = disableProcessAutomationTrigger;
             return this;
         }
         @CustomType.Setter
@@ -702,6 +744,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return this;
         }
         @CustomType.Setter
+        public Builder logGroupId(String logGroupId) {
+            if (logGroupId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "logGroupId");
+            }
+            this.logGroupId = logGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder messagePacks(Integer messagePacks) {
             if (messagePacks == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "messagePacks");
@@ -793,9 +843,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.attachments = attachments;
             _resultValue.compartmentId = compartmentId;
             _resultValue.consumptionModel = consumptionModel;
+            _resultValue.convertInstanceTrigger = convertInstanceTrigger;
             _resultValue.customEndpoints = customEndpoints;
             _resultValue.dataRetentionPeriod = dataRetentionPeriod;
             _resultValue.definedTags = definedTags;
+            _resultValue.disableProcessAutomationTrigger = disableProcessAutomationTrigger;
             _resultValue.disasterRecoveryDetails = disasterRecoveryDetails;
             _resultValue.displayName = displayName;
             _resultValue.domainId = domainId;
@@ -814,6 +866,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.isFileServerEnabled = isFileServerEnabled;
             _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logGroupId = logGroupId;
             _resultValue.messagePacks = messagePacks;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.privateEndpointOutboundConnections = privateEndpointOutboundConnections;

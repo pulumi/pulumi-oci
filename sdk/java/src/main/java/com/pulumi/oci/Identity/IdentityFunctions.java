@@ -125,6 +125,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
@@ -368,6 +372,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsIdentitySettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsIdentitySettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsKmsiSettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsKmsiSettingsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMappedAttributeResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMappedAttributesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeyResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeysResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAppsResult;
@@ -14543,6 +14549,486 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsKmsiSettingsResult> getDomainsKmsiSettingsPlain(GetDomainsKmsiSettingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsKmsiSettings:getDomainsKmsiSettings", TypeShape.of(GetDomainsKmsiSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Attribute Mappings for a Mapped Attribute
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributeResult> getDomainsMappedAttribute(GetDomainsMappedAttributeArgs args) {
+        return getDomainsMappedAttribute(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Attribute Mappings for a Mapped Attribute
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsMappedAttributeResult> getDomainsMappedAttributePlain(GetDomainsMappedAttributePlainArgs args) {
+        return getDomainsMappedAttributePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Attribute Mappings for a Mapped Attribute
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributeResult> getDomainsMappedAttribute(GetDomainsMappedAttributeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMappedAttribute:getDomainsMappedAttribute", TypeShape.of(GetDomainsMappedAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Attribute Mappings for a Mapped Attribute
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributeResult> getDomainsMappedAttribute(GetDomainsMappedAttributeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMappedAttribute:getDomainsMappedAttribute", TypeShape.of(GetDomainsMappedAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Attribute Mappings for a Mapped Attribute
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttribute = IdentityFunctions.getDomainsMappedAttribute(GetDomainsMappedAttributeArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeId(testMappedAttributeOciIdentityDomainsMappedAttribute.id())
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsMappedAttributeResult> getDomainsMappedAttributePlain(GetDomainsMappedAttributePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMappedAttribute:getDomainsMappedAttribute", TypeShape.of(GetDomainsMappedAttributeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Mapped Attributes
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
+     *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .startIndex(mappedAttributeStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributesResult> getDomainsMappedAttributes(GetDomainsMappedAttributesArgs args) {
+        return getDomainsMappedAttributes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Mapped Attributes
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
+     *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .startIndex(mappedAttributeStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsMappedAttributesResult> getDomainsMappedAttributesPlain(GetDomainsMappedAttributesPlainArgs args) {
+        return getDomainsMappedAttributesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Mapped Attributes
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
+     *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .startIndex(mappedAttributeStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributesResult> getDomainsMappedAttributes(GetDomainsMappedAttributesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMappedAttributes:getDomainsMappedAttributes", TypeShape.of(GetDomainsMappedAttributesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Mapped Attributes
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
+     *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .startIndex(mappedAttributeStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDomainsMappedAttributesResult> getDomainsMappedAttributes(GetDomainsMappedAttributesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMappedAttributes:getDomainsMappedAttributes", TypeShape.of(GetDomainsMappedAttributesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Mapped Attributes in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Mapped Attributes
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMappedAttributes = IdentityFunctions.getDomainsMappedAttributes(GetDomainsMappedAttributesArgs.builder()
+     *             .idcsEndpoint(testDomain.url())
+     *             .mappedAttributeCount(mappedAttributeMappedAttributeCount)
+     *             .mappedAttributeFilter(mappedAttributeMappedAttributeFilter)
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(mappedAttributeAuthorization)
+     *             .resourceTypeSchemaVersion(mappedAttributeResourceTypeSchemaVersion)
+     *             .startIndex(mappedAttributeStartIndex)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDomainsMappedAttributesResult> getDomainsMappedAttributesPlain(GetDomainsMappedAttributesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMappedAttributes:getDomainsMappedAttributes", TypeShape.of(GetDomainsMappedAttributesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.

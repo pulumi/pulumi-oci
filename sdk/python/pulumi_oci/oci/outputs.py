@@ -21,6 +21,14 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetail',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
+    'BatchBatchContextFleet',
+    'BatchBatchContextFleetShape',
+    'BatchBatchContextJobPriorityConfiguration',
+    'BatchBatchContextLoggingConfiguration',
+    'BatchBatchContextNetwork',
+    'BatchBatchContextNetworkVnic',
+    'BatchBatchTaskEnvironmentSecurityContext',
+    'BatchBatchTaskEnvironmentVolume',
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode',
@@ -89,6 +97,40 @@ __all__ = [
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemResult',
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailResult',
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListResult',
+    'GetBatchBatchContextFleetResult',
+    'GetBatchBatchContextFleetShapeResult',
+    'GetBatchBatchContextJobPriorityConfigurationResult',
+    'GetBatchBatchContextLoggingConfigurationResult',
+    'GetBatchBatchContextNetworkResult',
+    'GetBatchBatchContextNetworkVnicResult',
+    'GetBatchBatchContextShapesBatchContextShapeCollectionResult',
+    'GetBatchBatchContextShapesBatchContextShapeCollectionItemResult',
+    'GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionResult',
+    'GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionResult',
+    'GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionResult',
+    'GetBatchBatchContextShapesFilterResult',
+    'GetBatchBatchContextsBatchContextCollectionResult',
+    'GetBatchBatchContextsBatchContextCollectionItemResult',
+    'GetBatchBatchContextsBatchContextCollectionItemFleetResult',
+    'GetBatchBatchContextsBatchContextCollectionItemFleetShapeResult',
+    'GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationResult',
+    'GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult',
+    'GetBatchBatchContextsBatchContextCollectionItemNetworkResult',
+    'GetBatchBatchContextsBatchContextCollectionItemNetworkVnicResult',
+    'GetBatchBatchContextsFilterResult',
+    'GetBatchBatchJobPoolsBatchJobPoolCollectionResult',
+    'GetBatchBatchJobPoolsBatchJobPoolCollectionItemResult',
+    'GetBatchBatchJobPoolsFilterResult',
+    'GetBatchBatchTaskEnvironmentSecurityContextResult',
+    'GetBatchBatchTaskEnvironmentVolumeResult',
+    'GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionResult',
+    'GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemResult',
+    'GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextResult',
+    'GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeResult',
+    'GetBatchBatchTaskEnvironmentsFilterResult',
+    'GetBatchBatchTaskProfilesBatchTaskProfileCollectionResult',
+    'GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemResult',
+    'GetBatchBatchTaskProfilesFilterResult',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterResult',
     'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionResult',
     'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult',
@@ -240,6 +282,9 @@ __all__ = [
     'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult',
     'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult',
     'GetMulticloudExternalLocationsMetadataFilterResult',
+    'GetMulticloudMulticloudsubscriptionsFilterResult',
+    'GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionResult',
+    'GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemResult',
     'GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult',
     'GetMulticloudNetworkAnchorOciMetadataItemResult',
     'GetMulticloudNetworkAnchorOciMetadataItemDnResult',
@@ -249,6 +294,9 @@ __all__ = [
     'GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult',
     'GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionResult',
     'GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResult',
+    'GetMulticloudOmHubMulticloudResourcesFilterResult',
+    'GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionResult',
+    'GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResult',
     'GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult',
     'GetMulticloudResourceAnchorsFilterResult',
     'GetMulticloudResourceAnchorsResourceAnchorCollectionResult',
@@ -591,6 +639,550 @@ class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList(dict):
         list of attributes belonging to the above api which needs to be protected.
         """
         return pulumi.get(self, "attribute_names")
+
+
+@pulumi.output_type
+class BatchBatchContextFleet(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maxConcurrentTasks":
+            suggest = "max_concurrent_tasks"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextFleet. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextFleet.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextFleet.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 max_concurrent_tasks: _builtins.int,
+                 name: _builtins.str,
+                 shape: 'outputs.BatchBatchContextFleetShape',
+                 type: _builtins.str,
+                 details: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int max_concurrent_tasks: Maximum number of concurrent tasks for the service managed fleet.
+        :param _builtins.str name: Name of the service managed fleet.
+        :param 'BatchBatchContextFleetShapeArgs' shape: Shape of the fleet. Describes hardware resources of each node in the fleet.
+        :param _builtins.str type: Type of the fleet. Also serves as a discriminator for sub-entities.
+        :param _builtins.str details: A message that describes the current state of the service manage fleet configuration in more detail.
+        :param _builtins.str state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "max_concurrent_tasks", max_concurrent_tasks)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "type", type)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="maxConcurrentTasks")
+    def max_concurrent_tasks(self) -> _builtins.int:
+        """
+        Maximum number of concurrent tasks for the service managed fleet.
+        """
+        return pulumi.get(self, "max_concurrent_tasks")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> 'outputs.BatchBatchContextFleetShape':
+        """
+        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        """
+        return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the fleet. Also serves as a discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> Optional[_builtins.str]:
+        """
+        A message that describes the current state of the service manage fleet configuration in more detail.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class BatchBatchContextFleetShape(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+        elif key == "shapeName":
+            suggest = "shape_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextFleetShape. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextFleetShape.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextFleetShape.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int,
+                 shape_name: _builtins.str):
+        """
+        :param _builtins.int memory_in_gbs: Amount of memory in GBs required by the shape.
+        :param _builtins.int ocpus: Number of OCPUs required by the shape.
+        :param _builtins.str shape_name: The name of the shape.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        Amount of memory in GBs required by the shape.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        Number of OCPUs required by the shape.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name of the shape.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class BatchBatchContextJobPriorityConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "tagKey":
+            suggest = "tag_key"
+        elif key == "tagNamespace":
+            suggest = "tag_namespace"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextJobPriorityConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextJobPriorityConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextJobPriorityConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 tag_key: _builtins.str,
+                 tag_namespace: _builtins.str,
+                 values: Mapping[str, _builtins.str],
+                 weight: _builtins.int):
+        """
+        :param _builtins.str tag_key: (Updatable) Name of the tag key.
+        :param _builtins.str tag_namespace: (Updatable) Name of the corresponding tag namespace.
+        :param Mapping[str, _builtins.str] values: (Updatable) Mapping of tag value to its priority.
+        :param _builtins.int weight: (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "tag_namespace", tag_namespace)
+        pulumi.set(__self__, "values", values)
+        pulumi.set(__self__, "weight", weight)
+
+    @_builtins.property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> _builtins.str:
+        """
+        (Updatable) Name of the tag key.
+        """
+        return pulumi.get(self, "tag_key")
+
+    @_builtins.property
+    @pulumi.getter(name="tagNamespace")
+    def tag_namespace(self) -> _builtins.str:
+        """
+        (Updatable) Name of the corresponding tag namespace.
+        """
+        return pulumi.get(self, "tag_namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Mapping[str, _builtins.str]:
+        """
+        (Updatable) Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def weight(self) -> _builtins.int:
+        """
+        (Updatable) Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class BatchBatchContextLoggingConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "logGroupId":
+            suggest = "log_group_id"
+        elif key == "logId":
+            suggest = "log_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextLoggingConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextLoggingConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextLoggingConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 log_group_id: _builtins.str,
+                 log_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param _builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class BatchBatchContextNetwork(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "subnetId":
+            suggest = "subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextNetwork. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextNetwork.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextNetwork.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 subnet_id: _builtins.str,
+                 nsg_ids: Optional[Sequence[_builtins.str]] = None,
+                 vnics: Optional[Sequence['outputs.BatchBatchContextNetworkVnic']] = None):
+        """
+        :param _builtins.str subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        :param Sequence[_builtins.str] nsg_ids: A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        :param Sequence['BatchBatchContextNetworkVnicArgs'] vnics: A list of private endpoint's VNICs.
+        """
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if vnics is not None:
+            pulumi.set(__self__, "vnics", vnics)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter
+    def vnics(self) -> Optional[Sequence['outputs.BatchBatchContextNetworkVnic']]:
+        """
+        A list of private endpoint's VNICs.
+        """
+        return pulumi.get(self, "vnics")
+
+
+@pulumi.output_type
+class BatchBatchContextNetworkVnic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceIps":
+            suggest = "source_ips"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchContextNetworkVnic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchContextNetworkVnic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchContextNetworkVnic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[_builtins.str] = None,
+                 source_ips: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        :param Sequence[_builtins.str] source_ips: A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if source_ips is not None:
+            pulumi.set(__self__, "source_ips", source_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIps")
+    def source_ips(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        return pulumi.get(self, "source_ips")
+
+
+@pulumi.output_type
+class BatchBatchTaskEnvironmentSecurityContext(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "fsGroup":
+            suggest = "fs_group"
+        elif key == "runAsGroup":
+            suggest = "run_as_group"
+        elif key == "runAsUser":
+            suggest = "run_as_user"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchTaskEnvironmentSecurityContext. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchTaskEnvironmentSecurityContext.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchTaskEnvironmentSecurityContext.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 fs_group: Optional[_builtins.int] = None,
+                 run_as_group: Optional[_builtins.int] = None,
+                 run_as_user: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int fs_group: A special supplemental group ID that applies to all containers in a pod.
+        :param _builtins.int run_as_group: Group ID for running processes inside the container.
+        :param _builtins.int run_as_user: User ID for running processes inside the container.
+        """
+        if fs_group is not None:
+            pulumi.set(__self__, "fs_group", fs_group)
+        if run_as_group is not None:
+            pulumi.set(__self__, "run_as_group", run_as_group)
+        if run_as_user is not None:
+            pulumi.set(__self__, "run_as_user", run_as_user)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> Optional[_builtins.int]:
+        """
+        A special supplemental group ID that applies to all containers in a pod.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> Optional[_builtins.int]:
+        """
+        Group ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> Optional[_builtins.int]:
+        """
+        User ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_user")
+
+
+@pulumi.output_type
+class BatchBatchTaskEnvironmentVolume(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "localMountDirectoryPath":
+            suggest = "local_mount_directory_path"
+        elif key == "mountTargetExportPath":
+            suggest = "mount_target_export_path"
+        elif key == "mountTargetFqdn":
+            suggest = "mount_target_fqdn"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BatchBatchTaskEnvironmentVolume. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BatchBatchTaskEnvironmentVolume.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BatchBatchTaskEnvironmentVolume.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 local_mount_directory_path: _builtins.str,
+                 mount_target_export_path: _builtins.str,
+                 mount_target_fqdn: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str local_mount_directory_path: The local path to mount the NFS share to.
+        :param _builtins.str mount_target_export_path: The path to the directory on the NFS server to be mounted.
+        :param _builtins.str mount_target_fqdn: The FQDN of the NFS server to connect to.
+        :param _builtins.str name: The name of the NfsVolume.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "local_mount_directory_path", local_mount_directory_path)
+        pulumi.set(__self__, "mount_target_export_path", mount_target_export_path)
+        pulumi.set(__self__, "mount_target_fqdn", mount_target_fqdn)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="localMountDirectoryPath")
+    def local_mount_directory_path(self) -> _builtins.str:
+        """
+        The local path to mount the NFS share to.
+        """
+        return pulumi.get(self, "local_mount_directory_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetExportPath")
+    def mount_target_export_path(self) -> _builtins.str:
+        """
+        The path to the directory on the NFS server to be mounted.
+        """
+        return pulumi.get(self, "mount_target_export_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetFqdn")
+    def mount_target_fqdn(self) -> _builtins.str:
+        """
+        The FQDN of the NFS server to connect to.
+        """
+        return pulumi.get(self, "mount_target_fqdn")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -5357,6 +5949,1783 @@ class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItem
         list of attributes belonging to the above api which needs to be protected.
         """
         return pulumi.get(self, "attribute_names")
+
+
+@pulumi.output_type
+class GetBatchBatchContextFleetResult(dict):
+    def __init__(__self__, *,
+                 details: _builtins.str,
+                 max_concurrent_tasks: _builtins.int,
+                 name: _builtins.str,
+                 shapes: Sequence['outputs.GetBatchBatchContextFleetShapeResult'],
+                 state: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str details: A message that describes the current state of the service manage fleet configuration in more detail.
+        :param _builtins.int max_concurrent_tasks: Maximum number of concurrent tasks for the service managed fleet.
+        :param _builtins.str name: Name of the service managed fleet.
+        :param Sequence['GetBatchBatchContextFleetShapeArgs'] shapes: Shape of the fleet. Describes hardware resources of each node in the fleet.
+        :param _builtins.str state: The current state of the batch context.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "max_concurrent_tasks", max_concurrent_tasks)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "shapes", shapes)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the service manage fleet configuration in more detail.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter(name="maxConcurrentTasks")
+    def max_concurrent_tasks(self) -> _builtins.int:
+        """
+        Maximum number of concurrent tasks for the service managed fleet.
+        """
+        return pulumi.get(self, "max_concurrent_tasks")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def shapes(self) -> Sequence['outputs.GetBatchBatchContextFleetShapeResult']:
+        """
+        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        """
+        return pulumi.get(self, "shapes")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the batch context.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchContextFleetShapeResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int,
+                 shape_name: _builtins.str):
+        """
+        :param _builtins.int memory_in_gbs: Amount of memory in GBs required by the shape.
+        :param _builtins.int ocpus: Number of OCPUs required by the shape.
+        :param _builtins.str shape_name: The name of the shape.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        Amount of memory in GBs required by the shape.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        Number of OCPUs required by the shape.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name of the shape.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetBatchBatchContextJobPriorityConfigurationResult(dict):
+    def __init__(__self__, *,
+                 tag_key: _builtins.str,
+                 tag_namespace: _builtins.str,
+                 values: Mapping[str, _builtins.str],
+                 weight: _builtins.int):
+        """
+        :param _builtins.str tag_key: Name of the tag key.
+        :param _builtins.str tag_namespace: Name of the corresponding tag namespace.
+        :param Mapping[str, _builtins.str] values: Mapping of tag value to its priority.
+        :param _builtins.int weight: Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "tag_namespace", tag_namespace)
+        pulumi.set(__self__, "values", values)
+        pulumi.set(__self__, "weight", weight)
+
+    @_builtins.property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> _builtins.str:
+        """
+        Name of the tag key.
+        """
+        return pulumi.get(self, "tag_key")
+
+    @_builtins.property
+    @pulumi.getter(name="tagNamespace")
+    def tag_namespace(self) -> _builtins.str:
+        """
+        Name of the corresponding tag namespace.
+        """
+        return pulumi.get(self, "tag_namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def weight(self) -> _builtins.int:
+        """
+        Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetBatchBatchContextLoggingConfigurationResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: _builtins.str,
+                 log_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param _builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchContextNetworkResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[_builtins.str],
+                 subnet_id: _builtins.str,
+                 vnics: Sequence['outputs.GetBatchBatchContextNetworkVnicResult']):
+        """
+        :param Sequence[_builtins.str] nsg_ids: A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        :param _builtins.str subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        :param Sequence['GetBatchBatchContextNetworkVnicArgs'] vnics: A list of private endpoint's VNICs.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vnics", vnics)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def vnics(self) -> Sequence['outputs.GetBatchBatchContextNetworkVnicResult']:
+        """
+        A list of private endpoint's VNICs.
+        """
+        return pulumi.get(self, "vnics")
+
+
+@pulumi.output_type
+class GetBatchBatchContextNetworkVnicResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 source_ips: Sequence[_builtins.str]):
+        """
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        :param Sequence[_builtins.str] source_ips: A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "source_ips", source_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC, which resides in the customer's VCN.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIps")
+    def source_ips(self) -> Sequence[_builtins.str]:
+        """
+        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        return pulumi.get(self, "source_ips")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesBatchContextShapeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemResult']):
+        """
+        :param Sequence['GetBatchBatchContextShapesBatchContextShapeCollectionItemArgs'] items: List of shapes.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemResult']:
+        """
+        List of shapes.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesBatchContextShapeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 memory_options: Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionResult'],
+                 name: _builtins.str,
+                 networking_bandwidth_options: Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionResult'],
+                 ocpu_options: Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionResult'],
+                 processor_description: _builtins.str):
+        """
+        :param Sequence['GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionArgs'] memory_options: The amount of memory available for container instances that use this shape.
+        :param _builtins.str name: The name identifying the shape.
+        :param Sequence['GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionArgs'] networking_bandwidth_options: For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+        :param Sequence['GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for container instances that use this shape.
+        :param _builtins.str processor_description: A short description of the container instance's processor (CPU).
+        """
+        pulumi.set(__self__, "memory_options", memory_options)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
+        pulumi.set(__self__, "ocpu_options", ocpu_options)
+        pulumi.set(__self__, "processor_description", processor_description)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryOptions")
+    def memory_options(self) -> Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionResult']:
+        """
+        The amount of memory available for container instances that use this shape.
+        """
+        return pulumi.get(self, "memory_options")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name identifying the shape.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="networkingBandwidthOptions")
+    def networking_bandwidth_options(self) -> Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionResult']:
+        """
+        For a flexible shape, the amount of networking bandwidth available for container instances that use this shape.
+        """
+        return pulumi.get(self, "networking_bandwidth_options")
+
+    @_builtins.property
+    @pulumi.getter(name="ocpuOptions")
+    def ocpu_options(self) -> Sequence['outputs.GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionResult']:
+        """
+        For a flexible shape, the number of OCPUs available for container instances that use this shape.
+        """
+        return pulumi.get(self, "ocpu_options")
+
+    @_builtins.property
+    @pulumi.getter(name="processorDescription")
+    def processor_description(self) -> _builtins.str:
+        """
+        A short description of the container instance's processor (CPU).
+        """
+        return pulumi.get(self, "processor_description")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesBatchContextShapeCollectionItemMemoryOptionResult(dict):
+    def __init__(__self__, *,
+                 default_per_ocpu_in_gbs: _builtins.float,
+                 max_in_gbs: _builtins.float,
+                 max_per_ocpu_in_gbs: _builtins.float,
+                 min_in_gbs: _builtins.float,
+                 min_per_ocpu_in_gbs: _builtins.float):
+        """
+        :param _builtins.float default_per_ocpu_in_gbs: The default amount of memory per OCPU available for this shape (GB).
+        :param _builtins.float max_in_gbs: The maximum amount of memory (GB).
+        :param _builtins.float max_per_ocpu_in_gbs: For a flexible shape, the maximum amount of memory per OCPU available for this shape (GB).
+        :param _builtins.float min_in_gbs: The minimum amount of memory (GB).
+        :param _builtins.float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape (GB).
+        """
+        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
+        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
+        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultPerOcpuInGbs")
+    def default_per_ocpu_in_gbs(self) -> _builtins.float:
+        """
+        The default amount of memory per OCPU available for this shape (GB).
+        """
+        return pulumi.get(self, "default_per_ocpu_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="maxInGbs")
+    def max_in_gbs(self) -> _builtins.float:
+        """
+        The maximum amount of memory (GB).
+        """
+        return pulumi.get(self, "max_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="maxPerOcpuInGbs")
+    def max_per_ocpu_in_gbs(self) -> _builtins.float:
+        """
+        For a flexible shape, the maximum amount of memory per OCPU available for this shape (GB).
+        """
+        return pulumi.get(self, "max_per_ocpu_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="minInGbs")
+    def min_in_gbs(self) -> _builtins.float:
+        """
+        The minimum amount of memory (GB).
+        """
+        return pulumi.get(self, "min_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="minPerOcpuInGbs")
+    def min_per_ocpu_in_gbs(self) -> _builtins.float:
+        """
+        The minimum amount of memory per OCPU available for this shape (GB).
+        """
+        return pulumi.get(self, "min_per_ocpu_in_gbs")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesBatchContextShapeCollectionItemNetworkingBandwidthOptionResult(dict):
+    def __init__(__self__, *,
+                 default_per_ocpu_in_gbps: _builtins.float,
+                 max_in_gbps: _builtins.float,
+                 min_in_gbps: _builtins.float):
+        """
+        :param _builtins.float default_per_ocpu_in_gbps: The default amount of networking bandwidth per OCPU, in gigabits per second.
+        :param _builtins.float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
+        :param _builtins.float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
+        """
+        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
+        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultPerOcpuInGbps")
+    def default_per_ocpu_in_gbps(self) -> _builtins.float:
+        """
+        The default amount of networking bandwidth per OCPU, in gigabits per second.
+        """
+        return pulumi.get(self, "default_per_ocpu_in_gbps")
+
+    @_builtins.property
+    @pulumi.getter(name="maxInGbps")
+    def max_in_gbps(self) -> _builtins.float:
+        """
+        The maximum amount of networking bandwidth, in gigabits per second.
+        """
+        return pulumi.get(self, "max_in_gbps")
+
+    @_builtins.property
+    @pulumi.getter(name="minInGbps")
+    def min_in_gbps(self) -> _builtins.float:
+        """
+        The minimum amount of networking bandwidth, in gigabits per second.
+        """
+        return pulumi.get(self, "min_in_gbps")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesBatchContextShapeCollectionItemOcpuOptionResult(dict):
+    def __init__(__self__, *,
+                 max_ocpus: _builtins.float,
+                 min_ocpus: _builtins.float):
+        """
+        :param _builtins.float max_ocpus: The maximum number of OCPUs.
+        :param _builtins.float min_ocpus: The minimum number of OCPUs.
+        """
+        pulumi.set(__self__, "max_ocpus", max_ocpus)
+        pulumi.set(__self__, "min_ocpus", min_ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="maxOcpus")
+    def max_ocpus(self) -> _builtins.float:
+        """
+        The maximum number of OCPUs.
+        """
+        return pulumi.get(self, "max_ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="minOcpus")
+    def min_ocpus(self) -> _builtins.float:
+        """
+        The minimum number of OCPUs.
+        """
+        return pulumi.get(self, "min_ocpus")
+
+
+@pulumi.output_type
+class GetBatchBatchContextShapesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name identifying the shape.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name identifying the shape.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 entitlements: Mapping[str, _builtins.str],
+                 fleets: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemFleetResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 job_priority_configurations: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationResult'],
+                 lifecycle_details: _builtins.str,
+                 logging_configurations: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult'],
+                 networks: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemNetworkResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Summarized information about the batch context.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] entitlements: Mapping of concurrent/shared resources used in job tasks to their limits.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemFleetArgs'] fleets: List of fleet configurations related to the batch context.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationArgs'] job_priority_configurations: List of job priority configurations related to the batch context.
+        :param _builtins.str lifecycle_details: A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationArgs'] logging_configurations: Logging configuration for batch context.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemNetworkArgs'] networks: Network configuration of the batch context.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "entitlements", entitlements)
+        pulumi.set(__self__, "fleets", fleets)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "job_priority_configurations", job_priority_configurations)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "logging_configurations", logging_configurations)
+        pulumi.set(__self__, "networks", networks)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Summarized information about the batch context.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def entitlements(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of concurrent/shared resources used in job tasks to their limits.
+        """
+        return pulumi.get(self, "entitlements")
+
+    @_builtins.property
+    @pulumi.getter
+    def fleets(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemFleetResult']:
+        """
+        List of fleet configurations related to the batch context.
+        """
+        return pulumi.get(self, "fleets")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobPriorityConfigurations")
+    def job_priority_configurations(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationResult']:
+        """
+        List of job priority configurations related to the batch context.
+        """
+        return pulumi.get(self, "job_priority_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state in more detail. For example,   can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="loggingConfigurations")
+    def logging_configurations(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult']:
+        """
+        Logging configuration for batch context.
+        """
+        return pulumi.get(self, "logging_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def networks(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemNetworkResult']:
+        """
+        Network configuration of the batch context.
+        """
+        return pulumi.get(self, "networks")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the batch context was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the batch context was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemFleetResult(dict):
+    def __init__(__self__, *,
+                 details: _builtins.str,
+                 max_concurrent_tasks: _builtins.int,
+                 name: _builtins.str,
+                 shapes: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemFleetShapeResult'],
+                 state: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str details: A message that describes the current state of the service manage fleet configuration in more detail.
+        :param _builtins.int max_concurrent_tasks: Maximum number of concurrent tasks for the service managed fleet.
+        :param _builtins.str name: Name of the service managed fleet.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemFleetShapeArgs'] shapes: Shape of the fleet. Describes hardware resources of each node in the fleet.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "max_concurrent_tasks", max_concurrent_tasks)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "shapes", shapes)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the service manage fleet configuration in more detail.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter(name="maxConcurrentTasks")
+    def max_concurrent_tasks(self) -> _builtins.int:
+        """
+        Maximum number of concurrent tasks for the service managed fleet.
+        """
+        return pulumi.get(self, "max_concurrent_tasks")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def shapes(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemFleetShapeResult']:
+        """
+        Shape of the fleet. Describes hardware resources of each node in the fleet.
+        """
+        return pulumi.get(self, "shapes")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemFleetShapeResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.int,
+                 ocpus: _builtins.int,
+                 shape_name: _builtins.str):
+        """
+        :param _builtins.int memory_in_gbs: Amount of memory in GBs required by the shape.
+        :param _builtins.int ocpus: Number of OCPUs required by the shape.
+        :param _builtins.str shape_name: The name of the shape.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "shape_name", shape_name)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.int:
+        """
+        Amount of memory in GBs required by the shape.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.int:
+        """
+        Number of OCPUs required by the shape.
+        """
+        return pulumi.get(self, "ocpus")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name of the shape.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemJobPriorityConfigurationResult(dict):
+    def __init__(__self__, *,
+                 tag_key: _builtins.str,
+                 tag_namespace: _builtins.str,
+                 values: Mapping[str, _builtins.str],
+                 weight: _builtins.int):
+        """
+        :param _builtins.str tag_key: Name of the tag key.
+        :param _builtins.str tag_namespace: Name of the corresponding tag namespace.
+        :param Mapping[str, _builtins.str] values: Mapping of tag value to its priority.
+        :param _builtins.int weight: Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        pulumi.set(__self__, "tag_key", tag_key)
+        pulumi.set(__self__, "tag_namespace", tag_namespace)
+        pulumi.set(__self__, "values", values)
+        pulumi.set(__self__, "weight", weight)
+
+    @_builtins.property
+    @pulumi.getter(name="tagKey")
+    def tag_key(self) -> _builtins.str:
+        """
+        Name of the tag key.
+        """
+        return pulumi.get(self, "tag_key")
+
+    @_builtins.property
+    @pulumi.getter(name="tagNamespace")
+    def tag_namespace(self) -> _builtins.str:
+        """
+        Name of the corresponding tag namespace.
+        """
+        return pulumi.get(self, "tag_namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Mapping[str, _builtins.str]:
+        """
+        Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def weight(self) -> _builtins.int:
+        """
+        Weight associated with the tag key. Percentage point is the unit of measurement.
+        """
+        return pulumi.get(self, "weight")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemLoggingConfigurationResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: _builtins.str,
+                 log_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param _builtins.str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemNetworkResult(dict):
+    def __init__(__self__, *,
+                 nsg_ids: Sequence[_builtins.str],
+                 subnet_id: _builtins.str,
+                 vnics: Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemNetworkVnicResult']):
+        """
+        :param Sequence[_builtins.str] nsg_ids: A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        :param _builtins.str subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        :param Sequence['GetBatchBatchContextsBatchContextCollectionItemNetworkVnicArgs'] vnics: A list of private endpoint's VNICs.
+        """
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "vnics", vnics)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated network security groups.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def vnics(self) -> Sequence['outputs.GetBatchBatchContextsBatchContextCollectionItemNetworkVnicResult']:
+        """
+        A list of private endpoint's VNICs.
+        """
+        return pulumi.get(self, "vnics")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsBatchContextCollectionItemNetworkVnicResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 source_ips: Sequence[_builtins.str]):
+        """
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        :param Sequence[_builtins.str] source_ips: A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "source_ips", source_ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceIps")
+    def source_ips(self) -> Sequence[_builtins.str]:
+        """
+        A list of private IP addresses (in the customer's VCN) that represent access points for the service.
+        """
+        return pulumi.get(self, "source_ips")
+
+
+@pulumi.output_type
+class GetBatchBatchContextsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the service managed fleet.
+        :param Sequence[_builtins.str] values: Mapping of tag value to its priority.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the service managed fleet.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Mapping of tag value to its priority.
+        """
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBatchBatchJobPoolsBatchJobPoolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBatchBatchJobPoolsBatchJobPoolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBatchBatchJobPoolsBatchJobPoolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBatchBatchJobPoolsBatchJobPoolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 batch_context_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str batch_context_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Summarized information about the batch job pool.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch job pool.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the batch job pool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the batch job pool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "batch_context_id", batch_context_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="batchContextId")
+    def batch_context_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch context.
+        """
+        return pulumi.get(self, "batch_context_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Summarized information about the batch job pool.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch job pool.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the batch job pool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the batch job pool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBatchBatchJobPoolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 fs_group: _builtins.int,
+                 run_as_group: _builtins.int,
+                 run_as_user: _builtins.int):
+        """
+        :param _builtins.int fs_group: A special supplemental group ID that applies to all containers in a pod.
+        :param _builtins.int run_as_group: Group ID for running processes inside the container.
+        :param _builtins.int run_as_user: User ID for running processes inside the container.
+        """
+        pulumi.set(__self__, "fs_group", fs_group)
+        pulumi.set(__self__, "run_as_group", run_as_group)
+        pulumi.set(__self__, "run_as_user", run_as_user)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> _builtins.int:
+        """
+        A special supplemental group ID that applies to all containers in a pod.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> _builtins.int:
+        """
+        Group ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> _builtins.int:
+        """
+        User ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_user")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentVolumeResult(dict):
+    def __init__(__self__, *,
+                 local_mount_directory_path: _builtins.str,
+                 mount_target_export_path: _builtins.str,
+                 mount_target_fqdn: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str local_mount_directory_path: The local path to mount the NFS share to.
+        :param _builtins.str mount_target_export_path: The path to the directory on the NFS server to be mounted.
+        :param _builtins.str mount_target_fqdn: The FQDN of the NFS server to connect to.
+        :param _builtins.str name: The name of the NfsVolume.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "local_mount_directory_path", local_mount_directory_path)
+        pulumi.set(__self__, "mount_target_export_path", mount_target_export_path)
+        pulumi.set(__self__, "mount_target_fqdn", mount_target_fqdn)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="localMountDirectoryPath")
+    def local_mount_directory_path(self) -> _builtins.str:
+        """
+        The local path to mount the NFS share to.
+        """
+        return pulumi.get(self, "local_mount_directory_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetExportPath")
+    def mount_target_export_path(self) -> _builtins.str:
+        """
+        The path to the directory on the NFS server to be mounted.
+        """
+        return pulumi.get(self, "mount_target_export_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetFqdn")
+    def mount_target_fqdn(self) -> _builtins.str:
+        """
+        The FQDN of the NFS server to connect to.
+        """
+        return pulumi.get(self, "mount_target_fqdn")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 image_url: _builtins.str,
+                 security_contexts: Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 volumes: Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeResult'],
+                 working_directory: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The batch task environment description.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task environment.
+        :param _builtins.str image_url: The URL of the ocir image.
+        :param Sequence['GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextArgs'] security_contexts: Security context for container runtime configuration.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param Sequence['GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeArgs'] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+        :param _builtins.str working_directory: Container's working directory.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "image_url", image_url)
+        pulumi.set(__self__, "security_contexts", security_contexts)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "volumes", volumes)
+        pulumi.set(__self__, "working_directory", working_directory)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The batch task environment description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task environment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="imageUrl")
+    def image_url(self) -> _builtins.str:
+        """
+        The URL of the ocir image.
+        """
+        return pulumi.get(self, "image_url")
+
+    @_builtins.property
+    @pulumi.getter(name="securityContexts")
+    def security_contexts(self) -> Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextResult']:
+        """
+        Security context for container runtime configuration.
+        """
+        return pulumi.get(self, "security_contexts")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the batch task environment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> Sequence['outputs.GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeResult']:
+        """
+        List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
+        """
+        return pulumi.get(self, "volumes")
+
+    @_builtins.property
+    @pulumi.getter(name="workingDirectory")
+    def working_directory(self) -> _builtins.str:
+        """
+        Container's working directory.
+        """
+        return pulumi.get(self, "working_directory")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 fs_group: _builtins.int,
+                 run_as_group: _builtins.int,
+                 run_as_user: _builtins.int):
+        """
+        :param _builtins.int fs_group: A special supplemental group ID that applies to all containers in a pod.
+        :param _builtins.int run_as_group: Group ID for running processes inside the container.
+        :param _builtins.int run_as_user: User ID for running processes inside the container.
+        """
+        pulumi.set(__self__, "fs_group", fs_group)
+        pulumi.set(__self__, "run_as_group", run_as_group)
+        pulumi.set(__self__, "run_as_user", run_as_user)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> _builtins.int:
+        """
+        A special supplemental group ID that applies to all containers in a pod.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsGroup")
+    def run_as_group(self) -> _builtins.int:
+        """
+        Group ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_group")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> _builtins.int:
+        """
+        User ID for running processes inside the container.
+        """
+        return pulumi.get(self, "run_as_user")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentsBatchTaskEnvironmentCollectionItemVolumeResult(dict):
+    def __init__(__self__, *,
+                 local_mount_directory_path: _builtins.str,
+                 mount_target_export_path: _builtins.str,
+                 mount_target_fqdn: _builtins.str,
+                 name: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str local_mount_directory_path: The local path to mount the NFS share to.
+        :param _builtins.str mount_target_export_path: The path to the directory on the NFS server to be mounted.
+        :param _builtins.str mount_target_fqdn: The FQDN of the NFS server to connect to.
+        :param _builtins.str name: The name of the NfsVolume.
+        :param _builtins.str type: Discriminator for sub-entities.
+        """
+        pulumi.set(__self__, "local_mount_directory_path", local_mount_directory_path)
+        pulumi.set(__self__, "mount_target_export_path", mount_target_export_path)
+        pulumi.set(__self__, "mount_target_fqdn", mount_target_fqdn)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="localMountDirectoryPath")
+    def local_mount_directory_path(self) -> _builtins.str:
+        """
+        The local path to mount the NFS share to.
+        """
+        return pulumi.get(self, "local_mount_directory_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetExportPath")
+    def mount_target_export_path(self) -> _builtins.str:
+        """
+        The path to the directory on the NFS server to be mounted.
+        """
+        return pulumi.get(self, "mount_target_export_path")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargetFqdn")
+    def mount_target_fqdn(self) -> _builtins.str:
+        """
+        The FQDN of the NFS server to connect to.
+        """
+        return pulumi.get(self, "mount_target_fqdn")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Discriminator for sub-entities.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskEnvironmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the NfsVolume.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the NfsVolume.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskProfilesBatchTaskProfileCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskProfilesBatchTaskProfileCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 min_memory_in_gbs: _builtins.int,
+                 min_ocpus: _builtins.int,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The batch task profile description.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
+        :param _builtins.int min_memory_in_gbs: The minimum required memory.
+        :param _builtins.int min_ocpus: The minimum required OCPUs.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the batch task profile was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the batch task profile was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "min_memory_in_gbs", min_memory_in_gbs)
+        pulumi.set(__self__, "min_ocpus", min_ocpus)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The batch task profile description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the batch task profile.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="minMemoryInGbs")
+    def min_memory_in_gbs(self) -> _builtins.int:
+        """
+        The minimum required memory.
+        """
+        return pulumi.get(self, "min_memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="minOcpus")
+    def min_ocpus(self) -> _builtins.int:
+        """
+        The minimum required OCPUs.
+        """
+        return pulumi.get(self, "min_ocpus")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the batch task profile was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the batch task profile was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBatchBatchTaskProfilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -13915,6 +16284,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
 @pulumi.output_type
 class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult(dict):
     def __init__(__self__, *,
+                 cluster_placement_group_id: _builtins.str,
                  cpg_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  external_locations: Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult'],
@@ -13922,17 +16292,25 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
                  oci_logical_ad: _builtins.str,
                  oci_physical_ad: _builtins.str,
                  oci_region: _builtins.str,
+                 partner_cloud_account_name: _builtins.str,
+                 partner_cloud_account_url: _builtins.str,
+                 partner_cloud_name: _builtins.str,
                  system_tags: Mapping[str, _builtins.str]):
         """
-        :param _builtins.str cpg_id: Cluster Placement Group OCID
+        :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        :param _builtins.str cpg_id: Cluster Placement Group OCID (deprecated representation)
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs'] external_locations: External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs'] external_locations: The Cloud Service Provider region.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str oci_logical_ad: Oracle Cloud Infrastructure logical ad name
         :param _builtins.str oci_physical_ad: Oracle Cloud Infrastructure physical ad name
         :param _builtins.str oci_region: Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param _builtins.str partner_cloud_account_name: User friendly name of account name for customer's subscription
+        :param _builtins.str partner_cloud_account_url: Direct URL to partner cloud for customer's account
+        :param _builtins.str partner_cloud_name: Partner Cloud Name based on service name
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "cpg_id", cpg_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "external_locations", external_locations)
@@ -13940,13 +16318,24 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
         pulumi.set(__self__, "oci_logical_ad", oci_logical_ad)
         pulumi.set(__self__, "oci_physical_ad", oci_physical_ad)
         pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "partner_cloud_account_name", partner_cloud_account_name)
+        pulumi.set(__self__, "partner_cloud_account_url", partner_cloud_account_url)
+        pulumi.set(__self__, "partner_cloud_name", partner_cloud_name)
         pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster Placement Group.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="cpgId")
     def cpg_id(self) -> _builtins.str:
         """
-        Cluster Placement Group OCID
+        Cluster Placement Group OCID (deprecated representation)
         """
         return pulumi.get(self, "cpg_id")
 
@@ -13962,7 +16351,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
     @pulumi.getter(name="externalLocations")
     def external_locations(self) -> Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult']:
         """
-        External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        The Cloud Service Provider region.
         """
         return pulumi.get(self, "external_locations")
 
@@ -13999,6 +16388,30 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
         return pulumi.get(self, "oci_region")
 
     @_builtins.property
+    @pulumi.getter(name="partnerCloudAccountName")
+    def partner_cloud_account_name(self) -> _builtins.str:
+        """
+        User friendly name of account name for customer's subscription
+        """
+        return pulumi.get(self, "partner_cloud_account_name")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerCloudAccountUrl")
+    def partner_cloud_account_url(self) -> _builtins.str:
+        """
+        Direct URL to partner cloud for customer's account
+        """
+        return pulumi.get(self, "partner_cloud_account_url")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerCloudName")
+    def partner_cloud_name(self) -> _builtins.str:
+        """
+        Partner Cloud Name based on service name
+        """
+        return pulumi.get(self, "partner_cloud_name")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -14011,6 +16424,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
 class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult(dict):
     def __init__(__self__, *,
                  csp_logical_az: _builtins.str,
+                 csp_logical_az_display_name: _builtins.str,
                  csp_physical_az: _builtins.str,
                  csp_physical_az_display_name: _builtins.str,
                  csp_region: _builtins.str,
@@ -14019,6 +16433,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
                  service_name: _builtins.str):
         """
         :param _builtins.str csp_logical_az: A mapping of CSP physical availability zone to CSP logical availability zone.
+        :param _builtins.str csp_logical_az_display_name: User friendly display name for cspLogicalAZ
         :param _builtins.str csp_physical_az: A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
         :param _builtins.str csp_physical_az_display_name: User friendly display name for cspPhysicalAZ
         :param _builtins.str csp_region: CSP region corresponding to the given Oracle Cloud Infrastructure region
@@ -14027,6 +16442,7 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
         :param _builtins.str service_name: The serviceName that externalLocation map object belongs to.
         """
         pulumi.set(__self__, "csp_logical_az", csp_logical_az)
+        pulumi.set(__self__, "csp_logical_az_display_name", csp_logical_az_display_name)
         pulumi.set(__self__, "csp_physical_az", csp_physical_az)
         pulumi.set(__self__, "csp_physical_az_display_name", csp_physical_az_display_name)
         pulumi.set(__self__, "csp_region", csp_region)
@@ -14041,6 +16457,14 @@ class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection
         A mapping of CSP physical availability zone to CSP logical availability zone.
         """
         return pulumi.get(self, "csp_logical_az")
+
+    @_builtins.property
+    @pulumi.getter(name="cspLogicalAzDisplayName")
+    def csp_logical_az_display_name(self) -> _builtins.str:
+        """
+        User friendly display name for cspLogicalAZ
+        """
+        return pulumi.get(self, "csp_logical_az_display_name")
 
     @_builtins.property
     @pulumi.getter(name="cspPhysicalAz")
@@ -14148,21 +16572,241 @@ class GetMulticloudExternalLocationsMetadataFilterResult(dict):
 
 
 @pulumi.output_type
+class GetMulticloudMulticloudsubscriptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemArgs'] items: List of MulticloudSubscriptionSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemResult']:
+        """
+        List of MulticloudSubscriptionSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudMulticloudsubscriptionsMulticloudSubscriptionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 active_commitment: _builtins.str,
+                 classic_subscription_id: _builtins.str,
+                 csp_additional_properties: Mapping[str, _builtins.str],
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_state: _builtins.str,
+                 partner_cloud_account_identifier: _builtins.str,
+                 payment_plan: _builtins.str,
+                 service_name: _builtins.str,
+                 subscription_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_end_date: _builtins.str,
+                 time_linked_date: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str active_commitment: Total value for the subscription.
+        :param _builtins.str classic_subscription_id: Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_state: The current state of the subscription.
+        :param _builtins.str partner_cloud_account_identifier: The partner cloud account ID.
+        :param _builtins.str payment_plan: Payment plan for the subscription.
+        :param _builtins.str service_name: The serviceName that externalLocation map object belongs to.
+        :param _builtins.str subscription_id: URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_end_date: The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_linked_date: The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_updated: The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "active_commitment", active_commitment)
+        pulumi.set(__self__, "classic_subscription_id", classic_subscription_id)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "partner_cloud_account_identifier", partner_cloud_account_identifier)
+        pulumi.set(__self__, "payment_plan", payment_plan)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_end_date", time_end_date)
+        pulumi.set(__self__, "time_linked_date", time_linked_date)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="activeCommitment")
+    def active_commitment(self) -> _builtins.str:
+        """
+        Total value for the subscription.
+        """
+        return pulumi.get(self, "active_commitment")
+
+    @_builtins.property
+    @pulumi.getter(name="classicSubscriptionId")
+    def classic_subscription_id(self) -> _builtins.str:
+        """
+        Subscription ID for Oracle Cloud Infrastructure and Partner cloud in classic format.
+        """
+        return pulumi.get(self, "classic_subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the subscription.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerCloudAccountIdentifier")
+    def partner_cloud_account_identifier(self) -> _builtins.str:
+        """
+        The partner cloud account ID.
+        """
+        return pulumi.get(self, "partner_cloud_account_identifier")
+
+    @_builtins.property
+    @pulumi.getter(name="paymentPlan")
+    def payment_plan(self) -> _builtins.str:
+        """
+        Payment plan for the subscription.
+        """
+        return pulumi.get(self, "payment_plan")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        The serviceName that externalLocation map object belongs to.
+        """
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        URL to the subscription page https://{console-url}/org-mgmt/subscription/ocid1.organizationssubscription.oc1.iad.amaaaaaapf266qyaqohz27zvh45jzaielgwojo53bh24s7cy5q5g7fiknpxa?region=us-ashburn-1.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeEndDate")
+    def time_end_date(self) -> _builtins.str:
+        """
+        The date and time when the subscription is finishing, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_end_date")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLinkedDate")
+    def time_linked_date(self) -> _builtins.str:
+        """
+        The date and time when the multicloud link was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_linked_date")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult(dict):
     def __init__(__self__, *,
                  cidr_blocks: Sequence[_builtins.str],
+                 csp_additional_properties: Mapping[str, _builtins.str],
                  dns_forwarding_configs: Sequence[Any],
                  network_anchor_uri: _builtins.str,
                  odb_network_id: _builtins.str,
                  region: _builtins.str):
         """
         :param Sequence[_builtins.str] cidr_blocks: An Azure/GCP/AWS cidrBlocks
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
         :param Sequence[Any] dns_forwarding_configs: DNS domain ip mapping forwarding configuration
         :param _builtins.str network_anchor_uri: CSP network anchor Uri
         :param _builtins.str odb_network_id: CSP oracle database network anchor unique ID/name
         :param _builtins.str region: Azure/GCP/AWS region
         """
         pulumi.set(__self__, "cidr_blocks", cidr_blocks)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
         pulumi.set(__self__, "dns_forwarding_configs", dns_forwarding_configs)
         pulumi.set(__self__, "network_anchor_uri", network_anchor_uri)
         pulumi.set(__self__, "odb_network_id", odb_network_id)
@@ -14175,6 +16819,14 @@ class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult(dict):
         An Azure/GCP/AWS cidrBlocks
         """
         return pulumi.get(self, "cidr_blocks")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
 
     @_builtins.property
     @pulumi.getter(name="dnsForwardingConfigs")
@@ -14357,17 +17009,20 @@ class GetMulticloudNetworkAnchorOciMetadataItemVcnResult(dict):
                  backup_cidr_blocks: Sequence[_builtins.str],
                  cidr_blocks: Sequence[_builtins.str],
                  dns_label: _builtins.str,
-                 vcn_id: _builtins.str):
+                 vcn_id: _builtins.str,
+                 vcn_name: _builtins.str):
         """
         :param Sequence[_builtins.str] backup_cidr_blocks: Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
         :param Sequence[_builtins.str] cidr_blocks: An Azure/GCP/AWS cidrBlocks
         :param _builtins.str dns_label: Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
         :param _builtins.str vcn_id: Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        :param _builtins.str vcn_name: Name of the VCN associated to the Network Anchor.
         """
         pulumi.set(__self__, "backup_cidr_blocks", backup_cidr_blocks)
         pulumi.set(__self__, "cidr_blocks", cidr_blocks)
         pulumi.set(__self__, "dns_label", dns_label)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "vcn_name", vcn_name)
 
     @_builtins.property
     @pulumi.getter(name="backupCidrBlocks")
@@ -14401,6 +17056,14 @@ class GetMulticloudNetworkAnchorOciMetadataItemVcnResult(dict):
         """
         return pulumi.get(self, "vcn_id")
 
+    @_builtins.property
+    @pulumi.getter(name="vcnName")
+    def vcn_name(self) -> _builtins.str:
+        """
+        Name of the VCN associated to the Network Anchor.
+        """
+        return pulumi.get(self, "vcn_name")
+
 
 @pulumi.output_type
 class GetMulticloudNetworkAnchorsNetworkAnchorCollectionResult(dict):
@@ -14425,47 +17088,63 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
     def __init__(__self__, *,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 csp_additional_properties: Mapping[str, _builtins.str],
+                 csp_network_anchor_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 network_anchor_connection_status: _builtins.str,
                  network_anchor_lifecycle_state: _builtins.str,
+                 network_anchor_uri: _builtins.str,
                  resource_anchor_id: _builtins.str,
+                 subscription_type: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
-                 vcn_id: _builtins.str):
+                 vcn_id: _builtins.str,
+                 vcn_name: _builtins.str):
         """
         :param _builtins.str cluster_placement_group_id: The CPG ID in which Network Anchor will be created.
-        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param _builtins.str csp_network_anchor_id: Network Anchor Id in the Cloud Service Provider.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-               
-               Note: one of the arguments `compartment_id` or `id` must be specified.
         :param _builtins.str lifecycle_details: A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str network_anchor_connection_status: Defines status of the Network Anchor.
         :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str network_anchor_uri: CSP network anchor Uri
         :param _builtins.str resource_anchor_id: Oracle Cloud Infrastructure resource anchor Id (OCID).
+        :param _builtins.str subscription_type: Oracle Cloud Infrastructure Subscription Type.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str vcn_id: Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        :param _builtins.str vcn_name: Name of the VCN associated to the Network Anchor.
         """
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
+        pulumi.set(__self__, "csp_network_anchor_id", csp_network_anchor_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "network_anchor_connection_status", network_anchor_connection_status)
         pulumi.set(__self__, "network_anchor_lifecycle_state", network_anchor_lifecycle_state)
+        pulumi.set(__self__, "network_anchor_uri", network_anchor_uri)
         pulumi.set(__self__, "resource_anchor_id", resource_anchor_id)
+        pulumi.set(__self__, "subscription_type", subscription_type)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "vcn_name", vcn_name)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
@@ -14479,9 +17158,25 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="cspNetworkAnchorId")
+    def csp_network_anchor_id(self) -> _builtins.str:
+        """
+        Network Anchor Id in the Cloud Service Provider.
+        """
+        return pulumi.get(self, "csp_network_anchor_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -14512,8 +17207,6 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
     def id(self) -> _builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-
-        Note: one of the arguments `compartment_id` or `id` must be specified.
         """
         return pulumi.get(self, "id")
 
@@ -14526,6 +17219,14 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="networkAnchorConnectionStatus")
+    def network_anchor_connection_status(self) -> _builtins.str:
+        """
+        Defines status of the Network Anchor.
+        """
+        return pulumi.get(self, "network_anchor_connection_status")
+
+    @_builtins.property
     @pulumi.getter(name="networkAnchorLifecycleState")
     def network_anchor_lifecycle_state(self) -> _builtins.str:
         """
@@ -14534,12 +17235,28 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
         return pulumi.get(self, "network_anchor_lifecycle_state")
 
     @_builtins.property
+    @pulumi.getter(name="networkAnchorUri")
+    def network_anchor_uri(self) -> _builtins.str:
+        """
+        CSP network anchor Uri
+        """
+        return pulumi.get(self, "network_anchor_uri")
+
+    @_builtins.property
     @pulumi.getter(name="resourceAnchorId")
     def resource_anchor_id(self) -> _builtins.str:
         """
         Oracle Cloud Infrastructure resource anchor Id (OCID).
         """
         return pulumi.get(self, "resource_anchor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionType")
+    def subscription_type(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Subscription Type.
+        """
+        return pulumi.get(self, "subscription_type")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -14572,6 +17289,14 @@ class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
         Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
         """
         return pulumi.get(self, "vcn_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnName")
+    def vcn_name(self) -> _builtins.str:
+        """
+        Name of the VCN associated to the Network Anchor.
+        """
+        return pulumi.get(self, "vcn_name")
 
 
 @pulumi.output_type
@@ -14666,9 +17391,251 @@ class GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResul
 
 
 @pulumi.output_type
+class GetMulticloudOmHubMulticloudResourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemArgs'] items: List of MulticloudResourceSummary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResult']:
+        """
+        List of MulticloudResourceSummary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudOmHubMulticloudResourcesMulticloudResourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 compartment_name: _builtins.str,
+                 csp_additional_properties: Mapping[str, _builtins.str],
+                 csp_resource_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 lifecycle_state: _builtins.str,
+                 network_anchor_id: _builtins.str,
+                 network_anchor_name: _builtins.str,
+                 resource_display_name: _builtins.str,
+                 resource_id: _builtins.str,
+                 resource_type: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vcn_id: _builtins.str,
+                 vcn_name: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str compartment_name: Compartment name associated the resource.
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param _builtins.str csp_resource_id: Resource Id that comes from the Multi Cloud Control Plane
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str lifecycle_state: The current state of the multicloud resource.
+        :param _builtins.str network_anchor_id: OCID of the Network Anchor
+        :param _builtins.str network_anchor_name: Name of the network anchor associated to the resource.
+        :param _builtins.str resource_display_name: Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        :param _builtins.str resource_id: The Id of the multicloud resource.
+        :param _builtins.str resource_type: What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str time_updated: The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param _builtins.str vcn_id: Id of the Virtual Cloud Network associated to the resource.
+        :param _builtins.str vcn_name: Resource Anchor name.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_name", compartment_name)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
+        pulumi.set(__self__, "csp_resource_id", csp_resource_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "network_anchor_id", network_anchor_id)
+        pulumi.set(__self__, "network_anchor_name", network_anchor_name)
+        pulumi.set(__self__, "resource_display_name", resource_display_name)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+        pulumi.set(__self__, "vcn_name", vcn_name)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> _builtins.str:
+        """
+        Compartment name associated the resource.
+        """
+        return pulumi.get(self, "compartment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="cspResourceId")
+    def csp_resource_id(self) -> _builtins.str:
+        """
+        Resource Id that comes from the Multi Cloud Control Plane
+        """
+        return pulumi.get(self, "csp_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        The current state of the multicloud resource.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAnchorId")
+    def network_anchor_id(self) -> _builtins.str:
+        """
+        OCID of the Network Anchor
+        """
+        return pulumi.get(self, "network_anchor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAnchorName")
+    def network_anchor_name(self) -> _builtins.str:
+        """
+        Name of the network anchor associated to the resource.
+        """
+        return pulumi.get(self, "network_anchor_name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceDisplayName")
+    def resource_display_name(self) -> _builtins.str:
+        """
+        Endpoint used to retrieve displayName and lifeCycleState of the resource.
+        """
+        return pulumi.get(self, "resource_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The Id of the multicloud resource.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        What resource it refers to. Eg. VMCluster, ExaInfra, etc.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the subscription was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the subscription was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> _builtins.str:
+        """
+        Id of the Virtual Cloud Network associated to the resource.
+        """
+        return pulumi.get(self, "vcn_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnName")
+    def vcn_name(self) -> _builtins.str:
+        """
+        Resource Anchor name.
+        """
+        return pulumi.get(self, "vcn_name")
+
+
+@pulumi.output_type
 class GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(dict):
     def __init__(__self__, *,
                  account_id: _builtins.str,
+                 csp_additional_properties: Mapping[str, _builtins.str],
+                 csp_resource_anchor_id: _builtins.str,
+                 csp_resource_anchor_name: _builtins.str,
                  project_number: _builtins.str,
                  region: _builtins.str,
                  resource_anchor_name: _builtins.str,
@@ -14678,15 +17645,21 @@ class GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(dict):
                  subscription_type: _builtins.str):
         """
         :param _builtins.str account_id: AWS accountId that was used for creating this resource anchor resource.
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param _builtins.str csp_resource_anchor_id: CSP resource anchor ID.
+        :param _builtins.str csp_resource_anchor_name: CSP resource anchor name.
         :param _builtins.str project_number: GCP project number that was used for creating this resource anchor resource.
         :param _builtins.str region: Oracle Cloud Infrastructure Region that resource is created.
-        :param _builtins.str resource_anchor_name: CSP resource anchor ID or name.
+        :param _builtins.str resource_anchor_name: Oracle Cloud Infrastructure resource anchor name.
         :param _builtins.str resource_anchor_uri: CSP resource anchor Uri.
         :param _builtins.str resource_group: Azure resource group that was used for creating this resource.
         :param _builtins.str subscription: Azure subscription that was used for creating this resource.
         :param _builtins.str subscription_type: subscription type
         """
         pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
+        pulumi.set(__self__, "csp_resource_anchor_id", csp_resource_anchor_id)
+        pulumi.set(__self__, "csp_resource_anchor_name", csp_resource_anchor_name)
         pulumi.set(__self__, "project_number", project_number)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "resource_anchor_name", resource_anchor_name)
@@ -14702,6 +17675,30 @@ class GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(dict):
         AWS accountId that was used for creating this resource anchor resource.
         """
         return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="cspResourceAnchorId")
+    def csp_resource_anchor_id(self) -> _builtins.str:
+        """
+        CSP resource anchor ID.
+        """
+        return pulumi.get(self, "csp_resource_anchor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cspResourceAnchorName")
+    def csp_resource_anchor_name(self) -> _builtins.str:
+        """
+        CSP resource anchor name.
+        """
+        return pulumi.get(self, "csp_resource_anchor_name")
 
     @_builtins.property
     @pulumi.getter(name="projectNumber")
@@ -14723,7 +17720,7 @@ class GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(dict):
     @pulumi.getter(name="resourceAnchorName")
     def resource_anchor_name(self) -> _builtins.str:
         """
-        CSP resource anchor ID or name.
+        Oracle Cloud Infrastructure resource anchor name.
         """
         return pulumi.get(self, "resource_anchor_name")
 
@@ -14809,36 +17806,57 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionResult(dict):
 class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 compartment_name: _builtins.str,
+                 csp_additional_properties: Mapping[str, _builtins.str],
+                 csp_resource_anchor_id: _builtins.str,
+                 csp_resource_anchor_name: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  lifecycle_state: _builtins.str,
+                 linked_compartment_id: _builtins.str,
+                 linked_compartment_name: _builtins.str,
+                 partner_cloud_account_identifier: _builtins.str,
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+        :param _builtins.str compartment_name: The name assigned to the compartment during creation.
+        :param Mapping[str, _builtins.str] csp_additional_properties: CSP Specific Additional Properties, AzureSubnetId for Azure
+        :param _builtins.str csp_resource_anchor_id: CSP resource anchor ID.
+        :param _builtins.str csp_resource_anchor_name: CSP resource anchor name.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
         :param _builtins.str lifecycle_details: A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param _builtins.str lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        :param _builtins.str lifecycle_state: The current state of the ResourceAnchor.
+        :param _builtins.str linked_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+        :param _builtins.str linked_compartment_name: The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        :param _builtins.str partner_cloud_account_identifier: Partner Cloud Account Identifier of the Cloud Service Provider.
+        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_name", compartment_name)
+        pulumi.set(__self__, "csp_additional_properties", csp_additional_properties)
+        pulumi.set(__self__, "csp_resource_anchor_id", csp_resource_anchor_id)
+        pulumi.set(__self__, "csp_resource_anchor_name", csp_resource_anchor_name)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "linked_compartment_id", linked_compartment_id)
+        pulumi.set(__self__, "linked_compartment_name", linked_compartment_name)
+        pulumi.set(__self__, "partner_cloud_account_identifier", partner_cloud_account_identifier)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -14848,9 +17866,41 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentName")
+    def compartment_name(self) -> _builtins.str:
+        """
+        The name assigned to the compartment during creation.
+        """
+        return pulumi.get(self, "compartment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cspAdditionalProperties")
+    def csp_additional_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        CSP Specific Additional Properties, AzureSubnetId for Azure
+        """
+        return pulumi.get(self, "csp_additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="cspResourceAnchorId")
+    def csp_resource_anchor_id(self) -> _builtins.str:
+        """
+        CSP resource anchor ID.
+        """
+        return pulumi.get(self, "csp_resource_anchor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cspResourceAnchorName")
+    def csp_resource_anchor_name(self) -> _builtins.str:
+        """
+        CSP resource anchor name.
+        """
+        return pulumi.get(self, "csp_resource_anchor_name")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -14896,15 +17946,39 @@ class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleState")
     def lifecycle_state(self) -> _builtins.str:
         """
-        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        The current state of the ResourceAnchor.
         """
         return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="linkedCompartmentId")
+    def linked_compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
+        """
+        return pulumi.get(self, "linked_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="linkedCompartmentName")
+    def linked_compartment_name(self) -> _builtins.str:
+        """
+        The name assigned to the compartment which was created or linked by customer with resource anchor. This compartment is different from where resource Anchor live.
+        """
+        return pulumi.get(self, "linked_compartment_name")
+
+    @_builtins.property
+    @pulumi.getter(name="partnerCloudAccountIdentifier")
+    def partner_cloud_account_identifier(self) -> _builtins.str:
+        """
+        Partner Cloud Account Identifier of the Cloud Service Provider.
+        """
+        return pulumi.get(self, "partner_cloud_account_identifier")
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
         """
         return pulumi.get(self, "subscription_id")
 

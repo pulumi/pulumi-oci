@@ -66,6 +66,11 @@ public final class GetComputeHostResult {
      */
     private String faultDomain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     * 
+     */
+    private String firmwareBundleId;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -115,6 +120,11 @@ public final class GetComputeHostResult {
      * 
      */
     private String networkBlockId;
+    /**
+     * @return The platform of the host
+     * 
+     */
+    private String platform;
     /**
      * @return Shows details about the last recycle performed on this host.
      * 
@@ -221,6 +231,13 @@ public final class GetComputeHostResult {
         return this.faultDomain;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
+     * 
+     */
+    public String firmwareBundleId() {
+        return this.firmwareBundleId;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -291,6 +308,13 @@ public final class GetComputeHostResult {
         return this.networkBlockId;
     }
     /**
+     * @return The platform of the host
+     * 
+     */
+    public String platform() {
+        return this.platform;
+    }
+    /**
      * @return Shows details about the last recycle performed on this host.
      * 
      */
@@ -353,6 +377,7 @@ public final class GetComputeHostResult {
         private Map<String,String> definedTags;
         private String displayName;
         private String faultDomain;
+        private String firmwareBundleId;
         private Map<String,String> freeformTags;
         private String gpuMemoryFabricId;
         private String health;
@@ -363,6 +388,7 @@ public final class GetComputeHostResult {
         private Map<String,String> lifecycleDetails;
         private String localBlockId;
         private String networkBlockId;
+        private String platform;
         private List<GetComputeHostRecycleDetail> recycleDetails;
         private String shape;
         private String state;
@@ -383,6 +409,7 @@ public final class GetComputeHostResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.faultDomain = defaults.faultDomain;
+    	      this.firmwareBundleId = defaults.firmwareBundleId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.gpuMemoryFabricId = defaults.gpuMemoryFabricId;
     	      this.health = defaults.health;
@@ -393,6 +420,7 @@ public final class GetComputeHostResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.localBlockId = defaults.localBlockId;
     	      this.networkBlockId = defaults.networkBlockId;
+    	      this.platform = defaults.platform;
     	      this.recycleDetails = defaults.recycleDetails;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -493,6 +521,14 @@ public final class GetComputeHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder firmwareBundleId(String firmwareBundleId) {
+            if (firmwareBundleId == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "firmwareBundleId");
+            }
+            this.firmwareBundleId = firmwareBundleId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetComputeHostResult", "freeformTags");
@@ -573,6 +609,14 @@ public final class GetComputeHostResult {
             return this;
         }
         @CustomType.Setter
+        public Builder platform(String platform) {
+            if (platform == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostResult", "platform");
+            }
+            this.platform = platform;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recycleDetails(List<GetComputeHostRecycleDetail> recycleDetails) {
             if (recycleDetails == null) {
               throw new MissingRequiredPropertyException("GetComputeHostResult", "recycleDetails");
@@ -636,6 +680,7 @@ public final class GetComputeHostResult {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.faultDomain = faultDomain;
+            _resultValue.firmwareBundleId = firmwareBundleId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.gpuMemoryFabricId = gpuMemoryFabricId;
             _resultValue.health = health;
@@ -646,6 +691,7 @@ public final class GetComputeHostResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.localBlockId = localBlockId;
             _resultValue.networkBlockId = networkBlockId;
+            _resultValue.platform = platform;
             _resultValue.recycleDetails = recycleDetails;
             _resultValue.shape = shape;
             _resultValue.state = state;

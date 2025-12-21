@@ -16,7 +16,7 @@ public final class GetDrProtectionGroupLogLocation {
      */
     private String bucket;
     /**
-     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
      * 
      */
     private String namespace;
@@ -35,7 +35,7 @@ public final class GetDrProtectionGroupLogLocation {
         return this.bucket;
     }
     /**
-     * @return The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
      * 
      */
     public String namespace() {

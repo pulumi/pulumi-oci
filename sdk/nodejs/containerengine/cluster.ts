@@ -80,6 +80,7 @@ import * as utilities from "../utilities";
  *             },
  *         },
  *         serviceLbConfig: {
+ *             backendNsgIds: clusterOptionsServiceLbConfigBackendNsgIds,
  *             definedTags: {
  *                 "Operations.CostCenter": "42",
  *             },

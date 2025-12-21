@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// The entitlement used for billing purposes.
         /// </summary>
         public readonly string ConsumptionModel;
+        public readonly int ConvertInstanceTrigger;
         /// <summary>
         /// Details for a custom endpoint for the integration instance.
         /// </summary>
@@ -41,6 +42,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly int DisableProcessAutomationTrigger;
         /// <summary>
         /// Disaster recovery details for the integration instance created in the region.
         /// </summary>
@@ -96,6 +98,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given integration instance
+        /// </summary>
+        public readonly string LogGroupId;
+        /// <summary>
         /// The number of configured message packs (if any)
         /// </summary>
         public readonly int MessagePacks;
@@ -149,11 +155,15 @@ namespace Pulumi.Oci.Integration.Outputs
 
             string consumptionModel,
 
+            int convertInstanceTrigger,
+
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult> customEndpoints,
 
             string dataRetentionPeriod,
 
             ImmutableDictionary<string, string> definedTags,
+
+            int disableProcessAutomationTrigger,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceDisasterRecoveryDetailResult> disasterRecoveryDetails,
 
@@ -191,6 +201,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             string lifecycleDetails,
 
+            string logGroupId,
+
             int messagePacks,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult> networkEndpointDetails,
@@ -215,9 +227,11 @@ namespace Pulumi.Oci.Integration.Outputs
             Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
+            ConvertInstanceTrigger = convertInstanceTrigger;
             CustomEndpoints = customEndpoints;
             DataRetentionPeriod = dataRetentionPeriod;
             DefinedTags = definedTags;
+            DisableProcessAutomationTrigger = disableProcessAutomationTrigger;
             DisasterRecoveryDetails = disasterRecoveryDetails;
             DisplayName = displayName;
             DomainId = domainId;
@@ -236,6 +250,7 @@ namespace Pulumi.Oci.Integration.Outputs
             IsFileServerEnabled = isFileServerEnabled;
             IsVisualBuilderEnabled = isVisualBuilderEnabled;
             LifecycleDetails = lifecycleDetails;
+            LogGroupId = logGroupId;
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
             PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;

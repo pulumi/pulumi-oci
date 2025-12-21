@@ -29,6 +29,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApiaccesscontrolPrivilegedApiControl{}
 	case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
 		r = &ApiaccesscontrolPrivilegedApiRequest{}
+	case "oci:oci/batchBatchContext:BatchBatchContext":
+		r = &BatchBatchContext{}
+	case "oci:oci/batchBatchJobPool:BatchBatchJobPool":
+		r = &BatchBatchJobPool{}
+	case "oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment":
+		r = &BatchBatchTaskEnvironment{}
+	case "oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile":
+		r = &BatchBatchTaskProfile{}
 	case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
 		r = &DbmulticloudMultiCloudResourceDiscovery{}
 	case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -118,6 +126,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/apiaccesscontrolPrivilegedApiRequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/batchBatchContext",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/batchBatchJobPool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/batchBatchTaskEnvironment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/batchBatchTaskProfile",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

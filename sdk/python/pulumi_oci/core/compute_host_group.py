@@ -363,6 +363,7 @@ class ComputeHostGroup(pulumi.CustomResource):
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "recycle_level": compute_host_group_configurations_recycle_level,
+                "state": compute_host_group_configurations_state,
                 "target": compute_host_group_configurations_target,
             }],
             defined_tags={
@@ -416,6 +417,7 @@ class ComputeHostGroup(pulumi.CustomResource):
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "recycle_level": compute_host_group_configurations_recycle_level,
+                "state": compute_host_group_configurations_state,
                 "target": compute_host_group_configurations_target,
             }],
             defined_tags={

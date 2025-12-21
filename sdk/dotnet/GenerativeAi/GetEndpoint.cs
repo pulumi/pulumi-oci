@@ -136,18 +136,30 @@ namespace Pulumi.Oci.GenerativeAi
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// An optional description of the endpoint.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable.
+        /// </summary>
         public readonly string DisplayName;
         public readonly string EndpointId;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string GenerativeAiPrivateEndpointId;
+        /// <summary>
+        /// An OCID that uniquely identifies this endpoint resource.
+        /// </summary>
         public readonly string Id;
         /// <summary>
         /// A message describing the current state of the endpoint in more detail that can provide actionable information.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The OCID of the model used for the feature.
+        /// The OCID of the model that's used to create this endpoint.
         /// </summary>
         public readonly string ModelId;
         /// <summary>
@@ -158,7 +170,13 @@ namespace Pulumi.Oci.GenerativeAi
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+        /// </summary>
         public readonly string TimeUpdated;
 
         [OutputConstructor]

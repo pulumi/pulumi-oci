@@ -27,6 +27,7 @@ type GetShapeArgs struct {
 	CompartmentId      string           `pulumi:"compartmentId"`
 	Filters            []GetShapeFilter `pulumi:"filters"`
 	ImageId            *string          `pulumi:"imageId"`
+	Shape              *string          `pulumi:"shape"`
 }
 
 // A collection of values returned by getShape.
@@ -37,6 +38,7 @@ type GetShapeResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id      string          `pulumi:"id"`
 	ImageId *string         `pulumi:"imageId"`
+	Shape   *string         `pulumi:"shape"`
 	Shapes  []GetShapeShape `pulumi:"shapes"`
 }
 
@@ -55,6 +57,7 @@ type GetShapeOutputArgs struct {
 	CompartmentId      pulumi.StringInput       `pulumi:"compartmentId"`
 	Filters            GetShapeFilterArrayInput `pulumi:"filters"`
 	ImageId            pulumi.StringPtrInput    `pulumi:"imageId"`
+	Shape              pulumi.StringPtrInput    `pulumi:"shape"`
 }
 
 func (GetShapeOutputArgs) ElementType() reflect.Type {
@@ -95,6 +98,10 @@ func (o GetShapeResultOutput) Id() pulumi.StringOutput {
 
 func (o GetShapeResultOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetShapeResult) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetShapeResultOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetShapeResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 func (o GetShapeResultOutput) Shapes() GetShapeShapeArrayOutput {

@@ -4,6 +4,7 @@
 package com.pulumi.oci.Integration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -12,6 +13,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IntegrationInstancePrivateEndpointOutboundConnection {
+    private @Nullable Boolean isAllOutboundTrafficPrivate;
     /**
      * @return One or more Network security group Ids. This is an optional argument.
      * 
@@ -29,6 +31,9 @@ public final class IntegrationInstancePrivateEndpointOutboundConnection {
     private @Nullable String subnetId;
 
     private IntegrationInstancePrivateEndpointOutboundConnection() {}
+    public Optional<Boolean> isAllOutboundTrafficPrivate() {
+        return Optional.ofNullable(this.isAllOutboundTrafficPrivate);
+    }
     /**
      * @return One or more Network security group Ids. This is an optional argument.
      * 
@@ -60,17 +65,25 @@ public final class IntegrationInstancePrivateEndpointOutboundConnection {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Boolean isAllOutboundTrafficPrivate;
         private @Nullable List<String> nsgIds;
         private @Nullable String outboundConnectionType;
         private @Nullable String subnetId;
         public Builder() {}
         public Builder(IntegrationInstancePrivateEndpointOutboundConnection defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.isAllOutboundTrafficPrivate = defaults.isAllOutboundTrafficPrivate;
     	      this.nsgIds = defaults.nsgIds;
     	      this.outboundConnectionType = defaults.outboundConnectionType;
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder isAllOutboundTrafficPrivate(@Nullable Boolean isAllOutboundTrafficPrivate) {
+
+            this.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
+            return this;
+        }
         @CustomType.Setter
         public Builder nsgIds(@Nullable List<String> nsgIds) {
 
@@ -94,6 +107,7 @@ public final class IntegrationInstancePrivateEndpointOutboundConnection {
         }
         public IntegrationInstancePrivateEndpointOutboundConnection build() {
             final var _resultValue = new IntegrationInstancePrivateEndpointOutboundConnection();
+            _resultValue.isAllOutboundTrafficPrivate = isAllOutboundTrafficPrivate;
             _resultValue.nsgIds = nsgIds;
             _resultValue.outboundConnectionType = outboundConnectionType;
             _resultValue.subnetId = subnetId;

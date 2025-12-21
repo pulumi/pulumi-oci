@@ -50,6 +50,16 @@ export const getMlApplicationImplementation: typeof import("./getMlApplicationIm
 export const getMlApplicationImplementationOutput: typeof import("./getMlApplicationImplementation").getMlApplicationImplementationOutput = null as any;
 utilities.lazyLoad(exports, ["getMlApplicationImplementation","getMlApplicationImplementationOutput"], () => require("./getMlApplicationImplementation"));
 
+export { GetMlApplicationImplementationVersionArgs, GetMlApplicationImplementationVersionResult, GetMlApplicationImplementationVersionOutputArgs } from "./getMlApplicationImplementationVersion";
+export const getMlApplicationImplementationVersion: typeof import("./getMlApplicationImplementationVersion").getMlApplicationImplementationVersion = null as any;
+export const getMlApplicationImplementationVersionOutput: typeof import("./getMlApplicationImplementationVersion").getMlApplicationImplementationVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationImplementationVersion","getMlApplicationImplementationVersionOutput"], () => require("./getMlApplicationImplementationVersion"));
+
+export { GetMlApplicationImplementationVersionsArgs, GetMlApplicationImplementationVersionsResult, GetMlApplicationImplementationVersionsOutputArgs } from "./getMlApplicationImplementationVersions";
+export const getMlApplicationImplementationVersions: typeof import("./getMlApplicationImplementationVersions").getMlApplicationImplementationVersions = null as any;
+export const getMlApplicationImplementationVersionsOutput: typeof import("./getMlApplicationImplementationVersions").getMlApplicationImplementationVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getMlApplicationImplementationVersions","getMlApplicationImplementationVersionsOutput"], () => require("./getMlApplicationImplementationVersions"));
+
 export { GetMlApplicationImplementationsArgs, GetMlApplicationImplementationsResult, GetMlApplicationImplementationsOutputArgs } from "./getMlApplicationImplementations";
 export const getMlApplicationImplementations: typeof import("./getMlApplicationImplementations").getMlApplicationImplementations = null as any;
 export const getMlApplicationImplementationsOutput: typeof import("./getMlApplicationImplementations").getMlApplicationImplementationsOutput = null as any;

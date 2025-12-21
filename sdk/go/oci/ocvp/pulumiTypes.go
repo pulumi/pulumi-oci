@@ -3173,6 +3173,8 @@ type GetClustersClusterCollectionItem struct {
 	SddcId string `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -3242,6 +3244,8 @@ type GetClustersClusterCollectionItemArgs struct {
 	SddcId pulumi.StringInput `pulumi:"sddcId"`
 	// The lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -3418,6 +3422,11 @@ func (o GetClustersClusterCollectionItemOutput) SddcId() pulumi.StringOutput {
 // The lifecycle state of the resource.
 func (o GetClustersClusterCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetClustersClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -5626,6 +5635,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
 	SwapBillingHostId string `pulumi:"swapBillingHostId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -5720,6 +5731,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
 	SwapBillingHostId pulumi.StringInput `pulumi:"swapBillingHostId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the ESXi host was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -5946,6 +5959,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
 func (o GetExsiHostsEsxiHostCollectionOutput) SwapBillingHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.SwapBillingHostId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetExsiHostsEsxiHostCollectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -7547,7 +7565,8 @@ type GetSddcsSddcCollection struct {
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	SshAuthorizedKeys                string   `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated                 string `pulumi:"timeCreated"`
@@ -7721,7 +7740,8 @@ type GetSddcsSddcCollectionArgs struct {
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
 	SshAuthorizedKeys                pulumi.StringInput      `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
-	State      pulumi.StringInput    `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated                 pulumi.StringInput `pulumi:"timeCreated"`
@@ -8078,6 +8098,7 @@ func (o GetSddcsSddcCollectionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.State }).(pulumi.StringOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetSddcsSddcCollectionOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

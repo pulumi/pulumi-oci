@@ -455,6 +455,16 @@ __all__ = [
     'DomainsKmsiSettingMetaArgsDict',
     'DomainsKmsiSettingTagArgs',
     'DomainsKmsiSettingTagArgsDict',
+    'DomainsMappedAttributeAttributeMappingArgs',
+    'DomainsMappedAttributeAttributeMappingArgsDict',
+    'DomainsMappedAttributeIdcsCreatedByArgs',
+    'DomainsMappedAttributeIdcsCreatedByArgsDict',
+    'DomainsMappedAttributeIdcsLastModifiedByArgs',
+    'DomainsMappedAttributeIdcsLastModifiedByArgsDict',
+    'DomainsMappedAttributeMetaArgs',
+    'DomainsMappedAttributeMetaArgsDict',
+    'DomainsMappedAttributeTagArgs',
+    'DomainsMappedAttributeTagArgsDict',
     'DomainsMyApiKeyIdcsCreatedByArgs',
     'DomainsMyApiKeyIdcsCreatedByArgsDict',
     'DomainsMyApiKeyIdcsLastModifiedByArgs',
@@ -52091,6 +52101,1077 @@ elif False:
 
 @pulumi.input_type
 class DomainsKmsiSettingTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: (Updatable) Key or name of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] value: (Updatable) Value of the tag.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class DomainsMappedAttributeAttributeMappingArgsDict(TypedDict):
+        idcs_attribute_name: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \\"idcsResourceType\\" attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        managed_object_attribute_name: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \\"idcsName\\" attribute in the schema of an Managed Object Class.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        applies_to_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) If specified, indicates a subset of mappedActions to which this attribute-mapping applies.If not specified, this attribute-mapping applies to all mappedActions that use mappedAttributes
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        required: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \\"required\\" sub-attribute in the schema of an Managed Object Class.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        saml_format: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Indicates the format of the assertion attribute. Also stores AttributeNamespace for WSFed1.1.
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+elif False:
+    DomainsMappedAttributeAttributeMappingArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DomainsMappedAttributeAttributeMappingArgs:
+    def __init__(__self__, *,
+                 idcs_attribute_name: pulumi.Input[_builtins.str],
+                 managed_object_attribute_name: pulumi.Input[_builtins.str],
+                 applies_to_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 required: Optional[pulumi.Input[_builtins.bool]] = None,
+                 saml_format: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] idcs_attribute_name: (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \\"idcsResourceType\\" attribute.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] managed_object_attribute_name: (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \\"idcsName\\" attribute in the schema of an Managed Object Class.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applies_to_actions: (Updatable) If specified, indicates a subset of mappedActions to which this attribute-mapping applies.If not specified, this attribute-mapping applies to all mappedActions that use mappedAttributes
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.bool] required: (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \\"required\\" sub-attribute in the schema of an Managed Object Class.
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: boolean
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] saml_format: (Updatable) Indicates the format of the assertion attribute. Also stores AttributeNamespace for WSFed1.1.
+               
+               **Added In:** 17.4.2
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "idcs_attribute_name", idcs_attribute_name)
+        pulumi.set(__self__, "managed_object_attribute_name", managed_object_attribute_name)
+        if applies_to_actions is not None:
+            pulumi.set(__self__, "applies_to_actions", applies_to_actions)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if saml_format is not None:
+            pulumi.set(__self__, "saml_format", saml_format)
+
+    @_builtins.property
+    @pulumi.getter(name="idcsAttributeName")
+    def idcs_attribute_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \\"idcsResourceType\\" attribute.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "idcs_attribute_name")
+
+    @idcs_attribute_name.setter
+    def idcs_attribute_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "idcs_attribute_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedObjectAttributeName")
+    def managed_object_attribute_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \\"idcsName\\" attribute in the schema of an Managed Object Class.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "managed_object_attribute_name")
+
+    @managed_object_attribute_name.setter
+    def managed_object_attribute_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "managed_object_attribute_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appliesToActions")
+    def applies_to_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) If specified, indicates a subset of mappedActions to which this attribute-mapping applies.If not specified, this attribute-mapping applies to all mappedActions that use mappedAttributes
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "applies_to_actions")
+
+    @applies_to_actions.setter
+    def applies_to_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "applies_to_actions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \\"required\\" sub-attribute in the schema of an Managed Object Class.
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: boolean
+        * uniqueness: none
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "required", value)
+
+    @_builtins.property
+    @pulumi.getter(name="samlFormat")
+    def saml_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Indicates the format of the assertion attribute. Also stores AttributeNamespace for WSFed1.1.
+
+        **Added In:** 17.4.2
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "saml_format")
+
+    @saml_format.setter
+    def saml_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "saml_format", value)
+
+
+if not MYPY:
+    class DomainsMappedAttributeIdcsCreatedByArgsDict(TypedDict):
+        value: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        display: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The displayName of the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        ocid: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        ref: NotRequired[pulumi.Input[_builtins.str]]
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The type of resource, User or App, that created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+elif False:
+    DomainsMappedAttributeIdcsCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DomainsMappedAttributeIdcsCreatedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 display: Optional[pulumi.Input[_builtins.str]] = None,
+                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 ref: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] value: (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] display: (Updatable) The displayName of the User or App who created this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] ocid: (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of resource, User or App, that created this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The displayName of the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ocid", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ref", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The type of resource, User or App, that created this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class DomainsMappedAttributeIdcsLastModifiedByArgsDict(TypedDict):
+        value: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        display: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        ocid: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        ref: NotRequired[pulumi.Input[_builtins.str]]
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+elif False:
+    DomainsMappedAttributeIdcsLastModifiedByArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DomainsMappedAttributeIdcsLastModifiedByArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 display: Optional[pulumi.Input[_builtins.str]] = None,
+                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 ref: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] value: (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: true
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] display: (Updatable) The displayName of the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] ocid: (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type of resource, User or App, that modified this Resource
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        pulumi.set(__self__, "value", value)
+        if display is not None:
+            pulumi.set(__self__, "display", display)
+        if ocid is not None:
+            pulumi.set(__self__, "ocid", ocid)
+        if ref is not None:
+            pulumi.set(__self__, "ref", ref)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def display(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The displayName of the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "display")
+
+    @display.setter
+    def display(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "ocid")
+
+    @ocid.setter
+    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ocid", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ref(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "ref")
+
+    @ref.setter
+    def ref(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ref", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The type of resource, User or App, that modified this Resource
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class DomainsMappedAttributeMetaArgsDict(TypedDict):
+        created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        last_modified: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        location: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        resource_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+elif False:
+    DomainsMappedAttributeMetaArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DomainsMappedAttributeMetaArgs:
+    def __init__(__self__, *,
+                 created: Optional[pulumi.Input[_builtins.str]] = None,
+                 last_modified: Optional[pulumi.Input[_builtins.str]] = None,
+                 location: Optional[pulumi.Input[_builtins.str]] = None,
+                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 version: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] created: (Updatable) The DateTime the Resource was added to the Service Provider
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] last_modified: (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] location: (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] resource_type: (Updatable) Name of the resource type of the resource--for example, Users or Groups
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] version: (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+               
+               **SCIM++ Properties:**
+               * caseExact: false
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if last_modified is not None:
+            pulumi.set(__self__, "last_modified", last_modified)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The DateTime the Resource was added to the Service Provider
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastModified")
+    def last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "last_modified")
+
+    @last_modified.setter
+    def last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "last_modified", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "location", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Name of the resource type of the resource--for example, Users or Groups
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "resource_type")
+
+    @resource_type.setter
+    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+if not MYPY:
+    class DomainsMappedAttributeTagArgsDict(TypedDict):
+        key: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Key or name of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        value: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Value of the tag.
+
+        **SCIM++ Properties:**
+        * caseExact: false
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: true
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+elif False:
+    DomainsMappedAttributeTagArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DomainsMappedAttributeTagArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str]):

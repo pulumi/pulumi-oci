@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = shapeAvailabilityDomain,
         ///         ImageId = testImage.Id,
+        ///         Shape = shapeShape,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = shapeAvailabilityDomain,
         ///         ImageId = testImage.Id,
+        ///         Shape = shapeShape,
         ///     });
         /// 
         /// });
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.Core
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = shapeAvailabilityDomain,
         ///         ImageId = testImage.Id,
+        ///         Shape = shapeShape,
         ///     });
         /// 
         /// });
@@ -131,6 +134,12 @@ namespace Pulumi.Oci.Core
         [Input("imageId")]
         public string? ImageId { get; set; }
 
+        /// <summary>
+        /// Shape name.
+        /// </summary>
+        [Input("shape")]
+        public string? Shape { get; set; }
+
         public GetShapesArgs()
         {
         }
@@ -165,6 +174,12 @@ namespace Pulumi.Oci.Core
         [Input("imageId")]
         public Input<string>? ImageId { get; set; }
 
+        /// <summary>
+        /// Shape name.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
+
         public GetShapesInvokeArgs()
         {
         }
@@ -183,6 +198,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         public readonly string? ImageId;
+        public readonly string? Shape;
         /// <summary>
         /// The list of shapes.
         /// </summary>
@@ -200,6 +216,8 @@ namespace Pulumi.Oci.Core
 
             string? imageId,
 
+            string? shape,
+
             ImmutableArray<Outputs.GetShapesShapeResult> shapes)
         {
             AvailabilityDomain = availabilityDomain;
@@ -207,6 +225,7 @@ namespace Pulumi.Oci.Core
             Filters = filters;
             Id = id;
             ImageId = imageId;
+            Shape = shape;
             Shapes = shapes;
         }
     }

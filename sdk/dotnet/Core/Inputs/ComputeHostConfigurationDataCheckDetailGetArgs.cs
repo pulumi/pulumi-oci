@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? ConfigurationState { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         /// </summary>
         [Input("firmwareBundleId")]
         public Input<string>? FirmwareBundleId { get; set; }

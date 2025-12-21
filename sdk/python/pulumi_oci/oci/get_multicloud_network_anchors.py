@@ -27,10 +27,13 @@ class GetMulticloudNetworkAnchorsResult:
     """
     A collection of values returned by getMulticloudNetworkAnchors.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, external_location=None, id=None, limit=None, network_anchor_collections=None, network_anchor_lifecycle_state=None, network_anchor_oci_subnet_id=None, network_anchor_oci_vcn_id=None, subscription_id=None, subscription_service_name=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, display_name=None, external_location=None, id=None, limit=None, network_anchor_collections=None, network_anchor_lifecycle_state=None, network_anchor_oci_subnet_id=None, network_anchor_oci_vcn_id=None, should_fetch_vcn_name=None, subscription_id=None, subscription_service_name=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
+            raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
+        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -55,6 +58,9 @@ class GetMulticloudNetworkAnchorsResult:
         if network_anchor_oci_vcn_id and not isinstance(network_anchor_oci_vcn_id, str):
             raise TypeError("Expected argument 'network_anchor_oci_vcn_id' to be a str")
         pulumi.set(__self__, "network_anchor_oci_vcn_id", network_anchor_oci_vcn_id)
+        if should_fetch_vcn_name and not isinstance(should_fetch_vcn_name, bool):
+            raise TypeError("Expected argument 'should_fetch_vcn_name' to be a bool")
+        pulumi.set(__self__, "should_fetch_vcn_name", should_fetch_vcn_name)
         if subscription_id and not isinstance(subscription_id, str):
             raise TypeError("Expected argument 'subscription_id' to be a str")
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -71,6 +77,11 @@ class GetMulticloudNetworkAnchorsResult:
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "compartment_id_in_subtree")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
@@ -80,7 +91,7 @@ class GetMulticloudNetworkAnchorsResult:
 
     @_builtins.property
     @pulumi.getter(name="externalLocation")
-    def external_location(self) -> _builtins.str:
+    def external_location(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "external_location")
 
     @_builtins.property
@@ -123,13 +134,18 @@ class GetMulticloudNetworkAnchorsResult:
         return pulumi.get(self, "network_anchor_oci_vcn_id")
 
     @_builtins.property
+    @pulumi.getter(name="shouldFetchVcnName")
+    def should_fetch_vcn_name(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "should_fetch_vcn_name")
+
+    @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> _builtins.str:
+    def subscription_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="subscriptionServiceName")
-    def subscription_service_name(self) -> _builtins.str:
+    def subscription_service_name(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "subscription_service_name")
 
 
@@ -140,6 +156,7 @@ class AwaitableGetMulticloudNetworkAnchorsResult(GetMulticloudNetworkAnchorsResu
             yield self
         return GetMulticloudNetworkAnchorsResult(
             compartment_id=self.compartment_id,
+            compartment_id_in_subtree=self.compartment_id_in_subtree,
             display_name=self.display_name,
             external_location=self.external_location,
             id=self.id,
@@ -148,11 +165,13 @@ class AwaitableGetMulticloudNetworkAnchorsResult(GetMulticloudNetworkAnchorsResu
             network_anchor_lifecycle_state=self.network_anchor_lifecycle_state,
             network_anchor_oci_subnet_id=self.network_anchor_oci_subnet_id,
             network_anchor_oci_vcn_id=self.network_anchor_oci_vcn_id,
+            should_fetch_vcn_name=self.should_fetch_vcn_name,
             subscription_id=self.subscription_id,
             subscription_service_name=self.subscription_service_name)
 
 
 def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = None,
+                                   compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                    display_name: Optional[_builtins.str] = None,
                                    external_location: Optional[_builtins.str] = None,
                                    id: Optional[_builtins.str] = None,
@@ -160,6 +179,7 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
                                    network_anchor_lifecycle_state: Optional[_builtins.str] = None,
                                    network_anchor_oci_subnet_id: Optional[_builtins.str] = None,
                                    network_anchor_oci_vcn_id: Optional[_builtins.str] = None,
+                                   should_fetch_vcn_name: Optional[_builtins.bool] = None,
                                    subscription_id: Optional[_builtins.str] = None,
                                    subscription_service_name: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMulticloudNetworkAnchorsResult:
@@ -174,32 +194,37 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_network_anchors = oci.oci.get_multicloud_network_anchors(external_location=external_location,
+    test_network_anchors = oci.oci.get_multicloud_network_anchors(compartment_id=compartment_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        compartment_id=compartment_id,
         network_anchor_lifecycle_state=network_anchor_lifecycle_state,
         display_name=display_name,
+        external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
+        compartment_id_in_subtree=compartment_id_in_subtree,
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
-        id=id)
+        id=id,
+        should_fetch_vcn_name=should_fetch_vcn_name)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+    :param _builtins.bool compartment_id_in_subtree: If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
+    :param _builtins.str external_location: The Cloud Service Provider region.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-           
-           Note: one of the arguments `compartment_id` or `id` must be specified.
     :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     :param _builtins.str network_anchor_oci_subnet_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure subnet Id.
     :param _builtins.str network_anchor_oci_vcn_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
+           
+           Note: one of the arguments `compartment_id` or `id` must be specified.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['externalLocation'] = external_location
     __args__['id'] = id
@@ -207,6 +232,7 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
     __args__['networkAnchorLifecycleState'] = network_anchor_lifecycle_state
     __args__['networkAnchorOciSubnetId'] = network_anchor_oci_subnet_id
     __args__['networkAnchorOciVcnId'] = network_anchor_oci_vcn_id
+    __args__['shouldFetchVcnName'] = should_fetch_vcn_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -214,6 +240,7 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
 
     return AwaitableGetMulticloudNetworkAnchorsResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__ret__, 'display_name'),
         external_location=pulumi.get(__ret__, 'external_location'),
         id=pulumi.get(__ret__, 'id'),
@@ -222,18 +249,21 @@ def get_multicloud_network_anchors(compartment_id: Optional[_builtins.str] = Non
         network_anchor_lifecycle_state=pulumi.get(__ret__, 'network_anchor_lifecycle_state'),
         network_anchor_oci_subnet_id=pulumi.get(__ret__, 'network_anchor_oci_subnet_id'),
         network_anchor_oci_vcn_id=pulumi.get(__ret__, 'network_anchor_oci_vcn_id'),
+        should_fetch_vcn_name=pulumi.get(__ret__, 'should_fetch_vcn_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
 def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                          compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          external_location: Optional[pulumi.Input[_builtins.str]] = None,
+                                          external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                           network_anchor_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           network_anchor_oci_subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           network_anchor_oci_vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+                                          should_fetch_vcn_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                                          subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                          subscription_service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudNetworkAnchorsResult]:
     """
     This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
@@ -246,32 +276,37 @@ def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_network_anchors = oci.oci.get_multicloud_network_anchors(external_location=external_location,
+    test_network_anchors = oci.oci.get_multicloud_network_anchors(compartment_id=compartment_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        compartment_id=compartment_id,
         network_anchor_lifecycle_state=network_anchor_lifecycle_state,
         display_name=display_name,
+        external_location=external_location,
         network_anchor_oci_subnet_id=network_anchor_oci_subnet_id,
+        compartment_id_in_subtree=compartment_id_in_subtree,
         network_anchor_oci_vcn_id=network_anchor_oci_vcn_id,
-        id=id)
+        id=id,
+        should_fetch_vcn_name=should_fetch_vcn_name)
     ```
 
 
-    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
+    :param _builtins.bool compartment_id_in_subtree: If set to true, a list operation will return NetworkAnchors from all child compartments in the provided compartmentId parameter.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
-    :param _builtins.str external_location: OMHub Control Plane must know underlying CSP CP Region External Location Name.
+    :param _builtins.str external_location: The Cloud Service Provider region.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
-           
-           Note: one of the arguments `compartment_id` or `id` must be specified.
     :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     :param _builtins.str network_anchor_oci_subnet_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure subnet Id.
     :param _builtins.str network_anchor_oci_vcn_id: A filter to return only NetworkAnchor resources that match the given Oracle Cloud Infrastructure Vcn Id.
-    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
-    :param _builtins.str subscription_service_name: The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+    :param _builtins.bool should_fetch_vcn_name: Whether to fetch and include the vcn display name, which may introduce additional latency.
+           
+           Note: one of the arguments `compartment_id` or `id` must be specified.
+    :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+    :param _builtins.str subscription_service_name: The subscription service name of the Cloud Service Provider.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['displayName'] = display_name
     __args__['externalLocation'] = external_location
     __args__['id'] = id
@@ -279,12 +314,14 @@ def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[
     __args__['networkAnchorLifecycleState'] = network_anchor_lifecycle_state
     __args__['networkAnchorOciSubnetId'] = network_anchor_oci_subnet_id
     __args__['networkAnchorOciVcnId'] = network_anchor_oci_vcn_id
+    __args__['shouldFetchVcnName'] = should_fetch_vcn_name
     __args__['subscriptionId'] = subscription_id
     __args__['subscriptionServiceName'] = subscription_service_name
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors', __args__, opts=opts, typ=GetMulticloudNetworkAnchorsResult)
     return __ret__.apply(lambda __response__: GetMulticloudNetworkAnchorsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         display_name=pulumi.get(__response__, 'display_name'),
         external_location=pulumi.get(__response__, 'external_location'),
         id=pulumi.get(__response__, 'id'),
@@ -293,5 +330,6 @@ def get_multicloud_network_anchors_output(compartment_id: Optional[pulumi.Input[
         network_anchor_lifecycle_state=pulumi.get(__response__, 'network_anchor_lifecycle_state'),
         network_anchor_oci_subnet_id=pulumi.get(__response__, 'network_anchor_oci_subnet_id'),
         network_anchor_oci_vcn_id=pulumi.get(__response__, 'network_anchor_oci_vcn_id'),
+        should_fetch_vcn_name=pulumi.get(__response__, 'should_fetch_vcn_name'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         subscription_service_name=pulumi.get(__response__, 'subscription_service_name')))

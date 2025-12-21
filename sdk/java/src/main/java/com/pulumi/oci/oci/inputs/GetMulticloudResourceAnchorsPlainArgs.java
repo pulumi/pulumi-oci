@@ -4,7 +4,6 @@
 package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsFilter;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -20,14 +19,14 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
     public static final GetMulticloudResourceAnchorsPlainArgs Empty = new GetMulticloudResourceAnchorsPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
      * 
      */
     public Optional<String> compartmentId() {
@@ -87,14 +86,14 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * The current state of the ResourceAnchor.
      * 
      */
     @Import(name="lifecycleState")
     private @Nullable String lifecycleState;
 
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return The current state of the ResourceAnchor.
      * 
      */
     public Optional<String> lifecycleState() {
@@ -109,14 +108,14 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      * 
      */
     @Import(name="linkedCompartmentId")
     private @Nullable String linkedCompartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
      * 
      */
     public Optional<String> linkedCompartmentId() {
@@ -124,33 +123,48 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      * 
      */
-    @Import(name="subscriptionId", required=true)
-    private String subscriptionId;
+    @Import(name="shouldFetchCompartmentName")
+    private @Nullable Boolean shouldFetchCompartmentName;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+     * @return Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
      * 
      */
-    public String subscriptionId() {
-        return this.subscriptionId;
+    public Optional<Boolean> shouldFetchCompartmentName() {
+        return Optional.ofNullable(this.shouldFetchCompartmentName);
     }
 
     /**
-     * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    @Import(name="subscriptionServiceName", required=true)
-    private String subscriptionServiceName;
+    @Import(name="subscriptionId")
+    private @Nullable String subscriptionId;
 
     /**
-     * @return The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
      * 
      */
-    public String subscriptionServiceName() {
-        return this.subscriptionServiceName;
+    public Optional<String> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
+     * The subscription service name of the Cloud Service Provider.
+     * 
+     */
+    @Import(name="subscriptionServiceName")
+    private @Nullable String subscriptionServiceName;
+
+    /**
+     * @return The subscription service name of the Cloud Service Provider.
+     * 
+     */
+    public Optional<String> subscriptionServiceName() {
+        return Optional.ofNullable(this.subscriptionServiceName);
     }
 
     private GetMulticloudResourceAnchorsPlainArgs() {}
@@ -164,6 +178,7 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
         this.lifecycleState = $.lifecycleState;
         this.limit = $.limit;
         this.linkedCompartmentId = $.linkedCompartmentId;
+        this.shouldFetchCompartmentName = $.shouldFetchCompartmentName;
         this.subscriptionId = $.subscriptionId;
         this.subscriptionServiceName = $.subscriptionServiceName;
     }
@@ -187,7 +202,7 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud base compartment or sub-compartment in which to list resources.  A Multicloud base compartment is an Oracle Cloud Infrastructure compartment that maps to a subscription in a Cloud Service Provider (such as Azure, AWS, or Google Cloud).
          * 
          * @return builder
          * 
@@ -240,7 +255,7 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param lifecycleState A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         * @param lifecycleState The current state of the ResourceAnchor.
          * 
          * @return builder
          * 
@@ -256,7 +271,7 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which linked to Resource.
+         * @param linkedCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment linked to the resource.
          * 
          * @return builder
          * 
@@ -267,34 +282,39 @@ public final class GetMulticloudResourceAnchorsPlainArgs extends com.pulumi.reso
         }
 
         /**
-         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+         * @param shouldFetchCompartmentName Whether to fetch and include the compartment name, setting this field to yes may introduce additional latency.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionId(String subscriptionId) {
+        public Builder shouldFetchCompartmentName(@Nullable Boolean shouldFetchCompartmentName) {
+            $.shouldFetchCompartmentName = shouldFetchCompartmentName;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud subscription in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable String subscriptionId) {
             $.subscriptionId = subscriptionId;
             return this;
         }
 
         /**
-         * @param subscriptionServiceName The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
+         * @param subscriptionServiceName The subscription service name of the Cloud Service Provider.
          * 
          * @return builder
          * 
          */
-        public Builder subscriptionServiceName(String subscriptionServiceName) {
+        public Builder subscriptionServiceName(@Nullable String subscriptionServiceName) {
             $.subscriptionServiceName = subscriptionServiceName;
             return this;
         }
 
         public GetMulticloudResourceAnchorsPlainArgs build() {
-            if ($.subscriptionId == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsPlainArgs", "subscriptionId");
-            }
-            if ($.subscriptionServiceName == null) {
-                throw new MissingRequiredPropertyException("GetMulticloudResourceAnchorsPlainArgs", "subscriptionServiceName");
-            }
             return $;
         }
     }

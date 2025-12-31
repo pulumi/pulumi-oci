@@ -1,0 +1,3 @@
+name: oci
+description: A Pulumi resource provider for oci.
+language: dotnet

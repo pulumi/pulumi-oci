@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetPlatformConfigurationConfigCategoryDetailResult
     {
         /// <summary>
-        /// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        /// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult> CompatibleProducts;
         /// <summary>
@@ -38,6 +38,18 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string InstanceName;
         /// <summary>
+        /// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        public readonly bool IsCompliancePolicyRequiredForSoftlink;
+        /// <summary>
+        /// Specify if the product is softlink product or not
+        /// </summary>
+        public readonly bool IsSoftlink;
+        /// <summary>
+        /// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        public readonly string LinkProductId;
+        /// <summary>
         /// Patch Types associated with this Product Stack which will be considered as Product.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult> PatchTypes;
@@ -50,7 +62,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult> SubCategoryDetails;
         /// <summary>
-        /// Versions associated with the PRODUCT .
+        /// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         /// </summary>
         public readonly ImmutableArray<string> Versions;
 
@@ -68,6 +80,12 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string instanceName,
 
+            bool isCompliancePolicyRequiredForSoftlink,
+
+            bool isSoftlink,
+
+            string linkProductId,
+
             ImmutableArray<Outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult> patchTypes,
 
             ImmutableArray<Outputs.GetPlatformConfigurationConfigCategoryDetailProductResult> products,
@@ -82,6 +100,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             Credentials = credentials;
             InstanceId = instanceId;
             InstanceName = instanceName;
+            IsCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            IsSoftlink = isSoftlink;
+            LinkProductId = linkProductId;
             PatchTypes = patchTypes;
             Products = products;
             SubCategoryDetails = subCategoryDetails;

@@ -914,6 +914,38 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Budget/costAlertSubscription",
+  "fqn": "pulumi_oci.budget",
+  "classes": {
+   "oci:Budget/costAlertSubscription:CostAlertSubscription": "CostAlertSubscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Budget/costAnomalyEvent",
+  "fqn": "pulumi_oci.budget",
+  "classes": {
+   "oci:Budget/costAnomalyEvent:CostAnomalyEvent": "CostAnomalyEvent"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Budget/costAnomalyMonitor",
+  "fqn": "pulumi_oci.budget",
+  "classes": {
+   "oci:Budget/costAnomalyMonitor:CostAnomalyMonitor": "CostAnomalyMonitor"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Budget/costAnomalyMonitorCostanomalymonitorenabletogglesManagement",
+  "fqn": "pulumi_oci.budget",
+  "classes": {
+   "oci:Budget/costAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostAnomalyMonitorCostanomalymonitorenabletogglesManagement": "CostAnomalyMonitorCostanomalymonitorenabletogglesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Budget/rule",
   "fqn": "pulumi_oci.budget",
   "classes": {
@@ -5566,6 +5598,14 @@ _utilities.register(
   "fqn": "pulumi_oci.loganalytics",
   "classes": {
    "oci:LogAnalytics/namespace:Namespace": "Namespace"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "LogAnalytics/namespaceAssociation",
+  "fqn": "pulumi_oci.loganalytics",
+  "classes": {
+   "oci:LogAnalytics/namespaceAssociation:NamespaceAssociation": "NamespaceAssociation"
   }
  },
  {

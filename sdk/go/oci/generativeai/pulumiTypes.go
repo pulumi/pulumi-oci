@@ -17912,12 +17912,9 @@ func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayO
 }
 
 type GetDedicatedAiClusterCapacity struct {
-	// The type of the dedicated AI cluster capacity.
-	CapacityType string `pulumi:"capacityType"`
-	// The total number of endpoints that can be hosted on this dedicated AI cluster.
-	TotalEndpointCapacity int `pulumi:"totalEndpointCapacity"`
-	// The number of endpoints hosted on this dedicated AI cluster.
-	UsedEndpointCapacity int `pulumi:"usedEndpointCapacity"`
+	CapacityType          string `pulumi:"capacityType"`
+	TotalEndpointCapacity int    `pulumi:"totalEndpointCapacity"`
+	UsedEndpointCapacity  int    `pulumi:"usedEndpointCapacity"`
 }
 
 // GetDedicatedAiClusterCapacityInput is an input type that accepts GetDedicatedAiClusterCapacityArgs and GetDedicatedAiClusterCapacityOutput values.
@@ -17932,12 +17929,9 @@ type GetDedicatedAiClusterCapacityInput interface {
 }
 
 type GetDedicatedAiClusterCapacityArgs struct {
-	// The type of the dedicated AI cluster capacity.
-	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The total number of endpoints that can be hosted on this dedicated AI cluster.
-	TotalEndpointCapacity pulumi.IntInput `pulumi:"totalEndpointCapacity"`
-	// The number of endpoints hosted on this dedicated AI cluster.
-	UsedEndpointCapacity pulumi.IntInput `pulumi:"usedEndpointCapacity"`
+	CapacityType          pulumi.StringInput `pulumi:"capacityType"`
+	TotalEndpointCapacity pulumi.IntInput    `pulumi:"totalEndpointCapacity"`
+	UsedEndpointCapacity  pulumi.IntInput    `pulumi:"usedEndpointCapacity"`
 }
 
 func (GetDedicatedAiClusterCapacityArgs) ElementType() reflect.Type {
@@ -17991,17 +17985,14 @@ func (o GetDedicatedAiClusterCapacityOutput) ToGetDedicatedAiClusterCapacityOutp
 	return o
 }
 
-// The type of the dedicated AI cluster capacity.
 func (o GetDedicatedAiClusterCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The total number of endpoints that can be hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClusterCapacityOutput) TotalEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) int { return v.TotalEndpointCapacity }).(pulumi.IntOutput)
 }
 
-// The number of endpoints hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClusterCapacityOutput) UsedEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) int { return v.UsedEndpointCapacity }).(pulumi.IntOutput)
 }
@@ -18123,7 +18114,6 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionArrayOutput) Index(i p
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItem struct {
-	// The total capacity for a dedicated AI cluster.
 	Capacities []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -18166,7 +18156,6 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput interface {
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs struct {
-	// The total capacity for a dedicated AI cluster.
 	Capacities GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayInput `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -18248,7 +18237,6 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) ToGetDedic
 	return o
 }
 
-// The total capacity for a dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Capacities() GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity {
 		return v.Capacities
@@ -18347,12 +18335,9 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemArrayOutput) Index
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity struct {
-	// The type of the dedicated AI cluster capacity.
-	CapacityType string `pulumi:"capacityType"`
-	// The total number of endpoints that can be hosted on this dedicated AI cluster.
-	TotalEndpointCapacity int `pulumi:"totalEndpointCapacity"`
-	// The number of endpoints hosted on this dedicated AI cluster.
-	UsedEndpointCapacity int `pulumi:"usedEndpointCapacity"`
+	CapacityType          string `pulumi:"capacityType"`
+	TotalEndpointCapacity int    `pulumi:"totalEndpointCapacity"`
+	UsedEndpointCapacity  int    `pulumi:"usedEndpointCapacity"`
 }
 
 // GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityInput is an input type that accepts GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs and GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput values.
@@ -18367,12 +18352,9 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityInput interfa
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs struct {
-	// The type of the dedicated AI cluster capacity.
-	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The total number of endpoints that can be hosted on this dedicated AI cluster.
-	TotalEndpointCapacity pulumi.IntInput `pulumi:"totalEndpointCapacity"`
-	// The number of endpoints hosted on this dedicated AI cluster.
-	UsedEndpointCapacity pulumi.IntInput `pulumi:"usedEndpointCapacity"`
+	CapacityType          pulumi.StringInput `pulumi:"capacityType"`
+	TotalEndpointCapacity pulumi.IntInput    `pulumi:"totalEndpointCapacity"`
+	UsedEndpointCapacity  pulumi.IntInput    `pulumi:"usedEndpointCapacity"`
 }
 
 func (GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs) ElementType() reflect.Type {
@@ -18426,19 +18408,16 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) To
 	return o
 }
 
-// The type of the dedicated AI cluster capacity.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The total number of endpoints that can be hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) TotalEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) int {
 		return v.TotalEndpointCapacity
 	}).(pulumi.IntOutput)
 }
 
-// The number of endpoints hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) UsedEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) int {
 		return v.UsedEndpointCapacity
@@ -21046,7 +21025,8 @@ type GetModelsModelCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string            `pulumi:"compartmentId"`
 	DefinedTags   map[string]string `pulumi:"definedTags"`
-	Description   string            `pulumi:"description"`
+	// An optional description of the model.
+	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName     string                                       `pulumi:"displayName"`
 	FineTuneDetails []GetModelsModelCollectionItemFineTuneDetail `pulumi:"fineTuneDetails"`
@@ -21057,14 +21037,16 @@ type GetModelsModelCollectionItem struct {
 	LifecycleDetails    string                                    `pulumi:"lifecycleDetails"`
 	ModelMetrics        []GetModelsModelCollectionItemModelMetric `pulumi:"modelMetrics"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State          string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags     map[string]string `pulumi:"systemTags"`
 	TimeCreated    string            `pulumi:"timeCreated"`
 	TimeDeprecated string            `pulumi:"timeDeprecated"`
 	TimeUpdated    string            `pulumi:"timeUpdated"`
 	Type           string            `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
-	Vendor  string `pulumi:"vendor"`
+	Vendor string `pulumi:"vendor"`
+	// The version of the model.
 	Version string `pulumi:"version"`
 }
 
@@ -21085,7 +21067,8 @@ type GetModelsModelCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
 	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
-	Description   pulumi.StringInput    `pulumi:"description"`
+	// An optional description of the model.
+	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName     pulumi.StringInput                                   `pulumi:"displayName"`
 	FineTuneDetails GetModelsModelCollectionItemFineTuneDetailArrayInput `pulumi:"fineTuneDetails"`
@@ -21096,14 +21079,16 @@ type GetModelsModelCollectionItemArgs struct {
 	LifecycleDetails    pulumi.StringInput                                `pulumi:"lifecycleDetails"`
 	ModelMetrics        GetModelsModelCollectionItemModelMetricArrayInput `pulumi:"modelMetrics"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
-	State          pulumi.StringInput    `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags     pulumi.StringMapInput `pulumi:"systemTags"`
 	TimeCreated    pulumi.StringInput    `pulumi:"timeCreated"`
 	TimeDeprecated pulumi.StringInput    `pulumi:"timeDeprecated"`
 	TimeUpdated    pulumi.StringInput    `pulumi:"timeUpdated"`
 	Type           pulumi.StringInput    `pulumi:"type"`
 	// A filter to return only resources that match the entire vendor given.
-	Vendor  pulumi.StringInput `pulumi:"vendor"`
+	Vendor pulumi.StringInput `pulumi:"vendor"`
+	// The version of the model.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -21175,6 +21160,7 @@ func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// An optional description of the model.
 func (o GetModelsModelCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -21216,6 +21202,7 @@ func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
@@ -21241,6 +21228,7 @@ func (o GetModelsModelCollectionItemOutput) Vendor() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Vendor }).(pulumi.StringOutput)
 }
 
+// The version of the model.
 func (o GetModelsModelCollectionItemOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Version }).(pulumi.StringOutput)
 }

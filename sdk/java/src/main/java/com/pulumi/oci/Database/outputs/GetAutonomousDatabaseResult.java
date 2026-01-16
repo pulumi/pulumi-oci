@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseApexDetail;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseConnectionUrl;
@@ -76,6 +77,11 @@ public final class GetAutonomousDatabaseResult {
     private String autonomousContainerDatabaseId;
     private String autonomousDatabaseBackupId;
     private String autonomousDatabaseId;
+    /**
+     * @return Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    private List<GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows;
     /**
      * @return The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
@@ -410,6 +416,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private Integer localAdgAutoFailoverMaxDataLossLimit;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    private String localAdgResourcePoolLeaderId;
+    /**
      * @return Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -656,6 +667,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeMaintenanceEnd;
     /**
+     * @return The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    private String timeMaintenancePauseUntil;
+    /**
      * @return The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
@@ -813,6 +829,13 @@ public final class GetAutonomousDatabaseResult {
     }
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
+    }
+    /**
+     * @return Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public List<GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows() {
+        return this.autonomousDatabaseMaintenanceWindows;
     }
     /**
      * @return The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -1288,6 +1311,13 @@ public final class GetAutonomousDatabaseResult {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    public String localAdgResourcePoolLeaderId() {
+        return this.localAdgResourcePoolLeaderId;
+    }
+    /**
      * @return Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -1648,6 +1678,13 @@ public final class GetAutonomousDatabaseResult {
         return this.timeMaintenanceEnd;
     }
     /**
+     * @return The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    public String timeMaintenancePauseUntil() {
+        return this.timeMaintenancePauseUntil;
+    }
+    /**
      * @return The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
@@ -1800,6 +1837,7 @@ public final class GetAutonomousDatabaseResult {
         private String autonomousContainerDatabaseId;
         private String autonomousDatabaseBackupId;
         private String autonomousDatabaseId;
+        private List<GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows;
         private String autonomousMaintenanceScheduleType;
         private String availabilityDomain;
         private List<String> availableUpgradeVersions;
@@ -1870,6 +1908,7 @@ public final class GetAutonomousDatabaseResult {
         private String licenseModel;
         private String lifecycleDetails;
         private Integer localAdgAutoFailoverMaxDataLossLimit;
+        private String localAdgResourcePoolLeaderId;
         private String localDisasterRecoveryType;
         private List<GetAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
         private List<GetAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
@@ -1927,6 +1966,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
+        private String timeMaintenancePauseUntil;
         private String timeOfAutoRefreshStart;
         private String timeOfJoiningResourcePool;
         private String timeOfLastFailover;
@@ -1961,6 +2001,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousDatabaseBackupId = defaults.autonomousDatabaseBackupId;
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
+    	      this.autonomousDatabaseMaintenanceWindows = defaults.autonomousDatabaseMaintenanceWindows;
     	      this.autonomousMaintenanceScheduleType = defaults.autonomousMaintenanceScheduleType;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
@@ -2031,6 +2072,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.localAdgAutoFailoverMaxDataLossLimit = defaults.localAdgAutoFailoverMaxDataLossLimit;
+    	      this.localAdgResourcePoolLeaderId = defaults.localAdgResourcePoolLeaderId;
     	      this.localDisasterRecoveryType = defaults.localDisasterRecoveryType;
     	      this.localStandbyDbs = defaults.localStandbyDbs;
     	      this.longTermBackupSchedules = defaults.longTermBackupSchedules;
@@ -2088,6 +2130,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
+    	      this.timeMaintenancePauseUntil = defaults.timeMaintenancePauseUntil;
     	      this.timeOfAutoRefreshStart = defaults.timeOfAutoRefreshStart;
     	      this.timeOfJoiningResourcePool = defaults.timeOfJoiningResourcePool;
     	      this.timeOfLastFailover = defaults.timeOfLastFailover;
@@ -2200,6 +2243,17 @@ public final class GetAutonomousDatabaseResult {
             }
             this.autonomousDatabaseId = autonomousDatabaseId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder autonomousDatabaseMaintenanceWindows(List<GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindows) {
+            if (autonomousDatabaseMaintenanceWindows == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "autonomousDatabaseMaintenanceWindows");
+            }
+            this.autonomousDatabaseMaintenanceWindows = autonomousDatabaseMaintenanceWindows;
+            return this;
+        }
+        public Builder autonomousDatabaseMaintenanceWindows(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow... autonomousDatabaseMaintenanceWindows) {
+            return autonomousDatabaseMaintenanceWindows(List.of(autonomousDatabaseMaintenanceWindows));
         }
         @CustomType.Setter
         public Builder autonomousMaintenanceScheduleType(String autonomousMaintenanceScheduleType) {
@@ -2792,6 +2846,14 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder localAdgResourcePoolLeaderId(String localAdgResourcePoolLeaderId) {
+            if (localAdgResourcePoolLeaderId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "localAdgResourcePoolLeaderId");
+            }
+            this.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder localDisasterRecoveryType(String localDisasterRecoveryType) {
             if (localDisasterRecoveryType == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "localDisasterRecoveryType");
@@ -3284,6 +3346,14 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeMaintenancePauseUntil(String timeMaintenancePauseUntil) {
+            if (timeMaintenancePauseUntil == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeMaintenancePauseUntil");
+            }
+            this.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeOfAutoRefreshStart(String timeOfAutoRefreshStart) {
             if (timeOfAutoRefreshStart == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeOfAutoRefreshStart");
@@ -3465,6 +3535,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
             _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.autonomousDatabaseMaintenanceWindows = autonomousDatabaseMaintenanceWindows;
             _resultValue.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableUpgradeVersions = availableUpgradeVersions;
@@ -3535,6 +3606,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
+            _resultValue.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
             _resultValue.localDisasterRecoveryType = localDisasterRecoveryType;
             _resultValue.localStandbyDbs = localStandbyDbs;
             _resultValue.longTermBackupSchedules = longTermBackupSchedules;
@@ -3592,6 +3664,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
             _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
+            _resultValue.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
             _resultValue.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
             _resultValue.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
             _resultValue.timeOfLastFailover = timeOfLastFailover;

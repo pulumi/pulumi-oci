@@ -2917,15 +2917,15 @@ if not MYPY:
         """
         compatible_products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict']]]]
         """
-        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         """
         components: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
         """
         credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgsDict']]]]
         """
-        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         """
         instance_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2935,9 +2935,21 @@ if not MYPY:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
+        is_compliance_policy_required_for_softlink: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        """
+        is_softlink: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Specify if the product is softlink product or not
+        """
+        link_product_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        """
         patch_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict']]]]
         """
-        (Updatable) Patch Types associated with this Product.
+        (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         """
         products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgsDict']]]]
         """
@@ -2949,7 +2961,7 @@ if not MYPY:
         """
         versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) Versions associated with the PRODUCT .
+        (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
 elif False:
     PlatformConfigurationConfigCategoryDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -2963,21 +2975,27 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
                  credentials: Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgs']]]] = None,
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  instance_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_compliance_policy_required_for_softlink: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_softlink: Optional[pulumi.Input[_builtins.bool]] = None,
+                 link_product_id: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_types: Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs']]]] = None,
                  products: Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgs']]]] = None,
                  sub_category_details: Optional[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs']] = None,
                  versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] config_category: (Updatable) Category of configuration
-        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs']]] compatible_products: (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
-        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgs']]] credentials: (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs']]] compatible_products: (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
+        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgs']]] credentials: (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         :param pulumi.Input[_builtins.str] instance_id: (Updatable) The OCID of the resource.
         :param pulumi.Input[_builtins.str] instance_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs']]] patch_types: (Updatable) Patch Types associated with this Product.
+        :param pulumi.Input[_builtins.bool] is_compliance_policy_required_for_softlink: (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        :param pulumi.Input[_builtins.bool] is_softlink: (Updatable) Specify if the product is softlink product or not
+        :param pulumi.Input[_builtins.str] link_product_id: (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs']]] patch_types: (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         :param pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgs']]] products: (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
         :param pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs'] sub_category_details: (Updatable) ProductStack Config Category Details.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] versions: (Updatable) Versions associated with the PRODUCT .
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] versions: (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "config_category", config_category)
         if compatible_products is not None:
@@ -2990,6 +3008,12 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
             pulumi.set(__self__, "instance_id", instance_id)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if is_compliance_policy_required_for_softlink is not None:
+            pulumi.set(__self__, "is_compliance_policy_required_for_softlink", is_compliance_policy_required_for_softlink)
+        if is_softlink is not None:
+            pulumi.set(__self__, "is_softlink", is_softlink)
+        if link_product_id is not None:
+            pulumi.set(__self__, "link_product_id", link_product_id)
         if patch_types is not None:
             pulumi.set(__self__, "patch_types", patch_types)
         if products is not None:
@@ -3015,7 +3039,7 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
     @pulumi.getter(name="compatibleProducts")
     def compatible_products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs']]]]:
         """
-        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "compatible_products")
 
@@ -3027,7 +3051,7 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
     @pulumi.getter
     def components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "components")
 
@@ -3039,7 +3063,7 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
     @pulumi.getter
     def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgs']]]]:
         """
-        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "credentials")
 
@@ -3072,10 +3096,46 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCompliancePolicyRequiredForSoftlink")
+    def is_compliance_policy_required_for_softlink(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "is_compliance_policy_required_for_softlink")
+
+    @is_compliance_policy_required_for_softlink.setter
+    def is_compliance_policy_required_for_softlink(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_compliance_policy_required_for_softlink", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSoftlink")
+    def is_softlink(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Specify if the product is softlink product or not
+        """
+        return pulumi.get(self, "is_softlink")
+
+    @is_softlink.setter
+    def is_softlink(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_softlink", value)
+
+    @_builtins.property
+    @pulumi.getter(name="linkProductId")
+    def link_product_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "link_product_id")
+
+    @link_product_id.setter
+    def link_product_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "link_product_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="patchTypes")
     def patch_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs']]]]:
         """
-        (Updatable) Patch Types associated with this Product.
+        (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "patch_types")
 
@@ -3111,7 +3171,7 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
     @pulumi.getter
     def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Versions associated with the PRODUCT .
+        (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 

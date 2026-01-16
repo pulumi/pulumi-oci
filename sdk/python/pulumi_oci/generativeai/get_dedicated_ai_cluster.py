@@ -80,9 +80,6 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClusterCapacityResult']:
-        """
-        The total capacity for a dedicated AI cluster.
-        """
         return pulumi.get(self, "capacities")
 
     @_builtins.property

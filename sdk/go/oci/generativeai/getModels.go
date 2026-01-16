@@ -81,8 +81,10 @@ type GetModelsResult struct {
 	Id            *string           `pulumi:"id"`
 	// The list of model_collection.
 	ModelCollections []GetModelsModelCollection `pulumi:"modelCollections"`
-	State            *string                    `pulumi:"state"`
-	Vendor           *string                    `pulumi:"vendor"`
+	// The lifecycle state of the model.
+	State *string `pulumi:"state"`
+	// The provider of the base model.
+	Vendor *string `pulumi:"vendor"`
 }
 
 func GetModelsOutput(ctx *pulumi.Context, args GetModelsOutputArgs, opts ...pulumi.InvokeOption) GetModelsResultOutput {
@@ -155,10 +157,12 @@ func (o GetModelsResultOutput) ModelCollections() GetModelsModelCollectionArrayO
 	return o.ApplyT(func(v GetModelsResult) []GetModelsModelCollection { return v.ModelCollections }).(GetModelsModelCollectionArrayOutput)
 }
 
+// The lifecycle state of the model.
 func (o GetModelsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
+// The provider of the base model.
 func (o GetModelsResultOutput) Vendor() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.Vendor }).(pulumi.StringPtrOutput)
 }

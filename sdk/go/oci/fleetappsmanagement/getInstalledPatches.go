@@ -61,7 +61,7 @@ type GetInstalledPatchesArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string                      `pulumi:"compartmentId"`
 	Filters       []GetInstalledPatchesFilter `pulumi:"filters"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel *string `pulumi:"patchLevel"`
 	// Patch type.
 	PatchType *string `pulumi:"patchType"`
@@ -105,7 +105,7 @@ type GetInstalledPatchesOutputArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput                  `pulumi:"compartmentId"`
 	Filters       GetInstalledPatchesFilterArrayInput `pulumi:"filters"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel pulumi.StringPtrInput `pulumi:"patchLevel"`
 	// Patch type.
 	PatchType pulumi.StringPtrInput `pulumi:"patchType"`

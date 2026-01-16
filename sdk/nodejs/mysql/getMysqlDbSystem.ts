@@ -92,6 +92,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly dataStorages: outputs.Mysql.GetMysqlDbSystemDataStorage[];
     /**
+     * Database console configuration details.
+     */
+    readonly databaseConsoles: outputs.Mysql.GetMysqlDbSystemDatabaseConsole[];
+    /**
      * Whether to enable monitoring via the Database Management service.
      */
     readonly databaseManagement: string;

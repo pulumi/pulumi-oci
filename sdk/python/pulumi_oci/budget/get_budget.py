@@ -26,7 +26,7 @@ class GetBudgetResult:
     """
     A collection of values returned by getBudget.
     """
-    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, end_date=None, forecasted_spend=None, freeform_tags=None, id=None, processing_period_type=None, reset_period=None, start_date=None, state=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
+    def __init__(__self__, actual_spend=None, alert_rule_count=None, amount=None, budget_id=None, budget_processing_period_start_offset=None, compartment_id=None, defined_tags=None, description=None, display_name=None, end_date=None, forecasted_spend=None, freeform_tags=None, id=None, processing_period_type=None, reset_period=None, start_date=None, state=None, system_tags=None, target_compartment_id=None, target_type=None, targets=None, time_created=None, time_spend_computed=None, time_updated=None, version=None):
         if actual_spend and not isinstance(actual_spend, float):
             raise TypeError("Expected argument 'actual_spend' to be a float")
         pulumi.set(__self__, "actual_spend", actual_spend)
@@ -78,6 +78,9 @@ class GetBudgetResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if target_compartment_id and not isinstance(target_compartment_id, str):
             raise TypeError("Expected argument 'target_compartment_id' to be a str")
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
@@ -173,7 +176,7 @@ class GetBudgetResult:
     @pulumi.getter(name="endDate")
     def end_date(self) -> _builtins.str:
         """
-        The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "end_date")
 
@@ -221,7 +224,7 @@ class GetBudgetResult:
     @pulumi.getter(name="startDate")
     def start_date(self) -> _builtins.str:
         """
-        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "start_date")
 
@@ -232,6 +235,14 @@ class GetBudgetResult:
         The current state of the budget.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
@@ -314,6 +325,7 @@ class AwaitableGetBudgetResult(GetBudgetResult):
             reset_period=self.reset_period,
             start_date=self.start_date,
             state=self.state,
+            system_tags=self.system_tags,
             target_compartment_id=self.target_compartment_id,
             target_type=self.target_type,
             targets=self.targets,
@@ -365,6 +377,7 @@ def get_budget(budget_id: Optional[_builtins.str] = None,
         reset_period=pulumi.get(__ret__, 'reset_period'),
         start_date=pulumi.get(__ret__, 'start_date'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         target_compartment_id=pulumi.get(__ret__, 'target_compartment_id'),
         target_type=pulumi.get(__ret__, 'target_type'),
         targets=pulumi.get(__ret__, 'targets'),
@@ -413,6 +426,7 @@ def get_budget_output(budget_id: Optional[pulumi.Input[_builtins.str]] = None,
         reset_period=pulumi.get(__response__, 'reset_period'),
         start_date=pulumi.get(__response__, 'start_date'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         target_compartment_id=pulumi.get(__response__, 'target_compartment_id'),
         target_type=pulumi.get(__response__, 'target_type'),
         targets=pulumi.get(__response__, 'targets'),

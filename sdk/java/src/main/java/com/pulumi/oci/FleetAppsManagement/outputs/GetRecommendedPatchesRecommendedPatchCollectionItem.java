@@ -21,7 +21,7 @@ public final class GetRecommendedPatchesRecommendedPatchCollectionItem {
      */
     private String patchId;
     /**
-     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      * 
      */
     private String patchLevel;
@@ -62,7 +62,7 @@ public final class GetRecommendedPatchesRecommendedPatchCollectionItem {
         return this.patchId;
     }
     /**
-     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      * 
      */
     public String patchLevel() {

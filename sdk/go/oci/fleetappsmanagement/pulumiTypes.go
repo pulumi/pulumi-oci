@@ -4617,25 +4617,31 @@ func (o PatchProductPtrOutput) Version() pulumi.StringPtrOutput {
 }
 
 type PlatformConfigurationConfigCategoryDetails struct {
-	// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts []PlatformConfigurationConfigCategoryDetailsCompatibleProduct `pulumi:"compatibleProducts"`
-	// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+	// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
 	Components []string `pulumi:"components"`
 	// (Updatable) Category of configuration
 	ConfigCategory string `pulumi:"configCategory"`
-	// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+	// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
 	Credentials []PlatformConfigurationConfigCategoryDetailsCredential `pulumi:"credentials"`
 	// (Updatable) The OCID of the resource.
 	InstanceId *string `pulumi:"instanceId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName *string `pulumi:"instanceName"`
-	// (Updatable) Patch Types associated with this Product.
+	// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink *bool `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// (Updatable) Specify if the product is softlink product or not
+	IsSoftlink *bool `pulumi:"isSoftlink"`
+	// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId *string `pulumi:"linkProductId"`
+	// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
 	PatchTypes []PlatformConfigurationConfigCategoryDetailsPatchType `pulumi:"patchTypes"`
 	// (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products []PlatformConfigurationConfigCategoryDetailsProduct `pulumi:"products"`
 	// (Updatable) ProductStack Config Category Details.
 	SubCategoryDetails *PlatformConfigurationConfigCategoryDetailsSubCategoryDetails `pulumi:"subCategoryDetails"`
-	// (Updatable) Versions associated with the PRODUCT .
+	// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -4651,25 +4657,31 @@ type PlatformConfigurationConfigCategoryDetailsInput interface {
 }
 
 type PlatformConfigurationConfigCategoryDetailsArgs struct {
-	// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts PlatformConfigurationConfigCategoryDetailsCompatibleProductArrayInput `pulumi:"compatibleProducts"`
-	// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+	// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
 	Components pulumi.StringArrayInput `pulumi:"components"`
 	// (Updatable) Category of configuration
 	ConfigCategory pulumi.StringInput `pulumi:"configCategory"`
-	// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+	// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
 	Credentials PlatformConfigurationConfigCategoryDetailsCredentialArrayInput `pulumi:"credentials"`
 	// (Updatable) The OCID of the resource.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// (Updatable) Patch Types associated with this Product.
+	// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink pulumi.BoolPtrInput `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// (Updatable) Specify if the product is softlink product or not
+	IsSoftlink pulumi.BoolPtrInput `pulumi:"isSoftlink"`
+	// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId pulumi.StringPtrInput `pulumi:"linkProductId"`
+	// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
 	PatchTypes PlatformConfigurationConfigCategoryDetailsPatchTypeArrayInput `pulumi:"patchTypes"`
 	// (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products PlatformConfigurationConfigCategoryDetailsProductArrayInput `pulumi:"products"`
 	// (Updatable) ProductStack Config Category Details.
 	SubCategoryDetails PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPtrInput `pulumi:"subCategoryDetails"`
-	// (Updatable) Versions associated with the PRODUCT .
+	// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -4750,14 +4762,14 @@ func (o PlatformConfigurationConfigCategoryDetailsOutput) ToPlatformConfiguratio
 	}).(PlatformConfigurationConfigCategoryDetailsPtrOutput)
 }
 
-// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsOutput) CompatibleProducts() PlatformConfigurationConfigCategoryDetailsCompatibleProductArrayOutput {
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsCompatibleProduct {
 		return v.CompatibleProducts
 	}).(PlatformConfigurationConfigCategoryDetailsCompatibleProductArrayOutput)
 }
 
-// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsOutput) Components() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) []string { return v.Components }).(pulumi.StringArrayOutput)
 }
@@ -4767,7 +4779,7 @@ func (o PlatformConfigurationConfigCategoryDetailsOutput) ConfigCategory() pulum
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) string { return v.ConfigCategory }).(pulumi.StringOutput)
 }
 
-// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsOutput) Credentials() PlatformConfigurationConfigCategoryDetailsCredentialArrayOutput {
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsCredential {
 		return v.Credentials
@@ -4784,7 +4796,24 @@ func (o PlatformConfigurationConfigCategoryDetailsOutput) InstanceName() pulumi.
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Patch Types associated with this Product.
+// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+func (o PlatformConfigurationConfigCategoryDetailsOutput) IsCompliancePolicyRequiredForSoftlink() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) *bool {
+		return v.IsCompliancePolicyRequiredForSoftlink
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specify if the product is softlink product or not
+func (o PlatformConfigurationConfigCategoryDetailsOutput) IsSoftlink() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) *bool { return v.IsSoftlink }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+func (o PlatformConfigurationConfigCategoryDetailsOutput) LinkProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) *string { return v.LinkProductId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsOutput) PatchTypes() PlatformConfigurationConfigCategoryDetailsPatchTypeArrayOutput {
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsPatchType {
 		return v.PatchTypes
@@ -4805,7 +4834,7 @@ func (o PlatformConfigurationConfigCategoryDetailsOutput) SubCategoryDetails() P
 	}).(PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPtrOutput)
 }
 
-// (Updatable) Versions associated with the PRODUCT .
+// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o PlatformConfigurationConfigCategoryDetailsOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v PlatformConfigurationConfigCategoryDetails) []string { return v.Versions }).(pulumi.StringArrayOutput)
 }
@@ -4834,7 +4863,7 @@ func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) Elem() PlatformConf
 	}).(PlatformConfigurationConfigCategoryDetailsOutput)
 }
 
-// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) CompatibleProducts() PlatformConfigurationConfigCategoryDetailsCompatibleProductArrayOutput {
 	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsCompatibleProduct {
 		if v == nil {
@@ -4844,7 +4873,7 @@ func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) CompatibleProducts(
 	}).(PlatformConfigurationConfigCategoryDetailsCompatibleProductArrayOutput)
 }
 
-// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) Components() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) []string {
 		if v == nil {
@@ -4864,7 +4893,7 @@ func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) ConfigCategory() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) Credentials() PlatformConfigurationConfigCategoryDetailsCredentialArrayOutput {
 	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsCredential {
 		if v == nil {
@@ -4894,7 +4923,37 @@ func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) InstanceName() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Patch Types associated with this Product.
+// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) IsCompliancePolicyRequiredForSoftlink() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsCompliancePolicyRequiredForSoftlink
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Specify if the product is softlink product or not
+func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) IsSoftlink() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSoftlink
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) LinkProductId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LinkProductId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
 func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) PatchTypes() PlatformConfigurationConfigCategoryDetailsPatchTypeArrayOutput {
 	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) []PlatformConfigurationConfigCategoryDetailsPatchType {
 		if v == nil {
@@ -4924,7 +4983,7 @@ func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) SubCategoryDetails(
 	}).(PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPtrOutput)
 }
 
-// (Updatable) Versions associated with the PRODUCT .
+// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o PlatformConfigurationConfigCategoryDetailsPtrOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PlatformConfigurationConfigCategoryDetails) []string {
 		if v == nil {
@@ -28578,6 +28637,8 @@ type GetFleetTargetsFleetTargetCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A boolean flag that represents whether the last discovery attempt was successful.
 	IsLastDiscoveryAttemptSuccessful bool `pulumi:"isLastDiscoveryAttemptSuccessful"`
+	// Name of the parent target.
+	ParentTargetName string `pulumi:"parentTargetName"`
 	// Product Name.
 	Product string `pulumi:"product"`
 	// Resource Information for the Target.
@@ -28616,6 +28677,8 @@ type GetFleetTargetsFleetTargetCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag that represents whether the last discovery attempt was successful.
 	IsLastDiscoveryAttemptSuccessful pulumi.BoolInput `pulumi:"isLastDiscoveryAttemptSuccessful"`
+	// Name of the parent target.
+	ParentTargetName pulumi.StringInput `pulumi:"parentTargetName"`
 	// Product Name.
 	Product pulumi.StringInput `pulumi:"product"`
 	// Resource Information for the Target.
@@ -28706,6 +28769,11 @@ func (o GetFleetTargetsFleetTargetCollectionItemOutput) Id() pulumi.StringOutput
 // A boolean flag that represents whether the last discovery attempt was successful.
 func (o GetFleetTargetsFleetTargetCollectionItemOutput) IsLastDiscoveryAttemptSuccessful() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetTargetsFleetTargetCollectionItem) bool { return v.IsLastDiscoveryAttemptSuccessful }).(pulumi.BoolOutput)
+}
+
+// Name of the parent target.
+func (o GetFleetTargetsFleetTargetCollectionItemOutput) ParentTargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetTargetsFleetTargetCollectionItem) string { return v.ParentTargetName }).(pulumi.StringOutput)
 }
 
 // Product Name.
@@ -31525,7 +31593,7 @@ type GetInstalledPatchesInstalledPatchCollectionItem struct {
 	PatchDescription string `pulumi:"patchDescription"`
 	// The OCID of the patch.
 	PatchId string `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel string `pulumi:"patchLevel"`
 	// Name of the patch.
 	PatchName string `pulumi:"patchName"`
@@ -31555,7 +31623,7 @@ type GetInstalledPatchesInstalledPatchCollectionItemArgs struct {
 	PatchDescription pulumi.StringInput `pulumi:"patchDescription"`
 	// The OCID of the patch.
 	PatchId pulumi.StringInput `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel pulumi.StringInput `pulumi:"patchLevel"`
 	// Name of the patch.
 	PatchName pulumi.StringInput `pulumi:"patchName"`
@@ -31630,7 +31698,7 @@ func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchId() pulumi.
 	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchId }).(pulumi.StringOutput)
 }
 
-// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 func (o GetInstalledPatchesInstalledPatchCollectionItemOutput) PatchLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstalledPatchesInstalledPatchCollectionItem) string { return v.PatchLevel }).(pulumi.StringOutput)
 }
@@ -31899,6 +31967,8 @@ type GetInventoryRecordsInventoryRecordCollectionItem struct {
 	InstalledPatches []GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch `pulumi:"installedPatches"`
 	// OS installed on the resource associated with the target
 	OsType string `pulumi:"osType"`
+	// Name of the parent target.
+	ParentTargetName string `pulumi:"parentTargetName"`
 	// List of target properties
 	Properties []GetInventoryRecordsInventoryRecordCollectionItemProperty `pulumi:"properties"`
 	// The current state of the Inventory target.
@@ -31945,6 +32015,8 @@ type GetInventoryRecordsInventoryRecordCollectionItemArgs struct {
 	InstalledPatches GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArrayInput `pulumi:"installedPatches"`
 	// OS installed on the resource associated with the target
 	OsType pulumi.StringInput `pulumi:"osType"`
+	// Name of the parent target.
+	ParentTargetName pulumi.StringInput `pulumi:"parentTargetName"`
 	// List of target properties
 	Properties GetInventoryRecordsInventoryRecordCollectionItemPropertyArrayInput `pulumi:"properties"`
 	// The current state of the Inventory target.
@@ -32047,6 +32119,11 @@ func (o GetInventoryRecordsInventoryRecordCollectionItemOutput) InstalledPatches
 // OS installed on the resource associated with the target
 func (o GetInventoryRecordsInventoryRecordCollectionItemOutput) OsType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItem) string { return v.OsType }).(pulumi.StringOutput)
+}
+
+// Name of the parent target.
+func (o GetInventoryRecordsInventoryRecordCollectionItemOutput) ParentTargetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInventoryRecordsInventoryRecordCollectionItem) string { return v.ParentTargetName }).(pulumi.StringOutput)
 }
 
 // List of target properties
@@ -36562,7 +36639,7 @@ func (o GetPatchesPatchCollectionItemProductArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetPlatformConfigurationConfigCategoryDetail struct {
-	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts []GetPlatformConfigurationConfigCategoryDetailCompatibleProduct `pulumi:"compatibleProducts"`
 	// Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
 	Components []string `pulumi:"components"`
@@ -36574,13 +36651,19 @@ type GetPlatformConfigurationConfigCategoryDetail struct {
 	InstanceId string `pulumi:"instanceId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName string `pulumi:"instanceName"`
+	// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink bool `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// Specify if the product is softlink product or not
+	IsSoftlink bool `pulumi:"isSoftlink"`
+	// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId string `pulumi:"linkProductId"`
 	// Patch Types associated with this Product Stack which will be considered as Product.
 	PatchTypes []GetPlatformConfigurationConfigCategoryDetailPatchType `pulumi:"patchTypes"`
 	// Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products []GetPlatformConfigurationConfigCategoryDetailProduct `pulumi:"products"`
 	// ProductStack Config Category Details.
 	SubCategoryDetails []GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail `pulumi:"subCategoryDetails"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -36596,7 +36679,7 @@ type GetPlatformConfigurationConfigCategoryDetailInput interface {
 }
 
 type GetPlatformConfigurationConfigCategoryDetailArgs struct {
-	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts GetPlatformConfigurationConfigCategoryDetailCompatibleProductArrayInput `pulumi:"compatibleProducts"`
 	// Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
 	Components pulumi.StringArrayInput `pulumi:"components"`
@@ -36608,13 +36691,19 @@ type GetPlatformConfigurationConfigCategoryDetailArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink pulumi.BoolInput `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// Specify if the product is softlink product or not
+	IsSoftlink pulumi.BoolInput `pulumi:"isSoftlink"`
+	// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId pulumi.StringInput `pulumi:"linkProductId"`
 	// Patch Types associated with this Product Stack which will be considered as Product.
 	PatchTypes GetPlatformConfigurationConfigCategoryDetailPatchTypeArrayInput `pulumi:"patchTypes"`
 	// Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products GetPlatformConfigurationConfigCategoryDetailProductArrayInput `pulumi:"products"`
 	// ProductStack Config Category Details.
 	SubCategoryDetails GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailArrayInput `pulumi:"subCategoryDetails"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -36669,7 +36758,7 @@ func (o GetPlatformConfigurationConfigCategoryDetailOutput) ToGetPlatformConfigu
 	return o
 }
 
-// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 func (o GetPlatformConfigurationConfigCategoryDetailOutput) CompatibleProducts() GetPlatformConfigurationConfigCategoryDetailCompatibleProductArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) []GetPlatformConfigurationConfigCategoryDetailCompatibleProduct {
 		return v.CompatibleProducts
@@ -36703,6 +36792,23 @@ func (o GetPlatformConfigurationConfigCategoryDetailOutput) InstanceName() pulum
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
+// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+func (o GetPlatformConfigurationConfigCategoryDetailOutput) IsCompliancePolicyRequiredForSoftlink() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) bool {
+		return v.IsCompliancePolicyRequiredForSoftlink
+	}).(pulumi.BoolOutput)
+}
+
+// Specify if the product is softlink product or not
+func (o GetPlatformConfigurationConfigCategoryDetailOutput) IsSoftlink() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) bool { return v.IsSoftlink }).(pulumi.BoolOutput)
+}
+
+// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+func (o GetPlatformConfigurationConfigCategoryDetailOutput) LinkProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) string { return v.LinkProductId }).(pulumi.StringOutput)
+}
+
 // Patch Types associated with this Product Stack which will be considered as Product.
 func (o GetPlatformConfigurationConfigCategoryDetailOutput) PatchTypes() GetPlatformConfigurationConfigCategoryDetailPatchTypeArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) []GetPlatformConfigurationConfigCategoryDetailPatchType {
@@ -36724,7 +36830,7 @@ func (o GetPlatformConfigurationConfigCategoryDetailOutput) SubCategoryDetails()
 	}).(GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailArrayOutput)
 }
 
-// Versions associated with the PRODUCT .
+// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o GetPlatformConfigurationConfigCategoryDetailOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetail) []string { return v.Versions }).(pulumi.StringArrayOutput)
 }
@@ -37182,7 +37288,7 @@ type GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail struct {
 	PatchTypes []GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchType `pulumi:"patchTypes"`
 	// SubCategory of Product Stack.
 	SubCategory string `pulumi:"subCategory"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -37206,7 +37312,7 @@ type GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailArgs struct {
 	PatchTypes GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeArrayInput `pulumi:"patchTypes"`
 	// SubCategory of Product Stack.
 	SubCategory pulumi.StringInput `pulumi:"subCategory"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -37285,7 +37391,7 @@ func (o GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailOutput) Sub
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail) string { return v.SubCategory }).(pulumi.StringOutput)
 }
 
-// Versions associated with the PRODUCT .
+// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail) []string { return v.Versions }).(pulumi.StringArrayOutput)
 }
@@ -37951,7 +38057,7 @@ func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemArrayOutput)
 }
 
 type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail struct {
-	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProduct `pulumi:"compatibleProducts"`
 	// Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
 	Components []string `pulumi:"components"`
@@ -37963,13 +38069,19 @@ type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryD
 	InstanceId string `pulumi:"instanceId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName string `pulumi:"instanceName"`
+	// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink bool `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// Specify if the product is softlink product or not
+	IsSoftlink bool `pulumi:"isSoftlink"`
+	// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId string `pulumi:"linkProductId"`
 	// Patch Types associated with this Product Stack which will be considered as Product.
 	PatchTypes []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchType `pulumi:"patchTypes"`
 	// Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProduct `pulumi:"products"`
 	// ProductStack Config Category Details.
 	SubCategoryDetails []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetail `pulumi:"subCategoryDetails"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -37985,7 +38097,7 @@ type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryD
 }
 
 type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailArgs struct {
-	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+	// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 	CompatibleProducts GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductArrayInput `pulumi:"compatibleProducts"`
 	// Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
 	Components pulumi.StringArrayInput `pulumi:"components"`
@@ -37997,13 +38109,19 @@ type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryD
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+	IsCompliancePolicyRequiredForSoftlink pulumi.BoolInput `pulumi:"isCompliancePolicyRequiredForSoftlink"`
+	// Specify if the product is softlink product or not
+	IsSoftlink pulumi.BoolInput `pulumi:"isSoftlink"`
+	// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+	LinkProductId pulumi.StringInput `pulumi:"linkProductId"`
 	// Patch Types associated with this Product Stack which will be considered as Product.
 	PatchTypes GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeArrayInput `pulumi:"patchTypes"`
 	// Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
 	Products GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductArrayInput `pulumi:"products"`
 	// ProductStack Config Category Details.
 	SubCategoryDetails GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailArrayInput `pulumi:"subCategoryDetails"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -38058,7 +38176,7 @@ func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCatego
 	return o
 }
 
-// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+// Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
 func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) CompatibleProducts() GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProduct {
 		return v.CompatibleProducts
@@ -38100,6 +38218,27 @@ func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCatego
 	}).(pulumi.StringOutput)
 }
 
+// If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) IsCompliancePolicyRequiredForSoftlink() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) bool {
+		return v.IsCompliancePolicyRequiredForSoftlink
+	}).(pulumi.BoolOutput)
+}
+
+// Specify if the product is softlink product or not
+func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) IsSoftlink() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) bool {
+		return v.IsSoftlink
+	}).(pulumi.BoolOutput)
+}
+
+// The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) LinkProductId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) string {
+		return v.LinkProductId
+	}).(pulumi.StringOutput)
+}
+
 // Patch Types associated with this Product Stack which will be considered as Product.
 func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) PatchTypes() GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchType {
@@ -38121,7 +38260,7 @@ func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCatego
 	}).(GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailArrayOutput)
 }
 
-// Versions associated with the PRODUCT .
+// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail) []string {
 		return v.Versions
@@ -38597,7 +38736,7 @@ type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryD
 	PatchTypes []GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchType `pulumi:"patchTypes"`
 	// SubCategory of Product Stack.
 	SubCategory string `pulumi:"subCategory"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -38621,7 +38760,7 @@ type GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryD
 	PatchTypes GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeArrayInput `pulumi:"patchTypes"`
 	// SubCategory of Product Stack.
 	SubCategory pulumi.StringInput `pulumi:"subCategory"`
-	// Versions associated with the PRODUCT .
+	// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -38704,7 +38843,7 @@ func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCatego
 	}).(pulumi.StringOutput)
 }
 
-// Versions associated with the PRODUCT .
+// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
 func (o GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetail) []string {
 		return v.Versions
@@ -40910,7 +41049,7 @@ type GetRecommendedPatchesRecommendedPatchCollectionItem struct {
 	PatchDescription string `pulumi:"patchDescription"`
 	// Patch identifier.
 	PatchId string `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel string `pulumi:"patchLevel"`
 	// Name of the patch.
 	PatchName string `pulumi:"patchName"`
@@ -40938,7 +41077,7 @@ type GetRecommendedPatchesRecommendedPatchCollectionItemArgs struct {
 	PatchDescription pulumi.StringInput `pulumi:"patchDescription"`
 	// Patch identifier.
 	PatchId pulumi.StringInput `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel pulumi.StringInput `pulumi:"patchLevel"`
 	// Name of the patch.
 	PatchName pulumi.StringInput `pulumi:"patchName"`
@@ -41011,7 +41150,7 @@ func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchId() pul
 	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchId }).(pulumi.StringOutput)
 }
 
-// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 func (o GetRecommendedPatchesRecommendedPatchCollectionItemOutput) PatchLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecommendedPatchesRecommendedPatchCollectionItem) string { return v.PatchLevel }).(pulumi.StringOutput)
 }

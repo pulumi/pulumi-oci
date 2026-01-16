@@ -28,6 +28,9 @@ import * as utilities from "../utilities";
  *         }],
  *         instanceId: testInstance.id,
  *         instanceName: testInstance.name,
+ *         isCompliancePolicyRequiredForSoftlink: platformConfigurationConfigCategoryDetailsIsCompliancePolicyRequiredForSoftlink,
+ *         isSoftlink: platformConfigurationConfigCategoryDetailsIsSoftlink,
+ *         linkProductId: testLinkProduct.id,
  *         patchTypes: [{
  *             displayName: platformConfigurationConfigCategoryDetailsPatchTypesDisplayName,
  *             id: platformConfigurationConfigCategoryDetailsPatchTypesId,

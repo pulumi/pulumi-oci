@@ -767,6 +767,235 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInpu
 	}).(LogAnalyticsPreferencesManagementItemOutput)
 }
 
+type NamespaceAssociationAssociationProperty struct {
+	// The name of the association property.
+	Name string `pulumi:"name"`
+	// A list of pattern level overrides for this property.
+	Patterns []NamespaceAssociationAssociationPropertyPattern `pulumi:"patterns"`
+	// The value of the association property.
+	Value *string `pulumi:"value"`
+}
+
+// NamespaceAssociationAssociationPropertyInput is an input type that accepts NamespaceAssociationAssociationPropertyArgs and NamespaceAssociationAssociationPropertyOutput values.
+// You can construct a concrete instance of `NamespaceAssociationAssociationPropertyInput` via:
+//
+//	NamespaceAssociationAssociationPropertyArgs{...}
+type NamespaceAssociationAssociationPropertyInput interface {
+	pulumi.Input
+
+	ToNamespaceAssociationAssociationPropertyOutput() NamespaceAssociationAssociationPropertyOutput
+	ToNamespaceAssociationAssociationPropertyOutputWithContext(context.Context) NamespaceAssociationAssociationPropertyOutput
+}
+
+type NamespaceAssociationAssociationPropertyArgs struct {
+	// The name of the association property.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A list of pattern level overrides for this property.
+	Patterns NamespaceAssociationAssociationPropertyPatternArrayInput `pulumi:"patterns"`
+	// The value of the association property.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (NamespaceAssociationAssociationPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceAssociationAssociationProperty)(nil)).Elem()
+}
+
+func (i NamespaceAssociationAssociationPropertyArgs) ToNamespaceAssociationAssociationPropertyOutput() NamespaceAssociationAssociationPropertyOutput {
+	return i.ToNamespaceAssociationAssociationPropertyOutputWithContext(context.Background())
+}
+
+func (i NamespaceAssociationAssociationPropertyArgs) ToNamespaceAssociationAssociationPropertyOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceAssociationAssociationPropertyOutput)
+}
+
+// NamespaceAssociationAssociationPropertyArrayInput is an input type that accepts NamespaceAssociationAssociationPropertyArray and NamespaceAssociationAssociationPropertyArrayOutput values.
+// You can construct a concrete instance of `NamespaceAssociationAssociationPropertyArrayInput` via:
+//
+//	NamespaceAssociationAssociationPropertyArray{ NamespaceAssociationAssociationPropertyArgs{...} }
+type NamespaceAssociationAssociationPropertyArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceAssociationAssociationPropertyArrayOutput() NamespaceAssociationAssociationPropertyArrayOutput
+	ToNamespaceAssociationAssociationPropertyArrayOutputWithContext(context.Context) NamespaceAssociationAssociationPropertyArrayOutput
+}
+
+type NamespaceAssociationAssociationPropertyArray []NamespaceAssociationAssociationPropertyInput
+
+func (NamespaceAssociationAssociationPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceAssociationAssociationProperty)(nil)).Elem()
+}
+
+func (i NamespaceAssociationAssociationPropertyArray) ToNamespaceAssociationAssociationPropertyArrayOutput() NamespaceAssociationAssociationPropertyArrayOutput {
+	return i.ToNamespaceAssociationAssociationPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceAssociationAssociationPropertyArray) ToNamespaceAssociationAssociationPropertyArrayOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceAssociationAssociationPropertyArrayOutput)
+}
+
+type NamespaceAssociationAssociationPropertyOutput struct{ *pulumi.OutputState }
+
+func (NamespaceAssociationAssociationPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceAssociationAssociationProperty)(nil)).Elem()
+}
+
+func (o NamespaceAssociationAssociationPropertyOutput) ToNamespaceAssociationAssociationPropertyOutput() NamespaceAssociationAssociationPropertyOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyOutput) ToNamespaceAssociationAssociationPropertyOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyOutput {
+	return o
+}
+
+// The name of the association property.
+func (o NamespaceAssociationAssociationPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of pattern level overrides for this property.
+func (o NamespaceAssociationAssociationPropertyOutput) Patterns() NamespaceAssociationAssociationPropertyPatternArrayOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationProperty) []NamespaceAssociationAssociationPropertyPattern {
+		return v.Patterns
+	}).(NamespaceAssociationAssociationPropertyPatternArrayOutput)
+}
+
+// The value of the association property.
+func (o NamespaceAssociationAssociationPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type NamespaceAssociationAssociationPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceAssociationAssociationPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceAssociationAssociationProperty)(nil)).Elem()
+}
+
+func (o NamespaceAssociationAssociationPropertyArrayOutput) ToNamespaceAssociationAssociationPropertyArrayOutput() NamespaceAssociationAssociationPropertyArrayOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyArrayOutput) ToNamespaceAssociationAssociationPropertyArrayOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyArrayOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyArrayOutput) Index(i pulumi.IntInput) NamespaceAssociationAssociationPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceAssociationAssociationProperty {
+		return vs[0].([]NamespaceAssociationAssociationProperty)[vs[1].(int)]
+	}).(NamespaceAssociationAssociationPropertyOutput)
+}
+
+type NamespaceAssociationAssociationPropertyPattern struct {
+	EffectiveLevel *string `pulumi:"effectiveLevel"`
+	// The pattern id.
+	Id string `pulumi:"id"`
+	// (Updatable) The value of the property.
+	Value string `pulumi:"value"`
+}
+
+// NamespaceAssociationAssociationPropertyPatternInput is an input type that accepts NamespaceAssociationAssociationPropertyPatternArgs and NamespaceAssociationAssociationPropertyPatternOutput values.
+// You can construct a concrete instance of `NamespaceAssociationAssociationPropertyPatternInput` via:
+//
+//	NamespaceAssociationAssociationPropertyPatternArgs{...}
+type NamespaceAssociationAssociationPropertyPatternInput interface {
+	pulumi.Input
+
+	ToNamespaceAssociationAssociationPropertyPatternOutput() NamespaceAssociationAssociationPropertyPatternOutput
+	ToNamespaceAssociationAssociationPropertyPatternOutputWithContext(context.Context) NamespaceAssociationAssociationPropertyPatternOutput
+}
+
+type NamespaceAssociationAssociationPropertyPatternArgs struct {
+	EffectiveLevel pulumi.StringPtrInput `pulumi:"effectiveLevel"`
+	// The pattern id.
+	Id pulumi.StringInput `pulumi:"id"`
+	// (Updatable) The value of the property.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (NamespaceAssociationAssociationPropertyPatternArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceAssociationAssociationPropertyPattern)(nil)).Elem()
+}
+
+func (i NamespaceAssociationAssociationPropertyPatternArgs) ToNamespaceAssociationAssociationPropertyPatternOutput() NamespaceAssociationAssociationPropertyPatternOutput {
+	return i.ToNamespaceAssociationAssociationPropertyPatternOutputWithContext(context.Background())
+}
+
+func (i NamespaceAssociationAssociationPropertyPatternArgs) ToNamespaceAssociationAssociationPropertyPatternOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyPatternOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceAssociationAssociationPropertyPatternOutput)
+}
+
+// NamespaceAssociationAssociationPropertyPatternArrayInput is an input type that accepts NamespaceAssociationAssociationPropertyPatternArray and NamespaceAssociationAssociationPropertyPatternArrayOutput values.
+// You can construct a concrete instance of `NamespaceAssociationAssociationPropertyPatternArrayInput` via:
+//
+//	NamespaceAssociationAssociationPropertyPatternArray{ NamespaceAssociationAssociationPropertyPatternArgs{...} }
+type NamespaceAssociationAssociationPropertyPatternArrayInput interface {
+	pulumi.Input
+
+	ToNamespaceAssociationAssociationPropertyPatternArrayOutput() NamespaceAssociationAssociationPropertyPatternArrayOutput
+	ToNamespaceAssociationAssociationPropertyPatternArrayOutputWithContext(context.Context) NamespaceAssociationAssociationPropertyPatternArrayOutput
+}
+
+type NamespaceAssociationAssociationPropertyPatternArray []NamespaceAssociationAssociationPropertyPatternInput
+
+func (NamespaceAssociationAssociationPropertyPatternArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceAssociationAssociationPropertyPattern)(nil)).Elem()
+}
+
+func (i NamespaceAssociationAssociationPropertyPatternArray) ToNamespaceAssociationAssociationPropertyPatternArrayOutput() NamespaceAssociationAssociationPropertyPatternArrayOutput {
+	return i.ToNamespaceAssociationAssociationPropertyPatternArrayOutputWithContext(context.Background())
+}
+
+func (i NamespaceAssociationAssociationPropertyPatternArray) ToNamespaceAssociationAssociationPropertyPatternArrayOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyPatternArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamespaceAssociationAssociationPropertyPatternArrayOutput)
+}
+
+type NamespaceAssociationAssociationPropertyPatternOutput struct{ *pulumi.OutputState }
+
+func (NamespaceAssociationAssociationPropertyPatternOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamespaceAssociationAssociationPropertyPattern)(nil)).Elem()
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternOutput) ToNamespaceAssociationAssociationPropertyPatternOutput() NamespaceAssociationAssociationPropertyPatternOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternOutput) ToNamespaceAssociationAssociationPropertyPatternOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyPatternOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternOutput) EffectiveLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationPropertyPattern) *string { return v.EffectiveLevel }).(pulumi.StringPtrOutput)
+}
+
+// The pattern id.
+func (o NamespaceAssociationAssociationPropertyPatternOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationPropertyPattern) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// (Updatable) The value of the property.
+func (o NamespaceAssociationAssociationPropertyPatternOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v NamespaceAssociationAssociationPropertyPattern) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type NamespaceAssociationAssociationPropertyPatternArrayOutput struct{ *pulumi.OutputState }
+
+func (NamespaceAssociationAssociationPropertyPatternArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamespaceAssociationAssociationPropertyPattern)(nil)).Elem()
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternArrayOutput) ToNamespaceAssociationAssociationPropertyPatternArrayOutput() NamespaceAssociationAssociationPropertyPatternArrayOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternArrayOutput) ToNamespaceAssociationAssociationPropertyPatternArrayOutputWithContext(ctx context.Context) NamespaceAssociationAssociationPropertyPatternArrayOutput {
+	return o
+}
+
+func (o NamespaceAssociationAssociationPropertyPatternArrayOutput) Index(i pulumi.IntInput) NamespaceAssociationAssociationPropertyPatternOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamespaceAssociationAssociationPropertyPattern {
+		return vs[0].([]NamespaceAssociationAssociationPropertyPattern)[vs[1].(int)]
+	}).(NamespaceAssociationAssociationPropertyPatternOutput)
+}
+
 type NamespaceIngestTimeRuleAction struct {
 	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -15016,6 +15245,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsObjectCollectionRuleOverrideArrayInput)(nil)).Elem(), LogAnalyticsObjectCollectionRuleOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsPreferencesManagementItemInput)(nil)).Elem(), LogAnalyticsPreferencesManagementItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LogAnalyticsPreferencesManagementItemArrayInput)(nil)).Elem(), LogAnalyticsPreferencesManagementItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceAssociationAssociationPropertyInput)(nil)).Elem(), NamespaceAssociationAssociationPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceAssociationAssociationPropertyArrayInput)(nil)).Elem(), NamespaceAssociationAssociationPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceAssociationAssociationPropertyPatternInput)(nil)).Elem(), NamespaceAssociationAssociationPropertyPatternArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceAssociationAssociationPropertyPatternArrayInput)(nil)).Elem(), NamespaceAssociationAssociationPropertyPatternArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleActionInput)(nil)).Elem(), NamespaceIngestTimeRuleActionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleActionArrayInput)(nil)).Elem(), NamespaceIngestTimeRuleActionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NamespaceIngestTimeRuleConditionsInput)(nil)).Elem(), NamespaceIngestTimeRuleConditionsArgs{})
@@ -15240,6 +15473,10 @@ func init() {
 	pulumi.RegisterOutputType(LogAnalyticsObjectCollectionRuleOverrideArrayOutput{})
 	pulumi.RegisterOutputType(LogAnalyticsPreferencesManagementItemOutput{})
 	pulumi.RegisterOutputType(LogAnalyticsPreferencesManagementItemArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceAssociationAssociationPropertyOutput{})
+	pulumi.RegisterOutputType(NamespaceAssociationAssociationPropertyArrayOutput{})
+	pulumi.RegisterOutputType(NamespaceAssociationAssociationPropertyPatternOutput{})
+	pulumi.RegisterOutputType(NamespaceAssociationAssociationPropertyPatternArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleActionOutput{})
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleActionArrayOutput{})
 	pulumi.RegisterOutputType(NamespaceIngestTimeRuleConditionsOutput{})

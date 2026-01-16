@@ -81,6 +81,11 @@ public final class GetDeployEnvironmentResult {
      */
     private String projectId;
     /**
+     * @return Security attributes to be added in to the deployment environment
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The current state of the deployment environment.
      * 
      */
@@ -197,6 +202,13 @@ public final class GetDeployEnvironmentResult {
         return this.projectId;
     }
     /**
+     * @return Security attributes to be added in to the deployment environment
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The current state of the deployment environment.
      * 
      */
@@ -248,6 +260,7 @@ public final class GetDeployEnvironmentResult {
         private String lifecycleDetails;
         private List<GetDeployEnvironmentNetworkChannel> networkChannels;
         private String projectId;
+        private Map<String,String> securityAttributes;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -269,6 +282,7 @@ public final class GetDeployEnvironmentResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkChannels = defaults.networkChannels;
     	      this.projectId = defaults.projectId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -394,6 +408,14 @@ public final class GetDeployEnvironmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDeployEnvironmentResult", "state");
@@ -441,6 +463,7 @@ public final class GetDeployEnvironmentResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkChannels = networkChannels;
             _resultValue.projectId = projectId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

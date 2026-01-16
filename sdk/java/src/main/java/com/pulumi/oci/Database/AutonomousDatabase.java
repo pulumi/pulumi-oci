@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.AutonomousDatabaseArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseState;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseApexDetail;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionUrl;
@@ -204,6 +205,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
+    }
+    /**
+     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    @Export(name="autonomousDatabaseMaintenanceWindow", refs={AutonomousDatabaseAutonomousDatabaseMaintenanceWindow.class}, tree="[0]")
+    private Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindow;
+
+    /**
+     * @return (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> autonomousDatabaseMaintenanceWindow() {
+        return this.autonomousDatabaseMaintenanceWindow;
     }
     /**
      * (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -1192,6 +1207,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    @Export(name="localAdgResourcePoolLeaderId", refs={String.class}, tree="[0]")
+    private Output<String> localAdgResourcePoolLeaderId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    public Output<String> localAdgResourcePoolLeaderId() {
+        return this.localAdgResourcePoolLeaderId;
+    }
+    /**
      * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -2026,6 +2055,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeMaintenanceEnd() {
         return this.timeMaintenanceEnd;
+    }
+    /**
+     * The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    @Export(name="timeMaintenancePauseUntil", refs={String.class}, tree="[0]")
+    private Output<String> timeMaintenancePauseUntil;
+
+    /**
+     * @return The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    public Output<String> timeMaintenancePauseUntil() {
+        return this.timeMaintenancePauseUntil;
     }
     /**
      * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.

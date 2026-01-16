@@ -135,7 +135,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public string? PatchId { get; set; }
 
         /// <summary>
-        /// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        /// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         /// </summary>
         [Input("patchLevel")]
         public string? PatchLevel { get; set; }
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public Input<string>? PatchId { get; set; }
 
         /// <summary>
-        /// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        /// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         /// </summary>
         [Input("patchLevel")]
         public Input<string>? PatchLevel { get; set; }

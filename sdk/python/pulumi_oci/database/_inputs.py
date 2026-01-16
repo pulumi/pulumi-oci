@@ -75,6 +75,10 @@ __all__ = [
     'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict',
     'AutonomousDatabaseApexDetailArgs',
     'AutonomousDatabaseApexDetailArgsDict',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict',
     'AutonomousDatabaseBackupBackupDestinationDetailsArgs',
     'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict',
     'AutonomousDatabaseBackupConfigArgs',
@@ -4838,6 +4842,108 @@ class AutonomousDatabaseApexDetailArgs:
 
 
 if not MYPY:
+    class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict(TypedDict):
+        day_of_week: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict']
+        """
+        (Updatable) Day of the week.
+        """
+        maintenance_end_time: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        maintenance_start_time: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+elif False:
+    AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 day_of_week: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'],
+                 maintenance_end_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 maintenance_start_time: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'] day_of_week: (Updatable) Day of the week.
+        :param pulumi.Input[_builtins.str] maintenance_end_time: (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param pulumi.Input[_builtins.str] maintenance_start_time: (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        if maintenance_end_time is not None:
+            pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        if maintenance_start_time is not None:
+            pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs']:
+        """
+        (Updatable) Day of the week.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @day_of_week.setter
+    def day_of_week(self, value: pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs']):
+        pulumi.set(self, "day_of_week", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @maintenance_end_time.setter
+    def maintenance_end_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "maintenance_end_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+    @maintenance_start_time.setter
+    def maintenance_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "maintenance_start_time", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict(TypedDict):
+        name: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Name of the day of the week.
+        """
+elif False:
+    AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+
+if not MYPY:
     class AutonomousDatabaseBackupBackupDestinationDetailsArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
@@ -7389,6 +7495,10 @@ if not MYPY:
         """
         (Updatable) Available capacity left for new elastic pool members provision
         """
+        available_storage_capacity_in_tbs: NotRequired[pulumi.Input[_builtins.float]]
+        """
+        (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
         is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
         (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
@@ -7396,6 +7506,10 @@ if not MYPY:
         pool_size: NotRequired[pulumi.Input[_builtins.int]]
         """
         (Updatable) Resource pool size.
+        """
+        pool_storage_size_in_tbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Resource pool storage size in TBs.
         """
         total_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
         """
@@ -7408,21 +7522,29 @@ elif False:
 class AutonomousDatabaseResourcePoolSummaryArgs:
     def __init__(__self__, *,
                  available_compute_capacity: Optional[pulumi.Input[_builtins.int]] = None,
+                 available_storage_capacity_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
                  is_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  pool_size: Optional[pulumi.Input[_builtins.int]] = None,
+                 pool_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
                  total_compute_capacity: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] available_compute_capacity: (Updatable) Available capacity left for new elastic pool members provision
+        :param pulumi.Input[_builtins.float] available_storage_capacity_in_tbs: (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
         :param pulumi.Input[_builtins.bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         :param pulumi.Input[_builtins.int] pool_size: (Updatable) Resource pool size.
+        :param pulumi.Input[_builtins.int] pool_storage_size_in_tbs: (Updatable) Resource pool storage size in TBs.
         :param pulumi.Input[_builtins.int] total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
         if available_compute_capacity is not None:
             pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
+        if available_storage_capacity_in_tbs is not None:
+            pulumi.set(__self__, "available_storage_capacity_in_tbs", available_storage_capacity_in_tbs)
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if pool_size is not None:
             pulumi.set(__self__, "pool_size", pool_size)
+        if pool_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "pool_storage_size_in_tbs", pool_storage_size_in_tbs)
         if total_compute_capacity is not None:
             pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
 
@@ -7437,6 +7559,18 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @available_compute_capacity.setter
     def available_compute_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "available_compute_capacity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageCapacityInTbs")
+    def available_storage_capacity_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
+        return pulumi.get(self, "available_storage_capacity_in_tbs")
+
+    @available_storage_capacity_in_tbs.setter
+    def available_storage_capacity_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "available_storage_capacity_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -7461,6 +7595,18 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @pool_size.setter
     def pool_size(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "pool_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="poolStorageSizeInTbs")
+    def pool_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Resource pool storage size in TBs.
+        """
+        return pulumi.get(self, "pool_storage_size_in_tbs")
+
+    @pool_storage_size_in_tbs.setter
+    def pool_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "pool_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalComputeCapacity")
@@ -12218,6 +12364,10 @@ if not MYPY:
 
         **The password MUST be the same as the primary admin password.**
         """
+        database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
         database_software_image_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -12304,6 +12454,7 @@ if not MYPY:
         """
         The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         """
+        time_stamp_for_point_in_time_recovery: NotRequired[pulumi.Input[_builtins.str]]
         transport_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -12319,6 +12470,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
+        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
 elif False:
     DatabaseDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -12330,6 +12485,7 @@ class DatabaseDatabaseArgs:
                  backup_tde_password: Optional[pulumi.Input[_builtins.str]] = None,
                  character_set: Optional[pulumi.Input[_builtins.str]] = None,
                  database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_backup_config: Optional[pulumi.Input['DatabaseDatabaseDbBackupConfigArgs']] = None,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -12351,8 +12507,10 @@ class DatabaseDatabaseArgs:
                  source_tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_size_details: Optional[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgs']] = None,
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[_builtins.str]] = None,
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -12363,6 +12521,7 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[_builtins.str] database_admin_password: The administrator password of the primary database in this Data Guard association.
                
                **The password MUST be the same as the primary admin password.**
+        :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input['DatabaseDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[_builtins.str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
@@ -12395,6 +12554,7 @@ class DatabaseDatabaseArgs:
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -12406,6 +12566,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "character_set", character_set)
         if database_admin_password is not None:
             pulumi.set(__self__, "database_admin_password", database_admin_password)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
@@ -12448,10 +12610,14 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+        if time_stamp_for_point_in_time_recovery is not None:
+            pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -12516,6 +12682,18 @@ class DatabaseDatabaseArgs:
     @database_admin_password.setter
     def database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "database_admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -12772,6 +12950,15 @@ class DatabaseDatabaseArgs:
         pulumi.set(self, "tde_wallet_password", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeStampForPointInTimeRecovery")
+    def time_stamp_for_point_in_time_recovery(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @time_stamp_for_point_in_time_recovery.setter
+    def time_stamp_for_point_in_time_recovery(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_stamp_for_point_in_time_recovery", value)
+
+    @_builtins.property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -12801,6 +12988,18 @@ class DatabaseDatabaseArgs:
     @vault_id.setter
     def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
 
 
 if not MYPY:
@@ -15605,6 +15804,14 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
+        vm_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
 elif False:
     DbHomeDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -15640,7 +15847,8 @@ class DbHomeDatabaseArgs:
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -15674,6 +15882,11 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[_builtins.str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[_builtins.str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[_builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -15734,6 +15947,8 @@ class DbHomeDatabaseArgs:
             pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -16092,6 +16307,22 @@ class DbHomeDatabaseArgs:
     @vault_id.setter
     def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_id")
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vm_cluster_id", value)
 
 
 if not MYPY:

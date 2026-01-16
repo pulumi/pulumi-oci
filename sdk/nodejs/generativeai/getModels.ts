@@ -84,7 +84,13 @@ export interface GetModelsResult {
      * The list of model_collection.
      */
     readonly modelCollections: outputs.GenerativeAi.GetModelsModelCollection[];
+    /**
+     * The lifecycle state of the model.
+     */
     readonly state?: string;
+    /**
+     * The provider of the base model.
+     */
     readonly vendor?: string;
 }
 /**

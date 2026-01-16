@@ -13,13 +13,105 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
+    'CostAnomalyMonitorCostAlertSubscriptionMap',
     'GetAlertRulesAlertRuleResult',
     'GetAlertRulesFilterResult',
     'GetBudgetsBudgetResult',
     'GetBudgetsFilterResult',
+    'GetCostAlertSubscriptionsCostAlertSubscriptionCollectionResult',
+    'GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemResult',
+    'GetCostAlertSubscriptionsFilterResult',
+    'GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionResult',
+    'GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemResult',
+    'GetCostAnomalyEventAnalyticsFilterResult',
+    'GetCostAnomalyEventsCostAnomalyEventCollectionResult',
+    'GetCostAnomalyEventsCostAnomalyEventCollectionItemResult',
+    'GetCostAnomalyEventsFilterResult',
+    'GetCostAnomalyMonitorCostAlertSubscriptionMapResult',
+    'GetCostAnomalyMonitorsCostAnomalyMonitorCollectionResult',
+    'GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemResult',
+    'GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapResult',
+    'GetCostAnomalyMonitorsFilterResult',
 ]
+
+@pulumi.output_type
+class CostAnomalyMonitorCostAlertSubscriptionMap(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "costAlertSubscriptionId":
+            suggest = "cost_alert_subscription_id"
+        elif key == "thresholdAbsoluteValue":
+            suggest = "threshold_absolute_value"
+        elif key == "thresholdRelativePercent":
+            suggest = "threshold_relative_percent"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CostAnomalyMonitorCostAlertSubscriptionMap. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CostAnomalyMonitorCostAlertSubscriptionMap.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CostAnomalyMonitorCostAlertSubscriptionMap.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cost_alert_subscription_id: Optional[_builtins.str] = None,
+                 operator: Optional[_builtins.str] = None,
+                 threshold_absolute_value: Optional[_builtins.int] = None,
+                 threshold_relative_percent: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str cost_alert_subscription_id: (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+        :param _builtins.str operator: (Updatable) The filter operator. Example: 'AND', 'OR'.
+        :param _builtins.int threshold_absolute_value: (Updatable) The absolute threshold value.
+        :param _builtins.int threshold_relative_percent: (Updatable) The relative percentage threshold value.
+        """
+        if cost_alert_subscription_id is not None:
+            pulumi.set(__self__, "cost_alert_subscription_id", cost_alert_subscription_id)
+        if operator is not None:
+            pulumi.set(__self__, "operator", operator)
+        if threshold_absolute_value is not None:
+            pulumi.set(__self__, "threshold_absolute_value", threshold_absolute_value)
+        if threshold_relative_percent is not None:
+            pulumi.set(__self__, "threshold_relative_percent", threshold_relative_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="costAlertSubscriptionId")
+    def cost_alert_subscription_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+        """
+        return pulumi.get(self, "cost_alert_subscription_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def operator(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The filter operator. Example: 'AND', 'OR'.
+        """
+        return pulumi.get(self, "operator")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdAbsoluteValue")
+    def threshold_absolute_value(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The absolute threshold value.
+        """
+        return pulumi.get(self, "threshold_absolute_value")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdRelativePercent")
+    def threshold_relative_percent(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The relative percentage threshold value.
+        """
+        return pulumi.get(self, "threshold_relative_percent")
+
 
 @pulumi.output_type
 class GetAlertRulesAlertRuleResult(dict):
@@ -239,6 +331,7 @@ class GetBudgetsBudgetResult(dict):
                  reset_period: _builtins.str,
                  start_date: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  target_compartment_id: _builtins.str,
                  target_type: _builtins.str,
                  targets: Sequence[_builtins.str],
@@ -255,14 +348,15 @@ class GetBudgetsBudgetResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: The description of the budget.
         :param _builtins.str display_name: A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param _builtins.str end_date: The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        :param _builtins.str end_date: The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param _builtins.float forecasted_spend: The forecasted spend in currency by the end of the current budget cycle.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the budget.
         :param _builtins.str processing_period_type: The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
         :param _builtins.str reset_period: The reset period for the budget.
-        :param _builtins.str start_date: The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        :param _builtins.str start_date: The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         :param _builtins.str state: The current state of the resource to filter by.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str target_compartment_id: This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         :param _builtins.str target_type: The type of target to filter by:
                * ALL - List all budgets
@@ -290,6 +384,7 @@ class GetBudgetsBudgetResult(dict):
         pulumi.set(__self__, "reset_period", reset_period)
         pulumi.set(__self__, "start_date", start_date)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_compartment_id", target_compartment_id)
         pulumi.set(__self__, "target_type", target_type)
         pulumi.set(__self__, "targets", targets)
@@ -366,7 +461,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="endDate")
     def end_date(self) -> _builtins.str:
         """
-        The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "end_date")
 
@@ -414,7 +509,7 @@ class GetBudgetsBudgetResult(dict):
     @pulumi.getter(name="startDate")
     def start_date(self) -> _builtins.str:
         """
-        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         """
         return pulumi.get(self, "start_date")
 
@@ -425,6 +520,14 @@ class GetBudgetsBudgetResult(dict):
         The current state of the resource to filter by.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
@@ -501,6 +604,846 @@ class GetBudgetsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCostAlertSubscriptionsCostAlertSubscriptionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 channels: _builtins.str,
+                 compartment_id: _builtins.str,
+                 cost_anomaly_monitors: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str channels: The notification channels string.
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str cost_anomaly_monitors: List of monitor identifiers
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the cost alert subscription.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the Cost Alert Subscription.
+        :param _builtins.str name: Unique, non-changeable resource name.
+        :param _builtins.str state: The current state of the cost alert subscription.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time that the cost alert subscription was created.
+        :param _builtins.str time_updated: The time that the cost alert subscription was updated.
+        """
+        pulumi.set(__self__, "channels", channels)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cost_anomaly_monitors", cost_anomaly_monitors)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def channels(self) -> _builtins.str:
+        """
+        The notification channels string.
+        """
+        return pulumi.get(self, "channels")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="costAnomalyMonitors")
+    def cost_anomaly_monitors(self) -> _builtins.str:
+        """
+        List of monitor identifiers
+        """
+        return pulumi.get(self, "cost_anomaly_monitors")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the cost alert subscription.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Cost Alert Subscription.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the cost alert subscription.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time that the cost alert subscription was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time that the cost alert subscription was updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCostAlertSubscriptionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemResult']):
+        """
+        :param Sequence['GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs'] items: The list of CostAnomalyEvent Analytic summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemResult']:
+        """
+        The list of CostAnomalyEvent Analytic summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 average_cost_impact: _builtins.float,
+                 average_cost_variance: _builtins.float,
+                 cost_anomaly_event_analytic_count: _builtins.int):
+        """
+        :param _builtins.float average_cost_impact: The average cost impact of the anomaly events in the given time period.
+        :param _builtins.float average_cost_variance: The average cost variance of the anomaly events in the given time period.
+        :param _builtins.int cost_anomaly_event_analytic_count: The number of cost anomaly events in the given time period.
+        """
+        pulumi.set(__self__, "average_cost_impact", average_cost_impact)
+        pulumi.set(__self__, "average_cost_variance", average_cost_variance)
+        pulumi.set(__self__, "cost_anomaly_event_analytic_count", cost_anomaly_event_analytic_count)
+
+    @_builtins.property
+    @pulumi.getter(name="averageCostImpact")
+    def average_cost_impact(self) -> _builtins.float:
+        """
+        The average cost impact of the anomaly events in the given time period.
+        """
+        return pulumi.get(self, "average_cost_impact")
+
+    @_builtins.property
+    @pulumi.getter(name="averageCostVariance")
+    def average_cost_variance(self) -> _builtins.float:
+        """
+        The average cost variance of the anomaly events in the given time period.
+        """
+        return pulumi.get(self, "average_cost_variance")
+
+    @_builtins.property
+    @pulumi.getter(name="costAnomalyEventAnalyticCount")
+    def cost_anomaly_event_analytic_count(self) -> _builtins.int:
+        """
+        The number of cost anomaly events in the given time period.
+        """
+        return pulumi.get(self, "cost_anomaly_event_analytic_count")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventAnalyticsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventsCostAnomalyEventCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCostAnomalyEventsCostAnomalyEventCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCostAnomalyEventsCostAnomalyEventCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventsCostAnomalyEventCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 cost_anomaly_event_id: _builtins.str,
+                 cost_anomaly_name: _builtins.str,
+                 cost_impact: _builtins.float,
+                 cost_monitor_id: _builtins.str,
+                 cost_monitor_name: _builtins.str,
+                 cost_monitor_type: _builtins.str,
+                 cost_variance_percentage: _builtins.float,
+                 defined_tags: Mapping[str, _builtins.str],
+                 feedback_response: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 root_cause_detail: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_resource_filter: _builtins.str,
+                 time_anomaly_event_date: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str cost_anomaly_name: The name of the associated cost monitor.
+        :param _builtins.float cost_impact: cost impact (absolute) of the anomaly event.
+        :param _builtins.str cost_monitor_id: The OCID of the associated cost monitor.
+        :param _builtins.str cost_monitor_name: The name of the associated cost monitor.
+        :param _builtins.str cost_monitor_type: Type of cost monitor
+        :param _builtins.float cost_variance_percentage: The cost variance percentage of the detected anomaly.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str feedback_response: The feedback response for the cost anomaly event.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the Cost Anomaly Event.
+        :param _builtins.str root_cause_detail: The root cause details of the cost anomaly event.
+        :param _builtins.str state: The current state of the cost anomaly event.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_resource_filter: The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+        :param _builtins.str time_anomaly_event_date: The event date of the anomaly event.
+        :param _builtins.str time_created: The created time of the cost anomaly event.
+        :param _builtins.str time_updated: The updated time of the cost anomaly event.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cost_anomaly_event_id", cost_anomaly_event_id)
+        pulumi.set(__self__, "cost_anomaly_name", cost_anomaly_name)
+        pulumi.set(__self__, "cost_impact", cost_impact)
+        pulumi.set(__self__, "cost_monitor_id", cost_monitor_id)
+        pulumi.set(__self__, "cost_monitor_name", cost_monitor_name)
+        pulumi.set(__self__, "cost_monitor_type", cost_monitor_type)
+        pulumi.set(__self__, "cost_variance_percentage", cost_variance_percentage)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "feedback_response", feedback_response)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "root_cause_detail", root_cause_detail)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_resource_filter", target_resource_filter)
+        pulumi.set(__self__, "time_anomaly_event_date", time_anomaly_event_date)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="costAnomalyEventId")
+    def cost_anomaly_event_id(self) -> _builtins.str:
+        return pulumi.get(self, "cost_anomaly_event_id")
+
+    @_builtins.property
+    @pulumi.getter(name="costAnomalyName")
+    def cost_anomaly_name(self) -> _builtins.str:
+        """
+        The name of the associated cost monitor.
+        """
+        return pulumi.get(self, "cost_anomaly_name")
+
+    @_builtins.property
+    @pulumi.getter(name="costImpact")
+    def cost_impact(self) -> _builtins.float:
+        """
+        cost impact (absolute) of the anomaly event.
+        """
+        return pulumi.get(self, "cost_impact")
+
+    @_builtins.property
+    @pulumi.getter(name="costMonitorId")
+    def cost_monitor_id(self) -> _builtins.str:
+        """
+        The OCID of the associated cost monitor.
+        """
+        return pulumi.get(self, "cost_monitor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="costMonitorName")
+    def cost_monitor_name(self) -> _builtins.str:
+        """
+        The name of the associated cost monitor.
+        """
+        return pulumi.get(self, "cost_monitor_name")
+
+    @_builtins.property
+    @pulumi.getter(name="costMonitorType")
+    def cost_monitor_type(self) -> _builtins.str:
+        """
+        Type of cost monitor
+        """
+        return pulumi.get(self, "cost_monitor_type")
+
+    @_builtins.property
+    @pulumi.getter(name="costVariancePercentage")
+    def cost_variance_percentage(self) -> _builtins.float:
+        """
+        The cost variance percentage of the detected anomaly.
+        """
+        return pulumi.get(self, "cost_variance_percentage")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="feedbackResponse")
+    def feedback_response(self) -> _builtins.str:
+        """
+        The feedback response for the cost anomaly event.
+        """
+        return pulumi.get(self, "feedback_response")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Cost Anomaly Event.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="rootCauseDetail")
+    def root_cause_detail(self) -> _builtins.str:
+        """
+        The root cause details of the cost anomaly event.
+        """
+        return pulumi.get(self, "root_cause_detail")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the cost anomaly event.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetResourceFilter")
+    def target_resource_filter(self) -> _builtins.str:
+        """
+        The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+        """
+        return pulumi.get(self, "target_resource_filter")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAnomalyEventDate")
+    def time_anomaly_event_date(self) -> _builtins.str:
+        """
+        The event date of the anomaly event.
+        """
+        return pulumi.get(self, "time_anomaly_event_date")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The created time of the cost anomaly event.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The updated time of the cost anomaly event.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCostAnomalyEventsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCostAnomalyMonitorCostAlertSubscriptionMapResult(dict):
+    def __init__(__self__, *,
+                 cost_alert_subscription_id: _builtins.str,
+                 operator: _builtins.str,
+                 threshold_absolute_value: _builtins.int,
+                 threshold_relative_percent: _builtins.int):
+        """
+        :param _builtins.str cost_alert_subscription_id: The costAlertSubscription ocid which the cost monitor alert maps to.
+        :param _builtins.str operator: The filter operator. Example: 'AND', 'OR'.
+        :param _builtins.int threshold_absolute_value: The absolute threshold value.
+        :param _builtins.int threshold_relative_percent: The relative percentage threshold value.
+        """
+        pulumi.set(__self__, "cost_alert_subscription_id", cost_alert_subscription_id)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "threshold_absolute_value", threshold_absolute_value)
+        pulumi.set(__self__, "threshold_relative_percent", threshold_relative_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="costAlertSubscriptionId")
+    def cost_alert_subscription_id(self) -> _builtins.str:
+        """
+        The costAlertSubscription ocid which the cost monitor alert maps to.
+        """
+        return pulumi.get(self, "cost_alert_subscription_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def operator(self) -> _builtins.str:
+        """
+        The filter operator. Example: 'AND', 'OR'.
+        """
+        return pulumi.get(self, "operator")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdAbsoluteValue")
+    def threshold_absolute_value(self) -> _builtins.int:
+        """
+        The absolute threshold value.
+        """
+        return pulumi.get(self, "threshold_absolute_value")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdRelativePercent")
+    def threshold_relative_percent(self) -> _builtins.int:
+        """
+        The relative percentage threshold value.
+        """
+        return pulumi.get(self, "threshold_relative_percent")
+
+
+@pulumi.output_type
+class GetCostAnomalyMonitorsCostAnomalyMonitorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 cost_alert_subscription_maps: Sequence['outputs.GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_resource_filter: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs'] cost_alert_subscription_maps: The mapping of cost monitor to alert subscription along with thresholds.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: The description of the budget.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the Cost Anomaly Monitor.
+        :param _builtins.str lifecycle_details: The current state details of the cost monitor.
+        :param _builtins.str name: Unique, non-changeable resource name.
+        :param _builtins.str state: The current state of the cost monitor.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_resource_filter: The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+        :param _builtins.str time_created: The time that the cost monitor was created.
+        :param _builtins.str time_updated: The time that the cost monitor was last updated.
+        :param _builtins.str type: Type of cost monitor
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "cost_alert_subscription_maps", cost_alert_subscription_maps)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_resource_filter", target_resource_filter)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="costAlertSubscriptionMaps")
+    def cost_alert_subscription_maps(self) -> Sequence['outputs.GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapResult']:
+        """
+        The mapping of cost monitor to alert subscription along with thresholds.
+        """
+        return pulumi.get(self, "cost_alert_subscription_maps")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        The description of the budget.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Cost Anomaly Monitor.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        The current state details of the cost monitor.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the cost monitor.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetResourceFilter")
+    def target_resource_filter(self) -> _builtins.str:
+        """
+        The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+        """
+        return pulumi.get(self, "target_resource_filter")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time that the cost monitor was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time that the cost monitor was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of cost monitor
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapResult(dict):
+    def __init__(__self__, *,
+                 cost_alert_subscription_id: _builtins.str,
+                 operator: _builtins.str,
+                 threshold_absolute_value: _builtins.int,
+                 threshold_relative_percent: _builtins.int):
+        """
+        :param _builtins.str cost_alert_subscription_id: The costAlertSubscription ocid which the cost monitor alert maps to.
+        :param _builtins.str operator: The filter operator. Example: 'AND', 'OR'.
+        :param _builtins.int threshold_absolute_value: The absolute threshold value.
+        :param _builtins.int threshold_relative_percent: The relative percentage threshold value.
+        """
+        pulumi.set(__self__, "cost_alert_subscription_id", cost_alert_subscription_id)
+        pulumi.set(__self__, "operator", operator)
+        pulumi.set(__self__, "threshold_absolute_value", threshold_absolute_value)
+        pulumi.set(__self__, "threshold_relative_percent", threshold_relative_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="costAlertSubscriptionId")
+    def cost_alert_subscription_id(self) -> _builtins.str:
+        """
+        The costAlertSubscription ocid which the cost monitor alert maps to.
+        """
+        return pulumi.get(self, "cost_alert_subscription_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def operator(self) -> _builtins.str:
+        """
+        The filter operator. Example: 'AND', 'OR'.
+        """
+        return pulumi.get(self, "operator")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdAbsoluteValue")
+    def threshold_absolute_value(self) -> _builtins.int:
+        """
+        The absolute threshold value.
+        """
+        return pulumi.get(self, "threshold_absolute_value")
+
+    @_builtins.property
+    @pulumi.getter(name="thresholdRelativePercent")
+    def threshold_relative_percent(self) -> _builtins.int:
+        """
+        The relative percentage threshold value.
+        """
+        return pulumi.get(self, "threshold_relative_percent")
+
+
+@pulumi.output_type
+class GetCostAnomalyMonitorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Unique, non-changeable resource name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Unique, non-changeable resource name.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property

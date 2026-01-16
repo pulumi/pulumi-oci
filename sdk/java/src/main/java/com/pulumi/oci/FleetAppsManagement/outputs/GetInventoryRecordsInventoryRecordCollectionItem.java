@@ -40,6 +40,11 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
      */
     private String osType;
     /**
+     * @return Name of the parent target.
+     * 
+     */
+    private String parentTargetName;
+    /**
      * @return List of target properties
      * 
      */
@@ -130,6 +135,13 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
      */
     public String osType() {
         return this.osType;
+    }
+    /**
+     * @return Name of the parent target.
+     * 
+     */
+    public String parentTargetName() {
+        return this.parentTargetName;
     }
     /**
      * @return List of target properties
@@ -223,6 +235,7 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
         private List<GetInventoryRecordsInventoryRecordCollectionItemComponent> components;
         private List<GetInventoryRecordsInventoryRecordCollectionItemInstalledPatch> installedPatches;
         private String osType;
+        private String parentTargetName;
         private List<GetInventoryRecordsInventoryRecordCollectionItemProperty> properties;
         private String state;
         private String targetId;
@@ -242,6 +255,7 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
     	      this.components = defaults.components;
     	      this.installedPatches = defaults.installedPatches;
     	      this.osType = defaults.osType;
+    	      this.parentTargetName = defaults.parentTargetName;
     	      this.properties = defaults.properties;
     	      this.state = defaults.state;
     	      this.targetId = defaults.targetId;
@@ -299,6 +313,14 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
               throw new MissingRequiredPropertyException("GetInventoryRecordsInventoryRecordCollectionItem", "osType");
             }
             this.osType = osType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parentTargetName(String parentTargetName) {
+            if (parentTargetName == null) {
+              throw new MissingRequiredPropertyException("GetInventoryRecordsInventoryRecordCollectionItem", "parentTargetName");
+            }
+            this.parentTargetName = parentTargetName;
             return this;
         }
         @CustomType.Setter
@@ -399,6 +421,7 @@ public final class GetInventoryRecordsInventoryRecordCollectionItem {
             _resultValue.components = components;
             _resultValue.installedPatches = installedPatches;
             _resultValue.osType = osType;
+            _resultValue.parentTargetName = parentTargetName;
             _resultValue.properties = properties;
             _resultValue.state = state;
             _resultValue.targetId = targetId;

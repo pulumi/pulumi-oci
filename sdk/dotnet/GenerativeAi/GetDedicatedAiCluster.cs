@@ -123,9 +123,6 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetDedicatedAiClusterResult
     {
-        /// <summary>
-        /// The total capacity for a dedicated AI cluster.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClusterCapacityResult> Capacities;
         /// <summary>
         /// The compartment OCID to create the dedicated AI cluster in.

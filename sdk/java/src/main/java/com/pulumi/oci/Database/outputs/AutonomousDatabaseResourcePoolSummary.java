@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,6 +19,11 @@ public final class AutonomousDatabaseResourcePoolSummary {
      */
     private @Nullable Integer availableComputeCapacity;
     /**
+     * @return (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    private @Nullable Double availableStorageCapacityInTbs;
+    /**
      * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
@@ -27,6 +33,11 @@ public final class AutonomousDatabaseResourcePoolSummary {
      * 
      */
     private @Nullable Integer poolSize;
+    /**
+     * @return (Updatable) Resource pool storage size in TBs.
+     * 
+     */
+    private @Nullable Integer poolStorageSizeInTbs;
     /**
      * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
      * 
@@ -42,6 +53,13 @@ public final class AutonomousDatabaseResourcePoolSummary {
         return Optional.ofNullable(this.availableComputeCapacity);
     }
     /**
+     * @return (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    public Optional<Double> availableStorageCapacityInTbs() {
+        return Optional.ofNullable(this.availableStorageCapacityInTbs);
+    }
+    /**
      * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
@@ -54,6 +72,13 @@ public final class AutonomousDatabaseResourcePoolSummary {
      */
     public Optional<Integer> poolSize() {
         return Optional.ofNullable(this.poolSize);
+    }
+    /**
+     * @return (Updatable) Resource pool storage size in TBs.
+     * 
+     */
+    public Optional<Integer> poolStorageSizeInTbs() {
+        return Optional.ofNullable(this.poolStorageSizeInTbs);
     }
     /**
      * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
@@ -73,15 +98,19 @@ public final class AutonomousDatabaseResourcePoolSummary {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer availableComputeCapacity;
+        private @Nullable Double availableStorageCapacityInTbs;
         private @Nullable Boolean isDisabled;
         private @Nullable Integer poolSize;
+        private @Nullable Integer poolStorageSizeInTbs;
         private @Nullable Integer totalComputeCapacity;
         public Builder() {}
         public Builder(AutonomousDatabaseResourcePoolSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableComputeCapacity = defaults.availableComputeCapacity;
+    	      this.availableStorageCapacityInTbs = defaults.availableStorageCapacityInTbs;
     	      this.isDisabled = defaults.isDisabled;
     	      this.poolSize = defaults.poolSize;
+    	      this.poolStorageSizeInTbs = defaults.poolStorageSizeInTbs;
     	      this.totalComputeCapacity = defaults.totalComputeCapacity;
         }
 
@@ -89,6 +118,12 @@ public final class AutonomousDatabaseResourcePoolSummary {
         public Builder availableComputeCapacity(@Nullable Integer availableComputeCapacity) {
 
             this.availableComputeCapacity = availableComputeCapacity;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availableStorageCapacityInTbs(@Nullable Double availableStorageCapacityInTbs) {
+
+            this.availableStorageCapacityInTbs = availableStorageCapacityInTbs;
             return this;
         }
         @CustomType.Setter
@@ -104,6 +139,12 @@ public final class AutonomousDatabaseResourcePoolSummary {
             return this;
         }
         @CustomType.Setter
+        public Builder poolStorageSizeInTbs(@Nullable Integer poolStorageSizeInTbs) {
+
+            this.poolStorageSizeInTbs = poolStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalComputeCapacity(@Nullable Integer totalComputeCapacity) {
 
             this.totalComputeCapacity = totalComputeCapacity;
@@ -112,8 +153,10 @@ public final class AutonomousDatabaseResourcePoolSummary {
         public AutonomousDatabaseResourcePoolSummary build() {
             final var _resultValue = new AutonomousDatabaseResourcePoolSummary();
             _resultValue.availableComputeCapacity = availableComputeCapacity;
+            _resultValue.availableStorageCapacityInTbs = availableStorageCapacityInTbs;
             _resultValue.isDisabled = isDisabled;
             _resultValue.poolSize = poolSize;
+            _resultValue.poolStorageSizeInTbs = poolStorageSizeInTbs;
             _resultValue.totalComputeCapacity = totalComputeCapacity;
             return _resultValue;
         }

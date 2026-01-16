@@ -27,6 +27,11 @@ public final class GetDatabaseDatabase {
     private String characterSet;
     private String databaseAdminPassword;
     /**
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private String databaseId;
+    /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -111,6 +116,7 @@ public final class GetDatabaseDatabase {
      */
     private List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails;
     private String tdeWalletPassword;
+    private String timeStampForPointInTimeRecovery;
     /**
      * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -124,6 +130,11 @@ public final class GetDatabaseDatabase {
      * 
      */
     private String vaultId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    private String vmClusterId;
 
     private GetDatabaseDatabase() {}
     public String adminPassword() {
@@ -144,6 +155,13 @@ public final class GetDatabaseDatabase {
     }
     public String databaseAdminPassword() {
         return this.databaseAdminPassword;
+    }
+    /**
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public String databaseId() {
+        return this.databaseId;
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -272,6 +290,9 @@ public final class GetDatabaseDatabase {
     public String tdeWalletPassword() {
         return this.tdeWalletPassword;
     }
+    public String timeStampForPointInTimeRecovery() {
+        return this.timeStampForPointInTimeRecovery;
+    }
     /**
      * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -289,6 +310,13 @@ public final class GetDatabaseDatabase {
     public String vaultId() {
         return this.vaultId;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    public String vmClusterId() {
+        return this.vmClusterId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -304,6 +332,7 @@ public final class GetDatabaseDatabase {
         private String backupTdePassword;
         private String characterSet;
         private String databaseAdminPassword;
+        private String databaseId;
         private String databaseSoftwareImageId;
         private List<GetDatabaseDatabaseDbBackupConfig> dbBackupConfigs;
         private String dbName;
@@ -325,8 +354,10 @@ public final class GetDatabaseDatabase {
         private String sourceTdeWalletPassword;
         private List<GetDatabaseDatabaseStorageSizeDetail> storageSizeDetails;
         private String tdeWalletPassword;
+        private String timeStampForPointInTimeRecovery;
         private String transportType;
         private String vaultId;
+        private String vmClusterId;
         public Builder() {}
         public Builder(GetDatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -335,6 +366,7 @@ public final class GetDatabaseDatabase {
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
     	      this.databaseAdminPassword = defaults.databaseAdminPassword;
+    	      this.databaseId = defaults.databaseId;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfigs = defaults.dbBackupConfigs;
     	      this.dbName = defaults.dbName;
@@ -356,8 +388,10 @@ public final class GetDatabaseDatabase {
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
+    	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
     	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
+    	      this.vmClusterId = defaults.vmClusterId;
         }
 
         @CustomType.Setter
@@ -398,6 +432,14 @@ public final class GetDatabaseDatabase {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "databaseAdminPassword");
             }
             this.databaseAdminPassword = databaseAdminPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseId(String databaseId) {
+            if (databaseId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "databaseId");
+            }
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
@@ -584,6 +626,14 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
+            if (timeStampForPointInTimeRecovery == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "timeStampForPointInTimeRecovery");
+            }
+            this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            return this;
+        }
+        @CustomType.Setter
         public Builder transportType(String transportType) {
             if (transportType == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "transportType");
@@ -599,6 +649,14 @@ public final class GetDatabaseDatabase {
             this.vaultId = vaultId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterId(String vmClusterId) {
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
+            return this;
+        }
         public GetDatabaseDatabase build() {
             final var _resultValue = new GetDatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
@@ -606,6 +664,7 @@ public final class GetDatabaseDatabase {
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
             _resultValue.databaseAdminPassword = databaseAdminPassword;
+            _resultValue.databaseId = databaseId;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfigs = dbBackupConfigs;
             _resultValue.dbName = dbName;
@@ -627,8 +686,10 @@ public final class GetDatabaseDatabase {
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
+            _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }
     }

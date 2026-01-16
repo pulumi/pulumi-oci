@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotDataStorageResult> DataStorages;
         /// <summary>
+        /// Database console configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult> DatabaseConsoles;
+        /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
         public readonly string DatabaseManagement;
@@ -164,6 +168,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotDataStorageResult> dataStorages,
 
+            ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult> databaseConsoles,
+
             string databaseManagement,
 
             ImmutableDictionary<string, string> definedTags,
@@ -222,6 +228,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             CrashRecovery = crashRecovery;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorages = dataStorages;
+            DatabaseConsoles = databaseConsoles;
             DatabaseManagement = databaseManagement;
             DefinedTags = definedTags;
             DeletionPolicies = deletionPolicies;

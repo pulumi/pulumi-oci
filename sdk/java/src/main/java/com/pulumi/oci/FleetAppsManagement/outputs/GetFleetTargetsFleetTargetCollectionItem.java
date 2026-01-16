@@ -40,6 +40,11 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
      */
     private Boolean isLastDiscoveryAttemptSuccessful;
     /**
+     * @return Name of the parent target.
+     * 
+     */
+    private String parentTargetName;
+    /**
      * @return Product Name.
      * 
      */
@@ -112,6 +117,13 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         return this.isLastDiscoveryAttemptSuccessful;
     }
     /**
+     * @return Name of the parent target.
+     * 
+     */
+    public String parentTargetName() {
+        return this.parentTargetName;
+    }
+    /**
      * @return Product Name.
      * 
      */
@@ -175,6 +187,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
         private String displayName;
         private String id;
         private Boolean isLastDiscoveryAttemptSuccessful;
+        private String parentTargetName;
         private String product;
         private List<GetFleetTargetsFleetTargetCollectionItemResource> resources;
         private String state;
@@ -190,6 +203,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.isLastDiscoveryAttemptSuccessful = defaults.isLastDiscoveryAttemptSuccessful;
+    	      this.parentTargetName = defaults.parentTargetName;
     	      this.product = defaults.product;
     	      this.resources = defaults.resources;
     	      this.state = defaults.state;
@@ -237,6 +251,14 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
               throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "isLastDiscoveryAttemptSuccessful");
             }
             this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parentTargetName(String parentTargetName) {
+            if (parentTargetName == null) {
+              throw new MissingRequiredPropertyException("GetFleetTargetsFleetTargetCollectionItem", "parentTargetName");
+            }
+            this.parentTargetName = parentTargetName;
             return this;
         }
         @CustomType.Setter
@@ -305,6 +327,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
+            _resultValue.parentTargetName = parentTargetName;
             _resultValue.product = product;
             _resultValue.resources = resources;
             _resultValue.state = state;

@@ -20,6 +20,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// An optional description of the model.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
@@ -38,6 +41,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only resources their lifecycleState matches the given lifecycleState.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         public readonly string TimeDeprecated;
@@ -47,6 +53,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only resources that match the entire vendor given.
         /// </summary>
         public readonly string Vendor;
+        /// <summary>
+        /// The version of the model.
+        /// </summary>
         public readonly string Version;
 
         [OutputConstructor]

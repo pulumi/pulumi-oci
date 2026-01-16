@@ -29,6 +29,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy',
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy',
     'MysqlBackupDbSystemSnapshotDataStorage',
+    'MysqlBackupDbSystemSnapshotDatabaseConsole',
     'MysqlBackupDbSystemSnapshotDeletionPolicy',
     'MysqlBackupDbSystemSnapshotEncryptData',
     'MysqlBackupDbSystemSnapshotEndpoint',
@@ -54,6 +55,7 @@ __all__ = [
     'MysqlDbSystemCurrentPlacement',
     'MysqlDbSystemCustomerContact',
     'MysqlDbSystemDataStorage',
+    'MysqlDbSystemDatabaseConsole',
     'MysqlDbSystemDeletionPolicy',
     'MysqlDbSystemEncryptData',
     'MysqlDbSystemEndpoint',
@@ -87,6 +89,7 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyResult',
     'GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult',
     'GetMysqlBackupDbSystemSnapshotDataStorageResult',
+    'GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult',
     'GetMysqlBackupDbSystemSnapshotDeletionPolicyResult',
     'GetMysqlBackupDbSystemSnapshotEncryptDataResult',
     'GetMysqlBackupDbSystemSnapshotEndpointResult',
@@ -120,6 +123,7 @@ __all__ = [
     'GetMysqlDbSystemCurrentPlacementResult',
     'GetMysqlDbSystemCustomerContactResult',
     'GetMysqlDbSystemDataStorageResult',
+    'GetMysqlDbSystemDatabaseConsoleResult',
     'GetMysqlDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemEncryptDataResult',
     'GetMysqlDbSystemEndpointResult',
@@ -143,6 +147,7 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemCurrentPlacementResult',
     'GetMysqlDbSystemsDbSystemCustomerContactResult',
     'GetMysqlDbSystemsDbSystemDataStorageResult',
+    'GetMysqlDbSystemsDbSystemDatabaseConsoleResult',
     'GetMysqlDbSystemsDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemsDbSystemEncryptDataResult',
     'GetMysqlDbSystemsDbSystemEndpointResult',
@@ -825,6 +830,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             suggest = "data_storage_size_in_gb"
         elif key == "dataStorages":
             suggest = "data_storages"
+        elif key == "databaseConsoles":
+            suggest = "database_consoles"
         elif key == "databaseManagement":
             suggest = "database_management"
         elif key == "definedTags":
@@ -882,6 +889,7 @@ class MysqlBackupDbSystemSnapshot(dict):
                  crash_recovery: Optional[_builtins.str] = None,
                  data_storage_size_in_gb: Optional[_builtins.int] = None,
                  data_storages: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDataStorage']] = None,
+                 database_consoles: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDatabaseConsole']] = None,
                  database_management: Optional[_builtins.str] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  deletion_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDeletionPolicy']] = None,
@@ -916,6 +924,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param _builtins.str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param _builtins.int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param Sequence['MysqlBackupDbSystemSnapshotDataStorageArgs'] data_storages: Data Storage information.
+        :param Sequence['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs'] database_consoles: Database console configuration details.
         :param _builtins.str database_management: Whether to enable monitoring via the Database Management service.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['MysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
@@ -958,6 +967,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storages is not None:
             pulumi.set(__self__, "data_storages", data_storages)
+        if database_consoles is not None:
+            pulumi.set(__self__, "database_consoles", database_consoles)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
         if defined_tags is not None:
@@ -1072,6 +1083,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         Data Storage information.
         """
         return pulumi.get(self, "data_storages")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsoles")
+    def database_consoles(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDatabaseConsole']]:
+        """
+        Database console configuration details.
+        """
+        return pulumi.get(self, "database_consoles")
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -1584,6 +1603,37 @@ class MysqlBackupDbSystemSnapshotDataStorage(dict):
         Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
         """
         return pulumi.get(self, "max_storage_size_in_gbs")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotDatabaseConsole(dict):
+    def __init__(__self__, *,
+                 port: Optional[_builtins.int] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        :param _builtins.str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type
@@ -5416,6 +5466,36 @@ class MysqlDbSystemDataStorage(dict):
 
 
 @pulumi.output_type
+class MysqlDbSystemDatabaseConsole(dict):
+    def __init__(__self__, *,
+                 status: _builtins.str,
+                 port: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str status: (Updatable) Enable/disable the database console on the DB System.
+        :param _builtins.int port: (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        pulumi.set(__self__, "status", status)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        (Updatable) Enable/disable the database console on the DB System.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+
+@pulumi.output_type
 class MysqlDbSystemDeletionPolicy(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7325,6 +7405,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  crash_recovery: _builtins.str,
                  data_storage_size_in_gb: _builtins.int,
                  data_storages: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDataStorageResult'],
+                 database_consoles: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult'],
                  database_management: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  deletion_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult'],
@@ -7359,6 +7440,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param _builtins.str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param _builtins.int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param Sequence['GetMysqlBackupDbSystemSnapshotDataStorageArgs'] data_storages: Data Storage information.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs'] database_consoles: Database console configuration details.
         :param _builtins.str database_management: Whether to enable monitoring via the Database Management service.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
@@ -7393,6 +7475,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "crash_recovery", crash_recovery)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storages", data_storages)
+        pulumi.set(__self__, "database_consoles", database_consoles)
         pulumi.set(__self__, "database_management", database_management)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deletion_policies", deletion_policies)
@@ -7482,6 +7565,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         Data Storage information.
         """
         return pulumi.get(self, "data_storages")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsoles")
+    def database_consoles(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult']:
+        """
+        Database console configuration details.
+        """
+        return pulumi.get(self, "database_consoles")
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -7886,6 +7977,35 @@ class GetMysqlBackupDbSystemSnapshotDataStorageResult(dict):
         Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
         """
         return pulumi.get(self, "max_storage_size_in_gbs")
+
+
+@pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotDatabaseConsoleResult(dict):
+    def __init__(__self__, *,
+                 port: _builtins.int,
+                 status: _builtins.str):
+        """
+        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        :param _builtins.str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type
@@ -12313,6 +12433,35 @@ class GetMysqlDbSystemDataStorageResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemDatabaseConsoleResult(dict):
+    def __init__(__self__, *,
+                 port: _builtins.int,
+                 status: _builtins.str):
+        """
+        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        :param _builtins.str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemDeletionPolicyResult(dict):
     def __init__(__self__, *,
                  automatic_backup_retention: _builtins.str,
@@ -12845,6 +12994,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  customer_contacts: Sequence['outputs.GetMysqlDbSystemsDbSystemCustomerContactResult'],
                  data_storage_size_in_gb: _builtins.int,
                  data_storages: Sequence['outputs.GetMysqlDbSystemsDbSystemDataStorageResult'],
+                 database_consoles: Sequence['outputs.GetMysqlDbSystemsDbSystemDatabaseConsoleResult'],
                  database_management: _builtins.str,
                  database_mode: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -12894,6 +13044,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param Sequence['GetMysqlDbSystemsDbSystemCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param _builtins.int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param Sequence['GetMysqlDbSystemsDbSystemDataStorageArgs'] data_storages: Data Storage information.
+        :param Sequence['GetMysqlDbSystemsDbSystemDatabaseConsoleArgs'] database_consoles: Database console configuration details.
         :param _builtins.str database_management: Filter DB Systems by their Database Management configuration.
         :param _builtins.str database_mode: The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE: allow running read and write statements on the DB system;
@@ -12944,6 +13095,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "customer_contacts", customer_contacts)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storages", data_storages)
+        pulumi.set(__self__, "database_consoles", database_consoles)
         pulumi.set(__self__, "database_management", database_management)
         pulumi.set(__self__, "database_mode", database_mode)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -13079,6 +13231,14 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         Data Storage information.
         """
         return pulumi.get(self, "data_storages")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsoles")
+    def database_consoles(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemDatabaseConsoleResult']:
+        """
+        Database console configuration details.
+        """
+        return pulumi.get(self, "database_consoles")
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -14036,6 +14196,35 @@ class GetMysqlDbSystemsDbSystemDataStorageResult(dict):
         Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
         """
         return pulumi.get(self, "max_storage_size_in_gbs")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemDatabaseConsoleResult(dict):
+    def __init__(__self__, *,
+                 port: _builtins.int,
+                 status: _builtins.str):
+        """
+        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        :param _builtins.str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        return pulumi.get(self, "status")
 
 
 @pulumi.output_type

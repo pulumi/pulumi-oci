@@ -10,6 +10,7 @@ import com.pulumi.oci.FleetAppsManagement.outputs.GetPlatformConfigurationsPlatf
 import com.pulumi.oci.FleetAppsManagement.outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchType;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProduct;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail {
     /**
-     * @return Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+     * @return Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
      * 
      */
     private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProduct> compatibleProducts;
@@ -47,6 +48,21 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
      */
     private String instanceName;
     /**
+     * @return If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    private Boolean isCompliancePolicyRequiredForSoftlink;
+    /**
+     * @return Specify if the product is softlink product or not
+     * 
+     */
+    private Boolean isSoftlink;
+    /**
+     * @return The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    private String linkProductId;
+    /**
      * @return Patch Types associated with this Product Stack which will be considered as Product.
      * 
      */
@@ -62,14 +78,14 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
      */
     private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetail> subCategoryDetails;
     /**
-     * @return Versions associated with the PRODUCT .
+     * @return Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     private List<String> versions;
 
     private GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail() {}
     /**
-     * @return Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+     * @return Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
      * 
      */
     public List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProduct> compatibleProducts() {
@@ -111,6 +127,27 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
         return this.instanceName;
     }
     /**
+     * @return If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    public Boolean isCompliancePolicyRequiredForSoftlink() {
+        return this.isCompliancePolicyRequiredForSoftlink;
+    }
+    /**
+     * @return Specify if the product is softlink product or not
+     * 
+     */
+    public Boolean isSoftlink() {
+        return this.isSoftlink;
+    }
+    /**
+     * @return The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    public String linkProductId() {
+        return this.linkProductId;
+    }
+    /**
      * @return Patch Types associated with this Product Stack which will be considered as Product.
      * 
      */
@@ -132,7 +169,7 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
         return this.subCategoryDetails;
     }
     /**
-     * @return Versions associated with the PRODUCT .
+     * @return Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     public List<String> versions() {
@@ -154,6 +191,9 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
         private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredential> credentials;
         private String instanceId;
         private String instanceName;
+        private Boolean isCompliancePolicyRequiredForSoftlink;
+        private Boolean isSoftlink;
+        private String linkProductId;
         private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchType> patchTypes;
         private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProduct> products;
         private List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetail> subCategoryDetails;
@@ -167,6 +207,9 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
     	      this.credentials = defaults.credentials;
     	      this.instanceId = defaults.instanceId;
     	      this.instanceName = defaults.instanceName;
+    	      this.isCompliancePolicyRequiredForSoftlink = defaults.isCompliancePolicyRequiredForSoftlink;
+    	      this.isSoftlink = defaults.isSoftlink;
+    	      this.linkProductId = defaults.linkProductId;
     	      this.patchTypes = defaults.patchTypes;
     	      this.products = defaults.products;
     	      this.subCategoryDetails = defaults.subCategoryDetails;
@@ -231,6 +274,30 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
             return this;
         }
         @CustomType.Setter
+        public Builder isCompliancePolicyRequiredForSoftlink(Boolean isCompliancePolicyRequiredForSoftlink) {
+            if (isCompliancePolicyRequiredForSoftlink == null) {
+              throw new MissingRequiredPropertyException("GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail", "isCompliancePolicyRequiredForSoftlink");
+            }
+            this.isCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSoftlink(Boolean isSoftlink) {
+            if (isSoftlink == null) {
+              throw new MissingRequiredPropertyException("GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail", "isSoftlink");
+            }
+            this.isSoftlink = isSoftlink;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder linkProductId(String linkProductId) {
+            if (linkProductId == null) {
+              throw new MissingRequiredPropertyException("GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail", "linkProductId");
+            }
+            this.linkProductId = linkProductId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder patchTypes(List<GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchType> patchTypes) {
             if (patchTypes == null) {
               throw new MissingRequiredPropertyException("GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetail", "patchTypes");
@@ -282,6 +349,9 @@ public final class GetPlatformConfigurationsPlatformConfigurationCollectionItemC
             _resultValue.credentials = credentials;
             _resultValue.instanceId = instanceId;
             _resultValue.instanceName = instanceName;
+            _resultValue.isCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            _resultValue.isSoftlink = isSoftlink;
+            _resultValue.linkProductId = linkProductId;
             _resultValue.patchTypes = patchTypes;
             _resultValue.products = products;
             _resultValue.subCategoryDetails = subCategoryDetails;

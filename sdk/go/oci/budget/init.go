@@ -23,6 +23,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Budget/budget:Budget":
 		r = &Budget{}
+	case "oci:Budget/costAlertSubscription:CostAlertSubscription":
+		r = &CostAlertSubscription{}
+	case "oci:Budget/costAnomalyEvent:CostAnomalyEvent":
+		r = &CostAnomalyEvent{}
+	case "oci:Budget/costAnomalyMonitor:CostAnomalyMonitor":
+		r = &CostAnomalyMonitor{}
+	case "oci:Budget/costAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostAnomalyMonitorCostanomalymonitorenabletogglesManagement":
+		r = &CostAnomalyMonitorCostanomalymonitorenabletogglesManagement{}
 	case "oci:Budget/rule:Rule":
 		r = &Rule{}
 	default:
@@ -41,6 +49,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Budget/budget",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Budget/costAlertSubscription",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Budget/costAnomalyEvent",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Budget/costAnomalyMonitor",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Budget/costAnomalyMonitorCostanomalymonitorenabletogglesManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

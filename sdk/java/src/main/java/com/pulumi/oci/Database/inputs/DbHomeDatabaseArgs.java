@@ -464,6 +464,27 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.vaultId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="vmClusterId")
+    private @Nullable Output<String> vmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
+    }
+
     private DbHomeDatabaseArgs() {}
 
     private DbHomeDatabaseArgs(DbHomeDatabaseArgs $) {
@@ -497,6 +518,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.timeCreated = $.timeCreated;
         this.timeStampForPointInTimeRecovery = $.timeStampForPointInTimeRecovery;
         this.vaultId = $.vaultId;
+        this.vmClusterId = $.vmClusterId;
     }
 
     public static Builder builder() {
@@ -1153,6 +1175,33 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder vaultId(String vaultId) {
             return vaultId(Output.of(vaultId));
+        }
+
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(@Nullable Output<String> vmClusterId) {
+            $.vmClusterId = vmClusterId;
+            return this;
+        }
+
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(String vmClusterId) {
+            return vmClusterId(Output.of(vmClusterId));
         }
 
         public DbHomeDatabaseArgs build() {

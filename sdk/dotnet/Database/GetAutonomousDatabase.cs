@@ -162,6 +162,10 @@ namespace Pulumi.Oci.Database
         public readonly string AutonomousDatabaseBackupId;
         public readonly string AutonomousDatabaseId;
         /// <summary>
+        /// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult> AutonomousDatabaseMaintenanceWindows;
+        /// <summary>
         /// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
@@ -426,6 +430,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int LocalAdgAutoFailoverMaxDataLossLimit;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        /// </summary>
+        public readonly string LocalAdgResourcePoolLeaderId;
+        /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
@@ -625,6 +633,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeMaintenanceEnd;
         /// <summary>
+        /// The date until which maintenance of Autonomous Database is temporarily paused.
+        /// </summary>
+        public readonly string TimeMaintenancePauseUntil;
+        /// <summary>
         /// The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         /// </summary>
         public readonly string TimeOfAutoRefreshStart;
@@ -722,6 +734,8 @@ namespace Pulumi.Oci.Database
             string autonomousDatabaseBackupId,
 
             string autonomousDatabaseId,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult> autonomousDatabaseMaintenanceWindows,
 
             string autonomousMaintenanceScheduleType,
 
@@ -863,6 +877,8 @@ namespace Pulumi.Oci.Database
 
             int localAdgAutoFailoverMaxDataLossLimit,
 
+            string localAdgResourcePoolLeaderId,
+
             string localDisasterRecoveryType,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseLocalStandbyDbResult> localStandbyDbs,
@@ -977,6 +993,8 @@ namespace Pulumi.Oci.Database
 
             string timeMaintenanceEnd,
 
+            string timeMaintenancePauseUntil,
+
             string timeOfAutoRefreshStart,
 
             string timeOfJoiningResourcePool,
@@ -1028,6 +1046,7 @@ namespace Pulumi.Oci.Database
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousDatabaseBackupId = autonomousDatabaseBackupId;
             AutonomousDatabaseId = autonomousDatabaseId;
+            AutonomousDatabaseMaintenanceWindows = autonomousDatabaseMaintenanceWindows;
             AutonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
             AvailabilityDomain = availabilityDomain;
             AvailableUpgradeVersions = availableUpgradeVersions;
@@ -1098,6 +1117,7 @@ namespace Pulumi.Oci.Database
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             LocalAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
+            LocalAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
             LocalDisasterRecoveryType = localDisasterRecoveryType;
             LocalStandbyDbs = localStandbyDbs;
             LongTermBackupSchedules = longTermBackupSchedules;
@@ -1155,6 +1175,7 @@ namespace Pulumi.Oci.Database
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
+            TimeMaintenancePauseUntil = timeMaintenancePauseUntil;
             TimeOfAutoRefreshStart = timeOfAutoRefreshStart;
             TimeOfJoiningResourcePool = timeOfJoiningResourcePool;
             TimeOfLastFailover = timeOfLastFailover;

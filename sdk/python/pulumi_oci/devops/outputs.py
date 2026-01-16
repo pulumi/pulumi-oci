@@ -8939,6 +8939,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
                  lifecycle_details: _builtins.str,
                  network_channels: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult'],
                  project_id: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
@@ -8957,6 +8958,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs'] network_channels: Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param _builtins.str project_id: unique project identifier
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes to be added in to the deployment environment
         :param _builtins.str state: A filter to return only DeployEnvironments that matches the given lifecycleState.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -8975,6 +8977,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "network_channels", network_channels)
         pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -9083,6 +9086,14 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
         unique project identifier
         """
         return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes to be added in to the deployment environment
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

@@ -10,6 +10,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCurrentPlacement;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDataStorage;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDatabaseConsole;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
@@ -88,6 +89,11 @@ public final class GetMysqlDbSystemsDbSystem {
      * 
      */
     private List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages;
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemDatabaseConsole> databaseConsoles;
     /**
      * @return Filter DB Systems by their Database Management configuration.
      * 
@@ -347,6 +353,13 @@ public final class GetMysqlDbSystemsDbSystem {
      */
     public List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages() {
         return this.dataStorages;
+    }
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemDatabaseConsole> databaseConsoles() {
+        return this.databaseConsoles;
     }
     /**
      * @return Filter DB Systems by their Database Management configuration.
@@ -614,6 +627,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private List<GetMysqlDbSystemsDbSystemCustomerContact> customerContacts;
         private Integer dataStorageSizeInGb;
         private List<GetMysqlDbSystemsDbSystemDataStorage> dataStorages;
+        private List<GetMysqlDbSystemsDbSystemDatabaseConsole> databaseConsoles;
         private String databaseManagement;
         private String databaseMode;
         private Map<String,String> definedTags;
@@ -665,6 +679,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.customerContacts = defaults.customerContacts;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorages = defaults.dataStorages;
+    	      this.databaseConsoles = defaults.databaseConsoles;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.databaseMode = defaults.databaseMode;
     	      this.definedTags = defaults.definedTags;
@@ -820,6 +835,17 @@ public final class GetMysqlDbSystemsDbSystem {
         }
         public Builder dataStorages(GetMysqlDbSystemsDbSystemDataStorage... dataStorages) {
             return dataStorages(List.of(dataStorages));
+        }
+        @CustomType.Setter
+        public Builder databaseConsoles(List<GetMysqlDbSystemsDbSystemDatabaseConsole> databaseConsoles) {
+            if (databaseConsoles == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "databaseConsoles");
+            }
+            this.databaseConsoles = databaseConsoles;
+            return this;
+        }
+        public Builder databaseConsoles(GetMysqlDbSystemsDbSystemDatabaseConsole... databaseConsoles) {
+            return databaseConsoles(List.of(databaseConsoles));
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
@@ -1149,6 +1175,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.customerContacts = customerContacts;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorages = dataStorages;
+            _resultValue.databaseConsoles = databaseConsoles;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.databaseMode = databaseMode;
             _resultValue.definedTags = definedTags;

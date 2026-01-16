@@ -11,41 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity {
-    /**
-     * @return The type of the dedicated AI cluster capacity.
-     * 
-     */
     private String capacityType;
-    /**
-     * @return The total number of endpoints that can be hosted on this dedicated AI cluster.
-     * 
-     */
     private Integer totalEndpointCapacity;
-    /**
-     * @return The number of endpoints hosted on this dedicated AI cluster.
-     * 
-     */
     private Integer usedEndpointCapacity;
 
     private GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity() {}
-    /**
-     * @return The type of the dedicated AI cluster capacity.
-     * 
-     */
     public String capacityType() {
         return this.capacityType;
     }
-    /**
-     * @return The total number of endpoints that can be hosted on this dedicated AI cluster.
-     * 
-     */
     public Integer totalEndpointCapacity() {
         return this.totalEndpointCapacity;
     }
-    /**
-     * @return The number of endpoints hosted on this dedicated AI cluster.
-     * 
-     */
     public Integer usedEndpointCapacity() {
         return this.usedEndpointCapacity;
     }

@@ -22,6 +22,8 @@ __all__ = [
     'LogAnalyticsImportCustomContentChangeList',
     'LogAnalyticsObjectCollectionRuleOverride',
     'LogAnalyticsPreferencesManagementItem',
+    'NamespaceAssociationAssociationProperty',
+    'NamespaceAssociationAssociationPropertyPattern',
     'NamespaceIngestTimeRuleAction',
     'NamespaceIngestTimeRuleConditions',
     'NamespaceIngestTimeRuleConditionsAdditionalCondition',
@@ -467,6 +469,102 @@ class LogAnalyticsPreferencesManagementItem(dict):
         The preference value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NamespaceAssociationAssociationProperty(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 patterns: Optional[Sequence['outputs.NamespaceAssociationAssociationPropertyPattern']] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: The name of the association property.
+        :param Sequence['NamespaceAssociationAssociationPropertyPatternArgs'] patterns: A list of pattern level overrides for this property.
+        :param _builtins.str value: The value of the association property.
+        """
+        pulumi.set(__self__, "name", name)
+        if patterns is not None:
+            pulumi.set(__self__, "patterns", patterns)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the association property.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def patterns(self) -> Optional[Sequence['outputs.NamespaceAssociationAssociationPropertyPattern']]:
+        """
+        A list of pattern level overrides for this property.
+        """
+        return pulumi.get(self, "patterns")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        The value of the association property.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class NamespaceAssociationAssociationPropertyPattern(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "effectiveLevel":
+            suggest = "effective_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamespaceAssociationAssociationPropertyPattern. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamespaceAssociationAssociationPropertyPattern.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamespaceAssociationAssociationPropertyPattern.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 value: _builtins.str,
+                 effective_level: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str id: The pattern id.
+        :param _builtins.str value: (Updatable) The value of the property.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "value", value)
+        if effective_level is not None:
+            pulumi.set(__self__, "effective_level", effective_level)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The pattern id.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        (Updatable) The value of the property.
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveLevel")
+    def effective_level(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "effective_level")
 
 
 @pulumi.output_type

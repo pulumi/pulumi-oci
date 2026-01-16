@@ -77,6 +77,12 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        /// </summary>
+        [Input("databaseId")]
+        public Input<string>? DatabaseId { get; set; }
+
+        /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         [Input("databaseSoftwareImageId")]
@@ -242,6 +248,9 @@ namespace Pulumi.Oci.Database.Inputs
             }
         }
 
+        [Input("timeStampForPointInTimeRecovery")]
+        public Input<string>? TimeStampForPointInTimeRecovery { get; set; }
+
         /// <summary>
         /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
         /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -260,6 +269,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// </summary>
+        [Input("vmClusterId")]
+        public Input<string>? VmClusterId { get; set; }
 
         public DatabaseDatabaseGetArgs()
         {

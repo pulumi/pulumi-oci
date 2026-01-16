@@ -30,15 +30,12 @@ class DeployEnvironmentArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  function_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None):
+                 network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DeployEnvironment resource.
         :param pulumi.Input[_builtins.str] deploy_environment_type: (Updatable) Deployment environment type.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The OCID of the Kubernetes cluster.
         :param pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs'] compute_instance_group_selectors: (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -47,6 +44,11 @@ class DeployEnvironmentArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "deploy_environment_type", deploy_environment_type)
         pulumi.set(__self__, "project_id", project_id)
@@ -66,6 +68,8 @@ class DeployEnvironmentArgs:
             pulumi.set(__self__, "function_id", function_id)
         if network_channel is not None:
             pulumi.set(__self__, "network_channel", network_channel)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="deployEnvironmentType")
@@ -84,10 +88,6 @@ class DeployEnvironmentArgs:
     def project_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
@@ -191,6 +191,22 @@ class DeployEnvironmentArgs:
     def network_channel(self, value: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']]):
         pulumi.set(self, "network_channel", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes to be added in to the deployment environment
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _DeployEnvironmentState:
@@ -207,6 +223,7 @@ class _DeployEnvironmentState:
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -225,6 +242,7 @@ class _DeployEnvironmentState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
                
                
                ** IMPORTANT **
@@ -258,6 +276,8 @@ class _DeployEnvironmentState:
             pulumi.set(__self__, "network_channel", network_channel)
         if project_id is not None:
             pulumi.set(__self__, "project_id", project_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -404,16 +424,28 @@ class _DeployEnvironmentState:
     def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The OCID of a project.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
     def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "project_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes to be added in to the deployment environment
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
@@ -480,6 +512,7 @@ class DeployEnvironment(pulumi.CustomResource):
                  function_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -513,7 +546,8 @@ class DeployEnvironment(pulumi.CustomResource):
                 "network_channel_type": deploy_environment_network_channel_network_channel_type,
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": deploy_environment_network_channel_nsg_ids,
-            })
+            },
+            security_attributes=deploy_environment_security_attributes)
         ```
 
         ## Import
@@ -536,6 +570,7 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
                
                
                ** IMPORTANT **
@@ -579,7 +614,8 @@ class DeployEnvironment(pulumi.CustomResource):
                 "network_channel_type": deploy_environment_network_channel_network_channel_type,
                 "subnet_id": test_subnet["id"],
                 "nsg_ids": deploy_environment_network_channel_nsg_ids,
-            })
+            },
+            security_attributes=deploy_environment_security_attributes)
         ```
 
         ## Import
@@ -615,6 +651,7 @@ class DeployEnvironment(pulumi.CustomResource):
                  function_id: Optional[pulumi.Input[_builtins.str]] = None,
                  network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -638,6 +675,7 @@ class DeployEnvironment(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -666,6 +704,7 @@ class DeployEnvironment(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             network_channel: Optional[pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']]] = None,
             project_id: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -689,6 +728,7 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
                
                
                ** IMPORTANT **
@@ -714,6 +754,7 @@ class DeployEnvironment(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["network_channel"] = network_channel
         __props__.__dict__["project_id"] = project_id
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -813,12 +854,20 @@ class DeployEnvironment(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of a project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes to be added in to the deployment environment
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "project_id")
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

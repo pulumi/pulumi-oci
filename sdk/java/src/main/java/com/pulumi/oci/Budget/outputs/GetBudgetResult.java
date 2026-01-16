@@ -56,7 +56,7 @@ public final class GetBudgetResult {
      */
     private String displayName;
     /**
-     * @return The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     private String endDate;
@@ -86,7 +86,7 @@ public final class GetBudgetResult {
      */
     private String resetPeriod;
     /**
-     * @return The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     private String startDate;
@@ -95,6 +95,11 @@ public final class GetBudgetResult {
      * 
      */
     private String state;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
@@ -196,7 +201,7 @@ public final class GetBudgetResult {
         return this.displayName;
     }
     /**
-     * @return The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public String endDate() {
@@ -238,7 +243,7 @@ public final class GetBudgetResult {
         return this.resetPeriod;
     }
     /**
-     * @return The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public String startDate() {
@@ -250,6 +255,13 @@ public final class GetBudgetResult {
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
@@ -331,6 +343,7 @@ public final class GetBudgetResult {
         private String resetPeriod;
         private String startDate;
         private String state;
+        private Map<String,String> systemTags;
         private String targetCompartmentId;
         private String targetType;
         private List<String> targets;
@@ -358,6 +371,7 @@ public final class GetBudgetResult {
     	      this.resetPeriod = defaults.resetPeriod;
     	      this.startDate = defaults.startDate;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetCompartmentId = defaults.targetCompartmentId;
     	      this.targetType = defaults.targetType;
     	      this.targets = defaults.targets;
@@ -504,6 +518,14 @@ public final class GetBudgetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBudgetResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetCompartmentId(String targetCompartmentId) {
             if (targetCompartmentId == null) {
               throw new MissingRequiredPropertyException("GetBudgetResult", "targetCompartmentId");
@@ -581,6 +603,7 @@ public final class GetBudgetResult {
             _resultValue.resetPeriod = resetPeriod;
             _resultValue.startDate = startDate;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetCompartmentId = targetCompartmentId;
             _resultValue.targetType = targetType;
             _resultValue.targets = targets;

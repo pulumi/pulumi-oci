@@ -27,12 +27,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.NewNamespaceLookupsAppendDataManagement(ctx, "test_namespace_lookups_append_data_management", &loganalytics.NamespaceLookupsAppendDataManagementArgs{
-//				AppendLookupFileBody: namespaceLookupsAppendDataManagementAppendLookupFileBody,
-//				LookupName:           pulumi.Any(namespaceLookupsAppendDataManagementLookupName),
-//				Namespace:            pulumi.Any(namespaceLookupsAppendDataManagementNamespace),
-//				CharEncoding:         pulumi.Any(namespaceLookupsAppendDataManagementCharEncoding),
-//				Expect:               pulumi.Any(namespaceLookupsAppendDataManagementExpect),
-//				IsForce:              pulumi.Any(namespaceLookupsAppendDataManagementIsForce),
+//				AppendLookupFile: pulumi.Any(namespaceLookupsAppendDataManagementAppendLookupFile),
+//				LookupName:       pulumi.Any(namespaceLookupsAppendDataManagementLookupName),
+//				Namespace:        pulumi.Any(namespaceLookupsAppendDataManagementNamespace),
+//				CharEncoding:     pulumi.Any(namespaceLookupsAppendDataManagementCharEncoding),
+//				Expect:           pulumi.Any(namespaceLookupsAppendDataManagementExpect),
+//				IsForce:          pulumi.Any(namespaceLookupsAppendDataManagementIsForce),
 //			})
 //			if err != nil {
 //				return err
@@ -49,6 +49,7 @@ import (
 type NamespaceLookupsAppendDataManagement struct {
 	pulumi.CustomResourceState
 
+	// Path to the file containing data for the lookup append.
 	AppendLookupFile pulumi.StringOutput `pulumi:"appendLookupFile"`
 	// The character encoding of the uploaded file.
 	CharEncoding pulumi.StringOutput `pulumi:"charEncoding"`
@@ -104,6 +105,7 @@ func GetNamespaceLookupsAppendDataManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NamespaceLookupsAppendDataManagement resources.
 type namespaceLookupsAppendDataManagementState struct {
+	// Path to the file containing data for the lookup append.
 	AppendLookupFile *string `pulumi:"appendLookupFile"`
 	// The character encoding of the uploaded file.
 	CharEncoding *string `pulumi:"charEncoding"`
@@ -121,6 +123,7 @@ type namespaceLookupsAppendDataManagementState struct {
 }
 
 type NamespaceLookupsAppendDataManagementState struct {
+	// Path to the file containing data for the lookup append.
 	AppendLookupFile pulumi.StringPtrInput
 	// The character encoding of the uploaded file.
 	CharEncoding pulumi.StringPtrInput
@@ -142,6 +145,7 @@ func (NamespaceLookupsAppendDataManagementState) ElementType() reflect.Type {
 }
 
 type namespaceLookupsAppendDataManagementArgs struct {
+	// Path to the file containing data for the lookup append.
 	AppendLookupFile string `pulumi:"appendLookupFile"`
 	// The character encoding of the uploaded file.
 	CharEncoding *string `pulumi:"charEncoding"`
@@ -160,6 +164,7 @@ type namespaceLookupsAppendDataManagementArgs struct {
 
 // The set of arguments for constructing a NamespaceLookupsAppendDataManagement resource.
 type NamespaceLookupsAppendDataManagementArgs struct {
+	// Path to the file containing data for the lookup append.
 	AppendLookupFile pulumi.StringInput
 	// The character encoding of the uploaded file.
 	CharEncoding pulumi.StringPtrInput
@@ -263,6 +268,7 @@ func (o NamespaceLookupsAppendDataManagementOutput) ToNamespaceLookupsAppendData
 	return o
 }
 
+// Path to the file containing data for the lookup append.
 func (o NamespaceLookupsAppendDataManagementOutput) AppendLookupFile() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceLookupsAppendDataManagement) pulumi.StringOutput { return v.AppendLookupFile }).(pulumi.StringOutput)
 }

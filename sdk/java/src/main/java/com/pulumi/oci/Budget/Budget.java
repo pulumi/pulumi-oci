@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .processingPeriodType(budgetProcessingPeriodType)
  *             .startDate(budgetStartDate)
+ *             .systemTags(budgetSystemTags)
  *             .targetCompartmentId(testCompartment.id())
  *             .targetType(budgetTargetType)
  *             .targets(budgetTargets)
@@ -188,14 +189,14 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     @Export(name="endDate", refs={String.class}, tree="[0]")
     private Output<String> endDate;
 
     /**
-     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public Output<String> endDate() {
@@ -258,14 +259,14 @@ public class Budget extends com.pulumi.resources.CustomResource {
         return this.resetPeriod;
     }
     /**
-     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     @Export(name="startDate", refs={String.class}, tree="[0]")
     private Output<String> startDate;
 
     /**
-     * @return (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public Output<String> startDate() {
@@ -284,6 +285,20 @@ public class Budget extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.

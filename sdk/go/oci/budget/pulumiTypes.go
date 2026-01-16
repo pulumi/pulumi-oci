@@ -13,6 +13,200 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CostAnomalyMonitorCostAlertSubscriptionMap struct {
+	// (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId *string `pulumi:"costAlertSubscriptionId"`
+	// (Updatable) The filter operator. Example: 'AND', 'OR'.
+	Operator *string `pulumi:"operator"`
+	// (Updatable) The absolute threshold value.
+	ThresholdAbsoluteValue *int `pulumi:"thresholdAbsoluteValue"`
+	// (Updatable) The relative percentage threshold value.
+	ThresholdRelativePercent *int `pulumi:"thresholdRelativePercent"`
+}
+
+// CostAnomalyMonitorCostAlertSubscriptionMapInput is an input type that accepts CostAnomalyMonitorCostAlertSubscriptionMap and CostAnomalyMonitorCostAlertSubscriptionMapOutput values.
+// You can construct a concrete instance of `CostAnomalyMonitorCostAlertSubscriptionMapInput` via:
+//
+//	CostAnomalyMonitorCostAlertSubscriptionMap{ "key": CostAnomalyMonitorCostAlertSubscriptionArgs{...} }
+type CostAnomalyMonitorCostAlertSubscriptionMapInput interface {
+	pulumi.Input
+
+	ToCostAnomalyMonitorCostAlertSubscriptionMapOutput() CostAnomalyMonitorCostAlertSubscriptionMapOutput
+	ToCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(context.Context) CostAnomalyMonitorCostAlertSubscriptionMapOutput
+}
+
+type CostAnomalyMonitorCostAlertSubscriptionMapArgs struct {
+	// (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId pulumi.StringPtrInput `pulumi:"costAlertSubscriptionId"`
+	// (Updatable) The filter operator. Example: 'AND', 'OR'.
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// (Updatable) The absolute threshold value.
+	ThresholdAbsoluteValue pulumi.IntPtrInput `pulumi:"thresholdAbsoluteValue"`
+	// (Updatable) The relative percentage threshold value.
+	ThresholdRelativePercent pulumi.IntPtrInput `pulumi:"thresholdRelativePercent"`
+}
+
+func (CostAnomalyMonitorCostAlertSubscriptionMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i CostAnomalyMonitorCostAlertSubscriptionMapArgs) ToCostAnomalyMonitorCostAlertSubscriptionMapOutput() CostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return i.ToCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(context.Background())
+}
+
+func (i CostAnomalyMonitorCostAlertSubscriptionMapArgs) ToCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CostAnomalyMonitorCostAlertSubscriptionMapOutput)
+}
+
+func (i CostAnomalyMonitorCostAlertSubscriptionMapArgs) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutput() CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return i.ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(context.Background())
+}
+
+func (i CostAnomalyMonitorCostAlertSubscriptionMapArgs) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CostAnomalyMonitorCostAlertSubscriptionMapOutput).ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(ctx)
+}
+
+// CostAnomalyMonitorCostAlertSubscriptionMapPtrInput is an input type that accepts CostAnomalyMonitorCostAlertSubscriptionMapArgs, CostAnomalyMonitorCostAlertSubscriptionMapPtr and CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput values.
+// You can construct a concrete instance of `CostAnomalyMonitorCostAlertSubscriptionMapPtrInput` via:
+//
+//	        CostAnomalyMonitorCostAlertSubscriptionMapArgs{...}
+//
+//	or:
+//
+//	        nil
+type CostAnomalyMonitorCostAlertSubscriptionMapPtrInput interface {
+	pulumi.Input
+
+	ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutput() CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput
+	ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(context.Context) CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput
+}
+
+type costAnomalyMonitorCostAlertSubscriptionMapPtrType CostAnomalyMonitorCostAlertSubscriptionMapArgs
+
+func CostAnomalyMonitorCostAlertSubscriptionMapPtr(v *CostAnomalyMonitorCostAlertSubscriptionMapArgs) CostAnomalyMonitorCostAlertSubscriptionMapPtrInput {
+	return (*costAnomalyMonitorCostAlertSubscriptionMapPtrType)(v)
+}
+
+func (*costAnomalyMonitorCostAlertSubscriptionMapPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i *costAnomalyMonitorCostAlertSubscriptionMapPtrType) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutput() CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return i.ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(context.Background())
+}
+
+func (i *costAnomalyMonitorCostAlertSubscriptionMapPtrType) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput)
+}
+
+type CostAnomalyMonitorCostAlertSubscriptionMapOutput struct{ *pulumi.OutputState }
+
+func (CostAnomalyMonitorCostAlertSubscriptionMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapOutput() CostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return o
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return o
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutput() CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return o.ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(context.Background())
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CostAnomalyMonitorCostAlertSubscriptionMap) *CostAnomalyMonitorCostAlertSubscriptionMap {
+		return &v
+	}).(CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput)
+}
+
+// (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) CostAlertSubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CostAnomalyMonitorCostAlertSubscriptionMap) *string { return v.CostAlertSubscriptionId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The filter operator. Example: 'AND', 'OR'.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CostAnomalyMonitorCostAlertSubscriptionMap) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The absolute threshold value.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ThresholdAbsoluteValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CostAnomalyMonitorCostAlertSubscriptionMap) *int { return v.ThresholdAbsoluteValue }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The relative percentage threshold value.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapOutput) ThresholdRelativePercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CostAnomalyMonitorCostAlertSubscriptionMap) *int { return v.ThresholdRelativePercent }).(pulumi.IntPtrOutput)
+}
+
+type CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput struct{ *pulumi.OutputState }
+
+func (CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutput() CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return o
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) ToCostAnomalyMonitorCostAlertSubscriptionMapPtrOutputWithContext(ctx context.Context) CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput {
+	return o
+}
+
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) Elem() CostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return o.ApplyT(func(v *CostAnomalyMonitorCostAlertSubscriptionMap) CostAnomalyMonitorCostAlertSubscriptionMap {
+		if v != nil {
+			return *v
+		}
+		var ret CostAnomalyMonitorCostAlertSubscriptionMap
+		return ret
+	}).(CostAnomalyMonitorCostAlertSubscriptionMapOutput)
+}
+
+// (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) CostAlertSubscriptionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CostAnomalyMonitorCostAlertSubscriptionMap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CostAlertSubscriptionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The filter operator. Example: 'AND', 'OR'.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CostAnomalyMonitorCostAlertSubscriptionMap) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Operator
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The absolute threshold value.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) ThresholdAbsoluteValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CostAnomalyMonitorCostAlertSubscriptionMap) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThresholdAbsoluteValue
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The relative percentage threshold value.
+func (o CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput) ThresholdRelativePercent() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CostAnomalyMonitorCostAlertSubscriptionMap) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ThresholdRelativePercent
+	}).(pulumi.IntPtrOutput)
+}
+
 type GetAlertRulesAlertRule struct {
 	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
@@ -359,7 +553,7 @@ type GetBudgetsBudget struct {
 	Description string `pulumi:"description"`
 	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
-	// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	EndDate string `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend float64 `pulumi:"forecastedSpend"`
@@ -371,10 +565,12 @@ type GetBudgetsBudget struct {
 	ProcessingPeriodType string `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod string `pulumi:"resetPeriod"`
-	// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	StartDate string `pulumi:"startDate"`
 	// The current state of the resource to filter by.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
@@ -424,7 +620,7 @@ type GetBudgetsBudgetArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	EndDate pulumi.StringInput `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64Input `pulumi:"forecastedSpend"`
@@ -436,10 +632,12 @@ type GetBudgetsBudgetArgs struct {
 	ProcessingPeriodType pulumi.StringInput `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod pulumi.StringInput `pulumi:"resetPeriod"`
-	// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	StartDate pulumi.StringInput `pulumi:"startDate"`
 	// The current state of the resource to filter by.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
@@ -552,7 +750,7 @@ func (o GetBudgetsBudgetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 func (o GetBudgetsBudgetOutput) EndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.EndDate }).(pulumi.StringOutput)
 }
@@ -582,7 +780,7 @@ func (o GetBudgetsBudgetOutput) ResetPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.ResetPeriod }).(pulumi.StringOutput)
 }
 
-// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 func (o GetBudgetsBudgetOutput) StartDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.StartDate }).(pulumi.StringOutput)
 }
@@ -590,6 +788,11 @@ func (o GetBudgetsBudgetOutput) StartDate() pulumi.StringOutput {
 // The current state of the resource to filter by.
 func (o GetBudgetsBudgetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBudgetsBudget) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetBudgetsBudgetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBudgetsBudget) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
@@ -758,7 +961,1887 @@ func (o GetBudgetsFilterArrayOutput) Index(i pulumi.IntInput) GetBudgetsFilterOu
 	}).(GetBudgetsFilterOutput)
 }
 
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollection struct {
+	Items []GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem `pulumi:"items"`
+}
+
+// GetCostAlertSubscriptionsCostAlertSubscriptionCollectionInput is an input type that accepts GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs and GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsCostAlertSubscriptionCollectionInput` via:
+//
+//	GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs{...}
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutputWithContext(context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs struct {
+	Items GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput {
+	return i.ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput)
+}
+
+// GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayInput is an input type that accepts GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray and GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayInput` via:
+//
+//	GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray{ GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs{...} }
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutputWithContext(context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray []GetCostAlertSubscriptionsCostAlertSubscriptionCollectionInput
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsCostAlertSubscriptionCollection)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput {
+	return i.ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput)
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput) Items() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollection) []GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem {
+		return v.Items
+	}).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput)
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsCostAlertSubscriptionCollection)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput) Index(i pulumi.IntInput) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAlertSubscriptionsCostAlertSubscriptionCollection {
+		return vs[0].([]GetCostAlertSubscriptionsCostAlertSubscriptionCollection)[vs[1].(int)]
+	}).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput)
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem struct {
+	// The notification channels string.
+	Channels string `pulumi:"channels"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of monitor identifiers
+	CostAnomalyMonitors string `pulumi:"costAnomalyMonitors"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the cost alert subscription.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the Cost Alert Subscription.
+	Id string `pulumi:"id"`
+	// Unique, non-changeable resource name.
+	Name string `pulumi:"name"`
+	// The current state of the cost alert subscription.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time that the cost alert subscription was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time that the cost alert subscription was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemInput is an input type that accepts GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs and GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemInput` via:
+//
+//	GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs{...}
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutputWithContext(context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs struct {
+	// The notification channels string.
+	Channels pulumi.StringInput `pulumi:"channels"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of monitor identifiers
+	CostAnomalyMonitors pulumi.StringInput `pulumi:"costAnomalyMonitors"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the cost alert subscription.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the Cost Alert Subscription.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Unique, non-changeable resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the cost alert subscription.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time that the cost alert subscription was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time that the cost alert subscription was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput {
+	return i.ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput)
+}
+
+// GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayInput is an input type that accepts GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray and GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayInput` via:
+//
+//	GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray{ GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs{...} }
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput
+	ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutputWithContext(context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray []GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemInput
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput {
+	return i.ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput)
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput {
+	return o
+}
+
+// The notification channels string.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) Channels() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.Channels }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of monitor identifiers
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) CostAnomalyMonitors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string {
+		return v.CostAnomalyMonitors
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the cost alert subscription.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the Cost Alert Subscription.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The current state of the cost alert subscription.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time that the cost alert subscription was created.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time that the cost alert subscription was updated.
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput() GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput) ToGetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem {
+		return vs[0].([]GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItem)[vs[1].(int)]
+	}).(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput)
+}
+
+type GetCostAlertSubscriptionsFilter struct {
+	// Unique, non-changeable resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCostAlertSubscriptionsFilterInput is an input type that accepts GetCostAlertSubscriptionsFilterArgs and GetCostAlertSubscriptionsFilterOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsFilterInput` via:
+//
+//	GetCostAlertSubscriptionsFilterArgs{...}
+type GetCostAlertSubscriptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsFilterOutput() GetCostAlertSubscriptionsFilterOutput
+	ToGetCostAlertSubscriptionsFilterOutputWithContext(context.Context) GetCostAlertSubscriptionsFilterOutput
+}
+
+type GetCostAlertSubscriptionsFilterArgs struct {
+	// Unique, non-changeable resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCostAlertSubscriptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsFilterArgs) ToGetCostAlertSubscriptionsFilterOutput() GetCostAlertSubscriptionsFilterOutput {
+	return i.ToGetCostAlertSubscriptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsFilterArgs) ToGetCostAlertSubscriptionsFilterOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsFilterOutput)
+}
+
+// GetCostAlertSubscriptionsFilterArrayInput is an input type that accepts GetCostAlertSubscriptionsFilterArray and GetCostAlertSubscriptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetCostAlertSubscriptionsFilterArrayInput` via:
+//
+//	GetCostAlertSubscriptionsFilterArray{ GetCostAlertSubscriptionsFilterArgs{...} }
+type GetCostAlertSubscriptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAlertSubscriptionsFilterArrayOutput() GetCostAlertSubscriptionsFilterArrayOutput
+	ToGetCostAlertSubscriptionsFilterArrayOutputWithContext(context.Context) GetCostAlertSubscriptionsFilterArrayOutput
+}
+
+type GetCostAlertSubscriptionsFilterArray []GetCostAlertSubscriptionsFilterInput
+
+func (GetCostAlertSubscriptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsFilter)(nil)).Elem()
+}
+
+func (i GetCostAlertSubscriptionsFilterArray) ToGetCostAlertSubscriptionsFilterArrayOutput() GetCostAlertSubscriptionsFilterArrayOutput {
+	return i.ToGetCostAlertSubscriptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAlertSubscriptionsFilterArray) ToGetCostAlertSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAlertSubscriptionsFilterArrayOutput)
+}
+
+type GetCostAlertSubscriptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAlertSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsFilterOutput) ToGetCostAlertSubscriptionsFilterOutput() GetCostAlertSubscriptionsFilterOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsFilterOutput) ToGetCostAlertSubscriptionsFilterOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsFilterOutput {
+	return o
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAlertSubscriptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCostAlertSubscriptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCostAlertSubscriptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCostAlertSubscriptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCostAlertSubscriptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAlertSubscriptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAlertSubscriptionsFilter)(nil)).Elem()
+}
+
+func (o GetCostAlertSubscriptionsFilterArrayOutput) ToGetCostAlertSubscriptionsFilterArrayOutput() GetCostAlertSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsFilterArrayOutput) ToGetCostAlertSubscriptionsFilterArrayOutputWithContext(ctx context.Context) GetCostAlertSubscriptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAlertSubscriptionsFilterArrayOutput) Index(i pulumi.IntInput) GetCostAlertSubscriptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAlertSubscriptionsFilter {
+		return vs[0].([]GetCostAlertSubscriptionsFilter)[vs[1].(int)]
+	}).(GetCostAlertSubscriptionsFilterOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection struct {
+	// The list of CostAnomalyEvent Analytic summary.
+	Items []GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem `pulumi:"items"`
+}
+
+// GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionInput is an input type that accepts GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs and GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionInput` via:
+//
+//	GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs{...}
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs struct {
+	// The list of CostAnomalyEvent Analytic summary.
+	Items GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput {
+	return i.ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput)
+}
+
+// GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayInput is an input type that accepts GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray and GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayInput` via:
+//
+//	GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray{ GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs{...} }
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray []GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionInput
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput {
+	return i.ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput {
+	return o
+}
+
+// The list of CostAnomalyEvent Analytic summary.
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput) Items() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection) []GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem {
+		return v.Items
+	}).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection {
+		return vs[0].([]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollection)[vs[1].(int)]
+	}).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem struct {
+	// The average cost impact of the anomaly events in the given time period.
+	AverageCostImpact float64 `pulumi:"averageCostImpact"`
+	// The average cost variance of the anomaly events in the given time period.
+	AverageCostVariance float64 `pulumi:"averageCostVariance"`
+	// The number of cost anomaly events in the given time period.
+	CostAnomalyEventAnalyticCount int `pulumi:"costAnomalyEventAnalyticCount"`
+}
+
+// GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemInput is an input type that accepts GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs and GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemInput` via:
+//
+//	GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs{...}
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs struct {
+	// The average cost impact of the anomaly events in the given time period.
+	AverageCostImpact pulumi.Float64Input `pulumi:"averageCostImpact"`
+	// The average cost variance of the anomaly events in the given time period.
+	AverageCostVariance pulumi.Float64Input `pulumi:"averageCostVariance"`
+	// The number of cost anomaly events in the given time period.
+	CostAnomalyEventAnalyticCount pulumi.IntInput `pulumi:"costAnomalyEventAnalyticCount"`
+}
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput {
+	return i.ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput)
+}
+
+// GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayInput is an input type that accepts GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray and GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayInput` via:
+//
+//	GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray{ GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs{...} }
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput
+	ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray []GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemInput
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput {
+	return i.ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput {
+	return o
+}
+
+// The average cost impact of the anomaly events in the given time period.
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) AverageCostImpact() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem) float64 {
+		return v.AverageCostImpact
+	}).(pulumi.Float64Output)
+}
+
+// The average cost variance of the anomaly events in the given time period.
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) AverageCostVariance() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem) float64 {
+		return v.AverageCostVariance
+	}).(pulumi.Float64Output)
+}
+
+// The number of cost anomaly events in the given time period.
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput) CostAnomalyEventAnalyticCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem) int {
+		return v.CostAnomalyEventAnalyticCount
+	}).(pulumi.IntOutput)
+}
+
+type GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput() GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput) ToGetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem {
+		return vs[0].([]GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItem)[vs[1].(int)]
+	}).(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput)
+}
+
+type GetCostAnomalyEventAnalyticsFilter struct {
+	// Unique, non-changeable resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCostAnomalyEventAnalyticsFilterInput is an input type that accepts GetCostAnomalyEventAnalyticsFilterArgs and GetCostAnomalyEventAnalyticsFilterOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsFilterInput` via:
+//
+//	GetCostAnomalyEventAnalyticsFilterArgs{...}
+type GetCostAnomalyEventAnalyticsFilterInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsFilterOutput() GetCostAnomalyEventAnalyticsFilterOutput
+	ToGetCostAnomalyEventAnalyticsFilterOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsFilterOutput
+}
+
+type GetCostAnomalyEventAnalyticsFilterArgs struct {
+	// Unique, non-changeable resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCostAnomalyEventAnalyticsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsFilterArgs) ToGetCostAnomalyEventAnalyticsFilterOutput() GetCostAnomalyEventAnalyticsFilterOutput {
+	return i.ToGetCostAnomalyEventAnalyticsFilterOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsFilterArgs) ToGetCostAnomalyEventAnalyticsFilterOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsFilterOutput)
+}
+
+// GetCostAnomalyEventAnalyticsFilterArrayInput is an input type that accepts GetCostAnomalyEventAnalyticsFilterArray and GetCostAnomalyEventAnalyticsFilterArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventAnalyticsFilterArrayInput` via:
+//
+//	GetCostAnomalyEventAnalyticsFilterArray{ GetCostAnomalyEventAnalyticsFilterArgs{...} }
+type GetCostAnomalyEventAnalyticsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventAnalyticsFilterArrayOutput() GetCostAnomalyEventAnalyticsFilterArrayOutput
+	ToGetCostAnomalyEventAnalyticsFilterArrayOutputWithContext(context.Context) GetCostAnomalyEventAnalyticsFilterArrayOutput
+}
+
+type GetCostAnomalyEventAnalyticsFilterArray []GetCostAnomalyEventAnalyticsFilterInput
+
+func (GetCostAnomalyEventAnalyticsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventAnalyticsFilterArray) ToGetCostAnomalyEventAnalyticsFilterArrayOutput() GetCostAnomalyEventAnalyticsFilterArrayOutput {
+	return i.ToGetCostAnomalyEventAnalyticsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventAnalyticsFilterArray) ToGetCostAnomalyEventAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventAnalyticsFilterArrayOutput)
+}
+
+type GetCostAnomalyEventAnalyticsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterOutput) ToGetCostAnomalyEventAnalyticsFilterOutput() GetCostAnomalyEventAnalyticsFilterOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterOutput) ToGetCostAnomalyEventAnalyticsFilterOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsFilterOutput {
+	return o
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAnomalyEventAnalyticsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventAnalyticsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCostAnomalyEventAnalyticsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventAnalyticsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventAnalyticsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterArrayOutput) ToGetCostAnomalyEventAnalyticsFilterArrayOutput() GetCostAnomalyEventAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterArrayOutput) ToGetCostAnomalyEventAnalyticsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventAnalyticsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventAnalyticsFilterArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventAnalyticsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventAnalyticsFilter {
+		return vs[0].([]GetCostAnomalyEventAnalyticsFilter)[vs[1].(int)]
+	}).(GetCostAnomalyEventAnalyticsFilterOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollection struct {
+	Items []GetCostAnomalyEventsCostAnomalyEventCollectionItem `pulumi:"items"`
+}
+
+// GetCostAnomalyEventsCostAnomalyEventCollectionInput is an input type that accepts GetCostAnomalyEventsCostAnomalyEventCollectionArgs and GetCostAnomalyEventsCostAnomalyEventCollectionOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsCostAnomalyEventCollectionInput` via:
+//
+//	GetCostAnomalyEventsCostAnomalyEventCollectionArgs{...}
+type GetCostAnomalyEventsCostAnomalyEventCollectionInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionOutput() GetCostAnomalyEventsCostAnomalyEventCollectionOutput
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionOutputWithContext(context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionOutput
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionArgs struct {
+	Items GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionArgs) ToGetCostAnomalyEventsCostAnomalyEventCollectionOutput() GetCostAnomalyEventsCostAnomalyEventCollectionOutput {
+	return i.ToGetCostAnomalyEventsCostAnomalyEventCollectionOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionArgs) ToGetCostAnomalyEventsCostAnomalyEventCollectionOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsCostAnomalyEventCollectionOutput)
+}
+
+// GetCostAnomalyEventsCostAnomalyEventCollectionArrayInput is an input type that accepts GetCostAnomalyEventsCostAnomalyEventCollectionArray and GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsCostAnomalyEventCollectionArrayInput` via:
+//
+//	GetCostAnomalyEventsCostAnomalyEventCollectionArray{ GetCostAnomalyEventsCostAnomalyEventCollectionArgs{...} }
+type GetCostAnomalyEventsCostAnomalyEventCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutputWithContext(context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionArray []GetCostAnomalyEventsCostAnomalyEventCollectionInput
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsCostAnomalyEventCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionArray) ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput {
+	return i.ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionArray) ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionOutput() GetCostAnomalyEventsCostAnomalyEventCollectionOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionOutput) Items() GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollection) []GetCostAnomalyEventsCostAnomalyEventCollectionItem {
+		return v.Items
+	}).(GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsCostAnomalyEventCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventsCostAnomalyEventCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventsCostAnomalyEventCollection {
+		return vs[0].([]GetCostAnomalyEventsCostAnomalyEventCollection)[vs[1].(int)]
+	}).(GetCostAnomalyEventsCostAnomalyEventCollectionOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId      string `pulumi:"compartmentId"`
+	CostAnomalyEventId string `pulumi:"costAnomalyEventId"`
+	// The name of the associated cost monitor.
+	CostAnomalyName string `pulumi:"costAnomalyName"`
+	// cost impact (absolute) of the anomaly event.
+	CostImpact float64 `pulumi:"costImpact"`
+	// The OCID of the associated cost monitor.
+	CostMonitorId string `pulumi:"costMonitorId"`
+	// The name of the associated cost monitor.
+	CostMonitorName string `pulumi:"costMonitorName"`
+	// Type of cost monitor
+	CostMonitorType string `pulumi:"costMonitorType"`
+	// The cost variance percentage of the detected anomaly.
+	CostVariancePercentage float64 `pulumi:"costVariancePercentage"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The feedback response for the cost anomaly event.
+	FeedbackResponse string `pulumi:"feedbackResponse"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the Cost Anomaly Event.
+	Id string `pulumi:"id"`
+	// The root cause details of the cost anomaly event.
+	RootCauseDetail string `pulumi:"rootCauseDetail"`
+	// The current state of the cost anomaly event.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+	TargetResourceFilter string `pulumi:"targetResourceFilter"`
+	// The event date of the anomaly event.
+	TimeAnomalyEventDate string `pulumi:"timeAnomalyEventDate"`
+	// The created time of the cost anomaly event.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The updated time of the cost anomaly event.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetCostAnomalyEventsCostAnomalyEventCollectionItemInput is an input type that accepts GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs and GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsCostAnomalyEventCollectionItemInput` via:
+//
+//	GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs{...}
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutputWithContext(context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId      pulumi.StringInput `pulumi:"compartmentId"`
+	CostAnomalyEventId pulumi.StringInput `pulumi:"costAnomalyEventId"`
+	// The name of the associated cost monitor.
+	CostAnomalyName pulumi.StringInput `pulumi:"costAnomalyName"`
+	// cost impact (absolute) of the anomaly event.
+	CostImpact pulumi.Float64Input `pulumi:"costImpact"`
+	// The OCID of the associated cost monitor.
+	CostMonitorId pulumi.StringInput `pulumi:"costMonitorId"`
+	// The name of the associated cost monitor.
+	CostMonitorName pulumi.StringInput `pulumi:"costMonitorName"`
+	// Type of cost monitor
+	CostMonitorType pulumi.StringInput `pulumi:"costMonitorType"`
+	// The cost variance percentage of the detected anomaly.
+	CostVariancePercentage pulumi.Float64Input `pulumi:"costVariancePercentage"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The feedback response for the cost anomaly event.
+	FeedbackResponse pulumi.StringInput `pulumi:"feedbackResponse"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the Cost Anomaly Event.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The root cause details of the cost anomaly event.
+	RootCauseDetail pulumi.StringInput `pulumi:"rootCauseDetail"`
+	// The current state of the cost anomaly event.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+	TargetResourceFilter pulumi.StringInput `pulumi:"targetResourceFilter"`
+	// The event date of the anomaly event.
+	TimeAnomalyEventDate pulumi.StringInput `pulumi:"timeAnomalyEventDate"`
+	// The created time of the cost anomaly event.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The updated time of the cost anomaly event.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput {
+	return i.ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput)
+}
+
+// GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayInput is an input type that accepts GetCostAnomalyEventsCostAnomalyEventCollectionItemArray and GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayInput` via:
+//
+//	GetCostAnomalyEventsCostAnomalyEventCollectionItemArray{ GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs{...} }
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput
+	ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutputWithContext(context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemArray []GetCostAnomalyEventsCostAnomalyEventCollectionItemInput
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsCostAnomalyEventCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionItemArray) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput {
+	return i.ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsCostAnomalyEventCollectionItemArray) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostAnomalyEventId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CostAnomalyEventId }).(pulumi.StringOutput)
+}
+
+// The name of the associated cost monitor.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostAnomalyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CostAnomalyName }).(pulumi.StringOutput)
+}
+
+// cost impact (absolute) of the anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostImpact() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) float64 { return v.CostImpact }).(pulumi.Float64Output)
+}
+
+// The OCID of the associated cost monitor.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostMonitorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CostMonitorId }).(pulumi.StringOutput)
+}
+
+// The name of the associated cost monitor.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostMonitorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CostMonitorName }).(pulumi.StringOutput)
+}
+
+// Type of cost monitor
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostMonitorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.CostMonitorType }).(pulumi.StringOutput)
+}
+
+// The cost variance percentage of the detected anomaly.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) CostVariancePercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) float64 { return v.CostVariancePercentage }).(pulumi.Float64Output)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The feedback response for the cost anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) FeedbackResponse() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.FeedbackResponse }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the Cost Anomaly Event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The root cause details of the cost anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) RootCauseDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.RootCauseDetail }).(pulumi.StringOutput)
+}
+
+// The current state of the cost anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) TargetResourceFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.TargetResourceFilter }).(pulumi.StringOutput)
+}
+
+// The event date of the anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) TimeAnomalyEventDate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.TimeAnomalyEventDate }).(pulumi.StringOutput)
+}
+
+// The created time of the cost anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The updated time of the cost anomaly event.
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsCostAnomalyEventCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsCostAnomalyEventCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput() GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput) ToGetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventsCostAnomalyEventCollectionItem {
+		return vs[0].([]GetCostAnomalyEventsCostAnomalyEventCollectionItem)[vs[1].(int)]
+	}).(GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput)
+}
+
+type GetCostAnomalyEventsFilter struct {
+	// Unique, non-changeable resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCostAnomalyEventsFilterInput is an input type that accepts GetCostAnomalyEventsFilterArgs and GetCostAnomalyEventsFilterOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsFilterInput` via:
+//
+//	GetCostAnomalyEventsFilterArgs{...}
+type GetCostAnomalyEventsFilterInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsFilterOutput() GetCostAnomalyEventsFilterOutput
+	ToGetCostAnomalyEventsFilterOutputWithContext(context.Context) GetCostAnomalyEventsFilterOutput
+}
+
+type GetCostAnomalyEventsFilterArgs struct {
+	// Unique, non-changeable resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCostAnomalyEventsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsFilterArgs) ToGetCostAnomalyEventsFilterOutput() GetCostAnomalyEventsFilterOutput {
+	return i.ToGetCostAnomalyEventsFilterOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsFilterArgs) ToGetCostAnomalyEventsFilterOutputWithContext(ctx context.Context) GetCostAnomalyEventsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsFilterOutput)
+}
+
+// GetCostAnomalyEventsFilterArrayInput is an input type that accepts GetCostAnomalyEventsFilterArray and GetCostAnomalyEventsFilterArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyEventsFilterArrayInput` via:
+//
+//	GetCostAnomalyEventsFilterArray{ GetCostAnomalyEventsFilterArgs{...} }
+type GetCostAnomalyEventsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyEventsFilterArrayOutput() GetCostAnomalyEventsFilterArrayOutput
+	ToGetCostAnomalyEventsFilterArrayOutputWithContext(context.Context) GetCostAnomalyEventsFilterArrayOutput
+}
+
+type GetCostAnomalyEventsFilterArray []GetCostAnomalyEventsFilterInput
+
+func (GetCostAnomalyEventsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyEventsFilterArray) ToGetCostAnomalyEventsFilterArrayOutput() GetCostAnomalyEventsFilterArrayOutput {
+	return i.ToGetCostAnomalyEventsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyEventsFilterArray) ToGetCostAnomalyEventsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyEventsFilterArrayOutput)
+}
+
+type GetCostAnomalyEventsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyEventsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsFilterOutput) ToGetCostAnomalyEventsFilterOutput() GetCostAnomalyEventsFilterOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsFilterOutput) ToGetCostAnomalyEventsFilterOutputWithContext(ctx context.Context) GetCostAnomalyEventsFilterOutput {
+	return o
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAnomalyEventsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCostAnomalyEventsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCostAnomalyEventsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyEventsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCostAnomalyEventsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyEventsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyEventsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyEventsFilterArrayOutput) ToGetCostAnomalyEventsFilterArrayOutput() GetCostAnomalyEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsFilterArrayOutput) ToGetCostAnomalyEventsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyEventsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyEventsFilterArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyEventsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyEventsFilter {
+		return vs[0].([]GetCostAnomalyEventsFilter)[vs[1].(int)]
+	}).(GetCostAnomalyEventsFilterOutput)
+}
+
+type GetCostAnomalyMonitorCostAlertSubscriptionMap struct {
+	// The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId string `pulumi:"costAlertSubscriptionId"`
+	// The filter operator. Example: 'AND', 'OR'.
+	Operator string `pulumi:"operator"`
+	// The absolute threshold value.
+	ThresholdAbsoluteValue int `pulumi:"thresholdAbsoluteValue"`
+	// The relative percentage threshold value.
+	ThresholdRelativePercent int `pulumi:"thresholdRelativePercent"`
+}
+
+// GetCostAnomalyMonitorCostAlertSubscriptionMapInput is an input type that accepts GetCostAnomalyMonitorCostAlertSubscriptionMap and GetCostAnomalyMonitorCostAlertSubscriptionMapOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorCostAlertSubscriptionMapInput` via:
+//
+//	GetCostAnomalyMonitorCostAlertSubscriptionMap{ "key": GetCostAnomalyMonitorCostAlertSubscriptionArgs{...} }
+type GetCostAnomalyMonitorCostAlertSubscriptionMapInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapOutput
+	ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapOutput
+}
+
+type GetCostAnomalyMonitorCostAlertSubscriptionMapArgs struct {
+	// The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId pulumi.StringInput `pulumi:"costAlertSubscriptionId"`
+	// The filter operator. Example: 'AND', 'OR'.
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// The absolute threshold value.
+	ThresholdAbsoluteValue pulumi.IntInput `pulumi:"thresholdAbsoluteValue"`
+	// The relative percentage threshold value.
+	ThresholdRelativePercent pulumi.IntInput `pulumi:"thresholdRelativePercent"`
+}
+
+func (GetCostAnomalyMonitorCostAlertSubscriptionMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorCostAlertSubscriptionMapArgs) ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return i.ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorCostAlertSubscriptionMapArgs) ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(ctx context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorCostAlertSubscriptionMapOutput)
+}
+
+// GetCostAnomalyMonitorCostAlertSubscriptionMapArrayInput is an input type that accepts GetCostAnomalyMonitorCostAlertSubscriptionMapArray and GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorCostAlertSubscriptionMapArrayInput` via:
+//
+//	GetCostAnomalyMonitorCostAlertSubscriptionMapArray{ GetCostAnomalyMonitorCostAlertSubscriptionMapArgs{...} }
+type GetCostAnomalyMonitorCostAlertSubscriptionMapArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput
+	ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutputWithContext(context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput
+}
+
+type GetCostAnomalyMonitorCostAlertSubscriptionMapArray []GetCostAnomalyMonitorCostAlertSubscriptionMapInput
+
+func (GetCostAnomalyMonitorCostAlertSubscriptionMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorCostAlertSubscriptionMapArray) ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput {
+	return i.ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorCostAlertSubscriptionMapArray) ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput)
+}
+
+type GetCostAnomalyMonitorCostAlertSubscriptionMapOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) ToGetCostAnomalyMonitorCostAlertSubscriptionMapOutputWithContext(ctx context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return o
+}
+
+// The costAlertSubscription ocid which the cost monitor alert maps to.
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) CostAlertSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorCostAlertSubscriptionMap) string { return v.CostAlertSubscriptionId }).(pulumi.StringOutput)
+}
+
+// The filter operator. Example: 'AND', 'OR'.
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorCostAlertSubscriptionMap) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// The absolute threshold value.
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) ThresholdAbsoluteValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorCostAlertSubscriptionMap) int { return v.ThresholdAbsoluteValue }).(pulumi.IntOutput)
+}
+
+// The relative percentage threshold value.
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapOutput) ThresholdRelativePercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorCostAlertSubscriptionMap) int { return v.ThresholdRelativePercent }).(pulumi.IntOutput)
+}
+
+type GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput) ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput) ToGetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyMonitorCostAlertSubscriptionMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyMonitorCostAlertSubscriptionMap {
+		return vs[0].([]GetCostAnomalyMonitorCostAlertSubscriptionMap)[vs[1].(int)]
+	}).(GetCostAnomalyMonitorCostAlertSubscriptionMapOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollection struct {
+	Items []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem `pulumi:"items"`
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs{...}
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs struct {
+	Items GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput)
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray{ GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs{...} }
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionInput
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollection)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput) Items() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollection) []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem {
+		return v.Items
+	}).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollection)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyMonitorsCostAnomalyMonitorCollection {
+		return vs[0].([]GetCostAnomalyMonitorsCostAnomalyMonitorCollection)[vs[1].(int)]
+	}).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The mapping of cost monitor to alert subscription along with thresholds.
+	CostAlertSubscriptionMaps []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap `pulumi:"costAlertSubscriptionMaps"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the budget.
+	Description string `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the Cost Anomaly Monitor.
+	Id string `pulumi:"id"`
+	// The current state details of the cost monitor.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Unique, non-changeable resource name.
+	Name string `pulumi:"name"`
+	// The current state of the cost monitor.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+	TargetResourceFilter string `pulumi:"targetResourceFilter"`
+	// The time that the cost monitor was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time that the cost monitor was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Type of cost monitor
+	Type string `pulumi:"type"`
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs{...}
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The mapping of cost monitor to alert subscription along with thresholds.
+	CostAlertSubscriptionMaps GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayInput `pulumi:"costAlertSubscriptionMaps"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the budget.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the Cost Anomaly Monitor.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current state details of the cost monitor.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Unique, non-changeable resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the cost monitor.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+	TargetResourceFilter pulumi.StringInput `pulumi:"targetResourceFilter"`
+	// The time that the cost monitor was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time that the cost monitor was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Type of cost monitor
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput)
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray{ GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs{...} }
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemInput
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The mapping of cost monitor to alert subscription along with thresholds.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) CostAlertSubscriptionMaps() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap {
+		return v.CostAlertSubscriptionMaps
+	}).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The description of the budget.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the Cost Anomaly Monitor.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current state details of the cost monitor.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The current state of the cost monitor.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The filter object to target resources for cost monitor.  Cost generated by one or more resources identified by this  filter is monitored for anomalous deviations.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) TargetResourceFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.TargetResourceFilter }).(pulumi.StringOutput)
+}
+
+// The time that the cost monitor was created.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time that the cost monitor was last updated.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of cost monitor
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem {
+		return vs[0].([]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItem)[vs[1].(int)]
+	}).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap struct {
+	// The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId string `pulumi:"costAlertSubscriptionId"`
+	// The filter operator. Example: 'AND', 'OR'.
+	Operator string `pulumi:"operator"`
+	// The absolute threshold value.
+	ThresholdAbsoluteValue int `pulumi:"thresholdAbsoluteValue"`
+	// The relative percentage threshold value.
+	ThresholdRelativePercent int `pulumi:"thresholdRelativePercent"`
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap{ "key": GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionArgs{...} }
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs struct {
+	// The costAlertSubscription ocid which the cost monitor alert maps to.
+	CostAlertSubscriptionId pulumi.StringInput `pulumi:"costAlertSubscriptionId"`
+	// The filter operator. Example: 'AND', 'OR'.
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// The absolute threshold value.
+	ThresholdAbsoluteValue pulumi.IntInput `pulumi:"thresholdAbsoluteValue"`
+	// The relative percentage threshold value.
+	ThresholdRelativePercent pulumi.IntInput `pulumi:"thresholdRelativePercent"`
+}
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput)
+}
+
+// GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayInput is an input type that accepts GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray and GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayInput` via:
+//
+//	GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray{ GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs{...} }
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput
+	ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutputWithContext(context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray []GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapInput
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput {
+	return i.ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput {
+	return o
+}
+
+// The costAlertSubscription ocid which the cost monitor alert maps to.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) CostAlertSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap) string {
+		return v.CostAlertSubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// The filter operator. Example: 'AND', 'OR'.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+// The absolute threshold value.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) ThresholdAbsoluteValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap) int {
+		return v.ThresholdAbsoluteValue
+	}).(pulumi.IntOutput)
+}
+
+// The relative percentage threshold value.
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput) ThresholdRelativePercent() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap) int {
+		return v.ThresholdRelativePercent
+	}).(pulumi.IntOutput)
+}
+
+type GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput() GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput) ToGetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap {
+		return vs[0].([]GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMap)[vs[1].(int)]
+	}).(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput)
+}
+
+type GetCostAnomalyMonitorsFilter struct {
+	// Unique, non-changeable resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCostAnomalyMonitorsFilterInput is an input type that accepts GetCostAnomalyMonitorsFilterArgs and GetCostAnomalyMonitorsFilterOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsFilterInput` via:
+//
+//	GetCostAnomalyMonitorsFilterArgs{...}
+type GetCostAnomalyMonitorsFilterInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsFilterOutput() GetCostAnomalyMonitorsFilterOutput
+	ToGetCostAnomalyMonitorsFilterOutputWithContext(context.Context) GetCostAnomalyMonitorsFilterOutput
+}
+
+type GetCostAnomalyMonitorsFilterArgs struct {
+	// Unique, non-changeable resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCostAnomalyMonitorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsFilterArgs) ToGetCostAnomalyMonitorsFilterOutput() GetCostAnomalyMonitorsFilterOutput {
+	return i.ToGetCostAnomalyMonitorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsFilterArgs) ToGetCostAnomalyMonitorsFilterOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsFilterOutput)
+}
+
+// GetCostAnomalyMonitorsFilterArrayInput is an input type that accepts GetCostAnomalyMonitorsFilterArray and GetCostAnomalyMonitorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetCostAnomalyMonitorsFilterArrayInput` via:
+//
+//	GetCostAnomalyMonitorsFilterArray{ GetCostAnomalyMonitorsFilterArgs{...} }
+type GetCostAnomalyMonitorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCostAnomalyMonitorsFilterArrayOutput() GetCostAnomalyMonitorsFilterArrayOutput
+	ToGetCostAnomalyMonitorsFilterArrayOutputWithContext(context.Context) GetCostAnomalyMonitorsFilterArrayOutput
+}
+
+type GetCostAnomalyMonitorsFilterArray []GetCostAnomalyMonitorsFilterInput
+
+func (GetCostAnomalyMonitorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsFilter)(nil)).Elem()
+}
+
+func (i GetCostAnomalyMonitorsFilterArray) ToGetCostAnomalyMonitorsFilterArrayOutput() GetCostAnomalyMonitorsFilterArrayOutput {
+	return i.ToGetCostAnomalyMonitorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCostAnomalyMonitorsFilterArray) ToGetCostAnomalyMonitorsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCostAnomalyMonitorsFilterArrayOutput)
+}
+
+type GetCostAnomalyMonitorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCostAnomalyMonitorsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsFilterOutput) ToGetCostAnomalyMonitorsFilterOutput() GetCostAnomalyMonitorsFilterOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsFilterOutput) ToGetCostAnomalyMonitorsFilterOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsFilterOutput {
+	return o
+}
+
+// Unique, non-changeable resource name.
+func (o GetCostAnomalyMonitorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCostAnomalyMonitorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCostAnomalyMonitorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCostAnomalyMonitorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCostAnomalyMonitorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCostAnomalyMonitorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCostAnomalyMonitorsFilter)(nil)).Elem()
+}
+
+func (o GetCostAnomalyMonitorsFilterArrayOutput) ToGetCostAnomalyMonitorsFilterArrayOutput() GetCostAnomalyMonitorsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsFilterArrayOutput) ToGetCostAnomalyMonitorsFilterArrayOutputWithContext(ctx context.Context) GetCostAnomalyMonitorsFilterArrayOutput {
+	return o
+}
+
+func (o GetCostAnomalyMonitorsFilterArrayOutput) Index(i pulumi.IntInput) GetCostAnomalyMonitorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCostAnomalyMonitorsFilter {
+		return vs[0].([]GetCostAnomalyMonitorsFilter)[vs[1].(int)]
+	}).(GetCostAnomalyMonitorsFilterOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CostAnomalyMonitorCostAlertSubscriptionMapInput)(nil)).Elem(), CostAnomalyMonitorCostAlertSubscriptionMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CostAnomalyMonitorCostAlertSubscriptionMapPtrInput)(nil)).Elem(), CostAnomalyMonitorCostAlertSubscriptionMapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertRulesAlertRuleInput)(nil)).Elem(), GetAlertRulesAlertRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertRulesAlertRuleArrayInput)(nil)).Elem(), GetAlertRulesAlertRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertRulesFilterInput)(nil)).Elem(), GetAlertRulesFilterArgs{})
@@ -767,6 +2850,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBudgetsBudgetArrayInput)(nil)).Elem(), GetBudgetsBudgetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBudgetsFilterInput)(nil)).Elem(), GetBudgetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBudgetsFilterArrayInput)(nil)).Elem(), GetBudgetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionInput)(nil)).Elem(), GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayInput)(nil)).Elem(), GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemInput)(nil)).Elem(), GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayInput)(nil)).Elem(), GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsFilterInput)(nil)).Elem(), GetCostAlertSubscriptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAlertSubscriptionsFilterArrayInput)(nil)).Elem(), GetCostAlertSubscriptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsFilterInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventAnalyticsFilterArrayInput)(nil)).Elem(), GetCostAnomalyEventAnalyticsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionInput)(nil)).Elem(), GetCostAnomalyEventsCostAnomalyEventCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionArrayInput)(nil)).Elem(), GetCostAnomalyEventsCostAnomalyEventCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionItemInput)(nil)).Elem(), GetCostAnomalyEventsCostAnomalyEventCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayInput)(nil)).Elem(), GetCostAnomalyEventsCostAnomalyEventCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsFilterInput)(nil)).Elem(), GetCostAnomalyEventsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyEventsFilterArrayInput)(nil)).Elem(), GetCostAnomalyEventsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorCostAlertSubscriptionMapInput)(nil)).Elem(), GetCostAnomalyMonitorCostAlertSubscriptionMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorCostAlertSubscriptionMapArrayInput)(nil)).Elem(), GetCostAnomalyMonitorCostAlertSubscriptionMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayInput)(nil)).Elem(), GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsFilterInput)(nil)).Elem(), GetCostAnomalyMonitorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCostAnomalyMonitorsFilterArrayInput)(nil)).Elem(), GetCostAnomalyMonitorsFilterArray{})
+	pulumi.RegisterOutputType(CostAnomalyMonitorCostAlertSubscriptionMapOutput{})
+	pulumi.RegisterOutputType(CostAnomalyMonitorCostAlertSubscriptionMapPtrOutput{})
 	pulumi.RegisterOutputType(GetAlertRulesAlertRuleOutput{})
 	pulumi.RegisterOutputType(GetAlertRulesAlertRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetAlertRulesFilterOutput{})
@@ -775,4 +2888,32 @@ func init() {
 	pulumi.RegisterOutputType(GetBudgetsBudgetArrayOutput{})
 	pulumi.RegisterOutputType(GetBudgetsFilterOutput{})
 	pulumi.RegisterOutputType(GetBudgetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsCostAlertSubscriptionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetCostAlertSubscriptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsCostAnomalyEventAnalyticCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsFilterOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventAnalyticsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsCostAnomalyEventCollectionOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsCostAnomalyEventCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsCostAnomalyEventCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsCostAnomalyEventCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsFilterOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyEventsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorCostAlertSubscriptionMapOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorCostAlertSubscriptionMapArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsCostAnomalyMonitorCollectionItemCostAlertSubscriptionMapArrayOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsFilterOutput{})
+	pulumi.RegisterOutputType(GetCostAnomalyMonitorsFilterArrayOutput{})
 }

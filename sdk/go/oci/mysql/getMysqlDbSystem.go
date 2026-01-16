@@ -84,6 +84,8 @@ type LookupMysqlDbSystemResult struct {
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []GetMysqlDbSystemDataStorage `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles []GetMysqlDbSystemDatabaseConsole `pulumi:"databaseConsoles"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
@@ -256,6 +258,11 @@ func (o LookupMysqlDbSystemResultOutput) DataStorageSizeInGb() pulumi.IntOutput 
 // Data Storage information.
 func (o LookupMysqlDbSystemResultOutput) DataStorages() GetMysqlDbSystemDataStorageArrayOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemDataStorage { return v.DataStorages }).(GetMysqlDbSystemDataStorageArrayOutput)
+}
+
+// Database console configuration details.
+func (o LookupMysqlDbSystemResultOutput) DatabaseConsoles() GetMysqlDbSystemDatabaseConsoleArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemDatabaseConsole { return v.DatabaseConsoles }).(GetMysqlDbSystemDatabaseConsoleArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.

@@ -58,10 +58,11 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	BaseModelId         string                   `pulumi:"baseModelId"`
-	Capabilities        []string                 `pulumi:"capabilities"`
-	CompartmentId       string                   `pulumi:"compartmentId"`
-	DefinedTags         map[string]string        `pulumi:"definedTags"`
+	BaseModelId   string            `pulumi:"baseModelId"`
+	Capabilities  []string          `pulumi:"capabilities"`
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	// An optional description of the model.
 	Description         string                   `pulumi:"description"`
 	DisplayName         string                   `pulumi:"displayName"`
 	FineTuneDetails     []GetModelFineTuneDetail `pulumi:"fineTuneDetails"`
@@ -71,14 +72,18 @@ type LookupModelResult struct {
 	LifecycleDetails    string                   `pulumi:"lifecycleDetails"`
 	ModelId             string                   `pulumi:"modelId"`
 	ModelMetrics        []GetModelModelMetric    `pulumi:"modelMetrics"`
-	State               string                   `pulumi:"state"`
-	SystemTags          map[string]string        `pulumi:"systemTags"`
-	TimeCreated         string                   `pulumi:"timeCreated"`
-	TimeDeprecated      string                   `pulumi:"timeDeprecated"`
-	TimeUpdated         string                   `pulumi:"timeUpdated"`
-	Type                string                   `pulumi:"type"`
-	Vendor              string                   `pulumi:"vendor"`
-	Version             string                   `pulumi:"version"`
+	// The lifecycle state of the model.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags     map[string]string `pulumi:"systemTags"`
+	TimeCreated    string            `pulumi:"timeCreated"`
+	TimeDeprecated string            `pulumi:"timeDeprecated"`
+	TimeUpdated    string            `pulumi:"timeUpdated"`
+	Type           string            `pulumi:"type"`
+	// The provider of the base model.
+	Vendor string `pulumi:"vendor"`
+	// The version of the model.
+	Version string `pulumi:"version"`
 }
 
 func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...pulumi.InvokeOption) LookupModelResultOutput {
@@ -131,6 +136,7 @@ func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// An optional description of the model.
 func (o LookupModelResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -167,10 +173,12 @@ func (o LookupModelResultOutput) ModelMetrics() GetModelModelMetricArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []GetModelModelMetric { return v.ModelMetrics }).(GetModelModelMetricArrayOutput)
 }
 
+// The lifecycle state of the model.
 func (o LookupModelResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupModelResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
@@ -191,10 +199,12 @@ func (o LookupModelResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
+// The provider of the base model.
 func (o LookupModelResultOutput) Vendor() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Vendor }).(pulumi.StringOutput)
 }
 
+// The version of the model.
 func (o LookupModelResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Version }).(pulumi.StringOutput)
 }

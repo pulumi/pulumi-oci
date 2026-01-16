@@ -79,6 +79,10 @@ export interface GetAutonomousDatabaseResult {
     readonly autonomousDatabaseBackupId: string;
     readonly autonomousDatabaseId: string;
     /**
+     * Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     */
+    readonly autonomousDatabaseMaintenanceWindows: outputs.Database.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow[];
+    /**
      * The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      */
     readonly autonomousMaintenanceScheduleType: string;
@@ -346,6 +350,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly localAdgAutoFailoverMaxDataLossLimit: number;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     */
+    readonly localAdgResourcePoolLeaderId: string;
+    /**
      * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     readonly localDisasterRecoveryType: string;
@@ -544,6 +552,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time when maintenance will end.
      */
     readonly timeMaintenanceEnd: string;
+    /**
+     * The date until which maintenance of Autonomous Database is temporarily paused.
+     */
+    readonly timeMaintenancePauseUntil: string;
     /**
      * The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      */

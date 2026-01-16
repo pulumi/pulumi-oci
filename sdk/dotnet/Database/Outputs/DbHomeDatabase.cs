@@ -131,6 +131,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         public readonly string? VaultId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private DbHomeDatabase(
@@ -192,7 +200,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? timeStampForPointInTimeRecovery,
 
-            string? vaultId)
+            string? vaultId,
+
+            string? vmClusterId)
         {
             AdminPassword = adminPassword;
             BackupId = backupId;
@@ -224,6 +234,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeCreated = timeCreated;
             TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             VaultId = vaultId;
+            VmClusterId = vmClusterId;
         }
     }
 }

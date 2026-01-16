@@ -14,10 +14,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
-    /**
-     * @return The total capacity for a dedicated AI cluster.
-     * 
-     */
     private List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -87,10 +83,6 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     private String unitShape;
 
     private GetDedicatedAiClustersDedicatedAiClusterCollectionItem() {}
-    /**
-     * @return The total capacity for a dedicated AI cluster.
-     * 
-     */
     public List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities() {
         return this.capacities;
     }

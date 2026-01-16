@@ -34,6 +34,7 @@ class MysqlDbSystemArgs:
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_console: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']] = None,
                  database_management: Optional[pulumi.Input[_builtins.str]] = None,
                  database_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -80,6 +81,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input['MysqlDbSystemDatabaseConsoleArgs'] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -142,6 +144,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if database_console is not None:
+            pulumi.set(__self__, "database_console", database_console)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
         if database_mode is not None:
@@ -353,6 +357,18 @@ class MysqlDbSystemArgs:
     @data_storage_size_in_gb.setter
     def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsole")
+    def database_console(self) -> Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]:
+        """
+        (Updatable) Details required to configure the database console while creating a DB System.
+        """
+        return pulumi.get(self, "database_console")
+
+    @database_console.setter
+    def database_console(self, value: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]):
+        pulumi.set(self, "database_console", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -674,6 +690,7 @@ class _MysqlDbSystemState:
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]]] = None,
                  data_storage: Optional[pulumi.Input['MysqlDbSystemDataStorageArgs']] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_console: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']] = None,
                  database_management: Optional[pulumi.Input[_builtins.str]] = None,
                  database_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -729,6 +746,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCustomerContactArgs']]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input['MysqlDbSystemDataStorageArgs'] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input['MysqlDbSystemDatabaseConsoleArgs'] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -806,6 +824,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "data_storage", data_storage)
         if data_storage_size_in_gb is not None:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if database_console is not None:
+            pulumi.set(__self__, "database_console", database_console)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
         if database_mode is not None:
@@ -1036,6 +1056,18 @@ class _MysqlDbSystemState:
     @data_storage_size_in_gb.setter
     def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsole")
+    def database_console(self) -> Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]:
+        """
+        (Updatable) Details required to configure the database console while creating a DB System.
+        """
+        return pulumi.get(self, "database_console")
+
+    @database_console.setter
+    def database_console(self, value: Optional[pulumi.Input['MysqlDbSystemDatabaseConsoleArgs']]):
+        pulumi.set(self, "database_console", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -1479,6 +1511,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
                  database_management: Optional[pulumi.Input[_builtins.str]] = None,
                  database_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1550,6 +1583,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
             },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            database_console={
+                "status": mysql_db_system_database_console_status,
+                "port": mysql_db_system_database_console_port,
+            },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
             defined_tags={
@@ -1630,6 +1667,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -1723,6 +1761,10 @@ class MysqlDbSystem(pulumi.CustomResource):
                 "max_storage_size_in_gbs": mysql_db_system_data_storage_max_storage_size_in_gbs,
             },
             data_storage_size_in_gb=mysql_db_system_data_storage_size_in_gb,
+            database_console={
+                "status": mysql_db_system_database_console_status,
+                "port": mysql_db_system_database_console_port,
+            },
             database_management=mysql_db_system_database_management,
             database_mode=mysql_db_system_database_mode,
             defined_tags={
@@ -1810,6 +1852,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
                  data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
                  database_management: Optional[pulumi.Input[_builtins.str]] = None,
                  database_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1860,6 +1903,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["customer_contacts"] = customer_contacts
             __props__.__dict__["data_storage"] = data_storage
             __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
+            __props__.__dict__["database_console"] = database_console
             __props__.__dict__["database_management"] = database_management
             __props__.__dict__["database_mode"] = database_mode
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1925,6 +1969,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]]] = None,
             data_storage: Optional[pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+            database_console: Optional[pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']]] = None,
             database_management: Optional[pulumi.Input[_builtins.str]] = None,
             database_mode: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1985,6 +2030,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemCustomerContactArgs', 'MysqlDbSystemCustomerContactArgsDict']]]] customer_contacts: (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
         :param pulumi.Input[Union['MysqlDbSystemDataStorageArgs', 'MysqlDbSystemDataStorageArgsDict']] data_storage: (Updatable) Data Storage configuration properties.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[Union['MysqlDbSystemDatabaseConsoleArgs', 'MysqlDbSystemDatabaseConsoleArgsDict']] database_console: (Updatable) Details required to configure the database console while creating a DB System.
         :param pulumi.Input[_builtins.str] database_management: (Updatable) Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[_builtins.str] database_mode: (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
                * READ_WRITE (default): allow running read and write statements on the DB system;
@@ -2053,6 +2099,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["customer_contacts"] = customer_contacts
         __props__.__dict__["data_storage"] = data_storage
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
+        __props__.__dict__["database_console"] = database_console
         __props__.__dict__["database_management"] = database_management
         __props__.__dict__["database_mode"] = database_mode
         __props__.__dict__["defined_tags"] = defined_tags
@@ -2198,6 +2245,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsole")
+    def database_console(self) -> pulumi.Output['outputs.MysqlDbSystemDatabaseConsole']:
+        """
+        (Updatable) Details required to configure the database console while creating a DB System.
+        """
+        return pulumi.get(self, "database_console")
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")

@@ -13,6 +13,883 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime string `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime string `pulumi:"freezePeriodStartTime"`
+}
+
+// GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput is an input type that accepts GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs and GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...}
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+	ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+}
+
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime pulumi.StringInput `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime pulumi.StringInput `pulumi:"freezePeriodStartTime"`
+}
+
+func (GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray and GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray{ GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...} }
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+	ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray []GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput
+
+func (GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+// End time of the freeze period cycle.
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod) string {
+		return v.FreezePeriodEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Start time of the freeze period cycle.
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod) string {
+		return v.FreezePeriodStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetCloudVmClustersCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs and GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...}
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterDataCollectionOptionArray and GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{ GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{...} }
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput
+	ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArray []GetCloudVmClustersCloudVmClusterDataCollectionOptionInput
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterDataCollectionOption {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb int `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint string `pulumi:"mountPoint"`
+}
+
+// GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailInput is an input type that accepts GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs and GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs{...}
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput
+	ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput
+}
+
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs struct {
+	// The file system size to be allocated in GBs.
+	FileSystemSizeGb pulumi.IntInput `pulumi:"fileSystemSizeGb"`
+	// The mount point of file system.
+	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
+}
+
+func (GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray and GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray{ GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs{...} }
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput
+	ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray []GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailInput
+
+func (GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput {
+	return o
+}
+
+// The file system size to be allocated in GBs.
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput) FileSystemSizeGb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail) int { return v.FileSystemSizeGb }).(pulumi.IntOutput)
+}
+
+// The mount point of file system.
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput) MountPoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail) string { return v.MountPoint }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput() GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCache struct {
+	DbPlans []GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	Objective        string `pulumi:"objective"`
+	// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+}
+
+// GetCloudVmClustersCloudVmClusterIormConfigCacheInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCacheArgs and GetCloudVmClustersCloudVmClusterIormConfigCacheOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCacheInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterIormConfigCacheArgs{...}
+type GetCloudVmClustersCloudVmClusterIormConfigCacheInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheOutput
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheOutput
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheArgs struct {
+	DbPlans GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput `pulumi:"dbPlans"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	Objective        pulumi.StringInput `pulumi:"objective"`
+	// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCache)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheArgs) ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheArgs) ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterIormConfigCacheOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCacheArray and GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterIormConfigCacheArray{ GetCloudVmClustersCloudVmClusterIormConfigCacheArgs{...} }
+type GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheArray []GetCloudVmClustersCloudVmClusterIormConfigCacheInput
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterIormConfigCache)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheArray) ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheArray) ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCache)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) DbPlans() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCache) []GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan {
+		return v.DbPlans
+	}).(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCache) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) Objective() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCache) string { return v.Objective }).(pulumi.StringOutput)
+}
+
+// A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCache) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterIormConfigCache)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterIormConfigCacheOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterIormConfigCache {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterIormConfigCache)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterIormConfigCacheOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan struct {
+	DbName          string `pulumi:"dbName"`
+	FlashCacheLimit string `pulumi:"flashCacheLimit"`
+	Share           int    `pulumi:"share"`
+}
+
+// GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs and GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs{...}
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs struct {
+	DbName          pulumi.StringInput `pulumi:"dbName"`
+	FlashCacheLimit pulumi.StringInput `pulumi:"flashCacheLimit"`
+	Share           pulumi.IntInput    `pulumi:"share"`
+}
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray and GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray{ GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs{...} }
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput
+	ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray []GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) FlashCacheLimit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan) string { return v.FlashCacheLimit }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput) Share() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan) int { return v.Share }).(pulumi.IntOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput() GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput) ToGetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlan)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+}
+
+// GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs and GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray and GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray{ GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray []GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig) string {
+		return v.CloudProvider
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+type GetCloudVmClustersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudVmClustersFilterInput is an input type that accepts GetCloudVmClustersFilterArgs and GetCloudVmClustersFilterOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersFilterInput` via:
+//
+//	GetCloudVmClustersFilterArgs{...}
+type GetCloudVmClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersFilterOutput() GetCloudVmClustersFilterOutput
+	ToGetCloudVmClustersFilterOutputWithContext(context.Context) GetCloudVmClustersFilterOutput
+}
+
+type GetCloudVmClustersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudVmClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersFilterArgs) ToGetCloudVmClustersFilterOutput() GetCloudVmClustersFilterOutput {
+	return i.ToGetCloudVmClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersFilterArgs) ToGetCloudVmClustersFilterOutputWithContext(ctx context.Context) GetCloudVmClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersFilterOutput)
+}
+
+// GetCloudVmClustersFilterArrayInput is an input type that accepts GetCloudVmClustersFilterArray and GetCloudVmClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersFilterArrayInput` via:
+//
+//	GetCloudVmClustersFilterArray{ GetCloudVmClustersFilterArgs{...} }
+type GetCloudVmClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersFilterArrayOutput() GetCloudVmClustersFilterArrayOutput
+	ToGetCloudVmClustersFilterArrayOutputWithContext(context.Context) GetCloudVmClustersFilterArrayOutput
+}
+
+type GetCloudVmClustersFilterArray []GetCloudVmClustersFilterInput
+
+func (GetCloudVmClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersFilter)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersFilterArray) ToGetCloudVmClustersFilterArrayOutput() GetCloudVmClustersFilterArrayOutput {
+	return i.ToGetCloudVmClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersFilterArray) ToGetCloudVmClustersFilterArrayOutputWithContext(ctx context.Context) GetCloudVmClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersFilterArrayOutput)
+}
+
+type GetCloudVmClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersFilterOutput) ToGetCloudVmClustersFilterOutput() GetCloudVmClustersFilterOutput {
+	return o
+}
+
+func (o GetCloudVmClustersFilterOutput) ToGetCloudVmClustersFilterOutputWithContext(ctx context.Context) GetCloudVmClustersFilterOutput {
+	return o
+}
+
+func (o GetCloudVmClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudVmClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCloudVmClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudVmClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersFilter)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersFilterArrayOutput) ToGetCloudVmClustersFilterArrayOutput() GetCloudVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersFilterArrayOutput) ToGetCloudVmClustersFilterArrayOutputWithContext(ctx context.Context) GetCloudVmClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersFilter {
+		return vs[0].([]GetCloudVmClustersFilter)[vs[1].(int)]
+	}).(GetCloudVmClustersFilterOutput)
+}
+
+type GetDataGuardAssociationDataCollectionOption struct {
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	IsHealthMonitoringEnabled  bool `pulumi:"isHealthMonitoringEnabled"`
+	IsIncidentLogsEnabled      bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetDataGuardAssociationDataCollectionOptionInput is an input type that accepts GetDataGuardAssociationDataCollectionOptionArgs and GetDataGuardAssociationDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationDataCollectionOptionInput` via:
+//
+//	GetDataGuardAssociationDataCollectionOptionArgs{...}
+type GetDataGuardAssociationDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationDataCollectionOptionOutput
+	ToGetDataGuardAssociationDataCollectionOptionOutputWithContext(context.Context) GetDataGuardAssociationDataCollectionOptionOutput
+}
+
+type GetDataGuardAssociationDataCollectionOptionArgs struct {
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	IsHealthMonitoringEnabled  pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	IsIncidentLogsEnabled      pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetDataGuardAssociationDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationDataCollectionOptionArgs) ToGetDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationDataCollectionOptionOutput {
+	return i.ToGetDataGuardAssociationDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationDataCollectionOptionArgs) ToGetDataGuardAssociationDataCollectionOptionOutputWithContext(ctx context.Context) GetDataGuardAssociationDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationDataCollectionOptionOutput)
+}
+
+// GetDataGuardAssociationDataCollectionOptionArrayInput is an input type that accepts GetDataGuardAssociationDataCollectionOptionArray and GetDataGuardAssociationDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetDataGuardAssociationDataCollectionOptionArrayInput` via:
+//
+//	GetDataGuardAssociationDataCollectionOptionArray{ GetDataGuardAssociationDataCollectionOptionArgs{...} }
+type GetDataGuardAssociationDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationDataCollectionOptionArrayOutput
+	ToGetDataGuardAssociationDataCollectionOptionArrayOutputWithContext(context.Context) GetDataGuardAssociationDataCollectionOptionArrayOutput
+}
+
+type GetDataGuardAssociationDataCollectionOptionArray []GetDataGuardAssociationDataCollectionOptionInput
+
+func (GetDataGuardAssociationDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetDataGuardAssociationDataCollectionOptionArray) ToGetDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationDataCollectionOptionArrayOutput {
+	return i.ToGetDataGuardAssociationDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataGuardAssociationDataCollectionOptionArray) ToGetDataGuardAssociationDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataGuardAssociationDataCollectionOptionArrayOutput)
+}
+
+type GetDataGuardAssociationDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionOutput) ToGetDataGuardAssociationDataCollectionOptionOutput() GetDataGuardAssociationDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionOutput) ToGetDataGuardAssociationDataCollectionOptionOutputWithContext(ctx context.Context) GetDataGuardAssociationDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataGuardAssociationDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetDataGuardAssociationDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataGuardAssociationDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataGuardAssociationDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionArrayOutput) ToGetDataGuardAssociationDataCollectionOptionArrayOutput() GetDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionArrayOutput) ToGetDataGuardAssociationDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetDataGuardAssociationDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetDataGuardAssociationDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetDataGuardAssociationDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataGuardAssociationDataCollectionOption {
+		return vs[0].([]GetDataGuardAssociationDataCollectionOption)[vs[1].(int)]
+	}).(GetDataGuardAssociationDataCollectionOptionOutput)
+}
+
 type GetDataGuardAssociationsDataGuardAssociation struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
 	ApplyLag string `pulumi:"applyLag"`
@@ -1137,6 +2014,8 @@ type GetDatabaseDatabase struct {
 	// The character set for the database.
 	CharacterSet          string `pulumi:"characterSet"`
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId string `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -1172,8 +2051,9 @@ type GetDatabaseDatabase struct {
 	SourceEncryptionKeyLocationDetails []GetDatabaseDatabaseSourceEncryptionKeyLocationDetail `pulumi:"sourceEncryptionKeyLocationDetails"`
 	SourceTdeWalletPassword            string                                                 `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-	StorageSizeDetails []GetDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
-	TdeWalletPassword  string                                 `pulumi:"tdeWalletPassword"`
+	StorageSizeDetails              []GetDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
+	TdeWalletPassword               string                                 `pulumi:"tdeWalletPassword"`
+	TimeStampForPointInTimeRecovery string                                 `pulumi:"timeStampForPointInTimeRecovery"`
 	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
@@ -1181,6 +2061,8 @@ type GetDatabaseDatabase struct {
 	TransportType string `pulumi:"transportType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId string `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
 }
 
 // GetDatabaseDatabaseInput is an input type that accepts GetDatabaseDatabaseArgs and GetDatabaseDatabaseOutput values.
@@ -1201,6 +2083,8 @@ type GetDatabaseDatabaseArgs struct {
 	// The character set for the database.
 	CharacterSet          pulumi.StringInput `pulumi:"characterSet"`
 	DatabaseAdminPassword pulumi.StringInput `pulumi:"databaseAdminPassword"`
+	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -1236,8 +2120,9 @@ type GetDatabaseDatabaseArgs struct {
 	SourceEncryptionKeyLocationDetails GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput `pulumi:"sourceEncryptionKeyLocationDetails"`
 	SourceTdeWalletPassword            pulumi.StringInput                                             `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-	StorageSizeDetails GetDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
-	TdeWalletPassword  pulumi.StringInput                             `pulumi:"tdeWalletPassword"`
+	StorageSizeDetails              GetDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
+	TdeWalletPassword               pulumi.StringInput                             `pulumi:"tdeWalletPassword"`
+	TimeStampForPointInTimeRecovery pulumi.StringInput                             `pulumi:"timeStampForPointInTimeRecovery"`
 	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
@@ -1245,6 +2130,8 @@ type GetDatabaseDatabaseArgs struct {
 	TransportType pulumi.StringInput `pulumi:"transportType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
 }
 
 func (GetDatabaseDatabaseArgs) ElementType() reflect.Type {
@@ -1317,6 +2204,11 @@ func (o GetDatabaseDatabaseOutput) CharacterSet() pulumi.StringOutput {
 
 func (o GetDatabaseDatabaseOutput) DatabaseAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
+// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseDatabaseOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -1423,6 +2315,10 @@ func (o GetDatabaseDatabaseOutput) TdeWalletPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
 }
 
+func (o GetDatabaseDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.TimeStampForPointInTimeRecovery }).(pulumi.StringOutput)
+}
+
 // The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 // * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 // * MAXIMUM_PERFORMANCE - ASYNC
@@ -1434,6 +2330,11 @@ func (o GetDatabaseDatabaseOutput) TransportType() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o GetDatabaseDatabaseOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+func (o GetDatabaseDatabaseOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.VmClusterId }).(pulumi.StringOutput)
 }
 
 type GetDatabaseDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -8196,6 +9097,8 @@ type GetDatabasesDatabaseDatabase struct {
 	// The character set for the database.
 	CharacterSet          string `pulumi:"characterSet"`
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+	DatabaseId string `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -8231,8 +9134,9 @@ type GetDatabasesDatabaseDatabase struct {
 	SourceEncryptionKeyLocationDetails []GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail `pulumi:"sourceEncryptionKeyLocationDetails"`
 	SourceTdeWalletPassword            string                                                          `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-	StorageSizeDetails []GetDatabasesDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
-	TdeWalletPassword  string                                          `pulumi:"tdeWalletPassword"`
+	StorageSizeDetails              []GetDatabasesDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
+	TdeWalletPassword               string                                          `pulumi:"tdeWalletPassword"`
+	TimeStampForPointInTimeRecovery string                                          `pulumi:"timeStampForPointInTimeRecovery"`
 	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
@@ -8240,6 +9144,8 @@ type GetDatabasesDatabaseDatabase struct {
 	TransportType string `pulumi:"transportType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId string `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
 }
 
 // GetDatabasesDatabaseDatabaseInput is an input type that accepts GetDatabasesDatabaseDatabaseArgs and GetDatabasesDatabaseDatabaseOutput values.
@@ -8260,6 +9166,8 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	// The character set for the database.
 	CharacterSet          pulumi.StringInput `pulumi:"characterSet"`
 	DatabaseAdminPassword pulumi.StringInput `pulumi:"databaseAdminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringInput `pulumi:"databaseSoftwareImageId"`
 	// Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
@@ -8295,8 +9203,9 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	SourceEncryptionKeyLocationDetails GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput `pulumi:"sourceEncryptionKeyLocationDetails"`
 	SourceTdeWalletPassword            pulumi.StringInput                                                      `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
-	StorageSizeDetails GetDatabasesDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
-	TdeWalletPassword  pulumi.StringInput                                      `pulumi:"tdeWalletPassword"`
+	StorageSizeDetails              GetDatabasesDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
+	TdeWalletPassword               pulumi.StringInput                                      `pulumi:"tdeWalletPassword"`
+	TimeStampForPointInTimeRecovery pulumi.StringInput                                      `pulumi:"timeStampForPointInTimeRecovery"`
 	// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 	// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 	// * MAXIMUM_PERFORMANCE - ASYNC
@@ -8304,6 +9213,8 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	TransportType pulumi.StringInput `pulumi:"transportType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
 }
 
 func (GetDatabasesDatabaseDatabaseArgs) ElementType() reflect.Type {
@@ -8376,6 +9287,11 @@ func (o GetDatabasesDatabaseDatabaseOutput) CharacterSet() pulumi.StringOutput {
 
 func (o GetDatabasesDatabaseDatabaseOutput) DatabaseAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+func (o GetDatabasesDatabaseDatabaseOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
 // The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -8486,6 +9402,10 @@ func (o GetDatabasesDatabaseDatabaseOutput) TdeWalletPassword() pulumi.StringOut
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
 }
 
+func (o GetDatabasesDatabaseDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.TimeStampForPointInTimeRecovery }).(pulumi.StringOutput)
+}
+
 // The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
 // * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
 // * MAXIMUM_PERFORMANCE - ASYNC
@@ -8497,6 +9417,11 @@ func (o GetDatabasesDatabaseDatabaseOutput) TransportType() pulumi.StringOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 func (o GetDatabasesDatabaseDatabaseOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+func (o GetDatabasesDatabaseDatabaseOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.VmClusterId }).(pulumi.StringOutput)
 }
 
 type GetDatabasesDatabaseDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -9904,6 +10829,8 @@ type GetDbHomeDatabase struct {
 	TimeCreated                     string `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery string `pulumi:"timeStampForPointInTimeRecovery"`
 	VaultId                         string `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
 }
 
 // GetDbHomeDatabaseInput is an input type that accepts GetDbHomeDatabaseArgs and GetDbHomeDatabaseOutput values.
@@ -9957,6 +10884,8 @@ type GetDbHomeDatabaseArgs struct {
 	TimeCreated                     pulumi.StringInput `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery pulumi.StringInput `pulumi:"timeStampForPointInTimeRecovery"`
 	VaultId                         pulumi.StringInput `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
 }
 
 func (GetDbHomeDatabaseArgs) ElementType() reflect.Type {
@@ -10139,6 +11068,11 @@ func (o GetDbHomeDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi.String
 
 func (o GetDbHomeDatabaseOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomeDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+func (o GetDbHomeDatabaseOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomeDatabase) string { return v.VmClusterId }).(pulumi.StringOutput)
 }
 
 type GetDbHomeDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -11628,6 +12562,8 @@ type GetDbHomesDbHomeDatabase struct {
 	TimeCreated                     string `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery string `pulumi:"timeStampForPointInTimeRecovery"`
 	VaultId                         string `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId string `pulumi:"vmClusterId"`
 }
 
 // GetDbHomesDbHomeDatabaseInput is an input type that accepts GetDbHomesDbHomeDatabaseArgs and GetDbHomesDbHomeDatabaseOutput values.
@@ -11682,6 +12618,8 @@ type GetDbHomesDbHomeDatabaseArgs struct {
 	TimeCreated                     pulumi.StringInput `pulumi:"timeCreated"`
 	TimeStampForPointInTimeRecovery pulumi.StringInput `pulumi:"timeStampForPointInTimeRecovery"`
 	VaultId                         pulumi.StringInput `pulumi:"vaultId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+	VmClusterId pulumi.StringInput `pulumi:"vmClusterId"`
 }
 
 func (GetDbHomesDbHomeDatabaseArgs) ElementType() reflect.Type {
@@ -11869,6 +12807,11 @@ func (o GetDbHomesDbHomeDatabaseOutput) TimeStampForPointInTimeRecovery() pulumi
 
 func (o GetDbHomesDbHomeDatabaseOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+func (o GetDbHomesDbHomeDatabaseOutput) VmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabase) string { return v.VmClusterId }).(pulumi.StringOutput)
 }
 
 type GetDbHomesDbHomeDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -45570,6 +46513,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOptionInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersFilterInput)(nil)).Elem(), GetCloudVmClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersFilterArrayInput)(nil)).Elem(), GetCloudVmClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationDataCollectionOptionInput)(nil)).Elem(), GetDataGuardAssociationDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationDataCollectionOptionArrayInput)(nil)).Elem(), GetDataGuardAssociationDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationArrayInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionInput)(nil)).Elem(), GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionArgs{})
@@ -46186,6 +47145,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetDataGuardAssociationDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationOutput{})
 	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationArrayOutput{})
 	pulumi.RegisterOutputType(GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionOutput{})

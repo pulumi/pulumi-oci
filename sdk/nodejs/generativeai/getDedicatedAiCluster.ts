@@ -43,9 +43,6 @@ export interface GetDedicatedAiClusterArgs {
  * A collection of values returned by getDedicatedAiCluster.
  */
 export interface GetDedicatedAiClusterResult {
-    /**
-     * The total capacity for a dedicated AI cluster.
-     */
     readonly capacities: outputs.GenerativeAi.GetDedicatedAiClusterCapacity[];
     /**
      * The compartment OCID to create the dedicated AI cluster in.

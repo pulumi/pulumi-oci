@@ -164,6 +164,14 @@ public final class DbHomeDatabase {
      * 
      */
     private @Nullable String vaultId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    private @Nullable String vmClusterId;
 
     private DbHomeDatabase() {}
     /**
@@ -372,6 +380,16 @@ public final class DbHomeDatabase {
     public Optional<String> vaultId() {
         return Optional.ofNullable(this.vaultId);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -412,6 +430,7 @@ public final class DbHomeDatabase {
         private @Nullable String timeCreated;
         private @Nullable String timeStampForPointInTimeRecovery;
         private @Nullable String vaultId;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(DbHomeDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -445,6 +464,7 @@ public final class DbHomeDatabase {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
     	      this.vaultId = defaults.vaultId;
+    	      this.vmClusterId = defaults.vmClusterId;
         }
 
         @CustomType.Setter
@@ -638,6 +658,12 @@ public final class DbHomeDatabase {
             this.vaultId = vaultId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+
+            this.vmClusterId = vmClusterId;
+            return this;
+        }
         public DbHomeDatabase build() {
             final var _resultValue = new DbHomeDatabase();
             _resultValue.adminPassword = adminPassword;
@@ -670,6 +696,7 @@ public final class DbHomeDatabase {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             _resultValue.vaultId = vaultId;
+            _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }
     }

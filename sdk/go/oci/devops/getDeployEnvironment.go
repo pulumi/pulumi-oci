@@ -85,6 +85,8 @@ type LookupDeployEnvironmentResult struct {
 	NetworkChannels []GetDeployEnvironmentNetworkChannel `pulumi:"networkChannels"`
 	// The OCID of a project.
 	ProjectId string `pulumi:"projectId"`
+	// Security attributes to be added in to the deployment environment
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the deployment environment.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -198,6 +200,11 @@ func (o LookupDeployEnvironmentResultOutput) NetworkChannels() GetDeployEnvironm
 // The OCID of a project.
 func (o LookupDeployEnvironmentResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeployEnvironmentResult) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Security attributes to be added in to the deployment environment
+func (o LookupDeployEnvironmentResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployEnvironmentResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the deployment environment.

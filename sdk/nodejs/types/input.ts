@@ -6496,6 +6496,25 @@ export namespace Blockchain {
 }
 
 export namespace Budget {
+    export interface CostAnomalyMonitorCostAlertSubscriptionMap {
+        /**
+         * (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
+         */
+        costAlertSubscriptionId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The filter operator. Example: 'AND', 'OR'.
+         */
+        operator?: pulumi.Input<string>;
+        /**
+         * (Updatable) The absolute threshold value.
+         */
+        thresholdAbsoluteValue?: pulumi.Input<number>;
+        /**
+         * (Updatable) The relative percentage threshold value.
+         */
+        thresholdRelativePercent?: pulumi.Input<number>;
+    }
+
     export interface GetAlertRulesFilter {
         name: string;
         regex?: boolean;
@@ -6515,6 +6534,78 @@ export namespace Budget {
     }
 
     export interface GetBudgetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCostAlertSubscriptionsFilter {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCostAlertSubscriptionsFilterArgs {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCostAnomalyEventAnalyticsFilter {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCostAnomalyEventAnalyticsFilterArgs {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCostAnomalyEventsFilter {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCostAnomalyEventsFilterArgs {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetCostAnomalyMonitorsFilter {
+        /**
+         * Unique, non-changeable resource name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetCostAnomalyMonitorsFilterArgs {
+        /**
+         * Unique, non-changeable resource name.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -28927,6 +29018,28 @@ export namespace Database {
         ordsVersion?: pulumi.Input<string>;
     }
 
+    export interface AutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
+        /**
+         * (Updatable) Day of the week.
+         */
+        dayOfWeek: pulumi.Input<inputs.Database.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek>;
+        /**
+         * (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceEndTime?: pulumi.Input<string>;
+        /**
+         * (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+         */
+        maintenanceStartTime?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek {
+        /**
+         * (Updatable) Name of the day of the week.
+         */
+        name: pulumi.Input<string>;
+    }
+
     export interface AutonomousDatabaseBackupBackupDestinationDetails {
         /**
          * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
@@ -29455,6 +29568,10 @@ export namespace Database {
          */
         availableComputeCapacity?: pulumi.Input<number>;
         /**
+         * (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+         */
+        availableStorageCapacityInTbs?: pulumi.Input<number>;
+        /**
          * (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
          */
         isDisabled?: pulumi.Input<boolean>;
@@ -29462,6 +29579,10 @@ export namespace Database {
          * (Updatable) Resource pool size.
          */
         poolSize?: pulumi.Input<number>;
+        /**
+         * (Updatable) Resource pool storage size in TBs.
+         */
+        poolStorageSizeInTbs?: pulumi.Input<number>;
         /**
          * Resource Pool total capacity, it's currently 4x of pool size
          */
@@ -30464,6 +30585,10 @@ export namespace Database {
          */
         databaseAdminPassword?: pulumi.Input<string>;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+         */
+        databaseId?: pulumi.Input<string>;
+        /**
          * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          */
         databaseSoftwareImageId?: pulumi.Input<string>;
@@ -30549,6 +30674,7 @@ export namespace Database {
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
          */
         tdeWalletPassword?: pulumi.Input<string>;
+        timeStampForPointInTimeRecovery?: pulumi.Input<string>;
         /**
          * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
          * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -30564,6 +30690,10 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         */
+        vmClusterId?: pulumi.Input<string>;
     }
 
     export interface DatabaseDatabaseDbBackupConfig {
@@ -31234,6 +31364,14 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
          */
         vaultId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        vmClusterId?: pulumi.Input<string>;
     }
 
     export interface DbHomeDatabaseConnectionString {
@@ -45042,11 +45180,11 @@ export namespace FleetAppsManagement {
 
     export interface PlatformConfigurationConfigCategoryDetails {
         /**
-         * (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+         * (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
          */
         compatibleProducts?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsCompatibleProduct>[]>;
         /**
-         * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
          */
         components?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -45054,7 +45192,7 @@ export namespace FleetAppsManagement {
          */
         configCategory: pulumi.Input<string>;
         /**
-         * (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
          */
         credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsCredential>[]>;
         /**
@@ -45066,7 +45204,19 @@ export namespace FleetAppsManagement {
          */
         instanceName?: pulumi.Input<string>;
         /**
-         * (Updatable) Patch Types associated with this Product.
+         * (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+         */
+        isCompliancePolicyRequiredForSoftlink?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specify if the product is softlink product or not
+         */
+        isSoftlink?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+         */
+        linkProductId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
          */
         patchTypes?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsPatchType>[]>;
         /**
@@ -45078,7 +45228,7 @@ export namespace FleetAppsManagement {
          */
         subCategoryDetails?: pulumi.Input<inputs.FleetAppsManagement.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails>;
         /**
-         * (Updatable) Versions associated with the PRODUCT .
+         * (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          */
         versions?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -80303,6 +80453,33 @@ export namespace LogAnalytics {
         value?: pulumi.Input<string>;
     }
 
+    export interface NamespaceAssociationAssociationProperty {
+        /**
+         * The name of the association property.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * A list of pattern level overrides for this property.
+         */
+        patterns?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceAssociationAssociationPropertyPattern>[]>;
+        /**
+         * The value of the association property.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface NamespaceAssociationAssociationPropertyPattern {
+        effectiveLevel?: pulumi.Input<string>;
+        /**
+         * The pattern id.
+         */
+        id: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the property.
+         */
+        value: pulumi.Input<string>;
+    }
+
     export interface NamespaceIngestTimeRuleAction {
         /**
          * (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
@@ -83918,6 +84095,10 @@ export namespace Mysql {
          */
         dataStorages?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotDataStorage>[]>;
         /**
+         * Database console configuration details.
+         */
+        databaseConsoles?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotDatabaseConsole>[]>;
+        /**
          * Whether to enable monitoring via the Database Management service.
          */
         databaseManagement?: pulumi.Input<string>;
@@ -84093,6 +84274,17 @@ export namespace Mysql {
          * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
          */
         maxStorageSizeInGbs?: pulumi.Input<number>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotDatabaseConsole {
+        /**
+         * The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+         */
+        status?: pulumi.Input<string>;
     }
 
     export interface MysqlBackupDbSystemSnapshotDeletionPolicy {
@@ -85238,6 +85430,17 @@ export namespace Mysql {
          * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
          */
         maxStorageSizeInGbs?: pulumi.Input<number>;
+    }
+
+    export interface MysqlDbSystemDatabaseConsole {
+        /**
+         * (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * (Updatable) Enable/disable the database console on the DB System.
+         */
+        status: pulumi.Input<string>;
     }
 
     export interface MysqlDbSystemDeletionPolicy {

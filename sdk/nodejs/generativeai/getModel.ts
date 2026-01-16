@@ -47,6 +47,9 @@ export interface GetModelResult {
     readonly capabilities: string[];
     readonly compartmentId: string;
     readonly definedTags: {[key: string]: string};
+    /**
+     * An optional description of the model.
+     */
     readonly description: string;
     readonly displayName: string;
     readonly fineTuneDetails: outputs.GenerativeAi.GetModelFineTuneDetail[];
@@ -56,13 +59,25 @@ export interface GetModelResult {
     readonly lifecycleDetails: string;
     readonly modelId: string;
     readonly modelMetrics: outputs.GenerativeAi.GetModelModelMetric[];
+    /**
+     * The lifecycle state of the model.
+     */
     readonly state: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     readonly systemTags: {[key: string]: string};
     readonly timeCreated: string;
     readonly timeDeprecated: string;
     readonly timeUpdated: string;
     readonly type: string;
+    /**
+     * The provider of the base model.
+     */
     readonly vendor: string;
+    /**
+     * The version of the model.
+     */
     readonly version: string;
 }
 /**

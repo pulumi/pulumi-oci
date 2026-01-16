@@ -27,6 +27,7 @@ import * as utilities from "../utilities";
  *     },
  *     processingPeriodType: budgetProcessingPeriodType,
  *     startDate: budgetStartDate,
+ *     systemTags: budgetSystemTags,
  *     targetCompartmentId: testCompartment.id,
  *     targetType: budgetTargetType,
  *     targets: budgetTargets,
@@ -102,7 +103,7 @@ export class Budget extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     declare public readonly endDate: pulumi.Output<string>;
     /**
@@ -122,13 +123,17 @@ export class Budget extends pulumi.CustomResource {
      */
     declare public readonly resetPeriod: pulumi.Output<string>;
     /**
-     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     declare public readonly startDate: pulumi.Output<string>;
     /**
      * The current state of the budget.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
+    /**
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
@@ -192,6 +197,7 @@ export class Budget extends pulumi.CustomResource {
             resourceInputs["resetPeriod"] = state?.resetPeriod;
             resourceInputs["startDate"] = state?.startDate;
             resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["targetCompartmentId"] = state?.targetCompartmentId;
             resourceInputs["targetType"] = state?.targetType;
             resourceInputs["targets"] = state?.targets;
@@ -221,6 +227,7 @@ export class Budget extends pulumi.CustomResource {
             resourceInputs["processingPeriodType"] = args?.processingPeriodType;
             resourceInputs["resetPeriod"] = args?.resetPeriod;
             resourceInputs["startDate"] = args?.startDate;
+            resourceInputs["systemTags"] = args?.systemTags;
             resourceInputs["targetCompartmentId"] = args?.targetCompartmentId;
             resourceInputs["targetType"] = args?.targetType;
             resourceInputs["targets"] = args?.targets;
@@ -275,7 +282,7 @@ export interface BudgetState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     endDate?: pulumi.Input<string>;
     /**
@@ -295,13 +302,17 @@ export interface BudgetState {
      */
     resetPeriod?: pulumi.Input<string>;
     /**
-     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     startDate?: pulumi.Input<string>;
     /**
      * The current state of the budget.
      */
     state?: pulumi.Input<string>;
+    /**
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *
@@ -367,7 +378,7 @@ export interface BudgetArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     endDate?: pulumi.Input<string>;
     /**
@@ -383,9 +394,13 @@ export interface BudgetArgs {
      */
     resetPeriod: pulumi.Input<string>;
     /**
-     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      */
     startDate?: pulumi.Input<string>;
+    /**
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      *

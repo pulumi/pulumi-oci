@@ -13,17 +13,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetDedicatedAiClusterCapacityResult
     {
-        /// <summary>
-        /// The type of the dedicated AI cluster capacity.
-        /// </summary>
         public readonly string CapacityType;
-        /// <summary>
-        /// The total number of endpoints that can be hosted on this dedicated AI cluster.
-        /// </summary>
         public readonly int TotalEndpointCapacity;
-        /// <summary>
-        /// The number of endpoints hosted on this dedicated AI cluster.
-        /// </summary>
         public readonly int UsedEndpointCapacity;
 
         [OutputConstructor]

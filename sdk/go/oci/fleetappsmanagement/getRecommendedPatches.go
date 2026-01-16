@@ -63,7 +63,7 @@ type GetRecommendedPatchesArgs struct {
 	Filters       []GetRecommendedPatchesFilter `pulumi:"filters"`
 	// Patch identifier.
 	PatchId *string `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel *string `pulumi:"patchLevel"`
 	// Patch type.
 	PatchType *string `pulumi:"patchType"`
@@ -111,7 +111,7 @@ type GetRecommendedPatchesOutputArgs struct {
 	Filters       GetRecommendedPatchesFilterArrayInput `pulumi:"filters"`
 	// Patch identifier.
 	PatchId pulumi.StringPtrInput `pulumi:"patchId"`
-	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+	// Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
 	PatchLevel pulumi.StringPtrInput `pulumi:"patchLevel"`
 	// Patch type.
 	PatchType pulumi.StringPtrInput `pulumi:"patchType"`

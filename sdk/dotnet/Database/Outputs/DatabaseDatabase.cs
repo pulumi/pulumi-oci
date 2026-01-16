@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? DatabaseAdminPassword;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        /// </summary>
+        public readonly string? DatabaseId;
+        /// <summary>
         /// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         /// </summary>
         public readonly string? DatabaseSoftwareImageId;
@@ -123,6 +127,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
         public readonly string? TdeWalletPassword;
+        public readonly string? TimeStampForPointInTimeRecovery;
         /// <summary>
         /// The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
         /// * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -138,6 +143,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         public readonly string? VaultId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// </summary>
+        public readonly string? VmClusterId;
 
         [OutputConstructor]
         private DatabaseDatabase(
@@ -150,6 +159,8 @@ namespace Pulumi.Oci.Database.Outputs
             string? characterSet,
 
             string? databaseAdminPassword,
+
+            string? databaseId,
 
             string? databaseSoftwareImageId,
 
@@ -193,15 +204,20 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? tdeWalletPassword,
 
+            string? timeStampForPointInTimeRecovery,
+
             string? transportType,
 
-            string? vaultId)
+            string? vaultId,
+
+            string? vmClusterId)
         {
             AdminPassword = adminPassword;
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
             DatabaseAdminPassword = databaseAdminPassword;
+            DatabaseId = databaseId;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbBackupConfig = dbBackupConfig;
             DbName = dbName;
@@ -223,8 +239,10 @@ namespace Pulumi.Oci.Database.Outputs
             SourceTdeWalletPassword = sourceTdeWalletPassword;
             StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;
+            TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             TransportType = transportType;
             VaultId = vaultId;
+            VmClusterId = vmClusterId;
         }
     }
 }

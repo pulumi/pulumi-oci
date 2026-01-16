@@ -127,6 +127,9 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly ImmutableArray<string> Capabilities;
         public readonly string CompartmentId;
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// An optional description of the model.
+        /// </summary>
         public readonly string Description;
         public readonly string DisplayName;
         public readonly ImmutableArray<Outputs.GetModelFineTuneDetailResult> FineTuneDetails;
@@ -136,13 +139,25 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly string LifecycleDetails;
         public readonly string ModelId;
         public readonly ImmutableArray<Outputs.GetModelModelMetricResult> ModelMetrics;
+        /// <summary>
+        /// The lifecycle state of the model.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         public readonly string TimeDeprecated;
         public readonly string TimeUpdated;
         public readonly string Type;
+        /// <summary>
+        /// The provider of the base model.
+        /// </summary>
         public readonly string Vendor;
+        /// <summary>
+        /// The version of the model.
+        /// </summary>
         public readonly string Version;
 
         [OutputConstructor]

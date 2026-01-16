@@ -67,8 +67,12 @@ import (
 //					MaxStorageSizeInGbs:        pulumi.Any(mysqlDbSystemDataStorageMaxStorageSizeInGbs),
 //				},
 //				DataStorageSizeInGb: pulumi.Any(mysqlDbSystemDataStorageSizeInGb),
-//				DatabaseManagement:  pulumi.Any(mysqlDbSystemDatabaseManagement),
-//				DatabaseMode:        pulumi.Any(mysqlDbSystemDatabaseMode),
+//				DatabaseConsole: &mysql.MysqlDbSystemDatabaseConsoleArgs{
+//					Status: pulumi.Any(mysqlDbSystemDatabaseConsoleStatus),
+//					Port:   pulumi.Any(mysqlDbSystemDatabaseConsolePort),
+//				},
+//				DatabaseManagement: pulumi.Any(mysqlDbSystemDatabaseManagement),
+//				DatabaseMode:       pulumi.Any(mysqlDbSystemDatabaseMode),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -172,6 +176,8 @@ type MysqlDbSystem struct {
 	DataStorage MysqlDbSystemDataStorageOutput `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Details required to configure the database console while creating a DB System.
+	DatabaseConsole MysqlDbSystemDatabaseConsoleOutput `pulumi:"databaseConsole"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringOutput `pulumi:"databaseManagement"`
 	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
@@ -339,6 +345,8 @@ type mysqlDbSystemState struct {
 	DataStorage *MysqlDbSystemDataStorage `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Details required to configure the database console while creating a DB System.
+	DatabaseConsole *MysqlDbSystemDatabaseConsole `pulumi:"databaseConsole"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
@@ -458,6 +466,8 @@ type MysqlDbSystemState struct {
 	DataStorage MysqlDbSystemDataStoragePtrInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
+	// (Updatable) Details required to configure the database console while creating a DB System.
+	DatabaseConsole MysqlDbSystemDatabaseConsolePtrInput
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
@@ -577,6 +587,8 @@ type mysqlDbSystemArgs struct {
 	DataStorage *MysqlDbSystemDataStorage `pulumi:"dataStorage"`
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
+	// (Updatable) Details required to configure the database console while creating a DB System.
+	DatabaseConsole *MysqlDbSystemDatabaseConsole `pulumi:"databaseConsole"`
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
@@ -677,6 +689,8 @@ type MysqlDbSystemArgs struct {
 	DataStorage MysqlDbSystemDataStoragePtrInput
 	// (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 	DataStorageSizeInGb pulumi.IntPtrInput
+	// (Updatable) Details required to configure the database console while creating a DB System.
+	DatabaseConsole MysqlDbSystemDatabaseConsolePtrInput
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
@@ -903,6 +917,11 @@ func (o MysqlDbSystemOutput) DataStorage() MysqlDbSystemDataStorageOutput {
 // (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
 func (o MysqlDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
+}
+
+// (Updatable) Details required to configure the database console while creating a DB System.
+func (o MysqlDbSystemOutput) DatabaseConsole() MysqlDbSystemDatabaseConsoleOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemDatabaseConsoleOutput { return v.DatabaseConsole }).(MysqlDbSystemDatabaseConsoleOutput)
 }
 
 // (Updatable) Whether to enable monitoring via the Database Management service.

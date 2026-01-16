@@ -77,6 +77,8 @@ type LookupAutonomousDatabaseResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	AutonomousDatabaseBackupId    string `pulumi:"autonomousDatabaseBackupId"`
 	AutonomousDatabaseId          string `pulumi:"autonomousDatabaseId"`
+	// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+	AutonomousDatabaseMaintenanceWindows []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow `pulumi:"autonomousDatabaseMaintenanceWindows"`
 	// The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
 	AutonomousMaintenanceScheduleType string `pulumi:"autonomousMaintenanceScheduleType"`
 	// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
@@ -216,6 +218,8 @@ type LookupAutonomousDatabaseResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
 	LocalAdgAutoFailoverMaxDataLossLimit int `pulumi:"localAdgAutoFailoverMaxDataLossLimit"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+	LocalAdgResourcePoolLeaderId string `pulumi:"localAdgResourcePoolLeaderId"`
 	// Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 	LocalDisasterRecoveryType string `pulumi:"localDisasterRecoveryType"`
 	// Autonomous Data Guard standby database details.
@@ -321,6 +325,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeMaintenanceBegin string `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
 	TimeMaintenanceEnd string `pulumi:"timeMaintenanceEnd"`
+	// The date until which maintenance of Autonomous Database is temporarily paused.
+	TimeMaintenancePauseUntil string `pulumi:"timeMaintenancePauseUntil"`
 	// The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
 	TimeOfAutoRefreshStart string `pulumi:"timeOfAutoRefreshStart"`
 	// The time the member joined the resource pool.
@@ -445,6 +451,13 @@ func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseBackupId() pulum
 
 func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
+}
+
+// Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+func (o LookupAutonomousDatabaseResultOutput) AutonomousDatabaseMaintenanceWindows() GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindow {
+		return v.AutonomousDatabaseMaintenanceWindows
+	}).(GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArrayOutput)
 }
 
 // The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -804,6 +817,11 @@ func (o LookupAutonomousDatabaseResultOutput) LocalAdgAutoFailoverMaxDataLossLim
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.LocalAdgAutoFailoverMaxDataLossLimit }).(pulumi.IntOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+func (o LookupAutonomousDatabaseResultOutput) LocalAdgResourcePoolLeaderId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LocalAdgResourcePoolLeaderId }).(pulumi.StringOutput)
+}
+
 // Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 func (o LookupAutonomousDatabaseResultOutput) LocalDisasterRecoveryType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.LocalDisasterRecoveryType }).(pulumi.StringOutput)
@@ -1088,6 +1106,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceBegin() pulumi.Stri
 // The date and time when maintenance will end.
 func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenanceEnd }).(pulumi.StringOutput)
+}
+
+// The date until which maintenance of Autonomous Database is temporarily paused.
+func (o LookupAutonomousDatabaseResultOutput) TimeMaintenancePauseUntil() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenancePauseUntil }).(pulumi.StringOutput)
 }
 
 // The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.

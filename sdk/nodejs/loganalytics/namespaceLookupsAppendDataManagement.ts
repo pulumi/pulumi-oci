@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceLookupsAppendDataManagement = new oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management", {
- *     appendLookupFileBody: namespaceLookupsAppendDataManagementAppendLookupFileBody,
+ *     appendLookupFile: namespaceLookupsAppendDataManagementAppendLookupFile,
  *     lookupName: namespaceLookupsAppendDataManagementLookupName,
  *     namespace: namespaceLookupsAppendDataManagementNamespace,
  *     charEncoding: namespaceLookupsAppendDataManagementCharEncoding,
@@ -53,6 +53,9 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
         return obj['__pulumiType'] === NamespaceLookupsAppendDataManagement.__pulumiType;
     }
 
+    /**
+     * Path to the file containing data for the lookup append.
+     */
     declare public readonly appendLookupFile: pulumi.Output<string>;
     /**
      * The character encoding of the uploaded file.
@@ -71,7 +74,7 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
      */
     declare public readonly lookupName: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **
@@ -125,6 +128,9 @@ export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource 
  * Input properties used for looking up and filtering NamespaceLookupsAppendDataManagement resources.
  */
 export interface NamespaceLookupsAppendDataManagementState {
+    /**
+     * Path to the file containing data for the lookup append.
+     */
     appendLookupFile?: pulumi.Input<string>;
     /**
      * The character encoding of the uploaded file.
@@ -143,7 +149,7 @@ export interface NamespaceLookupsAppendDataManagementState {
      */
     lookupName?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **
@@ -156,6 +162,9 @@ export interface NamespaceLookupsAppendDataManagementState {
  * The set of arguments for constructing a NamespaceLookupsAppendDataManagement resource.
  */
 export interface NamespaceLookupsAppendDataManagementArgs {
+    /**
+     * Path to the file containing data for the lookup append.
+     */
     appendLookupFile: pulumi.Input<string>;
     /**
      * The character encoding of the uploaded file.
@@ -174,7 +183,7 @@ export interface NamespaceLookupsAppendDataManagementArgs {
      */
     lookupName: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **

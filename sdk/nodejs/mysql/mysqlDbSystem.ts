@@ -50,6 +50,10 @@ import * as utilities from "../utilities";
  *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
  *     },
  *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
+ *     databaseConsole: {
+ *         status: mysqlDbSystemDatabaseConsoleStatus,
+ *         port: mysqlDbSystemDatabaseConsolePort,
+ *     },
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     databaseMode: mysqlDbSystemDatabaseMode,
  *     definedTags: {
@@ -198,6 +202,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     declare public readonly dataStorageSizeInGb: pulumi.Output<number>;
+    /**
+     * (Updatable) Details required to configure the database console while creating a DB System.
+     */
+    declare public readonly databaseConsole: pulumi.Output<outputs.Mysql.MysqlDbSystemDatabaseConsole>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
@@ -377,6 +385,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["customerContacts"] = state?.customerContacts;
             resourceInputs["dataStorage"] = state?.dataStorage;
             resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
+            resourceInputs["databaseConsole"] = state?.databaseConsole;
             resourceInputs["databaseManagement"] = state?.databaseManagement;
             resourceInputs["databaseMode"] = state?.databaseMode;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -436,6 +445,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["customerContacts"] = args?.customerContacts;
             resourceInputs["dataStorage"] = args?.dataStorage;
             resourceInputs["dataStorageSizeInGb"] = args?.dataStorageSizeInGb;
+            resourceInputs["databaseConsole"] = args?.databaseConsole;
             resourceInputs["databaseManagement"] = args?.databaseManagement;
             resourceInputs["databaseMode"] = args?.databaseMode;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -542,6 +552,10 @@ export interface MysqlDbSystemState {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Details required to configure the database console while creating a DB System.
+     */
+    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
@@ -750,6 +764,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
+    /**
+     * (Updatable) Details required to configure the database console while creating a DB System.
+     */
+    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */

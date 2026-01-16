@@ -39,6 +39,7 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *         nsgIds: deployEnvironmentNetworkChannelNsgIds,
  *     },
+ *     securityAttributes: deployEnvironmentSecurityAttributes,
  * });
  * ```
  *
@@ -124,12 +125,16 @@ export class DeployEnvironment extends pulumi.CustomResource {
     declare public readonly networkChannel: pulumi.Output<outputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     */
+    declare public readonly projectId: pulumi.Output<string>;
+    /**
+     * (Updatable) Security attributes to be added in to the deployment environment
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly projectId: pulumi.Output<string>;
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the deployment environment.
      */
@@ -172,6 +177,7 @@ export class DeployEnvironment extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["networkChannel"] = state?.networkChannel;
             resourceInputs["projectId"] = state?.projectId;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -194,6 +200,7 @@ export class DeployEnvironment extends pulumi.CustomResource {
             resourceInputs["functionId"] = args?.functionId;
             resourceInputs["networkChannel"] = args?.networkChannel;
             resourceInputs["projectId"] = args?.projectId;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -256,12 +263,16 @@ export interface DeployEnvironmentState {
     networkChannel?: pulumi.Input<inputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     */
+    projectId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Security attributes to be added in to the deployment environment
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    projectId?: pulumi.Input<string>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the deployment environment.
      */
@@ -322,10 +333,14 @@ export interface DeployEnvironmentArgs {
     networkChannel?: pulumi.Input<inputs.DevOps.DeployEnvironmentNetworkChannel>;
     /**
      * The OCID of a project.
+     */
+    projectId: pulumi.Input<string>;
+    /**
+     * (Updatable) Security attributes to be added in to the deployment environment
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    projectId: pulumi.Input<string>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

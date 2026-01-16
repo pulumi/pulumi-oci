@@ -75,7 +75,7 @@ type LookupBudgetResult struct {
 	Description string `pulumi:"description"`
 	// The display name of the budget. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	EndDate string `pulumi:"endDate"`
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend float64 `pulumi:"forecastedSpend"`
@@ -87,10 +87,12 @@ type LookupBudgetResult struct {
 	ProcessingPeriodType string `pulumi:"processingPeriodType"`
 	// The reset period for the budget.
 	ResetPeriod string `pulumi:"resetPeriod"`
-	// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+	// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	StartDate string `pulumi:"startDate"`
 	// The current state of the budget.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
 	//
 	// Deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.
@@ -187,7 +189,7 @@ func (o LookupBudgetResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 func (o LookupBudgetResultOutput) EndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.EndDate }).(pulumi.StringOutput)
 }
@@ -217,7 +219,7 @@ func (o LookupBudgetResultOutput) ResetPeriod() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.ResetPeriod }).(pulumi.StringOutput)
 }
 
-// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 func (o LookupBudgetResultOutput) StartDate() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.StartDate }).(pulumi.StringOutput)
 }
@@ -225,6 +227,11 @@ func (o LookupBudgetResultOutput) StartDate() pulumi.StringOutput {
 // The current state of the budget.
 func (o LookupBudgetResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBudgetResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupBudgetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBudgetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.

@@ -55,6 +55,7 @@ from .log_analytics_preferences_management import *
 from .log_analytics_resource_categories_management import *
 from .log_analytics_unprocessed_data_bucket_management import *
 from .namespace import *
+from .namespace_association import *
 from .namespace_ingest_time_rule import *
 from .namespace_ingest_time_rules_management import *
 from .namespace_lookup import *

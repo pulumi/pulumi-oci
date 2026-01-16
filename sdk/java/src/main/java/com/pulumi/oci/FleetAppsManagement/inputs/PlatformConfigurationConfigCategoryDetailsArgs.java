@@ -11,6 +11,7 @@ import com.pulumi.oci.FleetAppsManagement.inputs.PlatformConfigurationConfigCate
 import com.pulumi.oci.FleetAppsManagement.inputs.PlatformConfigurationConfigCategoryDetailsPatchTypeArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.PlatformConfigurationConfigCategoryDetailsProductArgs;
 import com.pulumi.oci.FleetAppsManagement.inputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,14 +24,14 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
     public static final PlatformConfigurationConfigCategoryDetailsArgs Empty = new PlatformConfigurationConfigCategoryDetailsArgs();
 
     /**
-     * (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+     * (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
      * 
      */
     @Import(name="compatibleProducts")
     private @Nullable Output<List<PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs>> compatibleProducts;
 
     /**
-     * @return (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+     * @return (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
      * 
      */
     public Optional<Output<List<PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs>>> compatibleProducts() {
@@ -38,14 +39,14 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+     * (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
      * 
      */
     @Import(name="components")
     private @Nullable Output<List<String>> components;
 
     /**
-     * @return (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+     * @return (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
      * 
      */
     public Optional<Output<List<String>>> components() {
@@ -68,14 +69,14 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+     * (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
      * 
      */
     @Import(name="credentials")
     private @Nullable Output<List<PlatformConfigurationConfigCategoryDetailsCredentialArgs>> credentials;
 
     /**
-     * @return (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+     * @return (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
      * 
      */
     public Optional<Output<List<PlatformConfigurationConfigCategoryDetailsCredentialArgs>>> credentials() {
@@ -113,14 +114,59 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) Patch Types associated with this Product.
+     * (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    @Import(name="isCompliancePolicyRequiredForSoftlink")
+    private @Nullable Output<Boolean> isCompliancePolicyRequiredForSoftlink;
+
+    /**
+     * @return (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    public Optional<Output<Boolean>> isCompliancePolicyRequiredForSoftlink() {
+        return Optional.ofNullable(this.isCompliancePolicyRequiredForSoftlink);
+    }
+
+    /**
+     * (Updatable) Specify if the product is softlink product or not
+     * 
+     */
+    @Import(name="isSoftlink")
+    private @Nullable Output<Boolean> isSoftlink;
+
+    /**
+     * @return (Updatable) Specify if the product is softlink product or not
+     * 
+     */
+    public Optional<Output<Boolean>> isSoftlink() {
+        return Optional.ofNullable(this.isSoftlink);
+    }
+
+    /**
+     * (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    @Import(name="linkProductId")
+    private @Nullable Output<String> linkProductId;
+
+    /**
+     * @return (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+     * 
+     */
+    public Optional<Output<String>> linkProductId() {
+        return Optional.ofNullable(this.linkProductId);
+    }
+
+    /**
+     * (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
      * 
      */
     @Import(name="patchTypes")
     private @Nullable Output<List<PlatformConfigurationConfigCategoryDetailsPatchTypeArgs>> patchTypes;
 
     /**
-     * @return (Updatable) Patch Types associated with this Product.
+     * @return (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
      * 
      */
     public Optional<Output<List<PlatformConfigurationConfigCategoryDetailsPatchTypeArgs>>> patchTypes() {
@@ -158,14 +204,14 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
     }
 
     /**
-     * (Updatable) Versions associated with the PRODUCT .
+     * (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     @Import(name="versions")
     private @Nullable Output<List<String>> versions;
 
     /**
-     * @return (Updatable) Versions associated with the PRODUCT .
+     * @return (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     public Optional<Output<List<String>>> versions() {
@@ -181,6 +227,9 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         this.credentials = $.credentials;
         this.instanceId = $.instanceId;
         this.instanceName = $.instanceName;
+        this.isCompliancePolicyRequiredForSoftlink = $.isCompliancePolicyRequiredForSoftlink;
+        this.isSoftlink = $.isSoftlink;
+        this.linkProductId = $.linkProductId;
         this.patchTypes = $.patchTypes;
         this.products = $.products;
         this.subCategoryDetails = $.subCategoryDetails;
@@ -206,7 +255,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -217,7 +266,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -227,7 +276,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+         * @param compatibleProducts (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -237,7 +286,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -248,7 +297,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -258,7 +307,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         * @param components (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -289,7 +338,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -300,7 +349,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -310,7 +359,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         * @param credentials (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -362,7 +411,70 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param patchTypes (Updatable) Patch Types associated with this Product.
+         * @param isCompliancePolicyRequiredForSoftlink (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCompliancePolicyRequiredForSoftlink(@Nullable Output<Boolean> isCompliancePolicyRequiredForSoftlink) {
+            $.isCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            return this;
+        }
+
+        /**
+         * @param isCompliancePolicyRequiredForSoftlink (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCompliancePolicyRequiredForSoftlink(Boolean isCompliancePolicyRequiredForSoftlink) {
+            return isCompliancePolicyRequiredForSoftlink(Output.of(isCompliancePolicyRequiredForSoftlink));
+        }
+
+        /**
+         * @param isSoftlink (Updatable) Specify if the product is softlink product or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSoftlink(@Nullable Output<Boolean> isSoftlink) {
+            $.isSoftlink = isSoftlink;
+            return this;
+        }
+
+        /**
+         * @param isSoftlink (Updatable) Specify if the product is softlink product or not
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSoftlink(Boolean isSoftlink) {
+            return isSoftlink(Output.of(isSoftlink));
+        }
+
+        /**
+         * @param linkProductId (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+         * 
+         * @return builder
+         * 
+         */
+        public Builder linkProductId(@Nullable Output<String> linkProductId) {
+            $.linkProductId = linkProductId;
+            return this;
+        }
+
+        /**
+         * @param linkProductId (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+         * 
+         * @return builder
+         * 
+         */
+        public Builder linkProductId(String linkProductId) {
+            return linkProductId(Output.of(linkProductId));
+        }
+
+        /**
+         * @param patchTypes (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -373,7 +485,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param patchTypes (Updatable) Patch Types associated with this Product.
+         * @param patchTypes (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -383,7 +495,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param patchTypes (Updatable) Patch Types associated with this Product.
+         * @param patchTypes (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
          * 
          * @return builder
          * 
@@ -445,7 +557,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param versions (Updatable) Versions associated with the PRODUCT .
+         * @param versions (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          * 
          * @return builder
          * 
@@ -456,7 +568,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param versions (Updatable) Versions associated with the PRODUCT .
+         * @param versions (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          * 
          * @return builder
          * 
@@ -466,7 +578,7 @@ public final class PlatformConfigurationConfigCategoryDetailsArgs extends com.pu
         }
 
         /**
-         * @param versions (Updatable) Versions associated with the PRODUCT .
+         * @param versions (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
          * 
          * @return builder
          * 

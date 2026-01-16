@@ -40,14 +40,14 @@ public final class GetInstalledPatchesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      * 
      */
     @Import(name="patchLevel")
     private @Nullable String patchLevel;
 
     /**
-     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * @return Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      * 
      */
     public Optional<String> patchLevel() {
@@ -165,7 +165,7 @@ public final class GetInstalledPatchesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param patchLevel Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+         * @param patchLevel Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
          * 
          * @return builder
          * 

@@ -43,8 +43,11 @@ import (
 //							Id:          pulumi.Any(platformConfigurationConfigCategoryDetailsCredentialsId),
 //						},
 //					},
-//					InstanceId:   pulumi.Any(testInstance.Id),
-//					InstanceName: pulumi.Any(testInstance.Name),
+//					InstanceId:                            pulumi.Any(testInstance.Id),
+//					InstanceName:                          pulumi.Any(testInstance.Name),
+//					IsCompliancePolicyRequiredForSoftlink: pulumi.Any(platformConfigurationConfigCategoryDetailsIsCompliancePolicyRequiredForSoftlink),
+//					IsSoftlink:                            pulumi.Any(platformConfigurationConfigCategoryDetailsIsSoftlink),
+//					LinkProductId:                         pulumi.Any(testLinkProduct.Id),
 //					PatchTypes: fleetappsmanagement.PlatformConfigurationConfigCategoryDetailsPatchTypeArray{
 //						&fleetappsmanagement.PlatformConfigurationConfigCategoryDetailsPatchTypeArgs{
 //							DisplayName: pulumi.Any(platformConfigurationConfigCategoryDetailsPatchTypesDisplayName),

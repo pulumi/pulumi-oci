@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCustomerContactArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDatabaseConsoleArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
@@ -205,6 +206,21 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> dataStorageSizeInGb() {
         return Optional.ofNullable(this.dataStorageSizeInGb);
+    }
+
+    /**
+     * (Updatable) Details required to configure the database console while creating a DB System.
+     * 
+     */
+    @Import(name="databaseConsole")
+    private @Nullable Output<MysqlDbSystemDatabaseConsoleArgs> databaseConsole;
+
+    /**
+     * @return (Updatable) Details required to configure the database console while creating a DB System.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemDatabaseConsoleArgs>> databaseConsole() {
+        return Optional.ofNullable(this.databaseConsole);
     }
 
     /**
@@ -643,6 +659,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.customerContacts = $.customerContacts;
         this.dataStorage = $.dataStorage;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
+        this.databaseConsole = $.databaseConsole;
         this.databaseManagement = $.databaseManagement;
         this.databaseMode = $.databaseMode;
         this.definedTags = $.definedTags;
@@ -940,6 +957,27 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dataStorageSizeInGb(Integer dataStorageSizeInGb) {
             return dataStorageSizeInGb(Output.of(dataStorageSizeInGb));
+        }
+
+        /**
+         * @param databaseConsole (Updatable) Details required to configure the database console while creating a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConsole(@Nullable Output<MysqlDbSystemDatabaseConsoleArgs> databaseConsole) {
+            $.databaseConsole = databaseConsole;
+            return this;
+        }
+
+        /**
+         * @param databaseConsole (Updatable) Details required to configure the database console while creating a DB System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConsole(MysqlDbSystemDatabaseConsoleArgs databaseConsole) {
+            return databaseConsole(Output.of(databaseConsole));
         }
 
         /**

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.PlatformConfigurationConfigCategoryDetailsCompatibleProductGetArgs>? _compatibleProducts;
 
         /// <summary>
-        /// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        /// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public InputList<Inputs.PlatformConfigurationConfigCategoryDetailsCompatibleProductGetArgs> CompatibleProducts
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<string>? _components;
 
         /// <summary>
-        /// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        /// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public InputList<string> Components
         {
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<Inputs.PlatformConfigurationConfigCategoryDetailsCredentialGetArgs>? _credentials;
 
         /// <summary>
-        /// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        /// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public InputList<Inputs.PlatformConfigurationConfigCategoryDetailsCredentialGetArgs> Credentials
         {
@@ -66,11 +66,29 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         [Input("instanceName")]
         public Input<string>? InstanceName { get; set; }
 
+        /// <summary>
+        /// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        [Input("isCompliancePolicyRequiredForSoftlink")]
+        public Input<bool>? IsCompliancePolicyRequiredForSoftlink { get; set; }
+
+        /// <summary>
+        /// (Updatable) Specify if the product is softlink product or not
+        /// </summary>
+        [Input("isSoftlink")]
+        public Input<bool>? IsSoftlink { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        [Input("linkProductId")]
+        public Input<string>? LinkProductId { get; set; }
+
         [Input("patchTypes")]
         private InputList<Inputs.PlatformConfigurationConfigCategoryDetailsPatchTypeGetArgs>? _patchTypes;
 
         /// <summary>
-        /// (Updatable) Patch Types associated with this Product.
+        /// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public InputList<Inputs.PlatformConfigurationConfigCategoryDetailsPatchTypeGetArgs> PatchTypes
         {
@@ -100,7 +118,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         private InputList<string>? _versions;
 
         /// <summary>
-        /// (Updatable) Versions associated with the PRODUCT .
+        /// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         /// </summary>
         public InputList<string> Versions
         {

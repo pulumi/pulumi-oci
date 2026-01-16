@@ -14,6 +14,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannel;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCurrentPlacement;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDataStorage;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDatabaseConsole;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyPitrPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCustomerContactArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDatabaseConsoleArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
@@ -102,6 +104,10 @@ import javax.annotation.Nullable;
  *                 .maxStorageSizeInGbs(mysqlDbSystemDataStorageMaxStorageSizeInGbs)
  *                 .build())
  *             .dataStorageSizeInGb(mysqlDbSystemDataStorageSizeInGb)
+ *             .databaseConsole(MysqlDbSystemDatabaseConsoleArgs.builder()
+ *                 .status(mysqlDbSystemDatabaseConsoleStatus)
+ *                 .port(mysqlDbSystemDatabaseConsolePort)
+ *                 .build())
  *             .databaseManagement(mysqlDbSystemDatabaseManagement)
  *             .databaseMode(mysqlDbSystemDatabaseMode)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -360,6 +366,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> dataStorageSizeInGb() {
         return this.dataStorageSizeInGb;
+    }
+    /**
+     * (Updatable) Details required to configure the database console while creating a DB System.
+     * 
+     */
+    @Export(name="databaseConsole", refs={MysqlDbSystemDatabaseConsole.class}, tree="[0]")
+    private Output<MysqlDbSystemDatabaseConsole> databaseConsole;
+
+    /**
+     * @return (Updatable) Details required to configure the database console while creating a DB System.
+     * 
+     */
+    public Output<MysqlDbSystemDatabaseConsole> databaseConsole() {
+        return this.databaseConsole;
     }
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.

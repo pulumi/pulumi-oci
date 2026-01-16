@@ -106,6 +106,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+     * 
+     */
+    @Import(name="databaseId")
+    private @Nullable Output<String> databaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+     * 
+     */
+    public Optional<Output<String>> databaseId() {
+        return Optional.ofNullable(this.databaseId);
+    }
+
+    /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -424,6 +439,13 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.tdeWalletPassword);
     }
 
+    @Import(name="timeStampForPointInTimeRecovery")
+    private @Nullable Output<String> timeStampForPointInTimeRecovery;
+
+    public Optional<Output<String>> timeStampForPointInTimeRecovery() {
+        return Optional.ofNullable(this.timeStampForPointInTimeRecovery);
+    }
+
     /**
      * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -468,6 +490,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.vaultId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    @Import(name="vmClusterId")
+    private @Nullable Output<String> vmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    public Optional<Output<String>> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
+    }
+
     private DatabaseDatabaseArgs() {}
 
     private DatabaseDatabaseArgs(DatabaseDatabaseArgs $) {
@@ -476,6 +513,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.backupTdePassword = $.backupTdePassword;
         this.characterSet = $.characterSet;
         this.databaseAdminPassword = $.databaseAdminPassword;
+        this.databaseId = $.databaseId;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbBackupConfig = $.dbBackupConfig;
         this.dbName = $.dbName;
@@ -497,8 +535,10 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.sourceTdeWalletPassword = $.sourceTdeWalletPassword;
         this.storageSizeDetails = $.storageSizeDetails;
         this.tdeWalletPassword = $.tdeWalletPassword;
+        this.timeStampForPointInTimeRecovery = $.timeStampForPointInTimeRecovery;
         this.transportType = $.transportType;
         this.vaultId = $.vaultId;
+        this.vmClusterId = $.vmClusterId;
     }
 
     public static Builder builder() {
@@ -630,6 +670,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             return databaseAdminPassword(Output.of(databaseAdminPassword));
+        }
+
+        /**
+         * @param databaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseId(@Nullable Output<String> databaseId) {
+            $.databaseId = databaseId;
+            return this;
+        }
+
+        /**
+         * @param databaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseId(String databaseId) {
+            return databaseId(Output.of(databaseId));
         }
 
         /**
@@ -1087,6 +1148,15 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
             return tdeWalletPassword(Output.of(tdeWalletPassword));
         }
 
+        public Builder timeStampForPointInTimeRecovery(@Nullable Output<String> timeStampForPointInTimeRecovery) {
+            $.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            return this;
+        }
+
+        public Builder timeStampForPointInTimeRecovery(String timeStampForPointInTimeRecovery) {
+            return timeStampForPointInTimeRecovery(Output.of(timeStampForPointInTimeRecovery));
+        }
+
         /**
          * @param transportType The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
          * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -1141,6 +1211,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder vaultId(String vaultId) {
             return vaultId(Output.of(vaultId));
+        }
+
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(@Nullable Output<String> vmClusterId) {
+            $.vmClusterId = vmClusterId;
+            return this;
+        }
+
+        /**
+         * @param vmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vmClusterId(String vmClusterId) {
+            return vmClusterId(Output.of(vmClusterId));
         }
 
         public DatabaseDatabaseArgs build() {

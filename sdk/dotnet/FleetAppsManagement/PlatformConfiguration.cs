@@ -45,6 +45,9 @@ namespace Pulumi.Oci.FleetAppsManagement
     ///             },
     ///             InstanceId = testInstance.Id,
     ///             InstanceName = testInstance.Name,
+    ///             IsCompliancePolicyRequiredForSoftlink = platformConfigurationConfigCategoryDetailsIsCompliancePolicyRequiredForSoftlink,
+    ///             IsSoftlink = platformConfigurationConfigCategoryDetailsIsSoftlink,
+    ///             LinkProductId = testLinkProduct.Id,
     ///             PatchTypes = new[]
     ///             {
     ///                 new Oci.FleetAppsManagement.Inputs.PlatformConfigurationConfigCategoryDetailsPatchTypeArgs

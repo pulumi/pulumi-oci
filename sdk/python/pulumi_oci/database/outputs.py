@@ -46,6 +46,8 @@ __all__ = [
     'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail',
     'AutonomousContainerDatabaseRecoveryApplianceDetail',
     'AutonomousDatabaseApexDetail',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindow',
+    'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek',
     'AutonomousDatabaseBackupBackupDestinationDetails',
     'AutonomousDatabaseBackupConfig',
     'AutonomousDatabaseBackupSourceDatabaseDetail',
@@ -316,6 +318,8 @@ __all__ = [
     'GetAutonomousContainerPatchesAutonomousPatchResult',
     'GetAutonomousContainerPatchesFilterResult',
     'GetAutonomousDatabaseApexDetailResult',
+    'GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult',
+    'GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult',
     'GetAutonomousDatabaseBackupBackupDestinationDetailResult',
     'GetAutonomousDatabaseBackupConfigResult',
     'GetAutonomousDatabaseBackupSourceDatabaseDetailResult',
@@ -362,6 +366,8 @@ __all__ = [
     'GetAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesAutonomousDatabaseResult',
     'GetAutonomousDatabasesAutonomousDatabaseApexDetailResult',
+    'GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult',
+    'GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult',
     'GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult',
     'GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult',
     'GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult',
@@ -384,6 +390,8 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetailResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResult',
@@ -3970,6 +3978,87 @@ class AutonomousDatabaseApexDetail(dict):
 
 
 @pulumi.output_type
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dayOfWeek":
+            suggest = "day_of_week"
+        elif key == "maintenanceEndTime":
+            suggest = "maintenance_end_time"
+        elif key == "maintenanceStartTime":
+            suggest = "maintenance_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseAutonomousDatabaseMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabaseAutonomousDatabaseMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabaseAutonomousDatabaseMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 day_of_week: 'outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek',
+                 maintenance_end_time: Optional[_builtins.str] = None,
+                 maintenance_start_time: Optional[_builtins.str] = None):
+        """
+        :param 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs' day_of_week: (Updatable) Day of the week.
+        :param _builtins.str maintenance_end_time: (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param _builtins.str maintenance_start_time: (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        pulumi.set(__self__, "day_of_week", day_of_week)
+        if maintenance_end_time is not None:
+            pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        if maintenance_start_time is not None:
+            pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeek")
+    def day_of_week(self) -> 'outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek':
+        """
+        (Updatable) Day of the week.
+        """
+        return pulumi.get(self, "day_of_week")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+
+@pulumi.output_type
+class AutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeek(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: (Updatable) Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class AutonomousDatabaseBackupBackupDestinationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -5919,10 +6008,14 @@ class AutonomousDatabaseResourcePoolSummary(dict):
         suggest = None
         if key == "availableComputeCapacity":
             suggest = "available_compute_capacity"
+        elif key == "availableStorageCapacityInTbs":
+            suggest = "available_storage_capacity_in_tbs"
         elif key == "isDisabled":
             suggest = "is_disabled"
         elif key == "poolSize":
             suggest = "pool_size"
+        elif key == "poolStorageSizeInTbs":
+            suggest = "pool_storage_size_in_tbs"
         elif key == "totalComputeCapacity":
             suggest = "total_compute_capacity"
 
@@ -5939,21 +6032,29 @@ class AutonomousDatabaseResourcePoolSummary(dict):
 
     def __init__(__self__, *,
                  available_compute_capacity: Optional[_builtins.int] = None,
+                 available_storage_capacity_in_tbs: Optional[_builtins.float] = None,
                  is_disabled: Optional[_builtins.bool] = None,
                  pool_size: Optional[_builtins.int] = None,
+                 pool_storage_size_in_tbs: Optional[_builtins.int] = None,
                  total_compute_capacity: Optional[_builtins.int] = None):
         """
         :param _builtins.int available_compute_capacity: (Updatable) Available capacity left for new elastic pool members provision
+        :param _builtins.float available_storage_capacity_in_tbs: (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
         :param _builtins.bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         :param _builtins.int pool_size: (Updatable) Resource pool size.
+        :param _builtins.int pool_storage_size_in_tbs: (Updatable) Resource pool storage size in TBs.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
         if available_compute_capacity is not None:
             pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
+        if available_storage_capacity_in_tbs is not None:
+            pulumi.set(__self__, "available_storage_capacity_in_tbs", available_storage_capacity_in_tbs)
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if pool_size is not None:
             pulumi.set(__self__, "pool_size", pool_size)
+        if pool_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "pool_storage_size_in_tbs", pool_storage_size_in_tbs)
         if total_compute_capacity is not None:
             pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
 
@@ -5964,6 +6065,14 @@ class AutonomousDatabaseResourcePoolSummary(dict):
         (Updatable) Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageCapacityInTbs")
+    def available_storage_capacity_in_tbs(self) -> Optional[_builtins.float]:
+        """
+        (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
+        return pulumi.get(self, "available_storage_capacity_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -5980,6 +6089,14 @@ class AutonomousDatabaseResourcePoolSummary(dict):
         (Updatable) Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="poolStorageSizeInTbs")
+    def pool_storage_size_in_tbs(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Resource pool storage size in TBs.
+        """
+        return pulumi.get(self, "pool_storage_size_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="totalComputeCapacity")
@@ -9656,6 +9773,8 @@ class DatabaseDatabase(dict):
             suggest = "character_set"
         elif key == "databaseAdminPassword":
             suggest = "database_admin_password"
+        elif key == "databaseId":
+            suggest = "database_id"
         elif key == "databaseSoftwareImageId":
             suggest = "database_software_image_id"
         elif key == "dbBackupConfig":
@@ -9698,10 +9817,14 @@ class DatabaseDatabase(dict):
             suggest = "storage_size_details"
         elif key == "tdeWalletPassword":
             suggest = "tde_wallet_password"
+        elif key == "timeStampForPointInTimeRecovery":
+            suggest = "time_stamp_for_point_in_time_recovery"
         elif key == "transportType":
             suggest = "transport_type"
         elif key == "vaultId":
             suggest = "vault_id"
+        elif key == "vmClusterId":
+            suggest = "vm_cluster_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabase. Access the value via the '{suggest}' property getter instead.")
@@ -9720,6 +9843,7 @@ class DatabaseDatabase(dict):
                  backup_tde_password: Optional[_builtins.str] = None,
                  character_set: Optional[_builtins.str] = None,
                  database_admin_password: Optional[_builtins.str] = None,
+                 database_id: Optional[_builtins.str] = None,
                  database_software_image_id: Optional[_builtins.str] = None,
                  db_backup_config: Optional['outputs.DatabaseDatabaseDbBackupConfig'] = None,
                  db_name: Optional[_builtins.str] = None,
@@ -9741,8 +9865,10 @@ class DatabaseDatabase(dict):
                  source_tde_wallet_password: Optional[_builtins.str] = None,
                  storage_size_details: Optional['outputs.DatabaseDatabaseStorageSizeDetails'] = None,
                  tde_wallet_password: Optional[_builtins.str] = None,
+                 time_stamp_for_point_in_time_recovery: Optional[_builtins.str] = None,
                  transport_type: Optional[_builtins.str] = None,
-                 vault_id: Optional[_builtins.str] = None):
+                 vault_id: Optional[_builtins.str] = None,
+                 vm_cluster_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param _builtins.str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -9753,6 +9879,7 @@ class DatabaseDatabase(dict):
         :param _builtins.str database_admin_password: The administrator password of the primary database in this Data Guard association.
                
                **The password MUST be the same as the primary admin password.**
+        :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param 'DatabaseDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param _builtins.str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
@@ -9785,6 +9912,7 @@ class DatabaseDatabase(dict):
                
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
@@ -9796,6 +9924,8 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "character_set", character_set)
         if database_admin_password is not None:
             pulumi.set(__self__, "database_admin_password", database_admin_password)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_backup_config is not None:
@@ -9838,10 +9968,14 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+        if time_stamp_for_point_in_time_recovery is not None:
+            pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if transport_type is not None:
             pulumi.set(__self__, "transport_type", transport_type)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -9886,6 +10020,14 @@ class DatabaseDatabase(dict):
         **The password MUST be the same as the primary admin password.**
         """
         return pulumi.get(self, "database_admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
+        return pulumi.get(self, "database_id")
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -10058,6 +10200,11 @@ class DatabaseDatabase(dict):
         return pulumi.get(self, "tde_wallet_password")
 
     @_builtins.property
+    @pulumi.getter(name="timeStampForPointInTimeRecovery")
+    def time_stamp_for_point_in_time_recovery(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @_builtins.property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> Optional[_builtins.str]:
         """
@@ -10079,6 +10226,14 @@ class DatabaseDatabase(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type
@@ -12278,6 +12433,8 @@ class DbHomeDatabase(dict):
             suggest = "time_stamp_for_point_in_time_recovery"
         elif key == "vaultId":
             suggest = "vault_id"
+        elif key == "vmClusterId":
+            suggest = "vm_cluster_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbHomeDatabase. Access the value via the '{suggest}' property getter instead.")
@@ -12320,7 +12477,8 @@ class DbHomeDatabase(dict):
                  tde_wallet_password: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
                  time_stamp_for_point_in_time_recovery: Optional[_builtins.str] = None,
-                 vault_id: Optional[_builtins.str] = None):
+                 vault_id: Optional[_builtins.str] = None,
+                 vm_cluster_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param _builtins.str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -12354,6 +12512,11 @@ class DbHomeDatabase(dict):
         :param _builtins.str time_created: The date and time the Database Home was created.
         :param _builtins.str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "admin_password", admin_password)
         if backup_id is not None:
@@ -12414,6 +12577,8 @@ class DbHomeDatabase(dict):
             pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
+        if vm_cluster_id is not None:
+            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -12652,6 +12817,18 @@ class DbHomeDatabase(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type
@@ -25440,6 +25617,64 @@ class GetAutonomousDatabaseApexDetailResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day_of_weeks: Sequence['outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult'],
+                 maintenance_end_time: _builtins.str,
+                 maintenance_start_time: _builtins.str):
+        """
+        :param Sequence['GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'] day_of_weeks: Day of the week.
+        :param _builtins.str maintenance_end_time: The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param _builtins.str maintenance_start_time: The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        pulumi.set(__self__, "day_of_weeks", day_of_weeks)
+        pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeeks")
+    def day_of_weeks(self) -> Sequence['outputs.GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult']:
+        """
+        Day of the week.
+        """
+        return pulumi.get(self, "day_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> _builtins.str:
+        """
+        The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> _builtins.str:
+        """
+        The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseBackupBackupDestinationDetailResult(dict):
     def __init__(__self__, *,
                  backup_retention_policy_on_terminate: _builtins.str,
@@ -27829,18 +28064,24 @@ class GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemRe
 class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
                  available_compute_capacity: _builtins.int,
+                 available_storage_capacity_in_tbs: _builtins.float,
                  is_disabled: _builtins.bool,
                  pool_size: _builtins.int,
+                 pool_storage_size_in_tbs: _builtins.int,
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
+        :param _builtins.float available_storage_capacity_in_tbs: Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
         :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int pool_storage_size_in_tbs: Resource pool storage size in TBs.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
         pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
+        pulumi.set(__self__, "available_storage_capacity_in_tbs", available_storage_capacity_in_tbs)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "pool_storage_size_in_tbs", pool_storage_size_in_tbs)
         pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
 
     @_builtins.property
@@ -27850,6 +28091,14 @@ class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
         Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageCapacityInTbs")
+    def available_storage_capacity_in_tbs(self) -> _builtins.float:
+        """
+        Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
+        return pulumi.get(self, "available_storage_capacity_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -27866,6 +28115,14 @@ class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="poolStorageSizeInTbs")
+    def pool_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        Resource pool storage size in TBs.
+        """
+        return pulumi.get(self, "pool_storage_size_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="totalComputeCapacity")
@@ -28385,6 +28642,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  autonomous_container_database_id: _builtins.str,
                  autonomous_database_backup_id: _builtins.str,
                  autonomous_database_id: _builtins.str,
+                 autonomous_database_maintenance_windows: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult'],
                  autonomous_maintenance_schedule_type: _builtins.str,
                  availability_domain: _builtins.str,
                  available_upgrade_versions: Sequence[_builtins.str],
@@ -28455,6 +28713,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
                  local_adg_auto_failover_max_data_loss_limit: _builtins.int,
+                 local_adg_resource_pool_leader_id: _builtins.str,
                  local_disaster_recovery_type: _builtins.str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult'],
@@ -28512,6 +28771,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_local_data_guard_enabled: _builtins.str,
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str,
+                 time_maintenance_pause_until: _builtins.str,
                  time_of_auto_refresh_start: _builtins.str,
                  time_of_joining_resource_pool: _builtins.str,
                  time_of_last_failover: _builtins.str,
@@ -28541,6 +28801,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param _builtins.int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param _builtins.int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_windows: Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param _builtins.str availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -28605,6 +28866,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param _builtins.str local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param _builtins.str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -28655,6 +28917,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
+        :param _builtins.str time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param _builtins.str time_of_joining_resource_pool: The time the member joined the resource pool.
         :param _builtins.str time_of_last_failover: The timestamp of the last failover operation.
@@ -28685,6 +28948,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        pulumi.set(__self__, "autonomous_database_maintenance_windows", autonomous_database_maintenance_windows)
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
@@ -28755,6 +29019,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+        pulumi.set(__self__, "local_adg_resource_pool_leader_id", local_adg_resource_pool_leader_id)
         pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
@@ -28812,6 +29077,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+        pulumi.set(__self__, "time_maintenance_pause_until", time_maintenance_pause_until)
         pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         pulumi.set(__self__, "time_of_joining_resource_pool", time_of_joining_resource_pool)
         pulumi.set(__self__, "time_of_last_failover", time_of_last_failover)
@@ -28911,6 +29177,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> _builtins.str:
         return pulumi.get(self, "autonomous_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseMaintenanceWindows")
+    def autonomous_database_maintenance_windows(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult']:
+        """
+        Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "autonomous_database_maintenance_windows")
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
@@ -29456,6 +29730,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @_builtins.property
+    @pulumi.getter(name="localAdgResourcePoolLeaderId")
+    def local_adg_resource_pool_leader_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        """
+        return pulumi.get(self, "local_adg_resource_pool_leader_id")
+
+    @_builtins.property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> _builtins.str:
         """
@@ -29889,6 +30171,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "time_maintenance_end")
 
     @_builtins.property
+    @pulumi.getter(name="timeMaintenancePauseUntil")
+    def time_maintenance_pause_until(self) -> _builtins.str:
+        """
+        The date until which maintenance of Autonomous Database is temporarily paused.
+        """
+        return pulumi.get(self, "time_maintenance_pause_until")
+
+    @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> _builtins.str:
         """
@@ -30070,6 +30360,64 @@ class GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(dict):
         The Oracle REST Data Services (ORDS) version.
         """
         return pulumi.get(self, "ords_version")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day_of_weeks: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult'],
+                 maintenance_end_time: _builtins.str,
+                 maintenance_start_time: _builtins.str):
+        """
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'] day_of_weeks: Day of the week.
+        :param _builtins.str maintenance_end_time: The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param _builtins.str maintenance_start_time: The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        pulumi.set(__self__, "day_of_weeks", day_of_weeks)
+        pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeeks")
+    def day_of_weeks(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult']:
+        """
+        Day of the week.
+        """
+        return pulumi.get(self, "day_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> _builtins.str:
+        """
+        The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> _builtins.str:
+        """
+        The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -31237,18 +31585,24 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
 class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
                  available_compute_capacity: _builtins.int,
+                 available_storage_capacity_in_tbs: _builtins.float,
                  is_disabled: _builtins.bool,
                  pool_size: _builtins.int,
+                 pool_storage_size_in_tbs: _builtins.int,
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
+        :param _builtins.float available_storage_capacity_in_tbs: Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
         :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int pool_storage_size_in_tbs: Resource pool storage size in TBs.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
         pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
+        pulumi.set(__self__, "available_storage_capacity_in_tbs", available_storage_capacity_in_tbs)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "pool_storage_size_in_tbs", pool_storage_size_in_tbs)
         pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
 
     @_builtins.property
@@ -31258,6 +31612,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
         Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageCapacityInTbs")
+    def available_storage_capacity_in_tbs(self) -> _builtins.float:
+        """
+        Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
+        return pulumi.get(self, "available_storage_capacity_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -31274,6 +31636,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="poolStorageSizeInTbs")
+    def pool_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        Resource pool storage size in TBs.
+        """
+        return pulumi.get(self, "pool_storage_size_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="totalComputeCapacity")
@@ -31594,6 +31964,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  auto_refresh_frequency_in_seconds: _builtins.int,
                  auto_refresh_point_lag_in_seconds: _builtins.int,
                  autonomous_container_database_id: _builtins.str,
+                 autonomous_database_maintenance_windows: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult'],
                  autonomous_maintenance_schedule_type: _builtins.str,
                  availability_domain: _builtins.str,
                  available_upgrade_versions: Sequence[_builtins.str],
@@ -31655,6 +32026,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
                  local_adg_auto_failover_max_data_loss_limit: _builtins.int,
+                 local_adg_resource_pool_leader_id: _builtins.str,
                  local_disaster_recovery_type: _builtins.str,
                  local_standby_dbs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult'],
                  long_term_backup_schedules: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult'],
@@ -31701,6 +32073,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  time_local_data_guard_enabled: _builtins.str,
                  time_maintenance_begin: _builtins.str,
                  time_maintenance_end: _builtins.str,
+                 time_maintenance_pause_until: _builtins.str,
                  time_of_auto_refresh_start: _builtins.str,
                  time_of_joining_resource_pool: _builtins.str,
                  time_of_last_failover: _builtins.str,
@@ -31728,6 +32101,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param _builtins.int auto_refresh_frequency_in_seconds: The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled by the `timeOfAutoRefreshStart` parameter.
         :param _builtins.int auto_refresh_point_lag_in_seconds: The time, in seconds, the data of the refreshable clone lags the primary database at the point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available timestamp). The maximum is 7 days. The lag time increases after refreshing until the next data refresh happens.
         :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_windows: Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param _builtins.str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param _builtins.str availability_domain: The availability domain where the Autonomous AI Database Serverless instance is located.
         :param Sequence[_builtins.str] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -31793,6 +32167,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param _builtins.str license_model: The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.int local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param _builtins.str local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param _builtins.str local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbArgs'] local_standby_dbs: Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleArgs'] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -31843,6 +32218,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param _builtins.str time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param _builtins.str time_maintenance_begin: The date and time when maintenance will begin.
         :param _builtins.str time_maintenance_end: The date and time when maintenance will end.
+        :param _builtins.str time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param _builtins.str time_of_auto_refresh_start: The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param _builtins.str time_of_last_failover: The timestamp of the last failover operation.
         :param _builtins.str time_of_last_refresh: The date and time when last refresh happened.
@@ -31869,6 +32245,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "auto_refresh_frequency_in_seconds", auto_refresh_frequency_in_seconds)
         pulumi.set(__self__, "auto_refresh_point_lag_in_seconds", auto_refresh_point_lag_in_seconds)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        pulumi.set(__self__, "autonomous_database_maintenance_windows", autonomous_database_maintenance_windows)
         pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
@@ -31930,6 +32307,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+        pulumi.set(__self__, "local_adg_resource_pool_leader_id", local_adg_resource_pool_leader_id)
         pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         pulumi.set(__self__, "local_standby_dbs", local_standby_dbs)
         pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
@@ -31976,6 +32354,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
         pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+        pulumi.set(__self__, "time_maintenance_pause_until", time_maintenance_pause_until)
         pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         pulumi.set(__self__, "time_of_joining_resource_pool", time_of_joining_resource_pool)
         pulumi.set(__self__, "time_of_last_failover", time_of_last_failover)
@@ -32058,6 +32437,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseMaintenanceWindows")
+    def autonomous_database_maintenance_windows(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult']:
+        """
+        Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "autonomous_database_maintenance_windows")
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
@@ -32550,6 +32937,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @_builtins.property
+    @pulumi.getter(name="localAdgResourcePoolLeaderId")
+    def local_adg_resource_pool_leader_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        """
+        return pulumi.get(self, "local_adg_resource_pool_leader_id")
+
+    @_builtins.property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> _builtins.str:
         """
@@ -32922,6 +33317,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "time_maintenance_end")
 
     @_builtins.property
+    @pulumi.getter(name="timeMaintenancePauseUntil")
+    def time_maintenance_pause_until(self) -> _builtins.str:
+        """
+        The date until which maintenance of Autonomous Database is temporarily paused.
+        """
+        return pulumi.get(self, "time_maintenance_pause_until")
+
+    @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> _builtins.str:
         """
@@ -33090,6 +33493,64 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseApexDetailResult(dict):
         The Oracle REST Data Services (ORDS) version.
         """
         return pulumi.get(self, "ords_version")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 day_of_weeks: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult'],
+                 maintenance_end_time: _builtins.str,
+                 maintenance_start_time: _builtins.str):
+        """
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekArgs'] day_of_weeks: Day of the week.
+        :param _builtins.str maintenance_end_time: The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        :param _builtins.str maintenance_start_time: The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        pulumi.set(__self__, "day_of_weeks", day_of_weeks)
+        pulumi.set(__self__, "maintenance_end_time", maintenance_end_time)
+        pulumi.set(__self__, "maintenance_start_time", maintenance_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="dayOfWeeks")
+    def day_of_weeks(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult']:
+        """
+        Day of the week.
+        """
+        return pulumi.get(self, "day_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceEndTime")
+    def maintenance_end_time(self) -> _builtins.str:
+        """
+        The maintenance end time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="maintenanceStartTime")
+    def maintenance_start_time(self) -> _builtins.str:
+        """
+        The maintenance start time. The value must use the ISO-8601 format "hh:mm".
+        """
+        return pulumi.get(self, "maintenance_start_time")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseAutonomousDatabaseMaintenanceWindowDayOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str):
+        """
+        :param _builtins.str name: Name of the day of the week.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -34257,18 +34718,24 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
 class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
                  available_compute_capacity: _builtins.int,
+                 available_storage_capacity_in_tbs: _builtins.float,
                  is_disabled: _builtins.bool,
                  pool_size: _builtins.int,
+                 pool_storage_size_in_tbs: _builtins.int,
                  total_compute_capacity: _builtins.int):
         """
         :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
+        :param _builtins.float available_storage_capacity_in_tbs: Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
         :param _builtins.bool is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int pool_storage_size_in_tbs: Resource pool storage size in TBs.
         :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
         pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
+        pulumi.set(__self__, "available_storage_capacity_in_tbs", available_storage_capacity_in_tbs)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "pool_storage_size_in_tbs", pool_storage_size_in_tbs)
         pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
 
     @_builtins.property
@@ -34278,6 +34745,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(di
         Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageCapacityInTbs")
+    def available_storage_capacity_in_tbs(self) -> _builtins.float:
+        """
+        Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        """
+        return pulumi.get(self, "available_storage_capacity_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -34294,6 +34769,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(di
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="poolStorageSizeInTbs")
+    def pool_storage_size_in_tbs(self) -> _builtins.int:
+        """
+        Resource pool storage size in TBs.
+        """
+        return pulumi.get(self, "pool_storage_size_in_tbs")
 
     @_builtins.property
     @pulumi.getter(name="totalComputeCapacity")
@@ -43650,6 +44133,7 @@ class GetDatabaseDatabaseResult(dict):
                  backup_tde_password: _builtins.str,
                  character_set: _builtins.str,
                  database_admin_password: _builtins.str,
+                 database_id: _builtins.str,
                  database_software_image_id: _builtins.str,
                  db_backup_configs: Sequence['outputs.GetDatabaseDatabaseDbBackupConfigResult'],
                  db_name: _builtins.str,
@@ -43671,10 +44155,13 @@ class GetDatabaseDatabaseResult(dict):
                  source_tde_wallet_password: _builtins.str,
                  storage_size_details: Sequence['outputs.GetDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
+                 time_stamp_for_point_in_time_recovery: _builtins.str,
                  transport_type: _builtins.str,
-                 vault_id: _builtins.str):
+                 vault_id: _builtins.str,
+                 vm_cluster_id: _builtins.str):
         """
         :param _builtins.str character_set: The character set for the database.
+        :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param Sequence['GetDatabaseDatabaseDbBackupConfigArgs'] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param _builtins.str db_name: The database name.
@@ -43696,12 +44183,14 @@ class GetDatabaseDatabaseResult(dict):
                * MAXIMUM_PERFORMANCE - ASYNC
                * MAXIMUM_PROTECTION - SYNC
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "database_admin_password", database_admin_password)
+        pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "db_backup_configs", db_backup_configs)
         pulumi.set(__self__, "db_name", db_name)
@@ -43723,8 +44212,10 @@ class GetDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+        pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         pulumi.set(__self__, "transport_type", transport_type)
         pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -43753,6 +44244,14 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="databaseAdminPassword")
     def database_admin_password(self) -> _builtins.str:
         return pulumi.get(self, "database_admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> _builtins.str:
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "database_id")
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -43908,6 +44407,11 @@ class GetDatabaseDatabaseResult(dict):
         return pulumi.get(self, "tde_wallet_password")
 
     @_builtins.property
+    @pulumi.getter(name="timeStampForPointInTimeRecovery")
+    def time_stamp_for_point_in_time_recovery(self) -> _builtins.str:
+        return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @_builtins.property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> _builtins.str:
         """
@@ -43925,6 +44429,14 @@ class GetDatabaseDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type
@@ -47989,6 +48501,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  backup_tde_password: _builtins.str,
                  character_set: _builtins.str,
                  database_admin_password: _builtins.str,
+                 database_id: _builtins.str,
                  database_software_image_id: _builtins.str,
                  db_backup_configs: Sequence['outputs.GetDatabasesDatabaseDatabaseDbBackupConfigResult'],
                  db_name: _builtins.str,
@@ -48010,10 +48523,13 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  source_tde_wallet_password: _builtins.str,
                  storage_size_details: Sequence['outputs.GetDatabasesDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
+                 time_stamp_for_point_in_time_recovery: _builtins.str,
                  transport_type: _builtins.str,
-                 vault_id: _builtins.str):
+                 vault_id: _builtins.str,
+                 vm_cluster_id: _builtins.str):
         """
         :param _builtins.str character_set: The character set for the database.
+        :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param Sequence['GetDatabasesDatabaseDatabaseDbBackupConfigArgs'] db_backup_configs: Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param _builtins.str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
@@ -48035,12 +48551,14 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                * MAXIMUM_PERFORMANCE - ASYNC
                * MAXIMUM_PROTECTION - SYNC
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "database_admin_password", database_admin_password)
+        pulumi.set(__self__, "database_id", database_id)
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "db_backup_configs", db_backup_configs)
         pulumi.set(__self__, "db_name", db_name)
@@ -48062,8 +48580,10 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+        pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         pulumi.set(__self__, "transport_type", transport_type)
         pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -48092,6 +48612,14 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="databaseAdminPassword")
     def database_admin_password(self) -> _builtins.str:
         return pulumi.get(self, "database_admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+        """
+        return pulumi.get(self, "database_id")
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -48247,6 +48775,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         return pulumi.get(self, "tde_wallet_password")
 
     @_builtins.property
+    @pulumi.getter(name="timeStampForPointInTimeRecovery")
+    def time_stamp_for_point_in_time_recovery(self) -> _builtins.str:
+        return pulumi.get(self, "time_stamp_for_point_in_time_recovery")
+
+    @_builtins.property
     @pulumi.getter(name="transportType")
     def transport_type(self) -> _builtins.str:
         """
@@ -48264,6 +48797,14 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type
@@ -48911,7 +49452,8 @@ class GetDbHomeDatabaseResult(dict):
                  tde_wallet_password: _builtins.str,
                  time_created: _builtins.str,
                  time_stamp_for_point_in_time_recovery: _builtins.str,
-                 vault_id: _builtins.str):
+                 vault_id: _builtins.str,
+                 vm_cluster_id: _builtins.str):
         """
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -48922,6 +49464,7 @@ class GetDbHomeDatabaseResult(dict):
         :param Sequence[_builtins.str] one_off_patches: List of one-off patches for Database Homes.
         :param _builtins.str state: The current state of the Database Home.
         :param _builtins.str time_created: The date and time the Database Home was created.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
@@ -48953,6 +49496,7 @@ class GetDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -49130,6 +49674,14 @@ class GetDbHomeDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type
@@ -49871,7 +50423,8 @@ class GetDbHomesDbHomeDatabaseResult(dict):
                  tde_wallet_password: _builtins.str,
                  time_created: _builtins.str,
                  time_stamp_for_point_in_time_recovery: _builtins.str,
-                 vault_id: _builtins.str):
+                 vault_id: _builtins.str,
+                 vm_cluster_id: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -49883,6 +50436,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         :param Sequence[_builtins.str] one_off_patches: List of one-off patches for Database Homes.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str time_created: The date and time the Database Home was created.
+        :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
         pulumi.set(__self__, "backup_id", backup_id)
@@ -49914,6 +50468,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
         pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
 
     @_builtins.property
     @pulumi.getter(name="adminPassword")
@@ -50094,6 +50649,14 @@ class GetDbHomesDbHomeDatabaseResult(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         return pulumi.get(self, "vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vmClusterId")
+    def vm_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        """
+        return pulumi.get(self, "vm_cluster_id")
 
 
 @pulumi.output_type

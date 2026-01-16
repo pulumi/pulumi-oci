@@ -140,14 +140,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     @Import(name="endDate")
     private @Nullable Output<String> endDate;
 
     /**
-     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public Optional<Output<String>> endDate() {
@@ -215,14 +215,14 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     @Import(name="startDate")
     private @Nullable Output<String> startDate;
 
     /**
-     * @return (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+     * @return (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
      * 
      */
     public Optional<Output<String>> startDate() {
@@ -242,6 +242,21 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
     }
 
     /**
@@ -381,6 +396,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         this.resetPeriod = $.resetPeriod;
         this.startDate = $.startDate;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.targetCompartmentId = $.targetCompartmentId;
         this.targetType = $.targetType;
         this.targets = $.targets;
@@ -577,7 +593,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
          * 
          * @return builder
          * 
@@ -588,7 +604,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * @param endDate (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
          * 
          * @return builder
          * 
@@ -682,7 +698,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
          * 
          * @return builder
          * 
@@ -693,7 +709,7 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+         * @param startDate (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
          * 
          * @return builder
          * 
@@ -721,6 +737,27 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

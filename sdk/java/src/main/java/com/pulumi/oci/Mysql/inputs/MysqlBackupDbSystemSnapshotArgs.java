@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDataStorageArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDatabaseConsoleArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
@@ -146,6 +147,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
      */
     public Optional<Output<List<MysqlBackupDbSystemSnapshotDataStorageArgs>>> dataStorages() {
         return Optional.ofNullable(this.dataStorages);
+    }
+
+    /**
+     * Database console configuration details.
+     * 
+     */
+    @Import(name="databaseConsoles")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotDatabaseConsoleArgs>> databaseConsoles;
+
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotDatabaseConsoleArgs>>> databaseConsoles() {
+        return Optional.ofNullable(this.databaseConsoles);
     }
 
     /**
@@ -534,6 +550,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.crashRecovery = $.crashRecovery;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorages = $.dataStorages;
+        this.databaseConsoles = $.databaseConsoles;
         this.databaseManagement = $.databaseManagement;
         this.definedTags = $.definedTags;
         this.deletionPolicies = $.deletionPolicies;
@@ -765,6 +782,37 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder dataStorages(MysqlBackupDbSystemSnapshotDataStorageArgs... dataStorages) {
             return dataStorages(List.of(dataStorages));
+        }
+
+        /**
+         * @param databaseConsoles Database console configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConsoles(@Nullable Output<List<MysqlBackupDbSystemSnapshotDatabaseConsoleArgs>> databaseConsoles) {
+            $.databaseConsoles = databaseConsoles;
+            return this;
+        }
+
+        /**
+         * @param databaseConsoles Database console configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConsoles(List<MysqlBackupDbSystemSnapshotDatabaseConsoleArgs> databaseConsoles) {
+            return databaseConsoles(Output.of(databaseConsoles));
+        }
+
+        /**
+         * @param databaseConsoles Database console configuration details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConsoles(MysqlBackupDbSystemSnapshotDatabaseConsoleArgs... databaseConsoles) {
+            return databaseConsoles(List.of(databaseConsoles));
         }
 
         /**

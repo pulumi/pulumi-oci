@@ -90,6 +90,12 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Output("autonomousDatabaseMaintenanceWindow")]
+        public Output<Outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow> AutonomousDatabaseMaintenanceWindow { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         /// </summary>
         [Output("autonomousMaintenanceScheduleType")]
@@ -518,6 +524,12 @@ namespace Pulumi.Oci.Database
         public Output<int> LocalAdgAutoFailoverMaxDataLossLimit { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        /// </summary>
+        [Output("localAdgResourcePoolLeaderId")]
+        public Output<string> LocalAdgResourcePoolLeaderId { get; private set; } = null!;
+
+        /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Output("localDisasterRecoveryType")]
@@ -882,6 +894,12 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeMaintenanceEnd { get; private set; } = null!;
 
         /// <summary>
+        /// The date until which maintenance of Autonomous Database is temporarily paused.
+        /// </summary>
+        [Output("timeMaintenancePauseUntil")]
+        public Output<string> TimeMaintenancePauseUntil { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         /// </summary>
         [Output("timeOfAutoRefreshStart")]
@@ -1108,6 +1126,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Input("autonomousDatabaseMaintenanceWindow")]
+        public Input<Inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs>? AutonomousDatabaseMaintenanceWindow { get; set; }
 
         /// <summary>
         /// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -1441,6 +1465,12 @@ namespace Pulumi.Oci.Database
         [Input("localAdgAutoFailoverMaxDataLossLimit")]
         public Input<int>? LocalAdgAutoFailoverMaxDataLossLimit { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        /// </summary>
+        [Input("localAdgResourcePoolLeaderId")]
+        public Input<string>? LocalAdgResourcePoolLeaderId { get; set; }
+
         [Input("longTermBackupSchedules")]
         private InputList<Inputs.AutonomousDatabaseLongTermBackupScheduleArgs>? _longTermBackupSchedules;
 
@@ -1668,6 +1698,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? SwitchoverToRemotePeerId { get; set; }
 
         /// <summary>
+        /// The date until which maintenance of Autonomous Database is temporarily paused.
+        /// </summary>
+        [Input("timeMaintenancePauseUntil")]
+        public Input<string>? TimeMaintenancePauseUntil { get; set; }
+
+        /// <summary>
         /// (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         /// </summary>
         [Input("timeOfAutoRefreshStart")]
@@ -1822,6 +1858,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("autonomousDatabaseId")]
         public Input<string>? AutonomousDatabaseId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        /// </summary>
+        [Input("autonomousDatabaseMaintenanceWindow")]
+        public Input<Inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowGetArgs>? AutonomousDatabaseMaintenanceWindow { get; set; }
 
         /// <summary>
         /// (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
@@ -2318,6 +2360,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? LocalAdgAutoFailoverMaxDataLossLimit { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        /// </summary>
+        [Input("localAdgResourcePoolLeaderId")]
+        public Input<string>? LocalAdgResourcePoolLeaderId { get; set; }
+
+        /// <summary>
         /// Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         /// </summary>
         [Input("localDisasterRecoveryType")]
@@ -2758,6 +2806,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeMaintenanceEnd")]
         public Input<string>? TimeMaintenanceEnd { get; set; }
+
+        /// <summary>
+        /// The date until which maintenance of Autonomous Database is temporarily paused.
+        /// </summary>
+        [Input("timeMaintenancePauseUntil")]
+        public Input<string>? TimeMaintenancePauseUntil { get; set; }
 
         /// <summary>
         /// (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.

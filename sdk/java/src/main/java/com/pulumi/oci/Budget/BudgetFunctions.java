@@ -16,10 +16,31 @@ import com.pulumi.oci.Budget.inputs.GetBudgetArgs;
 import com.pulumi.oci.Budget.inputs.GetBudgetPlainArgs;
 import com.pulumi.oci.Budget.inputs.GetBudgetsArgs;
 import com.pulumi.oci.Budget.inputs.GetBudgetsPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorPlainArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsPlainArgs;
 import com.pulumi.oci.Budget.outputs.GetAlertRuleResult;
 import com.pulumi.oci.Budget.outputs.GetAlertRulesResult;
 import com.pulumi.oci.Budget.outputs.GetBudgetResult;
 import com.pulumi.oci.Budget.outputs.GetBudgetsResult;
+import com.pulumi.oci.Budget.outputs.GetCostAlertSubscriptionResult;
+import com.pulumi.oci.Budget.outputs.GetCostAlertSubscriptionsResult;
+import com.pulumi.oci.Budget.outputs.GetCostAnomalyEventAnalyticsResult;
+import com.pulumi.oci.Budget.outputs.GetCostAnomalyEventResult;
+import com.pulumi.oci.Budget.outputs.GetCostAnomalyEventsResult;
+import com.pulumi.oci.Budget.outputs.GetCostAnomalyMonitorResult;
+import com.pulumi.oci.Budget.outputs.GetCostAnomalyMonitorsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -923,5 +944,1585 @@ public final class BudgetFunctions {
      */
     public static CompletableFuture<GetBudgetsResult> getBudgetsPlain(GetBudgetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Budget/getBudgets:getBudgets", TypeShape.of(GetBudgetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionResult> getCostAlertSubscription(GetCostAlertSubscriptionArgs args) {
+        return getCostAlertSubscription(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAlertSubscriptionResult> getCostAlertSubscriptionPlain(GetCostAlertSubscriptionPlainArgs args) {
+        return getCostAlertSubscriptionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionResult> getCostAlertSubscription(GetCostAlertSubscriptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAlertSubscription:getCostAlertSubscription", TypeShape.of(GetCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionResult> getCostAlertSubscription(GetCostAlertSubscriptionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAlertSubscription:getCostAlertSubscription", TypeShape.of(GetCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Alert Subscription resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAlertSubscription by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscription = BudgetFunctions.getCostAlertSubscription(GetCostAlertSubscriptionArgs.builder()
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciBudgetCostAlertSubscription.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAlertSubscriptionResult> getCostAlertSubscriptionPlain(GetCostAlertSubscriptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAlertSubscription:getCostAlertSubscription", TypeShape.of(GetCostAlertSubscriptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = BudgetFunctions.getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionsResult> getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs args) {
+        return getCostAlertSubscriptions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = BudgetFunctions.getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAlertSubscriptionsResult> getCostAlertSubscriptionsPlain(GetCostAlertSubscriptionsPlainArgs args) {
+        return getCostAlertSubscriptionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = BudgetFunctions.getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionsResult> getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAlertSubscriptions:getCostAlertSubscriptions", TypeShape.of(GetCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = BudgetFunctions.getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAlertSubscriptionsResult> getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAlertSubscriptions:getCostAlertSubscriptions", TypeShape.of(GetCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Alert Subscription in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAlertSubscriptionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAlertSubscriptions = BudgetFunctions.getCostAlertSubscriptions(GetCostAlertSubscriptionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAlertSubscriptionName)
+     *             .state(costAlertSubscriptionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAlertSubscriptionsResult> getCostAlertSubscriptionsPlain(GetCostAlertSubscriptionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAlertSubscriptions:getCostAlertSubscriptions", TypeShape.of(GetCostAlertSubscriptionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventResult> getCostAnomalyEvent(GetCostAnomalyEventArgs args) {
+        return getCostAnomalyEvent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventResult> getCostAnomalyEventPlain(GetCostAnomalyEventPlainArgs args) {
+        return getCostAnomalyEventPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventResult> getCostAnomalyEvent(GetCostAnomalyEventArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEvent:getCostAnomalyEvent", TypeShape.of(GetCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventResult> getCostAnomalyEvent(GetCostAnomalyEventArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEvent:getCostAnomalyEvent", TypeShape.of(GetCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyEvent by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvent = BudgetFunctions.getCostAnomalyEvent(GetCostAnomalyEventArgs.builder()
+     *             .costAnomalyEventId(testCostAnomalyEventOciBudgetCostAnomalyEvent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventResult> getCostAnomalyEventPlain(GetCostAnomalyEventPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAnomalyEvent:getCostAnomalyEvent", TypeShape.of(GetCostAnomalyEventResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventAnalyticsResult> getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs args) {
+        return getCostAnomalyEventAnalytics(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventAnalyticsResult> getCostAnomalyEventAnalyticsPlain(GetCostAnomalyEventAnalyticsPlainArgs args) {
+        return getCostAnomalyEventAnalyticsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventAnalyticsResult> getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEventAnalytics:getCostAnomalyEventAnalytics", TypeShape.of(GetCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventAnalyticsResult> getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEventAnalytics:getCostAnomalyEventAnalytics", TypeShape.of(GetCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventAnalyticsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEventAnalytics = BudgetFunctions.getCostAnomalyEventAnalytics(GetCostAnomalyEventAnalyticsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventAnalyticCostImpact)
+     *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
+     *             .name(costAnomalyEventAnalyticName)
+     *             .regions(costAnomalyEventAnalyticRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventAnalyticsResult> getCostAnomalyEventAnalyticsPlain(GetCostAnomalyEventAnalyticsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAnomalyEventAnalytics:getCostAnomalyEventAnalytics", TypeShape.of(GetCostAnomalyEventAnalyticsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventsResult> getCostAnomalyEvents(GetCostAnomalyEventsArgs args) {
+        return getCostAnomalyEvents(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventsResult> getCostAnomalyEventsPlain(GetCostAnomalyEventsPlainArgs args) {
+        return getCostAnomalyEventsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventsResult> getCostAnomalyEvents(GetCostAnomalyEventsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEvents:getCostAnomalyEvents", TypeShape.of(GetCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyEventsResult> getCostAnomalyEvents(GetCostAnomalyEventsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyEvents:getCostAnomalyEvents", TypeShape.of(GetCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Event in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyEventsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyEvents = BudgetFunctions.getCostAnomalyEvents(GetCostAnomalyEventsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costImpact(costAnomalyEventCostImpact)
+     *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
+     *             .name(costAnomalyEventName)
+     *             .regions(costAnomalyEventRegion)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
+     *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyEventsResult> getCostAnomalyEventsPlain(GetCostAnomalyEventsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAnomalyEvents:getCostAnomalyEvents", TypeShape.of(GetCostAnomalyEventsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorResult> getCostAnomalyMonitor(GetCostAnomalyMonitorArgs args) {
+        return getCostAnomalyMonitor(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyMonitorResult> getCostAnomalyMonitorPlain(GetCostAnomalyMonitorPlainArgs args) {
+        return getCostAnomalyMonitorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorResult> getCostAnomalyMonitor(GetCostAnomalyMonitorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyMonitor:getCostAnomalyMonitor", TypeShape.of(GetCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorResult> getCostAnomalyMonitor(GetCostAnomalyMonitorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyMonitor:getCostAnomalyMonitor", TypeShape.of(GetCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a CostAnomalyMonitor by the identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitor = BudgetFunctions.getCostAnomalyMonitor(GetCostAnomalyMonitorArgs.builder()
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciBudgetCostAnomalyMonitor.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyMonitorResult> getCostAnomalyMonitorPlain(GetCostAnomalyMonitorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAnomalyMonitor:getCostAnomalyMonitor", TypeShape.of(GetCostAnomalyMonitorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = BudgetFunctions.getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorsResult> getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs args) {
+        return getCostAnomalyMonitors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = BudgetFunctions.getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyMonitorsResult> getCostAnomalyMonitorsPlain(GetCostAnomalyMonitorsPlainArgs args) {
+        return getCostAnomalyMonitorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = BudgetFunctions.getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorsResult> getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyMonitors:getCostAnomalyMonitors", TypeShape.of(GetCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = BudgetFunctions.getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetCostAnomalyMonitorsResult> getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Budget/getCostAnomalyMonitors:getCostAnomalyMonitors", TypeShape.of(GetCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
+     * 
+     * Gets a list of Cost Anomaly Monitors in a compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Budget.BudgetFunctions;
+     * import com.pulumi.oci.Budget.inputs.GetCostAnomalyMonitorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCostAnomalyMonitors = BudgetFunctions.getCostAnomalyMonitors(GetCostAnomalyMonitorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(costAnomalyMonitorName)
+     *             .regions(costAnomalyMonitorRegion)
+     *             .state(costAnomalyMonitorState)
+     *             .targetTenantIds(testTargetTenant.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetCostAnomalyMonitorsResult> getCostAnomalyMonitorsPlain(GetCostAnomalyMonitorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Budget/getCostAnomalyMonitors:getCostAnomalyMonitors", TypeShape.of(GetCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
     }
 }

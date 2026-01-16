@@ -14,10 +14,6 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClusterResult {
-    /**
-     * @return The total capacity for a dedicated AI cluster.
-     * 
-     */
     private List<GetDedicatedAiClusterCapacity> capacities;
     /**
      * @return The compartment OCID to create the dedicated AI cluster in.
@@ -88,10 +84,6 @@ public final class GetDedicatedAiClusterResult {
     private String unitShape;
 
     private GetDedicatedAiClusterResult() {}
-    /**
-     * @return The total capacity for a dedicated AI cluster.
-     * 
-     */
     public List<GetDedicatedAiClusterCapacity> capacities() {
         return this.capacities;
     }

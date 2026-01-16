@@ -97,6 +97,10 @@ export interface GetDeployEnvironmentResult {
      */
     readonly projectId: string;
     /**
+     * Security attributes to be added in to the deployment environment
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The current state of the deployment environment.
      */
     readonly state: string;

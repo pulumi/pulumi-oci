@@ -54,6 +54,7 @@ import (
 //					SubnetId:           pulumi.Any(testSubnet.Id),
 //					NsgIds:             pulumi.Any(deployEnvironmentNetworkChannelNsgIds),
 //				},
+//				SecurityAttributes: pulumi.Any(deployEnvironmentSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -97,10 +98,12 @@ type DeployEnvironment struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelOutput `pulumi:"networkChannel"`
 	// The OCID of a project.
+	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	// (Updatable) Security attributes to be added in to the deployment environment
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProjectId pulumi.StringOutput `pulumi:"projectId"`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the deployment environment.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -170,10 +173,12 @@ type deployEnvironmentState struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel *DeployEnvironmentNetworkChannel `pulumi:"networkChannel"`
 	// The OCID of a project.
+	ProjectId *string `pulumi:"projectId"`
+	// (Updatable) Security attributes to be added in to the deployment environment
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProjectId *string `pulumi:"projectId"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the deployment environment.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -208,10 +213,12 @@ type DeployEnvironmentState struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelPtrInput
 	// The OCID of a project.
+	ProjectId pulumi.StringPtrInput
+	// (Updatable) Security attributes to be added in to the deployment environment
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProjectId pulumi.StringPtrInput
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the deployment environment.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -246,10 +253,12 @@ type deployEnvironmentArgs struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel *DeployEnvironmentNetworkChannel `pulumi:"networkChannel"`
 	// The OCID of a project.
+	ProjectId string `pulumi:"projectId"`
+	// (Updatable) Security attributes to be added in to the deployment environment
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProjectId string `pulumi:"projectId"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 }
 
 // The set of arguments for constructing a DeployEnvironment resource.
@@ -273,10 +282,12 @@ type DeployEnvironmentArgs struct {
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
 	NetworkChannel DeployEnvironmentNetworkChannelPtrInput
 	// The OCID of a project.
+	ProjectId pulumi.StringInput
+	// (Updatable) Security attributes to be added in to the deployment environment
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ProjectId pulumi.StringInput
+	SecurityAttributes pulumi.StringMapInput
 }
 
 func (DeployEnvironmentArgs) ElementType() reflect.Type {
@@ -424,11 +435,16 @@ func (o DeployEnvironmentOutput) NetworkChannel() DeployEnvironmentNetworkChanne
 }
 
 // The OCID of a project.
+func (o DeployEnvironmentOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security attributes to be added in to the deployment environment
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o DeployEnvironmentOutput) ProjectId() pulumi.StringOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
+func (o DeployEnvironmentOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the deployment environment.

@@ -2562,6 +2562,12 @@ class PlatformConfigurationConfigCategoryDetails(dict):
             suggest = "instance_id"
         elif key == "instanceName":
             suggest = "instance_name"
+        elif key == "isCompliancePolicyRequiredForSoftlink":
+            suggest = "is_compliance_policy_required_for_softlink"
+        elif key == "isSoftlink":
+            suggest = "is_softlink"
+        elif key == "linkProductId":
+            suggest = "link_product_id"
         elif key == "patchTypes":
             suggest = "patch_types"
         elif key == "subCategoryDetails":
@@ -2585,21 +2591,27 @@ class PlatformConfigurationConfigCategoryDetails(dict):
                  credentials: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCredential']] = None,
                  instance_id: Optional[_builtins.str] = None,
                  instance_name: Optional[_builtins.str] = None,
+                 is_compliance_policy_required_for_softlink: Optional[_builtins.bool] = None,
+                 is_softlink: Optional[_builtins.bool] = None,
+                 link_product_id: Optional[_builtins.str] = None,
                  patch_types: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsPatchType']] = None,
                  products: Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsProduct']] = None,
                  sub_category_details: Optional['outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails'] = None,
                  versions: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str config_category: (Updatable) Category of configuration
-        :param Sequence['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs'] compatible_products: (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
-        :param Sequence[_builtins.str] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
-        :param Sequence['PlatformConfigurationConfigCategoryDetailsCredentialArgs'] credentials: (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs'] compatible_products: (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
+        :param Sequence[_builtins.str] components: (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsCredentialArgs'] credentials: (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         :param _builtins.str instance_id: (Updatable) The OCID of the resource.
         :param _builtins.str instance_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        :param Sequence['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs'] patch_types: (Updatable) Patch Types associated with this Product.
+        :param _builtins.bool is_compliance_policy_required_for_softlink: (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        :param _builtins.bool is_softlink: (Updatable) Specify if the product is softlink product or not
+        :param _builtins.str link_product_id: (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        :param Sequence['PlatformConfigurationConfigCategoryDetailsPatchTypeArgs'] patch_types: (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         :param Sequence['PlatformConfigurationConfigCategoryDetailsProductArgs'] products: (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
         :param 'PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs' sub_category_details: (Updatable) ProductStack Config Category Details.
-        :param Sequence[_builtins.str] versions: (Updatable) Versions associated with the PRODUCT .
+        :param Sequence[_builtins.str] versions: (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "config_category", config_category)
         if compatible_products is not None:
@@ -2612,6 +2624,12 @@ class PlatformConfigurationConfigCategoryDetails(dict):
             pulumi.set(__self__, "instance_id", instance_id)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
+        if is_compliance_policy_required_for_softlink is not None:
+            pulumi.set(__self__, "is_compliance_policy_required_for_softlink", is_compliance_policy_required_for_softlink)
+        if is_softlink is not None:
+            pulumi.set(__self__, "is_softlink", is_softlink)
+        if link_product_id is not None:
+            pulumi.set(__self__, "link_product_id", link_product_id)
         if patch_types is not None:
             pulumi.set(__self__, "patch_types", patch_types)
         if products is not None:
@@ -2633,7 +2651,7 @@ class PlatformConfigurationConfigCategoryDetails(dict):
     @pulumi.getter(name="compatibleProducts")
     def compatible_products(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCompatibleProduct']]:
         """
-        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "compatible_products")
 
@@ -2641,7 +2659,7 @@ class PlatformConfigurationConfigCategoryDetails(dict):
     @pulumi.getter
     def components(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "components")
 
@@ -2649,7 +2667,7 @@ class PlatformConfigurationConfigCategoryDetails(dict):
     @pulumi.getter
     def credentials(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsCredential']]:
         """
-        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "credentials")
 
@@ -2670,10 +2688,34 @@ class PlatformConfigurationConfigCategoryDetails(dict):
         return pulumi.get(self, "instance_name")
 
     @_builtins.property
+    @pulumi.getter(name="isCompliancePolicyRequiredForSoftlink")
+    def is_compliance_policy_required_for_softlink(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "is_compliance_policy_required_for_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="isSoftlink")
+    def is_softlink(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Specify if the product is softlink product or not
+        """
+        return pulumi.get(self, "is_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="linkProductId")
+    def link_product_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "link_product_id")
+
+    @_builtins.property
     @pulumi.getter(name="patchTypes")
     def patch_types(self) -> Optional[Sequence['outputs.PlatformConfigurationConfigCategoryDetailsPatchType']]:
         """
-        (Updatable) Patch Types associated with this Product.
+        (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "patch_types")
 
@@ -2697,7 +2739,7 @@ class PlatformConfigurationConfigCategoryDetails(dict):
     @pulumi.getter
     def versions(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) Versions associated with the PRODUCT .
+        (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 
@@ -13343,6 +13385,7 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
                  display_name: _builtins.str,
                  id: _builtins.str,
                  is_last_discovery_attempt_successful: _builtins.bool,
+                 parent_target_name: _builtins.str,
                  product: _builtins.str,
                  resources: Sequence['outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult'],
                  state: _builtins.str,
@@ -13356,6 +13399,7 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param _builtins.str id: The OCID of the resource.
         :param _builtins.bool is_last_discovery_attempt_successful: A boolean flag that represents whether the last discovery attempt was successful.
+        :param _builtins.str parent_target_name: Name of the parent target.
         :param _builtins.str product: Product Name.
         :param Sequence['GetFleetTargetsFleetTargetCollectionItemResourceArgs'] resources: Resource Information for the Target.
         :param _builtins.str state: A filter to return fleets whose lifecycleState matches the given lifecycleState.
@@ -13369,6 +13413,7 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_last_discovery_attempt_successful", is_last_discovery_attempt_successful)
+        pulumi.set(__self__, "parent_target_name", parent_target_name)
         pulumi.set(__self__, "product", product)
         pulumi.set(__self__, "resources", resources)
         pulumi.set(__self__, "state", state)
@@ -13416,6 +13461,14 @@ class GetFleetTargetsFleetTargetCollectionItemResult(dict):
         A boolean flag that represents whether the last discovery attempt was successful.
         """
         return pulumi.get(self, "is_last_discovery_attempt_successful")
+
+    @_builtins.property
+    @pulumi.getter(name="parentTargetName")
+    def parent_target_name(self) -> _builtins.str:
+        """
+        Name of the parent target.
+        """
+        return pulumi.get(self, "parent_target_name")
 
     @_builtins.property
     @pulumi.getter
@@ -14676,7 +14729,7 @@ class GetInstalledPatchesInstalledPatchCollectionItemResult(dict):
         """
         :param _builtins.str patch_description: Description of the patch
         :param _builtins.str patch_id: The OCID of the patch.
-        :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         :param _builtins.str patch_name: Name of the patch.
         :param _builtins.str patch_type: Patch type.
         :param _builtins.str severity: Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
@@ -14712,7 +14765,7 @@ class GetInstalledPatchesInstalledPatchCollectionItemResult(dict):
     @pulumi.getter(name="patchLevel")
     def patch_level(self) -> _builtins.str:
         """
-        Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         """
         return pulumi.get(self, "patch_level")
 
@@ -14816,6 +14869,7 @@ class GetInventoryRecordsInventoryRecordCollectionItemResult(dict):
                  components: Sequence['outputs.GetInventoryRecordsInventoryRecordCollectionItemComponentResult'],
                  installed_patches: Sequence['outputs.GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchResult'],
                  os_type: _builtins.str,
+                 parent_target_name: _builtins.str,
                  properties: Sequence['outputs.GetInventoryRecordsInventoryRecordCollectionItemPropertyResult'],
                  state: _builtins.str,
                  target_id: _builtins.str,
@@ -14833,6 +14887,7 @@ class GetInventoryRecordsInventoryRecordCollectionItemResult(dict):
         :param Sequence['GetInventoryRecordsInventoryRecordCollectionItemComponentArgs'] components: List of target components
         :param Sequence['GetInventoryRecordsInventoryRecordCollectionItemInstalledPatchArgs'] installed_patches: List of details on the patches currently installed on the target
         :param _builtins.str os_type: OS installed on the resource associated with the target
+        :param _builtins.str parent_target_name: Name of the parent target.
         :param Sequence['GetInventoryRecordsInventoryRecordCollectionItemPropertyArgs'] properties: List of target properties
         :param _builtins.str state: The current state of the Inventory target.
         :param _builtins.str target_id: The id of the Inventory target.
@@ -14850,6 +14905,7 @@ class GetInventoryRecordsInventoryRecordCollectionItemResult(dict):
         pulumi.set(__self__, "components", components)
         pulumi.set(__self__, "installed_patches", installed_patches)
         pulumi.set(__self__, "os_type", os_type)
+        pulumi.set(__self__, "parent_target_name", parent_target_name)
         pulumi.set(__self__, "properties", properties)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target_id", target_id)
@@ -14901,6 +14957,14 @@ class GetInventoryRecordsInventoryRecordCollectionItemResult(dict):
         OS installed on the resource associated with the target
         """
         return pulumi.get(self, "os_type")
+
+    @_builtins.property
+    @pulumi.getter(name="parentTargetName")
+    def parent_target_name(self) -> _builtins.str:
+        """
+        Name of the parent target.
+        """
+        return pulumi.get(self, "parent_target_name")
 
     @_builtins.property
     @pulumi.getter
@@ -16752,21 +16816,27 @@ class GetPlatformConfigurationConfigCategoryDetailResult(dict):
                  credentials: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCredentialResult'],
                  instance_id: _builtins.str,
                  instance_name: _builtins.str,
+                 is_compliance_policy_required_for_softlink: _builtins.bool,
+                 is_softlink: _builtins.bool,
+                 link_product_id: _builtins.str,
                  patch_types: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult'],
                  products: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailProductResult'],
                  sub_category_details: Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult'],
                  versions: Sequence[_builtins.str]):
         """
-        :param Sequence['GetPlatformConfigurationConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        :param Sequence['GetPlatformConfigurationConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         :param Sequence[_builtins.str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
         :param _builtins.str config_category: Category of configuration
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
         :param _builtins.str instance_id: The OCID of the resource.
         :param _builtins.str instance_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param _builtins.bool is_compliance_policy_required_for_softlink: If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        :param _builtins.bool is_softlink: Specify if the product is softlink product or not
+        :param _builtins.str link_product_id: The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailProductArgs'] products: Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailArgs'] sub_category_details: ProductStack Config Category Details.
-        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT .
+        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "compatible_products", compatible_products)
         pulumi.set(__self__, "components", components)
@@ -16774,6 +16844,9 @@ class GetPlatformConfigurationConfigCategoryDetailResult(dict):
         pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_compliance_policy_required_for_softlink", is_compliance_policy_required_for_softlink)
+        pulumi.set(__self__, "is_softlink", is_softlink)
+        pulumi.set(__self__, "link_product_id", link_product_id)
         pulumi.set(__self__, "patch_types", patch_types)
         pulumi.set(__self__, "products", products)
         pulumi.set(__self__, "sub_category_details", sub_category_details)
@@ -16783,7 +16856,7 @@ class GetPlatformConfigurationConfigCategoryDetailResult(dict):
     @pulumi.getter(name="compatibleProducts")
     def compatible_products(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailCompatibleProductResult']:
         """
-        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "compatible_products")
 
@@ -16828,6 +16901,30 @@ class GetPlatformConfigurationConfigCategoryDetailResult(dict):
         return pulumi.get(self, "instance_name")
 
     @_builtins.property
+    @pulumi.getter(name="isCompliancePolicyRequiredForSoftlink")
+    def is_compliance_policy_required_for_softlink(self) -> _builtins.bool:
+        """
+        If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "is_compliance_policy_required_for_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="isSoftlink")
+    def is_softlink(self) -> _builtins.bool:
+        """
+        Specify if the product is softlink product or not
+        """
+        return pulumi.get(self, "is_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="linkProductId")
+    def link_product_id(self) -> _builtins.str:
+        """
+        The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "link_product_id")
+
+    @_builtins.property
     @pulumi.getter(name="patchTypes")
     def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationConfigCategoryDetailPatchTypeResult']:
         """
@@ -16855,7 +16952,7 @@ class GetPlatformConfigurationConfigCategoryDetailResult(dict):
     @pulumi.getter
     def versions(self) -> Sequence[_builtins.str]:
         """
-        Versions associated with the PRODUCT .
+        Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 
@@ -16989,7 +17086,7 @@ class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult(dict):
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
         :param Sequence['GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
         :param _builtins.str sub_category: SubCategory of Product Stack.
-        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT .
+        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "components", components)
         pulumi.set(__self__, "credentials", credentials)
@@ -17033,7 +17130,7 @@ class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetailResult(dict):
     @pulumi.getter
     def versions(self) -> Sequence[_builtins.str]:
         """
-        Versions associated with the PRODUCT .
+        Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 
@@ -17305,21 +17402,27 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
                  credentials: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialResult'],
                  instance_id: _builtins.str,
                  instance_name: _builtins.str,
+                 is_compliance_policy_required_for_softlink: _builtins.bool,
+                 is_softlink: _builtins.bool,
+                 link_product_id: _builtins.str,
                  patch_types: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult'],
                  products: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductResult'],
                  sub_category_details: Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailResult'],
                  versions: Sequence[_builtins.str]):
         """
-        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductArgs'] compatible_products: Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         :param Sequence[_builtins.str] components: Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
         :param _builtins.str config_category: Config Category
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
         :param _builtins.str instance_id: The OCID of the resource.
         :param _builtins.str instance_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+        :param _builtins.bool is_compliance_policy_required_for_softlink: If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        :param _builtins.bool is_softlink: Specify if the product is softlink product or not
+        :param _builtins.str link_product_id: The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailProductArgs'] products: Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailArgs'] sub_category_details: ProductStack Config Category Details.
-        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT .
+        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "compatible_products", compatible_products)
         pulumi.set(__self__, "components", components)
@@ -17327,6 +17430,9 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
         pulumi.set(__self__, "credentials", credentials)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_compliance_policy_required_for_softlink", is_compliance_policy_required_for_softlink)
+        pulumi.set(__self__, "is_softlink", is_softlink)
+        pulumi.set(__self__, "link_product_id", link_product_id)
         pulumi.set(__self__, "patch_types", patch_types)
         pulumi.set(__self__, "products", products)
         pulumi.set(__self__, "sub_category_details", sub_category_details)
@@ -17336,7 +17442,7 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
     @pulumi.getter(name="compatibleProducts")
     def compatible_products(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailCompatibleProductResult']:
         """
-        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         """
         return pulumi.get(self, "compatible_products")
 
@@ -17381,6 +17487,30 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
         return pulumi.get(self, "instance_name")
 
     @_builtins.property
+    @pulumi.getter(name="isCompliancePolicyRequiredForSoftlink")
+    def is_compliance_policy_required_for_softlink(self) -> _builtins.bool:
+        """
+        If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "is_compliance_policy_required_for_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="isSoftlink")
+    def is_softlink(self) -> _builtins.bool:
+        """
+        Specify if the product is softlink product or not
+        """
+        return pulumi.get(self, "is_softlink")
+
+    @_builtins.property
+    @pulumi.getter(name="linkProductId")
+    def link_product_id(self) -> _builtins.str:
+        """
+        The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        """
+        return pulumi.get(self, "link_product_id")
+
+    @_builtins.property
     @pulumi.getter(name="patchTypes")
     def patch_types(self) -> Sequence['outputs.GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailPatchTypeResult']:
         """
@@ -17408,7 +17538,7 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
     @pulumi.getter
     def versions(self) -> Sequence[_builtins.str]:
         """
-        Versions associated with the PRODUCT .
+        Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 
@@ -17542,7 +17672,7 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailCredentialArgs'] credentials: OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
         :param Sequence['GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategoryDetailSubCategoryDetailPatchTypeArgs'] patch_types: Patch Types associated with this Product Stack which will be considered as Product.
         :param _builtins.str sub_category: SubCategory of Product Stack.
-        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT .
+        :param Sequence[_builtins.str] versions: Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         pulumi.set(__self__, "components", components)
         pulumi.set(__self__, "credentials", credentials)
@@ -17586,7 +17716,7 @@ class GetPlatformConfigurationsPlatformConfigurationCollectionItemConfigCategory
     @pulumi.getter
     def versions(self) -> Sequence[_builtins.str]:
         """
-        Versions associated with the PRODUCT .
+        Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         """
         return pulumi.get(self, "versions")
 
@@ -18617,7 +18747,7 @@ class GetRecommendedPatchesRecommendedPatchCollectionItemResult(dict):
         """
         :param _builtins.str patch_description: Description of the patch
         :param _builtins.str patch_id: Patch identifier.
-        :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         :param _builtins.str patch_name: Name of the patch.
         :param _builtins.str patch_type: Patch type.
         :param _builtins.str severity: Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
@@ -18651,7 +18781,7 @@ class GetRecommendedPatchesRecommendedPatchCollectionItemResult(dict):
     @pulumi.getter(name="patchLevel")
     def patch_level(self) -> _builtins.str:
         """
-        Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+        Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
         """
         return pulumi.get(self, "patch_level")
 

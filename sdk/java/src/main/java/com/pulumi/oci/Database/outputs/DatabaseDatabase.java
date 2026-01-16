@@ -48,6 +48,11 @@ public final class DatabaseDatabase {
      */
     private @Nullable String databaseAdminPassword;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+     * 
+     */
+    private @Nullable String databaseId;
+    /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
@@ -154,6 +159,7 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String tdeWalletPassword;
+    private @Nullable String timeStampForPointInTimeRecovery;
     /**
      * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -171,6 +177,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String vaultId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    private @Nullable String vmClusterId;
 
     private DatabaseDatabase() {}
     /**
@@ -211,6 +222,13 @@ public final class DatabaseDatabase {
      */
     public Optional<String> databaseAdminPassword() {
         return Optional.ofNullable(this.databaseAdminPassword);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
+     * 
+     */
+    public Optional<String> databaseId() {
+        return Optional.ofNullable(this.databaseId);
     }
     /**
      * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
@@ -361,6 +379,9 @@ public final class DatabaseDatabase {
     public Optional<String> tdeWalletPassword() {
         return Optional.ofNullable(this.tdeWalletPassword);
     }
+    public Optional<String> timeStampForPointInTimeRecovery() {
+        return Optional.ofNullable(this.timeStampForPointInTimeRecovery);
+    }
     /**
      * @return The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
      * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -382,6 +403,13 @@ public final class DatabaseDatabase {
     public Optional<String> vaultId() {
         return Optional.ofNullable(this.vaultId);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    public Optional<String> vmClusterId() {
+        return Optional.ofNullable(this.vmClusterId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -397,6 +425,7 @@ public final class DatabaseDatabase {
         private @Nullable String backupTdePassword;
         private @Nullable String characterSet;
         private @Nullable String databaseAdminPassword;
+        private @Nullable String databaseId;
         private @Nullable String databaseSoftwareImageId;
         private @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig;
         private @Nullable String dbName;
@@ -418,8 +447,10 @@ public final class DatabaseDatabase {
         private @Nullable String sourceTdeWalletPassword;
         private @Nullable DatabaseDatabaseStorageSizeDetails storageSizeDetails;
         private @Nullable String tdeWalletPassword;
+        private @Nullable String timeStampForPointInTimeRecovery;
         private @Nullable String transportType;
         private @Nullable String vaultId;
+        private @Nullable String vmClusterId;
         public Builder() {}
         public Builder(DatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -428,6 +459,7 @@ public final class DatabaseDatabase {
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
     	      this.databaseAdminPassword = defaults.databaseAdminPassword;
+    	      this.databaseId = defaults.databaseId;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbBackupConfig = defaults.dbBackupConfig;
     	      this.dbName = defaults.dbName;
@@ -449,8 +481,10 @@ public final class DatabaseDatabase {
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
+    	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
     	      this.transportType = defaults.transportType;
     	      this.vaultId = defaults.vaultId;
+    	      this.vmClusterId = defaults.vmClusterId;
         }
 
         @CustomType.Setter
@@ -481,6 +515,12 @@ public final class DatabaseDatabase {
         public Builder databaseAdminPassword(@Nullable String databaseAdminPassword) {
 
             this.databaseAdminPassword = databaseAdminPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseId(@Nullable String databaseId) {
+
+            this.databaseId = databaseId;
             return this;
         }
         @CustomType.Setter
@@ -613,6 +653,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeStampForPointInTimeRecovery(@Nullable String timeStampForPointInTimeRecovery) {
+
+            this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            return this;
+        }
+        @CustomType.Setter
         public Builder transportType(@Nullable String transportType) {
 
             this.transportType = transportType;
@@ -624,6 +670,12 @@ public final class DatabaseDatabase {
             this.vaultId = vaultId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterId(@Nullable String vmClusterId) {
+
+            this.vmClusterId = vmClusterId;
+            return this;
+        }
         public DatabaseDatabase build() {
             final var _resultValue = new DatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
@@ -631,6 +683,7 @@ public final class DatabaseDatabase {
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
             _resultValue.databaseAdminPassword = databaseAdminPassword;
+            _resultValue.databaseId = databaseId;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbBackupConfig = dbBackupConfig;
             _resultValue.dbName = dbName;
@@ -652,8 +705,10 @@ public final class DatabaseDatabase {
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             _resultValue.transportType = transportType;
             _resultValue.vaultId = vaultId;
+            _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }
     }

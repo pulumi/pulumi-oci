@@ -27,12 +27,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := loganalytics.NewNamespaceLookupsUpdateDataManagement(ctx, "test_namespace_lookups_update_data_management", &loganalytics.NamespaceLookupsUpdateDataManagementArgs{
-//				UpdateLookupFileBody: namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
-//				LookupName:           pulumi.Any(namespaceLookupsUpdateDataManagementLookupName),
-//				Namespace:            pulumi.Any(namespaceLookupsUpdateDataManagementNamespace),
-//				CharEncoding:         pulumi.Any(namespaceLookupsUpdateDataManagementCharEncoding),
-//				Expect:               pulumi.Any(namespaceLookupsUpdateDataManagementExpect),
-//				IsForce:              pulumi.Any(namespaceLookupsUpdateDataManagementIsForce),
+//				UpdateLookupFile: pulumi.Any(namespaceLookupsUpdateDataManagementUpdateLookupFile),
+//				LookupName:       pulumi.Any(namespaceLookupsUpdateDataManagementLookupName),
+//				Namespace:        pulumi.Any(namespaceLookupsUpdateDataManagementNamespace),
+//				CharEncoding:     pulumi.Any(namespaceLookupsUpdateDataManagementCharEncoding),
+//				Expect:           pulumi.Any(namespaceLookupsUpdateDataManagementExpect),
+//				IsForce:          pulumi.Any(namespaceLookupsUpdateDataManagementIsForce),
 //			})
 //			if err != nil {
 //				return err
@@ -61,7 +61,8 @@ type NamespaceLookupsUpdateDataManagement struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Namespace        pulumi.StringOutput `pulumi:"namespace"`
+	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	// Path to the file containing data for the lookup update.
 	UpdateLookupFile pulumi.StringOutput `pulumi:"updateLookupFile"`
 }
 
@@ -116,7 +117,8 @@ type namespaceLookupsUpdateDataManagementState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Namespace        *string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
+	// Path to the file containing data for the lookup update.
 	UpdateLookupFile *string `pulumi:"updateLookupFile"`
 }
 
@@ -133,7 +135,8 @@ type NamespaceLookupsUpdateDataManagementState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Namespace        pulumi.StringPtrInput
+	Namespace pulumi.StringPtrInput
+	// Path to the file containing data for the lookup update.
 	UpdateLookupFile pulumi.StringPtrInput
 }
 
@@ -154,7 +157,8 @@ type namespaceLookupsUpdateDataManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Namespace        string `pulumi:"namespace"`
+	Namespace string `pulumi:"namespace"`
+	// Path to the file containing data for the lookup update.
 	UpdateLookupFile string `pulumi:"updateLookupFile"`
 }
 
@@ -172,7 +176,8 @@ type NamespaceLookupsUpdateDataManagementArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Namespace        pulumi.StringInput
+	Namespace pulumi.StringInput
+	// Path to the file containing data for the lookup update.
 	UpdateLookupFile pulumi.StringInput
 }
 
@@ -291,6 +296,7 @@ func (o NamespaceLookupsUpdateDataManagementOutput) Namespace() pulumi.StringOut
 	return o.ApplyT(func(v *NamespaceLookupsUpdateDataManagement) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// Path to the file containing data for the lookup update.
 func (o NamespaceLookupsUpdateDataManagementOutput) UpdateLookupFile() pulumi.StringOutput {
 	return o.ApplyT(func(v *NamespaceLookupsUpdateDataManagement) pulumi.StringOutput { return v.UpdateLookupFile }).(pulumi.StringOutput)
 }

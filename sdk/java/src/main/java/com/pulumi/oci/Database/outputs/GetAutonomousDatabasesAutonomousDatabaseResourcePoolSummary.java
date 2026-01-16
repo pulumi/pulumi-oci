@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
 
@@ -17,6 +18,11 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
      */
     private Integer availableComputeCapacity;
     /**
+     * @return Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    private Double availableStorageCapacityInTbs;
+    /**
      * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
@@ -26,6 +32,11 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
      * 
      */
     private Integer poolSize;
+    /**
+     * @return Resource pool storage size in TBs.
+     * 
+     */
+    private Integer poolStorageSizeInTbs;
     /**
      * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
      * 
@@ -41,6 +52,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
         return this.availableComputeCapacity;
     }
     /**
+     * @return Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    public Double availableStorageCapacityInTbs() {
+        return this.availableStorageCapacityInTbs;
+    }
+    /**
      * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
@@ -53,6 +71,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
      */
     public Integer poolSize() {
         return this.poolSize;
+    }
+    /**
+     * @return Resource pool storage size in TBs.
+     * 
+     */
+    public Integer poolStorageSizeInTbs() {
+        return this.poolStorageSizeInTbs;
     }
     /**
      * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
@@ -72,15 +97,19 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
     @CustomType.Builder
     public static final class Builder {
         private Integer availableComputeCapacity;
+        private Double availableStorageCapacityInTbs;
         private Boolean isDisabled;
         private Integer poolSize;
+        private Integer poolStorageSizeInTbs;
         private Integer totalComputeCapacity;
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableComputeCapacity = defaults.availableComputeCapacity;
+    	      this.availableStorageCapacityInTbs = defaults.availableStorageCapacityInTbs;
     	      this.isDisabled = defaults.isDisabled;
     	      this.poolSize = defaults.poolSize;
+    	      this.poolStorageSizeInTbs = defaults.poolStorageSizeInTbs;
     	      this.totalComputeCapacity = defaults.totalComputeCapacity;
         }
 
@@ -90,6 +119,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary", "availableComputeCapacity");
             }
             this.availableComputeCapacity = availableComputeCapacity;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availableStorageCapacityInTbs(Double availableStorageCapacityInTbs) {
+            if (availableStorageCapacityInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary", "availableStorageCapacityInTbs");
+            }
+            this.availableStorageCapacityInTbs = availableStorageCapacityInTbs;
             return this;
         }
         @CustomType.Setter
@@ -109,6 +146,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
             return this;
         }
         @CustomType.Setter
+        public Builder poolStorageSizeInTbs(Integer poolStorageSizeInTbs) {
+            if (poolStorageSizeInTbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary", "poolStorageSizeInTbs");
+            }
+            this.poolStorageSizeInTbs = poolStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalComputeCapacity(Integer totalComputeCapacity) {
             if (totalComputeCapacity == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary", "totalComputeCapacity");
@@ -119,8 +164,10 @@ public final class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary {
         public GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary build() {
             final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary();
             _resultValue.availableComputeCapacity = availableComputeCapacity;
+            _resultValue.availableStorageCapacityInTbs = availableStorageCapacityInTbs;
             _resultValue.isDisabled = isDisabled;
             _resultValue.poolSize = poolSize;
+            _resultValue.poolStorageSizeInTbs = poolStorageSizeInTbs;
             _resultValue.totalComputeCapacity = totalComputeCapacity;
             return _resultValue;
         }

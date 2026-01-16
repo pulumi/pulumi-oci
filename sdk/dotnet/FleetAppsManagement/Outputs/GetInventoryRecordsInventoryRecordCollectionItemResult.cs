@@ -34,6 +34,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string OsType;
         /// <summary>
+        /// Name of the parent target.
+        /// </summary>
+        public readonly string ParentTargetName;
+        /// <summary>
         /// List of target properties
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInventoryRecordsInventoryRecordCollectionItemPropertyResult> Properties;
@@ -90,6 +94,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string osType,
 
+            string parentTargetName,
+
             ImmutableArray<Outputs.GetInventoryRecordsInventoryRecordCollectionItemPropertyResult> properties,
 
             string state,
@@ -117,6 +123,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             Components = components;
             InstalledPatches = installedPatches;
             OsType = osType;
+            ParentTargetName = parentTargetName;
             Properties = properties;
             State = state;
             TargetId = targetId;

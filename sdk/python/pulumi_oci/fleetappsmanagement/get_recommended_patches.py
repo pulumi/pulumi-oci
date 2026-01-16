@@ -179,7 +179,7 @@ def get_recommended_patches(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str patch_id: Patch identifier.
-    :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+    :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
     :param _builtins.str patch_type: Patch type.
     :param _builtins.str severity: Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
     :param _builtins.str target_id: Fleet target identifier.
@@ -240,7 +240,7 @@ def get_recommended_patches_output(compartment_id: Optional[pulumi.Input[_builti
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str patch_id: Patch identifier.
-    :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+    :param _builtins.str patch_level: Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
     :param _builtins.str patch_type: Patch type.
     :param _builtins.str severity: Patch severity with values like CRITICAL, HIGH, MEDIUM and LOW.
     :param _builtins.str target_id: Fleet target identifier.

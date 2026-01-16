@@ -7,10 +7,21 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .budget import *
+from .cost_alert_subscription import *
+from .cost_anomaly_event import *
+from .cost_anomaly_monitor import *
+from .cost_anomaly_monitor_costanomalymonitorenabletoggles_management import *
 from .get_alert_rule import *
 from .get_alert_rules import *
 from .get_budget import *
 from .get_budgets import *
+from .get_cost_alert_subscription import *
+from .get_cost_alert_subscriptions import *
+from .get_cost_anomaly_event import *
+from .get_cost_anomaly_event_analytics import *
+from .get_cost_anomaly_events import *
+from .get_cost_anomaly_monitor import *
+from .get_cost_anomaly_monitors import *
 from .rule import *
 from ._inputs import *
 from . import outputs

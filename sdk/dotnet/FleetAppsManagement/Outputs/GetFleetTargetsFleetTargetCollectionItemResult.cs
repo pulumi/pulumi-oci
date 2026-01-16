@@ -34,6 +34,10 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly bool IsLastDiscoveryAttemptSuccessful;
         /// <summary>
+        /// Name of the parent target.
+        /// </summary>
+        public readonly string ParentTargetName;
+        /// <summary>
         /// Product Name.
         /// </summary>
         public readonly string Product;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             bool isLastDiscoveryAttemptSuccessful,
 
+            string parentTargetName,
+
             string product,
 
             ImmutableArray<Outputs.GetFleetTargetsFleetTargetCollectionItemResourceResult> resources,
@@ -93,6 +99,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             DisplayName = displayName;
             Id = id;
             IsLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
+            ParentTargetName = parentTargetName;
             Product = product;
             Resources = resources;
             State = state;

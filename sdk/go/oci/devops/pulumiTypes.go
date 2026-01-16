@@ -23328,6 +23328,8 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItem struct {
 	NetworkChannels []GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannel `pulumi:"networkChannels"`
 	// unique project identifier
 	ProjectId string `pulumi:"projectId"`
+	// Security attributes to be added in to the deployment environment
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// A filter to return only DeployEnvironments that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -23376,6 +23378,8 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs struct {
 	NetworkChannels GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArrayInput `pulumi:"networkChannels"`
 	// unique project identifier
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// Security attributes to be added in to the deployment environment
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// A filter to return only DeployEnvironments that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -23504,6 +23508,13 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) NetworkChann
 // unique project identifier
 func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// Security attributes to be added in to the deployment environment
+func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only DeployEnvironments that matches the given lifecycleState.

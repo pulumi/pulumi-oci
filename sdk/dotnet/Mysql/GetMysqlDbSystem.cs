@@ -172,6 +172,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemDataStorageResult> DataStorages;
         /// <summary>
+        /// Database console configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemDatabaseConsoleResult> DatabaseConsoles;
+        /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>
         public readonly string DatabaseManagement;
@@ -343,6 +347,8 @@ namespace Pulumi.Oci.Mysql
 
             ImmutableArray<Outputs.GetMysqlDbSystemDataStorageResult> dataStorages,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemDatabaseConsoleResult> databaseConsoles,
+
             string databaseManagement,
 
             string databaseMode,
@@ -428,6 +434,7 @@ namespace Pulumi.Oci.Mysql
             CustomerContacts = customerContacts;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorages = dataStorages;
+            DatabaseConsoles = databaseConsoles;
             DatabaseManagement = databaseManagement;
             DatabaseMode = databaseMode;
             DbSystemId = dbSystemId;

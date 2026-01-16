@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The time when the one-time budget concludes. For example, - `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// The time when the one-time budget concludes. For example, - `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         public readonly string EndDate;
         /// <summary>
@@ -181,13 +181,17 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         public readonly string ResetPeriod;
         /// <summary>
-        /// The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         public readonly string StartDate;
         /// <summary>
         /// The current state of the budget.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// This is DEPRECATED. For backwards compatability, the property is populated when the targetType is "COMPARTMENT", and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
         /// </summary>
@@ -253,6 +257,8 @@ namespace Pulumi.Oci.Budget
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string targetCompartmentId,
 
             string targetType,
@@ -284,6 +290,7 @@ namespace Pulumi.Oci.Budget
             ResetPeriod = resetPeriod;
             StartDate = startDate;
             State = state;
+            SystemTags = systemTags;
             TargetCompartmentId = targetCompartmentId;
             TargetType = targetType;
             Targets = targets;

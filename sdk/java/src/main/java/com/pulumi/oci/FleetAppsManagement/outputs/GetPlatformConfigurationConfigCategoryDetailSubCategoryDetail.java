@@ -34,7 +34,7 @@ public final class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail
      */
     private String subCategory;
     /**
-     * @return Versions associated with the PRODUCT .
+     * @return Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     private List<String> versions;
@@ -69,7 +69,7 @@ public final class GetPlatformConfigurationConfigCategoryDetailSubCategoryDetail
         return this.subCategory;
     }
     /**
-     * @return Versions associated with the PRODUCT .
+     * @return Versions associated with the PRODUCT. Mandatory if product is not softlink product.
      * 
      */
     public List<String> versions() {

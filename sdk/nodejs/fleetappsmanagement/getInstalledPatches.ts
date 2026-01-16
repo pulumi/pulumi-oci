@@ -51,7 +51,7 @@ export interface GetInstalledPatchesArgs {
     compartmentId: string;
     filters?: inputs.FleetAppsManagement.GetInstalledPatchesFilter[];
     /**
-     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      */
     patchLevel?: string;
     /**
@@ -146,7 +146,7 @@ export interface GetInstalledPatchesOutputArgs {
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetInstalledPatchesFilterArgs>[]>;
     /**
-     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      */
     patchLevel?: pulumi.Input<string>;
     /**

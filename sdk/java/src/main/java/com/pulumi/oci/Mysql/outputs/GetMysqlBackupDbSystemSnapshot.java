@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDataStorage;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDatabaseConsole;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotEndpoint;
@@ -63,6 +64,11 @@ public final class GetMysqlBackupDbSystemSnapshot {
      * 
      */
     private List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages;
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    private List<GetMysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles;
     /**
      * @return Whether to enable monitoring via the Database Management service.
      * 
@@ -245,6 +251,13 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     public List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages() {
         return this.dataStorages;
+    }
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    public List<GetMysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles() {
+        return this.databaseConsoles;
     }
     /**
      * @return Whether to enable monitoring via the Database Management service.
@@ -439,6 +452,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         private String crashRecovery;
         private Integer dataStorageSizeInGb;
         private List<GetMysqlBackupDbSystemSnapshotDataStorage> dataStorages;
+        private List<GetMysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles;
         private String databaseManagement;
         private Map<String,String> definedTags;
         private List<GetMysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
@@ -475,6 +489,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorages = defaults.dataStorages;
+    	      this.databaseConsoles = defaults.databaseConsoles;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -571,6 +586,17 @@ public final class GetMysqlBackupDbSystemSnapshot {
         }
         public Builder dataStorages(GetMysqlBackupDbSystemSnapshotDataStorage... dataStorages) {
             return dataStorages(List.of(dataStorages));
+        }
+        @CustomType.Setter
+        public Builder databaseConsoles(List<GetMysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles) {
+            if (databaseConsoles == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupDbSystemSnapshot", "databaseConsoles");
+            }
+            this.databaseConsoles = databaseConsoles;
+            return this;
+        }
+        public Builder databaseConsoles(GetMysqlBackupDbSystemSnapshotDatabaseConsole... databaseConsoles) {
+            return databaseConsoles(List.of(databaseConsoles));
         }
         @CustomType.Setter
         public Builder databaseManagement(String databaseManagement) {
@@ -806,6 +832,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorages = dataStorages;
+            _resultValue.databaseConsoles = databaseConsoles;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;

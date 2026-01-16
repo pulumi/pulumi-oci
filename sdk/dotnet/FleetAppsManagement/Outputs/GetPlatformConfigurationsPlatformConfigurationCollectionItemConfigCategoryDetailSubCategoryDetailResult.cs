@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string SubCategory;
         /// <summary>
-        /// Versions associated with the PRODUCT .
+        /// Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         /// </summary>
         public readonly ImmutableArray<string> Versions;
 

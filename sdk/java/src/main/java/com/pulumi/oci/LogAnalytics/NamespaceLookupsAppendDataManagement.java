@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNamespaceLookupsAppendDataManagement = new NamespaceLookupsAppendDataManagement("testNamespaceLookupsAppendDataManagement", NamespaceLookupsAppendDataManagementArgs.builder()
- *             .appendLookupFileBody(namespaceLookupsAppendDataManagementAppendLookupFileBody)
+ *             .appendLookupFile(namespaceLookupsAppendDataManagementAppendLookupFile)
  *             .lookupName(namespaceLookupsAppendDataManagementLookupName)
  *             .namespace(namespaceLookupsAppendDataManagementNamespace)
  *             .charEncoding(namespaceLookupsAppendDataManagementCharEncoding)
@@ -60,9 +60,17 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement")
 public class NamespaceLookupsAppendDataManagement extends com.pulumi.resources.CustomResource {
+    /**
+     * Path to the file containing data for the lookup append.
+     * 
+     */
     @Export(name="appendLookupFile", refs={String.class}, tree="[0]")
     private Output<String> appendLookupFile;
 
+    /**
+     * @return Path to the file containing data for the lookup append.
+     * 
+     */
     public Output<String> appendLookupFile() {
         return this.appendLookupFile;
     }

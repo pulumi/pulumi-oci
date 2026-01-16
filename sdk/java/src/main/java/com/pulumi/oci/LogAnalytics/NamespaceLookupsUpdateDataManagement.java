@@ -40,7 +40,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNamespaceLookupsUpdateDataManagement = new NamespaceLookupsUpdateDataManagement("testNamespaceLookupsUpdateDataManagement", NamespaceLookupsUpdateDataManagementArgs.builder()
- *             .updateLookupFileBody(namespaceLookupsUpdateDataManagementUpdateLookupFileBody)
+ *             .updateLookupFile(namespaceLookupsUpdateDataManagementUpdateLookupFile)
  *             .lookupName(namespaceLookupsUpdateDataManagementLookupName)
  *             .namespace(namespaceLookupsUpdateDataManagementNamespace)
  *             .charEncoding(namespaceLookupsUpdateDataManagementCharEncoding)
@@ -136,9 +136,17 @@ public class NamespaceLookupsUpdateDataManagement extends com.pulumi.resources.C
     public Output<String> namespace() {
         return this.namespace;
     }
+    /**
+     * Path to the file containing data for the lookup update.
+     * 
+     */
     @Export(name="updateLookupFile", refs={String.class}, tree="[0]")
     private Output<String> updateLookupFile;
 
+    /**
+     * @return Path to the file containing data for the lookup update.
+     * 
+     */
     public Output<String> updateLookupFile() {
         return this.updateLookupFile;
     }

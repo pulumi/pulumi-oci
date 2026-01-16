@@ -22,7 +22,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// {
     ///     var testNamespaceLookupsAppendDataManagement = new Oci.LogAnalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management", new()
     ///     {
-    ///         AppendLookupFileBody = namespaceLookupsAppendDataManagementAppendLookupFileBody,
+    ///         AppendLookupFile = namespaceLookupsAppendDataManagementAppendLookupFile,
     ///         LookupName = namespaceLookupsAppendDataManagementLookupName,
     ///         Namespace = namespaceLookupsAppendDataManagementNamespace,
     ///         CharEncoding = namespaceLookupsAppendDataManagementCharEncoding,
@@ -40,6 +40,9 @@ namespace Pulumi.Oci.LogAnalytics
     [OciResourceType("oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement")]
     public partial class NamespaceLookupsAppendDataManagement : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Path to the file containing data for the lookup append.
+        /// </summary>
         [Output("appendLookupFile")]
         public Output<string> AppendLookupFile { get; private set; } = null!;
 
@@ -68,7 +71,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LookupName { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -123,6 +126,9 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class NamespaceLookupsAppendDataManagementArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Path to the file containing data for the lookup append.
+        /// </summary>
         [Input("appendLookupFile", required: true)]
         public Input<string> AppendLookupFile { get; set; } = null!;
 
@@ -151,7 +157,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> LookupName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -168,6 +174,9 @@ namespace Pulumi.Oci.LogAnalytics
 
     public sealed class NamespaceLookupsAppendDataManagementState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Path to the file containing data for the lookup append.
+        /// </summary>
         [Input("appendLookupFile")]
         public Input<string>? AppendLookupFile { get; set; }
 
@@ -196,7 +205,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LookupName { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **

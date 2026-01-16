@@ -65,6 +65,7 @@ import javax.annotation.Nullable;
  *                 .subnetId(testSubnet.id())
  *                 .nsgIds(deployEnvironmentNetworkChannelNsgIds)
  *                 .build())
+ *             .securityAttributes(deployEnvironmentSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -240,9 +241,6 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of a project.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
@@ -250,12 +248,29 @@ public class DeployEnvironment extends com.pulumi.resources.CustomResource {
     /**
      * @return The OCID of a project.
      * 
+     */
+    public Output<String> projectId() {
+        return this.projectId;
+    }
+    /**
+     * (Updatable) Security attributes to be added in to the deployment environment
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> projectId() {
-        return this.projectId;
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes to be added in to the deployment environment
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The current state of the deployment environment.

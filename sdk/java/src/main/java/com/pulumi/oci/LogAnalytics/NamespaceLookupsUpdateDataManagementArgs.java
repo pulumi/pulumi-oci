@@ -98,9 +98,17 @@ public final class NamespaceLookupsUpdateDataManagementArgs extends com.pulumi.r
         return this.namespace;
     }
 
+    /**
+     * Path to the file containing data for the lookup update.
+     * 
+     */
     @Import(name="updateLookupFile", required=true)
     private Output<String> updateLookupFile;
 
+    /**
+     * @return Path to the file containing data for the lookup update.
+     * 
+     */
     public Output<String> updateLookupFile() {
         return this.updateLookupFile;
     }
@@ -245,11 +253,23 @@ public final class NamespaceLookupsUpdateDataManagementArgs extends com.pulumi.r
             return namespace(Output.of(namespace));
         }
 
+        /**
+         * @param updateLookupFile Path to the file containing data for the lookup update.
+         * 
+         * @return builder
+         * 
+         */
         public Builder updateLookupFile(Output<String> updateLookupFile) {
             $.updateLookupFile = updateLookupFile;
             return this;
         }
 
+        /**
+         * @param updateLookupFile Path to the file containing data for the lookup update.
+         * 
+         * @return builder
+         * 
+         */
         public Builder updateLookupFile(String updateLookupFile) {
             return updateLookupFile(Output.of(updateLookupFile));
         }

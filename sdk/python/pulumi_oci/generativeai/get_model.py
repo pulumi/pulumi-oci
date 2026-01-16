@@ -115,6 +115,9 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the model.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -160,11 +163,17 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the model.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -190,11 +199,17 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter
     def vendor(self) -> _builtins.str:
+        """
+        The provider of the base model.
+        """
         return pulumi.get(self, "vendor")
 
     @_builtins.property
     @pulumi.getter
     def version(self) -> _builtins.str:
+        """
+        The version of the model.
+        """
         return pulumi.get(self, "version")
 
 

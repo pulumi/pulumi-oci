@@ -55,6 +55,7 @@ namespace Pulumi.Oci.DevOps
     ///             SubnetId = testSubnet.Id,
     ///             NsgIds = deployEnvironmentNetworkChannelNsgIds,
     ///         },
+    ///         SecurityAttributes = deployEnvironmentSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -139,13 +140,19 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// </summary>
+        [Output("projectId")]
+        public Output<string> ProjectId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes to be added in to the deployment environment
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("projectId")]
-        public Output<string> ProjectId { get; private set; } = null!;
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the deployment environment.
@@ -285,13 +292,25 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// </summary>
+        [Input("projectId", required: true)]
+        public Input<string> ProjectId { get; set; } = null!;
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes to be added in to the deployment environment
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("projectId", required: true)]
-        public Input<string> ProjectId { get; set; } = null!;
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         public DeployEnvironmentArgs()
         {
@@ -381,13 +400,25 @@ namespace Pulumi.Oci.DevOps
 
         /// <summary>
         /// The OCID of a project.
+        /// </summary>
+        [Input("projectId")]
+        public Input<string>? ProjectId { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes to be added in to the deployment environment
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("projectId")]
-        public Input<string>? ProjectId { get; set; }
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The current state of the deployment environment.

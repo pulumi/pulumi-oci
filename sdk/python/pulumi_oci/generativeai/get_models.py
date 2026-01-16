@@ -90,11 +90,17 @@ class GetModelsResult:
     @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
+        """
+        The lifecycle state of the model.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter
     def vendor(self) -> Optional[_builtins.str]:
+        """
+        The provider of the base model.
+        """
         return pulumi.get(self, "vendor")
 
 

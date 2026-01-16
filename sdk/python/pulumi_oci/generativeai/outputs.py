@@ -7036,11 +7036,6 @@ class GetDedicatedAiClusterCapacityResult(dict):
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
-        """
-        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
-        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
-        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
-        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -7048,25 +7043,16 @@ class GetDedicatedAiClusterCapacityResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
-        """
-        The type of the dedicated AI cluster capacity.
-        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
-        """
-        The total number of endpoints that can be hosted on this dedicated AI cluster.
-        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
-        """
-        The number of endpoints hosted on this dedicated AI cluster.
-        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 
@@ -7101,7 +7087,6 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
                  unit_count: _builtins.int,
                  unit_shape: _builtins.str):
         """
-        :param Sequence['GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs'] capacities: The total capacity for a dedicated AI cluster.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -7135,9 +7120,6 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult']:
-        """
-        The total capacity for a dedicated AI cluster.
-        """
         return pulumi.get(self, "capacities")
 
     @_builtins.property
@@ -7256,11 +7238,6 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
-        """
-        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
-        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
-        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
-        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -7268,25 +7245,16 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
-        """
-        The type of the dedicated AI cluster capacity.
-        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
-        """
-        The total number of endpoints that can be hosted on this dedicated AI cluster.
-        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
-        """
-        The number of endpoints hosted on this dedicated AI cluster.
-        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 
@@ -8354,10 +8322,13 @@ class GetModelsModelCollectionItemResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str description: An optional description of the model.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str id: The ID of the model.
         :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str vendor: A filter to return only resources that match the entire vendor given.
+        :param _builtins.str version: The version of the model.
         """
         pulumi.set(__self__, "base_model_id", base_model_id)
         pulumi.set(__self__, "capabilities", capabilities)
@@ -8406,6 +8377,9 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the model.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -8460,6 +8434,9 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -8493,6 +8470,9 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def version(self) -> _builtins.str:
+        """
+        The version of the model.
+        """
         return pulumi.get(self, "version")
 
 

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseApexDetailArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseConnectionUrlArgs;
@@ -201,6 +202,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> autonomousDatabaseId() {
         return Optional.ofNullable(this.autonomousDatabaseId);
+    }
+
+    /**
+     * (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    @Import(name="autonomousDatabaseMaintenanceWindow")
+    private @Nullable Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs> autonomousDatabaseMaintenanceWindow;
+
+    /**
+     * @return (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs>> autonomousDatabaseMaintenanceWindow() {
+        return Optional.ofNullable(this.autonomousDatabaseMaintenanceWindow);
     }
 
     /**
@@ -1263,6 +1279,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    @Import(name="localAdgResourcePoolLeaderId")
+    private @Nullable Output<String> localAdgResourcePoolLeaderId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+     * 
+     */
+    public Optional<Output<String>> localAdgResourcePoolLeaderId() {
+        return Optional.ofNullable(this.localAdgResourcePoolLeaderId);
+    }
+
+    /**
      * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
@@ -2156,6 +2187,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    @Import(name="timeMaintenancePauseUntil")
+    private @Nullable Output<String> timeMaintenancePauseUntil;
+
+    /**
+     * @return The date until which maintenance of Autonomous Database is temporarily paused.
+     * 
+     */
+    public Optional<Output<String>> timeMaintenancePauseUntil() {
+        return Optional.ofNullable(this.timeMaintenancePauseUntil);
+    }
+
+    /**
      * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
@@ -2481,6 +2527,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.autonomousContainerDatabaseId = $.autonomousContainerDatabaseId;
         this.autonomousDatabaseBackupId = $.autonomousDatabaseBackupId;
         this.autonomousDatabaseId = $.autonomousDatabaseId;
+        this.autonomousDatabaseMaintenanceWindow = $.autonomousDatabaseMaintenanceWindow;
         this.autonomousMaintenanceScheduleType = $.autonomousMaintenanceScheduleType;
         this.availabilityDomain = $.availabilityDomain;
         this.availableUpgradeVersions = $.availableUpgradeVersions;
@@ -2550,6 +2597,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.localAdgAutoFailoverMaxDataLossLimit = $.localAdgAutoFailoverMaxDataLossLimit;
+        this.localAdgResourcePoolLeaderId = $.localAdgResourcePoolLeaderId;
         this.localDisasterRecoveryType = $.localDisasterRecoveryType;
         this.localStandbyDbs = $.localStandbyDbs;
         this.longTermBackupSchedules = $.longTermBackupSchedules;
@@ -2607,6 +2655,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.timeLocalDataGuardEnabled = $.timeLocalDataGuardEnabled;
         this.timeMaintenanceBegin = $.timeMaintenanceBegin;
         this.timeMaintenanceEnd = $.timeMaintenanceEnd;
+        this.timeMaintenancePauseUntil = $.timeMaintenancePauseUntil;
         this.timeOfAutoRefreshStart = $.timeOfAutoRefreshStart;
         this.timeOfJoiningResourcePool = $.timeOfJoiningResourcePool;
         this.timeOfLastFailover = $.timeOfLastFailover;
@@ -2886,6 +2935,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
+        }
+
+        /**
+         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabaseMaintenanceWindow(@Nullable Output<AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs> autonomousDatabaseMaintenanceWindow) {
+            $.autonomousDatabaseMaintenanceWindow = autonomousDatabaseMaintenanceWindow;
+            return this;
+        }
+
+        /**
+         * @param autonomousDatabaseMaintenanceWindow (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabaseMaintenanceWindow(AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs autonomousDatabaseMaintenanceWindow) {
+            return autonomousDatabaseMaintenanceWindow(Output.of(autonomousDatabaseMaintenanceWindow));
         }
 
         /**
@@ -4430,6 +4500,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param localAdgResourcePoolLeaderId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAdgResourcePoolLeaderId(@Nullable Output<String> localAdgResourcePoolLeaderId) {
+            $.localAdgResourcePoolLeaderId = localAdgResourcePoolLeaderId;
+            return this;
+        }
+
+        /**
+         * @param localAdgResourcePoolLeaderId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localAdgResourcePoolLeaderId(String localAdgResourcePoolLeaderId) {
+            return localAdgResourcePoolLeaderId(Output.of(localAdgResourcePoolLeaderId));
+        }
+
+        /**
          * @param localDisasterRecoveryType Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          * 
          * @return builder
@@ -5769,6 +5860,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
             return timeMaintenanceEnd(Output.of(timeMaintenanceEnd));
+        }
+
+        /**
+         * @param timeMaintenancePauseUntil The date until which maintenance of Autonomous Database is temporarily paused.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenancePauseUntil(@Nullable Output<String> timeMaintenancePauseUntil) {
+            $.timeMaintenancePauseUntil = timeMaintenancePauseUntil;
+            return this;
+        }
+
+        /**
+         * @param timeMaintenancePauseUntil The date until which maintenance of Autonomous Database is temporarily paused.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeMaintenancePauseUntil(String timeMaintenancePauseUntil) {
+            return timeMaintenancePauseUntil(Output.of(timeMaintenancePauseUntil));
         }
 
         /**

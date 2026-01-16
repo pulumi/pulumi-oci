@@ -12,7 +12,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceLookupsUpdateDataManagement = new oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management", {
- *     updateLookupFileBody: namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
+ *     updateLookupFile: namespaceLookupsUpdateDataManagementUpdateLookupFile,
  *     lookupName: namespaceLookupsUpdateDataManagementLookupName,
  *     namespace: namespaceLookupsUpdateDataManagementNamespace,
  *     charEncoding: namespaceLookupsUpdateDataManagementCharEncoding,
@@ -70,13 +70,16 @@ export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource 
      */
     declare public readonly lookupName: pulumi.Output<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly namespace: pulumi.Output<string>;
+    /**
+     * Path to the file containing data for the lookup update.
+     */
     declare public readonly updateLookupFile: pulumi.Output<string>;
 
     /**
@@ -142,13 +145,16 @@ export interface NamespaceLookupsUpdateDataManagementState {
      */
     lookupName?: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace?: pulumi.Input<string>;
+    /**
+     * Path to the file containing data for the lookup update.
+     */
     updateLookupFile?: pulumi.Input<string>;
 }
 
@@ -173,12 +179,15 @@ export interface NamespaceLookupsUpdateDataManagementArgs {
      */
     lookupName: pulumi.Input<string>;
     /**
-     * The Logging Analytics namespace used for the request. 
+     * The Logging Analytics namespace used for the request.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     namespace: pulumi.Input<string>;
+    /**
+     * Path to the file containing data for the lookup update.
+     */
     updateLookupFile: pulumi.Input<string>;
 }

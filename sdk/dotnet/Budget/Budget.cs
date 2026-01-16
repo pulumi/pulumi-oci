@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Budget
     ///         },
     ///         ProcessingPeriodType = budgetProcessingPeriodType,
     ///         StartDate = budgetStartDate,
+    ///         SystemTags = budgetSystemTags,
     ///         TargetCompartmentId = testCompartment.Id,
     ///         TargetType = budgetTargetType,
     ///         Targets = budgetTargets,
@@ -107,7 +108,7 @@ namespace Pulumi.Oci.Budget
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Output("endDate")]
         public Output<string> EndDate { get; private set; } = null!;
@@ -137,7 +138,7 @@ namespace Pulumi.Oci.Budget
         public Output<string> ResetPeriod { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Output("startDate")]
         public Output<string> StartDate { get; private set; } = null!;
@@ -147,6 +148,12 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// This is DEPRECATED. Set the target compartment ID in targets instead.
@@ -283,7 +290,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Input("endDate")]
         public Input<string>? EndDate { get; set; }
@@ -313,10 +320,22 @@ namespace Pulumi.Oci.Budget
         public Input<string> ResetPeriod { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Input("startDate")]
         public Input<string>? StartDate { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// This is DEPRECATED. Set the target compartment ID in targets instead.
@@ -409,7 +428,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget concludes. For example, `2023-08-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Input("endDate")]
         public Input<string>? EndDate { get; set; }
@@ -445,7 +464,7 @@ namespace Pulumi.Oci.Budget
         public Input<string>? ResetPeriod { get; set; }
 
         /// <summary>
-        /// (Updatable) The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+        /// (Updatable) The date when the one-time budget begins. For example, `2023-07-12T16:01:19.847222+05:30`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
         /// </summary>
         [Input("startDate")]
         public Input<string>? StartDate { get; set; }
@@ -455,6 +474,18 @@ namespace Pulumi.Oci.Budget
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// This is DEPRECATED. Set the target compartment ID in targets instead.

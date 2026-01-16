@@ -43,6 +43,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LogAnalyticsUnprocessedDataBucketManagement{}
 	case "oci:LogAnalytics/namespace:Namespace":
 		r = &Namespace{}
+	case "oci:LogAnalytics/namespaceAssociation:NamespaceAssociation":
+		r = &NamespaceAssociation{}
 	case "oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule":
 		r = &NamespaceIngestTimeRule{}
 	case "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement":
@@ -125,6 +127,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"LogAnalytics/namespace",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"LogAnalytics/namespaceAssociation",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -56,7 +56,7 @@ export interface GetRecommendedPatchesArgs {
      */
     patchId?: string;
     /**
-     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      */
     patchLevel?: string;
     /**
@@ -160,7 +160,7 @@ export interface GetRecommendedPatchesOutputArgs {
      */
     patchId?: pulumi.Input<string>;
     /**
-     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MIUS_TWO etc.,.
+     * Patch level with values like LATEST, LATEST_MINUS_ONE, LATEST_MINUS_TWO etc.,.
      */
     patchLevel?: pulumi.Input<string>;
     /**

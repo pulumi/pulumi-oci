@@ -97,9 +97,17 @@ public final class NamespaceLookupsUpdateDataManagementState extends com.pulumi.
         return Optional.ofNullable(this.namespace);
     }
 
+    /**
+     * Path to the file containing data for the lookup update.
+     * 
+     */
     @Import(name="updateLookupFile")
     private @Nullable Output<String> updateLookupFile;
 
+    /**
+     * @return Path to the file containing data for the lookup update.
+     * 
+     */
     public Optional<Output<String>> updateLookupFile() {
         return Optional.ofNullable(this.updateLookupFile);
     }
@@ -244,11 +252,23 @@ public final class NamespaceLookupsUpdateDataManagementState extends com.pulumi.
             return namespace(Output.of(namespace));
         }
 
+        /**
+         * @param updateLookupFile Path to the file containing data for the lookup update.
+         * 
+         * @return builder
+         * 
+         */
         public Builder updateLookupFile(@Nullable Output<String> updateLookupFile) {
             $.updateLookupFile = updateLookupFile;
             return this;
         }
 
+        /**
+         * @param updateLookupFile Path to the file containing data for the lookup update.
+         * 
+         * @return builder
+         * 
+         */
         public Builder updateLookupFile(String updateLookupFile) {
             return updateLookupFile(Output.of(updateLookupFile));
         }

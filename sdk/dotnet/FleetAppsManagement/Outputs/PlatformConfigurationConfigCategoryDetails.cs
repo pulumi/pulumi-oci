@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class PlatformConfigurationConfigCategoryDetails
     {
         /// <summary>
-        /// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one
+        /// (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public readonly ImmutableArray<Outputs.PlatformConfigurationConfigCategoryDetailsCompatibleProduct> CompatibleProducts;
         /// <summary>
-        /// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+        /// (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public readonly ImmutableArray<string> Components;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string ConfigCategory;
         /// <summary>
-        /// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+        /// (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public readonly ImmutableArray<Outputs.PlatformConfigurationConfigCategoryDetailsCredential> Credentials;
         /// <summary>
@@ -38,7 +38,19 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string? InstanceName;
         /// <summary>
-        /// (Updatable) Patch Types associated with this Product.
+        /// (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        public readonly bool? IsCompliancePolicyRequiredForSoftlink;
+        /// <summary>
+        /// (Updatable) Specify if the product is softlink product or not
+        /// </summary>
+        public readonly bool? IsSoftlink;
+        /// <summary>
+        /// (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+        /// </summary>
+        public readonly string? LinkProductId;
+        /// <summary>
+        /// (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
         /// </summary>
         public readonly ImmutableArray<Outputs.PlatformConfigurationConfigCategoryDetailsPatchType> PatchTypes;
         /// <summary>
@@ -50,7 +62,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly Outputs.PlatformConfigurationConfigCategoryDetailsSubCategoryDetails? SubCategoryDetails;
         /// <summary>
-        /// (Updatable) Versions associated with the PRODUCT .
+        /// (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
         /// </summary>
         public readonly ImmutableArray<string> Versions;
 
@@ -68,6 +80,12 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
 
             string? instanceName,
 
+            bool? isCompliancePolicyRequiredForSoftlink,
+
+            bool? isSoftlink,
+
+            string? linkProductId,
+
             ImmutableArray<Outputs.PlatformConfigurationConfigCategoryDetailsPatchType> patchTypes,
 
             ImmutableArray<Outputs.PlatformConfigurationConfigCategoryDetailsProduct> products,
@@ -82,6 +100,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
             Credentials = credentials;
             InstanceId = instanceId;
             InstanceName = instanceName;
+            IsCompliancePolicyRequiredForSoftlink = isCompliancePolicyRequiredForSoftlink;
+            IsSoftlink = isSoftlink;
+            LinkProductId = linkProductId;
             PatchTypes = patchTypes;
             Products = products;
             SubCategoryDetails = subCategoryDetails;

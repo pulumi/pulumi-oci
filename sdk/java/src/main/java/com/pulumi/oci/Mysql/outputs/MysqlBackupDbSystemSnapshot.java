@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDataStorage;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDatabaseConsole;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDeletionPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEndpoint;
@@ -64,6 +65,11 @@ public final class MysqlBackupDbSystemSnapshot {
      * 
      */
     private @Nullable List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages;
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    private @Nullable List<MysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles;
     /**
      * @return Whether to enable monitoring via the Database Management service.
      * 
@@ -246,6 +252,13 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     public List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages() {
         return this.dataStorages == null ? List.of() : this.dataStorages;
+    }
+    /**
+     * @return Database console configuration details.
+     * 
+     */
+    public List<MysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles() {
+        return this.databaseConsoles == null ? List.of() : this.databaseConsoles;
     }
     /**
      * @return Whether to enable monitoring via the Database Management service.
@@ -440,6 +453,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String crashRecovery;
         private @Nullable Integer dataStorageSizeInGb;
         private @Nullable List<MysqlBackupDbSystemSnapshotDataStorage> dataStorages;
+        private @Nullable List<MysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles;
         private @Nullable String databaseManagement;
         private @Nullable Map<String,String> definedTags;
         private @Nullable List<MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
@@ -476,6 +490,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.crashRecovery = defaults.crashRecovery;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorages = defaults.dataStorages;
+    	      this.databaseConsoles = defaults.databaseConsoles;
     	      this.databaseManagement = defaults.databaseManagement;
     	      this.definedTags = defaults.definedTags;
     	      this.deletionPolicies = defaults.deletionPolicies;
@@ -556,6 +571,15 @@ public final class MysqlBackupDbSystemSnapshot {
         }
         public Builder dataStorages(MysqlBackupDbSystemSnapshotDataStorage... dataStorages) {
             return dataStorages(List.of(dataStorages));
+        }
+        @CustomType.Setter
+        public Builder databaseConsoles(@Nullable List<MysqlBackupDbSystemSnapshotDatabaseConsole> databaseConsoles) {
+
+            this.databaseConsoles = databaseConsoles;
+            return this;
+        }
+        public Builder databaseConsoles(MysqlBackupDbSystemSnapshotDatabaseConsole... databaseConsoles) {
+            return databaseConsoles(List.of(databaseConsoles));
         }
         @CustomType.Setter
         public Builder databaseManagement(@Nullable String databaseManagement) {
@@ -741,6 +765,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.crashRecovery = crashRecovery;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dataStorages = dataStorages;
+            _resultValue.databaseConsoles = databaseConsoles;
             _resultValue.databaseManagement = databaseManagement;
             _resultValue.definedTags = definedTags;
             _resultValue.deletionPolicies = deletionPolicies;

@@ -72,6 +72,18 @@ namespace Pulumi.Oci.Mysql.Inputs
             set => _dataStorages = value;
         }
 
+        [Input("databaseConsoles")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotDatabaseConsoleArgs>? _databaseConsoles;
+
+        /// <summary>
+        /// Database console configuration details.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotDatabaseConsoleArgs> DatabaseConsoles
+        {
+            get => _databaseConsoles ?? (_databaseConsoles = new InputList<Inputs.MysqlBackupDbSystemSnapshotDatabaseConsoleArgs>());
+            set => _databaseConsoles = value;
+        }
+
         /// <summary>
         /// Whether to enable monitoring via the Database Management service.
         /// </summary>

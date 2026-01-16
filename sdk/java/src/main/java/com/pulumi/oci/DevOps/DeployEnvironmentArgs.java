@@ -157,9 +157,6 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of a project.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="projectId", required=true)
     private Output<String> projectId;
@@ -167,12 +164,30 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
     /**
      * @return The OCID of a project.
      * 
+     */
+    public Output<String> projectId() {
+        return this.projectId;
+    }
+
+    /**
+     * (Updatable) Security attributes to be added in to the deployment environment
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> projectId() {
-        return this.projectId;
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes to be added in to the deployment environment
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     private DeployEnvironmentArgs() {}
@@ -188,6 +203,7 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
         this.functionId = $.functionId;
         this.networkChannel = $.networkChannel;
         this.projectId = $.projectId;
+        this.securityAttributes = $.securityAttributes;
     }
 
     public static Builder builder() {
@@ -400,9 +416,6 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param projectId The OCID of a project.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -414,14 +427,38 @@ public final class DeployEnvironmentArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param projectId The OCID of a project.
          * 
+         * @return builder
+         * 
+         */
+        public Builder projectId(String projectId) {
+            return projectId(Output.of(projectId));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes to be added in to the deployment environment
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder projectId(String projectId) {
-            return projectId(Output.of(projectId));
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes to be added in to the deployment environment
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         public DeployEnvironmentArgs build() {

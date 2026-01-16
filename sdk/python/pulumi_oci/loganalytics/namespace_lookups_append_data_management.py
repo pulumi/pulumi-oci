@@ -27,8 +27,9 @@ class NamespaceLookupsAppendDataManagementArgs:
                  is_force: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NamespaceLookupsAppendDataManagement resource.
+        :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
                
                ** IMPORTANT **
@@ -50,6 +51,9 @@ class NamespaceLookupsAppendDataManagementArgs:
     @_builtins.property
     @pulumi.getter(name="appendLookupFile")
     def append_lookup_file(self) -> pulumi.Input[_builtins.str]:
+        """
+        Path to the file containing data for the lookup append.
+        """
         return pulumi.get(self, "append_lookup_file")
 
     @append_lookup_file.setter
@@ -72,7 +76,7 @@ class NamespaceLookupsAppendDataManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Logging Analytics namespace used for the request.
 
 
         ** IMPORTANT **
@@ -132,11 +136,12 @@ class _NamespaceLookupsAppendDataManagementState:
                  namespace: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceLookupsAppendDataManagement resources.
+        :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
                
                ** IMPORTANT **
@@ -158,6 +163,9 @@ class _NamespaceLookupsAppendDataManagementState:
     @_builtins.property
     @pulumi.getter(name="appendLookupFile")
     def append_lookup_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Path to the file containing data for the lookup append.
+        """
         return pulumi.get(self, "append_lookup_file")
 
     @append_lookup_file.setter
@@ -216,7 +224,7 @@ class _NamespaceLookupsAppendDataManagementState:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Logging Analytics namespace used for the request.
 
 
         ** IMPORTANT **
@@ -250,7 +258,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_namespace_lookups_append_data_management = oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management",
-            append_lookup_file_body=namespace_lookups_append_data_management_append_lookup_file_body,
+            append_lookup_file=namespace_lookups_append_data_management_append_lookup_file,
             lookup_name=namespace_lookups_append_data_management_lookup_name,
             namespace=namespace_lookups_append_data_management_namespace,
             char_encoding=namespace_lookups_append_data_management_char_encoding,
@@ -264,11 +272,12 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
                
                ** IMPORTANT **
@@ -288,7 +297,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_namespace_lookups_append_data_management = oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management",
-            append_lookup_file_body=namespace_lookups_append_data_management_append_lookup_file_body,
+            append_lookup_file=namespace_lookups_append_data_management_append_lookup_file,
             lookup_name=namespace_lookups_append_data_management_lookup_name,
             namespace=namespace_lookups_append_data_management_namespace,
             char_encoding=namespace_lookups_append_data_management_char_encoding,
@@ -365,11 +374,12 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request. 
+        :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
                
                ** IMPORTANT **
@@ -390,6 +400,9 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="appendLookupFile")
     def append_lookup_file(self) -> pulumi.Output[_builtins.str]:
+        """
+        Path to the file containing data for the lookup append.
+        """
         return pulumi.get(self, "append_lookup_file")
 
     @_builtins.property
@@ -428,7 +441,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Logging Analytics namespace used for the request. 
+        The Logging Analytics namespace used for the request.
 
 
         ** IMPORTANT **

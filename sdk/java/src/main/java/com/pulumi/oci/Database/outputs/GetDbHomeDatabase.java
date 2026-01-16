@@ -82,6 +82,11 @@ public final class GetDbHomeDatabase {
     private String timeCreated;
     private String timeStampForPointInTimeRecovery;
     private String vaultId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    private String vmClusterId;
 
     private GetDbHomeDatabase() {}
     public String adminPassword() {
@@ -210,6 +215,13 @@ public final class GetDbHomeDatabase {
     public String vaultId() {
         return this.vaultId;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     * 
+     */
+    public String vmClusterId() {
+        return this.vmClusterId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -250,6 +262,7 @@ public final class GetDbHomeDatabase {
         private String timeCreated;
         private String timeStampForPointInTimeRecovery;
         private String vaultId;
+        private String vmClusterId;
         public Builder() {}
         public Builder(GetDbHomeDatabase defaults) {
     	      Objects.requireNonNull(defaults);
@@ -283,6 +296,7 @@ public final class GetDbHomeDatabase {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
     	      this.vaultId = defaults.vaultId;
+    	      this.vmClusterId = defaults.vmClusterId;
         }
 
         @CustomType.Setter
@@ -543,6 +557,14 @@ public final class GetDbHomeDatabase {
             this.vaultId = vaultId;
             return this;
         }
+        @CustomType.Setter
+        public Builder vmClusterId(String vmClusterId) {
+            if (vmClusterId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeDatabase", "vmClusterId");
+            }
+            this.vmClusterId = vmClusterId;
+            return this;
+        }
         public GetDbHomeDatabase build() {
             final var _resultValue = new GetDbHomeDatabase();
             _resultValue.adminPassword = adminPassword;
@@ -575,6 +597,7 @@ public final class GetDbHomeDatabase {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             _resultValue.vaultId = vaultId;
+            _resultValue.vmClusterId = vmClusterId;
             return _resultValue;
         }
     }

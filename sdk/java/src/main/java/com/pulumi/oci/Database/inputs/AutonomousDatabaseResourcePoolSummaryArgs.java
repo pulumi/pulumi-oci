@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,6 +30,21 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
      */
     public Optional<Output<Integer>> availableComputeCapacity() {
         return Optional.ofNullable(this.availableComputeCapacity);
+    }
+
+    /**
+     * (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    @Import(name="availableStorageCapacityInTbs")
+    private @Nullable Output<Double> availableStorageCapacityInTbs;
+
+    /**
+     * @return (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+     * 
+     */
+    public Optional<Output<Double>> availableStorageCapacityInTbs() {
+        return Optional.ofNullable(this.availableStorageCapacityInTbs);
     }
 
     /**
@@ -62,6 +78,21 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
     }
 
     /**
+     * (Updatable) Resource pool storage size in TBs.
+     * 
+     */
+    @Import(name="poolStorageSizeInTbs")
+    private @Nullable Output<Integer> poolStorageSizeInTbs;
+
+    /**
+     * @return (Updatable) Resource pool storage size in TBs.
+     * 
+     */
+    public Optional<Output<Integer>> poolStorageSizeInTbs() {
+        return Optional.ofNullable(this.poolStorageSizeInTbs);
+    }
+
+    /**
      * Resource Pool total capacity, it&#39;s currently 4x of pool size
      * 
      */
@@ -80,8 +111,10 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
 
     private AutonomousDatabaseResourcePoolSummaryArgs(AutonomousDatabaseResourcePoolSummaryArgs $) {
         this.availableComputeCapacity = $.availableComputeCapacity;
+        this.availableStorageCapacityInTbs = $.availableStorageCapacityInTbs;
         this.isDisabled = $.isDisabled;
         this.poolSize = $.poolSize;
+        this.poolStorageSizeInTbs = $.poolStorageSizeInTbs;
         this.totalComputeCapacity = $.totalComputeCapacity;
     }
 
@@ -125,6 +158,27 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
+         * @param availableStorageCapacityInTbs (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableStorageCapacityInTbs(@Nullable Output<Double> availableStorageCapacityInTbs) {
+            $.availableStorageCapacityInTbs = availableStorageCapacityInTbs;
+            return this;
+        }
+
+        /**
+         * @param availableStorageCapacityInTbs (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableStorageCapacityInTbs(Double availableStorageCapacityInTbs) {
+            return availableStorageCapacityInTbs(Output.of(availableStorageCapacityInTbs));
+        }
+
+        /**
          * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
          * 
          * @return builder
@@ -164,6 +218,27 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
          */
         public Builder poolSize(Integer poolSize) {
             return poolSize(Output.of(poolSize));
+        }
+
+        /**
+         * @param poolStorageSizeInTbs (Updatable) Resource pool storage size in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolStorageSizeInTbs(@Nullable Output<Integer> poolStorageSizeInTbs) {
+            $.poolStorageSizeInTbs = poolStorageSizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param poolStorageSizeInTbs (Updatable) Resource pool storage size in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolStorageSizeInTbs(Integer poolStorageSizeInTbs) {
+            return poolStorageSizeInTbs(Output.of(poolStorageSizeInTbs));
         }
 
         /**

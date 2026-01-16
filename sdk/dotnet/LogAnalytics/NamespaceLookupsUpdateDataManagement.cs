@@ -22,7 +22,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// {
     ///     var testNamespaceLookupsUpdateDataManagement = new Oci.LogAnalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management", new()
     ///     {
-    ///         UpdateLookupFileBody = namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
+    ///         UpdateLookupFile = namespaceLookupsUpdateDataManagementUpdateLookupFile,
     ///         LookupName = namespaceLookupsUpdateDataManagementLookupName,
     ///         Namespace = namespaceLookupsUpdateDataManagementNamespace,
     ///         CharEncoding = namespaceLookupsUpdateDataManagementCharEncoding,
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> LookupName { get; private set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -74,6 +74,9 @@ namespace Pulumi.Oci.LogAnalytics
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
+        /// <summary>
+        /// Path to the file containing data for the lookup update.
+        /// </summary>
         [Output("updateLookupFile")]
         public Output<string> UpdateLookupFile { get; private set; } = null!;
 
@@ -148,7 +151,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> LookupName { get; set; } = null!;
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -157,6 +160,9 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
+        /// <summary>
+        /// Path to the file containing data for the lookup update.
+        /// </summary>
         [Input("updateLookupFile", required: true)]
         public Input<string> UpdateLookupFile { get; set; } = null!;
 
@@ -193,7 +199,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? LookupName { get; set; }
 
         /// <summary>
-        /// The Logging Analytics namespace used for the request. 
+        /// The Logging Analytics namespace used for the request.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -202,6 +208,9 @@ namespace Pulumi.Oci.LogAnalytics
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
+        /// <summary>
+        /// Path to the file containing data for the lookup update.
+        /// </summary>
         [Input("updateLookupFile")]
         public Input<string>? UpdateLookupFile { get; set; }
 

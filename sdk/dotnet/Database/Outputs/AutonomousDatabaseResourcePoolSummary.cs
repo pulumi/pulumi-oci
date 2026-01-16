@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int? AvailableComputeCapacity;
         /// <summary>
+        /// (Updatable) Available storage capacity (in TB) that can be used for adding new members or scaling existing members in a dedicated elastic pool.
+        /// </summary>
+        public readonly double? AvailableStorageCapacityInTbs;
+        /// <summary>
         /// (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         /// </summary>
         public readonly bool? IsDisabled;
@@ -25,6 +29,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) Resource pool size.
         /// </summary>
         public readonly int? PoolSize;
+        /// <summary>
+        /// (Updatable) Resource pool storage size in TBs.
+        /// </summary>
+        public readonly int? PoolStorageSizeInTbs;
         /// <summary>
         /// Resource Pool total capacity, it's currently 4x of pool size
         /// </summary>
@@ -34,15 +42,21 @@ namespace Pulumi.Oci.Database.Outputs
         private AutonomousDatabaseResourcePoolSummary(
             int? availableComputeCapacity,
 
+            double? availableStorageCapacityInTbs,
+
             bool? isDisabled,
 
             int? poolSize,
 
+            int? poolStorageSizeInTbs,
+
             int? totalComputeCapacity)
         {
             AvailableComputeCapacity = availableComputeCapacity;
+            AvailableStorageCapacityInTbs = availableStorageCapacityInTbs;
             IsDisabled = isDisabled;
             PoolSize = poolSize;
+            PoolStorageSizeInTbs = poolStorageSizeInTbs;
             TotalComputeCapacity = totalComputeCapacity;
         }
     }

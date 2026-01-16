@@ -177,6 +177,10 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
+        /// Security attributes to be added in to the deployment environment
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the deployment environment.
         /// </summary>
         public readonly string State;
@@ -223,6 +227,8 @@ namespace Pulumi.Oci.DevOps
 
             string projectId,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -245,6 +251,7 @@ namespace Pulumi.Oci.DevOps
             LifecycleDetails = lifecycleDetails;
             NetworkChannels = networkChannels;
             ProjectId = projectId;
+            SecurityAttributes = securityAttributes;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

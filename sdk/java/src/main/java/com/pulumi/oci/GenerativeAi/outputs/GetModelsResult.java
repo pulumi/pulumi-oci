@@ -25,7 +25,15 @@ public final class GetModelsResult {
      * 
      */
     private List<GetModelsModelCollection> modelCollections;
+    /**
+     * @return The lifecycle state of the model.
+     * 
+     */
     private @Nullable String state;
+    /**
+     * @return The provider of the base model.
+     * 
+     */
     private @Nullable String vendor;
 
     private GetModelsResult() {}
@@ -51,9 +59,17 @@ public final class GetModelsResult {
     public List<GetModelsModelCollection> modelCollections() {
         return this.modelCollections;
     }
+    /**
+     * @return The lifecycle state of the model.
+     * 
+     */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The provider of the base model.
+     * 
+     */
     public Optional<String> vendor() {
         return Optional.ofNullable(this.vendor);
     }

@@ -27,7 +27,7 @@ class GetDeployEnvironmentResult:
     """
     A collection of values returned by getDeployEnvironment.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, compute_instance_group_selectors=None, defined_tags=None, deploy_environment_id=None, deploy_environment_type=None, description=None, display_name=None, freeform_tags=None, function_id=None, id=None, lifecycle_details=None, network_channels=None, project_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, compute_instance_group_selectors=None, defined_tags=None, deploy_environment_id=None, deploy_environment_type=None, description=None, display_name=None, freeform_tags=None, function_id=None, id=None, lifecycle_details=None, network_channels=None, project_id=None, security_attributes=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -70,6 +70,9 @@ class GetDeployEnvironmentResult:
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -193,6 +196,14 @@ class GetDeployEnvironmentResult:
         return pulumi.get(self, "project_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes to be added in to the deployment environment
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -245,6 +256,7 @@ class AwaitableGetDeployEnvironmentResult(GetDeployEnvironmentResult):
             lifecycle_details=self.lifecycle_details,
             network_channels=self.network_channels,
             project_id=self.project_id,
+            security_attributes=self.security_attributes,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -290,6 +302,7 @@ def get_deploy_environment(deploy_environment_id: Optional[_builtins.str] = None
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         network_channels=pulumi.get(__ret__, 'network_channels'),
         project_id=pulumi.get(__ret__, 'project_id'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -332,6 +345,7 @@ def get_deploy_environment_output(deploy_environment_id: Optional[pulumi.Input[_
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         network_channels=pulumi.get(__response__, 'network_channels'),
         project_id=pulumi.get(__response__, 'project_id'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

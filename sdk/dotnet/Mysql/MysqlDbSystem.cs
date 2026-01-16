@@ -71,6 +71,11 @@ namespace Pulumi.Oci.Mysql
     ///             MaxStorageSizeInGbs = mysqlDbSystemDataStorageMaxStorageSizeInGbs,
     ///         },
     ///         DataStorageSizeInGb = mysqlDbSystemDataStorageSizeInGb,
+    ///         DatabaseConsole = new Oci.Mysql.Inputs.MysqlDbSystemDatabaseConsoleArgs
+    ///         {
+    ///             Status = mysqlDbSystemDatabaseConsoleStatus,
+    ///             Port = mysqlDbSystemDatabaseConsolePort,
+    ///         },
     ///         DatabaseManagement = mysqlDbSystemDatabaseManagement,
     ///         DatabaseMode = mysqlDbSystemDatabaseMode,
     ///         DefinedTags = 
@@ -233,6 +238,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<int> DataStorageSizeInGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details required to configure the database console while creating a DB System.
+        /// </summary>
+        [Output("databaseConsole")]
+        public Output<Outputs.MysqlDbSystemDatabaseConsole> DatabaseConsole { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Whether to enable monitoring via the Database Management service.
@@ -593,6 +604,12 @@ namespace Pulumi.Oci.Mysql
         public Input<int>? DataStorageSizeInGb { get; set; }
 
         /// <summary>
+        /// (Updatable) Details required to configure the database console while creating a DB System.
+        /// </summary>
+        [Input("databaseConsole")]
+        public Input<Inputs.MysqlDbSystemDatabaseConsoleArgs>? DatabaseConsole { get; set; }
+
+        /// <summary>
         /// (Updatable) Whether to enable monitoring via the Database Management service.
         /// </summary>
         [Input("databaseManagement")]
@@ -913,6 +930,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details required to configure the database console while creating a DB System.
+        /// </summary>
+        [Input("databaseConsole")]
+        public Input<Inputs.MysqlDbSystemDatabaseConsoleGetArgs>? DatabaseConsole { get; set; }
 
         /// <summary>
         /// (Updatable) Whether to enable monitoring via the Database Management service.

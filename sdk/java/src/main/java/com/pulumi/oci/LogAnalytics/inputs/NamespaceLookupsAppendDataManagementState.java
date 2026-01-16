@@ -16,9 +16,17 @@ public final class NamespaceLookupsAppendDataManagementState extends com.pulumi.
 
     public static final NamespaceLookupsAppendDataManagementState Empty = new NamespaceLookupsAppendDataManagementState();
 
+    /**
+     * Path to the file containing data for the lookup append.
+     * 
+     */
     @Import(name="appendLookupFile")
     private @Nullable Output<String> appendLookupFile;
 
+    /**
+     * @return Path to the file containing data for the lookup append.
+     * 
+     */
     public Optional<Output<String>> appendLookupFile() {
         return Optional.ofNullable(this.appendLookupFile);
     }
@@ -133,11 +141,23 @@ public final class NamespaceLookupsAppendDataManagementState extends com.pulumi.
             $ = new NamespaceLookupsAppendDataManagementState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param appendLookupFile Path to the file containing data for the lookup append.
+         * 
+         * @return builder
+         * 
+         */
         public Builder appendLookupFile(@Nullable Output<String> appendLookupFile) {
             $.appendLookupFile = appendLookupFile;
             return this;
         }
 
+        /**
+         * @param appendLookupFile Path to the file containing data for the lookup append.
+         * 
+         * @return builder
+         * 
+         */
         public Builder appendLookupFile(String appendLookupFile) {
             return appendLookupFile(Output.of(appendLookupFile));
         }

@@ -23,6 +23,10 @@ public final class GetModelsModelCollectionItem {
      */
     private String compartmentId;
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the model.
+     * 
+     */
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -44,6 +48,10 @@ public final class GetModelsModelCollectionItem {
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
     private String timeCreated;
     private String timeDeprecated;
@@ -54,6 +62,10 @@ public final class GetModelsModelCollectionItem {
      * 
      */
     private String vendor;
+    /**
+     * @return The version of the model.
+     * 
+     */
     private String version;
 
     private GetModelsModelCollectionItem() {}
@@ -73,6 +85,10 @@ public final class GetModelsModelCollectionItem {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the model.
+     * 
+     */
     public String description() {
         return this.description;
     }
@@ -112,6 +128,10 @@ public final class GetModelsModelCollectionItem {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
@@ -134,6 +154,10 @@ public final class GetModelsModelCollectionItem {
     public String vendor() {
         return this.vendor;
     }
+    /**
+     * @return The version of the model.
+     * 
+     */
     public String version() {
         return this.version;
     }

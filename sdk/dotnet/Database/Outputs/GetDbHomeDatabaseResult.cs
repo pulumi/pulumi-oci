@@ -70,6 +70,10 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string TimeCreated;
         public readonly string TimeStampForPointInTimeRecovery;
         public readonly string VaultId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
+        /// </summary>
+        public readonly string VmClusterId;
 
         [OutputConstructor]
         private GetDbHomeDatabaseResult(
@@ -131,7 +135,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeStampForPointInTimeRecovery,
 
-            string vaultId)
+            string vaultId,
+
+            string vmClusterId)
         {
             AdminPassword = adminPassword;
             BackupId = backupId;
@@ -163,6 +169,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeCreated = timeCreated;
             TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
             VaultId = vaultId;
+            VmClusterId = vmClusterId;
         }
     }
 }

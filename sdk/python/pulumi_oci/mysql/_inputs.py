@@ -41,6 +41,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotDataStorageArgs',
     'MysqlBackupDbSystemSnapshotDataStorageArgsDict',
+    'MysqlBackupDbSystemSnapshotDatabaseConsoleArgs',
+    'MysqlBackupDbSystemSnapshotDatabaseConsoleArgsDict',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict',
     'MysqlBackupDbSystemSnapshotEncryptDataArgs',
@@ -91,6 +93,8 @@ __all__ = [
     'MysqlDbSystemCustomerContactArgsDict',
     'MysqlDbSystemDataStorageArgs',
     'MysqlDbSystemDataStorageArgsDict',
+    'MysqlDbSystemDatabaseConsoleArgs',
+    'MysqlDbSystemDatabaseConsoleArgsDict',
     'MysqlDbSystemDeletionPolicyArgs',
     'MysqlDbSystemDeletionPolicyArgsDict',
     'MysqlDbSystemEncryptDataArgs',
@@ -980,6 +984,10 @@ if not MYPY:
         """
         Data Storage information.
         """
+        database_consoles: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgsDict']]]]
+        """
+        Database console configuration details.
+        """
         database_management: NotRequired[pulumi.Input[_builtins.str]]
         """
         Whether to enable monitoring via the Database Management service.
@@ -1094,6 +1102,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  crash_recovery: Optional[pulumi.Input[_builtins.str]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  data_storages: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]] = None,
+                 database_consoles: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs']]]] = None,
                  database_management: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]] = None,
@@ -1128,6 +1137,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[_builtins.str] crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]] data_storages: Data Storage information.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs']]] database_consoles: Database console configuration details.
         :param pulumi.Input[_builtins.str] database_management: Whether to enable monitoring via the Database Management service.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]] deletion_policies: The Deletion policy for the DB System.
@@ -1170,6 +1180,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storages is not None:
             pulumi.set(__self__, "data_storages", data_storages)
+        if database_consoles is not None:
+            pulumi.set(__self__, "database_consoles", database_consoles)
         if database_management is not None:
             pulumi.set(__self__, "database_management", database_management)
         if defined_tags is not None:
@@ -1316,6 +1328,18 @@ class MysqlBackupDbSystemSnapshotArgs:
     @data_storages.setter
     def data_storages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDataStorageArgs']]]]):
         pulumi.set(self, "data_storages", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsoles")
+    def database_consoles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs']]]]:
+        """
+        Database console configuration details.
+        """
+        return pulumi.get(self, "database_consoles")
+
+    @database_consoles.setter
+    def database_consoles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDatabaseConsoleArgs']]]]):
+        pulumi.set(self, "database_consoles", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -1984,6 +2008,58 @@ class MysqlBackupDbSystemSnapshotDataStorageArgs:
     @max_storage_size_in_gbs.setter
     def max_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "max_storage_size_in_gbs", value)
+
+
+if not MYPY:
+    class MysqlBackupDbSystemSnapshotDatabaseConsoleArgsDict(TypedDict):
+        port: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotDatabaseConsoleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotDatabaseConsoleArgs:
+    def __init__(__self__, *,
+                 port: Optional[pulumi.Input[_builtins.int]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        :param pulumi.Input[_builtins.str] status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
 
 
 if not MYPY:
@@ -7153,6 +7229,57 @@ class MysqlDbSystemDataStorageArgs:
     @max_storage_size_in_gbs.setter
     def max_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "max_storage_size_in_gbs", value)
+
+
+if not MYPY:
+    class MysqlDbSystemDatabaseConsoleArgsDict(TypedDict):
+        status: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Enable/disable the database console on the DB System.
+        """
+        port: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+        """
+elif False:
+    MysqlDbSystemDatabaseConsoleArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlDbSystemDatabaseConsoleArgs:
+    def __init__(__self__, *,
+                 status: pulumi.Input[_builtins.str],
+                 port: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] status: (Updatable) Enable/disable the database console on the DB System.
+        :param pulumi.Input[_builtins.int] port: (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        pulumi.set(__self__, "status", status)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Enable/disable the database console on the DB System.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "port", value)
 
 
 if not MYPY:

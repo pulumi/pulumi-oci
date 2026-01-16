@@ -30,6 +30,7 @@ class AutonomousDatabaseArgs:
                  autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
@@ -76,6 +77,7 @@ class AutonomousDatabaseArgs:
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
@@ -105,6 +107,7 @@ class AutonomousDatabaseArgs:
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
@@ -123,6 +126,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
+        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.float] byol_compute_count_limit: (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
@@ -195,6 +199,7 @@ class AutonomousDatabaseArgs:
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[_builtins.int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[_builtins.str] local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[_builtins.str] ncharacter_set: The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -252,6 +257,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[_builtins.str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+        :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
@@ -282,6 +288,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if autonomous_database_maintenance_window is not None:
+            pulumi.set(__self__, "autonomous_database_maintenance_window", autonomous_database_maintenance_window)
         if autonomous_maintenance_schedule_type is not None:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         if backup_retention_period_in_days is not None:
@@ -377,6 +385,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "license_model", license_model)
         if local_adg_auto_failover_max_data_loss_limit is not None:
             pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+        if local_adg_resource_pool_leader_id is not None:
+            pulumi.set(__self__, "local_adg_resource_pool_leader_id", local_adg_resource_pool_leader_id)
         if long_term_backup_schedules is not None:
             pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         if max_cpu_core_count is not None:
@@ -435,6 +445,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "switchover_to", switchover_to)
         if switchover_to_remote_peer_id is not None:
             pulumi.set(__self__, "switchover_to_remote_peer_id", switchover_to_remote_peer_id)
+        if time_maintenance_pause_until is not None:
+            pulumi.set(__self__, "time_maintenance_pause_until", time_maintenance_pause_until)
         if time_of_auto_refresh_start is not None:
             pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         if time_scheduled_db_version_upgrade is not None:
@@ -557,6 +569,18 @@ class AutonomousDatabaseArgs:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
+    def autonomous_database_maintenance_window(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
+        """
+        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "autonomous_database_maintenance_window")
+
+    @autonomous_database_maintenance_window.setter
+    def autonomous_database_maintenance_window(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
+        pulumi.set(self, "autonomous_database_maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
@@ -1126,6 +1150,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
 
     @_builtins.property
+    @pulumi.getter(name="localAdgResourcePoolLeaderId")
+    def local_adg_resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        """
+        return pulumi.get(self, "local_adg_resource_pool_leader_id")
+
+    @local_adg_resource_pool_leader_id.setter
+    def local_adg_resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "local_adg_resource_pool_leader_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="longTermBackupSchedules")
     def long_term_backup_schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
         """
@@ -1496,6 +1532,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "switchover_to_remote_peer_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeMaintenancePauseUntil")
+    def time_maintenance_pause_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date until which maintenance of Autonomous Database is temporarily paused.
+        """
+        return pulumi.get(self, "time_maintenance_pause_until")
+
+    @time_maintenance_pause_until.setter
+    def time_maintenance_pause_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_maintenance_pause_until", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1600,6 +1648,7 @@ class _AutonomousDatabaseState:
                  autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1669,6 +1718,7 @@ class _AutonomousDatabaseState:
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
                  local_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
                  local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
@@ -1726,6 +1776,7 @@ class _AutonomousDatabaseState:
                  time_local_data_guard_enabled: Optional[pulumi.Input[_builtins.str]] = None,
                  time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
                  time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_joining_resource_pool: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_last_failover: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1759,6 +1810,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
+        :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs'] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -1854,6 +1906,7 @@ class _AutonomousDatabaseState:
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[_builtins.str] local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param pulumi.Input[_builtins.str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLocalStandbyDbArgs']]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -1939,6 +1992,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[_builtins.str] time_maintenance_end: The date and time when maintenance will end.
+        :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_of_joining_resource_pool: The time the member joined the resource pool.
         :param pulumi.Input[_builtins.str] time_of_last_failover: The timestamp of the last failover operation.
@@ -1988,6 +2042,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "autonomous_database_backup_id", autonomous_database_backup_id)
         if autonomous_database_id is not None:
             pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+        if autonomous_database_maintenance_window is not None:
+            pulumi.set(__self__, "autonomous_database_maintenance_window", autonomous_database_maintenance_window)
         if autonomous_maintenance_schedule_type is not None:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         if availability_domain is not None:
@@ -2129,6 +2185,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if local_adg_auto_failover_max_data_loss_limit is not None:
             pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+        if local_adg_resource_pool_leader_id is not None:
+            pulumi.set(__self__, "local_adg_resource_pool_leader_id", local_adg_resource_pool_leader_id)
         if local_disaster_recovery_type is not None:
             pulumi.set(__self__, "local_disaster_recovery_type", local_disaster_recovery_type)
         if local_standby_dbs is not None:
@@ -2243,6 +2301,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_maintenance_begin", time_maintenance_begin)
         if time_maintenance_end is not None:
             pulumi.set(__self__, "time_maintenance_end", time_maintenance_end)
+        if time_maintenance_pause_until is not None:
+            pulumi.set(__self__, "time_maintenance_pause_until", time_maintenance_pause_until)
         if time_of_auto_refresh_start is not None:
             pulumi.set(__self__, "time_of_auto_refresh_start", time_of_auto_refresh_start)
         if time_of_joining_resource_pool is not None:
@@ -2415,6 +2475,18 @@ class _AutonomousDatabaseState:
     @autonomous_database_id.setter
     def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
+    def autonomous_database_maintenance_window(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]:
+        """
+        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "autonomous_database_maintenance_window")
+
+    @autonomous_database_maintenance_window.setter
+    def autonomous_database_maintenance_window(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs']]):
+        pulumi.set(self, "autonomous_database_maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
@@ -3260,6 +3332,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
 
     @_builtins.property
+    @pulumi.getter(name="localAdgResourcePoolLeaderId")
+    def local_adg_resource_pool_leader_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        """
+        return pulumi.get(self, "local_adg_resource_pool_leader_id")
+
+    @local_adg_resource_pool_leader_id.setter
+    def local_adg_resource_pool_leader_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "local_adg_resource_pool_leader_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -3966,6 +4050,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "time_maintenance_end", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeMaintenancePauseUntil")
+    def time_maintenance_pause_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date until which maintenance of Autonomous Database is temporarily paused.
+        """
+        return pulumi.get(self, "time_maintenance_pause_until")
+
+    @time_maintenance_pause_until.setter
+    def time_maintenance_pause_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_maintenance_pause_until", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")
     def time_of_auto_refresh_start(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -4225,6 +4321,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
@@ -4273,6 +4370,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4302,6 +4400,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4330,6 +4429,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.int] backup_retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.float] byol_compute_count_limit: (Updatable) The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
@@ -4404,6 +4504,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[_builtins.int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[_builtins.str] local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[_builtins.str] ncharacter_set: The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -4461,6 +4562,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[_builtins.str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
+        :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
@@ -4514,6 +4616,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                  autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  byol_compute_count_limit: Optional[pulumi.Input[_builtins.float]] = None,
@@ -4562,6 +4665,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
                  long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4591,6 +4695,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to: Optional[pulumi.Input[_builtins.str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4614,6 +4719,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["autonomous_container_database_id"] = autonomous_container_database_id
             __props__.__dict__["autonomous_database_backup_id"] = autonomous_database_backup_id
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+            __props__.__dict__["autonomous_database_maintenance_window"] = autonomous_database_maintenance_window
             __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
             __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
             __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
@@ -4666,6 +4772,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
+            __props__.__dict__["local_adg_resource_pool_leader_id"] = local_adg_resource_pool_leader_id
             __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
             __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
             __props__.__dict__["ncharacter_set"] = ncharacter_set
@@ -4695,6 +4802,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["switchover_to"] = switchover_to
             __props__.__dict__["switchover_to_remote_peer_id"] = switchover_to_remote_peer_id
+            __props__.__dict__["time_maintenance_pause_until"] = time_maintenance_pause_until
             __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
             __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
             __props__.__dict__["timestamp"] = timestamp
@@ -4791,6 +4899,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
             autonomous_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
             autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+            autonomous_database_maintenance_window: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']]] = None,
             autonomous_maintenance_schedule_type: Optional[pulumi.Input[_builtins.str]] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -4860,6 +4969,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[_builtins.int]] = None,
+            local_adg_resource_pool_leader_id: Optional[pulumi.Input[_builtins.str]] = None,
             local_disaster_recovery_type: Optional[pulumi.Input[_builtins.str]] = None,
             local_standby_dbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]]] = None,
             long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]]] = None,
@@ -4917,6 +5027,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_local_data_guard_enabled: Optional[pulumi.Input[_builtins.str]] = None,
             time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
             time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None,
+            time_maintenance_pause_until: Optional[pulumi.Input[_builtins.str]] = None,
             time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
             time_of_joining_resource_pool: Optional[pulumi.Input[_builtins.str]] = None,
             time_of_last_failover: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4955,6 +5066,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
+        :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgs', 'AutonomousDatabaseAutonomousDatabaseMaintenanceWindowArgsDict']] autonomous_database_maintenance_window: (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
         :param pulumi.Input[_builtins.str] autonomous_maintenance_schedule_type: (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] available_upgrade_versions: List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -5050,6 +5162,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[_builtins.str] local_adg_resource_pool_leader_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
         :param pulumi.Input[_builtins.str] local_disaster_recovery_type: Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLocalStandbyDbArgs', 'AutonomousDatabaseLocalStandbyDbArgsDict']]]] local_standby_dbs: Autonomous Data Guard standby database details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseLongTermBackupScheduleArgs', 'AutonomousDatabaseLongTermBackupScheduleArgsDict']]]] long_term_backup_schedules: Details for the long-term backup schedule.
@@ -5135,6 +5248,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_local_data_guard_enabled: The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[_builtins.str] time_maintenance_end: The date and time when maintenance will end.
+        :param pulumi.Input[_builtins.str] time_maintenance_pause_until: The date until which maintenance of Autonomous Database is temporarily paused.
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_of_joining_resource_pool: The time the member joined the resource pool.
         :param pulumi.Input[_builtins.str] time_of_last_failover: The timestamp of the last failover operation.
@@ -5177,6 +5291,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["autonomous_container_database_id"] = autonomous_container_database_id
         __props__.__dict__["autonomous_database_backup_id"] = autonomous_database_backup_id
         __props__.__dict__["autonomous_database_id"] = autonomous_database_id
+        __props__.__dict__["autonomous_database_maintenance_window"] = autonomous_database_maintenance_window
         __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_upgrade_versions"] = available_upgrade_versions
@@ -5246,6 +5361,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
+        __props__.__dict__["local_adg_resource_pool_leader_id"] = local_adg_resource_pool_leader_id
         __props__.__dict__["local_disaster_recovery_type"] = local_disaster_recovery_type
         __props__.__dict__["local_standby_dbs"] = local_standby_dbs
         __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
@@ -5303,6 +5419,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_local_data_guard_enabled"] = time_local_data_guard_enabled
         __props__.__dict__["time_maintenance_begin"] = time_maintenance_begin
         __props__.__dict__["time_maintenance_end"] = time_maintenance_end
+        __props__.__dict__["time_maintenance_pause_until"] = time_maintenance_pause_until
         __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
         __props__.__dict__["time_of_joining_resource_pool"] = time_of_joining_resource_pool
         __props__.__dict__["time_of_last_failover"] = time_of_last_failover
@@ -5412,6 +5529,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
         """
         return pulumi.get(self, "autonomous_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseMaintenanceWindow")
+    def autonomous_database_maintenance_window(self) -> pulumi.Output['outputs.AutonomousDatabaseAutonomousDatabaseMaintenanceWindow']:
+        """
+        (Updatable) Autonomous Database maintenance window. The maintenance window can be configured during database creation. To change the maintenance window of an existing Autonomous Database Serverless instance, clone the database and specify the maintenance window for the new cloned instance.
+        """
+        return pulumi.get(self, "autonomous_database_maintenance_window")
 
     @_builtins.property
     @pulumi.getter(name="autonomousMaintenanceScheduleType")
@@ -5981,6 +6106,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         return pulumi.get(self, "local_adg_auto_failover_max_data_loss_limit")
 
     @_builtins.property
+    @pulumi.getter(name="localAdgResourcePoolLeaderId")
+    def local_adg_resource_pool_leader_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated resource pool leader Autonomous Database in the same region, associated with local Autonomous Data Guard for a dedicated resource pool member.
+        """
+        return pulumi.get(self, "local_adg_resource_pool_leader_id")
+
+    @_builtins.property
     @pulumi.getter(name="localDisasterRecoveryType")
     def local_disaster_recovery_type(self) -> pulumi.Output[_builtins.str]:
         """
@@ -6457,6 +6590,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The date and time when maintenance will end.
         """
         return pulumi.get(self, "time_maintenance_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeMaintenancePauseUntil")
+    def time_maintenance_pause_until(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date until which maintenance of Autonomous Database is temporarily paused.
+        """
+        return pulumi.get(self, "time_maintenance_pause_until")
 
     @_builtins.property
     @pulumi.getter(name="timeOfAutoRefreshStart")

@@ -19,6 +19,10 @@ public final class GetModelResult {
     private List<String> capabilities;
     private String compartmentId;
     private Map<String,String> definedTags;
+    /**
+     * @return An optional description of the model.
+     * 
+     */
     private String description;
     private String displayName;
     private List<GetModelFineTuneDetail> fineTuneDetails;
@@ -28,13 +32,29 @@ public final class GetModelResult {
     private String lifecycleDetails;
     private String modelId;
     private List<GetModelModelMetric> modelMetrics;
+    /**
+     * @return The lifecycle state of the model.
+     * 
+     */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     private Map<String,String> systemTags;
     private String timeCreated;
     private String timeDeprecated;
     private String timeUpdated;
     private String type;
+    /**
+     * @return The provider of the base model.
+     * 
+     */
     private String vendor;
+    /**
+     * @return The version of the model.
+     * 
+     */
     private String version;
 
     private GetModelResult() {}
@@ -50,6 +70,10 @@ public final class GetModelResult {
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return An optional description of the model.
+     * 
+     */
     public String description() {
         return this.description;
     }
@@ -77,9 +101,17 @@ public final class GetModelResult {
     public List<GetModelModelMetric> modelMetrics() {
         return this.modelMetrics;
     }
+    /**
+     * @return The lifecycle state of the model.
+     * 
+     */
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
@@ -95,9 +127,17 @@ public final class GetModelResult {
     public String type() {
         return this.type;
     }
+    /**
+     * @return The provider of the base model.
+     * 
+     */
     public String vendor() {
         return this.vendor;
     }
+    /**
+     * @return The version of the model.
+     * 
+     */
     public String version() {
         return this.version;
     }

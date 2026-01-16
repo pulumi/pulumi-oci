@@ -1412,6 +1412,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []MysqlBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles []MysqlBackupDbSystemSnapshotDatabaseConsole `pulumi:"databaseConsoles"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1492,6 +1494,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	DataStorageSizeInGb pulumi.IntPtrInput `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages MysqlBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles MysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput `pulumi:"databaseConsoles"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1633,6 +1637,13 @@ func (o MysqlBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntPtrOu
 // Data Storage information.
 func (o MysqlBackupDbSystemSnapshotOutput) DataStorages() MysqlBackupDbSystemSnapshotDataStorageArrayOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotDataStorage { return v.DataStorages }).(MysqlBackupDbSystemSnapshotDataStorageArrayOutput)
+}
+
+// Database console configuration details.
+func (o MysqlBackupDbSystemSnapshotOutput) DatabaseConsoles() MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotDatabaseConsole {
+		return v.DatabaseConsoles
+	}).(MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
@@ -2282,6 +2293,112 @@ func (o MysqlBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotDataStorage {
 		return vs[0].([]MysqlBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotDataStorageOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDatabaseConsole struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port *int `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status *string `pulumi:"status"`
+}
+
+// MysqlBackupDbSystemSnapshotDatabaseConsoleInput is an input type that accepts MysqlBackupDbSystemSnapshotDatabaseConsoleArgs and MysqlBackupDbSystemSnapshotDatabaseConsoleOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDatabaseConsoleInput` via:
+//
+//	MysqlBackupDbSystemSnapshotDatabaseConsoleArgs{...}
+type MysqlBackupDbSystemSnapshotDatabaseConsoleInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleOutput
+	ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleOutput
+}
+
+type MysqlBackupDbSystemSnapshotDatabaseConsoleArgs struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (MysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return i.ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDatabaseConsoleOutput)
+}
+
+// MysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotDatabaseConsoleArray and MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotDatabaseConsoleArray{ MysqlBackupDbSystemSnapshotDatabaseConsoleArgs{...} }
+type MysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput
+	ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotDatabaseConsoleArray []MysqlBackupDbSystemSnapshotDatabaseConsoleInput
+
+func (MysqlBackupDbSystemSnapshotDatabaseConsoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotDatabaseConsoleArray) ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotDatabaseConsoleArray) ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDatabaseConsoleOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ToMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return o
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDatabaseConsole) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotDatabaseConsole) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ToMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotDatabaseConsole {
+		return vs[0].([]MysqlBackupDbSystemSnapshotDatabaseConsole)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotDatabaseConsoleOutput)
 }
 
 type MysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -8880,6 +8997,162 @@ func (o MysqlDbSystemDataStoragePtrOutput) MaxStorageSizeInGbs() pulumi.IntPtrOu
 	}).(pulumi.IntPtrOutput)
 }
 
+type MysqlDbSystemDatabaseConsole struct {
+	// (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+	Port *int `pulumi:"port"`
+	// (Updatable) Enable/disable the database console on the DB System.
+	Status string `pulumi:"status"`
+}
+
+// MysqlDbSystemDatabaseConsoleInput is an input type that accepts MysqlDbSystemDatabaseConsoleArgs and MysqlDbSystemDatabaseConsoleOutput values.
+// You can construct a concrete instance of `MysqlDbSystemDatabaseConsoleInput` via:
+//
+//	MysqlDbSystemDatabaseConsoleArgs{...}
+type MysqlDbSystemDatabaseConsoleInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemDatabaseConsoleOutput() MysqlDbSystemDatabaseConsoleOutput
+	ToMysqlDbSystemDatabaseConsoleOutputWithContext(context.Context) MysqlDbSystemDatabaseConsoleOutput
+}
+
+type MysqlDbSystemDatabaseConsoleArgs struct {
+	// (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// (Updatable) Enable/disable the database console on the DB System.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (MysqlDbSystemDatabaseConsoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i MysqlDbSystemDatabaseConsoleArgs) ToMysqlDbSystemDatabaseConsoleOutput() MysqlDbSystemDatabaseConsoleOutput {
+	return i.ToMysqlDbSystemDatabaseConsoleOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemDatabaseConsoleArgs) ToMysqlDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDatabaseConsoleOutput)
+}
+
+func (i MysqlDbSystemDatabaseConsoleArgs) ToMysqlDbSystemDatabaseConsolePtrOutput() MysqlDbSystemDatabaseConsolePtrOutput {
+	return i.ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemDatabaseConsoleArgs) ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsolePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDatabaseConsoleOutput).ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemDatabaseConsolePtrInput is an input type that accepts MysqlDbSystemDatabaseConsoleArgs, MysqlDbSystemDatabaseConsolePtr and MysqlDbSystemDatabaseConsolePtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemDatabaseConsolePtrInput` via:
+//
+//	        MysqlDbSystemDatabaseConsoleArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemDatabaseConsolePtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemDatabaseConsolePtrOutput() MysqlDbSystemDatabaseConsolePtrOutput
+	ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(context.Context) MysqlDbSystemDatabaseConsolePtrOutput
+}
+
+type mysqlDbSystemDatabaseConsolePtrType MysqlDbSystemDatabaseConsoleArgs
+
+func MysqlDbSystemDatabaseConsolePtr(v *MysqlDbSystemDatabaseConsoleArgs) MysqlDbSystemDatabaseConsolePtrInput {
+	return (*mysqlDbSystemDatabaseConsolePtrType)(v)
+}
+
+func (*mysqlDbSystemDatabaseConsolePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemDatabaseConsolePtrType) ToMysqlDbSystemDatabaseConsolePtrOutput() MysqlDbSystemDatabaseConsolePtrOutput {
+	return i.ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemDatabaseConsolePtrType) ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsolePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemDatabaseConsolePtrOutput)
+}
+
+type MysqlDbSystemDatabaseConsoleOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemDatabaseConsoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o MysqlDbSystemDatabaseConsoleOutput) ToMysqlDbSystemDatabaseConsoleOutput() MysqlDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+func (o MysqlDbSystemDatabaseConsoleOutput) ToMysqlDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+func (o MysqlDbSystemDatabaseConsoleOutput) ToMysqlDbSystemDatabaseConsolePtrOutput() MysqlDbSystemDatabaseConsolePtrOutput {
+	return o.ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemDatabaseConsoleOutput) ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsolePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemDatabaseConsole) *MysqlDbSystemDatabaseConsole {
+		return &v
+	}).(MysqlDbSystemDatabaseConsolePtrOutput)
+}
+
+// (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlDbSystemDatabaseConsoleOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemDatabaseConsole) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Enable/disable the database console on the DB System.
+func (o MysqlDbSystemDatabaseConsoleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemDatabaseConsole) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type MysqlDbSystemDatabaseConsolePtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemDatabaseConsolePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o MysqlDbSystemDatabaseConsolePtrOutput) ToMysqlDbSystemDatabaseConsolePtrOutput() MysqlDbSystemDatabaseConsolePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemDatabaseConsolePtrOutput) ToMysqlDbSystemDatabaseConsolePtrOutputWithContext(ctx context.Context) MysqlDbSystemDatabaseConsolePtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemDatabaseConsolePtrOutput) Elem() MysqlDbSystemDatabaseConsoleOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDatabaseConsole) MysqlDbSystemDatabaseConsole {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemDatabaseConsole
+		return ret
+	}).(MysqlDbSystemDatabaseConsoleOutput)
+}
+
+// (Updatable) The port on which the database console can be accessed. Supported port numbers are 443 and from 1024 to 65535.
+func (o MysqlDbSystemDatabaseConsolePtrOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDatabaseConsole) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Port
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Enable/disable the database console on the DB System.
+func (o MysqlDbSystemDatabaseConsolePtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemDatabaseConsole) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
 type MysqlDbSystemDeletionPolicy struct {
 	// (Updatable) Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
 	AutomaticBackupRetention *string `pulumi:"automaticBackupRetention"`
@@ -13024,6 +13297,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []GetMysqlBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles []GetMysqlBackupDbSystemSnapshotDatabaseConsole `pulumi:"databaseConsoles"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -13104,6 +13379,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages GetMysqlBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput `pulumi:"databaseConsoles"`
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -13249,6 +13526,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) DataStorages() GetMysqlBackupDbSys
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotDataStorage {
 		return v.DataStorages
 	}).(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput)
+}
+
+// Database console configuration details.
+func (o GetMysqlBackupDbSystemSnapshotOutput) DatabaseConsoles() GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotDatabaseConsole {
+		return v.DatabaseConsoles
+	}).(GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput)
 }
 
 // Whether to enable monitoring via the Database Management service.
@@ -13904,6 +14188,112 @@ func (o GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotDataStorage {
 		return vs[0].([]GetMysqlBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
 	}).(GetMysqlBackupDbSystemSnapshotDataStorageOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDatabaseConsole struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status string `pulumi:"status"`
+}
+
+// GetMysqlBackupDbSystemSnapshotDatabaseConsoleInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs and GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotDatabaseConsoleInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs{...}
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput
+	ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray and GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray{ GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs{...} }
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray []GetMysqlBackupDbSystemSnapshotDatabaseConsoleInput
+
+func (GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return o
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDatabaseConsole) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotDatabaseConsole) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput() GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) ToGetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotDatabaseConsole {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotDatabaseConsole)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput)
 }
 
 type GetMysqlBackupDbSystemSnapshotDeletionPolicy struct {
@@ -20351,6 +20741,112 @@ func (o GetMysqlDbSystemDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysq
 	}).(GetMysqlDbSystemDataStorageOutput)
 }
 
+type GetMysqlDbSystemDatabaseConsole struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status string `pulumi:"status"`
+}
+
+// GetMysqlDbSystemDatabaseConsoleInput is an input type that accepts GetMysqlDbSystemDatabaseConsoleArgs and GetMysqlDbSystemDatabaseConsoleOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemDatabaseConsoleInput` via:
+//
+//	GetMysqlDbSystemDatabaseConsoleArgs{...}
+type GetMysqlDbSystemDatabaseConsoleInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemDatabaseConsoleOutput() GetMysqlDbSystemDatabaseConsoleOutput
+	ToGetMysqlDbSystemDatabaseConsoleOutputWithContext(context.Context) GetMysqlDbSystemDatabaseConsoleOutput
+}
+
+type GetMysqlDbSystemDatabaseConsoleArgs struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetMysqlDbSystemDatabaseConsoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemDatabaseConsoleArgs) ToGetMysqlDbSystemDatabaseConsoleOutput() GetMysqlDbSystemDatabaseConsoleOutput {
+	return i.ToGetMysqlDbSystemDatabaseConsoleOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemDatabaseConsoleArgs) ToGetMysqlDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlDbSystemDatabaseConsoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDatabaseConsoleOutput)
+}
+
+// GetMysqlDbSystemDatabaseConsoleArrayInput is an input type that accepts GetMysqlDbSystemDatabaseConsoleArray and GetMysqlDbSystemDatabaseConsoleArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemDatabaseConsoleArrayInput` via:
+//
+//	GetMysqlDbSystemDatabaseConsoleArray{ GetMysqlDbSystemDatabaseConsoleArgs{...} }
+type GetMysqlDbSystemDatabaseConsoleArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemDatabaseConsoleArrayOutput
+	ToGetMysqlDbSystemDatabaseConsoleArrayOutputWithContext(context.Context) GetMysqlDbSystemDatabaseConsoleArrayOutput
+}
+
+type GetMysqlDbSystemDatabaseConsoleArray []GetMysqlDbSystemDatabaseConsoleInput
+
+func (GetMysqlDbSystemDatabaseConsoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemDatabaseConsoleArray) ToGetMysqlDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemDatabaseConsoleArrayOutput {
+	return i.ToGetMysqlDbSystemDatabaseConsoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemDatabaseConsoleArray) ToGetMysqlDbSystemDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemDatabaseConsoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemDatabaseConsoleArrayOutput)
+}
+
+type GetMysqlDbSystemDatabaseConsoleOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemDatabaseConsoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemDatabaseConsoleOutput) ToGetMysqlDbSystemDatabaseConsoleOutput() GetMysqlDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDatabaseConsoleOutput) ToGetMysqlDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlDbSystemDatabaseConsoleOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDatabaseConsole) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+func (o GetMysqlDbSystemDatabaseConsoleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemDatabaseConsole) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemDatabaseConsoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemDatabaseConsoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemDatabaseConsoleArrayOutput) ToGetMysqlDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDatabaseConsoleArrayOutput) ToGetMysqlDbSystemDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemDatabaseConsoleArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemDatabaseConsoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemDatabaseConsole {
+		return vs[0].([]GetMysqlDbSystemDatabaseConsole)[vs[1].(int)]
+	}).(GetMysqlDbSystemDatabaseConsoleOutput)
+}
+
 type GetMysqlDbSystemDeletionPolicy struct {
 	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
 	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
@@ -21624,6 +22120,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages []GetMysqlDbSystemsDbSystemDataStorage `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles []GetMysqlDbSystemsDbSystemDatabaseConsole `pulumi:"databaseConsoles"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
@@ -21735,6 +22233,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
 	// Data Storage information.
 	DataStorages GetMysqlDbSystemsDbSystemDataStorageArrayInput `pulumi:"dataStorages"`
+	// Database console configuration details.
+	DatabaseConsoles GetMysqlDbSystemsDbSystemDatabaseConsoleArrayInput `pulumi:"databaseConsoles"`
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// The database mode indicating the types of statements that are allowed to run in the the DB system. This mode applies only to statements run by user connections. Replicated write statements continue  to be allowed regardless of the DatabaseMode.
@@ -21926,6 +22426,13 @@ func (o GetMysqlDbSystemsDbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput 
 // Data Storage information.
 func (o GetMysqlDbSystemsDbSystemOutput) DataStorages() GetMysqlDbSystemsDbSystemDataStorageArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemDataStorage { return v.DataStorages }).(GetMysqlDbSystemsDbSystemDataStorageArrayOutput)
+}
+
+// Database console configuration details.
+func (o GetMysqlDbSystemsDbSystemOutput) DatabaseConsoles() GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemDatabaseConsole {
+		return v.DatabaseConsoles
+	}).(GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput)
 }
 
 // Filter DB Systems by their Database Management configuration.
@@ -23684,6 +24191,112 @@ func (o GetMysqlDbSystemsDbSystemDataStorageArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemDataStorage {
 		return vs[0].([]GetMysqlDbSystemsDbSystemDataStorage)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemDataStorageOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDatabaseConsole struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port int `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status string `pulumi:"status"`
+}
+
+// GetMysqlDbSystemsDbSystemDatabaseConsoleInput is an input type that accepts GetMysqlDbSystemsDbSystemDatabaseConsoleArgs and GetMysqlDbSystemsDbSystemDatabaseConsoleOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemDatabaseConsoleInput` via:
+//
+//	GetMysqlDbSystemsDbSystemDatabaseConsoleArgs{...}
+type GetMysqlDbSystemsDbSystemDatabaseConsoleInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleOutput
+	ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleOutput
+}
+
+type GetMysqlDbSystemsDbSystemDatabaseConsoleArgs struct {
+	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetMysqlDbSystemsDbSystemDatabaseConsoleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemDatabaseConsoleArgs) ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleOutput {
+	return i.ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemDatabaseConsoleArgs) ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDatabaseConsoleOutput)
+}
+
+// GetMysqlDbSystemsDbSystemDatabaseConsoleArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemDatabaseConsoleArray and GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemDatabaseConsoleArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemDatabaseConsoleArray{ GetMysqlDbSystemsDbSystemDatabaseConsoleArgs{...} }
+type GetMysqlDbSystemsDbSystemDatabaseConsoleArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput
+	ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemDatabaseConsoleArray []GetMysqlDbSystemsDbSystemDatabaseConsoleInput
+
+func (GetMysqlDbSystemsDbSystemDatabaseConsoleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemDatabaseConsoleArray) ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemDatabaseConsoleArray) ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDatabaseConsoleOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemDatabaseConsoleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleOutput) ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleOutput) ToGetMysqlDbSystemsDbSystemDatabaseConsoleOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleOutput {
+	return o
+}
+
+// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDatabaseConsole) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemDatabaseConsole) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemDatabaseConsole)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput) ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput() GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput) ToGetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemDatabaseConsoleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemDatabaseConsole {
+		return vs[0].([]GetMysqlDbSystemsDbSystemDatabaseConsole)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemDatabaseConsoleOutput)
 }
 
 type GetMysqlDbSystemsDbSystemDeletionPolicy struct {
@@ -26725,6 +27338,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDatabaseConsoleInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDatabaseConsoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDatabaseConsoleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEncryptDataArgs{})
@@ -26775,6 +27390,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCustomerContactArrayInput)(nil)).Elem(), MysqlDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStorageInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStoragePtrInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDatabaseConsoleInput)(nil)).Elem(), MysqlDbSystemDatabaseConsoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDatabaseConsolePtrInput)(nil)).Elem(), MysqlDbSystemDatabaseConsoleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEncryptDataInput)(nil)).Elem(), MysqlDbSystemEncryptDataArgs{})
@@ -26841,6 +27458,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDatabaseConsoleInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDatabaseConsoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDatabaseConsoleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEncryptDataArgs{})
@@ -26907,6 +27526,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCustomerContactArrayInput)(nil)).Elem(), GetMysqlDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDatabaseConsoleInput)(nil)).Elem(), GetMysqlDbSystemDatabaseConsoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDatabaseConsoleArrayInput)(nil)).Elem(), GetMysqlDbSystemDatabaseConsoleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEncryptDataInput)(nil)).Elem(), GetMysqlDbSystemEncryptDataArgs{})
@@ -26953,6 +27574,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCustomerContactArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCustomerContactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDatabaseConsoleInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDatabaseConsoleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDatabaseConsoleArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDatabaseConsoleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEncryptDataInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEncryptDataArgs{})
@@ -27027,6 +27650,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDatabaseConsoleOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEncryptDataOutput{})
@@ -27077,6 +27702,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDataStoragePtrOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemDatabaseConsoleOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemDatabaseConsolePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemEncryptDataOutput{})
@@ -27143,6 +27770,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDatabaseConsoleOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDatabaseConsoleArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEncryptDataOutput{})
@@ -27209,6 +27838,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemDatabaseConsoleOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemDatabaseConsoleArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemEncryptDataOutput{})
@@ -27255,6 +27886,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCustomerContactArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDatabaseConsoleOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDatabaseConsoleArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEncryptDataOutput{})

@@ -250,6 +250,11 @@ export type Namespace = import("./namespace").Namespace;
 export const Namespace: typeof import("./namespace").Namespace = null as any;
 utilities.lazyLoad(exports, ["Namespace"], () => require("./namespace"));
 
+export { NamespaceAssociationArgs, NamespaceAssociationState } from "./namespaceAssociation";
+export type NamespaceAssociation = import("./namespaceAssociation").NamespaceAssociation;
+export const NamespaceAssociation: typeof import("./namespaceAssociation").NamespaceAssociation = null as any;
+utilities.lazyLoad(exports, ["NamespaceAssociation"], () => require("./namespaceAssociation"));
+
 export { NamespaceIngestTimeRuleArgs, NamespaceIngestTimeRuleState } from "./namespaceIngestTimeRule";
 export type NamespaceIngestTimeRule = import("./namespaceIngestTimeRule").NamespaceIngestTimeRule;
 export const NamespaceIngestTimeRule: typeof import("./namespaceIngestTimeRule").NamespaceIngestTimeRule = null as any;
@@ -317,6 +322,8 @@ const _module = {
                 return new LogAnalyticsUnprocessedDataBucketManagement(name, <any>undefined, { urn })
             case "oci:LogAnalytics/namespace:Namespace":
                 return new Namespace(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/namespaceAssociation:NamespaceAssociation":
+                return new NamespaceAssociation(name, <any>undefined, { urn })
             case "oci:LogAnalytics/namespaceIngestTimeRule:NamespaceIngestTimeRule":
                 return new NamespaceIngestTimeRule(name, <any>undefined, { urn })
             case "oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement":
@@ -349,6 +356,7 @@ pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsPreferenc
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsResourceCategoriesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsUnprocessedDataBucketManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespace", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceIngestTimeRule", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceIngestTimeRulesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/namespaceLookup", _module)

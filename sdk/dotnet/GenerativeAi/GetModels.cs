@@ -235,7 +235,13 @@ namespace Pulumi.Oci.GenerativeAi
         /// The list of model_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionResult> ModelCollections;
+        /// <summary>
+        /// The lifecycle state of the model.
+        /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The provider of the base model.
+        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

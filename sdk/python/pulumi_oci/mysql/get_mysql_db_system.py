@@ -27,7 +27,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, encrypt_datas=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, security_attributes=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_consoles=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, encrypt_datas=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, security_attributes=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
@@ -67,6 +67,9 @@ class GetMysqlDbSystemResult:
         if data_storages and not isinstance(data_storages, list):
             raise TypeError("Expected argument 'data_storages' to be a list")
         pulumi.set(__self__, "data_storages", data_storages)
+        if database_consoles and not isinstance(database_consoles, list):
+            raise TypeError("Expected argument 'database_consoles' to be a list")
+        pulumi.set(__self__, "database_consoles", database_consoles)
         if database_management and not isinstance(database_management, str):
             raise TypeError("Expected argument 'database_management' to be a str")
         pulumi.set(__self__, "database_management", database_management)
@@ -275,6 +278,14 @@ class GetMysqlDbSystemResult:
         Data Storage information.
         """
         return pulumi.get(self, "data_storages")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConsoles")
+    def database_consoles(self) -> Sequence['outputs.GetMysqlDbSystemDatabaseConsoleResult']:
+        """
+        Database console configuration details.
+        """
+        return pulumi.get(self, "database_consoles")
 
     @_builtins.property
     @pulumi.getter(name="databaseManagement")
@@ -583,6 +594,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             customer_contacts=self.customer_contacts,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storages=self.data_storages,
+            database_consoles=self.database_consoles,
             database_management=self.database_management,
             database_mode=self.database_mode,
             db_system_id=self.db_system_id,
@@ -659,6 +671,7 @@ def get_mysql_db_system(db_system_id: Optional[_builtins.str] = None,
         customer_contacts=pulumi.get(__ret__, 'customer_contacts'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         data_storages=pulumi.get(__ret__, 'data_storages'),
+        database_consoles=pulumi.get(__ret__, 'database_consoles'),
         database_management=pulumi.get(__ret__, 'database_management'),
         database_mode=pulumi.get(__ret__, 'database_mode'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
@@ -732,6 +745,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[_builtins.str
         customer_contacts=pulumi.get(__response__, 'customer_contacts'),
         data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
         data_storages=pulumi.get(__response__, 'data_storages'),
+        database_consoles=pulumi.get(__response__, 'database_consoles'),
         database_management=pulumi.get(__response__, 'database_management'),
         database_mode=pulumi.get(__response__, 'database_mode'),
         db_system_id=pulumi.get(__response__, 'db_system_id'),

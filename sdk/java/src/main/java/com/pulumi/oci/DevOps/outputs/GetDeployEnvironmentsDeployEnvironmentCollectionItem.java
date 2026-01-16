@@ -80,6 +80,11 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
      */
     private String projectId;
     /**
+     * @return Security attributes to be added in to the deployment environment
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return A filter to return only DeployEnvironments that matches the given lifecycleState.
      * 
      */
@@ -193,6 +198,13 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
         return this.projectId;
     }
     /**
+     * @return Security attributes to be added in to the deployment environment
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return A filter to return only DeployEnvironments that matches the given lifecycleState.
      * 
      */
@@ -243,6 +255,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
         private String lifecycleDetails;
         private List<GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannel> networkChannels;
         private String projectId;
+        private Map<String,String> securityAttributes;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -263,6 +276,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkChannels = defaults.networkChannels;
     	      this.projectId = defaults.projectId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -380,6 +394,14 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDeployEnvironmentsDeployEnvironmentCollectionItem", "state");
@@ -426,6 +448,7 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItem {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkChannels = networkChannels;
             _resultValue.projectId = projectId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

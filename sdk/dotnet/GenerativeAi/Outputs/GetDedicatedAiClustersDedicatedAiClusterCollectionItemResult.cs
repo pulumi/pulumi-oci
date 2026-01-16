@@ -13,9 +13,6 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult
     {
-        /// <summary>
-        /// The total capacity for a dedicated AI cluster.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult> Capacities;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

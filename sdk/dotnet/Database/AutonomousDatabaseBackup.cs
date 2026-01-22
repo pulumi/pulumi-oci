@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Database
         public Output<double> DatabaseSizeInTbs { get; private set; } = null!;
 
         /// <summary>
-        /// A valid Oracle AI Database version for Autonomous AI Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -322,7 +322,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? DatabaseSizeInTbs { get; set; }
 
         /// <summary>
-        /// A valid Oracle AI Database version for Autonomous AI Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }

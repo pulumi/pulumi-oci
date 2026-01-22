@@ -36,6 +36,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Type: pulumi.Any(iotDomainGroupType),
 //			})
 //			if err != nil {
 //				return err
@@ -73,9 +74,6 @@ type IotIotDomainGroup struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The current state of an IoT Domain Group.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -85,6 +83,11 @@ type IotIotDomainGroup struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringOutput `pulumi:"type"`
 }
 
 // NewIotIotDomainGroup registers a new resource with the given unique name, arguments, and options.
@@ -137,9 +140,6 @@ type iotIotDomainGroupState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The current state of an IoT Domain Group.
 	State *string `pulumi:"state"`
@@ -149,6 +149,11 @@ type iotIotDomainGroupState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type *string `pulumi:"type"`
 }
 
 type IotIotDomainGroupState struct {
@@ -169,9 +174,6 @@ type IotIotDomainGroupState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
 	// The current state of an IoT Domain Group.
 	State pulumi.StringPtrInput
@@ -181,6 +183,11 @@ type IotIotDomainGroupState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringPtrInput
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Type pulumi.StringPtrInput
 }
 
 func (IotIotDomainGroupState) ElementType() reflect.Type {
@@ -197,10 +204,12 @@ type iotIotDomainGroupArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a IotIotDomainGroup resource.
@@ -214,10 +223,12 @@ type IotIotDomainGroupArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	Type pulumi.StringPtrInput
 }
 
 func (IotIotDomainGroupArgs) ElementType() reflect.Type {
@@ -348,9 +359,6 @@ func (o IotIotDomainGroupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o IotIotDomainGroupOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *IotIotDomainGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -373,6 +381,14 @@ func (o IotIotDomainGroupOutput) TimeCreated() pulumi.StringOutput {
 // The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o IotIotDomainGroupOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *IotIotDomainGroup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o IotIotDomainGroupOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v *IotIotDomainGroup) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
 type IotIotDomainGroupArrayOutput struct{ *pulumi.OutputState }

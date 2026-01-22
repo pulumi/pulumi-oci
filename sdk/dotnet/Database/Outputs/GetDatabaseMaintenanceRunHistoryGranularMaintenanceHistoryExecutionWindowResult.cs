@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new execution window created as part of reschedule for the execution window failure.
+        /// </summary>
+        public readonly string DeferredExecutionWindowId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -98,6 +102,8 @@ namespace Pulumi.Oci.Database.Outputs
         private GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindowResult(
             string compartmentId,
 
+            string deferredExecutionWindowId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string description,
@@ -137,6 +143,7 @@ namespace Pulumi.Oci.Database.Outputs
             string windowType)
         {
             CompartmentId = compartmentId;
+            DeferredExecutionWindowId = deferredExecutionWindowId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

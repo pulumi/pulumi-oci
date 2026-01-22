@@ -73,7 +73,8 @@ def get_iot_digital_twin_instance_content(digital_twin_instance_id: Optional[_bu
     """
     This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
 
-    Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+    Retrieves the content associated with a digital twin instance identified by the specified OCID.
+    The content can be retrieved only when a model is associated with the digital twin instance.
 
     ## Example Usage
 
@@ -105,7 +106,8 @@ def get_iot_digital_twin_instance_content_output(digital_twin_instance_id: Optio
     """
     This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
 
-    Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+    Retrieves the content associated with a digital twin instance identified by the specified OCID.
+    The content can be retrieved only when a model is associated with the digital twin instance.
 
     ## Example Usage
 

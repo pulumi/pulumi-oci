@@ -34,6 +34,7 @@ from .cloud_exadata_infrastructure_configure_exascale_management import *
 from .cloud_vm_cluster import *
 from .cloud_vm_cluster_iorm_config import *
 from .data_guard_association import *
+from .data_patch import *
 from .database import *
 from .database_snapshot_standby import *
 from .database_software_image import *
@@ -132,6 +133,8 @@ from .get_database_software_images import *
 from .get_database_upgrade_history_entries import *
 from .get_database_upgrade_history_entry import *
 from .get_databases import *
+from .get_db_connection_bundle import *
+from .get_db_connection_bundles import *
 from .get_db_home import *
 from .get_db_home_patch_history_entries import *
 from .get_db_home_patches import *

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseEncryptionKeyLocationDetailsArgs;
+import com.pulumi.oci.Database.inputs.DatabaseDatabasePatchOptionsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseStorageSizeDetailsArgs;
 import java.lang.Boolean;
@@ -275,14 +276,14 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     public Optional<Output<String>> kmsKeyVersionId() {
@@ -302,6 +303,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> ncharacterSet() {
         return Optional.ofNullable(this.ncharacterSet);
+    }
+
+    /**
+     * (Updatable) Options for DB Home and Database patching
+     * 
+     */
+    @Import(name="patchOptions")
+    private @Nullable Output<DatabaseDatabasePatchOptionsArgs> patchOptions;
+
+    /**
+     * @return (Updatable) Options for DB Home and Database patching
+     * 
+     */
+    public Optional<Output<DatabaseDatabasePatchOptionsArgs>> patchOptions() {
+        return Optional.ofNullable(this.patchOptions);
     }
 
     /**
@@ -526,6 +542,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.ncharacterSet = $.ncharacterSet;
+        this.patchOptions = $.patchOptions;
         this.pdbName = $.pdbName;
         this.pluggableDatabases = $.pluggableDatabases;
         this.protectionMode = $.protectionMode;
@@ -908,7 +925,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          * 
          * @return builder
          * 
@@ -919,7 +936,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          * 
          * @return builder
          * 
@@ -947,6 +964,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder ncharacterSet(String ncharacterSet) {
             return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        /**
+         * @param patchOptions (Updatable) Options for DB Home and Database patching
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchOptions(@Nullable Output<DatabaseDatabasePatchOptionsArgs> patchOptions) {
+            $.patchOptions = patchOptions;
+            return this;
+        }
+
+        /**
+         * @param patchOptions (Updatable) Options for DB Home and Database patching
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchOptions(DatabaseDatabasePatchOptionsArgs patchOptions) {
+            return patchOptions(Output.of(patchOptions));
         }
 
         /**

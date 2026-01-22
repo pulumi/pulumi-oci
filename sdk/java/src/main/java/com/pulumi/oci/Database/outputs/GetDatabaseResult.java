@@ -157,6 +157,11 @@ public final class GetDatabaseResult {
      */
     private String ncharacterSet;
     /**
+     * @return The patch version of the  database.
+     * 
+     */
+    private String patchVersion;
+    /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
@@ -405,6 +410,13 @@ public final class GetDatabaseResult {
         return this.ncharacterSet;
     }
     /**
+     * @return The patch version of the  database.
+     * 
+     */
+    public String patchVersion() {
+        return this.patchVersion;
+    }
+    /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
      */
@@ -512,6 +524,7 @@ public final class GetDatabaseResult {
         private String lastFailedBackupTimestamp;
         private String lifecycleDetails;
         private String ncharacterSet;
+        private String patchVersion;
         private String pdbName;
         private String sidPrefix;
         private String source;
@@ -557,6 +570,7 @@ public final class GetDatabaseResult {
     	      this.lastFailedBackupTimestamp = defaults.lastFailedBackupTimestamp;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.patchVersion = defaults.patchVersion;
     	      this.pdbName = defaults.pdbName;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.source = defaults.source;
@@ -841,6 +855,14 @@ public final class GetDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder patchVersion(String patchVersion) {
+            if (patchVersion == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseResult", "patchVersion");
+            }
+            this.patchVersion = patchVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             if (pdbName == null) {
               throw new MissingRequiredPropertyException("GetDatabaseResult", "pdbName");
@@ -957,6 +979,7 @@ public final class GetDatabaseResult {
             _resultValue.lastFailedBackupTimestamp = lastFailedBackupTimestamp;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.patchVersion = patchVersion;
             _resultValue.pdbName = pdbName;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.source = source;

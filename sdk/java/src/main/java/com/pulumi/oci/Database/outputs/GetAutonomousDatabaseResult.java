@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseEncryptionKey;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntry;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLongTermBackupSchedule;
@@ -22,6 +23,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRemoteDisasterRecove
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseStandbyDb;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseTransportableTablespace;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseVanityConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseVanityUrlDetail;
 import java.lang.Boolean;
@@ -204,7 +206,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private List<GetAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
-     * @return A valid Oracle AI Database version for Autonomous AI Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
      * 
      */
     private String dbVersion;
@@ -248,6 +250,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private List<GetAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    private List<GetAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     /**
      * @return Details of the Autonomous AI Database encryption key.
      * 
@@ -732,6 +735,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private Double totalBackupStorageSizeInGbs;
+    private List<GetAutonomousDatabaseTransportableTablespace> transportableTablespaces;
     private Boolean useLatestAvailableBackupTimeStamp;
     /**
      * @return The storage space consumed by Autonomous AI Database in GBs.
@@ -1009,7 +1013,7 @@ public final class GetAutonomousDatabaseResult {
         return this.dbToolsDetails;
     }
     /**
-     * @return A valid Oracle AI Database version for Autonomous AI Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
      * 
      */
     public String dbVersion() {
@@ -1068,6 +1072,9 @@ public final class GetAutonomousDatabaseResult {
      */
     public List<GetAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries() {
         return this.encryptionKeyHistoryEntries;
+    }
+    public List<GetAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * @return Details of the Autonomous AI Database encryption key.
@@ -1771,6 +1778,9 @@ public final class GetAutonomousDatabaseResult {
     public Double totalBackupStorageSizeInGbs() {
         return this.totalBackupStorageSizeInGbs;
     }
+    public List<GetAutonomousDatabaseTransportableTablespace> transportableTablespaces() {
+        return this.transportableTablespaces;
+    }
     public Boolean useLatestAvailableBackupTimeStamp() {
         return this.useLatestAvailableBackupTimeStamp;
     }
@@ -1871,6 +1881,7 @@ public final class GetAutonomousDatabaseResult {
         private String displayName;
         private Boolean enableDeleteScheduledOperations;
         private List<GetAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+        private List<GetAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private List<GetAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
@@ -1980,6 +1991,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
         private Double totalBackupStorageSizeInGbs;
+        private List<GetAutonomousDatabaseTransportableTablespace> transportableTablespaces;
         private Boolean useLatestAvailableBackupTimeStamp;
         private Integer usedDataStorageSizeInGbs;
         private Integer usedDataStorageSizeInTbs;
@@ -2035,6 +2047,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.displayName = defaults.displayName;
     	      this.enableDeleteScheduledOperations = defaults.enableDeleteScheduledOperations;
     	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -2144,6 +2157,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
     	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
+    	      this.transportableTablespaces = defaults.transportableTablespaces;
     	      this.useLatestAvailableBackupTimeStamp = defaults.useLatestAvailableBackupTimeStamp;
     	      this.usedDataStorageSizeInGbs = defaults.usedDataStorageSizeInGbs;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
@@ -2542,6 +2556,17 @@ public final class GetAutonomousDatabaseResult {
         }
         public Builder encryptionKeyHistoryEntries(GetAutonomousDatabaseEncryptionKeyHistoryEntry... encryptionKeyHistoryEntries) {
             return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetAutonomousDatabaseEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
         @CustomType.Setter
         public Builder encryptionKeys(List<GetAutonomousDatabaseEncryptionKey> encryptionKeys) {
@@ -3458,6 +3483,17 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder transportableTablespaces(List<GetAutonomousDatabaseTransportableTablespace> transportableTablespaces) {
+            if (transportableTablespaces == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "transportableTablespaces");
+            }
+            this.transportableTablespaces = transportableTablespaces;
+            return this;
+        }
+        public Builder transportableTablespaces(GetAutonomousDatabaseTransportableTablespace... transportableTablespaces) {
+            return transportableTablespaces(List.of(transportableTablespaces));
+        }
+        @CustomType.Setter
         public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
             if (useLatestAvailableBackupTimeStamp == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "useLatestAvailableBackupTimeStamp");
@@ -3569,6 +3605,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.displayName = displayName;
             _resultValue.enableDeleteScheduledOperations = enableDeleteScheduledOperations;
             _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;
@@ -3678,6 +3715,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;
             _resultValue.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            _resultValue.transportableTablespaces = transportableTablespaces;
             _resultValue.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             _resultValue.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             _resultValue.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;

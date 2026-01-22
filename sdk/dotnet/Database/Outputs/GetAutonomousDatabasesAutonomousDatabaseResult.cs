@@ -181,6 +181,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Key History Entry.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
         /// <summary>
         /// Details of the Autonomous AI Database encryption key.
         /// </summary>
@@ -576,6 +577,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The backup storage to the database.
         /// </summary>
         public readonly double TotalBackupStorageSizeInGbs;
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseTransportableTablespaceResult> TransportableTablespaces;
         public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
         /// The storage space consumed by Autonomous AI Database in GBs.
@@ -693,6 +695,8 @@ namespace Pulumi.Oci.Database.Outputs
             bool enableDeleteScheduledOperations,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
+
+            ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
 
@@ -912,6 +916,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             double totalBackupStorageSizeInGbs,
 
+            ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseTransportableTablespaceResult> transportableTablespaces,
+
             bool useLatestAvailableBackupTimeStamp,
 
             int usedDataStorageSizeInGbs,
@@ -971,6 +977,7 @@ namespace Pulumi.Oci.Database.Outputs
             DisplayName = displayName;
             EnableDeleteScheduledOperations = enableDeleteScheduledOperations;
             EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
@@ -1080,6 +1087,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            TransportableTablespaces = transportableTablespaces;
             UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             UsedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;

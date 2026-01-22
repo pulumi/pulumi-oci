@@ -3034,6 +3034,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/dataPatch",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dataPatch:DataPatch": "DataPatch"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/database",
   "fqn": "pulumi_oci.database",
   "classes": {

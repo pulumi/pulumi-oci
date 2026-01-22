@@ -140,18 +140,12 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -218,6 +212,27 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private IotIotDomainGroupState() {}
 
     private IotIotDomainGroupState(IotIotDomainGroupState $) {
@@ -234,6 +249,7 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -435,9 +451,6 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -448,9 +461,6 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -541,6 +551,33 @@ public final class IotIotDomainGroupState extends com.pulumi.resources.ResourceA
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param type Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public IotIotDomainGroupState build() {

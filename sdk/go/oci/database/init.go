@@ -77,6 +77,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudVmClusterIormConfig{}
 	case "oci:Database/dataGuardAssociation:DataGuardAssociation":
 		r = &DataGuardAssociation{}
+	case "oci:Database/dataPatch:DataPatch":
+		r = &DataPatch{}
 	case "oci:Database/database:Database":
 		r = &Database{}
 	case "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby":
@@ -326,6 +328,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/dataGuardAssociation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/dataPatch",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

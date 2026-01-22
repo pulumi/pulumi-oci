@@ -98,6 +98,10 @@ export interface GetIotIotDomainGroupResult {
      * The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     */
+    readonly type: string;
 }
 /**
  * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.

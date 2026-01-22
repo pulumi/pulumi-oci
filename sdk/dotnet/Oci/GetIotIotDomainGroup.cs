@@ -180,6 +180,10 @@ namespace Pulumi.Oci.Oci
         /// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetIotIotDomainGroupResult(
@@ -211,7 +215,9 @@ namespace Pulumi.Oci.Oci
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             DataHost = dataHost;
@@ -228,6 +234,7 @@ namespace Pulumi.Oci.Oci
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Type = type;
         }
     }
 }

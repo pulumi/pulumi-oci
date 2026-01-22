@@ -85,6 +85,10 @@ export interface GetPluggableDatabaseResult {
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
     readonly openMode: string;
+    /**
+     * The patch version of the pluggable database.
+     */
+    readonly patchVersion: string;
     readonly pdbAdminPassword: string;
     readonly pdbCreationTypeDetails: outputs.Database.GetPluggableDatabasePdbCreationTypeDetail[];
     /**

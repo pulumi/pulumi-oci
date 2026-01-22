@@ -197,6 +197,9 @@ namespace Pulumi.Oci.Database
         [Output("ncharacterSet")]
         public Output<string> NcharacterSet { get; private set; } = null!;
 
+        [Output("patchVersion")]
+        public Output<string> PatchVersion { get; private set; } = null!;
+
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
@@ -582,6 +585,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ncharacterSet")]
         public Input<string>? NcharacterSet { get; set; }
+
+        [Input("patchVersion")]
+        public Input<string>? PatchVersion { get; set; }
 
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

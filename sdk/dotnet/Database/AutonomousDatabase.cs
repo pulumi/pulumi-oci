@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseDbToolsDetail>> DbToolsDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
+        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -318,6 +318,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("encryptionKeyHistoryEntries")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyHistoryEntry>> EncryptionKeyHistoryEntries { get; private set; } = null!;
+
+        [Output("encryptionKeyLocationDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
 
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -978,6 +981,12 @@ namespace Pulumi.Oci.Database
         public Output<double> TotalBackupStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// Details for importing transportable tablespace for an Autonomous Database.
+        /// </summary>
+        [Output("transportableTablespace")]
+        public Output<Outputs.AutonomousDatabaseTransportableTablespace> TransportableTablespace { get; private set; } = null!;
+
+        /// <summary>
         /// Clone from latest available backup timestamp.
         /// </summary>
         [Output("useLatestAvailableBackupTimeStamp")]
@@ -1276,7 +1285,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
+        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -1722,6 +1731,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? Timestamp { get; set; }
 
         /// <summary>
+        /// Details for importing transportable tablespace for an Autonomous Database.
+        /// </summary>
+        [Input("transportableTablespace")]
+        public Input<Inputs.AutonomousDatabaseTransportableTablespaceArgs>? TransportableTablespace { get; set; }
+
+        /// <summary>
         /// Clone from latest available backup timestamp.
         /// </summary>
         [Input("useLatestAvailableBackupTimeStamp")]
@@ -2074,7 +2089,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
+        /// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `DbWorkload` AJD is only supported for `DbVersion` `19c` and above.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -2141,6 +2156,14 @@ namespace Pulumi.Oci.Database
         {
             get => _encryptionKeyHistoryEntries ?? (_encryptionKeyHistoryEntries = new InputList<Inputs.AutonomousDatabaseEncryptionKeyHistoryEntryGetArgs>());
             set => _encryptionKeyHistoryEntries = value;
+        }
+
+        [Input("encryptionKeyLocationDetails")]
+        private InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs>? _encryptionKeyLocationDetails;
+        public InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs> EncryptionKeyLocationDetails
+        {
+            get => _encryptionKeyLocationDetails ?? (_encryptionKeyLocationDetails = new InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs>());
+            set => _encryptionKeyLocationDetails = value;
         }
 
         /// <summary>
@@ -2890,6 +2913,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalBackupStorageSizeInGbs")]
         public Input<double>? TotalBackupStorageSizeInGbs { get; set; }
+
+        /// <summary>
+        /// Details for importing transportable tablespace for an Autonomous Database.
+        /// </summary>
+        [Input("transportableTablespace")]
+        public Input<Inputs.AutonomousDatabaseTransportableTablespaceGetArgs>? TransportableTablespace { get; set; }
 
         /// <summary>
         /// Clone from latest available backup timestamp.

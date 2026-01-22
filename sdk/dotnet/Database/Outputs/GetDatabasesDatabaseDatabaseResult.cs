@@ -73,6 +73,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The national character set for the database.
         /// </summary>
         public readonly string NcharacterSet;
+        public readonly ImmutableArray<Outputs.GetDatabasesDatabaseDatabasePatchOptionResult> PatchOptions;
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
@@ -149,6 +150,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string ncharacterSet,
 
+            ImmutableArray<Outputs.GetDatabasesDatabaseDatabasePatchOptionResult> patchOptions,
+
             string pdbName,
 
             ImmutableArray<string> pluggableDatabases,
@@ -193,6 +196,7 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             NcharacterSet = ncharacterSet;
+            PatchOptions = patchOptions;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             ProtectionMode = protectionMode;

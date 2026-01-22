@@ -240,6 +240,7 @@ class _DatabaseState:
                  last_failed_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_version: Optional[pulumi.Input[_builtins.str]] = None,
                  pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
                  sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  source: Optional[pulumi.Input[_builtins.str]] = None,
@@ -353,6 +354,8 @@ class _DatabaseState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if patch_version is not None:
+            pulumi.set(__self__, "patch_version", patch_version)
         if pdb_name is not None:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if sid_prefix is not None:
@@ -727,6 +730,15 @@ class _DatabaseState:
         pulumi.set(self, "ncharacter_set", value)
 
     @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "patch_version")
+
+    @patch_version.setter
+    def patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "patch_version", value)
+
+    @_builtins.property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -987,6 +999,7 @@ class Database(pulumi.CustomResource):
             __props__.__dict__["last_failed_backup_timestamp"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ncharacter_set"] = None
+            __props__.__dict__["patch_version"] = None
             __props__.__dict__["pdb_name"] = None
             __props__.__dict__["sid_prefix"] = None
             __props__.__dict__["source_database_point_in_time_recovery_timestamp"] = None
@@ -1035,6 +1048,7 @@ class Database(pulumi.CustomResource):
             last_failed_backup_timestamp: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
+            patch_version: Optional[pulumi.Input[_builtins.str]] = None,
             pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
             sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
             source: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1127,6 +1141,7 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["last_failed_backup_timestamp"] = last_failed_backup_timestamp
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["ncharacter_set"] = ncharacter_set
+        __props__.__dict__["patch_version"] = patch_version
         __props__.__dict__["pdb_name"] = pdb_name
         __props__.__dict__["sid_prefix"] = sid_prefix
         __props__.__dict__["source"] = source
@@ -1370,6 +1385,11 @@ class Database(pulumi.CustomResource):
         The national character set for the database.
         """
         return pulumi.get(self, "ncharacter_set")
+
+    @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "patch_version")
 
     @_builtins.property
     @pulumi.getter(name="pdbName")

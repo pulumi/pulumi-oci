@@ -136,6 +136,10 @@ import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+import com.pulumi.oci.Database.inputs.GetDbConnectionBundlePlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
 import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
 import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesPlainArgs;
@@ -383,6 +387,8 @@ import com.pulumi.oci.Database.outputs.GetDatabaseSoftwareImagesResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseUpgradeHistoryEntriesResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseUpgradeHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDatabasesResult;
+import com.pulumi.oci.Database.outputs.GetDbConnectionBundleResult;
+import com.pulumi.oci.Database.outputs.GetDbConnectionBundlesResult;
 import com.pulumi.oci.Database.outputs.GetDbHomePatchHistoryEntriesResult;
 import com.pulumi.oci.Database.outputs.GetDbHomePatchesResult;
 import com.pulumi.oci.Database.outputs.GetDbHomeResult;
@@ -15036,6 +15042,446 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDatabasesResult> getDatabasesPlain(GetDatabasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabases:getDatabases", TypeShape.of(GetDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Connection Bundle resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database connection bundle.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundle = DatabaseFunctions.getDbConnectionBundle(GetDbConnectionBundleArgs.builder()
+     *             .dbConnectionBundleId(testDbConnectionBundleOciDatabaseDbConnectionBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundleResult> getDbConnectionBundle(GetDbConnectionBundleArgs args) {
+        return getDbConnectionBundle(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Connection Bundle resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database connection bundle.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundle = DatabaseFunctions.getDbConnectionBundle(GetDbConnectionBundleArgs.builder()
+     *             .dbConnectionBundleId(testDbConnectionBundleOciDatabaseDbConnectionBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbConnectionBundleResult> getDbConnectionBundlePlain(GetDbConnectionBundlePlainArgs args) {
+        return getDbConnectionBundlePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Connection Bundle resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database connection bundle.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundle = DatabaseFunctions.getDbConnectionBundle(GetDbConnectionBundleArgs.builder()
+     *             .dbConnectionBundleId(testDbConnectionBundleOciDatabaseDbConnectionBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundleResult> getDbConnectionBundle(GetDbConnectionBundleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbConnectionBundle:getDbConnectionBundle", TypeShape.of(GetDbConnectionBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Connection Bundle resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database connection bundle.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundle = DatabaseFunctions.getDbConnectionBundle(GetDbConnectionBundleArgs.builder()
+     *             .dbConnectionBundleId(testDbConnectionBundleOciDatabaseDbConnectionBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundleResult> getDbConnectionBundle(GetDbConnectionBundleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbConnectionBundle:getDbConnectionBundle", TypeShape.of(GetDbConnectionBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Connection Bundle resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database connection bundle.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundle = DatabaseFunctions.getDbConnectionBundle(GetDbConnectionBundleArgs.builder()
+     *             .dbConnectionBundleId(testDbConnectionBundleOciDatabaseDbConnectionBundle.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbConnectionBundleResult> getDbConnectionBundlePlain(GetDbConnectionBundlePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbConnectionBundle:getDbConnectionBundle", TypeShape.of(GetDbConnectionBundleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all database connection bundles that match the query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundles = DatabaseFunctions.getDbConnectionBundles(GetDbConnectionBundlesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResourceId(testResource.id())
+     *             .dbConnectionBundleType(dbConnectionBundleDbConnectionBundleType)
+     *             .displayName(dbConnectionBundleDisplayName)
+     *             .state(dbConnectionBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundlesResult> getDbConnectionBundles(GetDbConnectionBundlesArgs args) {
+        return getDbConnectionBundles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all database connection bundles that match the query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundles = DatabaseFunctions.getDbConnectionBundles(GetDbConnectionBundlesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResourceId(testResource.id())
+     *             .dbConnectionBundleType(dbConnectionBundleDbConnectionBundleType)
+     *             .displayName(dbConnectionBundleDisplayName)
+     *             .state(dbConnectionBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbConnectionBundlesResult> getDbConnectionBundlesPlain(GetDbConnectionBundlesPlainArgs args) {
+        return getDbConnectionBundlesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all database connection bundles that match the query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundles = DatabaseFunctions.getDbConnectionBundles(GetDbConnectionBundlesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResourceId(testResource.id())
+     *             .dbConnectionBundleType(dbConnectionBundleDbConnectionBundleType)
+     *             .displayName(dbConnectionBundleDisplayName)
+     *             .state(dbConnectionBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundlesResult> getDbConnectionBundles(GetDbConnectionBundlesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbConnectionBundles:getDbConnectionBundles", TypeShape.of(GetDbConnectionBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all database connection bundles that match the query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundles = DatabaseFunctions.getDbConnectionBundles(GetDbConnectionBundlesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResourceId(testResource.id())
+     *             .dbConnectionBundleType(dbConnectionBundleDbConnectionBundleType)
+     *             .displayName(dbConnectionBundleDisplayName)
+     *             .state(dbConnectionBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbConnectionBundlesResult> getDbConnectionBundles(GetDbConnectionBundlesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbConnectionBundles:getDbConnectionBundles", TypeShape.of(GetDbConnectionBundlesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists all database connection bundles that match the query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbConnectionBundles = DatabaseFunctions.getDbConnectionBundles(GetDbConnectionBundlesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .associatedResourceId(testResource.id())
+     *             .dbConnectionBundleType(dbConnectionBundleDbConnectionBundleType)
+     *             .displayName(dbConnectionBundleDisplayName)
+     *             .state(dbConnectionBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbConnectionBundlesResult> getDbConnectionBundlesPlain(GetDbConnectionBundlesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbConnectionBundles:getDbConnectionBundles", TypeShape.of(GetDbConnectionBundlesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.

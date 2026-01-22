@@ -270,6 +270,7 @@ class _PluggableDatabaseState:
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  open_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_version: Optional[pulumi.Input[_builtins.str]] = None,
                  pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
                  pdb_creation_type_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
                  pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -297,6 +298,7 @@ class _PluggableDatabaseState:
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+        :param pulumi.Input[_builtins.str] patch_version: The patch version of the pluggable database.
         :param pulumi.Input[_builtins.str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs'] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure. Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
         :param pulumi.Input[_builtins.str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -338,6 +340,8 @@ class _PluggableDatabaseState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if open_mode is not None:
             pulumi.set(__self__, "open_mode", open_mode)
+        if patch_version is not None:
+            pulumi.set(__self__, "patch_version", patch_version)
         if pdb_admin_password is not None:
             pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
         if pdb_creation_type_details is not None:
@@ -498,6 +502,18 @@ class _PluggableDatabaseState:
     @open_mode.setter
     def open_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "open_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The patch version of the pluggable database.
+        """
+        return pulumi.get(self, "patch_version")
+
+    @patch_version.setter
+    def patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "patch_version", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbAdminPassword")
@@ -803,6 +819,7 @@ class PluggableDatabase(pulumi.CustomResource):
             __props__.__dict__["is_restricted"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["open_mode"] = None
+            __props__.__dict__["patch_version"] = None
             __props__.__dict__["pdb_node_level_details"] = None
             __props__.__dict__["pluggable_database_management_configs"] = None
             __props__.__dict__["refreshable_clone_configs"] = None
@@ -832,6 +849,7 @@ class PluggableDatabase(pulumi.CustomResource):
             kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             open_mode: Optional[pulumi.Input[_builtins.str]] = None,
+            patch_version: Optional[pulumi.Input[_builtins.str]] = None,
             pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
             pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
             pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -864,6 +882,7 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+        :param pulumi.Input[_builtins.str] patch_version: The patch version of the pluggable database.
         :param pulumi.Input[_builtins.str] pdb_admin_password: A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']] pdb_creation_type_details: The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure. Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
         :param pulumi.Input[_builtins.str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -898,6 +917,7 @@ class PluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["open_mode"] = open_mode
+        __props__.__dict__["patch_version"] = patch_version
         __props__.__dict__["pdb_admin_password"] = pdb_admin_password
         __props__.__dict__["pdb_creation_type_details"] = pdb_creation_type_details
         __props__.__dict__["pdb_name"] = pdb_name
@@ -1001,6 +1021,14 @@ class PluggableDatabase(pulumi.CustomResource):
         The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
         return pulumi.get(self, "open_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        The patch version of the pluggable database.
+        """
+        return pulumi.get(self, "patch_version")
 
     @_builtins.property
     @pulumi.getter(name="pdbAdminPassword")

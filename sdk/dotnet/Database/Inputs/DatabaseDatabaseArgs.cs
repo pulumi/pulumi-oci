@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
@@ -167,6 +167,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("ncharacterSet")]
         public Input<string>? NcharacterSet { get; set; }
+
+        /// <summary>
+        /// (Updatable) Options for DB Home and Database patching
+        /// </summary>
+        [Input("patchOptions")]
+        public Input<Inputs.DatabaseDatabasePatchOptionsArgs>? PatchOptions { get; set; }
 
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

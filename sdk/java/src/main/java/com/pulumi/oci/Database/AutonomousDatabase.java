@@ -18,6 +18,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseEncryptionKey;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseEncryptionKeyHistoryEntry;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
@@ -26,6 +27,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryC
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseTransportableTablespace;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseVanityConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseVanityUrlDetail;
 import com.pulumi.oci.Utilities;
@@ -603,14 +605,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dbToolsDetails;
     }
     /**
-     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * @return (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     public Output<String> dbVersion() {
@@ -733,6 +735,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<List<AutonomousDatabaseEncryptionKeyHistoryEntry>> encryptionKeyHistoryEntries() {
         return this.encryptionKeyHistoryEntries;
+    }
+    @Export(name="encryptionKeyLocationDetails", refs={List.class,AutonomousDatabaseEncryptionKeyLocationDetail.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseEncryptionKeyLocationDetail>> encryptionKeyLocationDetails;
+
+    public Output<List<AutonomousDatabaseEncryptionKeyLocationDetail>> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
@@ -2251,6 +2259,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> totalBackupStorageSizeInGbs() {
         return this.totalBackupStorageSizeInGbs;
+    }
+    /**
+     * Details for importing transportable tablespace for an Autonomous Database.
+     * 
+     */
+    @Export(name="transportableTablespace", refs={AutonomousDatabaseTransportableTablespace.class}, tree="[0]")
+    private Output<AutonomousDatabaseTransportableTablespace> transportableTablespace;
+
+    /**
+     * @return Details for importing transportable tablespace for an Autonomous Database.
+     * 
+     */
+    public Output<AutonomousDatabaseTransportableTablespace> transportableTablespace() {
+        return this.transportableTablespace;
     }
     /**
      * Clone from latest available backup timestamp.

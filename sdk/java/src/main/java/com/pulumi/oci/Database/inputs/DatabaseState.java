@@ -451,6 +451,13 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.ncharacterSet);
     }
 
+    @Import(name="patchVersion")
+    private @Nullable Output<String> patchVersion;
+
+    public Optional<Output<String>> patchVersion() {
+        return Optional.ofNullable(this.patchVersion);
+    }
+
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
@@ -634,6 +641,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         this.lastFailedBackupTimestamp = $.lastFailedBackupTimestamp;
         this.lifecycleDetails = $.lifecycleDetails;
         this.ncharacterSet = $.ncharacterSet;
+        this.patchVersion = $.patchVersion;
         this.pdbName = $.pdbName;
         this.sidPrefix = $.sidPrefix;
         this.source = $.source;
@@ -1292,6 +1300,15 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ncharacterSet(String ncharacterSet) {
             return ncharacterSet(Output.of(ncharacterSet));
+        }
+
+        public Builder patchVersion(@Nullable Output<String> patchVersion) {
+            $.patchVersion = patchVersion;
+            return this;
+        }
+
+        public Builder patchVersion(String patchVersion) {
+            return patchVersion(Output.of(patchVersion));
         }
 
         /**

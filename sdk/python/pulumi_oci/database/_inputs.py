@@ -105,6 +105,8 @@ __all__ = [
     'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict',
     'AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs',
     'AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict',
+    'AutonomousDatabaseEncryptionKeyLocationDetailArgs',
+    'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict',
     'AutonomousDatabaseKeyHistoryEntryArgs',
     'AutonomousDatabaseKeyHistoryEntryArgsDict',
     'AutonomousDatabaseLocalStandbyDbArgs',
@@ -123,6 +125,8 @@ __all__ = [
     'AutonomousDatabaseScheduledOperationDayOfWeekArgsDict',
     'AutonomousDatabaseStandbyDbArgs',
     'AutonomousDatabaseStandbyDbArgsDict',
+    'AutonomousDatabaseTransportableTablespaceArgs',
+    'AutonomousDatabaseTransportableTablespaceArgsDict',
     'AutonomousDatabaseVanityConnectionUrlArgs',
     'AutonomousDatabaseVanityConnectionUrlArgsDict',
     'AutonomousDatabaseVanityUrlDetailArgs',
@@ -217,6 +221,8 @@ __all__ = [
     'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict',
     'DataGuardAssociationDataCollectionOptionsArgs',
     'DataGuardAssociationDataCollectionOptionsArgsDict',
+    'DataPatchDataPatchOptionArgs',
+    'DataPatchDataPatchOptionArgsDict',
     'DatabaseConnectionStringArgs',
     'DatabaseConnectionStringArgsDict',
     'DatabaseDataGuardGroupArgs',
@@ -233,6 +239,8 @@ __all__ = [
     'DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict',
     'DatabaseDatabaseManagementConfigArgs',
     'DatabaseDatabaseManagementConfigArgsDict',
+    'DatabaseDatabasePatchOptionsArgs',
+    'DatabaseDatabasePatchOptionsArgsDict',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict',
     'DatabaseDatabaseStorageSizeDetailsArgs',
@@ -575,6 +583,8 @@ __all__ = [
     'GetDatabaseUpgradeHistoryEntriesFilterArgsDict',
     'GetDatabasesFilterArgs',
     'GetDatabasesFilterArgsDict',
+    'GetDbConnectionBundlesFilterArgs',
+    'GetDbConnectionBundlesFilterArgsDict',
     'GetDbHomePatchHistoryEntriesFilterArgs',
     'GetDbHomePatchHistoryEntriesFilterArgsDict',
     'GetDbHomePatchesFilterArgs',
@@ -6850,6 +6860,68 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
 
 
 if not MYPY:
+    class AutonomousDatabaseEncryptionKeyLocationDetailArgsDict(TypedDict):
+        aws_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+        azure_encryption_key_id: NotRequired[pulumi.Input[_builtins.str]]
+        hsm_password: NotRequired[pulumi.Input[_builtins.str]]
+        provider_type: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    AutonomousDatabaseEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseEncryptionKeyLocationDetailArgs:
+    def __init__(__self__, *,
+                 aws_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 azure_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 hsm_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 provider_type: Optional[pulumi.Input[_builtins.str]] = None):
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
+        if provider_type is not None:
+            pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @aws_encryption_key_id.setter
+    def aws_encryption_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "aws_encryption_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @azure_encryption_key_id.setter
+    def azure_encryption_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "azure_encryption_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "hsm_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "provider_type")
+
+    @provider_type.setter
+    def provider_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "provider_type", value)
+
+
+if not MYPY:
     class AutonomousDatabaseKeyHistoryEntryArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -7914,6 +7986,37 @@ class AutonomousDatabaseStandbyDbArgs:
     @time_maintenance_end.setter
     def time_maintenance_end(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_maintenance_end", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseTransportableTablespaceArgsDict(TypedDict):
+        tts_bundle_url: pulumi.Input[_builtins.str]
+        """
+        URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
+        """
+elif False:
+    AutonomousDatabaseTransportableTablespaceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseTransportableTablespaceArgs:
+    def __init__(__self__, *,
+                 tts_bundle_url: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] tts_bundle_url: URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
+        """
+        pulumi.set(__self__, "tts_bundle_url", tts_bundle_url)
+
+    @_builtins.property
+    @pulumi.getter(name="ttsBundleUrl")
+    def tts_bundle_url(self) -> pulumi.Input[_builtins.str]:
+        """
+        URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
+        """
+        return pulumi.get(self, "tts_bundle_url")
+
+    @tts_bundle_url.setter
+    def tts_bundle_url(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "tts_bundle_url", value)
 
 
 if not MYPY:
@@ -11894,6 +11997,29 @@ class DataGuardAssociationDataCollectionOptionsArgs:
 
 
 if not MYPY:
+    class DataPatchDataPatchOptionArgsDict(TypedDict):
+        should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+elif False:
+    DataPatchDataPatchOptionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DataPatchDataPatchOptionArgs:
+    def __init__(__self__, *,
+                 should_skip_closed_pdbs: Optional[pulumi.Input[_builtins.bool]] = None):
+        if should_skip_closed_pdbs is not None:
+            pulumi.set(__self__, "should_skip_closed_pdbs", should_skip_closed_pdbs)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldSkipClosedPdbs")
+    def should_skip_closed_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "should_skip_closed_pdbs")
+
+    @should_skip_closed_pdbs.setter
+    def should_skip_closed_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "should_skip_closed_pdbs", value)
+
+
+if not MYPY:
     class DatabaseConnectionStringArgsDict(TypedDict):
         all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
@@ -12412,11 +12538,15 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
         """
         The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        """
+        patch_options: NotRequired[pulumi.Input['DatabaseDatabasePatchOptionsArgsDict']]
+        """
+        (Updatable) Options for DB Home and Database patching
         """
         pdb_name: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -12498,6 +12628,7 @@ class DatabaseDatabaseArgs:
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ncharacter_set: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_options: Optional[pulumi.Input['DatabaseDatabasePatchOptionsArgs']] = None,
                  pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
                  pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -12534,8 +12665,9 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+        :param pulumi.Input['DatabaseDatabasePatchOptionsArgs'] patch_options: (Updatable) Options for DB Home and Database patching
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -12592,6 +12724,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if ncharacter_set is not None:
             pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if patch_options is not None:
+            pulumi.set(__self__, "patch_options", patch_options)
         if pdb_name is not None:
             pulumi.set(__self__, "pdb_name", pdb_name)
         if pluggable_databases is not None:
@@ -12821,7 +12955,7 @@ class DatabaseDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -12840,6 +12974,18 @@ class DatabaseDatabaseArgs:
     @ncharacter_set.setter
     def ncharacter_set(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ncharacter_set", value)
+
+    @_builtins.property
+    @pulumi.getter(name="patchOptions")
+    def patch_options(self) -> Optional[pulumi.Input['DatabaseDatabasePatchOptionsArgs']]:
+        """
+        (Updatable) Options for DB Home and Database patching
+        """
+        return pulumi.get(self, "patch_options")
+
+    @patch_options.setter
+    def patch_options(self, value: Optional[pulumi.Input['DatabaseDatabasePatchOptionsArgs']]):
+        pulumi.set(self, "patch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbName")
@@ -13513,6 +13659,58 @@ class DatabaseDatabaseManagementConfigArgs:
     @management_type.setter
     def management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "management_type", value)
+
+
+if not MYPY:
+    class DatabaseDatabasePatchOptionsArgsDict(TypedDict):
+        should_skip_closed_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Skip running datapatch on PDBs in closed state
+        """
+        should_skip_data_patch: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Skip running datapatch on database(s)
+        """
+elif False:
+    DatabaseDatabasePatchOptionsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabasePatchOptionsArgs:
+    def __init__(__self__, *,
+                 should_skip_closed_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
+                 should_skip_data_patch: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] should_skip_closed_pdbs: Skip running datapatch on PDBs in closed state
+        :param pulumi.Input[_builtins.bool] should_skip_data_patch: Skip running datapatch on database(s)
+        """
+        if should_skip_closed_pdbs is not None:
+            pulumi.set(__self__, "should_skip_closed_pdbs", should_skip_closed_pdbs)
+        if should_skip_data_patch is not None:
+            pulumi.set(__self__, "should_skip_data_patch", should_skip_data_patch)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldSkipClosedPdbs")
+    def should_skip_closed_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Skip running datapatch on PDBs in closed state
+        """
+        return pulumi.get(self, "should_skip_closed_pdbs")
+
+    @should_skip_closed_pdbs.setter
+    def should_skip_closed_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "should_skip_closed_pdbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldSkipDataPatch")
+    def should_skip_data_patch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Skip running datapatch on database(s)
+        """
+        return pulumi.get(self, "should_skip_data_patch")
+
+    @should_skip_data_patch.setter
+    def should_skip_data_patch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "should_skip_data_patch", value)
 
 
 if not MYPY:
@@ -27863,6 +28061,53 @@ elif False:
 
 @pulumi.input_type
 class GetDatabasesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbConnectionBundlesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbConnectionBundlesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbConnectionBundlesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

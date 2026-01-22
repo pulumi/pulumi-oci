@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabasePatchOption;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseStorageSizeDetail;
 import java.lang.Boolean;
@@ -91,6 +92,7 @@ public final class GetDatabasesDatabaseDatabase {
      * 
      */
     private String ncharacterSet;
+    private List<GetDatabasesDatabaseDatabasePatchOption> patchOptions;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
@@ -247,6 +249,9 @@ public final class GetDatabasesDatabaseDatabase {
     public String ncharacterSet() {
         return this.ncharacterSet;
     }
+    public List<GetDatabasesDatabaseDatabasePatchOption> patchOptions() {
+        return this.patchOptions;
+    }
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
@@ -345,6 +350,7 @@ public final class GetDatabasesDatabaseDatabase {
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String ncharacterSet;
+        private List<GetDatabasesDatabaseDatabasePatchOption> patchOptions;
         private String pdbName;
         private List<String> pluggableDatabases;
         private String protectionMode;
@@ -379,6 +385,7 @@ public final class GetDatabasesDatabaseDatabase {
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.patchOptions = defaults.patchOptions;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.protectionMode = defaults.protectionMode;
@@ -545,6 +552,17 @@ public final class GetDatabasesDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder patchOptions(List<GetDatabasesDatabaseDatabasePatchOption> patchOptions) {
+            if (patchOptions == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "patchOptions");
+            }
+            this.patchOptions = patchOptions;
+            return this;
+        }
+        public Builder patchOptions(GetDatabasesDatabaseDatabasePatchOption... patchOptions) {
+            return patchOptions(List.of(patchOptions));
+        }
+        @CustomType.Setter
         public Builder pdbName(String pdbName) {
             if (pdbName == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "pdbName");
@@ -677,6 +695,7 @@ public final class GetDatabasesDatabaseDatabase {
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.patchOptions = patchOptions;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.protectionMode = protectionMode;

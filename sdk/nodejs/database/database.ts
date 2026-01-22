@@ -159,6 +159,7 @@ export class Database extends pulumi.CustomResource {
      * The national character set for the database.
      */
     declare public /*out*/ readonly ncharacterSet: pulumi.Output<string>;
+    declare public /*out*/ readonly patchVersion: pulumi.Output<string>;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */
@@ -243,6 +244,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["lastFailedBackupTimestamp"] = state?.lastFailedBackupTimestamp;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["ncharacterSet"] = state?.ncharacterSet;
+            resourceInputs["patchVersion"] = state?.patchVersion;
             resourceInputs["pdbName"] = state?.pdbName;
             resourceInputs["sidPrefix"] = state?.sidPrefix;
             resourceInputs["source"] = state?.source;
@@ -296,6 +298,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["lastFailedBackupTimestamp"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ncharacterSet"] = undefined /*out*/;
+            resourceInputs["patchVersion"] = undefined /*out*/;
             resourceInputs["pdbName"] = undefined /*out*/;
             resourceInputs["sidPrefix"] = undefined /*out*/;
             resourceInputs["sourceDatabasePointInTimeRecoveryTimestamp"] = undefined /*out*/;
@@ -426,6 +429,7 @@ export interface DatabaseState {
      * The national character set for the database.
      */
     ncharacterSet?: pulumi.Input<string>;
+    patchVersion?: pulumi.Input<string>;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */

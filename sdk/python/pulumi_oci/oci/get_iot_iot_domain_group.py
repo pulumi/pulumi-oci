@@ -26,7 +26,7 @@ class GetIotIotDomainGroupResult:
     """
     A collection of values returned by getIotIotDomainGroup.
     """
-    def __init__(__self__, compartment_id=None, data_host=None, db_allow_listed_vcn_ids=None, db_connection_string=None, db_token_scope=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, iot_domain_group_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, data_host=None, db_allow_listed_vcn_ids=None, db_connection_string=None, db_token_scope=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, iot_domain_group_id=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -72,6 +72,9 @@ class GetIotIotDomainGroupResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -190,6 +193,14 @@ class GetIotIotDomainGroupResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetIotIotDomainGroupResult(GetIotIotDomainGroupResult):
     # pylint: disable=using-constant-test
@@ -211,7 +222,8 @@ class AwaitableGetIotIotDomainGroupResult(GetIotIotDomainGroupResult):
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            type=self.type)
 
 
 def get_iot_iot_domain_group(iot_domain_group_id: Optional[_builtins.str] = None,
@@ -253,7 +265,8 @@ def get_iot_iot_domain_group(iot_domain_group_id: Optional[_builtins.str] = None
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        type=pulumi.get(__ret__, 'type'))
 def get_iot_iot_domain_group_output(iot_domain_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotIotDomainGroupResult]:
     """
@@ -292,4 +305,5 @@ def get_iot_iot_domain_group_output(iot_domain_group_id: Optional[pulumi.Input[_
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        type=pulumi.get(__response__, 'type')))

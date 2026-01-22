@@ -145,6 +145,11 @@ export type DataGuardAssociation = import("./dataGuardAssociation").DataGuardAss
 export const DataGuardAssociation: typeof import("./dataGuardAssociation").DataGuardAssociation = null as any;
 utilities.lazyLoad(exports, ["DataGuardAssociation"], () => require("./dataGuardAssociation"));
 
+export { DataPatchArgs, DataPatchState } from "./dataPatch";
+export type DataPatch = import("./dataPatch").DataPatch;
+export const DataPatch: typeof import("./dataPatch").DataPatch = null as any;
+utilities.lazyLoad(exports, ["DataPatch"], () => require("./dataPatch"));
+
 export { DatabaseArgs, DatabaseState } from "./database";
 export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
@@ -634,6 +639,16 @@ export { GetDatabasesArgs, GetDatabasesResult, GetDatabasesOutputArgs } from "./
 export const getDatabases: typeof import("./getDatabases").getDatabases = null as any;
 export const getDatabasesOutput: typeof import("./getDatabases").getDatabasesOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabases","getDatabasesOutput"], () => require("./getDatabases"));
+
+export { GetDbConnectionBundleArgs, GetDbConnectionBundleResult, GetDbConnectionBundleOutputArgs } from "./getDbConnectionBundle";
+export const getDbConnectionBundle: typeof import("./getDbConnectionBundle").getDbConnectionBundle = null as any;
+export const getDbConnectionBundleOutput: typeof import("./getDbConnectionBundle").getDbConnectionBundleOutput = null as any;
+utilities.lazyLoad(exports, ["getDbConnectionBundle","getDbConnectionBundleOutput"], () => require("./getDbConnectionBundle"));
+
+export { GetDbConnectionBundlesArgs, GetDbConnectionBundlesResult, GetDbConnectionBundlesOutputArgs } from "./getDbConnectionBundles";
+export const getDbConnectionBundles: typeof import("./getDbConnectionBundles").getDbConnectionBundles = null as any;
+export const getDbConnectionBundlesOutput: typeof import("./getDbConnectionBundles").getDbConnectionBundlesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbConnectionBundles","getDbConnectionBundlesOutput"], () => require("./getDbConnectionBundles"));
 
 export { GetDbHomeArgs, GetDbHomeResult, GetDbHomeOutputArgs } from "./getDbHome";
 export const getDbHome: typeof import("./getDbHome").getDbHome = null as any;
@@ -1231,6 +1246,8 @@ const _module = {
                 return new CloudVmClusterIormConfig(name, <any>undefined, { urn })
             case "oci:Database/dataGuardAssociation:DataGuardAssociation":
                 return new DataGuardAssociation(name, <any>undefined, { urn })
+            case "oci:Database/dataPatch:DataPatch":
+                return new DataPatch(name, <any>undefined, { urn })
             case "oci:Database/database:Database":
                 return new Database(name, <any>undefined, { urn })
             case "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby":
@@ -1362,6 +1379,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/cloudExadataInfrastructur
 pulumi.runtime.registerResourceModule("oci", "Database/cloudVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudVmClusterIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dataGuardAssociation", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dataPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/database", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSnapshotStandby", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareImage", _module)

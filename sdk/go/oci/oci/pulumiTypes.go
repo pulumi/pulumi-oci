@@ -31719,6 +31719,8 @@ type GetIotIotDomainGroupsIotDomainGroupCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type string `pulumi:"type"`
 }
 
 // GetIotIotDomainGroupsIotDomainGroupCollectionItemInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs and GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput values.
@@ -31761,6 +31763,8 @@ type GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ElementType() reflect.Type {
@@ -31882,6 +31886,11 @@ func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeCreated() p
 // The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Type }).(pulumi.StringOutput)
 }
 
 type GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }

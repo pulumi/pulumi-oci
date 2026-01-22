@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     type: iotDomainGroupType,
  * });
  * ```
  *
@@ -93,11 +94,7 @@ export class IotIotDomainGroup extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
@@ -116,6 +113,14 @@ export class IotIotDomainGroup extends pulumi.CustomResource {
      * The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a IotIotDomainGroup resource with the given unique name, arguments, and options.
@@ -143,6 +148,7 @@ export class IotIotDomainGroup extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as IotIotDomainGroupArgs | undefined;
             if (args?.compartmentId === undefined && !opts.urn) {
@@ -153,6 +159,7 @@ export class IotIotDomainGroup extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["type"] = args?.type;
             resourceInputs["dataHost"] = undefined /*out*/;
             resourceInputs["dbAllowListedVcnIds"] = undefined /*out*/;
             resourceInputs["dbConnectionString"] = undefined /*out*/;
@@ -204,11 +211,7 @@ export interface IotIotDomainGroupState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -227,6 +230,14 @@ export interface IotIotDomainGroupState {
      * The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     timeUpdated?: pulumi.Input<string>;
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    type?: pulumi.Input<string>;
 }
 
 /**
@@ -250,11 +261,15 @@ export interface IotIotDomainGroupArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production. 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    type?: pulumi.Input<string>;
 }

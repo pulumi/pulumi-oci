@@ -19,6 +19,11 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
      */
     private String compartmentId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new execution window created as part of reschedule for the execution window failure.
+     * 
+     */
+    private String deferredExecutionWindowId;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -121,6 +126,13 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the new execution window created as part of reschedule for the execution window failure.
+     * 
+     */
+    public String deferredExecutionWindowId() {
+        return this.deferredExecutionWindowId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -266,6 +278,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private String deferredExecutionWindowId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -289,6 +302,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
         public Builder(GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.deferredExecutionWindowId = defaults.deferredExecutionWindowId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -316,6 +330,14 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
               throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deferredExecutionWindowId(String deferredExecutionWindowId) {
+            if (deferredExecutionWindowId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow", "deferredExecutionWindowId");
+            }
+            this.deferredExecutionWindowId = deferredExecutionWindowId;
             return this;
         }
         @CustomType.Setter
@@ -473,6 +495,7 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranul
         public GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow build() {
             final var _resultValue = new GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryGranularMaintenanceHistoryExecutionWindow();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.deferredExecutionWindowId = deferredExecutionWindowId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

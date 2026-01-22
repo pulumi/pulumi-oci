@@ -28,7 +28,7 @@ class GetIotIotDomainGroupsResult:
     """
     A collection of values returned by getIotIotDomainGroups.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, iot_domain_group_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, iot_domain_group_collections=None, state=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetIotIotDomainGroupsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -93,6 +96,14 @@ class GetIotIotDomainGroupsResult:
         """
         return pulumi.get(self, "state")
 
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetIotIotDomainGroupsResult(GetIotIotDomainGroupsResult):
     # pylint: disable=using-constant-test
@@ -105,7 +116,8 @@ class AwaitableGetIotIotDomainGroupsResult(GetIotIotDomainGroupsResult):
             filters=self.filters,
             id=self.id,
             iot_domain_group_collections=self.iot_domain_group_collections,
-            state=self.state)
+            state=self.state,
+            type=self.type)
 
 
 def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
@@ -113,6 +125,7 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
                               filters: Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict']]] = None,
                               id: Optional[_builtins.str] = None,
                               state: Optional[_builtins.str] = None,
+                              type: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIotIotDomainGroupsResult:
     """
     This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
@@ -128,7 +141,8 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
     test_iot_domain_groups = oci.oci.get_iot_iot_domain_groups(compartment_id=compartment_id,
         display_name=iot_domain_group_display_name,
         id=iot_domain_group_id,
-        state=iot_domain_group_state)
+        state=iot_domain_group_state,
+        type=iot_domain_group_type)
     ```
 
 
@@ -136,6 +150,7 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+    :param _builtins.str type: Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -143,6 +158,7 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getIotIotDomainGroups:getIotIotDomainGroups', __args__, opts=opts, typ=GetIotIotDomainGroupsResult).value
 
@@ -152,12 +168,14 @@ def get_iot_iot_domain_groups(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         iot_domain_group_collections=pulumi.get(__ret__, 'iot_domain_group_collections'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'))
 def get_iot_iot_domain_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIotIotDomainGroupsFilterArgs', 'GetIotIotDomainGroupsFilterArgsDict']]]]] = None,
                                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                     type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotIotDomainGroupsResult]:
     """
     This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
@@ -173,7 +191,8 @@ def get_iot_iot_domain_groups_output(compartment_id: Optional[pulumi.Input[_buil
     test_iot_domain_groups = oci.oci.get_iot_iot_domain_groups(compartment_id=compartment_id,
         display_name=iot_domain_group_display_name,
         id=iot_domain_group_id,
-        state=iot_domain_group_state)
+        state=iot_domain_group_state,
+        type=iot_domain_group_type)
     ```
 
 
@@ -181,6 +200,7 @@ def get_iot_iot_domain_groups_output(compartment_id: Optional[pulumi.Input[_buil
     :param _builtins.str display_name: Filter resources whose display name matches the specified value.
     :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
     :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+    :param _builtins.str type: Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -188,6 +208,7 @@ def get_iot_iot_domain_groups_output(compartment_id: Optional[pulumi.Input[_buil
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getIotIotDomainGroups:getIotIotDomainGroups', __args__, opts=opts, typ=GetIotIotDomainGroupsResult)
     return __ret__.apply(lambda __response__: GetIotIotDomainGroupsResult(
@@ -196,4 +217,5 @@ def get_iot_iot_domain_groups_output(compartment_id: Optional[pulumi.Input[_buil
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         iot_domain_group_collections=pulumi.get(__response__, 'iot_domain_group_collections'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type')))

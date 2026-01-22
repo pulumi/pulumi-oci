@@ -180,7 +180,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly dbToolsDetails: outputs.Database.GetAutonomousDatabaseDbToolsDetail[];
     /**
-     * A valid Oracle AI Database version for Autonomous AI Database.
+     * A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
      */
     readonly dbVersion: string;
     /**
@@ -216,6 +216,7 @@ export interface GetAutonomousDatabaseResult {
      * Key History Entry.
      */
     readonly encryptionKeyHistoryEntries: outputs.Database.GetAutonomousDatabaseEncryptionKeyHistoryEntry[];
+    readonly encryptionKeyLocationDetails: outputs.Database.GetAutonomousDatabaseEncryptionKeyLocationDetail[];
     /**
      * Details of the Autonomous AI Database encryption key.
      */
@@ -605,6 +606,7 @@ export interface GetAutonomousDatabaseResult {
      * The backup storage to the database.
      */
     readonly totalBackupStorageSizeInGbs: number;
+    readonly transportableTablespaces: outputs.Database.GetAutonomousDatabaseTransportableTablespace[];
     readonly useLatestAvailableBackupTimeStamp: boolean;
     /**
      * The storage space consumed by Autonomous AI Database in GBs.

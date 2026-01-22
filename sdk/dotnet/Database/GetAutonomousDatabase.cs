@@ -263,7 +263,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseDbToolsDetailResult> DbToolsDetails;
         /// <summary>
-        /// A valid Oracle AI Database version for Autonomous AI Database.
+        /// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         /// </summary>
         public readonly string DbVersion;
         /// <summary>
@@ -299,6 +299,7 @@ namespace Pulumi.Oci.Database
         /// Key History Entry.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
         /// <summary>
         /// Details of the Autonomous AI Database encryption key.
         /// </summary>
@@ -685,6 +686,7 @@ namespace Pulumi.Oci.Database
         /// The backup storage to the database.
         /// </summary>
         public readonly double TotalBackupStorageSizeInGbs;
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseTransportableTablespaceResult> TransportableTablespaces;
         public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
         /// The storage space consumed by Autonomous AI Database in GBs.
@@ -802,6 +804,8 @@ namespace Pulumi.Oci.Database
             bool enableDeleteScheduledOperations,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
 
             ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
 
@@ -1021,6 +1025,8 @@ namespace Pulumi.Oci.Database
 
             double totalBackupStorageSizeInGbs,
 
+            ImmutableArray<Outputs.GetAutonomousDatabaseTransportableTablespaceResult> transportableTablespaces,
+
             bool useLatestAvailableBackupTimeStamp,
 
             int usedDataStorageSizeInGbs,
@@ -1080,6 +1086,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             EnableDeleteScheduledOperations = enableDeleteScheduledOperations;
             EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;
@@ -1189,6 +1196,7 @@ namespace Pulumi.Oci.Database
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            TransportableTablespaces = transportableTablespaces;
             UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             UsedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;

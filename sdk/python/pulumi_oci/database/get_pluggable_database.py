@@ -27,7 +27,7 @@ class GetPluggableDatabaseResult:
     """
     A collection of values returned by getPluggableDatabase.
     """
-    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_admin_password=None, container_database_id=None, convert_to_regular_trigger=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, kms_key_version_id=None, lifecycle_details=None, open_mode=None, pdb_admin_password=None, pdb_creation_type_details=None, pdb_name=None, pdb_node_level_details=None, pluggable_database_id=None, pluggable_database_management_configs=None, refresh_trigger=None, refreshable_clone_configs=None, rotate_key_trigger=None, should_create_pdb_backup=None, should_pdb_admin_account_be_locked=None, state=None, system_tags=None, tde_wallet_password=None, time_created=None):
+    def __init__(__self__, compartment_id=None, connection_strings=None, container_database_admin_password=None, container_database_id=None, convert_to_regular_trigger=None, defined_tags=None, freeform_tags=None, id=None, is_restricted=None, kms_key_version_id=None, lifecycle_details=None, open_mode=None, patch_version=None, pdb_admin_password=None, pdb_creation_type_details=None, pdb_name=None, pdb_node_level_details=None, pluggable_database_id=None, pluggable_database_management_configs=None, refresh_trigger=None, refreshable_clone_configs=None, rotate_key_trigger=None, should_create_pdb_backup=None, should_pdb_admin_account_be_locked=None, state=None, system_tags=None, tde_wallet_password=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,9 @@ class GetPluggableDatabaseResult:
         if open_mode and not isinstance(open_mode, str):
             raise TypeError("Expected argument 'open_mode' to be a str")
         pulumi.set(__self__, "open_mode", open_mode)
+        if patch_version and not isinstance(patch_version, str):
+            raise TypeError("Expected argument 'patch_version' to be a str")
+        pulumi.set(__self__, "patch_version", patch_version)
         if pdb_admin_password and not isinstance(pdb_admin_password, str):
             raise TypeError("Expected argument 'pdb_admin_password' to be a str")
         pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
@@ -201,6 +204,14 @@ class GetPluggableDatabaseResult:
         return pulumi.get(self, "open_mode")
 
     @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> _builtins.str:
+        """
+        The patch version of the pluggable database.
+        """
+        return pulumi.get(self, "patch_version")
+
+    @_builtins.property
     @pulumi.getter(name="pdbAdminPassword")
     def pdb_admin_password(self) -> _builtins.str:
         return pulumi.get(self, "pdb_admin_password")
@@ -315,6 +326,7 @@ class AwaitableGetPluggableDatabaseResult(GetPluggableDatabaseResult):
             kms_key_version_id=self.kms_key_version_id,
             lifecycle_details=self.lifecycle_details,
             open_mode=self.open_mode,
+            patch_version=self.patch_version,
             pdb_admin_password=self.pdb_admin_password,
             pdb_creation_type_details=self.pdb_creation_type_details,
             pdb_name=self.pdb_name,
@@ -369,6 +381,7 @@ def get_pluggable_database(pluggable_database_id: Optional[_builtins.str] = None
         kms_key_version_id=pulumi.get(__ret__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         open_mode=pulumi.get(__ret__, 'open_mode'),
+        patch_version=pulumi.get(__ret__, 'patch_version'),
         pdb_admin_password=pulumi.get(__ret__, 'pdb_admin_password'),
         pdb_creation_type_details=pulumi.get(__ret__, 'pdb_creation_type_details'),
         pdb_name=pulumi.get(__ret__, 'pdb_name'),
@@ -420,6 +433,7 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[_
         kms_key_version_id=pulumi.get(__response__, 'kms_key_version_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         open_mode=pulumi.get(__response__, 'open_mode'),
+        patch_version=pulumi.get(__response__, 'patch_version'),
         pdb_admin_password=pulumi.get(__response__, 'pdb_admin_password'),
         pdb_creation_type_details=pulumi.get(__response__, 'pdb_creation_type_details'),
         pdb_name=pulumi.get(__response__, 'pdb_name'),

@@ -111,6 +111,7 @@ class AutonomousDatabaseArgs:
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 transportable_tablespace: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
                  vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -159,7 +160,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]] db_tools_details: (Updatable) The list of database tools details.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         :param pulumi.Input[_builtins.str] db_workload: (Updatable) The Autonomous AI Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous AI Transaction Processing database
                * DW - indicates an Autonomous AI Lakehouse database
@@ -261,6 +262,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
+        :param pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs'] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseVanityUrlDetailArgs']]] vanity_url_details: Details for api gateway and vanity url(custom url) for dbTools.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -453,6 +455,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
+        if transportable_tablespace is not None:
+            pulumi.set(__self__, "transportable_tablespace", transportable_tablespace)
         if use_latest_available_backup_time_stamp is not None:
             pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if vanity_url_details is not None:
@@ -794,7 +798,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         """
         return pulumi.get(self, "db_version")
 
@@ -1580,6 +1584,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "timestamp", value)
 
     @_builtins.property
+    @pulumi.getter(name="transportableTablespace")
+    def transportable_tablespace(self) -> Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]:
+        """
+        Details for importing transportable tablespace for an Autonomous Database.
+        """
+        return pulumi.get(self, "transportable_tablespace")
+
+    @transportable_tablespace.setter
+    def transportable_tablespace(self, value: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]):
+        pulumi.set(self, "transportable_tablespace", value)
+
+    @_builtins.property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
     def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -1683,6 +1699,7 @@ class _AutonomousDatabaseState:
                  enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
                  encryption_key: Optional[pulumi.Input['AutonomousDatabaseEncryptionKeyArgs']] = None,
                  encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
+                 encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]] = None,
                  failed_data_recovery_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  in_memory_area_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1790,6 +1807,7 @@ class _AutonomousDatabaseState:
                  time_until_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
                  total_backup_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
+                 transportable_tablespace: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
                  used_data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1852,7 +1870,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]] db_tools_details: (Updatable) The list of database tools details.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         :param pulumi.Input[_builtins.str] db_workload: (Updatable) The Autonomous AI Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous AI Transaction Processing database
                * DW - indicates an Autonomous AI Lakehouse database
@@ -2006,6 +2024,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input[_builtins.float] total_backup_storage_size_in_gbs: The backup storage to the database.
+        :param pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs'] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[_builtins.int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous AI Database in GBs.
         :param pulumi.Input[_builtins.int] used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
@@ -2112,6 +2131,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "encryption_key", encryption_key)
         if encryption_key_history_entries is not None:
             pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
+        if encryption_key_location_details is not None:
+            pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if failed_data_recovery_in_seconds is not None:
             pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         if freeform_tags is not None:
@@ -2329,6 +2350,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "timestamp", timestamp)
         if total_backup_storage_size_in_gbs is not None:
             pulumi.set(__self__, "total_backup_storage_size_in_gbs", total_backup_storage_size_in_gbs)
+        if transportable_tablespace is not None:
+            pulumi.set(__self__, "transportable_tablespace", transportable_tablespace)
         if use_latest_available_backup_time_stamp is not None:
             pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if used_data_storage_size_in_gbs is not None:
@@ -2808,7 +2831,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         """
         return pulumi.get(self, "db_version")
 
@@ -2915,6 +2938,15 @@ class _AutonomousDatabaseState:
     @encryption_key_history_entries.setter
     def encryption_key_history_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]]):
         pulumi.set(self, "encryption_key_history_entries", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]:
+        return pulumi.get(self, "encryption_key_location_details")
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]):
+        pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -4218,6 +4250,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "total_backup_storage_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="transportableTablespace")
+    def transportable_tablespace(self) -> Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]:
+        """
+        Details for importing transportable tablespace for an Autonomous Database.
+        """
+        return pulumi.get(self, "transportable_tablespace")
+
+    @transportable_tablespace.setter
+    def transportable_tablespace(self, value: Optional[pulumi.Input['AutonomousDatabaseTransportableTablespaceArgs']]):
+        pulumi.set(self, "transportable_tablespace", value)
+
+    @_builtins.property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
     def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -4404,6 +4448,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
                  vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4464,7 +4509,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]] db_tools_details: (Updatable) The list of database tools details.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         :param pulumi.Input[_builtins.str] db_workload: (Updatable) The Autonomous AI Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous AI Transaction Processing database
                * DW - indicates an Autonomous AI Lakehouse database
@@ -4566,6 +4611,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_of_auto_refresh_start: (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         :param pulumi.Input[_builtins.str] time_scheduled_db_version_upgrade: The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
+        :param pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]] vanity_url_details: Details for api gateway and vanity url(custom url) for dbTools.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -4699,6 +4745,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  time_of_auto_refresh_start: Optional[pulumi.Input[_builtins.str]] = None,
                  time_scheduled_db_version_upgrade: Optional[pulumi.Input[_builtins.str]] = None,
                  timestamp: Optional[pulumi.Input[_builtins.str]] = None,
+                 transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
                  use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
                  vanity_url_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseVanityUrlDetailArgs', 'AutonomousDatabaseVanityUrlDetailArgsDict']]]]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4806,6 +4853,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
             __props__.__dict__["time_scheduled_db_version_upgrade"] = time_scheduled_db_version_upgrade
             __props__.__dict__["timestamp"] = timestamp
+            __props__.__dict__["transportable_tablespace"] = transportable_tablespace
             __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
             __props__.__dict__["vanity_url_details"] = vanity_url_details
             __props__.__dict__["vault_id"] = vault_id
@@ -4823,6 +4871,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["dataguard_region_type"] = None
             __props__.__dict__["disaster_recovery_region_type"] = None
             __props__.__dict__["encryption_key_history_entries"] = None
+            __props__.__dict__["encryption_key_location_details"] = None
             __props__.__dict__["failed_data_recovery_in_seconds"] = None
             __props__.__dict__["in_memory_area_in_gbs"] = None
             __props__.__dict__["infrastructure_type"] = None
@@ -4934,6 +4983,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             enable_delete_scheduled_operations: Optional[pulumi.Input[_builtins.bool]] = None,
             encryption_key: Optional[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
             encryption_key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
+            encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]]] = None,
             failed_data_recovery_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             in_memory_area_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -5041,6 +5091,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_until_reconnect_clone_enabled: Optional[pulumi.Input[_builtins.str]] = None,
             timestamp: Optional[pulumi.Input[_builtins.str]] = None,
             total_backup_storage_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
+            transportable_tablespace: Optional[pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']]] = None,
             use_latest_available_backup_time_stamp: Optional[pulumi.Input[_builtins.bool]] = None,
             used_data_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             used_data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.int]] = None,
@@ -5108,7 +5159,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseDbToolsDetailArgs', 'AutonomousDatabaseDbToolsDetailArgsDict']]]] db_tools_details: (Updatable) The list of database tools details.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        :param pulumi.Input[_builtins.str] db_version: (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         :param pulumi.Input[_builtins.str] db_workload: (Updatable) The Autonomous AI Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous AI Transaction Processing database
                * DW - indicates an Autonomous AI Lakehouse database
@@ -5262,6 +5313,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[_builtins.str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
         :param pulumi.Input[_builtins.float] total_backup_storage_size_in_gbs: The backup storage to the database.
+        :param pulumi.Input[Union['AutonomousDatabaseTransportableTablespaceArgs', 'AutonomousDatabaseTransportableTablespaceArgsDict']] transportable_tablespace: Details for importing transportable tablespace for an Autonomous Database.
         :param pulumi.Input[_builtins.bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[_builtins.int] used_data_storage_size_in_gbs: The storage space consumed by Autonomous AI Database in GBs.
         :param pulumi.Input[_builtins.int] used_data_storage_size_in_tbs: The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
@@ -5326,6 +5378,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["enable_delete_scheduled_operations"] = enable_delete_scheduled_operations
         __props__.__dict__["encryption_key"] = encryption_key
         __props__.__dict__["encryption_key_history_entries"] = encryption_key_history_entries
+        __props__.__dict__["encryption_key_location_details"] = encryption_key_location_details
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["in_memory_area_in_gbs"] = in_memory_area_in_gbs
@@ -5433,6 +5486,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
         __props__.__dict__["timestamp"] = timestamp
         __props__.__dict__["total_backup_storage_size_in_gbs"] = total_backup_storage_size_in_gbs
+        __props__.__dict__["transportable_tablespace"] = transportable_tablespace
         __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
         __props__.__dict__["used_data_storage_size_in_gbs"] = used_data_storage_size_in_gbs
         __props__.__dict__["used_data_storage_size_in_tbs"] = used_data_storage_size_in_tbs
@@ -5758,7 +5812,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+        (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `db_workload` AJD is only supported for `db_version` `19c` and above.
         """
         return pulumi.get(self, "db_version")
 
@@ -5829,6 +5883,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         Key History Entry.
         """
         return pulumi.get(self, "encryption_key_history_entries")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseEncryptionKeyLocationDetail']]:
+        return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -6702,6 +6761,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The backup storage to the database.
         """
         return pulumi.get(self, "total_backup_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="transportableTablespace")
+    def transportable_tablespace(self) -> pulumi.Output['outputs.AutonomousDatabaseTransportableTablespace']:
+        """
+        Details for importing transportable tablespace for an Autonomous Database.
+        """
+        return pulumi.get(self, "transportable_tablespace")
 
     @_builtins.property
     @pulumi.getter(name="useLatestAvailableBackupTimeStamp")

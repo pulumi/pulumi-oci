@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseC
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKey;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule;
@@ -22,6 +23,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseR
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseStandbyDb;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseVanityUrlDetail;
 import java.lang.Boolean;
@@ -243,6 +245,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     /**
      * @return Details of the Autonomous AI Database encryption key.
      * 
@@ -739,6 +742,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private Double totalBackupStorageSizeInGbs;
+    private List<GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace> transportableTablespaces;
     private Boolean useLatestAvailableBackupTimeStamp;
     /**
      * @return The storage space consumed by Autonomous AI Database in GBs.
@@ -1070,6 +1074,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries() {
         return this.encryptionKeyHistoryEntries;
+    }
+    public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * @return Details of the Autonomous AI Database encryption key.
@@ -1785,6 +1792,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public Double totalBackupStorageSizeInGbs() {
         return this.totalBackupStorageSizeInGbs;
     }
+    public List<GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace> transportableTablespaces() {
+        return this.transportableTablespaces;
+    }
     public Boolean useLatestAvailableBackupTimeStamp() {
         return this.useLatestAvailableBackupTimeStamp;
     }
@@ -1885,6 +1895,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String displayName;
         private Boolean enableDeleteScheduledOperations;
         private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+        private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
@@ -1994,6 +2005,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
         private Double totalBackupStorageSizeInGbs;
+        private List<GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace> transportableTablespaces;
         private Boolean useLatestAvailableBackupTimeStamp;
         private Integer usedDataStorageSizeInGbs;
         private Integer usedDataStorageSizeInTbs;
@@ -2049,6 +2061,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.displayName = defaults.displayName;
     	      this.enableDeleteScheduledOperations = defaults.enableDeleteScheduledOperations;
     	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -2158,6 +2171,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
     	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
+    	      this.transportableTablespaces = defaults.transportableTablespaces;
     	      this.useLatestAvailableBackupTimeStamp = defaults.useLatestAvailableBackupTimeStamp;
     	      this.usedDataStorageSizeInGbs = defaults.usedDataStorageSizeInGbs;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
@@ -2556,6 +2570,17 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         }
         public Builder encryptionKeyHistoryEntries(GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry... encryptionKeyHistoryEntries) {
             return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
         @CustomType.Setter
         public Builder encryptionKeys(List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKey> encryptionKeys) {
@@ -3472,6 +3497,17 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder transportableTablespaces(List<GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace> transportableTablespaces) {
+            if (transportableTablespaces == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "transportableTablespaces");
+            }
+            this.transportableTablespaces = transportableTablespaces;
+            return this;
+        }
+        public Builder transportableTablespaces(GetAutonomousDatabasesAutonomousDatabaseTransportableTablespace... transportableTablespaces) {
+            return transportableTablespaces(List.of(transportableTablespaces));
+        }
+        @CustomType.Setter
         public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
             if (useLatestAvailableBackupTimeStamp == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "useLatestAvailableBackupTimeStamp");
@@ -3583,6 +3619,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.displayName = displayName;
             _resultValue.enableDeleteScheduledOperations = enableDeleteScheduledOperations;
             _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;
@@ -3692,6 +3729,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;
             _resultValue.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
+            _resultValue.transportableTablespaces = transportableTablespaces;
             _resultValue.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             _resultValue.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             _resultValue.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;

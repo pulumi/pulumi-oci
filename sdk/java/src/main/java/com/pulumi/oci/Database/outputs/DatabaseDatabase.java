@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
+import com.pulumi.oci.Database.outputs.DatabaseDatabasePatchOptions;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseStorageSizeDetails;
 import java.lang.Boolean;
@@ -105,7 +106,7 @@ public final class DatabaseDatabase {
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     private @Nullable String kmsKeyVersionId;
@@ -114,6 +115,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String ncharacterSet;
+    /**
+     * @return (Updatable) Options for DB Home and Database patching
+     * 
+     */
+    private @Nullable DatabaseDatabasePatchOptions patchOptions;
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      * 
@@ -303,7 +309,7 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     public Optional<String> kmsKeyVersionId() {
@@ -315,6 +321,13 @@ public final class DatabaseDatabase {
      */
     public Optional<String> ncharacterSet() {
         return Optional.ofNullable(this.ncharacterSet);
+    }
+    /**
+     * @return (Updatable) Options for DB Home and Database patching
+     * 
+     */
+    public Optional<DatabaseDatabasePatchOptions> patchOptions() {
+        return Optional.ofNullable(this.patchOptions);
     }
     /**
      * @return The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -438,6 +451,7 @@ public final class DatabaseDatabase {
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable String ncharacterSet;
+        private @Nullable DatabaseDatabasePatchOptions patchOptions;
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
         private @Nullable String protectionMode;
@@ -472,6 +486,7 @@ public final class DatabaseDatabase {
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.ncharacterSet = defaults.ncharacterSet;
+    	      this.patchOptions = defaults.patchOptions;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.protectionMode = defaults.protectionMode;
@@ -596,6 +611,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder patchOptions(@Nullable DatabaseDatabasePatchOptions patchOptions) {
+
+            this.patchOptions = patchOptions;
+            return this;
+        }
+        @CustomType.Setter
         public Builder pdbName(@Nullable String pdbName) {
 
             this.pdbName = pdbName;
@@ -696,6 +717,7 @@ public final class DatabaseDatabase {
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.patchOptions = patchOptions;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.protectionMode = protectionMode;

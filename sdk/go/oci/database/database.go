@@ -86,6 +86,7 @@ type Database struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
 	NcharacterSet pulumi.StringOutput `pulumi:"ncharacterSet"`
+	PatchVersion  pulumi.StringOutput `pulumi:"patchVersion"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -207,6 +208,7 @@ type databaseState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
 	NcharacterSet *string `pulumi:"ncharacterSet"`
+	PatchVersion  *string `pulumi:"patchVersion"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName *string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -290,6 +292,7 @@ type DatabaseState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The national character set for the database.
 	NcharacterSet pulumi.StringPtrInput
+	PatchVersion  pulumi.StringPtrInput
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName pulumi.StringPtrInput
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -606,6 +609,10 @@ func (o DatabaseOutput) LifecycleDetails() pulumi.StringOutput {
 // The national character set for the database.
 func (o DatabaseOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+func (o DatabaseOutput) PatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.PatchVersion }).(pulumi.StringOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

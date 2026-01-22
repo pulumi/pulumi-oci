@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: iotDomainGroupDisplayName,
  *     id: iotDomainGroupId,
  *     state: iotDomainGroupState,
+ *     type: iotDomainGroupType,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getIotIotDomainGroups(args: GetIotIotDomainGroupsArgs, opts?: pu
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -57,6 +59,10 @@ export interface GetIotIotDomainGroupsArgs {
      * Filter resources whose lifecycleState matches the specified value.
      */
     state?: string;
+    /**
+     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     */
+    type?: string;
 }
 
 /**
@@ -84,6 +90,10 @@ export interface GetIotIotDomainGroupsResult {
      * The current state of an IoT Domain Group.
      */
     readonly state?: string;
+    /**
+     * Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     */
+    readonly type?: string;
 }
 /**
  * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
@@ -101,6 +111,7 @@ export interface GetIotIotDomainGroupsResult {
  *     displayName: iotDomainGroupDisplayName,
  *     id: iotDomainGroupId,
  *     state: iotDomainGroupState,
+ *     type: iotDomainGroupType,
  * });
  * ```
  */
@@ -112,6 +123,7 @@ export function getIotIotDomainGroupsOutput(args: GetIotIotDomainGroupsOutputArg
         "filters": args.filters,
         "id": args.id,
         "state": args.state,
+        "type": args.type,
     }, opts);
 }
 
@@ -136,4 +148,8 @@ export interface GetIotIotDomainGroupsOutputArgs {
      * Filter resources whose lifecycleState matches the specified value.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     */
+    type?: pulumi.Input<string>;
 }

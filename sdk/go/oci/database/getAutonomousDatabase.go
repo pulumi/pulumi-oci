@@ -128,7 +128,7 @@ type LookupAutonomousDatabaseResult struct {
 	DbName string `pulumi:"dbName"`
 	// The list of database tools details.
 	DbToolsDetails []GetAutonomousDatabaseDbToolsDetail `pulumi:"dbToolsDetails"`
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion string `pulumi:"dbVersion"`
 	// The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -148,7 +148,8 @@ type LookupAutonomousDatabaseResult struct {
 	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous AI Database. If set to true, provider will delete scheduledOperations from the Autonomous AI Database.
 	EnableDeleteScheduledOperations bool `pulumi:"enableDeleteScheduledOperations"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries []GetAutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries  []GetAutonomousDatabaseEncryptionKeyHistoryEntry   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyLocationDetails []GetAutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// Details of the Autonomous AI Database encryption key.
 	EncryptionKeys []GetAutonomousDatabaseEncryptionKey `pulumi:"encryptionKeys"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -351,8 +352,9 @@ type LookupAutonomousDatabaseResult struct {
 	TimeUntilReconnectCloneEnabled string `pulumi:"timeUntilReconnectCloneEnabled"`
 	Timestamp                      string `pulumi:"timestamp"`
 	// The backup storage to the database.
-	TotalBackupStorageSizeInGbs       float64 `pulumi:"totalBackupStorageSizeInGbs"`
-	UseLatestAvailableBackupTimeStamp bool    `pulumi:"useLatestAvailableBackupTimeStamp"`
+	TotalBackupStorageSizeInGbs       float64                                        `pulumi:"totalBackupStorageSizeInGbs"`
+	TransportableTablespaces          []GetAutonomousDatabaseTransportableTablespace `pulumi:"transportableTablespaces"`
+	UseLatestAvailableBackupTimeStamp bool                                           `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The storage space consumed by Autonomous AI Database in GBs.
 	UsedDataStorageSizeInGbs int `pulumi:"usedDataStorageSizeInGbs"`
 	// The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
@@ -588,7 +590,7 @@ func (o LookupAutonomousDatabaseResultOutput) DbToolsDetails() GetAutonomousData
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseDbToolsDetail { return v.DbToolsDetails }).(GetAutonomousDatabaseDbToolsDetailArrayOutput)
 }
 
-// A valid Oracle AI Database version for Autonomous AI Database.
+// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 func (o LookupAutonomousDatabaseResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -633,6 +635,12 @@ func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyHistoryEntries() GetA
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKeyHistoryEntry {
 		return v.EncryptionKeyHistoryEntries
 	}).(GetAutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyLocationDetails() GetAutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKeyLocationDetail {
+		return v.EncryptionKeyLocationDetails
+	}).(GetAutonomousDatabaseEncryptionKeyLocationDetailArrayOutput)
 }
 
 // Details of the Autonomous AI Database encryption key.
@@ -1175,6 +1183,12 @@ func (o LookupAutonomousDatabaseResultOutput) Timestamp() pulumi.StringOutput {
 // The backup storage to the database.
 func (o LookupAutonomousDatabaseResultOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64Output)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) TransportableTablespaces() GetAutonomousDatabaseTransportableTablespaceArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseTransportableTablespace {
+		return v.TransportableTablespaces
+	}).(GetAutonomousDatabaseTransportableTablespaceArrayOutput)
 }
 
 func (o LookupAutonomousDatabaseResultOutput) UseLatestAvailableBackupTimeStamp() pulumi.BoolOutput {

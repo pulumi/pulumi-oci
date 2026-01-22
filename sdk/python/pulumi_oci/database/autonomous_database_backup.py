@@ -147,7 +147,7 @@ class _AutonomousDatabaseBackupState:
         :param pulumi.Input['AutonomousDatabaseBackupBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
-        :param pulumi.Input[_builtins.str] db_version: A valid Oracle AI Database version for Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] db_version: A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[_builtins.bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
@@ -276,7 +276,7 @@ class _AutonomousDatabaseBackupState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A valid Oracle AI Database version for Autonomous AI Database.
+        A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         """
         return pulumi.get(self, "db_version")
 
@@ -729,7 +729,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict']] backup_destination_details: Backup destination details
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.float] database_size_in_tbs: The size of the database in terabytes at the time the backup was taken.
-        :param pulumi.Input[_builtins.str] db_version: A valid Oracle AI Database version for Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] db_version: A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the backup. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[_builtins.bool] is_automatic: Indicates whether the backup is user-initiated or automatic.
@@ -822,7 +822,7 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[_builtins.str]:
         """
-        A valid Oracle AI Database version for Autonomous AI Database.
+        A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         """
         return pulumi.get(self, "db_version")
 

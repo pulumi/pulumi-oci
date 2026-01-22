@@ -14735,7 +14735,8 @@ class GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(dict):
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
-                 time_updated: _builtins.str):
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param _builtins.str data_host: The host name of the database corresponding to the IoT Domain group.
@@ -14751,6 +14752,7 @@ class GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str type: Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_host", data_host)
@@ -14766,6 +14768,7 @@ class GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -14878,6 +14881,14 @@ class GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(dict):
         The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

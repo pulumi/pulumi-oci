@@ -71,6 +71,11 @@ public final class GetPluggableDatabasesPluggableDatabase {
      * 
      */
     private String openMode;
+    /**
+     * @return The patch version of the pluggable database.
+     * 
+     */
+    private String patchVersion;
     private String pdbAdminPassword;
     private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails;
     /**
@@ -191,6 +196,13 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public String openMode() {
         return this.openMode;
     }
+    /**
+     * @return The patch version of the pluggable database.
+     * 
+     */
+    public String patchVersion() {
+        return this.patchVersion;
+    }
     public String pdbAdminPassword() {
         return this.pdbAdminPassword;
     }
@@ -283,6 +295,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
         private String kmsKeyVersionId;
         private String lifecycleDetails;
         private String openMode;
+        private String patchVersion;
         private String pdbAdminPassword;
         private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail> pdbCreationTypeDetails;
         private String pdbName;
@@ -312,6 +325,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.openMode = defaults.openMode;
+    	      this.patchVersion = defaults.patchVersion;
     	      this.pdbAdminPassword = defaults.pdbAdminPassword;
     	      this.pdbCreationTypeDetails = defaults.pdbCreationTypeDetails;
     	      this.pdbName = defaults.pdbName;
@@ -425,6 +439,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
               throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "openMode");
             }
             this.openMode = openMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder patchVersion(String patchVersion) {
+            if (patchVersion == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "patchVersion");
+            }
+            this.patchVersion = patchVersion;
             return this;
         }
         @CustomType.Setter
@@ -565,6 +587,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.openMode = openMode;
+            _resultValue.patchVersion = patchVersion;
             _resultValue.pdbAdminPassword = pdbAdminPassword;
             _resultValue.pdbCreationTypeDetails = pdbCreationTypeDetails;
             _resultValue.pdbName = pdbName;

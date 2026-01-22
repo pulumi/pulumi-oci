@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseEncryptionKeyArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseTransportableTablespaceArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseVanityUrlDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -452,14 +453,14 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * @return (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -1442,6 +1443,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Details for importing transportable tablespace for an Autonomous Database.
+     * 
+     */
+    @Import(name="transportableTablespace")
+    private @Nullable Output<AutonomousDatabaseTransportableTablespaceArgs> transportableTablespace;
+
+    /**
+     * @return Details for importing transportable tablespace for an Autonomous Database.
+     * 
+     */
+    public Optional<Output<AutonomousDatabaseTransportableTablespaceArgs>> transportableTablespace() {
+        return Optional.ofNullable(this.transportableTablespace);
+    }
+
+    /**
      * Clone from latest available backup timestamp.
      * 
      */
@@ -1606,6 +1622,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.timeOfAutoRefreshStart = $.timeOfAutoRefreshStart;
         this.timeScheduledDbVersionUpgrade = $.timeScheduledDbVersionUpgrade;
         this.timestamp = $.timestamp;
+        this.transportableTablespace = $.transportableTablespace;
         this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
         this.vanityUrlDetails = $.vanityUrlDetails;
         this.vaultId = $.vaultId;
@@ -2241,7 +2258,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param dbVersion (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+         * @param dbVersion (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
          * 
          * @return builder
          * 
@@ -2252,7 +2269,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param dbVersion (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+         * @param dbVersion (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
          * 
          * @return builder
          * 
@@ -3625,6 +3642,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder timestamp(String timestamp) {
             return timestamp(Output.of(timestamp));
+        }
+
+        /**
+         * @param transportableTablespace Details for importing transportable tablespace for an Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportableTablespace(@Nullable Output<AutonomousDatabaseTransportableTablespaceArgs> transportableTablespace) {
+            $.transportableTablespace = transportableTablespace;
+            return this;
+        }
+
+        /**
+         * @param transportableTablespace Details for importing transportable tablespace for an Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder transportableTablespace(AutonomousDatabaseTransportableTablespaceArgs transportableTablespace) {
+            return transportableTablespace(Output.of(transportableTablespace));
         }
 
         /**

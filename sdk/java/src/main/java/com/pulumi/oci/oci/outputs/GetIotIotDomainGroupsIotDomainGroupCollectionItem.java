@@ -82,6 +82,11 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * 
+     */
+    private String type;
 
     private GetIotIotDomainGroupsIotDomainGroupCollectionItem() {}
     /**
@@ -182,6 +187,13 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -206,6 +218,7 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String type;
         public Builder() {}
         public Builder(GetIotIotDomainGroupsIotDomainGroupCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -223,6 +236,7 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -340,6 +354,14 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetIotIotDomainGroupsIotDomainGroupCollectionItem", "type");
+            }
+            this.type = type;
+            return this;
+        }
         public GetIotIotDomainGroupsIotDomainGroupCollectionItem build() {
             final var _resultValue = new GetIotIotDomainGroupsIotDomainGroupCollectionItem();
             _resultValue.compartmentId = compartmentId;
@@ -356,6 +378,7 @@ public final class GetIotIotDomainGroupsIotDomainGroupCollectionItem {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

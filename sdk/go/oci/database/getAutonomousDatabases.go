@@ -115,7 +115,7 @@ type GetAutonomousDatabasesResult struct {
 	AutonomousDatabases []GetAutonomousDatabasesAutonomousDatabase `pulumi:"autonomousDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion *string `pulumi:"dbVersion"`
 	// The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -220,7 +220,7 @@ func (o GetAutonomousDatabasesResultOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A valid Oracle AI Database version for Autonomous AI Database.
+// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 func (o GetAutonomousDatabasesResultOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }

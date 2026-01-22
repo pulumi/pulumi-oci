@@ -71,7 +71,7 @@ type AutonomousDatabaseBackup struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs pulumi.Float64Output `pulumi:"databaseSizeInTbs"`
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -159,7 +159,7 @@ type autonomousDatabaseBackupState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs *float64 `pulumi:"databaseSizeInTbs"`
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion *string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
@@ -215,7 +215,7 @@ type AutonomousDatabaseBackupState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs pulumi.Float64PtrInput
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion pulumi.StringPtrInput
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
@@ -408,7 +408,7 @@ func (o AutonomousDatabaseBackupOutput) DatabaseSizeInTbs() pulumi.Float64Output
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.Float64Output { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
 }
 
-// A valid Oracle AI Database version for Autonomous AI Database.
+// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 func (o AutonomousDatabaseBackupOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseBackup) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
 }

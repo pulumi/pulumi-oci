@@ -67,7 +67,7 @@ type LookupAutonomousDatabaseBackupResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs float64 `pulumi:"databaseSizeInTbs"`
-	// A valid Oracle AI Database version for Autonomous AI Database.
+	// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 	DbVersion string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
@@ -172,7 +172,7 @@ func (o LookupAutonomousDatabaseBackupResultOutput) DatabaseSizeInTbs() pulumi.F
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
 }
 
-// A valid Oracle AI Database version for Autonomous AI Database.
+// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
 func (o LookupAutonomousDatabaseBackupResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }

@@ -84,6 +84,21 @@ public final class GetIotIotDomainGroupsPlainArgs extends com.pulumi.resources.I
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable String type;
+
+    /**
+     * @return Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetIotIotDomainGroupsPlainArgs() {}
 
     private GetIotIotDomainGroupsPlainArgs(GetIotIotDomainGroupsPlainArgs $) {
@@ -92,6 +107,7 @@ public final class GetIotIotDomainGroupsPlainArgs extends com.pulumi.resources.I
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -162,6 +178,17 @@ public final class GetIotIotDomainGroupsPlainArgs extends com.pulumi.resources.I
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param type Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable String type) {
+            $.type = type;
             return this;
         }
 

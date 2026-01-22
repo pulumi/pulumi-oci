@@ -90,6 +90,10 @@ export class PluggableDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly openMode: pulumi.Output<string>;
     /**
+     * The patch version of the pluggable database.
+     */
+    declare public /*out*/ readonly patchVersion: pulumi.Output<string>;
+    /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */
     declare public readonly pdbAdminPassword: pulumi.Output<string>;
@@ -174,6 +178,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["openMode"] = state?.openMode;
+            resourceInputs["patchVersion"] = state?.patchVersion;
             resourceInputs["pdbAdminPassword"] = state?.pdbAdminPassword;
             resourceInputs["pdbCreationTypeDetails"] = state?.pdbCreationTypeDetails;
             resourceInputs["pdbName"] = state?.pdbName;
@@ -215,6 +220,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["isRestricted"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["openMode"] = undefined /*out*/;
+            resourceInputs["patchVersion"] = undefined /*out*/;
             resourceInputs["pdbNodeLevelDetails"] = undefined /*out*/;
             resourceInputs["pluggableDatabaseManagementConfigs"] = undefined /*out*/;
             resourceInputs["refreshableCloneConfigs"] = undefined /*out*/;
@@ -277,6 +283,10 @@ export interface PluggableDatabaseState {
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
     openMode?: pulumi.Input<string>;
+    /**
+     * The patch version of the pluggable database.
+     */
+    patchVersion?: pulumi.Input<string>;
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      */

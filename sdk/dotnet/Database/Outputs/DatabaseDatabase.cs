@@ -84,13 +84,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         /// </summary>
         public readonly string? KmsKeyVersionId;
         /// <summary>
         /// The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         /// </summary>
         public readonly string? NcharacterSet;
+        /// <summary>
+        /// (Updatable) Options for DB Home and Database patching
+        /// </summary>
+        public readonly Outputs.DatabaseDatabasePatchOptions? PatchOptions;
         /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
@@ -186,6 +190,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? ncharacterSet,
 
+            Outputs.DatabaseDatabasePatchOptions? patchOptions,
+
             string? pdbName,
 
             ImmutableArray<string> pluggableDatabases,
@@ -230,6 +236,7 @@ namespace Pulumi.Oci.Database.Outputs
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             NcharacterSet = ncharacterSet;
+            PatchOptions = patchOptions;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             ProtectionMode = protectionMode;

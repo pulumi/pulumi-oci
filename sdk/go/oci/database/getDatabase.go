@@ -116,6 +116,8 @@ type LookupDatabaseResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The national character set for the database.
 	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The patch version of the  database.
+	PatchVersion string `pulumi:"patchVersion"`
 	// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
 	PdbName string `pulumi:"pdbName"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
@@ -323,6 +325,11 @@ func (o LookupDatabaseResultOutput) LifecycleDetails() pulumi.StringOutput {
 // The national character set for the database.
 func (o LookupDatabaseResultOutput) NcharacterSet() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The patch version of the  database.
+func (o LookupDatabaseResultOutput) PatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) string { return v.PatchVersion }).(pulumi.StringOutput)
 }
 
 // The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

@@ -114,7 +114,7 @@ type AutonomousDatabase struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayOutput `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -137,7 +137,8 @@ type AutonomousDatabase struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyOutput `pulumi:"encryptionKey"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries  AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntOutput `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -386,6 +387,8 @@ type AutonomousDatabase struct {
 	Timestamp pulumi.StringOutput `pulumi:"timestamp"`
 	// The backup storage to the database.
 	TotalBackupStorageSizeInGbs pulumi.Float64Output `pulumi:"totalBackupStorageSizeInGbs"`
+	// Details for importing transportable tablespace for an Autonomous Database.
+	TransportableTablespace AutonomousDatabaseTransportableTablespaceOutput `pulumi:"transportableTablespace"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolOutput `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The storage space consumed by Autonomous AI Database in GBs.
@@ -541,7 +544,7 @@ type autonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails []AutonomousDatabaseDbToolsDetail `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -564,7 +567,8 @@ type autonomousDatabaseState struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries []AutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries  []AutonomousDatabaseEncryptionKeyHistoryEntry   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyLocationDetails []AutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -813,6 +817,8 @@ type autonomousDatabaseState struct {
 	Timestamp *string `pulumi:"timestamp"`
 	// The backup storage to the database.
 	TotalBackupStorageSizeInGbs *float64 `pulumi:"totalBackupStorageSizeInGbs"`
+	// Details for importing transportable tablespace for an Autonomous Database.
+	TransportableTablespace *AutonomousDatabaseTransportableTablespace `pulumi:"transportableTablespace"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// The storage space consumed by Autonomous AI Database in GBs.
@@ -926,7 +932,7 @@ type AutonomousDatabaseState struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayInput
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -949,7 +955,8 @@ type AutonomousDatabaseState struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
 	// Key History Entry.
-	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
+	EncryptionKeyHistoryEntries  AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
+	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayInput
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1198,6 +1205,8 @@ type AutonomousDatabaseState struct {
 	Timestamp pulumi.StringPtrInput
 	// The backup storage to the database.
 	TotalBackupStorageSizeInGbs pulumi.Float64PtrInput
+	// Details for importing transportable tablespace for an Autonomous Database.
+	TransportableTablespace AutonomousDatabaseTransportableTablespacePtrInput
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The storage space consumed by Autonomous AI Database in GBs.
@@ -1293,7 +1302,7 @@ type autonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails []AutonomousDatabaseDbToolsDetail `pulumi:"dbToolsDetails"`
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -1461,6 +1470,8 @@ type autonomousDatabaseArgs struct {
 	TimeScheduledDbVersionUpgrade *string `pulumi:"timeScheduledDbVersionUpgrade"`
 	// The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 	Timestamp *string `pulumi:"timestamp"`
+	// Details for importing transportable tablespace for an Autonomous Database.
+	TransportableTablespace *AutonomousDatabaseTransportableTablespace `pulumi:"transportableTablespace"`
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp *bool `pulumi:"useLatestAvailableBackupTimeStamp"`
 	// Details for api gateway and vanity url(custom url) for dbTools.
@@ -1547,7 +1558,7 @@ type AutonomousDatabaseArgs struct {
 	//
 	// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
 	DbToolsDetails AutonomousDatabaseDbToolsDetailArrayInput
-	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+	// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) The Autonomous AI Database workload type. The following values are valid:
 	// * OLTP - indicates an Autonomous AI Transaction Processing database
@@ -1715,6 +1726,8 @@ type AutonomousDatabaseArgs struct {
 	TimeScheduledDbVersionUpgrade pulumi.StringPtrInput
 	// The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
 	Timestamp pulumi.StringPtrInput
+	// Details for importing transportable tablespace for an Autonomous Database.
+	TransportableTablespace AutonomousDatabaseTransportableTablespacePtrInput
 	// Clone from latest available backup timestamp.
 	UseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// Details for api gateway and vanity url(custom url) for dbTools.
@@ -2021,7 +2034,7 @@ func (o AutonomousDatabaseOutput) DbToolsDetails() AutonomousDatabaseDbToolsDeta
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseDbToolsDetailArrayOutput { return v.DbToolsDetails }).(AutonomousDatabaseDbToolsDetailArrayOutput)
 }
 
-// (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+// (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
 func (o AutonomousDatabaseOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -2072,6 +2085,12 @@ func (o AutonomousDatabaseOutput) EncryptionKeyHistoryEntries() AutonomousDataba
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput {
 		return v.EncryptionKeyHistoryEntries
 	}).(AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
+}
+
+func (o AutonomousDatabaseOutput) EncryptionKeyLocationDetails() AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
+		return v.EncryptionKeyLocationDetails
+	}).(AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.
@@ -2649,6 +2668,13 @@ func (o AutonomousDatabaseOutput) Timestamp() pulumi.StringOutput {
 // The backup storage to the database.
 func (o AutonomousDatabaseOutput) TotalBackupStorageSizeInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.Float64Output { return v.TotalBackupStorageSizeInGbs }).(pulumi.Float64Output)
+}
+
+// Details for importing transportable tablespace for an Autonomous Database.
+func (o AutonomousDatabaseOutput) TransportableTablespace() AutonomousDatabaseTransportableTablespaceOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseTransportableTablespaceOutput {
+		return v.TransportableTablespace
+	}).(AutonomousDatabaseTransportableTablespaceOutput)
 }
 
 // Clone from latest available backup timestamp.

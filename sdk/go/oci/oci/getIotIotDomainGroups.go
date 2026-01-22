@@ -34,6 +34,7 @@ import (
 //				DisplayName:   pulumi.StringRef(iotDomainGroupDisplayName),
 //				Id:            pulumi.StringRef(iotDomainGroupId),
 //				State:         pulumi.StringRef(iotDomainGroupState),
+//				Type:          pulumi.StringRef(iotDomainGroupType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -64,6 +65,8 @@ type GetIotIotDomainGroupsArgs struct {
 	Id *string `pulumi:"id"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State *string `pulumi:"state"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type *string `pulumi:"type"`
 }
 
 // A collection of values returned by getIotIotDomainGroups.
@@ -79,6 +82,8 @@ type GetIotIotDomainGroupsResult struct {
 	IotDomainGroupCollections []GetIotIotDomainGroupsIotDomainGroupCollection `pulumi:"iotDomainGroupCollections"`
 	// The current state of an IoT Domain Group.
 	State *string `pulumi:"state"`
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	Type *string `pulumi:"type"`
 }
 
 func GetIotIotDomainGroupsOutput(ctx *pulumi.Context, args GetIotIotDomainGroupsOutputArgs, opts ...pulumi.InvokeOption) GetIotIotDomainGroupsResultOutput {
@@ -101,6 +106,8 @@ type GetIotIotDomainGroupsOutputArgs struct {
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Filter resources whose lifecycleState matches the specified value.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetIotIotDomainGroupsOutputArgs) ElementType() reflect.Type {
@@ -151,6 +158,11 @@ func (o GetIotIotDomainGroupsResultOutput) IotDomainGroupCollections() GetIotIot
 // The current state of an IoT Domain Group.
 func (o GetIotIotDomainGroupsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetIotIotDomainGroupsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+func (o GetIotIotDomainGroupsResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -79,7 +79,9 @@ type LookupPluggableDatabaseResult struct {
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
-	OpenMode               string                                      `pulumi:"openMode"`
+	OpenMode string `pulumi:"openMode"`
+	// The patch version of the pluggable database.
+	PatchVersion           string                                      `pulumi:"patchVersion"`
 	PdbAdminPassword       string                                      `pulumi:"pdbAdminPassword"`
 	PdbCreationTypeDetails []GetPluggableDatabasePdbCreationTypeDetail `pulumi:"pdbCreationTypeDetails"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -196,6 +198,11 @@ func (o LookupPluggableDatabaseResultOutput) LifecycleDetails() pulumi.StringOut
 // The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
 func (o LookupPluggableDatabaseResultOutput) OpenMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.OpenMode }).(pulumi.StringOutput)
+}
+
+// The patch version of the pluggable database.
+func (o LookupPluggableDatabaseResultOutput) PatchVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.PatchVersion }).(pulumi.StringOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) PdbAdminPassword() pulumi.StringOutput {

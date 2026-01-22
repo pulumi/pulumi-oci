@@ -87,6 +87,8 @@ type LookupIotIotDomainGroupResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+	Type string `pulumi:"type"`
 }
 
 func LookupIotIotDomainGroupOutput(ctx *pulumi.Context, args LookupIotIotDomainGroupOutputArgs, opts ...pulumi.InvokeOption) LookupIotIotDomainGroupResultOutput {
@@ -195,6 +197,11 @@ func (o LookupIotIotDomainGroupResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o LookupIotIotDomainGroupResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIotIotDomainGroupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+func (o LookupIotIotDomainGroupResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIotIotDomainGroupResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = iotDomainGroupDisplayName,
         ///         Id = iotDomainGroupId,
         ///         State = iotDomainGroupState,
+        ///         Type = iotDomainGroupType,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = iotDomainGroupDisplayName,
         ///         Id = iotDomainGroupId,
         ///         State = iotDomainGroupState,
+        ///         Type = iotDomainGroupType,
         ///     });
         /// 
         /// });
@@ -93,6 +95,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = iotDomainGroupDisplayName,
         ///         Id = iotDomainGroupId,
         ///         State = iotDomainGroupState,
+        ///         Type = iotDomainGroupType,
         ///     });
         /// 
         /// });
@@ -137,6 +140,12 @@ namespace Pulumi.Oci.Oci
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
+
         public GetIotIotDomainGroupsArgs()
         {
         }
@@ -177,6 +186,12 @@ namespace Pulumi.Oci.Oci
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
         public GetIotIotDomainGroupsInvokeArgs()
         {
         }
@@ -208,6 +223,10 @@ namespace Pulumi.Oci.Oci
         /// The current state of an IoT Domain Group.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetIotIotDomainGroupsResult(
@@ -221,7 +240,9 @@ namespace Pulumi.Oci.Oci
 
             ImmutableArray<Outputs.GetIotIotDomainGroupsIotDomainGroupCollectionResult> iotDomainGroupCollections,
 
-            string? state)
+            string? state,
+
+            string? type)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
@@ -229,6 +250,7 @@ namespace Pulumi.Oci.Oci
             Id = id;
             IotDomainGroupCollections = iotDomainGroupCollections;
             State = state;
+            Type = type;
         }
     }
 }

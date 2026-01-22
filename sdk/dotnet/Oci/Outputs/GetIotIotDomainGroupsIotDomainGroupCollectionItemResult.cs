@@ -69,6 +69,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(
@@ -98,7 +102,9 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             DataHost = dataHost;
@@ -114,6 +120,7 @@ namespace Pulumi.Oci.Oci.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Type = type;
         }
     }
 }

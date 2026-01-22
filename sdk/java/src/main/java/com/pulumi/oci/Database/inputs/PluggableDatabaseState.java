@@ -190,6 +190,21 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The patch version of the pluggable database.
+     * 
+     */
+    @Import(name="patchVersion")
+    private @Nullable Output<String> patchVersion;
+
+    /**
+     * @return The patch version of the pluggable database.
+     * 
+     */
+    public Optional<Output<String>> patchVersion() {
+        return Optional.ofNullable(this.patchVersion);
+    }
+
+    /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -419,6 +434,7 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.openMode = $.openMode;
+        this.patchVersion = $.patchVersion;
         this.pdbAdminPassword = $.pdbAdminPassword;
         this.pdbCreationTypeDetails = $.pdbCreationTypeDetails;
         this.pdbName = $.pdbName;
@@ -692,6 +708,27 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
          */
         public Builder openMode(String openMode) {
             return openMode(Output.of(openMode));
+        }
+
+        /**
+         * @param patchVersion The patch version of the pluggable database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchVersion(@Nullable Output<String> patchVersion) {
+            $.patchVersion = patchVersion;
+            return this;
+        }
+
+        /**
+         * @param patchVersion The patch version of the pluggable database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder patchVersion(String patchVersion) {
+            return patchVersion(Output.of(patchVersion));
         }
 
         /**

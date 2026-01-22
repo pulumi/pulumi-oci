@@ -210,7 +210,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public readonly dbToolsDetails: pulumi.Output<outputs.Database.AutonomousDatabaseDbToolsDetail[]>;
     /**
-     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      */
     declare public readonly dbVersion: pulumi.Output<string>;
     /**
@@ -249,6 +249,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * Key History Entry.
      */
     declare public /*out*/ readonly encryptionKeyHistoryEntries: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry[]>;
+    declare public /*out*/ readonly encryptionKeyLocationDetails: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
@@ -696,6 +697,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly totalBackupStorageSizeInGbs: pulumi.Output<number>;
     /**
+     * Details for importing transportable tablespace for an Autonomous Database.
+     */
+    declare public readonly transportableTablespace: pulumi.Output<outputs.Database.AutonomousDatabaseTransportableTablespace>;
+    /**
      * Clone from latest available backup timestamp.
      */
     declare public readonly useLatestAvailableBackupTimeStamp: pulumi.Output<boolean>;
@@ -789,6 +794,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["enableDeleteScheduledOperations"] = state?.enableDeleteScheduledOperations;
             resourceInputs["encryptionKey"] = state?.encryptionKey;
             resourceInputs["encryptionKeyHistoryEntries"] = state?.encryptionKeyHistoryEntries;
+            resourceInputs["encryptionKeyLocationDetails"] = state?.encryptionKeyLocationDetails;
             resourceInputs["failedDataRecoveryInSeconds"] = state?.failedDataRecoveryInSeconds;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inMemoryAreaInGbs"] = state?.inMemoryAreaInGbs;
@@ -896,6 +902,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeUntilReconnectCloneEnabled"] = state?.timeUntilReconnectCloneEnabled;
             resourceInputs["timestamp"] = state?.timestamp;
             resourceInputs["totalBackupStorageSizeInGbs"] = state?.totalBackupStorageSizeInGbs;
+            resourceInputs["transportableTablespace"] = state?.transportableTablespace;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = state?.useLatestAvailableBackupTimeStamp;
             resourceInputs["usedDataStorageSizeInGbs"] = state?.usedDataStorageSizeInGbs;
             resourceInputs["usedDataStorageSizeInTbs"] = state?.usedDataStorageSizeInTbs;
@@ -1001,6 +1008,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeOfAutoRefreshStart"] = args?.timeOfAutoRefreshStart;
             resourceInputs["timeScheduledDbVersionUpgrade"] = args?.timeScheduledDbVersionUpgrade;
             resourceInputs["timestamp"] = args?.timestamp;
+            resourceInputs["transportableTablespace"] = args?.transportableTablespace;
             resourceInputs["useLatestAvailableBackupTimeStamp"] = args?.useLatestAvailableBackupTimeStamp;
             resourceInputs["vanityUrlDetails"] = args?.vanityUrlDetails;
             resourceInputs["vaultId"] = args?.vaultId;
@@ -1018,6 +1026,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["dataguardRegionType"] = undefined /*out*/;
             resourceInputs["disasterRecoveryRegionType"] = undefined /*out*/;
             resourceInputs["encryptionKeyHistoryEntries"] = undefined /*out*/;
+            resourceInputs["encryptionKeyLocationDetails"] = undefined /*out*/;
             resourceInputs["failedDataRecoveryInSeconds"] = undefined /*out*/;
             resourceInputs["inMemoryAreaInGbs"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
@@ -1248,7 +1257,7 @@ export interface AutonomousDatabaseState {
      */
     dbToolsDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseDbToolsDetail>[]>;
     /**
-     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -1287,6 +1296,7 @@ export interface AutonomousDatabaseState {
      * Key History Entry.
      */
     encryptionKeyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry>[]>;
+    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail>[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
@@ -1734,6 +1744,10 @@ export interface AutonomousDatabaseState {
      */
     totalBackupStorageSizeInGbs?: pulumi.Input<number>;
     /**
+     * Details for importing transportable tablespace for an Autonomous Database.
+     */
+    transportableTablespace?: pulumi.Input<inputs.Database.AutonomousDatabaseTransportableTablespace>;
+    /**
      * Clone from latest available backup timestamp.
      */
     useLatestAvailableBackupTimeStamp?: pulumi.Input<boolean>;
@@ -1894,7 +1908,7 @@ export interface AutonomousDatabaseArgs {
      */
     dbToolsDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseDbToolsDetail>[]>;
     /**
-     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai. `dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      */
     dbVersion?: pulumi.Input<string>;
     /**
@@ -2171,6 +2185,10 @@ export interface AutonomousDatabaseArgs {
      * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      */
     timestamp?: pulumi.Input<string>;
+    /**
+     * Details for importing transportable tablespace for an Autonomous Database.
+     */
+    transportableTablespace?: pulumi.Input<inputs.Database.AutonomousDatabaseTransportableTablespace>;
     /**
      * Clone from latest available backup timestamp.
      */

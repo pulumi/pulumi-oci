@@ -83,6 +83,11 @@ public final class GetIotIotDomainGroupResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * 
+     */
+    private String type;
 
     private GetIotIotDomainGroupResult() {}
     /**
@@ -186,6 +191,13 @@ public final class GetIotIotDomainGroupResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Type of the domain group. LIGHTWEIGHT uses fewer resources and has a higher Recovery Time Objective (RTO),  making it suitable for development and testing. STANDARD is recommended for production.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -211,6 +223,7 @@ public final class GetIotIotDomainGroupResult {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String type;
         public Builder() {}
         public Builder(GetIotIotDomainGroupResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -229,6 +242,7 @@ public final class GetIotIotDomainGroupResult {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -354,6 +368,14 @@ public final class GetIotIotDomainGroupResult {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            if (type == null) {
+              throw new MissingRequiredPropertyException("GetIotIotDomainGroupResult", "type");
+            }
+            this.type = type;
+            return this;
+        }
         public GetIotIotDomainGroupResult build() {
             final var _resultValue = new GetIotIotDomainGroupResult();
             _resultValue.compartmentId = compartmentId;
@@ -371,6 +393,7 @@ public final class GetIotIotDomainGroupResult {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

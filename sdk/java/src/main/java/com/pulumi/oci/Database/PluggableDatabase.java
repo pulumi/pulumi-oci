@@ -192,6 +192,20 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
         return this.openMode;
     }
     /**
+     * The patch version of the pluggable database.
+     * 
+     */
+    @Export(name="patchVersion", refs={String.class}, tree="[0]")
+    private Output<String> patchVersion;
+
+    /**
+     * @return The patch version of the pluggable database.
+     * 
+     */
+    public Output<String> patchVersion() {
+        return this.patchVersion;
+    }
+    /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
      * 
      */

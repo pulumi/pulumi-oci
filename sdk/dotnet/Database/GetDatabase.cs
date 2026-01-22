@@ -234,6 +234,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string NcharacterSet;
         /// <summary>
+        /// The patch version of the  database.
+        /// </summary>
+        public readonly string PatchVersion;
+        /// <summary>
         /// The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         /// </summary>
         public readonly string PdbName;
@@ -337,6 +341,8 @@ namespace Pulumi.Oci.Database
 
             string ncharacterSet,
 
+            string patchVersion,
+
             string pdbName,
 
             string sidPrefix,
@@ -389,6 +395,7 @@ namespace Pulumi.Oci.Database
             LastFailedBackupTimestamp = lastFailedBackupTimestamp;
             LifecycleDetails = lifecycleDetails;
             NcharacterSet = ncharacterSet;
+            PatchVersion = patchVersion;
             PdbName = pdbName;
             SidPrefix = sidPrefix;
             Source = source;

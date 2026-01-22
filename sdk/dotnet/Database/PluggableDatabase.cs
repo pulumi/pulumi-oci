@@ -90,6 +90,12 @@ namespace Pulumi.Oci.Database
         public Output<string> OpenMode { get; private set; } = null!;
 
         /// <summary>
+        /// The patch version of the pluggable database.
+        /// </summary>
+        [Output("patchVersion")]
+        public Output<string> PatchVersion { get; private set; } = null!;
+
+        /// <summary>
         /// A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
         [Output("pdbAdminPassword")]
@@ -460,6 +466,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("openMode")]
         public Input<string>? OpenMode { get; set; }
+
+        /// <summary>
+        /// The patch version of the pluggable database.
+        /// </summary>
+        [Input("patchVersion")]
+        public Input<string>? PatchVersion { get; set; }
 
         [Input("pdbAdminPassword")]
         private Input<string>? _pdbAdminPassword;

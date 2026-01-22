@@ -29431,6 +29431,13 @@ export namespace Database {
         vaultUri?: pulumi.Input<string>;
     }
 
+    export interface AutonomousDatabaseEncryptionKeyLocationDetail {
+        awsEncryptionKeyId?: pulumi.Input<string>;
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        hsmPassword?: pulumi.Input<string>;
+        providerType?: pulumi.Input<string>;
+    }
+
     export interface AutonomousDatabaseKeyHistoryEntry {
         /**
          * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -29648,6 +29655,13 @@ export namespace Database {
          * The date and time when maintenance will end.
          */
         timeMaintenanceEnd?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseTransportableTablespace {
+        /**
+         * URL for Oracle Cloud Infrastructure Storage location for a Transportable Tablespace (TTS) bundle.
+         */
+        ttsBundleUrl: pulumi.Input<string>;
     }
 
     export interface AutonomousDatabaseVanityConnectionUrl {
@@ -30467,6 +30481,10 @@ export namespace Database {
         isIncidentLogsEnabled?: pulumi.Input<boolean>;
     }
 
+    export interface DataPatchDataPatchOption {
+        shouldSkipClosedPdbs?: pulumi.Input<boolean>;
+    }
+
     export interface DatabaseConnectionString {
         /**
          * All connection strings to use to connect to the Database.
@@ -30631,13 +30649,17 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
          * The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
          */
         ncharacterSet?: pulumi.Input<string>;
+        /**
+         * (Updatable) Options for DB Home and Database patching
+         */
+        patchOptions?: pulumi.Input<inputs.Database.DatabaseDatabasePatchOptions>;
         /**
          * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
          */
@@ -30796,6 +30818,17 @@ export namespace Database {
          * The Database Management type.
          */
         managementType?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseDatabasePatchOptions {
+        /**
+         * Skip running datapatch on PDBs in closed state
+         */
+        shouldSkipClosedPdbs?: pulumi.Input<boolean>;
+        /**
+         * Skip running datapatch on database(s)
+         */
+        shouldSkipDataPatch?: pulumi.Input<boolean>;
     }
 
     export interface DatabaseDatabaseSourceEncryptionKeyLocationDetails {
@@ -33207,6 +33240,18 @@ export namespace Database {
     }
 
     export interface GetDatabasesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbConnectionBundlesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbConnectionBundlesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

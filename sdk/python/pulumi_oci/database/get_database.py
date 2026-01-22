@@ -27,7 +27,7 @@ class GetDatabaseResult:
     """
     A collection of values returned by getDatabase.
     """
-    def __init__(__self__, action_trigger=None, character_set=None, compartment_id=None, connection_strings=None, data_guard_action=None, data_guard_groups=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, storage_size_details=None, system_tags=None, time_created=None, vault_id=None, vm_cluster_id=None):
+    def __init__(__self__, action_trigger=None, character_set=None, compartment_id=None, connection_strings=None, data_guard_action=None, data_guard_groups=None, database_id=None, database_management_configs=None, database_software_image_id=None, databases=None, db_backup_configs=None, db_home_id=None, db_name=None, db_system_id=None, db_unique_name=None, db_version=None, db_workload=None, defined_tags=None, freeform_tags=None, id=None, is_cdb=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, kms_key_migration=None, kms_key_rotation=None, kms_key_version_id=None, last_backup_duration_in_seconds=None, last_backup_timestamp=None, last_failed_backup_timestamp=None, lifecycle_details=None, ncharacter_set=None, patch_version=None, pdb_name=None, sid_prefix=None, source=None, source_database_point_in_time_recovery_timestamp=None, state=None, storage_size_details=None, system_tags=None, time_created=None, vault_id=None, vm_cluster_id=None):
         if action_trigger and not isinstance(action_trigger, int):
             raise TypeError("Expected argument 'action_trigger' to be a int")
         pulumi.set(__self__, "action_trigger", action_trigger)
@@ -124,6 +124,9 @@ class GetDatabaseResult:
         if ncharacter_set and not isinstance(ncharacter_set, str):
             raise TypeError("Expected argument 'ncharacter_set' to be a str")
         pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+        if patch_version and not isinstance(patch_version, str):
+            raise TypeError("Expected argument 'patch_version' to be a str")
+        pulumi.set(__self__, "patch_version", patch_version)
         if pdb_name and not isinstance(pdb_name, str):
             raise TypeError("Expected argument 'pdb_name' to be a str")
         pulumi.set(__self__, "pdb_name", pdb_name)
@@ -394,6 +397,14 @@ class GetDatabaseResult:
         return pulumi.get(self, "ncharacter_set")
 
     @_builtins.property
+    @pulumi.getter(name="patchVersion")
+    def patch_version(self) -> _builtins.str:
+        """
+        The patch version of the  database.
+        """
+        return pulumi.get(self, "patch_version")
+
+    @_builtins.property
     @pulumi.getter(name="pdbName")
     def pdb_name(self) -> _builtins.str:
         """
@@ -509,6 +520,7 @@ class AwaitableGetDatabaseResult(GetDatabaseResult):
             last_failed_backup_timestamp=self.last_failed_backup_timestamp,
             lifecycle_details=self.lifecycle_details,
             ncharacter_set=self.ncharacter_set,
+            patch_version=self.patch_version,
             pdb_name=self.pdb_name,
             sid_prefix=self.sid_prefix,
             source=self.source,
@@ -578,6 +590,7 @@ def get_database(database_id: Optional[_builtins.str] = None,
         last_failed_backup_timestamp=pulumi.get(__ret__, 'last_failed_backup_timestamp'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
+        patch_version=pulumi.get(__ret__, 'patch_version'),
         pdb_name=pulumi.get(__ret__, 'pdb_name'),
         sid_prefix=pulumi.get(__ret__, 'sid_prefix'),
         source=pulumi.get(__ret__, 'source'),
@@ -644,6 +657,7 @@ def get_database_output(database_id: Optional[pulumi.Input[_builtins.str]] = Non
         last_failed_backup_timestamp=pulumi.get(__response__, 'last_failed_backup_timestamp'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
+        patch_version=pulumi.get(__response__, 'patch_version'),
         pdb_name=pulumi.get(__response__, 'pdb_name'),
         sid_prefix=pulumi.get(__response__, 'sid_prefix'),
         source=pulumi.get(__response__, 'source'),

@@ -165,6 +165,10 @@ namespace Pulumi.Oci.Database
         /// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         /// </summary>
         public readonly string OpenMode;
+        /// <summary>
+        /// The patch version of the pluggable database.
+        /// </summary>
+        public readonly string PatchVersion;
         public readonly string PdbAdminPassword;
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> PdbCreationTypeDetails;
         /// <summary>
@@ -228,6 +232,8 @@ namespace Pulumi.Oci.Database
 
             string openMode,
 
+            string patchVersion,
+
             string pdbAdminPassword,
 
             ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailResult> pdbCreationTypeDetails,
@@ -270,6 +276,7 @@ namespace Pulumi.Oci.Database
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;
             OpenMode = openMode;
+            PatchVersion = patchVersion;
             PdbAdminPassword = pdbAdminPassword;
             PdbCreationTypeDetails = pdbCreationTypeDetails;
             PdbName = pdbName;

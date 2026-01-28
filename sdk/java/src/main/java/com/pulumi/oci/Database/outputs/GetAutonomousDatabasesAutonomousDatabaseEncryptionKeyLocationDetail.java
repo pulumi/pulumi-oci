@@ -10,12 +10,24 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail {
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     private String awsEncryptionKeyId;
     private String azureEncryptionKeyId;
     private String hsmPassword;
+    /**
+     * @return Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     private String providerType;
 
     private GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail() {}
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     public String awsEncryptionKeyId() {
         return this.awsEncryptionKeyId;
     }
@@ -25,6 +37,10 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocation
     public String hsmPassword() {
         return this.hsmPassword;
     }
+    /**
+     * @return Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     public String providerType() {
         return this.providerType;
     }

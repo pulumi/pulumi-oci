@@ -112,6 +112,21 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    @Import(name="externalKeyDescription")
+    private @Nullable Output<String> externalKeyDescription;
+
+    /**
+     * @return (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    public Optional<Output<String>> externalKeyDescription() {
+        return Optional.ofNullable(this.externalKeyDescription);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -130,15 +145,15 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    @Import(name="kmsKeyId", required=true)
-    private Output<String> kmsKeyId;
+    @Import(name="kmsKeyId")
+    private @Nullable Output<String> kmsKeyId;
 
     /**
      * @return The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<Output<String>> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
 
     /**
@@ -171,6 +186,7 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.externalKeyDescription = $.externalKeyDescription;
         this.freeformTags = $.freeformTags;
         this.kmsKeyId = $.kmsKeyId;
         this.name = $.name;
@@ -331,6 +347,27 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param externalKeyDescription (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyDescription(@Nullable Output<String> externalKeyDescription) {
+            $.externalKeyDescription = externalKeyDescription;
+            return this;
+        }
+
+        /**
+         * @param externalKeyDescription (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            return externalKeyDescription(Output.of(externalKeyDescription));
+        }
+
+        /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -357,7 +394,7 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
          * @return builder
          * 
          */
-        public Builder kmsKeyId(Output<String> kmsKeyId) {
+        public Builder kmsKeyId(@Nullable Output<String> kmsKeyId) {
             $.kmsKeyId = kmsKeyId;
             return this;
         }
@@ -405,9 +442,6 @@ public final class CertificateAuthorityArgs extends com.pulumi.resources.Resourc
             }
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("CertificateAuthorityArgs", "compartmentId");
-            }
-            if ($.kmsKeyId == null) {
-                throw new MissingRequiredPropertyException("CertificateAuthorityArgs", "kmsKeyId");
             }
             return $;
         }

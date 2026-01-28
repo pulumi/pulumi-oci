@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidity;
 import java.lang.String;
@@ -13,6 +14,8 @@ import java.util.Objects;
 
 @CustomType
 public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig {
+    private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail> actionDetails;
+    private String certificatePem;
     /**
      * @return The origin of the CA.
      * 
@@ -45,6 +48,12 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     private String versionName;
 
     private GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig() {}
+    public List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail> actionDetails() {
+        return this.actionDetails;
+    }
+    public String certificatePem() {
+        return this.certificatePem;
+    }
     /**
      * @return The origin of the CA.
      * 
@@ -97,6 +106,8 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail> actionDetails;
+        private String certificatePem;
         private String configType;
         private String issuerCertificateAuthorityId;
         private String signingAlgorithm;
@@ -106,6 +117,8 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.actionDetails = defaults.actionDetails;
+    	      this.certificatePem = defaults.certificatePem;
     	      this.configType = defaults.configType;
     	      this.issuerCertificateAuthorityId = defaults.issuerCertificateAuthorityId;
     	      this.signingAlgorithm = defaults.signingAlgorithm;
@@ -114,6 +127,25 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
+        public Builder actionDetails(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail> actionDetails) {
+            if (actionDetails == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "actionDetails");
+            }
+            this.actionDetails = actionDetails;
+            return this;
+        }
+        public Builder actionDetails(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail... actionDetails) {
+            return actionDetails(List.of(actionDetails));
+        }
+        @CustomType.Setter
+        public Builder certificatePem(String certificatePem) {
+            if (certificatePem == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig", "certificatePem");
+            }
+            this.certificatePem = certificatePem;
+            return this;
+        }
         @CustomType.Setter
         public Builder configType(String configType) {
             if (configType == null) {
@@ -170,6 +202,8 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig build() {
             final var _resultValue = new GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig();
+            _resultValue.actionDetails = actionDetails;
+            _resultValue.certificatePem = certificatePem;
             _resultValue.configType = configType;
             _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             _resultValue.signingAlgorithm = signingAlgorithm;

@@ -237,6 +237,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly memorySizeInGbs: pulumi.Output<number>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    declare public /*out*/ readonly multiCloudIdentityConnectorConfigs: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     declare public /*out*/ readonly nextMaintenanceRunId: pulumi.Output<string>;
@@ -282,6 +286,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly reclaimableCpus: pulumi.Output<number>;
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    declare public readonly registerPkcsTrigger: pulumi.Output<number | undefined>;
+    /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
     declare public /*out*/ readonly reservedCpus: pulumi.Output<number>;
@@ -318,6 +326,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * TDE keystore type
+     */
+    declare public readonly tdeKeyStoreType: pulumi.Output<string>;
+    /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -339,15 +351,19 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     declare public /*out*/ readonly totalAutonomousDataStorageInTbs: pulumi.Output<number>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly totalContainerDatabases: pulumi.Output<number>;
     /**
      * The total number of CPUs in an Autonomous VM Cluster.
      */
     declare public /*out*/ readonly totalCpus: pulumi.Output<number>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly unregisterPkcsTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a CloudAutonomousVmCluster resource with the given unique name, arguments, and options.
@@ -397,6 +413,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memoryPerComputeUnitInGbs"] = state?.memoryPerComputeUnitInGbs;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
             resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = state?.multiCloudIdentityConnectorConfigs;
             resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
             resourceInputs["nodeCount"] = state?.nodeCount;
             resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state?.nonProvisionableAutonomousContainerDatabases;
@@ -408,6 +425,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["provisionedAutonomousContainerDatabases"] = state?.provisionedAutonomousContainerDatabases;
             resourceInputs["provisionedCpus"] = state?.provisionedCpus;
             resourceInputs["reclaimableCpus"] = state?.reclaimableCpus;
+            resourceInputs["registerPkcsTrigger"] = state?.registerPkcsTrigger;
             resourceInputs["reservedCpus"] = state?.reservedCpus;
             resourceInputs["scanListenerPortNonTls"] = state?.scanListenerPortNonTls;
             resourceInputs["scanListenerPortTls"] = state?.scanListenerPortTls;
@@ -417,6 +435,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tdeKeyStoreType"] = state?.tdeKeyStoreType;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeDatabaseSslCertificateExpires"] = state?.timeDatabaseSslCertificateExpires;
             resourceInputs["timeOrdsCertificateExpires"] = state?.timeOrdsCertificateExpires;
@@ -424,6 +443,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["totalAutonomousDataStorageInTbs"] = state?.totalAutonomousDataStorageInTbs;
             resourceInputs["totalContainerDatabases"] = state?.totalContainerDatabases;
             resourceInputs["totalCpus"] = state?.totalCpus;
+            resourceInputs["unregisterPkcsTrigger"] = state?.unregisterPkcsTrigger;
         } else {
             const args = argsOrState as CloudAutonomousVmClusterArgs | undefined;
             if (args?.cloudExadataInfrastructureId === undefined && !opts.urn) {
@@ -455,13 +475,16 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = args?.memoryPerOracleComputeUnitInGbs;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["opcDryRun"] = args?.opcDryRun;
+            resourceInputs["registerPkcsTrigger"] = args?.registerPkcsTrigger;
             resourceInputs["scanListenerPortNonTls"] = args?.scanListenerPortNonTls;
             resourceInputs["scanListenerPortTls"] = args?.scanListenerPortTls;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
+            resourceInputs["tdeKeyStoreType"] = args?.tdeKeyStoreType;
             resourceInputs["timeUpdated"] = args?.timeUpdated;
             resourceInputs["totalContainerDatabases"] = args?.totalContainerDatabases;
+            resourceInputs["unregisterPkcsTrigger"] = args?.unregisterPkcsTrigger;
             resourceInputs["autonomousDataStoragePercentage"] = undefined /*out*/;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
@@ -482,6 +505,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["maxAcdsLowestScaledValue"] = undefined /*out*/;
             resourceInputs["memoryPerComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
             resourceInputs["nonProvisionableAutonomousContainerDatabases"] = undefined /*out*/;
@@ -653,6 +677,10 @@ export interface CloudAutonomousVmClusterState {
      */
     memorySizeInGbs?: pulumi.Input<number>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    multiCloudIdentityConnectorConfigs?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig>[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
@@ -698,6 +726,10 @@ export interface CloudAutonomousVmClusterState {
      */
     reclaimableCpus?: pulumi.Input<number>;
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    registerPkcsTrigger?: pulumi.Input<number>;
+    /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
     reservedCpus?: pulumi.Input<number>;
@@ -734,6 +766,10 @@ export interface CloudAutonomousVmClusterState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * TDE keystore type
+     */
+    tdeKeyStoreType?: pulumi.Input<string>;
+    /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     timeCreated?: pulumi.Input<string>;
@@ -755,15 +791,19 @@ export interface CloudAutonomousVmClusterState {
     totalAutonomousDataStorageInTbs?: pulumi.Input<number>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     totalContainerDatabases?: pulumi.Input<number>;
     /**
      * The total number of CPUs in an Autonomous VM Cluster.
      */
     totalCpus?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    unregisterPkcsTrigger?: pulumi.Input<number>;
 }
 
 /**
@@ -842,6 +882,10 @@ export interface CloudAutonomousVmClusterArgs {
      */
     opcDryRun?: pulumi.Input<boolean>;
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    registerPkcsTrigger?: pulumi.Input<number>;
+    /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
     scanListenerPortNonTls?: pulumi.Input<number>;
@@ -862,14 +906,22 @@ export interface CloudAutonomousVmClusterArgs {
      */
     subscriptionId?: pulumi.Input<string>;
     /**
+     * TDE keystore type
+     */
+    tdeKeyStoreType?: pulumi.Input<string>;
+    /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
+     */
+    totalContainerDatabases?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    totalContainerDatabases?: pulumi.Input<number>;
+    unregisterPkcsTrigger?: pulumi.Input<number>;
 }

@@ -6,6 +6,9 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .consumer_group import *
+from .get_consumer_group import *
+from .get_consumer_groups import *
 from .get_queue import *
 from .get_queues import *
 from .queue import *

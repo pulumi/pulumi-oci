@@ -80,7 +80,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly attachedShapeAttributes: pulumi.Output<string[]>;
     /**
-     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      */
     declare public readonly autoscaleLimitInGbs: pulumi.Output<number>;
     /**
@@ -248,7 +248,7 @@ export interface ExascaleDbStorageVaultState {
      */
     attachedShapeAttributes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      */
     autoscaleLimitInGbs?: pulumi.Input<number>;
     /**
@@ -338,7 +338,7 @@ export interface ExascaleDbStorageVaultArgs {
      */
     additionalFlashCacheInPercent?: pulumi.Input<number>;
     /**
-     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      */
     autoscaleLimitInGbs?: pulumi.Input<number>;
     /**

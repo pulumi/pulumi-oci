@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Core
     ///             new Oci.Core.Inputs.InstancePoolPlacementConfigurationArgs
     ///             {
     ///                 AvailabilityDomain = instancePoolPlacementConfigurationsAvailabilityDomain,
+    ///                 ComputeClusterId = testComputeCluster.Id,
     ///                 FaultDomains = instancePoolPlacementConfigurationsFaultDomains,
     ///                 PrimarySubnetId = testSubnet.Id,
     ///                 PrimaryVnicSubnets = new Oci.Core.Inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs
@@ -178,7 +179,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
         /// 
-        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         /// </summary>
         [Output("placementConfigurations")]
         public Output<ImmutableArray<Outputs.InstancePoolPlacementConfiguration>> PlacementConfigurations { get; private set; } = null!;
@@ -329,7 +330,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
         /// 
-        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         /// </summary>
         public InputList<Inputs.InstancePoolPlacementConfigurationArgs> PlacementConfigurations
         {
@@ -445,7 +446,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
         /// 
-        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        /// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         /// </summary>
         public InputList<Inputs.InstancePoolPlacementConfigurationGetArgs> PlacementConfigurations
         {

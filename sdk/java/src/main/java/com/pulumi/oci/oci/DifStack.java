@@ -11,10 +11,13 @@ import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.DifStackArgs;
 import com.pulumi.oci.oci.inputs.DifStackState;
 import com.pulumi.oci.oci.outputs.DifStackAdb;
+import com.pulumi.oci.oci.outputs.DifStackAidataplatform;
 import com.pulumi.oci.oci.outputs.DifStackDataflow;
 import com.pulumi.oci.oci.outputs.DifStackGenai;
 import com.pulumi.oci.oci.outputs.DifStackGgc;
 import com.pulumi.oci.oci.outputs.DifStackObjectstorage;
+import com.pulumi.oci.oci.outputs.DifStackOke;
+import com.pulumi.oci.oci.outputs.DifStackOmk;
 import com.pulumi.oci.oci.outputs.DifStackServiceDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -40,6 +43,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.DifStack;
  * import com.pulumi.oci.oci.DifStackArgs;
  * import com.pulumi.oci.oci.inputs.DifStackAdbArgs;
+ * import com.pulumi.oci.oci.inputs.DifStackAidataplatformArgs;
  * import com.pulumi.oci.oci.inputs.DifStackDataflowArgs;
  * import com.pulumi.oci.oci.inputs.DifStackDataflowConnectionsArgs;
  * import com.pulumi.oci.oci.inputs.DifStackDataflowConnectionsConnectionDetailsArgs;
@@ -48,6 +52,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.inputs.DifStackGenaiArgs;
  * import com.pulumi.oci.oci.inputs.DifStackGgcArgs;
  * import com.pulumi.oci.oci.inputs.DifStackObjectstorageArgs;
+ * import com.pulumi.oci.oci.inputs.DifStackOkeArgs;
+ * import com.pulumi.oci.oci.inputs.DifStackOmkArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -83,6 +89,10 @@ import javax.annotation.Nullable;
  *                     .secretId(stackAdbDbCredentialsSecretId)
  *                     .userType(stackAdbDbCredentialsUserType)
  *                     .build())
+ *                 .build())
+ *             .aidataplatforms(DifStackAidataplatformArgs.builder()
+ *                 .defaultWorkspaceName(testWorkspace.name())
+ *                 .instanceId(testInstance.id())
  *                 .build())
  *             .dataflows(DifStackDataflowArgs.builder()
  *                 .driverShape(stackDataflowDriverShape)
@@ -172,6 +182,43 @@ import javax.annotation.Nullable;
  *                 .storageTier(stackObjectstorageStorageTier)
  *                 .autoTiering(stackObjectstorageAutoTiering)
  *                 .build())
+ *             .okes(DifStackOkeArgs.builder()
+ *                 .clusterId(testCluster.id())
+ *                 .instanceId(testInstance.id())
+ *                 .namespaceName(stackOkeNamespaceName)
+ *                 .secrets(DifStackOkeSecretArgs.builder()
+ *                     .secretName(stackOkeSecretsSecretName)
+ *                     .templateObjectStoragePath(stackOkeSecretsTemplateObjectStoragePath)
+ *                     .secretDatas(DifStackOkeSecretSecretDataArgs.builder()
+ *                         .key(stackOkeSecretsSecretDataKey)
+ *                         .secretId(stackOkeSecretsSecretDataSecretId)
+ *                         .build())
+ *                     .build())
+ *                 .manifestObjectStoragePath(stackOkeManifestObjectStoragePath)
+ *                 .componentValueOverrides(DifStackOkeComponentValueOverrideArgs.builder()
+ *                     .componentName(stackOkeComponentValueOverridesComponentName)
+ *                     .valueOverrides(stackOkeComponentValueOverridesValueOverrides)
+ *                     .build())
+ *                 .build())
+ *             .omks(DifStackOmkArgs.builder()
+ *                 .clusterId(testCluster.id())
+ *                 .clusterNamespaceId(testNamespace.id())
+ *                 .instanceId(testInstance.id())
+ *                 .namespaceName(stackOmkNamespaceName)
+ *                 .secrets(DifStackOmkSecretArgs.builder()
+ *                     .secretName(stackOmkSecretsSecretName)
+ *                     .templateObjectStoragePath(stackOmkSecretsTemplateObjectStoragePath)
+ *                     .secretDatas(DifStackOmkSecretSecretDataArgs.builder()
+ *                         .key(stackOmkSecretsSecretDataKey)
+ *                         .secretId(stackOmkSecretsSecretDataSecretId)
+ *                         .build())
+ *                     .build())
+ *                 .manifestObjectStoragePath(stackOmkManifestObjectStoragePath)
+ *                 .componentValueOverrides(DifStackOmkComponentValueOverrideArgs.builder()
+ *                     .componentName(stackOmkComponentValueOverridesComponentName)
+ *                     .valueOverrides(stackOmkComponentValueOverridesValueOverrides)
+ *                     .build())
+ *                 .build())
  *             .subnetId(stackDeployArtifactsSubnetId)
  *             .build());
  * 
@@ -210,6 +257,20 @@ public class DifStack extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<Integer>> addServiceTrigger() {
         return Codegen.optional(this.addServiceTrigger);
+    }
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    @Export(name="aidataplatforms", refs={List.class,DifStackAidataplatform.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<DifStackAidataplatform>> aidataplatforms;
+
+    /**
+     * @return AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    public Output<Optional<List<DifStackAidataplatform>>> aidataplatforms() {
+        return Codegen.optional(this.aidataplatforms);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
@@ -384,6 +445,34 @@ public class DifStack extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<List<DifStackObjectstorage>>> objectstorages() {
         return Codegen.optional(this.objectstorages);
+    }
+    /**
+     * OKE Details if oke is included in services.
+     * 
+     */
+    @Export(name="okes", refs={List.class,DifStackOke.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<DifStackOke>> okes;
+
+    /**
+     * @return OKE Details if oke is included in services.
+     * 
+     */
+    public Output<Optional<List<DifStackOke>>> okes() {
+        return Codegen.optional(this.okes);
+    }
+    /**
+     * OMK Details if omk is included in services.
+     * 
+     */
+    @Export(name="omks", refs={List.class,DifStackOmk.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<DifStackOmk>> omks;
+
+    /**
+     * @return OMK Details if omk is included in services.
+     * 
+     */
+    public Output<Optional<List<DifStackOmk>>> omks() {
+        return Codegen.optional(this.omks);
     }
     /**
      * Details of the service onboarded for the data intelligence stack.

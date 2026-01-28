@@ -13,6 +13,8 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
     [OutputType]
     public sealed class GetCertificateAuthorityCertificateAuthorityConfigResult
     {
+        public readonly ImmutableArray<Outputs.GetCertificateAuthorityCertificateAuthorityConfigActionDetailResult> ActionDetails;
+        public readonly string CertificatePem;
         /// <summary>
         /// The origin of the CA.
         /// </summary>
@@ -40,6 +42,10 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
         [OutputConstructor]
         private GetCertificateAuthorityCertificateAuthorityConfigResult(
+            ImmutableArray<Outputs.GetCertificateAuthorityCertificateAuthorityConfigActionDetailResult> actionDetails,
+
+            string certificatePem,
+
             string configType,
 
             string issuerCertificateAuthorityId,
@@ -52,6 +58,8 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
             string versionName)
         {
+            ActionDetails = actionDetails;
+            CertificatePem = certificatePem;
             ConfigType = configType;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;
             SigningAlgorithm = signingAlgorithm;

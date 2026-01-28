@@ -20,6 +20,11 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
      */
     private @Nullable String availabilityDomain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    private @Nullable String computeClusterId;
+    /**
      * @return The fault domains to place instances.
      * 
      */
@@ -47,6 +52,13 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
     /**
      * @return The fault domains to place instances.
@@ -87,6 +99,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
+        private @Nullable String computeClusterId;
         private @Nullable List<String> faultDomains;
         private @Nullable String primarySubnetId;
         private @Nullable List<ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
@@ -95,6 +108,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         public Builder(ClusterNetworkInstancePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
     	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
@@ -105,6 +119,12 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
 
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -143,6 +163,7 @@ public final class ClusterNetworkInstancePoolPlacementConfiguration {
         public ClusterNetworkInstancePoolPlacementConfiguration build() {
             final var _resultValue = new ClusterNetworkInstancePoolPlacementConfiguration();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.faultDomains = faultDomains;
             _resultValue.primarySubnetId = primarySubnetId;
             _resultValue.primaryVnicSubnets = primaryVnicSubnets;

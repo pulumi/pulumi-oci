@@ -19,6 +19,11 @@ public final class GetInstancePoolPlacementConfiguration {
      */
     private String availabilityDomain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    private String computeClusterId;
+    /**
      * @return The fault domains to place instances.
      * 
      */
@@ -46,6 +51,13 @@ public final class GetInstancePoolPlacementConfiguration {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public String computeClusterId() {
+        return this.computeClusterId;
     }
     /**
      * @return The fault domains to place instances.
@@ -86,6 +98,7 @@ public final class GetInstancePoolPlacementConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String computeClusterId;
         private List<String> faultDomains;
         private String primarySubnetId;
         private List<GetInstancePoolPlacementConfigurationPrimaryVnicSubnet> primaryVnicSubnets;
@@ -94,6 +107,7 @@ public final class GetInstancePoolPlacementConfiguration {
         public Builder(GetInstancePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
     	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
@@ -106,6 +120,14 @@ public final class GetInstancePoolPlacementConfiguration {
               throw new MissingRequiredPropertyException("GetInstancePoolPlacementConfiguration", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(String computeClusterId) {
+            if (computeClusterId == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolPlacementConfiguration", "computeClusterId");
+            }
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -152,6 +174,7 @@ public final class GetInstancePoolPlacementConfiguration {
         public GetInstancePoolPlacementConfiguration build() {
             final var _resultValue = new GetInstancePoolPlacementConfiguration();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.faultDomains = faultDomains;
             _resultValue.primarySubnetId = primarySubnetId;
             _resultValue.primaryVnicSubnets = primaryVnicSubnets;

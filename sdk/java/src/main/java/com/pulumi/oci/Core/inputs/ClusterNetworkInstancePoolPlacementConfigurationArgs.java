@@ -34,6 +34,21 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationArgs extends 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable Output<String> computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<Output<String>> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
+    }
+
+    /**
      * The fault domains to place instances.
      * 
      */
@@ -97,6 +112,7 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationArgs extends 
 
     private ClusterNetworkInstancePoolPlacementConfigurationArgs(ClusterNetworkInstancePoolPlacementConfigurationArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.computeClusterId = $.computeClusterId;
         this.faultDomains = $.faultDomains;
         this.primarySubnetId = $.primarySubnetId;
         this.primaryVnicSubnets = $.primaryVnicSubnets;
@@ -140,6 +156,27 @@ public final class ClusterNetworkInstancePoolPlacementConfigurationArgs extends 
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable Output<String> computeClusterId) {
+            $.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            return computeClusterId(Output.of(computeClusterId));
         }
 
         /**

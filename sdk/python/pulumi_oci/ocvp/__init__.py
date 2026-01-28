@@ -18,6 +18,8 @@ from .get_datastore_clusters import *
 from .get_datastores import *
 from .get_exsi_host import *
 from .get_exsi_hosts import *
+from .get_management_appliance import *
+from .get_management_appliances import *
 from .get_retrieve_password import *
 from .get_sddc import *
 from .get_sddcs import *
@@ -25,6 +27,7 @@ from .get_supported_commitments import *
 from .get_supported_host_shapes import *
 from .get_supported_skus import *
 from .get_supported_vmware_software_versions import *
+from .management_appliance import *
 from .sddc import *
 from ._inputs import *
 from . import outputs

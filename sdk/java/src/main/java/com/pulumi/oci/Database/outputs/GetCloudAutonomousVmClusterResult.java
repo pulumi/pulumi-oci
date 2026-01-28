@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetail;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -139,7 +140,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String hostname;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+     * @return The OCID of the identity connector
      * 
      */
     private String id;
@@ -195,6 +196,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer memorySizeInGbs;
     /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    private List<GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -246,6 +252,7 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Double reclaimableCpus;
+    private Integer registerPkcsTrigger;
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
@@ -292,6 +299,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Map<String,String> systemTags;
     /**
+     * @return TDE keystore type
+     * 
+     */
+    private String tdeKeyStoreType;
+    /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
@@ -326,6 +338,7 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Double totalCpus;
+    private Integer unregisterPkcsTrigger;
 
     private GetCloudAutonomousVmClusterResult() {}
     /**
@@ -500,7 +513,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.hostname;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+     * @return The OCID of the identity connector
      * 
      */
     public String id() {
@@ -580,6 +593,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.memorySizeInGbs;
     }
     /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public List<GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -653,6 +673,9 @@ public final class GetCloudAutonomousVmClusterResult {
     public Double reclaimableCpus() {
         return this.reclaimableCpus;
     }
+    public Integer registerPkcsTrigger() {
+        return this.registerPkcsTrigger;
+    }
     /**
      * @return The number of CPUs reserved in an Autonomous VM Cluster.
      * 
@@ -717,6 +740,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.systemTags;
     }
     /**
+     * @return TDE keystore type
+     * 
+     */
+    public String tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
+    }
+    /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
@@ -765,6 +795,9 @@ public final class GetCloudAutonomousVmClusterResult {
     public Double totalCpus() {
         return this.totalCpus;
     }
+    public Integer unregisterPkcsTrigger() {
+        return this.unregisterPkcsTrigger;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -812,6 +845,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
+        private List<GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
         private String nextMaintenanceRunId;
         private Integer nodeCount;
         private Integer nonProvisionableAutonomousContainerDatabases;
@@ -823,6 +857,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Integer provisionedAutonomousContainerDatabases;
         private Double provisionedCpus;
         private Double reclaimableCpus;
+        private Integer registerPkcsTrigger;
         private Double reservedCpus;
         private Integer scanListenerPortNonTls;
         private Integer scanListenerPortTls;
@@ -832,6 +867,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private String subnetId;
         private String subscriptionId;
         private Map<String,String> systemTags;
+        private String tdeKeyStoreType;
         private String timeCreated;
         private String timeDatabaseSslCertificateExpires;
         private String timeOrdsCertificateExpires;
@@ -839,6 +875,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Double totalAutonomousDataStorageInTbs;
         private Integer totalContainerDatabases;
         private Double totalCpus;
+        private Integer unregisterPkcsTrigger;
         public Builder() {}
         public Builder(GetCloudAutonomousVmClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -879,6 +916,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.multiCloudIdentityConnectorConfigs = defaults.multiCloudIdentityConnectorConfigs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
@@ -890,6 +928,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
     	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
+    	      this.registerPkcsTrigger = defaults.registerPkcsTrigger;
     	      this.reservedCpus = defaults.reservedCpus;
     	      this.scanListenerPortNonTls = defaults.scanListenerPortNonTls;
     	      this.scanListenerPortTls = defaults.scanListenerPortTls;
@@ -899,6 +938,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.subnetId = defaults.subnetId;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
+    	      this.tdeKeyStoreType = defaults.tdeKeyStoreType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeDatabaseSslCertificateExpires = defaults.timeDatabaseSslCertificateExpires;
     	      this.timeOrdsCertificateExpires = defaults.timeOrdsCertificateExpires;
@@ -906,6 +946,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.totalAutonomousDataStorageInTbs = defaults.totalAutonomousDataStorageInTbs;
     	      this.totalContainerDatabases = defaults.totalContainerDatabases;
     	      this.totalCpus = defaults.totalCpus;
+    	      this.unregisterPkcsTrigger = defaults.unregisterPkcsTrigger;
         }
 
         @CustomType.Setter
@@ -1214,6 +1255,17 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder multiCloudIdentityConnectorConfigs(List<GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs) {
+            if (multiCloudIdentityConnectorConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "multiCloudIdentityConnectorConfigs");
+            }
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            return this;
+        }
+        public Builder multiCloudIdentityConnectorConfigs(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig... multiCloudIdentityConnectorConfigs) {
+            return multiCloudIdentityConnectorConfigs(List.of(multiCloudIdentityConnectorConfigs));
+        }
+        @CustomType.Setter
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             if (nextMaintenanceRunId == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "nextMaintenanceRunId");
@@ -1305,6 +1357,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder registerPkcsTrigger(Integer registerPkcsTrigger) {
+            if (registerPkcsTrigger == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "registerPkcsTrigger");
+            }
+            this.registerPkcsTrigger = registerPkcsTrigger;
+            return this;
+        }
+        @CustomType.Setter
         public Builder reservedCpus(Double reservedCpus) {
             if (reservedCpus == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "reservedCpus");
@@ -1377,6 +1437,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            if (tdeKeyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "tdeKeyStoreType");
+            }
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "timeCreated");
@@ -1432,6 +1500,14 @@ public final class GetCloudAutonomousVmClusterResult {
             this.totalCpus = totalCpus;
             return this;
         }
+        @CustomType.Setter
+        public Builder unregisterPkcsTrigger(Integer unregisterPkcsTrigger) {
+            if (unregisterPkcsTrigger == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "unregisterPkcsTrigger");
+            }
+            this.unregisterPkcsTrigger = unregisterPkcsTrigger;
+            return this;
+        }
         public GetCloudAutonomousVmClusterResult build() {
             final var _resultValue = new GetCloudAutonomousVmClusterResult();
             _resultValue.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
@@ -1471,6 +1547,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
@@ -1482,6 +1559,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             _resultValue.provisionedCpus = provisionedCpus;
             _resultValue.reclaimableCpus = reclaimableCpus;
+            _resultValue.registerPkcsTrigger = registerPkcsTrigger;
             _resultValue.reservedCpus = reservedCpus;
             _resultValue.scanListenerPortNonTls = scanListenerPortNonTls;
             _resultValue.scanListenerPortTls = scanListenerPortTls;
@@ -1491,6 +1569,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.subnetId = subnetId;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
+            _resultValue.tdeKeyStoreType = tdeKeyStoreType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             _resultValue.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
@@ -1498,6 +1577,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.totalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             _resultValue.totalContainerDatabases = totalContainerDatabases;
             _resultValue.totalCpus = totalCpus;
+            _resultValue.unregisterPkcsTrigger = unregisterPkcsTrigger;
             return _resultValue;
         }
     }

@@ -111,6 +111,8 @@ type AutonomousContainerDatabaseAddStandby struct {
 	DistributionAffinity pulumi.StringOutput `pulumi:"distributionAffinity"`
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringOutput `pulumi:"dstFileVersion"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -278,6 +280,8 @@ type autonomousContainerDatabaseAddStandbyState struct {
 	DistributionAffinity *string `pulumi:"distributionAffinity"`
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion *string `pulumi:"dstFileVersion"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails []AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -413,6 +417,8 @@ type AutonomousContainerDatabaseAddStandbyState struct {
 	DistributionAffinity pulumi.StringPtrInput
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringPtrInput
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArrayInput
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -762,6 +768,13 @@ func (o AutonomousContainerDatabaseAddStandbyOutput) DistributionAffinity() pulu
 // DST Time-Zone File version of the Autonomous Container Database.
 func (o AutonomousContainerDatabaseAddStandbyOutput) DstFileVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.StringOutput { return v.DstFileVersion }).(pulumi.StringOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o AutonomousContainerDatabaseAddStandbyOutput) EncryptionKeyLocationDetails() AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArrayOutput {
+		return v.EncryptionKeyLocationDetails
+	}).(AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArrayOutput)
 }
 
 // The lag time for my preference based on data loss tolerance in seconds.

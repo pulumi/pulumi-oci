@@ -13,8 +13,17 @@ namespace Pulumi.Oci.Oci.Outputs
     [OutputType]
     public sealed class DifStackAdbDbCredential
     {
+        /// <summary>
+        /// Vault secret OCID containing the corresponding user password.
+        /// </summary>
         public readonly string SecretId;
+        /// <summary>
+        /// Username for ADB to be created or updated.
+        /// </summary>
         public readonly string UserName;
+        /// <summary>
+        /// Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+        /// </summary>
         public readonly string UserType;
 
         [OutputConstructor]

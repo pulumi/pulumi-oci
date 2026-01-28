@@ -430,6 +430,11 @@ export const getManagedKafkaKafkaClusters: typeof import("./getManagedKafkaKafka
 export const getManagedKafkaKafkaClustersOutput: typeof import("./getManagedKafkaKafkaClusters").getManagedKafkaKafkaClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusters","getManagedKafkaKafkaClustersOutput"], () => require("./getManagedKafkaKafkaClusters"));
 
+export { GetManagedKafkaNodeShapesArgs, GetManagedKafkaNodeShapesResult, GetManagedKafkaNodeShapesOutputArgs } from "./getManagedKafkaNodeShapes";
+export const getManagedKafkaNodeShapes: typeof import("./getManagedKafkaNodeShapes").getManagedKafkaNodeShapes = null as any;
+export const getManagedKafkaNodeShapesOutput: typeof import("./getManagedKafkaNodeShapes").getManagedKafkaNodeShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaNodeShapes","getManagedKafkaNodeShapesOutput"], () => require("./getManagedKafkaNodeShapes"));
+
 export { GetMulticloudExternalLocationMappingMetadataArgs, GetMulticloudExternalLocationMappingMetadataResult, GetMulticloudExternalLocationMappingMetadataOutputArgs } from "./getMulticloudExternalLocationMappingMetadata";
 export const getMulticloudExternalLocationMappingMetadata: typeof import("./getMulticloudExternalLocationMappingMetadata").getMulticloudExternalLocationMappingMetadata = null as any;
 export const getMulticloudExternalLocationMappingMetadataOutput: typeof import("./getMulticloudExternalLocationMappingMetadata").getMulticloudExternalLocationMappingMetadataOutput = null as any;

@@ -13,12 +13,17 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
     [OutputType]
     public sealed class CertificateAuthorityCertificateAuthorityConfig
     {
+        public readonly Outputs.CertificateAuthorityCertificateAuthorityConfigActionDetails? ActionDetails;
+        /// <summary>
+        /// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        /// </summary>
+        public readonly string? CertificatePem;
         /// <summary>
         /// (Updatable) The origin of the CA.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the private, external issuer CA.
         /// </summary>
         public readonly string? IssuerCertificateAuthorityId;
         /// <summary>
@@ -28,7 +33,7 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
-        public readonly Outputs.CertificateAuthorityCertificateAuthorityConfigSubject Subject;
+        public readonly Outputs.CertificateAuthorityCertificateAuthorityConfigSubject? Subject;
         /// <summary>
         /// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         /// </summary>
@@ -40,18 +45,24 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
 
         [OutputConstructor]
         private CertificateAuthorityCertificateAuthorityConfig(
+            Outputs.CertificateAuthorityCertificateAuthorityConfigActionDetails? actionDetails,
+
+            string? certificatePem,
+
             string configType,
 
             string? issuerCertificateAuthorityId,
 
             string? signingAlgorithm,
 
-            Outputs.CertificateAuthorityCertificateAuthorityConfigSubject subject,
+            Outputs.CertificateAuthorityCertificateAuthorityConfigSubject? subject,
 
             Outputs.CertificateAuthorityCertificateAuthorityConfigValidity? validity,
 
             string? versionName)
         {
+            ActionDetails = actionDetails;
+            CertificatePem = certificatePem;
             ConfigType = configType;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;
             SigningAlgorithm = signingAlgorithm;

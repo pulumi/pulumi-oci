@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Oci
     ///         {
     ///             NodeCount = kafkaClusterBrokerShapeNodeCount,
     ///             OcpuCount = kafkaClusterBrokerShapeOcpuCount,
+    ///             NodeShape = kafkaClusterBrokerShapeNodeShape,
     ///             StorageSizeInGbs = kafkaClusterBrokerShapeStorageSizeInGbs,
     ///         },
     ///         ClusterConfigId = testConfig.Id,

@@ -59,6 +59,11 @@ public final class GetCertificateAuthorityResult {
      */
     private String description;
     /**
+     * @return For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+     * 
+     */
+    private String externalKeyDescription;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -175,6 +180,13 @@ public final class GetCertificateAuthorityResult {
         return this.description;
     }
     /**
+     * @return For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+     * 
+     */
+    public String externalKeyDescription() {
+        return this.externalKeyDescription;
+    }
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -270,6 +282,7 @@ public final class GetCertificateAuthorityResult {
         private List<GetCertificateAuthorityCurrentVersion> currentVersions;
         private Map<String,String> definedTags;
         private String description;
+        private String externalKeyDescription;
         private Map<String,String> freeformTags;
         private String id;
         private String issuerCertificateAuthorityId;
@@ -293,6 +306,7 @@ public final class GetCertificateAuthorityResult {
     	      this.currentVersions = defaults.currentVersions;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
+    	      this.externalKeyDescription = defaults.externalKeyDescription;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.issuerCertificateAuthorityId = defaults.issuerCertificateAuthorityId;
@@ -388,6 +402,14 @@ public final class GetCertificateAuthorityResult {
               throw new MissingRequiredPropertyException("GetCertificateAuthorityResult", "description");
             }
             this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            if (externalKeyDescription == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityResult", "externalKeyDescription");
+            }
+            this.externalKeyDescription = externalKeyDescription;
             return this;
         }
         @CustomType.Setter
@@ -492,6 +514,7 @@ public final class GetCertificateAuthorityResult {
             _resultValue.currentVersions = currentVersions;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
+            _resultValue.externalKeyDescription = externalKeyDescription;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;

@@ -20,6 +20,7 @@ __all__ = [
     'AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail',
     'AutonomousContainerDatabaseAddStandbyDataguard',
     'AutonomousContainerDatabaseAddStandbyDataguardGroupMember',
+    'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail',
     'AutonomousContainerDatabaseAddStandbyKeyHistoryEntry',
     'AutonomousContainerDatabaseAddStandbyMaintenanceWindow',
     'AutonomousContainerDatabaseAddStandbyMaintenanceWindowDaysOfWeek',
@@ -35,6 +36,7 @@ __all__ = [
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail',
     'AutonomousContainerDatabaseDataguardGroupMember',
+    'AutonomousContainerDatabaseEncryptionKeyLocationDetails',
     'AutonomousContainerDatabaseKeyHistoryEntry',
     'AutonomousContainerDatabaseMaintenanceWindow',
     'AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek',
@@ -96,6 +98,7 @@ __all__ = [
     'CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek',
     'CloudAutonomousVmClusterMaintenanceWindowDetailsMonth',
     'CloudAutonomousVmClusterMaintenanceWindowMonth',
+    'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig',
     'CloudDatabaseManagementCredentialdetails',
     'CloudExadataInfrastructureConfigureExascaleManagementCustomerContact',
     'CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration',
@@ -286,6 +289,7 @@ __all__ = [
     'GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterResult',
     'GetAutonomousContainerDatabaseDataguardGroupMemberResult',
+    'GetAutonomousContainerDatabaseEncryptionKeyLocationDetailResult',
     'GetAutonomousContainerDatabaseKeyHistoryEntryResult',
     'GetAutonomousContainerDatabaseMaintenanceWindowResult',
     'GetAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult',
@@ -308,6 +312,7 @@ __all__ = [
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseCustomerContactResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMemberResult',
+    'GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetailResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntryResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult',
     'GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekResult',
@@ -409,6 +414,7 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult',
@@ -487,6 +493,7 @@ __all__ = [
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult',
     'GetCloudAutonomousVmClusterMaintenanceWindowMonthResult',
+    'GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult',
     'GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult',
@@ -496,6 +503,7 @@ __all__ = [
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetCloudAutonomousVmClustersFilterResult',
     'GetCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult',
@@ -1538,6 +1546,76 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMember(dict):
         The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
         """
         return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
+        elif key == "azureEncryptionKeyId":
+            suggest = "azure_encryption_key_id"
+        elif key == "hsmPassword":
+            suggest = "hsm_password"
+        elif key == "providerType":
+            suggest = "provider_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
+                 azure_encryption_key_id: Optional[_builtins.str] = None,
+                 hsm_password: Optional[_builtins.str] = None,
+                 provider_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
+        if provider_type is not None:
+            pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "hsm_password")
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> Optional[_builtins.str]:
+        """
+        Use 'AWS' for creating a new database.
+        """
+        return pulumi.get(self, "provider_type")
 
 
 @pulumi.output_type
@@ -3184,6 +3262,83 @@ class AutonomousContainerDatabaseDataguardGroupMember(dict):
         The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
         """
         return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class AutonomousContainerDatabaseEncryptionKeyLocationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "providerType":
+            suggest = "provider_type"
+        elif key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
+        elif key == "azureEncryptionKeyId":
+            suggest = "azure_encryption_key_id"
+        elif key == "hsmPassword":
+            suggest = "hsm_password"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousContainerDatabaseEncryptionKeyLocationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousContainerDatabaseEncryptionKeyLocationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousContainerDatabaseEncryptionKeyLocationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 provider_type: _builtins.str,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
+                 azure_encryption_key_id: Optional[_builtins.str] = None,
+                 hsm_password: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws.
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        pulumi.set(__self__, "provider_type", provider_type)
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> _builtins.str:
+        """
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws.
+        """
+        return pulumi.get(self, "provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[_builtins.str]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
 
 
 @pulumi.output_type
@@ -5533,6 +5688,10 @@ class AutonomousDatabaseEncryptionKeyLocationDetail(dict):
                  azure_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None,
                  provider_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
         if aws_encryption_key_id is not None:
             pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         if azure_encryption_key_id is not None:
@@ -5545,6 +5704,9 @@ class AutonomousDatabaseEncryptionKeyLocationDetail(dict):
     @_builtins.property
     @pulumi.getter(name="awsEncryptionKeyId")
     def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
         return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
@@ -5560,6 +5722,9 @@ class AutonomousDatabaseEncryptionKeyLocationDetail(dict):
     @_builtins.property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> Optional[_builtins.str]:
+        """
+        Use 'AWS' for creating a new database.
+        """
         return pulumi.get(self, "provider_type")
 
 
@@ -8147,6 +8312,54 @@ class CloudAutonomousVmClusterMaintenanceWindowMonth(dict):
         Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cloudProvider":
+            suggest = "cloud_provider"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cloud_provider: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> Optional[_builtins.str]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -22765,6 +22978,49 @@ class GetAutonomousContainerDatabaseDataguardGroupMemberResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousContainerDatabaseEncryptionKeyLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
+                 azure_encryption_key_id: _builtins.str,
+                 hsm_password: _builtins.str,
+                 provider_type: _builtins.str):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> _builtins.str:
+        return pulumi.get(self, "hsm_password")
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> _builtins.str:
+        """
+        Use 'AWS' for creating a new database.
+        """
+        return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
 class GetAutonomousContainerDatabaseKeyHistoryEntryResult(dict):
     def __init__(__self__, *,
                  id: _builtins.str,
@@ -23535,6 +23791,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  display_name: _builtins.str,
                  distribution_affinity: _builtins.str,
                  dst_file_version: _builtins.str,
+                 encryption_key_location_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetailResult'],
                  failover_trigger: _builtins.int,
                  fast_start_fail_over_lag_limit_in_seconds: _builtins.int,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -23613,6 +23870,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param _builtins.str distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param _builtins.str dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param _builtins.int fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -23680,6 +23938,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "distribution_affinity", distribution_affinity)
         pulumi.set(__self__, "dst_file_version", dst_file_version)
+        pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         pulumi.set(__self__, "failover_trigger", failover_trigger)
         pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -23912,6 +24171,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetailResult']:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
     @pulumi.getter(name="failoverTrigger")
@@ -25046,6 +25313,49 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMe
         The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
         """
         return pulumi.get(self, "transport_lag")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
+                 azure_encryption_key_id: _builtins.str,
+                 hsm_password: _builtins.str,
+                 provider_type: _builtins.str):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> _builtins.str:
+        return pulumi.get(self, "hsm_password")
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> _builtins.str:
+        """
+        Use 'AWS' for creating a new database.
+        """
+        return pulumi.get(self, "provider_type")
 
 
 @pulumi.output_type
@@ -27711,6 +28021,10 @@ class GetAutonomousDatabaseEncryptionKeyLocationDetailResult(dict):
                  azure_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -27719,6 +28033,9 @@ class GetAutonomousDatabaseEncryptionKeyLocationDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="awsEncryptionKeyId")
     def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
         return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
@@ -27734,6 +28051,9 @@ class GetAutonomousDatabaseEncryptionKeyLocationDetailResult(dict):
     @_builtins.property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
+        """
+        Use 'AWS' for creating a new database.
+        """
         return pulumi.get(self, "provider_type")
 
 
@@ -29084,6 +29404,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param _builtins.bool enable_delete_scheduled_operations: If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -29702,6 +30023,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
     def encryption_key_location_details(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult']:
+        """
+        Types of providers supported for managing database encryption keys
+        """
         return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
@@ -31496,6 +31820,10 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult(
                  azure_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -31504,6 +31832,9 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult(
     @_builtins.property
     @pulumi.getter(name="awsEncryptionKeyId")
     def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
         return pulumi.get(self, "aws_encryption_key_id")
 
     @_builtins.property
@@ -31519,6 +31850,9 @@ class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult(
     @_builtins.property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
+        """
+        Use 'AWS' for creating a new database.
+        """
         return pulumi.get(self, "provider_type")
 
 
@@ -32303,6 +32637,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  disaster_recovery_region_type: _builtins.str,
                  display_name: _builtins.str,
                  encryption_key_history_entries: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult'],
+                 encryption_key_location_details: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult'],
                  encryption_keys: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult'],
                  failed_data_recovery_in_seconds: _builtins.int,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -32444,6 +32779,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param _builtins.str disaster_recovery_region_type: **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryArgs'] encryption_key_history_entries: Key History Entry.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyArgs'] encryption_keys: Details of the Autonomous AI Database encryption key.
         :param _builtins.int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -32584,6 +32920,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
+        pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         pulumi.set(__self__, "encryption_keys", encryption_keys)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -33002,6 +33339,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Key History Entry.
         """
         return pulumi.get(self, "encryption_key_history_entries")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult']:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeys")
@@ -34669,6 +35014,49 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEnc
         Azure vault URI
         """
         return pulumi.get(self, "vault_uri")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult(dict):
+    def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
+                 azure_encryption_key_id: _builtins.str,
+                 hsm_password: _builtins.str,
+                 provider_type: _builtins.str):
+        """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str provider_type: Use 'AWS' for creating a new database.
+        """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "hsm_password", hsm_password)
+        pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> _builtins.str:
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> _builtins.str:
+        return pulumi.get(self, "hsm_password")
+
+    @_builtins.property
+    @pulumi.getter(name="providerType")
+    def provider_type(self) -> _builtins.str:
+        """
+        Use 'AWS' for creating a new database.
+        """
+        return pulumi.get(self, "provider_type")
 
 
 @pulumi.output_type
@@ -40092,6 +40480,35 @@ class GetCloudAutonomousVmClusterMaintenanceWindowMonthResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult(dict):
     def __init__(__self__, *,
                  autonomous_container_database_usages: Sequence['outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageResult'],
@@ -40309,6 +40726,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  memory_per_compute_unit_in_gbs: _builtins.float,
                  memory_per_oracle_compute_unit_in_gbs: _builtins.int,
                  memory_size_in_gbs: _builtins.int,
+                 multi_cloud_identity_connector_configs: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult'],
                  next_maintenance_run_id: _builtins.str,
                  node_count: _builtins.int,
                  non_provisionable_autonomous_container_databases: _builtins.int,
@@ -40320,6 +40738,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  provisioned_autonomous_container_databases: _builtins.int,
                  provisioned_cpus: _builtins.float,
                  reclaimable_cpus: _builtins.float,
+                 register_pkcs_trigger: _builtins.int,
                  reserved_cpus: _builtins.float,
                  scan_listener_port_non_tls: _builtins.int,
                  scan_listener_port_tls: _builtins.int,
@@ -40329,13 +40748,15 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  subnet_id: _builtins.str,
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
+                 tde_key_store_type: _builtins.str,
                  time_created: _builtins.str,
                  time_database_ssl_certificate_expires: _builtins.str,
                  time_ords_certificate_expires: _builtins.str,
                  time_updated: _builtins.str,
                  total_autonomous_data_storage_in_tbs: _builtins.float,
                  total_container_databases: _builtins.int,
-                 total_cpus: _builtins.float):
+                 total_cpus: _builtins.float,
+                 unregister_pkcs_trigger: _builtins.int):
         """
         :param _builtins.float autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
         :param _builtins.float autonomous_data_storage_size_in_tbs: The data disk group size allocated for Autonomous AI Databases, in TBs.
@@ -40361,7 +40782,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage (in TBs) can be scaled down.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str hostname: The hostname for the cloud Autonomous VM cluster.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        :param _builtins.str id: The OCID of the identity connector
         :param _builtins.bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
         :param _builtins.str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
@@ -40372,6 +40793,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.float memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param _builtins.int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param _builtins.int memory_size_in_gbs: The memory allocated in GBs.
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs'] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param _builtins.str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param _builtins.int node_count: The number of database servers in the cloud VM cluster.
         :param _builtins.int non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -40392,6 +40814,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str tde_key_store_type: TDE keystore type
         :param _builtins.str time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param _builtins.str time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param _builtins.str time_ords_certificate_expires: The date and time of ORDS certificate expiration.
@@ -40436,6 +40859,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "non_provisionable_autonomous_container_databases", non_provisionable_autonomous_container_databases)
@@ -40447,6 +40871,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
         pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
@@ -40456,6 +40881,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_database_ssl_certificate_expires", time_database_ssl_certificate_expires)
         pulumi.set(__self__, "time_ords_certificate_expires", time_ords_certificate_expires)
@@ -40463,6 +40889,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "total_autonomous_data_storage_in_tbs", total_autonomous_data_storage_in_tbs)
         pulumi.set(__self__, "total_container_databases", total_container_databases)
         pulumi.set(__self__, "total_cpus", total_cpus)
+        pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDataStoragePercentage")
@@ -40660,7 +41087,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        The OCID of the identity connector
         """
         return pulumi.get(self, "id")
 
@@ -40750,6 +41177,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "memory_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult']:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> _builtins.str:
         """
@@ -40836,6 +41271,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "reclaimable_cpus")
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> _builtins.float:
         """
@@ -40908,6 +41348,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> _builtins.str:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -40962,6 +41410,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The total number of CPUs in an Autonomous VM Cluster.
         """
         return pulumi.get(self, "total_cpus")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "unregister_pkcs_trigger")
 
 
 @pulumi.output_type
@@ -41294,6 +41747,35 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth
         Name of the month of the year.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type

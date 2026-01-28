@@ -571,6 +571,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
             broker_shape={
                 "node_count": kafka_cluster_broker_shape_node_count,
                 "ocpu_count": kafka_cluster_broker_shape_ocpu_count,
+                "node_shape": kafka_cluster_broker_shape_node_shape,
                 "storage_size_in_gbs": kafka_cluster_broker_shape_storage_size_in_gbs,
             },
             cluster_config_id=test_config["id"],
@@ -636,6 +637,7 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
             broker_shape={
                 "node_count": kafka_cluster_broker_shape_node_count,
                 "ocpu_count": kafka_cluster_broker_shape_ocpu_count,
+                "node_shape": kafka_cluster_broker_shape_node_shape,
                 "storage_size_in_gbs": kafka_cluster_broker_shape_storage_size_in_gbs,
             },
             cluster_config_id=test_config["id"],

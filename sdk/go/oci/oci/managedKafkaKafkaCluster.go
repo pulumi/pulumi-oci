@@ -35,6 +35,7 @@ import (
 //				BrokerShape: &oci.ManagedKafkaKafkaClusterBrokerShapeArgs{
 //					NodeCount:        pulumi.Any(kafkaClusterBrokerShapeNodeCount),
 //					OcpuCount:        pulumi.Any(kafkaClusterBrokerShapeOcpuCount),
+//					NodeShape:        pulumi.Any(kafkaClusterBrokerShapeNodeShape),
 //					StorageSizeInGbs: pulumi.Any(kafkaClusterBrokerShapeStorageSizeInGbs),
 //				},
 //				ClusterConfigId:         pulumi.Any(testConfig.Id),

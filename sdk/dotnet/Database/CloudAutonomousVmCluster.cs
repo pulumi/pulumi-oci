@@ -302,6 +302,12 @@ namespace Pulumi.Oci.Database
         public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        [Output("multiCloudIdentityConnectorConfigs")]
+        public Output<ImmutableArray<Outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig>> MultiCloudIdentityConnectorConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         [Output("nextMaintenanceRunId")]
@@ -369,6 +375,12 @@ namespace Pulumi.Oci.Database
         public Output<double> ReclaimableCpus { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Output("registerPkcsTrigger")]
+        public Output<int?> RegisterPkcsTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
         [Output("reservedCpus")]
@@ -423,6 +435,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        [Output("tdeKeyStoreType")]
+        public Output<string> TdeKeyStoreType { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
         [Output("timeCreated")]
@@ -454,9 +472,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The total number of Autonomous Container Databases that can be created.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("totalContainerDatabases")]
         public Output<int> TotalContainerDatabases { get; private set; } = null!;
@@ -466,6 +481,15 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("totalCpus")]
         public Output<double> TotalCpus { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("unregisterPkcsTrigger")]
+        public Output<int?> UnregisterPkcsTrigger { get; private set; } = null!;
 
 
         /// <summary>
@@ -643,6 +667,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? OpcDryRun { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Input("registerPkcsTrigger")]
+        public Input<int>? RegisterPkcsTrigger { get; set; }
+
+        /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Input("scanListenerPortNonTls")]
@@ -679,6 +709,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
+
+        /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
         /// </summary>
         [Input("timeUpdated")]
@@ -686,12 +722,18 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The total number of Autonomous Container Databases that can be created.
+        /// </summary>
+        [Input("totalContainerDatabases")]
+        public Input<int>? TotalContainerDatabases { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("totalContainerDatabases")]
-        public Input<int>? TotalContainerDatabases { get; set; }
+        [Input("unregisterPkcsTrigger")]
+        public Input<int>? UnregisterPkcsTrigger { get; set; }
 
         public CloudAutonomousVmClusterArgs()
         {
@@ -937,6 +979,18 @@ namespace Pulumi.Oci.Database
         [Input("memorySizeInGbs")]
         public Input<int>? MemorySizeInGbs { get; set; }
 
+        [Input("multiCloudIdentityConnectorConfigs")]
+        private InputList<Inputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigGetArgs>? _multiCloudIdentityConnectorConfigs;
+
+        /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigGetArgs> MultiCloudIdentityConnectorConfigs
+        {
+            get => _multiCloudIdentityConnectorConfigs ?? (_multiCloudIdentityConnectorConfigs = new InputList<Inputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigGetArgs>());
+            set => _multiCloudIdentityConnectorConfigs = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
@@ -1011,6 +1065,12 @@ namespace Pulumi.Oci.Database
         public Input<double>? ReclaimableCpus { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Input("registerPkcsTrigger")]
+        public Input<int>? RegisterPkcsTrigger { get; set; }
+
+        /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
         [Input("reservedCpus")]
@@ -1077,6 +1137,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
+
+        /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
         [Input("timeCreated")]
@@ -1108,9 +1174,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The total number of Autonomous Container Databases that can be created.
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }
@@ -1120,6 +1183,15 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("totalCpus")]
         public Input<double>? TotalCpus { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("unregisterPkcsTrigger")]
+        public Input<int>? UnregisterPkcsTrigger { get; set; }
 
         public CloudAutonomousVmClusterState()
         {

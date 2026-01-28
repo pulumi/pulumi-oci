@@ -180,6 +180,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DstFileVersion { get; private set; } = null!;
 
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Output("encryptionKeyLocationDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
         /// </summary>
         [Output("fastStartFailOverLagLimitInSeconds")]
@@ -717,6 +723,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dstFileVersion")]
         public Input<string>? DstFileVersion { get; set; }
+
+        [Input("encryptionKeyLocationDetails")]
+        private InputList<Inputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailGetArgs>? _encryptionKeyLocationDetails;
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailGetArgs> EncryptionKeyLocationDetails
+        {
+            get => _encryptionKeyLocationDetails ?? (_encryptionKeyLocationDetails = new InputList<Inputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailGetArgs>());
+            set => _encryptionKeyLocationDetails = value;
+        }
 
         /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.

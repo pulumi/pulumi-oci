@@ -7,10 +7,13 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.inputs.DifStackAdbArgs;
+import com.pulumi.oci.oci.inputs.DifStackAidataplatformArgs;
 import com.pulumi.oci.oci.inputs.DifStackDataflowArgs;
 import com.pulumi.oci.oci.inputs.DifStackGenaiArgs;
 import com.pulumi.oci.oci.inputs.DifStackGgcArgs;
 import com.pulumi.oci.oci.inputs.DifStackObjectstorageArgs;
+import com.pulumi.oci.oci.inputs.DifStackOkeArgs;
+import com.pulumi.oci.oci.inputs.DifStackOmkArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -52,6 +55,21 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> addServiceTrigger() {
         return Optional.ofNullable(this.addServiceTrigger);
+    }
+
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    @Import(name="aidataplatforms")
+    private @Nullable Output<List<DifStackAidataplatformArgs>> aidataplatforms;
+
+    /**
+     * @return AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    public Optional<Output<List<DifStackAidataplatformArgs>>> aidataplatforms() {
+        return Optional.ofNullable(this.aidataplatforms);
     }
 
     /**
@@ -225,6 +243,36 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * OKE Details if oke is included in services.
+     * 
+     */
+    @Import(name="okes")
+    private @Nullable Output<List<DifStackOkeArgs>> okes;
+
+    /**
+     * @return OKE Details if oke is included in services.
+     * 
+     */
+    public Optional<Output<List<DifStackOkeArgs>>> okes() {
+        return Optional.ofNullable(this.okes);
+    }
+
+    /**
+     * OMK Details if omk is included in services.
+     * 
+     */
+    @Import(name="omks")
+    private @Nullable Output<List<DifStackOmkArgs>> omks;
+
+    /**
+     * @return OMK Details if omk is included in services.
+     * 
+     */
+    public Optional<Output<List<DifStackOmkArgs>>> omks() {
+        return Optional.ofNullable(this.omks);
+    }
+
+    /**
      * (Updatable) List of services to be onboarded for the stack.
      * 
      */
@@ -274,6 +322,7 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
     private DifStackArgs(DifStackArgs $) {
         this.adbs = $.adbs;
         this.addServiceTrigger = $.addServiceTrigger;
+        this.aidataplatforms = $.aidataplatforms;
         this.compartmentId = $.compartmentId;
         this.dataflows = $.dataflows;
         this.definedTags = $.definedTags;
@@ -284,6 +333,8 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
         this.ggcs = $.ggcs;
         this.notificationEmail = $.notificationEmail;
         this.objectstorages = $.objectstorages;
+        this.okes = $.okes;
+        this.omks = $.omks;
         this.services = $.services;
         this.stackTemplates = $.stackTemplates;
         this.subnetId = $.subnetId;
@@ -357,6 +408,37 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder addServiceTrigger(Integer addServiceTrigger) {
             return addServiceTrigger(Output.of(addServiceTrigger));
+        }
+
+        /**
+         * @param aidataplatforms AI Data Platform Details if aidataplatform is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder aidataplatforms(@Nullable Output<List<DifStackAidataplatformArgs>> aidataplatforms) {
+            $.aidataplatforms = aidataplatforms;
+            return this;
+        }
+
+        /**
+         * @param aidataplatforms AI Data Platform Details if aidataplatform is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder aidataplatforms(List<DifStackAidataplatformArgs> aidataplatforms) {
+            return aidataplatforms(Output.of(aidataplatforms));
+        }
+
+        /**
+         * @param aidataplatforms AI Data Platform Details if aidataplatform is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder aidataplatforms(DifStackAidataplatformArgs... aidataplatforms) {
+            return aidataplatforms(List.of(aidataplatforms));
         }
 
         /**
@@ -627,6 +709,68 @@ public final class DifStackArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder objectstorages(DifStackObjectstorageArgs... objectstorages) {
             return objectstorages(List.of(objectstorages));
+        }
+
+        /**
+         * @param okes OKE Details if oke is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okes(@Nullable Output<List<DifStackOkeArgs>> okes) {
+            $.okes = okes;
+            return this;
+        }
+
+        /**
+         * @param okes OKE Details if oke is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okes(List<DifStackOkeArgs> okes) {
+            return okes(Output.of(okes));
+        }
+
+        /**
+         * @param okes OKE Details if oke is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okes(DifStackOkeArgs... okes) {
+            return okes(List.of(okes));
+        }
+
+        /**
+         * @param omks OMK Details if omk is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder omks(@Nullable Output<List<DifStackOmkArgs>> omks) {
+            $.omks = omks;
+            return this;
+        }
+
+        /**
+         * @param omks OMK Details if omk is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder omks(List<DifStackOmkArgs> omks) {
+            return omks(Output.of(omks));
+        }
+
+        /**
+         * @param omks OMK Details if omk is included in services.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder omks(DifStackOmkArgs... omks) {
+            return omks(List.of(omks));
         }
 
         /**

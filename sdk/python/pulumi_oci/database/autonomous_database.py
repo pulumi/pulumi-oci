@@ -1885,6 +1885,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous AI Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]] encryption_key_history_entries: Key History Entry.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
@@ -2942,6 +2943,9 @@ class _AutonomousDatabaseState:
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
     def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
         return pulumi.get(self, "encryption_key_location_details")
 
     @encryption_key_location_details.setter
@@ -5174,6 +5178,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous AI Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]] encryption_key_history_entries: Key History Entry.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
@@ -5887,6 +5892,9 @@ class AutonomousDatabase(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
     def encryption_key_location_details(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseEncryptionKeyLocationDetail']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
         return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property

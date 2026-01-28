@@ -130,6 +130,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * DST Time-Zone File version of the Autonomous Container Database.
      */
     readonly dstFileVersion: string;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    readonly encryptionKeyLocationDetails: outputs.Database.GetAutonomousContainerDatabaseEncryptionKeyLocationDetail[];
     readonly failoverTrigger: number;
     /**
      * The lag time for my preference based on data loss tolerance in seconds.

@@ -249,6 +249,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * Key History Entry.
      */
     declare public /*out*/ readonly encryptionKeyHistoryEntries: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry[]>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
     declare public /*out*/ readonly encryptionKeyLocationDetails: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
@@ -1296,6 +1299,9 @@ export interface AutonomousDatabaseState {
      * Key History Entry.
      */
     encryptionKeyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntry>[]>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
     encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail>[]>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.

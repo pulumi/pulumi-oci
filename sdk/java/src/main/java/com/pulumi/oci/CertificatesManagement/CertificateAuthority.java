@@ -148,6 +148,20 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.description);
     }
     /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    @Export(name="externalKeyDescription", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> externalKeyDescription;
+
+    /**
+     * @return (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    public Output<Optional<String>> externalKeyDescription() {
+        return Codegen.optional(this.externalKeyDescription);
+    }
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -180,14 +194,14 @@ public class CertificateAuthority extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
-    private Output<String> kmsKeyId;
+    private Output</* @Nullable */ String> kmsKeyId;
 
     /**
      * @return The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      * 
      */
-    public Output<String> kmsKeyId() {
-        return this.kmsKeyId;
+    public Output<Optional<String>> kmsKeyId() {
+        return Codegen.optional(this.kmsKeyId);
     }
     /**
      * Additional information about the current CA lifecycle state.

@@ -43,6 +43,10 @@ export interface GetCertificateAuthorityVersionResult {
     readonly certificateAuthorityId: string;
     readonly certificateAuthorityVersionNumber: string;
     /**
+     * The certificate signing request (in PEM format).
+     */
+    readonly csrPem: string;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;

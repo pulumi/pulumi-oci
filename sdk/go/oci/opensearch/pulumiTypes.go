@@ -207,6 +207,181 @@ func (o ClusterCertificateConfigPtrOutput) OpenSearchDashboardCertificateId() pu
 	}).(pulumi.StringPtrOutput)
 }
 
+type ClusterLoadBalancerConfig struct {
+	// (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps *int `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps *int `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType string `pulumi:"loadBalancerServiceType"`
+}
+
+// ClusterLoadBalancerConfigInput is an input type that accepts ClusterLoadBalancerConfigArgs and ClusterLoadBalancerConfigOutput values.
+// You can construct a concrete instance of `ClusterLoadBalancerConfigInput` via:
+//
+//	ClusterLoadBalancerConfigArgs{...}
+type ClusterLoadBalancerConfigInput interface {
+	pulumi.Input
+
+	ToClusterLoadBalancerConfigOutput() ClusterLoadBalancerConfigOutput
+	ToClusterLoadBalancerConfigOutputWithContext(context.Context) ClusterLoadBalancerConfigOutput
+}
+
+type ClusterLoadBalancerConfigArgs struct {
+	// (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps pulumi.IntPtrInput `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps pulumi.IntPtrInput `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType pulumi.StringInput `pulumi:"loadBalancerServiceType"`
+}
+
+func (ClusterLoadBalancerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i ClusterLoadBalancerConfigArgs) ToClusterLoadBalancerConfigOutput() ClusterLoadBalancerConfigOutput {
+	return i.ToClusterLoadBalancerConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterLoadBalancerConfigArgs) ToClusterLoadBalancerConfigOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterLoadBalancerConfigOutput)
+}
+
+func (i ClusterLoadBalancerConfigArgs) ToClusterLoadBalancerConfigPtrOutput() ClusterLoadBalancerConfigPtrOutput {
+	return i.ToClusterLoadBalancerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterLoadBalancerConfigArgs) ToClusterLoadBalancerConfigPtrOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterLoadBalancerConfigOutput).ToClusterLoadBalancerConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterLoadBalancerConfigPtrInput is an input type that accepts ClusterLoadBalancerConfigArgs, ClusterLoadBalancerConfigPtr and ClusterLoadBalancerConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterLoadBalancerConfigPtrInput` via:
+//
+//	        ClusterLoadBalancerConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterLoadBalancerConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterLoadBalancerConfigPtrOutput() ClusterLoadBalancerConfigPtrOutput
+	ToClusterLoadBalancerConfigPtrOutputWithContext(context.Context) ClusterLoadBalancerConfigPtrOutput
+}
+
+type clusterLoadBalancerConfigPtrType ClusterLoadBalancerConfigArgs
+
+func ClusterLoadBalancerConfigPtr(v *ClusterLoadBalancerConfigArgs) ClusterLoadBalancerConfigPtrInput {
+	return (*clusterLoadBalancerConfigPtrType)(v)
+}
+
+func (*clusterLoadBalancerConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i *clusterLoadBalancerConfigPtrType) ToClusterLoadBalancerConfigPtrOutput() ClusterLoadBalancerConfigPtrOutput {
+	return i.ToClusterLoadBalancerConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterLoadBalancerConfigPtrType) ToClusterLoadBalancerConfigPtrOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterLoadBalancerConfigPtrOutput)
+}
+
+type ClusterLoadBalancerConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterLoadBalancerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o ClusterLoadBalancerConfigOutput) ToClusterLoadBalancerConfigOutput() ClusterLoadBalancerConfigOutput {
+	return o
+}
+
+func (o ClusterLoadBalancerConfigOutput) ToClusterLoadBalancerConfigOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigOutput {
+	return o
+}
+
+func (o ClusterLoadBalancerConfigOutput) ToClusterLoadBalancerConfigPtrOutput() ClusterLoadBalancerConfigPtrOutput {
+	return o.ToClusterLoadBalancerConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterLoadBalancerConfigOutput) ToClusterLoadBalancerConfigPtrOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterLoadBalancerConfig) *ClusterLoadBalancerConfig {
+		return &v
+	}).(ClusterLoadBalancerConfigPtrOutput)
+}
+
+// (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o ClusterLoadBalancerConfigOutput) LoadBalancerMaxBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterLoadBalancerConfig) *int { return v.LoadBalancerMaxBandwidthInMbps }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o ClusterLoadBalancerConfigOutput) LoadBalancerMinBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ClusterLoadBalancerConfig) *int { return v.LoadBalancerMinBandwidthInMbps }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+func (o ClusterLoadBalancerConfigOutput) LoadBalancerServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterLoadBalancerConfig) string { return v.LoadBalancerServiceType }).(pulumi.StringOutput)
+}
+
+type ClusterLoadBalancerConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterLoadBalancerConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o ClusterLoadBalancerConfigPtrOutput) ToClusterLoadBalancerConfigPtrOutput() ClusterLoadBalancerConfigPtrOutput {
+	return o
+}
+
+func (o ClusterLoadBalancerConfigPtrOutput) ToClusterLoadBalancerConfigPtrOutputWithContext(ctx context.Context) ClusterLoadBalancerConfigPtrOutput {
+	return o
+}
+
+func (o ClusterLoadBalancerConfigPtrOutput) Elem() ClusterLoadBalancerConfigOutput {
+	return o.ApplyT(func(v *ClusterLoadBalancerConfig) ClusterLoadBalancerConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterLoadBalancerConfig
+		return ret
+	}).(ClusterLoadBalancerConfigOutput)
+}
+
+// (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o ClusterLoadBalancerConfigPtrOutput) LoadBalancerMaxBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ClusterLoadBalancerConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LoadBalancerMaxBandwidthInMbps
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o ClusterLoadBalancerConfigPtrOutput) LoadBalancerMinBandwidthInMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ClusterLoadBalancerConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LoadBalancerMinBandwidthInMbps
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+func (o ClusterLoadBalancerConfigPtrOutput) LoadBalancerServiceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterLoadBalancerConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LoadBalancerServiceType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ClusterMaintenanceDetails struct {
 	// End time of the maintenance activity
 	EndTime *string `pulumi:"endTime"`
@@ -1277,6 +1452,121 @@ func (o GetOpensearchClusterCertificateConfigArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterCertificateConfig {
 		return vs[0].([]GetOpensearchClusterCertificateConfig)[vs[1].(int)]
 	}).(GetOpensearchClusterCertificateConfigOutput)
+}
+
+type GetOpensearchClusterLoadBalancerConfig struct {
+	// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps int `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps int `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType string `pulumi:"loadBalancerServiceType"`
+}
+
+// GetOpensearchClusterLoadBalancerConfigInput is an input type that accepts GetOpensearchClusterLoadBalancerConfigArgs and GetOpensearchClusterLoadBalancerConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterLoadBalancerConfigInput` via:
+//
+//	GetOpensearchClusterLoadBalancerConfigArgs{...}
+type GetOpensearchClusterLoadBalancerConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterLoadBalancerConfigOutput() GetOpensearchClusterLoadBalancerConfigOutput
+	ToGetOpensearchClusterLoadBalancerConfigOutputWithContext(context.Context) GetOpensearchClusterLoadBalancerConfigOutput
+}
+
+type GetOpensearchClusterLoadBalancerConfigArgs struct {
+	// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps pulumi.IntInput `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps pulumi.IntInput `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType pulumi.StringInput `pulumi:"loadBalancerServiceType"`
+}
+
+func (GetOpensearchClusterLoadBalancerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterLoadBalancerConfigArgs) ToGetOpensearchClusterLoadBalancerConfigOutput() GetOpensearchClusterLoadBalancerConfigOutput {
+	return i.ToGetOpensearchClusterLoadBalancerConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterLoadBalancerConfigArgs) ToGetOpensearchClusterLoadBalancerConfigOutputWithContext(ctx context.Context) GetOpensearchClusterLoadBalancerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterLoadBalancerConfigOutput)
+}
+
+// GetOpensearchClusterLoadBalancerConfigArrayInput is an input type that accepts GetOpensearchClusterLoadBalancerConfigArray and GetOpensearchClusterLoadBalancerConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterLoadBalancerConfigArrayInput` via:
+//
+//	GetOpensearchClusterLoadBalancerConfigArray{ GetOpensearchClusterLoadBalancerConfigArgs{...} }
+type GetOpensearchClusterLoadBalancerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterLoadBalancerConfigArrayOutput() GetOpensearchClusterLoadBalancerConfigArrayOutput
+	ToGetOpensearchClusterLoadBalancerConfigArrayOutputWithContext(context.Context) GetOpensearchClusterLoadBalancerConfigArrayOutput
+}
+
+type GetOpensearchClusterLoadBalancerConfigArray []GetOpensearchClusterLoadBalancerConfigInput
+
+func (GetOpensearchClusterLoadBalancerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterLoadBalancerConfigArray) ToGetOpensearchClusterLoadBalancerConfigArrayOutput() GetOpensearchClusterLoadBalancerConfigArrayOutput {
+	return i.ToGetOpensearchClusterLoadBalancerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterLoadBalancerConfigArray) ToGetOpensearchClusterLoadBalancerConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterLoadBalancerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterLoadBalancerConfigArrayOutput)
+}
+
+type GetOpensearchClusterLoadBalancerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterLoadBalancerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterLoadBalancerConfigOutput) ToGetOpensearchClusterLoadBalancerConfigOutput() GetOpensearchClusterLoadBalancerConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterLoadBalancerConfigOutput) ToGetOpensearchClusterLoadBalancerConfigOutputWithContext(ctx context.Context) GetOpensearchClusterLoadBalancerConfigOutput {
+	return o
+}
+
+// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o GetOpensearchClusterLoadBalancerConfigOutput) LoadBalancerMaxBandwidthInMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterLoadBalancerConfig) int { return v.LoadBalancerMaxBandwidthInMbps }).(pulumi.IntOutput)
+}
+
+// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o GetOpensearchClusterLoadBalancerConfigOutput) LoadBalancerMinBandwidthInMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClusterLoadBalancerConfig) int { return v.LoadBalancerMinBandwidthInMbps }).(pulumi.IntOutput)
+}
+
+// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+func (o GetOpensearchClusterLoadBalancerConfigOutput) LoadBalancerServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterLoadBalancerConfig) string { return v.LoadBalancerServiceType }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterLoadBalancerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterLoadBalancerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterLoadBalancerConfigArrayOutput) ToGetOpensearchClusterLoadBalancerConfigArrayOutput() GetOpensearchClusterLoadBalancerConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterLoadBalancerConfigArrayOutput) ToGetOpensearchClusterLoadBalancerConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterLoadBalancerConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterLoadBalancerConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterLoadBalancerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterLoadBalancerConfig {
+		return vs[0].([]GetOpensearchClusterLoadBalancerConfig)[vs[1].(int)]
+	}).(GetOpensearchClusterLoadBalancerConfigOutput)
 }
 
 type GetOpensearchClusterMaintenanceDetail struct {
@@ -2881,6 +3171,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfigs []GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig `pulumi:"loadBalancerConfigs"`
 	// Details for the maintenance activity.
 	MaintenanceDetails []GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
@@ -3012,6 +3304,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	InboundClusterIds pulumi.StringArrayInput `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfigs GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayInput `pulumi:"loadBalancerConfigs"`
 	// Details for the maintenance activity.
 	MaintenanceDetails GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
@@ -3240,6 +3534,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) InboundClust
 // Additional information about the current lifecycle state of the cluster.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) LoadBalancerConfigs() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig {
+		return v.LoadBalancerConfigs
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput)
 }
 
 // Details for the maintenance activity.
@@ -3622,6 +3923,127 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig)[vs[1].(int)]
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig struct {
+	// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps int `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps int `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType string `pulumi:"loadBalancerServiceType"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs and GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs struct {
+	// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMaxBandwidthInMbps pulumi.IntInput `pulumi:"loadBalancerMaxBandwidthInMbps"`
+	// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+	LoadBalancerMinBandwidthInMbps pulumi.IntInput `pulumi:"loadBalancerMinBandwidthInMbps"`
+	// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+	LoadBalancerServiceType pulumi.StringInput `pulumi:"loadBalancerServiceType"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray and GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray{ GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray []GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput {
+	return o
+}
+
+// Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) LoadBalancerMaxBandwidthInMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig) int {
+		return v.LoadBalancerMaxBandwidthInMbps
+	}).(pulumi.IntOutput)
+}
+
+// Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) LoadBalancerMinBandwidthInMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig) int {
+		return v.LoadBalancerMinBandwidthInMbps
+	}).(pulumi.IntOutput)
+}
+
+// Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput) LoadBalancerServiceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig) string {
+		return v.LoadBalancerServiceType
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput)
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail struct {
@@ -4664,6 +5086,8 @@ func (o GetOpensearchVersionsOpensearchVersionsCollectionItemArrayOutput) Index(
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterCertificateConfigInput)(nil)).Elem(), ClusterCertificateConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterCertificateConfigPtrInput)(nil)).Elem(), ClusterCertificateConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterLoadBalancerConfigInput)(nil)).Elem(), ClusterLoadBalancerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterLoadBalancerConfigPtrInput)(nil)).Elem(), ClusterLoadBalancerConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterMaintenanceDetailsPtrInput)(nil)).Elem(), ClusterMaintenanceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigInput)(nil)).Elem(), ClusterOutboundClusterConfigArgs{})
@@ -4678,6 +5102,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointArrayInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterCertificateConfigInput)(nil)).Elem(), GetOpensearchClusterCertificateConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterCertificateConfigArrayInput)(nil)).Elem(), GetOpensearchClusterCertificateConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterLoadBalancerConfigInput)(nil)).Elem(), GetOpensearchClusterLoadBalancerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterLoadBalancerConfigArrayInput)(nil)).Elem(), GetOpensearchClusterLoadBalancerConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClusterMaintenanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClusterOutboundClusterConfigArgs{})
@@ -4706,6 +5132,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs{})
@@ -4726,6 +5154,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionsOpensearchVersionsCollectionItemArrayInput)(nil)).Elem(), GetOpensearchVersionsOpensearchVersionsCollectionItemArray{})
 	pulumi.RegisterOutputType(ClusterCertificateConfigOutput{})
 	pulumi.RegisterOutputType(ClusterCertificateConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterLoadBalancerConfigOutput{})
+	pulumi.RegisterOutputType(ClusterLoadBalancerConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterMaintenanceDetailsOutput{})
 	pulumi.RegisterOutputType(ClusterMaintenanceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutput{})
@@ -4740,6 +5170,8 @@ func init() {
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterCertificateConfigOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterCertificateConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterLoadBalancerConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterLoadBalancerConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterMaintenanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterOutboundClusterConfigOutput{})
@@ -4768,6 +5200,8 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutput{})

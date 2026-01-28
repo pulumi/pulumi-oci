@@ -319,6 +319,9 @@ namespace Pulumi.Oci.Database
         [Output("encryptionKeyHistoryEntries")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyHistoryEntry>> EncryptionKeyHistoryEntries { get; private set; } = null!;
 
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
         [Output("encryptionKeyLocationDetails")]
         public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
 
@@ -2160,6 +2163,10 @@ namespace Pulumi.Oci.Database
 
         [Input("encryptionKeyLocationDetails")]
         private InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs>? _encryptionKeyLocationDetails;
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
         public InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs> EncryptionKeyLocationDetails
         {
             get => _encryptionKeyLocationDetails ?? (_encryptionKeyLocationDetails = new InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs>());

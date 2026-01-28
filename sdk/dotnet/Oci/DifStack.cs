@@ -56,6 +56,14 @@ namespace Pulumi.Oci.Oci
     ///                 },
     ///             },
     ///         },
+    ///         Aidataplatforms = new[]
+    ///         {
+    ///             new Oci.Oci.Inputs.DifStackAidataplatformArgs
+    ///             {
+    ///                 DefaultWorkspaceName = testWorkspace.Name,
+    ///                 InstanceId = testInstance.Id,
+    ///             },
+    ///         },
     ///         Dataflows = new[]
     ///         {
     ///             new Oci.Oci.Inputs.DifStackDataflowArgs
@@ -198,6 +206,75 @@ namespace Pulumi.Oci.Oci
     ///                 AutoTiering = stackObjectstorageAutoTiering,
     ///             },
     ///         },
+    ///         Okes = new[]
+    ///         {
+    ///             new Oci.Oci.Inputs.DifStackOkeArgs
+    ///             {
+    ///                 ClusterId = testCluster.Id,
+    ///                 InstanceId = testInstance.Id,
+    ///                 NamespaceName = stackOkeNamespaceName,
+    ///                 Secrets = new[]
+    ///                 {
+    ///                     new Oci.Oci.Inputs.DifStackOkeSecretArgs
+    ///                     {
+    ///                         SecretName = stackOkeSecretsSecretName,
+    ///                         TemplateObjectStoragePath = stackOkeSecretsTemplateObjectStoragePath,
+    ///                         SecretDatas = new[]
+    ///                         {
+    ///                             new Oci.Oci.Inputs.DifStackOkeSecretSecretDataArgs
+    ///                             {
+    ///                                 Key = stackOkeSecretsSecretDataKey,
+    ///                                 SecretId = stackOkeSecretsSecretDataSecretId,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 ManifestObjectStoragePath = stackOkeManifestObjectStoragePath,
+    ///                 ComponentValueOverrides = new[]
+    ///                 {
+    ///                     new Oci.Oci.Inputs.DifStackOkeComponentValueOverrideArgs
+    ///                     {
+    ///                         ComponentName = stackOkeComponentValueOverridesComponentName,
+    ///                         ValueOverrides = stackOkeComponentValueOverridesValueOverrides,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Omks = new[]
+    ///         {
+    ///             new Oci.Oci.Inputs.DifStackOmkArgs
+    ///             {
+    ///                 ClusterId = testCluster.Id,
+    ///                 ClusterNamespaceId = testNamespace.Id,
+    ///                 InstanceId = testInstance.Id,
+    ///                 NamespaceName = stackOmkNamespaceName,
+    ///                 Secrets = new[]
+    ///                 {
+    ///                     new Oci.Oci.Inputs.DifStackOmkSecretArgs
+    ///                     {
+    ///                         SecretName = stackOmkSecretsSecretName,
+    ///                         TemplateObjectStoragePath = stackOmkSecretsTemplateObjectStoragePath,
+    ///                         SecretDatas = new[]
+    ///                         {
+    ///                             new Oci.Oci.Inputs.DifStackOmkSecretSecretDataArgs
+    ///                             {
+    ///                                 Key = stackOmkSecretsSecretDataKey,
+    ///                                 SecretId = stackOmkSecretsSecretDataSecretId,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 ManifestObjectStoragePath = stackOmkManifestObjectStoragePath,
+    ///                 ComponentValueOverrides = new[]
+    ///                 {
+    ///                     new Oci.Oci.Inputs.DifStackOmkComponentValueOverrideArgs
+    ///                     {
+    ///                         ComponentName = stackOmkComponentValueOverridesComponentName,
+    ///                         ValueOverrides = stackOmkComponentValueOverridesValueOverrides,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
     ///         SubnetId = stackDeployArtifactsSubnetId,
     ///     });
     /// 
@@ -218,6 +295,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("addServiceTrigger")]
         public Output<int?> AddServiceTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// AI Data Platform Details if aidataplatform is included in services.
+        /// </summary>
+        [Output("aidataplatforms")]
+        public Output<ImmutableArray<Outputs.DifStackAidataplatform>> Aidataplatforms { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
@@ -295,6 +378,18 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("objectstorages")]
         public Output<ImmutableArray<Outputs.DifStackObjectstorage>> Objectstorages { get; private set; } = null!;
+
+        /// <summary>
+        /// OKE Details if oke is included in services.
+        /// </summary>
+        [Output("okes")]
+        public Output<ImmutableArray<Outputs.DifStackOke>> Okes { get; private set; } = null!;
+
+        /// <summary>
+        /// OMK Details if omk is included in services.
+        /// </summary>
+        [Output("omks")]
+        public Output<ImmutableArray<Outputs.DifStackOmk>> Omks { get; private set; } = null!;
 
         /// <summary>
         /// Details of the service onboarded for the data intelligence stack.
@@ -408,6 +503,18 @@ namespace Pulumi.Oci.Oci
         [Input("addServiceTrigger")]
         public Input<int>? AddServiceTrigger { get; set; }
 
+        [Input("aidataplatforms")]
+        private InputList<Inputs.DifStackAidataplatformArgs>? _aidataplatforms;
+
+        /// <summary>
+        /// AI Data Platform Details if aidataplatform is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackAidataplatformArgs> Aidataplatforms
+        {
+            get => _aidataplatforms ?? (_aidataplatforms = new InputList<Inputs.DifStackAidataplatformArgs>());
+            set => _aidataplatforms = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
         /// </summary>
@@ -515,6 +622,30 @@ namespace Pulumi.Oci.Oci
             set => _objectstorages = value;
         }
 
+        [Input("okes")]
+        private InputList<Inputs.DifStackOkeArgs>? _okes;
+
+        /// <summary>
+        /// OKE Details if oke is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackOkeArgs> Okes
+        {
+            get => _okes ?? (_okes = new InputList<Inputs.DifStackOkeArgs>());
+            set => _okes = value;
+        }
+
+        [Input("omks")]
+        private InputList<Inputs.DifStackOmkArgs>? _omks;
+
+        /// <summary>
+        /// OMK Details if omk is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackOmkArgs> Omks
+        {
+            get => _omks ?? (_omks = new InputList<Inputs.DifStackOmkArgs>());
+            set => _omks = value;
+        }
+
         [Input("services", required: true)]
         private InputList<string>? _services;
 
@@ -570,6 +701,18 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("addServiceTrigger")]
         public Input<int>? AddServiceTrigger { get; set; }
+
+        [Input("aidataplatforms")]
+        private InputList<Inputs.DifStackAidataplatformGetArgs>? _aidataplatforms;
+
+        /// <summary>
+        /// AI Data Platform Details if aidataplatform is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackAidataplatformGetArgs> Aidataplatforms
+        {
+            get => _aidataplatforms ?? (_aidataplatforms = new InputList<Inputs.DifStackAidataplatformGetArgs>());
+            set => _aidataplatforms = value;
+        }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
@@ -682,6 +825,30 @@ namespace Pulumi.Oci.Oci
         {
             get => _objectstorages ?? (_objectstorages = new InputList<Inputs.DifStackObjectstorageGetArgs>());
             set => _objectstorages = value;
+        }
+
+        [Input("okes")]
+        private InputList<Inputs.DifStackOkeGetArgs>? _okes;
+
+        /// <summary>
+        /// OKE Details if oke is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackOkeGetArgs> Okes
+        {
+            get => _okes ?? (_okes = new InputList<Inputs.DifStackOkeGetArgs>());
+            set => _okes = value;
+        }
+
+        [Input("omks")]
+        private InputList<Inputs.DifStackOmkGetArgs>? _omks;
+
+        /// <summary>
+        /// OMK Details if omk is included in services.
+        /// </summary>
+        public InputList<Inputs.DifStackOmkGetArgs> Omks
+        {
+            get => _omks ?? (_omks = new InputList<Inputs.DifStackOmkGetArgs>());
+            set => _omks = value;
         }
 
         [Input("serviceDetails")]

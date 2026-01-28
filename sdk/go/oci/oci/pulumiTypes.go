@@ -2544,8 +2544,11 @@ func (o DifStackAdbArrayOutput) Index(i pulumi.IntInput) DifStackAdbOutput {
 }
 
 type DifStackAdbDbCredential struct {
+	// Vault secret OCID containing the corresponding user password.
 	SecretId string `pulumi:"secretId"`
+	// Username for ADB to be created or updated.
 	UserName string `pulumi:"userName"`
+	// Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
 	UserType string `pulumi:"userType"`
 }
 
@@ -2561,8 +2564,11 @@ type DifStackAdbDbCredentialInput interface {
 }
 
 type DifStackAdbDbCredentialArgs struct {
+	// Vault secret OCID containing the corresponding user password.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// Username for ADB to be created or updated.
 	UserName pulumi.StringInput `pulumi:"userName"`
+	// Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
 	UserType pulumi.StringInput `pulumi:"userType"`
 }
 
@@ -2617,14 +2623,17 @@ func (o DifStackAdbDbCredentialOutput) ToDifStackAdbDbCredentialOutputWithContex
 	return o
 }
 
+// Vault secret OCID containing the corresponding user password.
 func (o DifStackAdbDbCredentialOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
+// Username for ADB to be created or updated.
 func (o DifStackAdbDbCredentialOutput) UserName() pulumi.StringOutput {
 	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.UserName }).(pulumi.StringOutput)
 }
 
+// Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
 func (o DifStackAdbDbCredentialOutput) UserType() pulumi.StringOutput {
 	return o.ApplyT(func(v DifStackAdbDbCredential) string { return v.UserType }).(pulumi.StringOutput)
 }
@@ -2647,6 +2656,112 @@ func (o DifStackAdbDbCredentialArrayOutput) Index(i pulumi.IntInput) DifStackAdb
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackAdbDbCredential {
 		return vs[0].([]DifStackAdbDbCredential)[vs[1].(int)]
 	}).(DifStackAdbDbCredentialOutput)
+}
+
+type DifStackAidataplatform struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName string `pulumi:"defaultWorkspaceName"`
+	// Identifier for AIDP instance to be provisioned.
+	InstanceId string `pulumi:"instanceId"`
+}
+
+// DifStackAidataplatformInput is an input type that accepts DifStackAidataplatformArgs and DifStackAidataplatformOutput values.
+// You can construct a concrete instance of `DifStackAidataplatformInput` via:
+//
+//	DifStackAidataplatformArgs{...}
+type DifStackAidataplatformInput interface {
+	pulumi.Input
+
+	ToDifStackAidataplatformOutput() DifStackAidataplatformOutput
+	ToDifStackAidataplatformOutputWithContext(context.Context) DifStackAidataplatformOutput
+}
+
+type DifStackAidataplatformArgs struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName pulumi.StringInput `pulumi:"defaultWorkspaceName"`
+	// Identifier for AIDP instance to be provisioned.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+}
+
+func (DifStackAidataplatformArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAidataplatform)(nil)).Elem()
+}
+
+func (i DifStackAidataplatformArgs) ToDifStackAidataplatformOutput() DifStackAidataplatformOutput {
+	return i.ToDifStackAidataplatformOutputWithContext(context.Background())
+}
+
+func (i DifStackAidataplatformArgs) ToDifStackAidataplatformOutputWithContext(ctx context.Context) DifStackAidataplatformOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAidataplatformOutput)
+}
+
+// DifStackAidataplatformArrayInput is an input type that accepts DifStackAidataplatformArray and DifStackAidataplatformArrayOutput values.
+// You can construct a concrete instance of `DifStackAidataplatformArrayInput` via:
+//
+//	DifStackAidataplatformArray{ DifStackAidataplatformArgs{...} }
+type DifStackAidataplatformArrayInput interface {
+	pulumi.Input
+
+	ToDifStackAidataplatformArrayOutput() DifStackAidataplatformArrayOutput
+	ToDifStackAidataplatformArrayOutputWithContext(context.Context) DifStackAidataplatformArrayOutput
+}
+
+type DifStackAidataplatformArray []DifStackAidataplatformInput
+
+func (DifStackAidataplatformArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAidataplatform)(nil)).Elem()
+}
+
+func (i DifStackAidataplatformArray) ToDifStackAidataplatformArrayOutput() DifStackAidataplatformArrayOutput {
+	return i.ToDifStackAidataplatformArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackAidataplatformArray) ToDifStackAidataplatformArrayOutputWithContext(ctx context.Context) DifStackAidataplatformArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackAidataplatformArrayOutput)
+}
+
+type DifStackAidataplatformOutput struct{ *pulumi.OutputState }
+
+func (DifStackAidataplatformOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackAidataplatform)(nil)).Elem()
+}
+
+func (o DifStackAidataplatformOutput) ToDifStackAidataplatformOutput() DifStackAidataplatformOutput {
+	return o
+}
+
+func (o DifStackAidataplatformOutput) ToDifStackAidataplatformOutputWithContext(ctx context.Context) DifStackAidataplatformOutput {
+	return o
+}
+
+// A default workspace will be created with this name.
+func (o DifStackAidataplatformOutput) DefaultWorkspaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAidataplatform) string { return v.DefaultWorkspaceName }).(pulumi.StringOutput)
+}
+
+// Identifier for AIDP instance to be provisioned.
+func (o DifStackAidataplatformOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackAidataplatform) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+type DifStackAidataplatformArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackAidataplatformArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackAidataplatform)(nil)).Elem()
+}
+
+func (o DifStackAidataplatformArrayOutput) ToDifStackAidataplatformArrayOutput() DifStackAidataplatformArrayOutput {
+	return o
+}
+
+func (o DifStackAidataplatformArrayOutput) ToDifStackAidataplatformArrayOutputWithContext(ctx context.Context) DifStackAidataplatformArrayOutput {
+	return o
+}
+
+func (o DifStackAidataplatformArrayOutput) Index(i pulumi.IntInput) DifStackAidataplatformOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackAidataplatform {
+		return vs[0].([]DifStackAidataplatform)[vs[1].(int)]
+	}).(DifStackAidataplatformOutput)
 }
 
 type DifStackDataflow struct {
@@ -3595,7 +3710,7 @@ type DifStackGenai struct {
 	ClusterType string `pulumi:"clusterType"`
 	// (Updatable) List of endpoints to provision for the GENAI cluster.
 	Endpoints []DifStackGenaiEndpoint `pulumi:"endpoints"`
-	// (Updatable) Id for the GGCS instance to be provisioned.
+	// (Updatable) Id for the GenAi instance to be provisioned.
 	InstanceId string `pulumi:"instanceId"`
 	// Region on which the cluster end endpoint will be provisioned.
 	OciRegion string `pulumi:"ociRegion"`
@@ -3621,7 +3736,7 @@ type DifStackGenaiArgs struct {
 	ClusterType pulumi.StringInput `pulumi:"clusterType"`
 	// (Updatable) List of endpoints to provision for the GENAI cluster.
 	Endpoints DifStackGenaiEndpointArrayInput `pulumi:"endpoints"`
-	// (Updatable) Id for the GGCS instance to be provisioned.
+	// (Updatable) Id for the GenAi instance to be provisioned.
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// Region on which the cluster end endpoint will be provisioned.
 	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
@@ -3695,7 +3810,7 @@ func (o DifStackGenaiOutput) Endpoints() DifStackGenaiEndpointArrayOutput {
 	return o.ApplyT(func(v DifStackGenai) []DifStackGenaiEndpoint { return v.Endpoints }).(DifStackGenaiEndpointArrayOutput)
 }
 
-// (Updatable) Id for the GGCS instance to be provisioned.
+// (Updatable) Id for the GenAi instance to be provisioned.
 func (o DifStackGenaiOutput) InstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v DifStackGenai) string { return v.InstanceId }).(pulumi.StringOutput)
 }
@@ -4755,6 +4870,965 @@ func (o DifStackObjectstorageArrayOutput) Index(i pulumi.IntInput) DifStackObjec
 	}).(DifStackObjectstorageOutput)
 }
 
+type DifStackOke struct {
+	// OCID of existing OKE cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// Component overrides for stack specific parameters applied during artifact template rendering.
+	ComponentValueOverrides []DifStackOkeComponentValueOverride `pulumi:"componentValueOverrides"`
+	// Unique identifier for an oke instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Object storage path for the deployment manifest.
+	ManifestObjectStoragePath *string `pulumi:"manifestObjectStoragePath"`
+	// Kubernetes namespace-name of OKE cluster.
+	NamespaceName string `pulumi:"namespaceName"`
+	// List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+	Secrets []DifStackOkeSecret `pulumi:"secrets"`
+}
+
+// DifStackOkeInput is an input type that accepts DifStackOkeArgs and DifStackOkeOutput values.
+// You can construct a concrete instance of `DifStackOkeInput` via:
+//
+//	DifStackOkeArgs{...}
+type DifStackOkeInput interface {
+	pulumi.Input
+
+	ToDifStackOkeOutput() DifStackOkeOutput
+	ToDifStackOkeOutputWithContext(context.Context) DifStackOkeOutput
+}
+
+type DifStackOkeArgs struct {
+	// OCID of existing OKE cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// Component overrides for stack specific parameters applied during artifact template rendering.
+	ComponentValueOverrides DifStackOkeComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// Unique identifier for an oke instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Object storage path for the deployment manifest.
+	ManifestObjectStoragePath pulumi.StringPtrInput `pulumi:"manifestObjectStoragePath"`
+	// Kubernetes namespace-name of OKE cluster.
+	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	// List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+	Secrets DifStackOkeSecretArrayInput `pulumi:"secrets"`
+}
+
+func (DifStackOkeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOke)(nil)).Elem()
+}
+
+func (i DifStackOkeArgs) ToDifStackOkeOutput() DifStackOkeOutput {
+	return i.ToDifStackOkeOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeArgs) ToDifStackOkeOutputWithContext(ctx context.Context) DifStackOkeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeOutput)
+}
+
+// DifStackOkeArrayInput is an input type that accepts DifStackOkeArray and DifStackOkeArrayOutput values.
+// You can construct a concrete instance of `DifStackOkeArrayInput` via:
+//
+//	DifStackOkeArray{ DifStackOkeArgs{...} }
+type DifStackOkeArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOkeArrayOutput() DifStackOkeArrayOutput
+	ToDifStackOkeArrayOutputWithContext(context.Context) DifStackOkeArrayOutput
+}
+
+type DifStackOkeArray []DifStackOkeInput
+
+func (DifStackOkeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOke)(nil)).Elem()
+}
+
+func (i DifStackOkeArray) ToDifStackOkeArrayOutput() DifStackOkeArrayOutput {
+	return i.ToDifStackOkeArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeArray) ToDifStackOkeArrayOutputWithContext(ctx context.Context) DifStackOkeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeArrayOutput)
+}
+
+type DifStackOkeOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOke)(nil)).Elem()
+}
+
+func (o DifStackOkeOutput) ToDifStackOkeOutput() DifStackOkeOutput {
+	return o
+}
+
+func (o DifStackOkeOutput) ToDifStackOkeOutputWithContext(ctx context.Context) DifStackOkeOutput {
+	return o
+}
+
+// OCID of existing OKE cluster.
+func (o DifStackOkeOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOke) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// Component overrides for stack specific parameters applied during artifact template rendering.
+func (o DifStackOkeOutput) ComponentValueOverrides() DifStackOkeComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v DifStackOke) []DifStackOkeComponentValueOverride { return v.ComponentValueOverrides }).(DifStackOkeComponentValueOverrideArrayOutput)
+}
+
+// Unique identifier for an oke instance.
+func (o DifStackOkeOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOke) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Object storage path for the deployment manifest.
+func (o DifStackOkeOutput) ManifestObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackOke) *string { return v.ManifestObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes namespace-name of OKE cluster.
+func (o DifStackOkeOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOke) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+// List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+func (o DifStackOkeOutput) Secrets() DifStackOkeSecretArrayOutput {
+	return o.ApplyT(func(v DifStackOke) []DifStackOkeSecret { return v.Secrets }).(DifStackOkeSecretArrayOutput)
+}
+
+type DifStackOkeArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOke)(nil)).Elem()
+}
+
+func (o DifStackOkeArrayOutput) ToDifStackOkeArrayOutput() DifStackOkeArrayOutput {
+	return o
+}
+
+func (o DifStackOkeArrayOutput) ToDifStackOkeArrayOutputWithContext(ctx context.Context) DifStackOkeArrayOutput {
+	return o
+}
+
+func (o DifStackOkeArrayOutput) Index(i pulumi.IntInput) DifStackOkeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOke {
+		return vs[0].([]DifStackOke)[vs[1].(int)]
+	}).(DifStackOkeOutput)
+}
+
+type DifStackOkeComponentValueOverride struct {
+	// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+	ComponentName string `pulumi:"componentName"`
+	// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+	// Used for overriding the values in value.yaml artifact of the component.
+	// Example: `{"WORKER_THREADS": "8"}`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// DifStackOkeComponentValueOverrideInput is an input type that accepts DifStackOkeComponentValueOverrideArgs and DifStackOkeComponentValueOverrideOutput values.
+// You can construct a concrete instance of `DifStackOkeComponentValueOverrideInput` via:
+//
+//	DifStackOkeComponentValueOverrideArgs{...}
+type DifStackOkeComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToDifStackOkeComponentValueOverrideOutput() DifStackOkeComponentValueOverrideOutput
+	ToDifStackOkeComponentValueOverrideOutputWithContext(context.Context) DifStackOkeComponentValueOverrideOutput
+}
+
+type DifStackOkeComponentValueOverrideArgs struct {
+	// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+	// Used for overriding the values in value.yaml artifact of the component.
+	// Example: `{"WORKER_THREADS": "8"}`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (DifStackOkeComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i DifStackOkeComponentValueOverrideArgs) ToDifStackOkeComponentValueOverrideOutput() DifStackOkeComponentValueOverrideOutput {
+	return i.ToDifStackOkeComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeComponentValueOverrideArgs) ToDifStackOkeComponentValueOverrideOutputWithContext(ctx context.Context) DifStackOkeComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeComponentValueOverrideOutput)
+}
+
+// DifStackOkeComponentValueOverrideArrayInput is an input type that accepts DifStackOkeComponentValueOverrideArray and DifStackOkeComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `DifStackOkeComponentValueOverrideArrayInput` via:
+//
+//	DifStackOkeComponentValueOverrideArray{ DifStackOkeComponentValueOverrideArgs{...} }
+type DifStackOkeComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOkeComponentValueOverrideArrayOutput() DifStackOkeComponentValueOverrideArrayOutput
+	ToDifStackOkeComponentValueOverrideArrayOutputWithContext(context.Context) DifStackOkeComponentValueOverrideArrayOutput
+}
+
+type DifStackOkeComponentValueOverrideArray []DifStackOkeComponentValueOverrideInput
+
+func (DifStackOkeComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i DifStackOkeComponentValueOverrideArray) ToDifStackOkeComponentValueOverrideArrayOutput() DifStackOkeComponentValueOverrideArrayOutput {
+	return i.ToDifStackOkeComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeComponentValueOverrideArray) ToDifStackOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) DifStackOkeComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeComponentValueOverrideArrayOutput)
+}
+
+type DifStackOkeComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o DifStackOkeComponentValueOverrideOutput) ToDifStackOkeComponentValueOverrideOutput() DifStackOkeComponentValueOverrideOutput {
+	return o
+}
+
+func (o DifStackOkeComponentValueOverrideOutput) ToDifStackOkeComponentValueOverrideOutputWithContext(ctx context.Context) DifStackOkeComponentValueOverrideOutput {
+	return o
+}
+
+// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+func (o DifStackOkeComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOkeComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+// Used for overriding the values in value.yaml artifact of the component.
+// Example: `{"WORKER_THREADS": "8"}`
+func (o DifStackOkeComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DifStackOkeComponentValueOverride) map[string]string { return v.ValueOverrides }).(pulumi.StringMapOutput)
+}
+
+type DifStackOkeComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o DifStackOkeComponentValueOverrideArrayOutput) ToDifStackOkeComponentValueOverrideArrayOutput() DifStackOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o DifStackOkeComponentValueOverrideArrayOutput) ToDifStackOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) DifStackOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o DifStackOkeComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) DifStackOkeComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOkeComponentValueOverride {
+		return vs[0].([]DifStackOkeComponentValueOverride)[vs[1].(int)]
+	}).(DifStackOkeComponentValueOverrideOutput)
+}
+
+type DifStackOkeSecret struct {
+	// List of kubernetes secret data.
+	SecretDatas []DifStackOkeSecretSecretData `pulumi:"secretDatas"`
+	// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+	SecretName string `pulumi:"secretName"`
+	// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+	TemplateObjectStoragePath *string `pulumi:"templateObjectStoragePath"`
+}
+
+// DifStackOkeSecretInput is an input type that accepts DifStackOkeSecretArgs and DifStackOkeSecretOutput values.
+// You can construct a concrete instance of `DifStackOkeSecretInput` via:
+//
+//	DifStackOkeSecretArgs{...}
+type DifStackOkeSecretInput interface {
+	pulumi.Input
+
+	ToDifStackOkeSecretOutput() DifStackOkeSecretOutput
+	ToDifStackOkeSecretOutputWithContext(context.Context) DifStackOkeSecretOutput
+}
+
+type DifStackOkeSecretArgs struct {
+	// List of kubernetes secret data.
+	SecretDatas DifStackOkeSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+	SecretName pulumi.StringInput `pulumi:"secretName"`
+	// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+	TemplateObjectStoragePath pulumi.StringPtrInput `pulumi:"templateObjectStoragePath"`
+}
+
+func (DifStackOkeSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeSecret)(nil)).Elem()
+}
+
+func (i DifStackOkeSecretArgs) ToDifStackOkeSecretOutput() DifStackOkeSecretOutput {
+	return i.ToDifStackOkeSecretOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeSecretArgs) ToDifStackOkeSecretOutputWithContext(ctx context.Context) DifStackOkeSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeSecretOutput)
+}
+
+// DifStackOkeSecretArrayInput is an input type that accepts DifStackOkeSecretArray and DifStackOkeSecretArrayOutput values.
+// You can construct a concrete instance of `DifStackOkeSecretArrayInput` via:
+//
+//	DifStackOkeSecretArray{ DifStackOkeSecretArgs{...} }
+type DifStackOkeSecretArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOkeSecretArrayOutput() DifStackOkeSecretArrayOutput
+	ToDifStackOkeSecretArrayOutputWithContext(context.Context) DifStackOkeSecretArrayOutput
+}
+
+type DifStackOkeSecretArray []DifStackOkeSecretInput
+
+func (DifStackOkeSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeSecret)(nil)).Elem()
+}
+
+func (i DifStackOkeSecretArray) ToDifStackOkeSecretArrayOutput() DifStackOkeSecretArrayOutput {
+	return i.ToDifStackOkeSecretArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeSecretArray) ToDifStackOkeSecretArrayOutputWithContext(ctx context.Context) DifStackOkeSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeSecretArrayOutput)
+}
+
+type DifStackOkeSecretOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeSecret)(nil)).Elem()
+}
+
+func (o DifStackOkeSecretOutput) ToDifStackOkeSecretOutput() DifStackOkeSecretOutput {
+	return o
+}
+
+func (o DifStackOkeSecretOutput) ToDifStackOkeSecretOutputWithContext(ctx context.Context) DifStackOkeSecretOutput {
+	return o
+}
+
+// List of kubernetes secret data.
+func (o DifStackOkeSecretOutput) SecretDatas() DifStackOkeSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v DifStackOkeSecret) []DifStackOkeSecretSecretData { return v.SecretDatas }).(DifStackOkeSecretSecretDataArrayOutput)
+}
+
+// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+func (o DifStackOkeSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOkeSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+func (o DifStackOkeSecretOutput) TemplateObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackOkeSecret) *string { return v.TemplateObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+type DifStackOkeSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeSecret)(nil)).Elem()
+}
+
+func (o DifStackOkeSecretArrayOutput) ToDifStackOkeSecretArrayOutput() DifStackOkeSecretArrayOutput {
+	return o
+}
+
+func (o DifStackOkeSecretArrayOutput) ToDifStackOkeSecretArrayOutputWithContext(ctx context.Context) DifStackOkeSecretArrayOutput {
+	return o
+}
+
+func (o DifStackOkeSecretArrayOutput) Index(i pulumi.IntInput) DifStackOkeSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOkeSecret {
+		return vs[0].([]DifStackOkeSecret)[vs[1].(int)]
+	}).(DifStackOkeSecretOutput)
+}
+
+type DifStackOkeSecretSecretData struct {
+	// Data key in the kubernetes secret.
+	Key string `pulumi:"key"`
+	// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+	SecretId string `pulumi:"secretId"`
+}
+
+// DifStackOkeSecretSecretDataInput is an input type that accepts DifStackOkeSecretSecretDataArgs and DifStackOkeSecretSecretDataOutput values.
+// You can construct a concrete instance of `DifStackOkeSecretSecretDataInput` via:
+//
+//	DifStackOkeSecretSecretDataArgs{...}
+type DifStackOkeSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToDifStackOkeSecretSecretDataOutput() DifStackOkeSecretSecretDataOutput
+	ToDifStackOkeSecretSecretDataOutputWithContext(context.Context) DifStackOkeSecretSecretDataOutput
+}
+
+type DifStackOkeSecretSecretDataArgs struct {
+	// Data key in the kubernetes secret.
+	Key pulumi.StringInput `pulumi:"key"`
+	// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (DifStackOkeSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i DifStackOkeSecretSecretDataArgs) ToDifStackOkeSecretSecretDataOutput() DifStackOkeSecretSecretDataOutput {
+	return i.ToDifStackOkeSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeSecretSecretDataArgs) ToDifStackOkeSecretSecretDataOutputWithContext(ctx context.Context) DifStackOkeSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeSecretSecretDataOutput)
+}
+
+// DifStackOkeSecretSecretDataArrayInput is an input type that accepts DifStackOkeSecretSecretDataArray and DifStackOkeSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `DifStackOkeSecretSecretDataArrayInput` via:
+//
+//	DifStackOkeSecretSecretDataArray{ DifStackOkeSecretSecretDataArgs{...} }
+type DifStackOkeSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOkeSecretSecretDataArrayOutput() DifStackOkeSecretSecretDataArrayOutput
+	ToDifStackOkeSecretSecretDataArrayOutputWithContext(context.Context) DifStackOkeSecretSecretDataArrayOutput
+}
+
+type DifStackOkeSecretSecretDataArray []DifStackOkeSecretSecretDataInput
+
+func (DifStackOkeSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i DifStackOkeSecretSecretDataArray) ToDifStackOkeSecretSecretDataArrayOutput() DifStackOkeSecretSecretDataArrayOutput {
+	return i.ToDifStackOkeSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOkeSecretSecretDataArray) ToDifStackOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) DifStackOkeSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOkeSecretSecretDataArrayOutput)
+}
+
+type DifStackOkeSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o DifStackOkeSecretSecretDataOutput) ToDifStackOkeSecretSecretDataOutput() DifStackOkeSecretSecretDataOutput {
+	return o
+}
+
+func (o DifStackOkeSecretSecretDataOutput) ToDifStackOkeSecretSecretDataOutputWithContext(ctx context.Context) DifStackOkeSecretSecretDataOutput {
+	return o
+}
+
+// Data key in the kubernetes secret.
+func (o DifStackOkeSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOkeSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+func (o DifStackOkeSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOkeSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type DifStackOkeSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOkeSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o DifStackOkeSecretSecretDataArrayOutput) ToDifStackOkeSecretSecretDataArrayOutput() DifStackOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o DifStackOkeSecretSecretDataArrayOutput) ToDifStackOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) DifStackOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o DifStackOkeSecretSecretDataArrayOutput) Index(i pulumi.IntInput) DifStackOkeSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOkeSecretSecretData {
+		return vs[0].([]DifStackOkeSecretSecretData)[vs[1].(int)]
+	}).(DifStackOkeSecretSecretDataOutput)
+}
+
+type DifStackOmk struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId string `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId string `pulumi:"clusterNamespaceId"`
+	// Component overrides for stack specific parameters applied during artifact template rendering.
+	ComponentValueOverrides []DifStackOmkComponentValueOverride `pulumi:"componentValueOverrides"`
+	// Unique identifier for an omk instance.
+	InstanceId string `pulumi:"instanceId"`
+	// Object storage path for the deployment manifest.
+	ManifestObjectStoragePath *string `pulumi:"manifestObjectStoragePath"`
+	// Kubernetes namespace-name of OMK cluster-namespace.
+	NamespaceName string `pulumi:"namespaceName"`
+	// List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+	Secrets []DifStackOmkSecret `pulumi:"secrets"`
+}
+
+// DifStackOmkInput is an input type that accepts DifStackOmkArgs and DifStackOmkOutput values.
+// You can construct a concrete instance of `DifStackOmkInput` via:
+//
+//	DifStackOmkArgs{...}
+type DifStackOmkInput interface {
+	pulumi.Input
+
+	ToDifStackOmkOutput() DifStackOmkOutput
+	ToDifStackOmkOutputWithContext(context.Context) DifStackOmkOutput
+}
+
+type DifStackOmkArgs struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId pulumi.StringInput `pulumi:"clusterNamespaceId"`
+	// Component overrides for stack specific parameters applied during artifact template rendering.
+	ComponentValueOverrides DifStackOmkComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// Unique identifier for an omk instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+	// Object storage path for the deployment manifest.
+	ManifestObjectStoragePath pulumi.StringPtrInput `pulumi:"manifestObjectStoragePath"`
+	// Kubernetes namespace-name of OMK cluster-namespace.
+	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
+	// List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+	Secrets DifStackOmkSecretArrayInput `pulumi:"secrets"`
+}
+
+func (DifStackOmkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmk)(nil)).Elem()
+}
+
+func (i DifStackOmkArgs) ToDifStackOmkOutput() DifStackOmkOutput {
+	return i.ToDifStackOmkOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkArgs) ToDifStackOmkOutputWithContext(ctx context.Context) DifStackOmkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkOutput)
+}
+
+// DifStackOmkArrayInput is an input type that accepts DifStackOmkArray and DifStackOmkArrayOutput values.
+// You can construct a concrete instance of `DifStackOmkArrayInput` via:
+//
+//	DifStackOmkArray{ DifStackOmkArgs{...} }
+type DifStackOmkArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOmkArrayOutput() DifStackOmkArrayOutput
+	ToDifStackOmkArrayOutputWithContext(context.Context) DifStackOmkArrayOutput
+}
+
+type DifStackOmkArray []DifStackOmkInput
+
+func (DifStackOmkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmk)(nil)).Elem()
+}
+
+func (i DifStackOmkArray) ToDifStackOmkArrayOutput() DifStackOmkArrayOutput {
+	return i.ToDifStackOmkArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkArray) ToDifStackOmkArrayOutputWithContext(ctx context.Context) DifStackOmkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkArrayOutput)
+}
+
+type DifStackOmkOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmk)(nil)).Elem()
+}
+
+func (o DifStackOmkOutput) ToDifStackOmkOutput() DifStackOmkOutput {
+	return o
+}
+
+func (o DifStackOmkOutput) ToDifStackOmkOutputWithContext(ctx context.Context) DifStackOmkOutput {
+	return o
+}
+
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o DifStackOmkOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmk) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// OCID of existing OMK cluster-namespace.
+func (o DifStackOmkOutput) ClusterNamespaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmk) string { return v.ClusterNamespaceId }).(pulumi.StringOutput)
+}
+
+// Component overrides for stack specific parameters applied during artifact template rendering.
+func (o DifStackOmkOutput) ComponentValueOverrides() DifStackOmkComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v DifStackOmk) []DifStackOmkComponentValueOverride { return v.ComponentValueOverrides }).(DifStackOmkComponentValueOverrideArrayOutput)
+}
+
+// Unique identifier for an omk instance.
+func (o DifStackOmkOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmk) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+// Object storage path for the deployment manifest.
+func (o DifStackOmkOutput) ManifestObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackOmk) *string { return v.ManifestObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes namespace-name of OMK cluster-namespace.
+func (o DifStackOmkOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmk) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+// List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+func (o DifStackOmkOutput) Secrets() DifStackOmkSecretArrayOutput {
+	return o.ApplyT(func(v DifStackOmk) []DifStackOmkSecret { return v.Secrets }).(DifStackOmkSecretArrayOutput)
+}
+
+type DifStackOmkArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmk)(nil)).Elem()
+}
+
+func (o DifStackOmkArrayOutput) ToDifStackOmkArrayOutput() DifStackOmkArrayOutput {
+	return o
+}
+
+func (o DifStackOmkArrayOutput) ToDifStackOmkArrayOutputWithContext(ctx context.Context) DifStackOmkArrayOutput {
+	return o
+}
+
+func (o DifStackOmkArrayOutput) Index(i pulumi.IntInput) DifStackOmkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOmk {
+		return vs[0].([]DifStackOmk)[vs[1].(int)]
+	}).(DifStackOmkOutput)
+}
+
+type DifStackOmkComponentValueOverride struct {
+	// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+	ComponentName string `pulumi:"componentName"`
+	// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+	// Used for overriding the values in value.yaml artifact of the component.
+	// Example: `{"WORKER_THREADS": "8"}`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// DifStackOmkComponentValueOverrideInput is an input type that accepts DifStackOmkComponentValueOverrideArgs and DifStackOmkComponentValueOverrideOutput values.
+// You can construct a concrete instance of `DifStackOmkComponentValueOverrideInput` via:
+//
+//	DifStackOmkComponentValueOverrideArgs{...}
+type DifStackOmkComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToDifStackOmkComponentValueOverrideOutput() DifStackOmkComponentValueOverrideOutput
+	ToDifStackOmkComponentValueOverrideOutputWithContext(context.Context) DifStackOmkComponentValueOverrideOutput
+}
+
+type DifStackOmkComponentValueOverrideArgs struct {
+	// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+	ComponentName pulumi.StringInput `pulumi:"componentName"`
+	// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+	// Used for overriding the values in value.yaml artifact of the component.
+	// Example: `{"WORKER_THREADS": "8"}`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (DifStackOmkComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i DifStackOmkComponentValueOverrideArgs) ToDifStackOmkComponentValueOverrideOutput() DifStackOmkComponentValueOverrideOutput {
+	return i.ToDifStackOmkComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkComponentValueOverrideArgs) ToDifStackOmkComponentValueOverrideOutputWithContext(ctx context.Context) DifStackOmkComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkComponentValueOverrideOutput)
+}
+
+// DifStackOmkComponentValueOverrideArrayInput is an input type that accepts DifStackOmkComponentValueOverrideArray and DifStackOmkComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `DifStackOmkComponentValueOverrideArrayInput` via:
+//
+//	DifStackOmkComponentValueOverrideArray{ DifStackOmkComponentValueOverrideArgs{...} }
+type DifStackOmkComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOmkComponentValueOverrideArrayOutput() DifStackOmkComponentValueOverrideArrayOutput
+	ToDifStackOmkComponentValueOverrideArrayOutputWithContext(context.Context) DifStackOmkComponentValueOverrideArrayOutput
+}
+
+type DifStackOmkComponentValueOverrideArray []DifStackOmkComponentValueOverrideInput
+
+func (DifStackOmkComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i DifStackOmkComponentValueOverrideArray) ToDifStackOmkComponentValueOverrideArrayOutput() DifStackOmkComponentValueOverrideArrayOutput {
+	return i.ToDifStackOmkComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkComponentValueOverrideArray) ToDifStackOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) DifStackOmkComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkComponentValueOverrideArrayOutput)
+}
+
+type DifStackOmkComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o DifStackOmkComponentValueOverrideOutput) ToDifStackOmkComponentValueOverrideOutput() DifStackOmkComponentValueOverrideOutput {
+	return o
+}
+
+func (o DifStackOmkComponentValueOverrideOutput) ToDifStackOmkComponentValueOverrideOutputWithContext(ctx context.Context) DifStackOmkComponentValueOverrideOutput {
+	return o
+}
+
+// Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+func (o DifStackOmkComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmkComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+// Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+// Used for overriding the values in value.yaml artifact of the component.
+// Example: `{"WORKER_THREADS": "8"}`
+func (o DifStackOmkComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DifStackOmkComponentValueOverride) map[string]string { return v.ValueOverrides }).(pulumi.StringMapOutput)
+}
+
+type DifStackOmkComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o DifStackOmkComponentValueOverrideArrayOutput) ToDifStackOmkComponentValueOverrideArrayOutput() DifStackOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o DifStackOmkComponentValueOverrideArrayOutput) ToDifStackOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) DifStackOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o DifStackOmkComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) DifStackOmkComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOmkComponentValueOverride {
+		return vs[0].([]DifStackOmkComponentValueOverride)[vs[1].(int)]
+	}).(DifStackOmkComponentValueOverrideOutput)
+}
+
+type DifStackOmkSecret struct {
+	// List of kubernetes secret data.
+	SecretDatas []DifStackOmkSecretSecretData `pulumi:"secretDatas"`
+	// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+	SecretName string `pulumi:"secretName"`
+	// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+	TemplateObjectStoragePath *string `pulumi:"templateObjectStoragePath"`
+}
+
+// DifStackOmkSecretInput is an input type that accepts DifStackOmkSecretArgs and DifStackOmkSecretOutput values.
+// You can construct a concrete instance of `DifStackOmkSecretInput` via:
+//
+//	DifStackOmkSecretArgs{...}
+type DifStackOmkSecretInput interface {
+	pulumi.Input
+
+	ToDifStackOmkSecretOutput() DifStackOmkSecretOutput
+	ToDifStackOmkSecretOutputWithContext(context.Context) DifStackOmkSecretOutput
+}
+
+type DifStackOmkSecretArgs struct {
+	// List of kubernetes secret data.
+	SecretDatas DifStackOmkSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+	SecretName pulumi.StringInput `pulumi:"secretName"`
+	// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+	TemplateObjectStoragePath pulumi.StringPtrInput `pulumi:"templateObjectStoragePath"`
+}
+
+func (DifStackOmkSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkSecret)(nil)).Elem()
+}
+
+func (i DifStackOmkSecretArgs) ToDifStackOmkSecretOutput() DifStackOmkSecretOutput {
+	return i.ToDifStackOmkSecretOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkSecretArgs) ToDifStackOmkSecretOutputWithContext(ctx context.Context) DifStackOmkSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkSecretOutput)
+}
+
+// DifStackOmkSecretArrayInput is an input type that accepts DifStackOmkSecretArray and DifStackOmkSecretArrayOutput values.
+// You can construct a concrete instance of `DifStackOmkSecretArrayInput` via:
+//
+//	DifStackOmkSecretArray{ DifStackOmkSecretArgs{...} }
+type DifStackOmkSecretArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOmkSecretArrayOutput() DifStackOmkSecretArrayOutput
+	ToDifStackOmkSecretArrayOutputWithContext(context.Context) DifStackOmkSecretArrayOutput
+}
+
+type DifStackOmkSecretArray []DifStackOmkSecretInput
+
+func (DifStackOmkSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkSecret)(nil)).Elem()
+}
+
+func (i DifStackOmkSecretArray) ToDifStackOmkSecretArrayOutput() DifStackOmkSecretArrayOutput {
+	return i.ToDifStackOmkSecretArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkSecretArray) ToDifStackOmkSecretArrayOutputWithContext(ctx context.Context) DifStackOmkSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkSecretArrayOutput)
+}
+
+type DifStackOmkSecretOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkSecret)(nil)).Elem()
+}
+
+func (o DifStackOmkSecretOutput) ToDifStackOmkSecretOutput() DifStackOmkSecretOutput {
+	return o
+}
+
+func (o DifStackOmkSecretOutput) ToDifStackOmkSecretOutputWithContext(ctx context.Context) DifStackOmkSecretOutput {
+	return o
+}
+
+// List of kubernetes secret data.
+func (o DifStackOmkSecretOutput) SecretDatas() DifStackOmkSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v DifStackOmkSecret) []DifStackOmkSecretSecretData { return v.SecretDatas }).(DifStackOmkSecretSecretDataArrayOutput)
+}
+
+// Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+func (o DifStackOmkSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmkSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+// Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+func (o DifStackOmkSecretOutput) TemplateObjectStoragePath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackOmkSecret) *string { return v.TemplateObjectStoragePath }).(pulumi.StringPtrOutput)
+}
+
+type DifStackOmkSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkSecret)(nil)).Elem()
+}
+
+func (o DifStackOmkSecretArrayOutput) ToDifStackOmkSecretArrayOutput() DifStackOmkSecretArrayOutput {
+	return o
+}
+
+func (o DifStackOmkSecretArrayOutput) ToDifStackOmkSecretArrayOutputWithContext(ctx context.Context) DifStackOmkSecretArrayOutput {
+	return o
+}
+
+func (o DifStackOmkSecretArrayOutput) Index(i pulumi.IntInput) DifStackOmkSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOmkSecret {
+		return vs[0].([]DifStackOmkSecret)[vs[1].(int)]
+	}).(DifStackOmkSecretOutput)
+}
+
+type DifStackOmkSecretSecretData struct {
+	// Data key in the kubernetes secret.
+	Key string `pulumi:"key"`
+	// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+	SecretId string `pulumi:"secretId"`
+}
+
+// DifStackOmkSecretSecretDataInput is an input type that accepts DifStackOmkSecretSecretDataArgs and DifStackOmkSecretSecretDataOutput values.
+// You can construct a concrete instance of `DifStackOmkSecretSecretDataInput` via:
+//
+//	DifStackOmkSecretSecretDataArgs{...}
+type DifStackOmkSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToDifStackOmkSecretSecretDataOutput() DifStackOmkSecretSecretDataOutput
+	ToDifStackOmkSecretSecretDataOutputWithContext(context.Context) DifStackOmkSecretSecretDataOutput
+}
+
+type DifStackOmkSecretSecretDataArgs struct {
+	// Data key in the kubernetes secret.
+	Key pulumi.StringInput `pulumi:"key"`
+	// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (DifStackOmkSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i DifStackOmkSecretSecretDataArgs) ToDifStackOmkSecretSecretDataOutput() DifStackOmkSecretSecretDataOutput {
+	return i.ToDifStackOmkSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkSecretSecretDataArgs) ToDifStackOmkSecretSecretDataOutputWithContext(ctx context.Context) DifStackOmkSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkSecretSecretDataOutput)
+}
+
+// DifStackOmkSecretSecretDataArrayInput is an input type that accepts DifStackOmkSecretSecretDataArray and DifStackOmkSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `DifStackOmkSecretSecretDataArrayInput` via:
+//
+//	DifStackOmkSecretSecretDataArray{ DifStackOmkSecretSecretDataArgs{...} }
+type DifStackOmkSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToDifStackOmkSecretSecretDataArrayOutput() DifStackOmkSecretSecretDataArrayOutput
+	ToDifStackOmkSecretSecretDataArrayOutputWithContext(context.Context) DifStackOmkSecretSecretDataArrayOutput
+}
+
+type DifStackOmkSecretSecretDataArray []DifStackOmkSecretSecretDataInput
+
+func (DifStackOmkSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i DifStackOmkSecretSecretDataArray) ToDifStackOmkSecretSecretDataArrayOutput() DifStackOmkSecretSecretDataArrayOutput {
+	return i.ToDifStackOmkSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i DifStackOmkSecretSecretDataArray) ToDifStackOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) DifStackOmkSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DifStackOmkSecretSecretDataArrayOutput)
+}
+
+type DifStackOmkSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o DifStackOmkSecretSecretDataOutput) ToDifStackOmkSecretSecretDataOutput() DifStackOmkSecretSecretDataOutput {
+	return o
+}
+
+func (o DifStackOmkSecretSecretDataOutput) ToDifStackOmkSecretSecretDataOutputWithContext(ctx context.Context) DifStackOmkSecretSecretDataOutput {
+	return o
+}
+
+// Data key in the kubernetes secret.
+func (o DifStackOmkSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmkSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+func (o DifStackOmkSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DifStackOmkSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type DifStackOmkSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (DifStackOmkSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o DifStackOmkSecretSecretDataArrayOutput) ToDifStackOmkSecretSecretDataArrayOutput() DifStackOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o DifStackOmkSecretSecretDataArrayOutput) ToDifStackOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) DifStackOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o DifStackOmkSecretSecretDataArrayOutput) Index(i pulumi.IntInput) DifStackOmkSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DifStackOmkSecretSecretData {
+		return vs[0].([]DifStackOmkSecretSecretData)[vs[1].(int)]
+	}).(DifStackOmkSecretSecretDataOutput)
+}
+
 type DifStackServiceDetail struct {
 	// Additional details about the provisioned services
 	AdditionalDetails []DifStackServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
@@ -4918,12 +5992,16 @@ func (o DifStackServiceDetailArrayOutput) Index(i pulumi.IntInput) DifStackServi
 type DifStackServiceDetailAdditionalDetail struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections []DifStackServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId *string `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails []DifStackServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId *string `pulumi:"modelId"`
 	// version of model
 	ModelVersion *string `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace *string `pulumi:"namespace"`
 	// region of cluster
 	OciRegion *string `pulumi:"ociRegion"`
 	// OCID of model
@@ -4944,12 +6022,16 @@ type DifStackServiceDetailAdditionalDetailInput interface {
 type DifStackServiceDetailAdditionalDetailArgs struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections DifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails DifStackServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 	// version of model
 	ModelVersion pulumi.StringPtrInput `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// region of cluster
 	OciRegion pulumi.StringPtrInput `pulumi:"ociRegion"`
 	// OCID of model
@@ -5014,6 +6096,11 @@ func (o DifStackServiceDetailAdditionalDetailOutput) AssignedConnections() DifSt
 	}).(DifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
 }
 
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o DifStackServiceDetailAdditionalDetailOutput) ClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
+}
+
 // details of all endpoints assigned to cluster
 func (o DifStackServiceDetailAdditionalDetailOutput) EndpointDetails() DifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
 	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) []DifStackServiceDetailAdditionalDetailEndpointDetail {
@@ -5029,6 +6116,11 @@ func (o DifStackServiceDetailAdditionalDetailOutput) ModelId() pulumi.StringPtrO
 // version of model
 func (o DifStackServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.ModelVersion }).(pulumi.StringPtrOutput)
+}
+
+// Kubernetes namespace-name of omk cluster-namespace.
+func (o DifStackServiceDetailAdditionalDetailOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DifStackServiceDetailAdditionalDetail) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // region of cluster
@@ -6272,6 +7364,8 @@ func (o ManagedKafkaKafkaClusterAccessSubnetArrayOutput) Index(i pulumi.IntInput
 type ManagedKafkaKafkaClusterBrokerShape struct {
 	// (Updatable) Number of Kafka broker nodes
 	NodeCount int `pulumi:"nodeCount"`
+	// (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape *string `pulumi:"nodeShape"`
 	// (Updatable) Number of OCPUs per nodes
 	OcpuCount int `pulumi:"ocpuCount"`
 	// (Updatable) Size of the storage per nodes.
@@ -6292,6 +7386,8 @@ type ManagedKafkaKafkaClusterBrokerShapeInput interface {
 type ManagedKafkaKafkaClusterBrokerShapeArgs struct {
 	// (Updatable) Number of Kafka broker nodes
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape pulumi.StringPtrInput `pulumi:"nodeShape"`
 	// (Updatable) Number of OCPUs per nodes
 	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
 	// (Updatable) Size of the storage per nodes.
@@ -6380,6 +7476,11 @@ func (o ManagedKafkaKafkaClusterBrokerShapeOutput) NodeCount() pulumi.IntOutput 
 	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
 }
 
+// (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) NodeShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) *string { return v.NodeShape }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Number of OCPUs per nodes
 func (o ManagedKafkaKafkaClusterBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
@@ -6422,6 +7523,16 @@ func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) NodeCount() pulumi.IntPtrO
 		}
 		return &v.NodeCount
 	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) NodeShape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterBrokerShape) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeShape
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Number of OCPUs per nodes
@@ -22950,6 +24061,112 @@ func (o GetDifStackAdbDbCredentialArrayOutput) Index(i pulumi.IntInput) GetDifSt
 	}).(GetDifStackAdbDbCredentialOutput)
 }
 
+type GetDifStackAidataplatform struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName string `pulumi:"defaultWorkspaceName"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+}
+
+// GetDifStackAidataplatformInput is an input type that accepts GetDifStackAidataplatformArgs and GetDifStackAidataplatformOutput values.
+// You can construct a concrete instance of `GetDifStackAidataplatformInput` via:
+//
+//	GetDifStackAidataplatformArgs{...}
+type GetDifStackAidataplatformInput interface {
+	pulumi.Input
+
+	ToGetDifStackAidataplatformOutput() GetDifStackAidataplatformOutput
+	ToGetDifStackAidataplatformOutputWithContext(context.Context) GetDifStackAidataplatformOutput
+}
+
+type GetDifStackAidataplatformArgs struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName pulumi.StringInput `pulumi:"defaultWorkspaceName"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+}
+
+func (GetDifStackAidataplatformArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAidataplatform)(nil)).Elem()
+}
+
+func (i GetDifStackAidataplatformArgs) ToGetDifStackAidataplatformOutput() GetDifStackAidataplatformOutput {
+	return i.ToGetDifStackAidataplatformOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAidataplatformArgs) ToGetDifStackAidataplatformOutputWithContext(ctx context.Context) GetDifStackAidataplatformOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAidataplatformOutput)
+}
+
+// GetDifStackAidataplatformArrayInput is an input type that accepts GetDifStackAidataplatformArray and GetDifStackAidataplatformArrayOutput values.
+// You can construct a concrete instance of `GetDifStackAidataplatformArrayInput` via:
+//
+//	GetDifStackAidataplatformArray{ GetDifStackAidataplatformArgs{...} }
+type GetDifStackAidataplatformArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackAidataplatformArrayOutput() GetDifStackAidataplatformArrayOutput
+	ToGetDifStackAidataplatformArrayOutputWithContext(context.Context) GetDifStackAidataplatformArrayOutput
+}
+
+type GetDifStackAidataplatformArray []GetDifStackAidataplatformInput
+
+func (GetDifStackAidataplatformArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAidataplatform)(nil)).Elem()
+}
+
+func (i GetDifStackAidataplatformArray) ToGetDifStackAidataplatformArrayOutput() GetDifStackAidataplatformArrayOutput {
+	return i.ToGetDifStackAidataplatformArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackAidataplatformArray) ToGetDifStackAidataplatformArrayOutputWithContext(ctx context.Context) GetDifStackAidataplatformArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackAidataplatformArrayOutput)
+}
+
+type GetDifStackAidataplatformOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAidataplatformOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackAidataplatform)(nil)).Elem()
+}
+
+func (o GetDifStackAidataplatformOutput) ToGetDifStackAidataplatformOutput() GetDifStackAidataplatformOutput {
+	return o
+}
+
+func (o GetDifStackAidataplatformOutput) ToGetDifStackAidataplatformOutputWithContext(ctx context.Context) GetDifStackAidataplatformOutput {
+	return o
+}
+
+// A default workspace will be created with this name.
+func (o GetDifStackAidataplatformOutput) DefaultWorkspaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAidataplatform) string { return v.DefaultWorkspaceName }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackAidataplatformOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackAidataplatform) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+type GetDifStackAidataplatformArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackAidataplatformArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackAidataplatform)(nil)).Elem()
+}
+
+func (o GetDifStackAidataplatformArrayOutput) ToGetDifStackAidataplatformArrayOutput() GetDifStackAidataplatformArrayOutput {
+	return o
+}
+
+func (o GetDifStackAidataplatformArrayOutput) ToGetDifStackAidataplatformArrayOutputWithContext(ctx context.Context) GetDifStackAidataplatformArrayOutput {
+	return o
+}
+
+func (o GetDifStackAidataplatformArrayOutput) Index(i pulumi.IntInput) GetDifStackAidataplatformOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackAidataplatform {
+		return vs[0].([]GetDifStackAidataplatform)[vs[1].(int)]
+	}).(GetDifStackAidataplatformOutput)
+}
+
 type GetDifStackDataflow struct {
 	ArchiveUri string `pulumi:"archiveUri"`
 	// Connection details to be associated with the Goldengate deployment.
@@ -24808,6 +26025,887 @@ func (o GetDifStackObjectstorageArrayOutput) Index(i pulumi.IntInput) GetDifStac
 	}).(GetDifStackObjectstorageOutput)
 }
 
+type GetDifStackOke struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId               string                                 `pulumi:"clusterId"`
+	ComponentValueOverrides []GetDifStackOkeComponentValueOverride `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                string                 `pulumi:"instanceId"`
+	ManifestObjectStoragePath string                 `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             string                 `pulumi:"namespaceName"`
+	Secrets                   []GetDifStackOkeSecret `pulumi:"secrets"`
+}
+
+// GetDifStackOkeInput is an input type that accepts GetDifStackOkeArgs and GetDifStackOkeOutput values.
+// You can construct a concrete instance of `GetDifStackOkeInput` via:
+//
+//	GetDifStackOkeArgs{...}
+type GetDifStackOkeInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeOutput() GetDifStackOkeOutput
+	ToGetDifStackOkeOutputWithContext(context.Context) GetDifStackOkeOutput
+}
+
+type GetDifStackOkeArgs struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId               pulumi.StringInput                             `pulumi:"clusterId"`
+	ComponentValueOverrides GetDifStackOkeComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                pulumi.StringInput             `pulumi:"instanceId"`
+	ManifestObjectStoragePath pulumi.StringInput             `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             pulumi.StringInput             `pulumi:"namespaceName"`
+	Secrets                   GetDifStackOkeSecretArrayInput `pulumi:"secrets"`
+}
+
+func (GetDifStackOkeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOke)(nil)).Elem()
+}
+
+func (i GetDifStackOkeArgs) ToGetDifStackOkeOutput() GetDifStackOkeOutput {
+	return i.ToGetDifStackOkeOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeArgs) ToGetDifStackOkeOutputWithContext(ctx context.Context) GetDifStackOkeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeOutput)
+}
+
+// GetDifStackOkeArrayInput is an input type that accepts GetDifStackOkeArray and GetDifStackOkeArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOkeArrayInput` via:
+//
+//	GetDifStackOkeArray{ GetDifStackOkeArgs{...} }
+type GetDifStackOkeArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeArrayOutput() GetDifStackOkeArrayOutput
+	ToGetDifStackOkeArrayOutputWithContext(context.Context) GetDifStackOkeArrayOutput
+}
+
+type GetDifStackOkeArray []GetDifStackOkeInput
+
+func (GetDifStackOkeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOke)(nil)).Elem()
+}
+
+func (i GetDifStackOkeArray) ToGetDifStackOkeArrayOutput() GetDifStackOkeArrayOutput {
+	return i.ToGetDifStackOkeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeArray) ToGetDifStackOkeArrayOutputWithContext(ctx context.Context) GetDifStackOkeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeArrayOutput)
+}
+
+type GetDifStackOkeOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOke)(nil)).Elem()
+}
+
+func (o GetDifStackOkeOutput) ToGetDifStackOkeOutput() GetDifStackOkeOutput {
+	return o
+}
+
+func (o GetDifStackOkeOutput) ToGetDifStackOkeOutputWithContext(ctx context.Context) GetDifStackOkeOutput {
+	return o
+}
+
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStackOkeOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOke) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeOutput) ComponentValueOverrides() GetDifStackOkeComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v GetDifStackOke) []GetDifStackOkeComponentValueOverride { return v.ComponentValueOverrides }).(GetDifStackOkeComponentValueOverrideArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackOkeOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOke) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeOutput) ManifestObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOke) string { return v.ManifestObjectStoragePath }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOke) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeOutput) Secrets() GetDifStackOkeSecretArrayOutput {
+	return o.ApplyT(func(v GetDifStackOke) []GetDifStackOkeSecret { return v.Secrets }).(GetDifStackOkeSecretArrayOutput)
+}
+
+type GetDifStackOkeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOke)(nil)).Elem()
+}
+
+func (o GetDifStackOkeArrayOutput) ToGetDifStackOkeArrayOutput() GetDifStackOkeArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeArrayOutput) ToGetDifStackOkeArrayOutputWithContext(ctx context.Context) GetDifStackOkeArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeArrayOutput) Index(i pulumi.IntInput) GetDifStackOkeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOke {
+		return vs[0].([]GetDifStackOke)[vs[1].(int)]
+	}).(GetDifStackOkeOutput)
+}
+
+type GetDifStackOkeComponentValueOverride struct {
+	ComponentName  string            `pulumi:"componentName"`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// GetDifStackOkeComponentValueOverrideInput is an input type that accepts GetDifStackOkeComponentValueOverrideArgs and GetDifStackOkeComponentValueOverrideOutput values.
+// You can construct a concrete instance of `GetDifStackOkeComponentValueOverrideInput` via:
+//
+//	GetDifStackOkeComponentValueOverrideArgs{...}
+type GetDifStackOkeComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeComponentValueOverrideOutput() GetDifStackOkeComponentValueOverrideOutput
+	ToGetDifStackOkeComponentValueOverrideOutputWithContext(context.Context) GetDifStackOkeComponentValueOverrideOutput
+}
+
+type GetDifStackOkeComponentValueOverrideArgs struct {
+	ComponentName  pulumi.StringInput    `pulumi:"componentName"`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (GetDifStackOkeComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStackOkeComponentValueOverrideArgs) ToGetDifStackOkeComponentValueOverrideOutput() GetDifStackOkeComponentValueOverrideOutput {
+	return i.ToGetDifStackOkeComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeComponentValueOverrideArgs) ToGetDifStackOkeComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStackOkeComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeComponentValueOverrideOutput)
+}
+
+// GetDifStackOkeComponentValueOverrideArrayInput is an input type that accepts GetDifStackOkeComponentValueOverrideArray and GetDifStackOkeComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOkeComponentValueOverrideArrayInput` via:
+//
+//	GetDifStackOkeComponentValueOverrideArray{ GetDifStackOkeComponentValueOverrideArgs{...} }
+type GetDifStackOkeComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeComponentValueOverrideArrayOutput() GetDifStackOkeComponentValueOverrideArrayOutput
+	ToGetDifStackOkeComponentValueOverrideArrayOutputWithContext(context.Context) GetDifStackOkeComponentValueOverrideArrayOutput
+}
+
+type GetDifStackOkeComponentValueOverrideArray []GetDifStackOkeComponentValueOverrideInput
+
+func (GetDifStackOkeComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStackOkeComponentValueOverrideArray) ToGetDifStackOkeComponentValueOverrideArrayOutput() GetDifStackOkeComponentValueOverrideArrayOutput {
+	return i.ToGetDifStackOkeComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeComponentValueOverrideArray) ToGetDifStackOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStackOkeComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeComponentValueOverrideArrayOutput)
+}
+
+type GetDifStackOkeComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStackOkeComponentValueOverrideOutput) ToGetDifStackOkeComponentValueOverrideOutput() GetDifStackOkeComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStackOkeComponentValueOverrideOutput) ToGetDifStackOkeComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStackOkeComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStackOkeComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOkeComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStackOkeComponentValueOverride) map[string]string { return v.ValueOverrides }).(pulumi.StringMapOutput)
+}
+
+type GetDifStackOkeComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStackOkeComponentValueOverrideArrayOutput) ToGetDifStackOkeComponentValueOverrideArrayOutput() GetDifStackOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeComponentValueOverrideArrayOutput) ToGetDifStackOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStackOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) GetDifStackOkeComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOkeComponentValueOverride {
+		return vs[0].([]GetDifStackOkeComponentValueOverride)[vs[1].(int)]
+	}).(GetDifStackOkeComponentValueOverrideOutput)
+}
+
+type GetDifStackOkeSecret struct {
+	SecretDatas               []GetDifStackOkeSecretSecretData `pulumi:"secretDatas"`
+	SecretName                string                           `pulumi:"secretName"`
+	TemplateObjectStoragePath string                           `pulumi:"templateObjectStoragePath"`
+}
+
+// GetDifStackOkeSecretInput is an input type that accepts GetDifStackOkeSecretArgs and GetDifStackOkeSecretOutput values.
+// You can construct a concrete instance of `GetDifStackOkeSecretInput` via:
+//
+//	GetDifStackOkeSecretArgs{...}
+type GetDifStackOkeSecretInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeSecretOutput() GetDifStackOkeSecretOutput
+	ToGetDifStackOkeSecretOutputWithContext(context.Context) GetDifStackOkeSecretOutput
+}
+
+type GetDifStackOkeSecretArgs struct {
+	SecretDatas               GetDifStackOkeSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	SecretName                pulumi.StringInput                       `pulumi:"secretName"`
+	TemplateObjectStoragePath pulumi.StringInput                       `pulumi:"templateObjectStoragePath"`
+}
+
+func (GetDifStackOkeSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeSecret)(nil)).Elem()
+}
+
+func (i GetDifStackOkeSecretArgs) ToGetDifStackOkeSecretOutput() GetDifStackOkeSecretOutput {
+	return i.ToGetDifStackOkeSecretOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeSecretArgs) ToGetDifStackOkeSecretOutputWithContext(ctx context.Context) GetDifStackOkeSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeSecretOutput)
+}
+
+// GetDifStackOkeSecretArrayInput is an input type that accepts GetDifStackOkeSecretArray and GetDifStackOkeSecretArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOkeSecretArrayInput` via:
+//
+//	GetDifStackOkeSecretArray{ GetDifStackOkeSecretArgs{...} }
+type GetDifStackOkeSecretArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeSecretArrayOutput() GetDifStackOkeSecretArrayOutput
+	ToGetDifStackOkeSecretArrayOutputWithContext(context.Context) GetDifStackOkeSecretArrayOutput
+}
+
+type GetDifStackOkeSecretArray []GetDifStackOkeSecretInput
+
+func (GetDifStackOkeSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeSecret)(nil)).Elem()
+}
+
+func (i GetDifStackOkeSecretArray) ToGetDifStackOkeSecretArrayOutput() GetDifStackOkeSecretArrayOutput {
+	return i.ToGetDifStackOkeSecretArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeSecretArray) ToGetDifStackOkeSecretArrayOutputWithContext(ctx context.Context) GetDifStackOkeSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeSecretArrayOutput)
+}
+
+type GetDifStackOkeSecretOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeSecret)(nil)).Elem()
+}
+
+func (o GetDifStackOkeSecretOutput) ToGetDifStackOkeSecretOutput() GetDifStackOkeSecretOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretOutput) ToGetDifStackOkeSecretOutputWithContext(ctx context.Context) GetDifStackOkeSecretOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretOutput) SecretDatas() GetDifStackOkeSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v GetDifStackOkeSecret) []GetDifStackOkeSecretSecretData { return v.SecretDatas }).(GetDifStackOkeSecretSecretDataArrayOutput)
+}
+
+func (o GetDifStackOkeSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOkeSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeSecretOutput) TemplateObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOkeSecret) string { return v.TemplateObjectStoragePath }).(pulumi.StringOutput)
+}
+
+type GetDifStackOkeSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeSecret)(nil)).Elem()
+}
+
+func (o GetDifStackOkeSecretArrayOutput) ToGetDifStackOkeSecretArrayOutput() GetDifStackOkeSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretArrayOutput) ToGetDifStackOkeSecretArrayOutputWithContext(ctx context.Context) GetDifStackOkeSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretArrayOutput) Index(i pulumi.IntInput) GetDifStackOkeSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOkeSecret {
+		return vs[0].([]GetDifStackOkeSecret)[vs[1].(int)]
+	}).(GetDifStackOkeSecretOutput)
+}
+
+type GetDifStackOkeSecretSecretData struct {
+	Key      string `pulumi:"key"`
+	SecretId string `pulumi:"secretId"`
+}
+
+// GetDifStackOkeSecretSecretDataInput is an input type that accepts GetDifStackOkeSecretSecretDataArgs and GetDifStackOkeSecretSecretDataOutput values.
+// You can construct a concrete instance of `GetDifStackOkeSecretSecretDataInput` via:
+//
+//	GetDifStackOkeSecretSecretDataArgs{...}
+type GetDifStackOkeSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeSecretSecretDataOutput() GetDifStackOkeSecretSecretDataOutput
+	ToGetDifStackOkeSecretSecretDataOutputWithContext(context.Context) GetDifStackOkeSecretSecretDataOutput
+}
+
+type GetDifStackOkeSecretSecretDataArgs struct {
+	Key      pulumi.StringInput `pulumi:"key"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetDifStackOkeSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStackOkeSecretSecretDataArgs) ToGetDifStackOkeSecretSecretDataOutput() GetDifStackOkeSecretSecretDataOutput {
+	return i.ToGetDifStackOkeSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeSecretSecretDataArgs) ToGetDifStackOkeSecretSecretDataOutputWithContext(ctx context.Context) GetDifStackOkeSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeSecretSecretDataOutput)
+}
+
+// GetDifStackOkeSecretSecretDataArrayInput is an input type that accepts GetDifStackOkeSecretSecretDataArray and GetDifStackOkeSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOkeSecretSecretDataArrayInput` via:
+//
+//	GetDifStackOkeSecretSecretDataArray{ GetDifStackOkeSecretSecretDataArgs{...} }
+type GetDifStackOkeSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOkeSecretSecretDataArrayOutput() GetDifStackOkeSecretSecretDataArrayOutput
+	ToGetDifStackOkeSecretSecretDataArrayOutputWithContext(context.Context) GetDifStackOkeSecretSecretDataArrayOutput
+}
+
+type GetDifStackOkeSecretSecretDataArray []GetDifStackOkeSecretSecretDataInput
+
+func (GetDifStackOkeSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStackOkeSecretSecretDataArray) ToGetDifStackOkeSecretSecretDataArrayOutput() GetDifStackOkeSecretSecretDataArrayOutput {
+	return i.ToGetDifStackOkeSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOkeSecretSecretDataArray) ToGetDifStackOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStackOkeSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOkeSecretSecretDataArrayOutput)
+}
+
+type GetDifStackOkeSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStackOkeSecretSecretDataOutput) ToGetDifStackOkeSecretSecretDataOutput() GetDifStackOkeSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretSecretDataOutput) ToGetDifStackOkeSecretSecretDataOutputWithContext(ctx context.Context) GetDifStackOkeSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOkeSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOkeSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOkeSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStackOkeSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOkeSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStackOkeSecretSecretDataArrayOutput) ToGetDifStackOkeSecretSecretDataArrayOutput() GetDifStackOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretSecretDataArrayOutput) ToGetDifStackOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStackOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStackOkeSecretSecretDataArrayOutput) Index(i pulumi.IntInput) GetDifStackOkeSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOkeSecretSecretData {
+		return vs[0].([]GetDifStackOkeSecretSecretData)[vs[1].(int)]
+	}).(GetDifStackOkeSecretSecretDataOutput)
+}
+
+type GetDifStackOmk struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId string `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId      string                                 `pulumi:"clusterNamespaceId"`
+	ComponentValueOverrides []GetDifStackOmkComponentValueOverride `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                string                 `pulumi:"instanceId"`
+	ManifestObjectStoragePath string                 `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             string                 `pulumi:"namespaceName"`
+	Secrets                   []GetDifStackOmkSecret `pulumi:"secrets"`
+}
+
+// GetDifStackOmkInput is an input type that accepts GetDifStackOmkArgs and GetDifStackOmkOutput values.
+// You can construct a concrete instance of `GetDifStackOmkInput` via:
+//
+//	GetDifStackOmkArgs{...}
+type GetDifStackOmkInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkOutput() GetDifStackOmkOutput
+	ToGetDifStackOmkOutputWithContext(context.Context) GetDifStackOmkOutput
+}
+
+type GetDifStackOmkArgs struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId      pulumi.StringInput                             `pulumi:"clusterNamespaceId"`
+	ComponentValueOverrides GetDifStackOmkComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                pulumi.StringInput             `pulumi:"instanceId"`
+	ManifestObjectStoragePath pulumi.StringInput             `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             pulumi.StringInput             `pulumi:"namespaceName"`
+	Secrets                   GetDifStackOmkSecretArrayInput `pulumi:"secrets"`
+}
+
+func (GetDifStackOmkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmk)(nil)).Elem()
+}
+
+func (i GetDifStackOmkArgs) ToGetDifStackOmkOutput() GetDifStackOmkOutput {
+	return i.ToGetDifStackOmkOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkArgs) ToGetDifStackOmkOutputWithContext(ctx context.Context) GetDifStackOmkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkOutput)
+}
+
+// GetDifStackOmkArrayInput is an input type that accepts GetDifStackOmkArray and GetDifStackOmkArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOmkArrayInput` via:
+//
+//	GetDifStackOmkArray{ GetDifStackOmkArgs{...} }
+type GetDifStackOmkArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkArrayOutput() GetDifStackOmkArrayOutput
+	ToGetDifStackOmkArrayOutputWithContext(context.Context) GetDifStackOmkArrayOutput
+}
+
+type GetDifStackOmkArray []GetDifStackOmkInput
+
+func (GetDifStackOmkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmk)(nil)).Elem()
+}
+
+func (i GetDifStackOmkArray) ToGetDifStackOmkArrayOutput() GetDifStackOmkArrayOutput {
+	return i.ToGetDifStackOmkArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkArray) ToGetDifStackOmkArrayOutputWithContext(ctx context.Context) GetDifStackOmkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkArrayOutput)
+}
+
+type GetDifStackOmkOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmk)(nil)).Elem()
+}
+
+func (o GetDifStackOmkOutput) ToGetDifStackOmkOutput() GetDifStackOmkOutput {
+	return o
+}
+
+func (o GetDifStackOmkOutput) ToGetDifStackOmkOutputWithContext(ctx context.Context) GetDifStackOmkOutput {
+	return o
+}
+
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStackOmkOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmk) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// OCID of existing OMK cluster-namespace.
+func (o GetDifStackOmkOutput) ClusterNamespaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmk) string { return v.ClusterNamespaceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkOutput) ComponentValueOverrides() GetDifStackOmkComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v GetDifStackOmk) []GetDifStackOmkComponentValueOverride { return v.ComponentValueOverrides }).(GetDifStackOmkComponentValueOverrideArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStackOmkOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmk) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkOutput) ManifestObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmk) string { return v.ManifestObjectStoragePath }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmk) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkOutput) Secrets() GetDifStackOmkSecretArrayOutput {
+	return o.ApplyT(func(v GetDifStackOmk) []GetDifStackOmkSecret { return v.Secrets }).(GetDifStackOmkSecretArrayOutput)
+}
+
+type GetDifStackOmkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmk)(nil)).Elem()
+}
+
+func (o GetDifStackOmkArrayOutput) ToGetDifStackOmkArrayOutput() GetDifStackOmkArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkArrayOutput) ToGetDifStackOmkArrayOutputWithContext(ctx context.Context) GetDifStackOmkArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkArrayOutput) Index(i pulumi.IntInput) GetDifStackOmkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOmk {
+		return vs[0].([]GetDifStackOmk)[vs[1].(int)]
+	}).(GetDifStackOmkOutput)
+}
+
+type GetDifStackOmkComponentValueOverride struct {
+	ComponentName  string            `pulumi:"componentName"`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// GetDifStackOmkComponentValueOverrideInput is an input type that accepts GetDifStackOmkComponentValueOverrideArgs and GetDifStackOmkComponentValueOverrideOutput values.
+// You can construct a concrete instance of `GetDifStackOmkComponentValueOverrideInput` via:
+//
+//	GetDifStackOmkComponentValueOverrideArgs{...}
+type GetDifStackOmkComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkComponentValueOverrideOutput() GetDifStackOmkComponentValueOverrideOutput
+	ToGetDifStackOmkComponentValueOverrideOutputWithContext(context.Context) GetDifStackOmkComponentValueOverrideOutput
+}
+
+type GetDifStackOmkComponentValueOverrideArgs struct {
+	ComponentName  pulumi.StringInput    `pulumi:"componentName"`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (GetDifStackOmkComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStackOmkComponentValueOverrideArgs) ToGetDifStackOmkComponentValueOverrideOutput() GetDifStackOmkComponentValueOverrideOutput {
+	return i.ToGetDifStackOmkComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkComponentValueOverrideArgs) ToGetDifStackOmkComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStackOmkComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkComponentValueOverrideOutput)
+}
+
+// GetDifStackOmkComponentValueOverrideArrayInput is an input type that accepts GetDifStackOmkComponentValueOverrideArray and GetDifStackOmkComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOmkComponentValueOverrideArrayInput` via:
+//
+//	GetDifStackOmkComponentValueOverrideArray{ GetDifStackOmkComponentValueOverrideArgs{...} }
+type GetDifStackOmkComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkComponentValueOverrideArrayOutput() GetDifStackOmkComponentValueOverrideArrayOutput
+	ToGetDifStackOmkComponentValueOverrideArrayOutputWithContext(context.Context) GetDifStackOmkComponentValueOverrideArrayOutput
+}
+
+type GetDifStackOmkComponentValueOverrideArray []GetDifStackOmkComponentValueOverrideInput
+
+func (GetDifStackOmkComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStackOmkComponentValueOverrideArray) ToGetDifStackOmkComponentValueOverrideArrayOutput() GetDifStackOmkComponentValueOverrideArrayOutput {
+	return i.ToGetDifStackOmkComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkComponentValueOverrideArray) ToGetDifStackOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStackOmkComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkComponentValueOverrideArrayOutput)
+}
+
+type GetDifStackOmkComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStackOmkComponentValueOverrideOutput) ToGetDifStackOmkComponentValueOverrideOutput() GetDifStackOmkComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStackOmkComponentValueOverrideOutput) ToGetDifStackOmkComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStackOmkComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStackOmkComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmkComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStackOmkComponentValueOverride) map[string]string { return v.ValueOverrides }).(pulumi.StringMapOutput)
+}
+
+type GetDifStackOmkComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStackOmkComponentValueOverrideArrayOutput) ToGetDifStackOmkComponentValueOverrideArrayOutput() GetDifStackOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkComponentValueOverrideArrayOutput) ToGetDifStackOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStackOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) GetDifStackOmkComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOmkComponentValueOverride {
+		return vs[0].([]GetDifStackOmkComponentValueOverride)[vs[1].(int)]
+	}).(GetDifStackOmkComponentValueOverrideOutput)
+}
+
+type GetDifStackOmkSecret struct {
+	SecretDatas               []GetDifStackOmkSecretSecretData `pulumi:"secretDatas"`
+	SecretName                string                           `pulumi:"secretName"`
+	TemplateObjectStoragePath string                           `pulumi:"templateObjectStoragePath"`
+}
+
+// GetDifStackOmkSecretInput is an input type that accepts GetDifStackOmkSecretArgs and GetDifStackOmkSecretOutput values.
+// You can construct a concrete instance of `GetDifStackOmkSecretInput` via:
+//
+//	GetDifStackOmkSecretArgs{...}
+type GetDifStackOmkSecretInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkSecretOutput() GetDifStackOmkSecretOutput
+	ToGetDifStackOmkSecretOutputWithContext(context.Context) GetDifStackOmkSecretOutput
+}
+
+type GetDifStackOmkSecretArgs struct {
+	SecretDatas               GetDifStackOmkSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	SecretName                pulumi.StringInput                       `pulumi:"secretName"`
+	TemplateObjectStoragePath pulumi.StringInput                       `pulumi:"templateObjectStoragePath"`
+}
+
+func (GetDifStackOmkSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkSecret)(nil)).Elem()
+}
+
+func (i GetDifStackOmkSecretArgs) ToGetDifStackOmkSecretOutput() GetDifStackOmkSecretOutput {
+	return i.ToGetDifStackOmkSecretOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkSecretArgs) ToGetDifStackOmkSecretOutputWithContext(ctx context.Context) GetDifStackOmkSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkSecretOutput)
+}
+
+// GetDifStackOmkSecretArrayInput is an input type that accepts GetDifStackOmkSecretArray and GetDifStackOmkSecretArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOmkSecretArrayInput` via:
+//
+//	GetDifStackOmkSecretArray{ GetDifStackOmkSecretArgs{...} }
+type GetDifStackOmkSecretArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkSecretArrayOutput() GetDifStackOmkSecretArrayOutput
+	ToGetDifStackOmkSecretArrayOutputWithContext(context.Context) GetDifStackOmkSecretArrayOutput
+}
+
+type GetDifStackOmkSecretArray []GetDifStackOmkSecretInput
+
+func (GetDifStackOmkSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkSecret)(nil)).Elem()
+}
+
+func (i GetDifStackOmkSecretArray) ToGetDifStackOmkSecretArrayOutput() GetDifStackOmkSecretArrayOutput {
+	return i.ToGetDifStackOmkSecretArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkSecretArray) ToGetDifStackOmkSecretArrayOutputWithContext(ctx context.Context) GetDifStackOmkSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkSecretArrayOutput)
+}
+
+type GetDifStackOmkSecretOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkSecret)(nil)).Elem()
+}
+
+func (o GetDifStackOmkSecretOutput) ToGetDifStackOmkSecretOutput() GetDifStackOmkSecretOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretOutput) ToGetDifStackOmkSecretOutputWithContext(ctx context.Context) GetDifStackOmkSecretOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretOutput) SecretDatas() GetDifStackOmkSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v GetDifStackOmkSecret) []GetDifStackOmkSecretSecretData { return v.SecretDatas }).(GetDifStackOmkSecretSecretDataArrayOutput)
+}
+
+func (o GetDifStackOmkSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmkSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkSecretOutput) TemplateObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmkSecret) string { return v.TemplateObjectStoragePath }).(pulumi.StringOutput)
+}
+
+type GetDifStackOmkSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkSecret)(nil)).Elem()
+}
+
+func (o GetDifStackOmkSecretArrayOutput) ToGetDifStackOmkSecretArrayOutput() GetDifStackOmkSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretArrayOutput) ToGetDifStackOmkSecretArrayOutputWithContext(ctx context.Context) GetDifStackOmkSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretArrayOutput) Index(i pulumi.IntInput) GetDifStackOmkSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOmkSecret {
+		return vs[0].([]GetDifStackOmkSecret)[vs[1].(int)]
+	}).(GetDifStackOmkSecretOutput)
+}
+
+type GetDifStackOmkSecretSecretData struct {
+	Key      string `pulumi:"key"`
+	SecretId string `pulumi:"secretId"`
+}
+
+// GetDifStackOmkSecretSecretDataInput is an input type that accepts GetDifStackOmkSecretSecretDataArgs and GetDifStackOmkSecretSecretDataOutput values.
+// You can construct a concrete instance of `GetDifStackOmkSecretSecretDataInput` via:
+//
+//	GetDifStackOmkSecretSecretDataArgs{...}
+type GetDifStackOmkSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkSecretSecretDataOutput() GetDifStackOmkSecretSecretDataOutput
+	ToGetDifStackOmkSecretSecretDataOutputWithContext(context.Context) GetDifStackOmkSecretSecretDataOutput
+}
+
+type GetDifStackOmkSecretSecretDataArgs struct {
+	Key      pulumi.StringInput `pulumi:"key"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetDifStackOmkSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStackOmkSecretSecretDataArgs) ToGetDifStackOmkSecretSecretDataOutput() GetDifStackOmkSecretSecretDataOutput {
+	return i.ToGetDifStackOmkSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkSecretSecretDataArgs) ToGetDifStackOmkSecretSecretDataOutputWithContext(ctx context.Context) GetDifStackOmkSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkSecretSecretDataOutput)
+}
+
+// GetDifStackOmkSecretSecretDataArrayInput is an input type that accepts GetDifStackOmkSecretSecretDataArray and GetDifStackOmkSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `GetDifStackOmkSecretSecretDataArrayInput` via:
+//
+//	GetDifStackOmkSecretSecretDataArray{ GetDifStackOmkSecretSecretDataArgs{...} }
+type GetDifStackOmkSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStackOmkSecretSecretDataArrayOutput() GetDifStackOmkSecretSecretDataArrayOutput
+	ToGetDifStackOmkSecretSecretDataArrayOutputWithContext(context.Context) GetDifStackOmkSecretSecretDataArrayOutput
+}
+
+type GetDifStackOmkSecretSecretDataArray []GetDifStackOmkSecretSecretDataInput
+
+func (GetDifStackOmkSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStackOmkSecretSecretDataArray) ToGetDifStackOmkSecretSecretDataArrayOutput() GetDifStackOmkSecretSecretDataArrayOutput {
+	return i.ToGetDifStackOmkSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStackOmkSecretSecretDataArray) ToGetDifStackOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStackOmkSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStackOmkSecretSecretDataArrayOutput)
+}
+
+type GetDifStackOmkSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStackOmkSecretSecretDataOutput) ToGetDifStackOmkSecretSecretDataOutput() GetDifStackOmkSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretSecretDataOutput) ToGetDifStackOmkSecretSecretDataOutputWithContext(ctx context.Context) GetDifStackOmkSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmkSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetDifStackOmkSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackOmkSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStackOmkSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStackOmkSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStackOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStackOmkSecretSecretDataArrayOutput) ToGetDifStackOmkSecretSecretDataArrayOutput() GetDifStackOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretSecretDataArrayOutput) ToGetDifStackOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStackOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStackOmkSecretSecretDataArrayOutput) Index(i pulumi.IntInput) GetDifStackOmkSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStackOmkSecretSecretData {
+		return vs[0].([]GetDifStackOmkSecretSecretData)[vs[1].(int)]
+	}).(GetDifStackOmkSecretSecretDataOutput)
+}
+
 type GetDifStackServiceDetail struct {
 	// Additional details about the provisioned services
 	AdditionalDetails []GetDifStackServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
@@ -24973,12 +27071,16 @@ func (o GetDifStackServiceDetailArrayOutput) Index(i pulumi.IntInput) GetDifStac
 type GetDifStackServiceDetailAdditionalDetail struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections []GetDifStackServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId string `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails []GetDifStackServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId string `pulumi:"modelId"`
 	// version of model
 	ModelVersion string `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace string `pulumi:"namespace"`
 	// region of cluster
 	OciRegion string `pulumi:"ociRegion"`
 	// OCID of model
@@ -24999,12 +27101,16 @@ type GetDifStackServiceDetailAdditionalDetailInput interface {
 type GetDifStackServiceDetailAdditionalDetailArgs struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// version of model
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// region of cluster
 	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
 	// OCID of model
@@ -25069,6 +27175,11 @@ func (o GetDifStackServiceDetailAdditionalDetailOutput) AssignedConnections() Ge
 	}).(GetDifStackServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
 }
 
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStackServiceDetailAdditionalDetailOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
 // details of all endpoints assigned to cluster
 func (o GetDifStackServiceDetailAdditionalDetailOutput) EndpointDetails() GetDifStackServiceDetailAdditionalDetailEndpointDetailArrayOutput {
 	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) []GetDifStackServiceDetailAdditionalDetailEndpointDetail {
@@ -25084,6 +27195,11 @@ func (o GetDifStackServiceDetailAdditionalDetailOutput) ModelId() pulumi.StringO
 // version of model
 func (o GetDifStackServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Kubernetes namespace-name of omk cluster-namespace.
+func (o GetDifStackServiceDetailAdditionalDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStackServiceDetailAdditionalDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
 // region of cluster
@@ -25541,6 +27657,8 @@ type GetDifStacksStackCollectionItem struct {
 	// ADB details if adb is included in the services.
 	Adbs              []GetDifStacksStackCollectionItemAdb `pulumi:"adbs"`
 	AddServiceTrigger int                                  `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms []GetDifStacksStackCollectionItemAidataplatform `pulumi:"aidataplatforms"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// DATAFLOW details if dataflow is included in the services.
@@ -25564,6 +27682,10 @@ type GetDifStacksStackCollectionItem struct {
 	NotificationEmail string `pulumi:"notificationEmail"`
 	// Object Storage Details if object storage is included in services.
 	Objectstorages []GetDifStacksStackCollectionItemObjectstorage `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes []GetDifStacksStackCollectionItemOke `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks []GetDifStacksStackCollectionItemOmk `pulumi:"omks"`
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails []GetDifStacksStackCollectionItemServiceDetail `pulumi:"serviceDetails"`
 	// List of services to be onboarded for the stack.
@@ -25597,6 +27719,8 @@ type GetDifStacksStackCollectionItemArgs struct {
 	// ADB details if adb is included in the services.
 	Adbs              GetDifStacksStackCollectionItemAdbArrayInput `pulumi:"adbs"`
 	AddServiceTrigger pulumi.IntInput                              `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms GetDifStacksStackCollectionItemAidataplatformArrayInput `pulumi:"aidataplatforms"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// DATAFLOW details if dataflow is included in the services.
@@ -25620,6 +27744,10 @@ type GetDifStacksStackCollectionItemArgs struct {
 	NotificationEmail pulumi.StringInput `pulumi:"notificationEmail"`
 	// Object Storage Details if object storage is included in services.
 	Objectstorages GetDifStacksStackCollectionItemObjectstorageArrayInput `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes GetDifStacksStackCollectionItemOkeArrayInput `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks GetDifStacksStackCollectionItemOmkArrayInput `pulumi:"omks"`
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails GetDifStacksStackCollectionItemServiceDetailArrayInput `pulumi:"serviceDetails"`
 	// List of services to be onboarded for the stack.
@@ -25698,6 +27826,13 @@ func (o GetDifStacksStackCollectionItemOutput) AddServiceTrigger() pulumi.IntOut
 	return o.ApplyT(func(v GetDifStacksStackCollectionItem) int { return v.AddServiceTrigger }).(pulumi.IntOutput)
 }
 
+// AI Data Platform Details if aidataplatform is included in services.
+func (o GetDifStacksStackCollectionItemOutput) Aidataplatforms() GetDifStacksStackCollectionItemAidataplatformArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemAidataplatform {
+		return v.Aidataplatforms
+	}).(GetDifStacksStackCollectionItemAidataplatformArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDifStacksStackCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDifStacksStackCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -25757,6 +27892,16 @@ func (o GetDifStacksStackCollectionItemOutput) Objectstorages() GetDifStacksStac
 	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemObjectstorage {
 		return v.Objectstorages
 	}).(GetDifStacksStackCollectionItemObjectstorageArrayOutput)
+}
+
+// OKE Details if oke is included in services.
+func (o GetDifStacksStackCollectionItemOutput) Okes() GetDifStacksStackCollectionItemOkeArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemOke { return v.Okes }).(GetDifStacksStackCollectionItemOkeArrayOutput)
+}
+
+// OMK Details if omk is included in services.
+func (o GetDifStacksStackCollectionItemOutput) Omks() GetDifStacksStackCollectionItemOmkArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItem) []GetDifStacksStackCollectionItemOmk { return v.Omks }).(GetDifStacksStackCollectionItemOmkArrayOutput)
 }
 
 // Details of the service onboarded for the data intelligence stack.
@@ -26117,6 +28262,112 @@ func (o GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemAdbDbCredential {
 		return vs[0].([]GetDifStacksStackCollectionItemAdbDbCredential)[vs[1].(int)]
 	}).(GetDifStacksStackCollectionItemAdbDbCredentialOutput)
+}
+
+type GetDifStacksStackCollectionItemAidataplatform struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName string `pulumi:"defaultWorkspaceName"`
+	// ID for the service instance.
+	InstanceId string `pulumi:"instanceId"`
+}
+
+// GetDifStacksStackCollectionItemAidataplatformInput is an input type that accepts GetDifStacksStackCollectionItemAidataplatformArgs and GetDifStacksStackCollectionItemAidataplatformOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAidataplatformInput` via:
+//
+//	GetDifStacksStackCollectionItemAidataplatformArgs{...}
+type GetDifStacksStackCollectionItemAidataplatformInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAidataplatformOutput() GetDifStacksStackCollectionItemAidataplatformOutput
+	ToGetDifStacksStackCollectionItemAidataplatformOutputWithContext(context.Context) GetDifStacksStackCollectionItemAidataplatformOutput
+}
+
+type GetDifStacksStackCollectionItemAidataplatformArgs struct {
+	// A default workspace will be created with this name.
+	DefaultWorkspaceName pulumi.StringInput `pulumi:"defaultWorkspaceName"`
+	// ID for the service instance.
+	InstanceId pulumi.StringInput `pulumi:"instanceId"`
+}
+
+func (GetDifStacksStackCollectionItemAidataplatformArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAidataplatform)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAidataplatformArgs) ToGetDifStacksStackCollectionItemAidataplatformOutput() GetDifStacksStackCollectionItemAidataplatformOutput {
+	return i.ToGetDifStacksStackCollectionItemAidataplatformOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAidataplatformArgs) ToGetDifStacksStackCollectionItemAidataplatformOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAidataplatformOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAidataplatformOutput)
+}
+
+// GetDifStacksStackCollectionItemAidataplatformArrayInput is an input type that accepts GetDifStacksStackCollectionItemAidataplatformArray and GetDifStacksStackCollectionItemAidataplatformArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemAidataplatformArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemAidataplatformArray{ GetDifStacksStackCollectionItemAidataplatformArgs{...} }
+type GetDifStacksStackCollectionItemAidataplatformArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemAidataplatformArrayOutput() GetDifStacksStackCollectionItemAidataplatformArrayOutput
+	ToGetDifStacksStackCollectionItemAidataplatformArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemAidataplatformArrayOutput
+}
+
+type GetDifStacksStackCollectionItemAidataplatformArray []GetDifStacksStackCollectionItemAidataplatformInput
+
+func (GetDifStacksStackCollectionItemAidataplatformArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAidataplatform)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemAidataplatformArray) ToGetDifStacksStackCollectionItemAidataplatformArrayOutput() GetDifStacksStackCollectionItemAidataplatformArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemAidataplatformArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemAidataplatformArray) ToGetDifStacksStackCollectionItemAidataplatformArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAidataplatformArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemAidataplatformArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemAidataplatformOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAidataplatformOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemAidataplatform)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAidataplatformOutput) ToGetDifStacksStackCollectionItemAidataplatformOutput() GetDifStacksStackCollectionItemAidataplatformOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAidataplatformOutput) ToGetDifStacksStackCollectionItemAidataplatformOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAidataplatformOutput {
+	return o
+}
+
+// A default workspace will be created with this name.
+func (o GetDifStacksStackCollectionItemAidataplatformOutput) DefaultWorkspaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAidataplatform) string { return v.DefaultWorkspaceName }).(pulumi.StringOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemAidataplatformOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemAidataplatform) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemAidataplatformArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemAidataplatformArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemAidataplatform)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemAidataplatformArrayOutput) ToGetDifStacksStackCollectionItemAidataplatformArrayOutput() GetDifStacksStackCollectionItemAidataplatformArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAidataplatformArrayOutput) ToGetDifStacksStackCollectionItemAidataplatformArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemAidataplatformArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemAidataplatformArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemAidataplatformOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemAidataplatform {
+		return vs[0].([]GetDifStacksStackCollectionItemAidataplatform)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemAidataplatformOutput)
 }
 
 type GetDifStacksStackCollectionItemDataflow struct {
@@ -27999,6 +30250,903 @@ func (o GetDifStacksStackCollectionItemObjectstorageArrayOutput) Index(i pulumi.
 	}).(GetDifStacksStackCollectionItemObjectstorageOutput)
 }
 
+type GetDifStacksStackCollectionItemOke struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId               string                                                     `pulumi:"clusterId"`
+	ComponentValueOverrides []GetDifStacksStackCollectionItemOkeComponentValueOverride `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                string                                     `pulumi:"instanceId"`
+	ManifestObjectStoragePath string                                     `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             string                                     `pulumi:"namespaceName"`
+	Secrets                   []GetDifStacksStackCollectionItemOkeSecret `pulumi:"secrets"`
+}
+
+// GetDifStacksStackCollectionItemOkeInput is an input type that accepts GetDifStacksStackCollectionItemOkeArgs and GetDifStacksStackCollectionItemOkeOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeArgs{...}
+type GetDifStacksStackCollectionItemOkeInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeOutput() GetDifStacksStackCollectionItemOkeOutput
+	ToGetDifStacksStackCollectionItemOkeOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeOutput
+}
+
+type GetDifStacksStackCollectionItemOkeArgs struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId               pulumi.StringInput                                                 `pulumi:"clusterId"`
+	ComponentValueOverrides GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                pulumi.StringInput                                 `pulumi:"instanceId"`
+	ManifestObjectStoragePath pulumi.StringInput                                 `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             pulumi.StringInput                                 `pulumi:"namespaceName"`
+	Secrets                   GetDifStacksStackCollectionItemOkeSecretArrayInput `pulumi:"secrets"`
+}
+
+func (GetDifStacksStackCollectionItemOkeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOke)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeArgs) ToGetDifStacksStackCollectionItemOkeOutput() GetDifStacksStackCollectionItemOkeOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeArgs) ToGetDifStacksStackCollectionItemOkeOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeOutput)
+}
+
+// GetDifStacksStackCollectionItemOkeArrayInput is an input type that accepts GetDifStacksStackCollectionItemOkeArray and GetDifStacksStackCollectionItemOkeArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeArray{ GetDifStacksStackCollectionItemOkeArgs{...} }
+type GetDifStacksStackCollectionItemOkeArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeArrayOutput() GetDifStacksStackCollectionItemOkeArrayOutput
+	ToGetDifStacksStackCollectionItemOkeArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOkeArray []GetDifStacksStackCollectionItemOkeInput
+
+func (GetDifStacksStackCollectionItemOkeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOke)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeArray) ToGetDifStacksStackCollectionItemOkeArrayOutput() GetDifStacksStackCollectionItemOkeArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeArray) ToGetDifStacksStackCollectionItemOkeArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOke)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) ToGetDifStacksStackCollectionItemOkeOutput() GetDifStacksStackCollectionItemOkeOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) ToGetDifStacksStackCollectionItemOkeOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeOutput {
+	return o
+}
+
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStacksStackCollectionItemOkeOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) ComponentValueOverrides() GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) []GetDifStacksStackCollectionItemOkeComponentValueOverride {
+		return v.ComponentValueOverrides
+	}).(GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemOkeOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) ManifestObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) string { return v.ManifestObjectStoragePath }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeOutput) Secrets() GetDifStacksStackCollectionItemOkeSecretArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOke) []GetDifStacksStackCollectionItemOkeSecret {
+		return v.Secrets
+	}).(GetDifStacksStackCollectionItemOkeSecretArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOke)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeArrayOutput) ToGetDifStacksStackCollectionItemOkeArrayOutput() GetDifStacksStackCollectionItemOkeArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeArrayOutput) ToGetDifStacksStackCollectionItemOkeArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOkeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOke {
+		return vs[0].([]GetDifStacksStackCollectionItemOke)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOkeOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeComponentValueOverride struct {
+	ComponentName  string            `pulumi:"componentName"`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// GetDifStacksStackCollectionItemOkeComponentValueOverrideInput is an input type that accepts GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs and GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeComponentValueOverrideInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs{...}
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput
+	ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput
+}
+
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs struct {
+	ComponentName  pulumi.StringInput    `pulumi:"componentName"`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput)
+}
+
+// GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayInput is an input type that accepts GetDifStacksStackCollectionItemOkeComponentValueOverrideArray and GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeComponentValueOverrideArray{ GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs{...} }
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput
+	ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideArray []GetDifStacksStackCollectionItemOkeComponentValueOverrideInput
+
+func (GetDifStacksStackCollectionItemOkeComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeComponentValueOverrideArray) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeComponentValueOverrideArray) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeComponentValueOverride) map[string]string {
+		return v.ValueOverrides
+	}).(pulumi.StringMapOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput) ToGetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOkeComponentValueOverride {
+		return vs[0].([]GetDifStacksStackCollectionItemOkeComponentValueOverride)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecret struct {
+	SecretDatas               []GetDifStacksStackCollectionItemOkeSecretSecretData `pulumi:"secretDatas"`
+	SecretName                string                                               `pulumi:"secretName"`
+	TemplateObjectStoragePath string                                               `pulumi:"templateObjectStoragePath"`
+}
+
+// GetDifStacksStackCollectionItemOkeSecretInput is an input type that accepts GetDifStacksStackCollectionItemOkeSecretArgs and GetDifStacksStackCollectionItemOkeSecretOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeSecretInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeSecretArgs{...}
+type GetDifStacksStackCollectionItemOkeSecretInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeSecretOutput() GetDifStacksStackCollectionItemOkeSecretOutput
+	ToGetDifStacksStackCollectionItemOkeSecretOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeSecretOutput
+}
+
+type GetDifStacksStackCollectionItemOkeSecretArgs struct {
+	SecretDatas               GetDifStacksStackCollectionItemOkeSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	SecretName                pulumi.StringInput                                           `pulumi:"secretName"`
+	TemplateObjectStoragePath pulumi.StringInput                                           `pulumi:"templateObjectStoragePath"`
+}
+
+func (GetDifStacksStackCollectionItemOkeSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecret)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretArgs) ToGetDifStacksStackCollectionItemOkeSecretOutput() GetDifStacksStackCollectionItemOkeSecretOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeSecretOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretArgs) ToGetDifStacksStackCollectionItemOkeSecretOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeSecretOutput)
+}
+
+// GetDifStacksStackCollectionItemOkeSecretArrayInput is an input type that accepts GetDifStacksStackCollectionItemOkeSecretArray and GetDifStacksStackCollectionItemOkeSecretArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeSecretArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeSecretArray{ GetDifStacksStackCollectionItemOkeSecretArgs{...} }
+type GetDifStacksStackCollectionItemOkeSecretArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeSecretArrayOutput() GetDifStacksStackCollectionItemOkeSecretArrayOutput
+	ToGetDifStacksStackCollectionItemOkeSecretArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeSecretArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOkeSecretArray []GetDifStacksStackCollectionItemOkeSecretInput
+
+func (GetDifStacksStackCollectionItemOkeSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeSecret)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretArray) ToGetDifStacksStackCollectionItemOkeSecretArrayOutput() GetDifStacksStackCollectionItemOkeSecretArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeSecretArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretArray) ToGetDifStacksStackCollectionItemOkeSecretArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeSecretArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecretOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecret)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretOutput) ToGetDifStacksStackCollectionItemOkeSecretOutput() GetDifStacksStackCollectionItemOkeSecretOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretOutput) ToGetDifStacksStackCollectionItemOkeSecretOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretOutput) SecretDatas() GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeSecret) []GetDifStacksStackCollectionItemOkeSecretSecretData {
+		return v.SecretDatas
+	}).(GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretOutput) TemplateObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeSecret) string { return v.TemplateObjectStoragePath }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeSecret)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretArrayOutput) ToGetDifStacksStackCollectionItemOkeSecretArrayOutput() GetDifStacksStackCollectionItemOkeSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretArrayOutput) ToGetDifStacksStackCollectionItemOkeSecretArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOkeSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOkeSecret {
+		return vs[0].([]GetDifStacksStackCollectionItemOkeSecret)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOkeSecretOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecretSecretData struct {
+	Key      string `pulumi:"key"`
+	SecretId string `pulumi:"secretId"`
+}
+
+// GetDifStacksStackCollectionItemOkeSecretSecretDataInput is an input type that accepts GetDifStacksStackCollectionItemOkeSecretSecretDataArgs and GetDifStacksStackCollectionItemOkeSecretSecretDataOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeSecretSecretDataInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeSecretSecretDataArgs{...}
+type GetDifStacksStackCollectionItemOkeSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataOutput
+	ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataOutput
+}
+
+type GetDifStacksStackCollectionItemOkeSecretSecretDataArgs struct {
+	Key      pulumi.StringInput `pulumi:"key"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetDifStacksStackCollectionItemOkeSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretSecretDataArgs) ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretSecretDataArgs) ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeSecretSecretDataOutput)
+}
+
+// GetDifStacksStackCollectionItemOkeSecretSecretDataArrayInput is an input type that accepts GetDifStacksStackCollectionItemOkeSecretSecretDataArray and GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOkeSecretSecretDataArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOkeSecretSecretDataArray{ GetDifStacksStackCollectionItemOkeSecretSecretDataArgs{...} }
+type GetDifStacksStackCollectionItemOkeSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput
+	ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOkeSecretSecretDataArray []GetDifStacksStackCollectionItemOkeSecretSecretDataInput
+
+func (GetDifStacksStackCollectionItemOkeSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretSecretDataArray) ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOkeSecretSecretDataArray) ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataOutput) ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataOutput) ToGetDifStacksStackCollectionItemOkeSecretSecretDataOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOkeSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOkeSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput) ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput) ToGetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOkeSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOkeSecretSecretData {
+		return vs[0].([]GetDifStacksStackCollectionItemOkeSecretSecretData)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOkeSecretSecretDataOutput)
+}
+
+type GetDifStacksStackCollectionItemOmk struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId string `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId      string                                                     `pulumi:"clusterNamespaceId"`
+	ComponentValueOverrides []GetDifStacksStackCollectionItemOmkComponentValueOverride `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                string                                     `pulumi:"instanceId"`
+	ManifestObjectStoragePath string                                     `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             string                                     `pulumi:"namespaceName"`
+	Secrets                   []GetDifStacksStackCollectionItemOmkSecret `pulumi:"secrets"`
+}
+
+// GetDifStacksStackCollectionItemOmkInput is an input type that accepts GetDifStacksStackCollectionItemOmkArgs and GetDifStacksStackCollectionItemOmkOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkArgs{...}
+type GetDifStacksStackCollectionItemOmkInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkOutput() GetDifStacksStackCollectionItemOmkOutput
+	ToGetDifStacksStackCollectionItemOmkOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkOutput
+}
+
+type GetDifStacksStackCollectionItemOmkArgs struct {
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// OCID of existing OMK cluster-namespace.
+	ClusterNamespaceId      pulumi.StringInput                                                 `pulumi:"clusterNamespaceId"`
+	ComponentValueOverrides GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayInput `pulumi:"componentValueOverrides"`
+	// ID for the service instance.
+	InstanceId                pulumi.StringInput                                 `pulumi:"instanceId"`
+	ManifestObjectStoragePath pulumi.StringInput                                 `pulumi:"manifestObjectStoragePath"`
+	NamespaceName             pulumi.StringInput                                 `pulumi:"namespaceName"`
+	Secrets                   GetDifStacksStackCollectionItemOmkSecretArrayInput `pulumi:"secrets"`
+}
+
+func (GetDifStacksStackCollectionItemOmkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmk)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkArgs) ToGetDifStacksStackCollectionItemOmkOutput() GetDifStacksStackCollectionItemOmkOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkArgs) ToGetDifStacksStackCollectionItemOmkOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkOutput)
+}
+
+// GetDifStacksStackCollectionItemOmkArrayInput is an input type that accepts GetDifStacksStackCollectionItemOmkArray and GetDifStacksStackCollectionItemOmkArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkArray{ GetDifStacksStackCollectionItemOmkArgs{...} }
+type GetDifStacksStackCollectionItemOmkArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkArrayOutput() GetDifStacksStackCollectionItemOmkArrayOutput
+	ToGetDifStacksStackCollectionItemOmkArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOmkArray []GetDifStacksStackCollectionItemOmkInput
+
+func (GetDifStacksStackCollectionItemOmkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmk)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkArray) ToGetDifStacksStackCollectionItemOmkArrayOutput() GetDifStacksStackCollectionItemOmkArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkArray) ToGetDifStacksStackCollectionItemOmkArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmk)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) ToGetDifStacksStackCollectionItemOmkOutput() GetDifStacksStackCollectionItemOmkOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) ToGetDifStacksStackCollectionItemOmkOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkOutput {
+	return o
+}
+
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStacksStackCollectionItemOmkOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// OCID of existing OMK cluster-namespace.
+func (o GetDifStacksStackCollectionItemOmkOutput) ClusterNamespaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) string { return v.ClusterNamespaceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) ComponentValueOverrides() GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) []GetDifStacksStackCollectionItemOmkComponentValueOverride {
+		return v.ComponentValueOverrides
+	}).(GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput)
+}
+
+// ID for the service instance.
+func (o GetDifStacksStackCollectionItemOmkOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) string { return v.InstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) ManifestObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) string { return v.ManifestObjectStoragePath }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) NamespaceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) string { return v.NamespaceName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkOutput) Secrets() GetDifStacksStackCollectionItemOmkSecretArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmk) []GetDifStacksStackCollectionItemOmkSecret {
+		return v.Secrets
+	}).(GetDifStacksStackCollectionItemOmkSecretArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmk)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkArrayOutput) ToGetDifStacksStackCollectionItemOmkArrayOutput() GetDifStacksStackCollectionItemOmkArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkArrayOutput) ToGetDifStacksStackCollectionItemOmkArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOmkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOmk {
+		return vs[0].([]GetDifStacksStackCollectionItemOmk)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOmkOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkComponentValueOverride struct {
+	ComponentName  string            `pulumi:"componentName"`
+	ValueOverrides map[string]string `pulumi:"valueOverrides"`
+}
+
+// GetDifStacksStackCollectionItemOmkComponentValueOverrideInput is an input type that accepts GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs and GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkComponentValueOverrideInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs{...}
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput
+	ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput
+}
+
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs struct {
+	ComponentName  pulumi.StringInput    `pulumi:"componentName"`
+	ValueOverrides pulumi.StringMapInput `pulumi:"valueOverrides"`
+}
+
+func (GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput)
+}
+
+// GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayInput is an input type that accepts GetDifStacksStackCollectionItemOmkComponentValueOverrideArray and GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkComponentValueOverrideArray{ GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs{...} }
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput
+	ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideArray []GetDifStacksStackCollectionItemOmkComponentValueOverrideInput
+
+func (GetDifStacksStackCollectionItemOmkComponentValueOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkComponentValueOverrideArray) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkComponentValueOverrideArray) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput) ComponentName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkComponentValueOverride) string { return v.ComponentName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput) ValueOverrides() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkComponentValueOverride) map[string]string {
+		return v.ValueOverrides
+	}).(pulumi.StringMapOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkComponentValueOverride)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput() GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput) ToGetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOmkComponentValueOverride {
+		return vs[0].([]GetDifStacksStackCollectionItemOmkComponentValueOverride)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecret struct {
+	SecretDatas               []GetDifStacksStackCollectionItemOmkSecretSecretData `pulumi:"secretDatas"`
+	SecretName                string                                               `pulumi:"secretName"`
+	TemplateObjectStoragePath string                                               `pulumi:"templateObjectStoragePath"`
+}
+
+// GetDifStacksStackCollectionItemOmkSecretInput is an input type that accepts GetDifStacksStackCollectionItemOmkSecretArgs and GetDifStacksStackCollectionItemOmkSecretOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkSecretInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkSecretArgs{...}
+type GetDifStacksStackCollectionItemOmkSecretInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkSecretOutput() GetDifStacksStackCollectionItemOmkSecretOutput
+	ToGetDifStacksStackCollectionItemOmkSecretOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkSecretOutput
+}
+
+type GetDifStacksStackCollectionItemOmkSecretArgs struct {
+	SecretDatas               GetDifStacksStackCollectionItemOmkSecretSecretDataArrayInput `pulumi:"secretDatas"`
+	SecretName                pulumi.StringInput                                           `pulumi:"secretName"`
+	TemplateObjectStoragePath pulumi.StringInput                                           `pulumi:"templateObjectStoragePath"`
+}
+
+func (GetDifStacksStackCollectionItemOmkSecretArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecret)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretArgs) ToGetDifStacksStackCollectionItemOmkSecretOutput() GetDifStacksStackCollectionItemOmkSecretOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkSecretOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretArgs) ToGetDifStacksStackCollectionItemOmkSecretOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkSecretOutput)
+}
+
+// GetDifStacksStackCollectionItemOmkSecretArrayInput is an input type that accepts GetDifStacksStackCollectionItemOmkSecretArray and GetDifStacksStackCollectionItemOmkSecretArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkSecretArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkSecretArray{ GetDifStacksStackCollectionItemOmkSecretArgs{...} }
+type GetDifStacksStackCollectionItemOmkSecretArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkSecretArrayOutput() GetDifStacksStackCollectionItemOmkSecretArrayOutput
+	ToGetDifStacksStackCollectionItemOmkSecretArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkSecretArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOmkSecretArray []GetDifStacksStackCollectionItemOmkSecretInput
+
+func (GetDifStacksStackCollectionItemOmkSecretArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkSecret)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretArray) ToGetDifStacksStackCollectionItemOmkSecretArrayOutput() GetDifStacksStackCollectionItemOmkSecretArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkSecretArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretArray) ToGetDifStacksStackCollectionItemOmkSecretArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkSecretArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecretOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkSecretOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecret)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretOutput) ToGetDifStacksStackCollectionItemOmkSecretOutput() GetDifStacksStackCollectionItemOmkSecretOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretOutput) ToGetDifStacksStackCollectionItemOmkSecretOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretOutput) SecretDatas() GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkSecret) []GetDifStacksStackCollectionItemOmkSecretSecretData {
+		return v.SecretDatas
+	}).(GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretOutput) SecretName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkSecret) string { return v.SecretName }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretOutput) TemplateObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkSecret) string { return v.TemplateObjectStoragePath }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecretArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkSecretArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkSecret)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretArrayOutput) ToGetDifStacksStackCollectionItemOmkSecretArrayOutput() GetDifStacksStackCollectionItemOmkSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretArrayOutput) ToGetDifStacksStackCollectionItemOmkSecretArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOmkSecretOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOmkSecret {
+		return vs[0].([]GetDifStacksStackCollectionItemOmkSecret)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOmkSecretOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecretSecretData struct {
+	Key      string `pulumi:"key"`
+	SecretId string `pulumi:"secretId"`
+}
+
+// GetDifStacksStackCollectionItemOmkSecretSecretDataInput is an input type that accepts GetDifStacksStackCollectionItemOmkSecretSecretDataArgs and GetDifStacksStackCollectionItemOmkSecretSecretDataOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkSecretSecretDataInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkSecretSecretDataArgs{...}
+type GetDifStacksStackCollectionItemOmkSecretSecretDataInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataOutput
+	ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataOutput
+}
+
+type GetDifStacksStackCollectionItemOmkSecretSecretDataArgs struct {
+	Key      pulumi.StringInput `pulumi:"key"`
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetDifStacksStackCollectionItemOmkSecretSecretDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretSecretDataArgs) ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretSecretDataArgs) ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkSecretSecretDataOutput)
+}
+
+// GetDifStacksStackCollectionItemOmkSecretSecretDataArrayInput is an input type that accepts GetDifStacksStackCollectionItemOmkSecretSecretDataArray and GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput values.
+// You can construct a concrete instance of `GetDifStacksStackCollectionItemOmkSecretSecretDataArrayInput` via:
+//
+//	GetDifStacksStackCollectionItemOmkSecretSecretDataArray{ GetDifStacksStackCollectionItemOmkSecretSecretDataArgs{...} }
+type GetDifStacksStackCollectionItemOmkSecretSecretDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput
+	ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutputWithContext(context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput
+}
+
+type GetDifStacksStackCollectionItemOmkSecretSecretDataArray []GetDifStacksStackCollectionItemOmkSecretSecretDataInput
+
+func (GetDifStacksStackCollectionItemOmkSecretSecretDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkSecretSecretData)(nil)).Elem()
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretSecretDataArray) ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput {
+	return i.ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDifStacksStackCollectionItemOmkSecretSecretDataArray) ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecretSecretDataOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkSecretSecretDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataOutput) ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataOutput) ToGetDifStacksStackCollectionItemOmkSecretSecretDataOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkSecretSecretData) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemOmkSecretSecretData) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+type GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDifStacksStackCollectionItemOmkSecretSecretData)(nil)).Elem()
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput) ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput() GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput) ToGetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutputWithContext(ctx context.Context) GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput {
+	return o
+}
+
+func (o GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput) Index(i pulumi.IntInput) GetDifStacksStackCollectionItemOmkSecretSecretDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDifStacksStackCollectionItemOmkSecretSecretData {
+		return vs[0].([]GetDifStacksStackCollectionItemOmkSecretSecretData)[vs[1].(int)]
+	}).(GetDifStacksStackCollectionItemOmkSecretSecretDataOutput)
+}
+
 type GetDifStacksStackCollectionItemServiceDetail struct {
 	// Additional details about the provisioned services
 	AdditionalDetails []GetDifStacksStackCollectionItemServiceDetailAdditionalDetail `pulumi:"additionalDetails"`
@@ -28164,12 +31312,16 @@ func (o GetDifStacksStackCollectionItemServiceDetailArrayOutput) Index(i pulumi.
 type GetDifStacksStackCollectionItemServiceDetailAdditionalDetail struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId string `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId string `pulumi:"modelId"`
 	// version of model
 	ModelVersion string `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace string `pulumi:"namespace"`
 	// region of cluster
 	OciRegion string `pulumi:"ociRegion"`
 	// OCID of model
@@ -28190,12 +31342,16 @@ type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput interface
 type GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs struct {
 	// connections assigned to Golden Gate deployment
 	AssignedConnections GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayInput `pulumi:"assignedConnections"`
+	// OCID of cluster assigned to OMK cluster-namespace.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
 	// details of all endpoints assigned to cluster
 	EndpointDetails GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayInput `pulumi:"endpointDetails"`
 	// OCID of model
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// version of model
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Kubernetes namespace-name of omk cluster-namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// region of cluster
 	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
 	// OCID of model
@@ -28260,6 +31416,11 @@ func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) Assi
 	}).(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionArrayOutput)
 }
 
+// OCID of cluster assigned to OMK cluster-namespace.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
 // details of all endpoints assigned to cluster
 func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) EndpointDetails() GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailArrayOutput {
 	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) []GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail {
@@ -28275,6 +31436,11 @@ func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) Mode
 // version of model
 func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Kubernetes namespace-name of omk cluster-namespace.
+func (o GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDifStacksStackCollectionItemServiceDetailAdditionalDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
 // region of cluster
@@ -32562,6 +35728,8 @@ func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) Index(i pulumi.IntIn
 type GetManagedKafkaKafkaClusterBrokerShape struct {
 	// Number of Kafka broker nodes
 	NodeCount int `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape string `pulumi:"nodeShape"`
 	// Number of OCPUs per nodes
 	OcpuCount int `pulumi:"ocpuCount"`
 	// Size of the storage per nodes.
@@ -32582,6 +35750,8 @@ type GetManagedKafkaKafkaClusterBrokerShapeInput interface {
 type GetManagedKafkaKafkaClusterBrokerShapeArgs struct {
 	// Number of Kafka broker nodes
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
 	// Number of OCPUs per nodes
 	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
 	// Size of the storage per nodes.
@@ -32642,6 +35812,11 @@ func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) ToGetManagedKafkaKafkaClus
 // Number of Kafka broker nodes
 func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) string { return v.NodeShape }).(pulumi.StringOutput)
 }
 
 // Number of OCPUs per nodes
@@ -34349,6 +37524,8 @@ func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayO
 type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape struct {
 	// Number of Kafka broker nodes
 	NodeCount int `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape string `pulumi:"nodeShape"`
 	// Number of OCPUs per nodes
 	OcpuCount int `pulumi:"ocpuCount"`
 	// Size of the storage per nodes.
@@ -34369,6 +37546,8 @@ type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput inte
 type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs struct {
 	// Number of Kafka broker nodes
 	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
 	// Number of OCPUs per nodes
 	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
 	// Size of the storage per nodes.
@@ -34429,6 +37608,11 @@ func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput)
 // Number of Kafka broker nodes
 func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) string { return v.NodeShape }).(pulumi.StringOutput)
 }
 
 // Number of OCPUs per nodes
@@ -34567,6 +37751,311 @@ func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlA
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
 		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)[vs[1].(int)]
 	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
+type GetManagedKafkaNodeShapesFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaNodeShapesFilterInput is an input type that accepts GetManagedKafkaNodeShapesFilterArgs and GetManagedKafkaNodeShapesFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesFilterInput` via:
+//
+//	GetManagedKafkaNodeShapesFilterArgs{...}
+type GetManagedKafkaNodeShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput
+	ToGetManagedKafkaNodeShapesFilterOutputWithContext(context.Context) GetManagedKafkaNodeShapesFilterOutput
+}
+
+type GetManagedKafkaNodeShapesFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaNodeShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesFilterArgs) ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput {
+	return i.ToGetManagedKafkaNodeShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesFilterArgs) ToGetManagedKafkaNodeShapesFilterOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesFilterOutput)
+}
+
+// GetManagedKafkaNodeShapesFilterArrayInput is an input type that accepts GetManagedKafkaNodeShapesFilterArray and GetManagedKafkaNodeShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesFilterArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesFilterArray{ GetManagedKafkaNodeShapesFilterArgs{...} }
+type GetManagedKafkaNodeShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput
+	ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesFilterArrayOutput
+}
+
+type GetManagedKafkaNodeShapesFilterArray []GetManagedKafkaNodeShapesFilterInput
+
+func (GetManagedKafkaNodeShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesFilterArray) ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesFilterArray) ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesFilterArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) ToGetManagedKafkaNodeShapesFilterOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaNodeShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesFilter {
+		return vs[0].([]GetManagedKafkaNodeShapesFilter)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesFilterOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollection struct {
+	// List of NodeShapeSummary.
+	Items []GetManagedKafkaNodeShapesNodeShapeCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionArgs and GetManagedKafkaNodeShapesNodeShapeCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionArgs{...}
+type GetManagedKafkaNodeShapesNodeShapeCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArgs struct {
+	// List of NodeShapeSummary.
+	Items GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionOutput)
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionArray and GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionArray{ GetManagedKafkaNodeShapesNodeShapeCollectionArgs{...} }
+type GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArray []GetManagedKafkaNodeShapesNodeShapeCollectionInput
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return o
+}
+
+// List of NodeShapeSummary.
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) Items() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesNodeShapeCollection) []GetManagedKafkaNodeShapesNodeShapeCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesNodeShapeCollection {
+		return vs[0].([]GetManagedKafkaNodeShapesNodeShapeCollection)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItem struct {
+	// The name to filter on.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionItemInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs and GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionItemInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{...}
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs struct {
+	// The name to filter on.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput)
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionItemArray and GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionItemArray{ GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{...} }
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArray []GetManagedKafkaNodeShapesNodeShapeCollectionItemInput
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesNodeShapeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesNodeShapeCollectionItem {
+		return vs[0].([]GetManagedKafkaNodeShapesNodeShapeCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput)
 }
 
 type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection struct {
@@ -47371,6 +50860,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbArrayInput)(nil)).Elem(), DifStackAdbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbDbCredentialInput)(nil)).Elem(), DifStackAdbDbCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAdbDbCredentialArrayInput)(nil)).Elem(), DifStackAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAidataplatformInput)(nil)).Elem(), DifStackAidataplatformArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackAidataplatformArrayInput)(nil)).Elem(), DifStackAidataplatformArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowInput)(nil)).Elem(), DifStackDataflowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowArrayInput)(nil)).Elem(), DifStackDataflowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackDataflowConnectionsInput)(nil)).Elem(), DifStackDataflowConnectionsArgs{})
@@ -47401,6 +50892,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackGgcUserArrayInput)(nil)).Elem(), DifStackGgcUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackObjectstorageInput)(nil)).Elem(), DifStackObjectstorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackObjectstorageArrayInput)(nil)).Elem(), DifStackObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeInput)(nil)).Elem(), DifStackOkeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeArrayInput)(nil)).Elem(), DifStackOkeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeComponentValueOverrideInput)(nil)).Elem(), DifStackOkeComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeComponentValueOverrideArrayInput)(nil)).Elem(), DifStackOkeComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeSecretInput)(nil)).Elem(), DifStackOkeSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeSecretArrayInput)(nil)).Elem(), DifStackOkeSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeSecretSecretDataInput)(nil)).Elem(), DifStackOkeSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOkeSecretSecretDataArrayInput)(nil)).Elem(), DifStackOkeSecretSecretDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkInput)(nil)).Elem(), DifStackOmkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkArrayInput)(nil)).Elem(), DifStackOmkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkComponentValueOverrideInput)(nil)).Elem(), DifStackOmkComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkComponentValueOverrideArrayInput)(nil)).Elem(), DifStackOmkComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkSecretInput)(nil)).Elem(), DifStackOmkSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkSecretArrayInput)(nil)).Elem(), DifStackOmkSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkSecretSecretDataInput)(nil)).Elem(), DifStackOmkSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DifStackOmkSecretSecretDataArrayInput)(nil)).Elem(), DifStackOmkSecretSecretDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailInput)(nil)).Elem(), DifStackServiceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailArrayInput)(nil)).Elem(), DifStackServiceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DifStackServiceDetailAdditionalDetailInput)(nil)).Elem(), DifStackServiceDetailAdditionalDetailArgs{})
@@ -47657,6 +51164,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbArrayInput)(nil)).Elem(), GetDifStackAdbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbDbCredentialInput)(nil)).Elem(), GetDifStackAdbDbCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbDbCredentialArrayInput)(nil)).Elem(), GetDifStackAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAidataplatformInput)(nil)).Elem(), GetDifStackAidataplatformArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAidataplatformArrayInput)(nil)).Elem(), GetDifStackAidataplatformArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowInput)(nil)).Elem(), GetDifStackDataflowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowArrayInput)(nil)).Elem(), GetDifStackDataflowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackDataflowConnectionInput)(nil)).Elem(), GetDifStackDataflowConnectionArgs{})
@@ -47687,6 +51196,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackGgcUserArrayInput)(nil)).Elem(), GetDifStackGgcUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackObjectstorageInput)(nil)).Elem(), GetDifStackObjectstorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackObjectstorageArrayInput)(nil)).Elem(), GetDifStackObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeInput)(nil)).Elem(), GetDifStackOkeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeArrayInput)(nil)).Elem(), GetDifStackOkeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeComponentValueOverrideInput)(nil)).Elem(), GetDifStackOkeComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeComponentValueOverrideArrayInput)(nil)).Elem(), GetDifStackOkeComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeSecretInput)(nil)).Elem(), GetDifStackOkeSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeSecretArrayInput)(nil)).Elem(), GetDifStackOkeSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeSecretSecretDataInput)(nil)).Elem(), GetDifStackOkeSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOkeSecretSecretDataArrayInput)(nil)).Elem(), GetDifStackOkeSecretSecretDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkInput)(nil)).Elem(), GetDifStackOmkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkArrayInput)(nil)).Elem(), GetDifStackOmkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkComponentValueOverrideInput)(nil)).Elem(), GetDifStackOmkComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkComponentValueOverrideArrayInput)(nil)).Elem(), GetDifStackOmkComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkSecretInput)(nil)).Elem(), GetDifStackOmkSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkSecretArrayInput)(nil)).Elem(), GetDifStackOmkSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkSecretSecretDataInput)(nil)).Elem(), GetDifStackOmkSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackOmkSecretSecretDataArrayInput)(nil)).Elem(), GetDifStackOmkSecretSecretDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailInput)(nil)).Elem(), GetDifStackServiceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailArrayInput)(nil)).Elem(), GetDifStackServiceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackServiceDetailAdditionalDetailInput)(nil)).Elem(), GetDifStackServiceDetailAdditionalDetailArgs{})
@@ -47705,6 +51230,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredentialInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbDbCredentialArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAdbDbCredentialArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemAdbDbCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAidataplatformInput)(nil)).Elem(), GetDifStacksStackCollectionItemAidataplatformArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemAidataplatformArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemAidataplatformArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemDataflowConnectionInput)(nil)).Elem(), GetDifStacksStackCollectionItemDataflowConnectionArgs{})
@@ -47735,6 +51262,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemGgcUserArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemGgcUserArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorageInput)(nil)).Elem(), GetDifStacksStackCollectionItemObjectstorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemObjectstorageArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemObjectstorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeComponentValueOverrideInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretSecretDataInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOkeSecretSecretDataArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOkeSecretSecretDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkComponentValueOverrideInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkComponentValueOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkComponentValueOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkSecretArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretSecretDataInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkSecretSecretDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemOmkSecretSecretDataArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemOmkSecretSecretDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailArrayInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStacksStackCollectionItemServiceDetailAdditionalDetailInput)(nil)).Elem(), GetDifStacksStackCollectionItemServiceDetailAdditionalDetailArgs{})
@@ -47837,6 +51380,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesFilterInput)(nil)).Elem(), GetManagedKafkaNodeShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesFilterArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItemInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{})
@@ -48070,6 +51619,8 @@ func init() {
 	pulumi.RegisterOutputType(DifStackAdbArrayOutput{})
 	pulumi.RegisterOutputType(DifStackAdbDbCredentialOutput{})
 	pulumi.RegisterOutputType(DifStackAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(DifStackAidataplatformOutput{})
+	pulumi.RegisterOutputType(DifStackAidataplatformArrayOutput{})
 	pulumi.RegisterOutputType(DifStackDataflowOutput{})
 	pulumi.RegisterOutputType(DifStackDataflowArrayOutput{})
 	pulumi.RegisterOutputType(DifStackDataflowConnectionsOutput{})
@@ -48100,6 +51651,22 @@ func init() {
 	pulumi.RegisterOutputType(DifStackGgcUserArrayOutput{})
 	pulumi.RegisterOutputType(DifStackObjectstorageOutput{})
 	pulumi.RegisterOutputType(DifStackObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOkeOutput{})
+	pulumi.RegisterOutputType(DifStackOkeArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOkeComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(DifStackOkeComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOkeSecretOutput{})
+	pulumi.RegisterOutputType(DifStackOkeSecretArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOkeSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(DifStackOkeSecretSecretDataArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOmkOutput{})
+	pulumi.RegisterOutputType(DifStackOmkArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOmkComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(DifStackOmkComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOmkSecretOutput{})
+	pulumi.RegisterOutputType(DifStackOmkSecretArrayOutput{})
+	pulumi.RegisterOutputType(DifStackOmkSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(DifStackOmkSecretSecretDataArrayOutput{})
 	pulumi.RegisterOutputType(DifStackServiceDetailOutput{})
 	pulumi.RegisterOutputType(DifStackServiceDetailArrayOutput{})
 	pulumi.RegisterOutputType(DifStackServiceDetailAdditionalDetailOutput{})
@@ -48356,6 +51923,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDifStackAdbArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackAdbDbCredentialOutput{})
 	pulumi.RegisterOutputType(GetDifStackAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackAidataplatformOutput{})
+	pulumi.RegisterOutputType(GetDifStackAidataplatformArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackDataflowOutput{})
 	pulumi.RegisterOutputType(GetDifStackDataflowArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackDataflowConnectionOutput{})
@@ -48386,6 +51955,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDifStackGgcUserArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackObjectstorageOutput{})
 	pulumi.RegisterOutputType(GetDifStackObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeSecretOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(GetDifStackOkeSecretSecretDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkSecretOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(GetDifStackOmkSecretSecretDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackServiceDetailOutput{})
 	pulumi.RegisterOutputType(GetDifStackServiceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackServiceDetailAdditionalDetailOutput{})
@@ -48404,6 +51989,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbDbCredentialOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAdbDbCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAidataplatformOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemAidataplatformArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemDataflowConnectionOutput{})
@@ -48434,6 +52021,22 @@ func init() {
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemGgcUserArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemObjectstorageOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemObjectstorageArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeSecretOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOkeSecretSecretDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkComponentValueOverrideOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkComponentValueOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkSecretOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkSecretSecretDataOutput{})
+	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemOmkSecretSecretDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailOutput{})
@@ -48536,6 +52139,12 @@ func init() {
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput{})
 	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput{})

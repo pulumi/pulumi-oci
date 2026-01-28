@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -47,14 +49,44 @@ public final class CertificateAuthorityCertificateAuthorityRuleArgs extends com.
     }
 
     /**
-     * (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    @Import(name="nameConstraint")
+    private @Nullable Output<CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs> nameConstraint;
+
+    /**
+     * @return A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    public Optional<Output<CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs>> nameConstraint() {
+        return Optional.ofNullable(this.nameConstraint);
+    }
+
+    /**
+     * The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+     * 
+     */
+    @Import(name="pathLengthConstraint")
+    private @Nullable Output<Integer> pathLengthConstraint;
+
+    /**
+     * @return The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+     * 
+     */
+    public Optional<Output<Integer>> pathLengthConstraint() {
+        return Optional.ofNullable(this.pathLengthConstraint);
+    }
+
+    /**
+     * (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     @Import(name="ruleType", required=true)
     private Output<String> ruleType;
 
     /**
-     * @return (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * @return (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     public Output<String> ruleType() {
@@ -66,6 +98,8 @@ public final class CertificateAuthorityCertificateAuthorityRuleArgs extends com.
     private CertificateAuthorityCertificateAuthorityRuleArgs(CertificateAuthorityCertificateAuthorityRuleArgs $) {
         this.certificateAuthorityMaxValidityDuration = $.certificateAuthorityMaxValidityDuration;
         this.leafCertificateMaxValidityDuration = $.leafCertificateMaxValidityDuration;
+        this.nameConstraint = $.nameConstraint;
+        this.pathLengthConstraint = $.pathLengthConstraint;
         this.ruleType = $.ruleType;
     }
 
@@ -130,7 +164,49 @@ public final class CertificateAuthorityCertificateAuthorityRuleArgs extends com.
         }
 
         /**
-         * @param ruleType (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+         * @param nameConstraint A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nameConstraint(@Nullable Output<CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs> nameConstraint) {
+            $.nameConstraint = nameConstraint;
+            return this;
+        }
+
+        /**
+         * @param nameConstraint A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nameConstraint(CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs nameConstraint) {
+            return nameConstraint(Output.of(nameConstraint));
+        }
+
+        /**
+         * @param pathLengthConstraint The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pathLengthConstraint(@Nullable Output<Integer> pathLengthConstraint) {
+            $.pathLengthConstraint = pathLengthConstraint;
+            return this;
+        }
+
+        /**
+         * @param pathLengthConstraint The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pathLengthConstraint(Integer pathLengthConstraint) {
+            return pathLengthConstraint(Output.of(pathLengthConstraint));
+        }
+
+        /**
+         * @param ruleType (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
          * 
          * @return builder
          * 
@@ -141,7 +217,7 @@ public final class CertificateAuthorityCertificateAuthorityRuleArgs extends com.
         }
 
         /**
-         * @param ruleType (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+         * @param ruleType (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
          * 
          * @return builder
          * 

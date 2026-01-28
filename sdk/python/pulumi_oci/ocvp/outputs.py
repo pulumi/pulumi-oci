@@ -23,6 +23,9 @@ __all__ = [
     'DatastoreBlockVolumeDetail',
     'DatastoreBlockVolumeDetailAttachment',
     'EsxiHostDatastoreAttachment',
+    'ManagementApplianceConfiguration',
+    'ManagementApplianceConnection',
+    'ManagementApplianceHeartbeatConnectionState',
     'SddcDatastore',
     'SddcHcxOnPremLicense',
     'SddcInitialConfiguration',
@@ -56,6 +59,15 @@ __all__ = [
     'GetExsiHostsEsxiHostCollectionResult',
     'GetExsiHostsEsxiHostCollectionDatastoreAttachmentResult',
     'GetExsiHostsFilterResult',
+    'GetManagementApplianceConfigurationResult',
+    'GetManagementApplianceConnectionResult',
+    'GetManagementApplianceHeartbeatConnectionStateResult',
+    'GetManagementAppliancesFilterResult',
+    'GetManagementAppliancesManagementApplianceCollectionResult',
+    'GetManagementAppliancesManagementApplianceCollectionItemResult',
+    'GetManagementAppliancesManagementApplianceCollectionItemConfigurationResult',
+    'GetManagementAppliancesManagementApplianceCollectionItemConnectionResult',
+    'GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateResult',
     'GetSddcDatastoreResult',
     'GetSddcHcxOnPremLicenseResult',
     'GetSddcInitialConfigurationResult',
@@ -673,6 +685,169 @@ class EsxiHostDatastoreAttachment(dict):
         An IQN of the Block Storage Volume.
         """
         return pulumi.get(self, "volume_iqn")
+
+
+@pulumi.output_type
+class ManagementApplianceConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isLogIngestionEnabled":
+            suggest = "is_log_ingestion_enabled"
+        elif key == "isMetricsCollectionEnabled":
+            suggest = "is_metrics_collection_enabled"
+        elif key == "supportBundleBucketId":
+            suggest = "support_bundle_bucket_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementApplianceConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementApplianceConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementApplianceConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_log_ingestion_enabled: _builtins.bool,
+                 is_metrics_collection_enabled: _builtins.bool,
+                 metrics: Optional[Sequence[_builtins.str]] = None,
+                 support_bundle_bucket_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_log_ingestion_enabled: (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        :param _builtins.bool is_metrics_collection_enabled: (Updatable) Is metrics collection and publishing is enabled for appliance.
+        :param Sequence[_builtins.str] metrics: (Updatable) Array of metrics ids to collect.
+        :param _builtins.str support_bundle_bucket_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        pulumi.set(__self__, "is_log_ingestion_enabled", is_log_ingestion_enabled)
+        pulumi.set(__self__, "is_metrics_collection_enabled", is_metrics_collection_enabled)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if support_bundle_bucket_id is not None:
+            pulumi.set(__self__, "support_bundle_bucket_id", support_bundle_bucket_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isLogIngestionEnabled")
+    def is_log_ingestion_enabled(self) -> _builtins.bool:
+        """
+        (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        """
+        return pulumi.get(self, "is_log_ingestion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricsCollectionEnabled")
+    def is_metrics_collection_enabled(self) -> _builtins.bool:
+        """
+        (Updatable) Is metrics collection and publishing is enabled for appliance.
+        """
+        return pulumi.get(self, "is_metrics_collection_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) Array of metrics ids to collect.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
+    @pulumi.getter(name="supportBundleBucketId")
+    def support_bundle_bucket_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        return pulumi.get(self, "support_bundle_bucket_id")
+
+
+@pulumi.output_type
+class ManagementApplianceConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialsSecretId":
+            suggest = "credentials_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagementApplianceConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagementApplianceConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagementApplianceConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credentials_secret_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        :param _builtins.str type: (Updatable) Type of connection.
+        """
+        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialsSecretId")
+    def credentials_secret_id(self) -> _builtins.str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        """
+        return pulumi.get(self, "credentials_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ManagementApplianceHeartbeatConnectionState(dict):
+    def __init__(__self__, *,
+                 details: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str details: Information about current connection status.
+        :param _builtins.str state: Current state of the management appliance.
+        :param _builtins.str type: Type of connection.
+        """
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> Optional[_builtins.str]:
+        """
+        Information about current connection status.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        Current state of the management appliance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -3409,6 +3584,497 @@ class GetExsiHostsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagementApplianceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_log_ingestion_enabled: _builtins.bool,
+                 is_metrics_collection_enabled: _builtins.bool,
+                 metrics: Sequence[_builtins.str],
+                 support_bundle_bucket_id: _builtins.str):
+        """
+        :param _builtins.bool is_log_ingestion_enabled: Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        :param _builtins.bool is_metrics_collection_enabled: Is metrics collection and publishing is enabled for appliance.
+        :param Sequence[_builtins.str] metrics: Array of metrics ids to collect.
+        :param _builtins.str support_bundle_bucket_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        pulumi.set(__self__, "is_log_ingestion_enabled", is_log_ingestion_enabled)
+        pulumi.set(__self__, "is_metrics_collection_enabled", is_metrics_collection_enabled)
+        pulumi.set(__self__, "metrics", metrics)
+        pulumi.set(__self__, "support_bundle_bucket_id", support_bundle_bucket_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isLogIngestionEnabled")
+    def is_log_ingestion_enabled(self) -> _builtins.bool:
+        """
+        Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        """
+        return pulumi.get(self, "is_log_ingestion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricsCollectionEnabled")
+    def is_metrics_collection_enabled(self) -> _builtins.bool:
+        """
+        Is metrics collection and publishing is enabled for appliance.
+        """
+        return pulumi.get(self, "is_metrics_collection_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence[_builtins.str]:
+        """
+        Array of metrics ids to collect.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
+    @pulumi.getter(name="supportBundleBucketId")
+    def support_bundle_bucket_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        return pulumi.get(self, "support_bundle_bucket_id")
+
+
+@pulumi.output_type
+class GetManagementApplianceConnectionResult(dict):
+    def __init__(__self__, *,
+                 credentials_secret_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str credentials_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        :param _builtins.str type: Type of connection.
+        """
+        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialsSecretId")
+    def credentials_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        """
+        return pulumi.get(self, "credentials_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementApplianceHeartbeatConnectionStateResult(dict):
+    def __init__(__self__, *,
+                 details: _builtins.str,
+                 state: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str details: Information about current connection status.
+        :param _builtins.str state: Current state of the management appliance.
+        :param _builtins.str type: Type of connection.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> _builtins.str:
+        """
+        Information about current connection status.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Current state of the management appliance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementAppliancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagementAppliancesManagementApplianceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagementAppliancesManagementApplianceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 compute_instance_id: _builtins.str,
+                 configurations: Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemConfigurationResult'],
+                 connections: Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemConnectionResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 heartbeat_connection_states: Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateResult'],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 management_agent_id: _builtins.str,
+                 public_ssh_keys: _builtins.str,
+                 sddc_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_configuration_updated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_last_heartbeat: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
+        :param Sequence['GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs'] configurations: Configuration of management appliance.
+        :param Sequence['GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs'] connections: Array of connections for management appliance.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence['GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs'] heartbeat_connection_states: Current states of connections.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
+        :param _builtins.str lifecycle_details: Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
+        :param _builtins.str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+        :param _builtins.str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        :param _builtins.str state: The lifecycle state of the management appliance.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_configuration_updated: The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_created: The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_last_heartbeat: The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_updated: The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_instance_id", compute_instance_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "connections", connections)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "heartbeat_connection_states", heartbeat_connection_states)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "public_ssh_keys", public_ssh_keys)
+        pulumi.set(__self__, "sddc_id", sddc_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_configuration_updated", time_configuration_updated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeInstanceId")
+    def compute_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
+        """
+        return pulumi.get(self, "compute_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemConfigurationResult']:
+        """
+        Configuration of management appliance.
+        """
+        return pulumi.get(self, "configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def connections(self) -> Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemConnectionResult']:
+        """
+        Array of connections for management appliance.
+        """
+        return pulumi.get(self, "connections")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="heartbeatConnectionStates")
+    def heartbeat_connection_states(self) -> Sequence['outputs.GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateResult']:
+        """
+        Current states of connections.
+        """
+        return pulumi.get(self, "heartbeat_connection_states")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicSshKeys")
+    def public_ssh_keys(self) -> _builtins.str:
+        return pulumi.get(self, "public_ssh_keys")
+
+    @_builtins.property
+    @pulumi.getter(name="sddcId")
+    def sddc_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+        """
+        return pulumi.get(self, "sddc_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the management appliance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConfigurationUpdated")
+    def time_configuration_updated(self) -> _builtins.str:
+        """
+        The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_configuration_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastHeartbeat")
+    def time_last_heartbeat(self) -> _builtins.str:
+        """
+        The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_last_heartbeat")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagementAppliancesManagementApplianceCollectionItemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 is_log_ingestion_enabled: _builtins.bool,
+                 is_metrics_collection_enabled: _builtins.bool,
+                 metrics: Sequence[_builtins.str],
+                 support_bundle_bucket_id: _builtins.str):
+        """
+        :param _builtins.bool is_log_ingestion_enabled: Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        :param _builtins.bool is_metrics_collection_enabled: Is metrics collection and publishing is enabled for appliance.
+        :param Sequence[_builtins.str] metrics: Array of metrics ids to collect.
+        :param _builtins.str support_bundle_bucket_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        pulumi.set(__self__, "is_log_ingestion_enabled", is_log_ingestion_enabled)
+        pulumi.set(__self__, "is_metrics_collection_enabled", is_metrics_collection_enabled)
+        pulumi.set(__self__, "metrics", metrics)
+        pulumi.set(__self__, "support_bundle_bucket_id", support_bundle_bucket_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isLogIngestionEnabled")
+    def is_log_ingestion_enabled(self) -> _builtins.bool:
+        """
+        Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        """
+        return pulumi.get(self, "is_log_ingestion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricsCollectionEnabled")
+    def is_metrics_collection_enabled(self) -> _builtins.bool:
+        """
+        Is metrics collection and publishing is enabled for appliance.
+        """
+        return pulumi.get(self, "is_metrics_collection_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Sequence[_builtins.str]:
+        """
+        Array of metrics ids to collect.
+        """
+        return pulumi.get(self, "metrics")
+
+    @_builtins.property
+    @pulumi.getter(name="supportBundleBucketId")
+    def support_bundle_bucket_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        return pulumi.get(self, "support_bundle_bucket_id")
+
+
+@pulumi.output_type
+class GetManagementAppliancesManagementApplianceCollectionItemConnectionResult(dict):
+    def __init__(__self__, *,
+                 credentials_secret_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str credentials_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        :param _builtins.str type: Type of connection.
+        """
+        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialsSecretId")
+    def credentials_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        """
+        return pulumi.get(self, "credentials_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateResult(dict):
+    def __init__(__self__, *,
+                 details: _builtins.str,
+                 state: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str details: Information about current connection status.
+        :param _builtins.str state: The lifecycle state of the management appliance.
+        :param _builtins.str type: Type of connection.
+        """
+        pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> _builtins.str:
+        """
+        Information about current connection status.
+        """
+        return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the management appliance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

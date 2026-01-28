@@ -78,6 +78,10 @@ export class CertificateAuthority extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     */
+    declare public readonly externalKeyDescription: pulumi.Output<string | undefined>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -88,7 +92,7 @@ export class CertificateAuthority extends pulumi.CustomResource {
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    declare public readonly kmsKeyId: pulumi.Output<string>;
+    declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current CA lifecycle state.
      */
@@ -143,6 +147,7 @@ export class CertificateAuthority extends pulumi.CustomResource {
             resourceInputs["currentVersions"] = state?.currentVersions;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
+            resourceInputs["externalKeyDescription"] = state?.externalKeyDescription;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["issuerCertificateAuthorityId"] = state?.issuerCertificateAuthorityId;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
@@ -161,15 +166,13 @@ export class CertificateAuthority extends pulumi.CustomResource {
             if (args?.compartmentId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if (args?.kmsKeyId === undefined && !opts.urn) {
-                throw new Error("Missing required property 'kmsKeyId'");
-            }
             resourceInputs["certificateAuthorityConfig"] = args?.certificateAuthorityConfig;
             resourceInputs["certificateAuthorityRules"] = args?.certificateAuthorityRules;
             resourceInputs["certificateRevocationListDetails"] = args?.certificateRevocationListDetails;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
+            resourceInputs["externalKeyDescription"] = args?.externalKeyDescription;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
             resourceInputs["name"] = args?.name;
@@ -224,6 +227,10 @@ export interface CertificateAuthorityState {
      * (Updatable) A brief description of the CA.
      */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     */
+    externalKeyDescription?: pulumi.Input<string>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -299,13 +306,17 @@ export interface CertificateAuthorityArgs {
      */
     description?: pulumi.Input<string>;
     /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     */
+    externalKeyDescription?: pulumi.Input<string>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    kmsKeyId: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string>;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *

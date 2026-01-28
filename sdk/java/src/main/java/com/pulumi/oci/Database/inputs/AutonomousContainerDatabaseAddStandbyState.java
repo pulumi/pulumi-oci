@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyDataguardArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs;
@@ -301,6 +302,21 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
      */
     public Optional<Output<String>> dstFileVersion() {
         return Optional.ofNullable(this.dstFileVersion);
+    }
+
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs>>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
 
     /**
@@ -1021,6 +1037,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         this.displayName = $.displayName;
         this.distributionAffinity = $.distributionAffinity;
         this.dstFileVersion = $.dstFileVersion;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
         this.infrastructureType = $.infrastructureType;
@@ -1502,6 +1519,37 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
          */
         public Builder dstFileVersion(String dstFileVersion) {
             return dstFileVersion(Output.of(dstFileVersion));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs> encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
 
         /**

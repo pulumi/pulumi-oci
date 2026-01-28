@@ -39,12 +39,15 @@ class CloudAutonomousVmClusterArgs:
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
+                 register_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_container_databases: Optional[pulumi.Input[_builtins.int]] = None):
+                 total_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
+                 unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a CloudAutonomousVmCluster resource.
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -68,12 +71,15 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,6 +116,8 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if opc_dry_run is not None:
             pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        if register_pkcs_trigger is not None:
+            pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if scan_listener_port_non_tls is not None:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
@@ -118,10 +126,14 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if subscription_id is not None:
             pulumi.set(__self__, "subscription_id", subscription_id)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_container_databases is not None:
             pulumi.set(__self__, "total_container_databases", total_container_databases)
+        if unregister_pkcs_trigger is not None:
+            pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
 
     @_builtins.property
     @pulumi.getter(name="cloudExadataInfrastructureId")
@@ -343,6 +355,18 @@ class CloudAutonomousVmClusterArgs:
         pulumi.set(self, "opc_dry_run", value)
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @register_pkcs_trigger.setter
+    def register_pkcs_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "register_pkcs_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="scanListenerPortNonTls")
     def scan_listener_port_non_tls(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -391,6 +415,18 @@ class CloudAutonomousVmClusterArgs:
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -407,15 +443,27 @@ class CloudAutonomousVmClusterArgs:
     def total_container_databases(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         (Updatable) The total number of Autonomous Container Databases that can be created.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 
     @total_container_databases.setter
     def total_container_databases(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "total_container_databases", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "unregister_pkcs_trigger")
+
+    @unregister_pkcs_trigger.setter
+    def unregister_pkcs_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "unregister_pkcs_trigger", value)
 
 
 @pulumi.input_type
@@ -456,6 +504,7 @@ class _CloudAutonomousVmClusterState:
                  memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 multi_cloud_identity_connector_configs: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs']]]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  non_provisionable_autonomous_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
@@ -467,6 +516,7 @@ class _CloudAutonomousVmClusterState:
                  provisioned_autonomous_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
                  provisioned_cpus: Optional[pulumi.Input[_builtins.float]] = None,
                  reclaimable_cpus: Optional[pulumi.Input[_builtins.float]] = None,
+                 register_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  reserved_cpus: Optional[pulumi.Input[_builtins.float]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
@@ -476,13 +526,15 @@ class _CloudAutonomousVmClusterState:
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_database_ssl_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
                  time_ords_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
                  total_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
-                 total_cpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 total_cpus: Optional[pulumi.Input[_builtins.float]] = None,
+                 unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering CloudAutonomousVmCluster resources.
         :param pulumi.Input[_builtins.float] autonomous_data_storage_percentage: The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
@@ -522,6 +574,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs']]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.int] node_count: The number of database servers in the cloud VM cluster.
         :param pulumi.Input[_builtins.int] non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -534,6 +587,7 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[_builtins.int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
@@ -543,16 +597,18 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[_builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[_builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[_builtins.float] total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous AI Databases, in TBs.
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
+        :param pulumi.Input[_builtins.float] total_cpus: The total number of CPUs in an Autonomous VM Cluster.
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.float] total_cpus: The total number of CPUs in an Autonomous VM Cluster.
         """
         if autonomous_data_storage_percentage is not None:
             pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -624,6 +680,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if multi_cloud_identity_connector_configs is not None:
+            pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
@@ -646,6 +704,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus is not None:
             pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if register_pkcs_trigger is not None:
+            pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if reserved_cpus is not None:
             pulumi.set(__self__, "reserved_cpus", reserved_cpus)
         if scan_listener_port_non_tls is not None:
@@ -664,6 +724,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_database_ssl_certificate_expires is not None:
@@ -678,6 +740,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "total_container_databases", total_container_databases)
         if total_cpus is not None:
             pulumi.set(__self__, "total_cpus", total_cpus)
+        if unregister_pkcs_trigger is not None:
+            pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDataStoragePercentage")
@@ -1102,6 +1166,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs']]]]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @multi_cloud_identity_connector_configs.setter
+    def multi_cloud_identity_connector_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs']]]]):
+        pulumi.set(self, "multi_cloud_identity_connector_configs", value)
+
+    @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1235,6 +1311,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "reclaimable_cpus", value)
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @register_pkcs_trigger.setter
+    def register_pkcs_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "register_pkcs_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
@@ -1343,6 +1431,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1407,9 +1507,6 @@ class _CloudAutonomousVmClusterState:
     def total_container_databases(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         (Updatable) The total number of Autonomous Container Databases that can be created.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 
@@ -1428,6 +1525,21 @@ class _CloudAutonomousVmClusterState:
     @total_cpus.setter
     def total_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
         pulumi.set(self, "total_cpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "unregister_pkcs_trigger")
+
+    @unregister_pkcs_trigger.setter
+    def unregister_pkcs_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "unregister_pkcs_trigger", value)
 
 
 @pulumi.type_token("oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster")
@@ -1453,13 +1565,16 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
+                 register_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  total_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
+                 unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -1542,13 +1657,16 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1650,13 +1768,16 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  opc_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
+                 register_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  total_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
+                 unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1689,6 +1810,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["opc_dry_run"] = opc_dry_run
+            __props__.__dict__["register_pkcs_trigger"] = register_pkcs_trigger
             __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
             __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
             __props__.__dict__["security_attributes"] = security_attributes
@@ -1696,8 +1818,10 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["subscription_id"] = subscription_id
+            __props__.__dict__["tde_key_store_type"] = tde_key_store_type
             __props__.__dict__["time_updated"] = time_updated
             __props__.__dict__["total_container_databases"] = total_container_databases
+            __props__.__dict__["unregister_pkcs_trigger"] = unregister_pkcs_trigger
             __props__.__dict__["autonomous_data_storage_percentage"] = None
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["available_autonomous_data_storage_size_in_tbs"] = None
@@ -1718,6 +1842,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["max_acds_lowest_scaled_value"] = None
             __props__.__dict__["memory_per_compute_unit_in_gbs"] = None
             __props__.__dict__["memory_size_in_gbs"] = None
+            __props__.__dict__["multi_cloud_identity_connector_configs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["node_count"] = None
             __props__.__dict__["non_provisionable_autonomous_container_databases"] = None
@@ -1781,6 +1906,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+            multi_cloud_identity_connector_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
             node_count: Optional[pulumi.Input[_builtins.int]] = None,
             non_provisionable_autonomous_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1792,6 +1918,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             provisioned_autonomous_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
             provisioned_cpus: Optional[pulumi.Input[_builtins.float]] = None,
             reclaimable_cpus: Optional[pulumi.Input[_builtins.float]] = None,
+            register_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             reserved_cpus: Optional[pulumi.Input[_builtins.float]] = None,
             scan_listener_port_non_tls: Optional[pulumi.Input[_builtins.int]] = None,
             scan_listener_port_tls: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1801,13 +1928,15 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tde_key_store_type: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_database_ssl_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
             time_ords_certificate_expires: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             total_autonomous_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
             total_container_databases: Optional[pulumi.Input[_builtins.int]] = None,
-            total_cpus: Optional[pulumi.Input[_builtins.float]] = None) -> 'CloudAutonomousVmCluster':
+            total_cpus: Optional[pulumi.Input[_builtins.float]] = None,
+            unregister_pkcs_trigger: Optional[pulumi.Input[_builtins.int]] = None) -> 'CloudAutonomousVmCluster':
         """
         Get an existing CloudAutonomousVmCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1852,6 +1981,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: The memory allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.int] node_count: The number of database servers in the cloud VM cluster.
         :param pulumi.Input[_builtins.int] non_provisionable_autonomous_container_databases: The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -1864,6 +1994,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[_builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
@@ -1873,16 +2004,18 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[_builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[_builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[_builtins.float] total_autonomous_data_storage_in_tbs: The total data disk group size for Autonomous AI Databases, in TBs.
         :param pulumi.Input[_builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
+        :param pulumi.Input[_builtins.float] total_cpus: The total number of CPUs in an Autonomous VM Cluster.
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.float] total_cpus: The total number of CPUs in an Autonomous VM Cluster.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1923,6 +2056,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["memory_per_compute_unit_in_gbs"] = memory_per_compute_unit_in_gbs
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
+        __props__.__dict__["multi_cloud_identity_connector_configs"] = multi_cloud_identity_connector_configs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["non_provisionable_autonomous_container_databases"] = non_provisionable_autonomous_container_databases
@@ -1934,6 +2068,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["provisioned_autonomous_container_databases"] = provisioned_autonomous_container_databases
         __props__.__dict__["provisioned_cpus"] = provisioned_cpus
         __props__.__dict__["reclaimable_cpus"] = reclaimable_cpus
+        __props__.__dict__["register_pkcs_trigger"] = register_pkcs_trigger
         __props__.__dict__["reserved_cpus"] = reserved_cpus
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
@@ -1943,6 +2078,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tde_key_store_type"] = tde_key_store_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
         __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
@@ -1950,6 +2086,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["total_autonomous_data_storage_in_tbs"] = total_autonomous_data_storage_in_tbs
         __props__.__dict__["total_container_databases"] = total_container_databases
         __props__.__dict__["total_cpus"] = total_cpus
+        __props__.__dict__["unregister_pkcs_trigger"] = unregister_pkcs_trigger
         return CloudAutonomousVmCluster(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -2235,6 +2372,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "memory_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> pulumi.Output[Sequence['outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig']]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2324,6 +2469,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "reclaimable_cpus")
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> pulumi.Output[_builtins.float]:
         """
@@ -2396,6 +2549,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2440,9 +2601,6 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
     def total_container_databases(self) -> pulumi.Output[_builtins.int]:
         """
         (Updatable) The total number of Autonomous Container Databases that can be created.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "total_container_databases")
 
@@ -2453,4 +2611,15 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         The total number of CPUs in an Autonomous VM Cluster.
         """
         return pulumi.get(self, "total_cpus")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "unregister_pkcs_trigger")
 

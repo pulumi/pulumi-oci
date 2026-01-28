@@ -5,13 +5,20 @@ package com.pulumi.oci.Queue.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Queue.outputs.GetQueueCapability;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetQueueResult {
+    /**
+     * @return The list of capabilities enabled on the queue
+     * 
+     */
+    private List<GetQueueCapability> capabilities;
     /**
      * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
@@ -102,6 +109,13 @@ public final class GetQueueResult {
     private Integer visibilityInSeconds;
 
     private GetQueueResult() {}
+    /**
+     * @return The list of capabilities enabled on the queue
+     * 
+     */
+    public List<GetQueueCapability> capabilities() {
+        return this.capabilities;
+    }
     /**
      * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
@@ -240,6 +254,7 @@ public final class GetQueueResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetQueueCapability> capabilities;
         private Integer channelConsumptionLimit;
         private String compartmentId;
         private String customEncryptionKeyId;
@@ -263,6 +278,7 @@ public final class GetQueueResult {
         public Builder() {}
         public Builder(GetQueueResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capabilities = defaults.capabilities;
     	      this.channelConsumptionLimit = defaults.channelConsumptionLimit;
     	      this.compartmentId = defaults.compartmentId;
     	      this.customEncryptionKeyId = defaults.customEncryptionKeyId;
@@ -285,6 +301,17 @@ public final class GetQueueResult {
     	      this.visibilityInSeconds = defaults.visibilityInSeconds;
         }
 
+        @CustomType.Setter
+        public Builder capabilities(List<GetQueueCapability> capabilities) {
+            if (capabilities == null) {
+              throw new MissingRequiredPropertyException("GetQueueResult", "capabilities");
+            }
+            this.capabilities = capabilities;
+            return this;
+        }
+        public Builder capabilities(GetQueueCapability... capabilities) {
+            return capabilities(List.of(capabilities));
+        }
         @CustomType.Setter
         public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
             if (channelConsumptionLimit == null) {
@@ -447,6 +474,7 @@ public final class GetQueueResult {
         }
         public GetQueueResult build() {
             final var _resultValue = new GetQueueResult();
+            _resultValue.capabilities = capabilities;
             _resultValue.channelConsumptionLimit = channelConsumptionLimit;
             _resultValue.compartmentId = compartmentId;
             _resultValue.customEncryptionKeyId = customEncryptionKeyId;

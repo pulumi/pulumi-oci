@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult> AssignedConnections;
         /// <summary>
+        /// OCID of cluster assigned to OMK cluster-namespace.
+        /// </summary>
+        public readonly string ClusterId;
+        /// <summary>
         /// details of all endpoints assigned to cluster
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult> EndpointDetails;
@@ -29,6 +33,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// version of model
         /// </summary>
         public readonly string ModelVersion;
+        /// <summary>
+        /// Kubernetes namespace-name of omk cluster-namespace.
+        /// </summary>
+        public readonly string Namespace;
         /// <summary>
         /// region of cluster
         /// </summary>
@@ -42,20 +50,26 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetDifStacksStackCollectionItemServiceDetailAdditionalDetailResult(
             ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnectionResult> assignedConnections,
 
+            string clusterId,
+
             ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetailResult> endpointDetails,
 
             string modelId,
 
             string modelVersion,
 
+            string @namespace,
+
             string ociRegion,
 
             string privateEndpointId)
         {
             AssignedConnections = assignedConnections;
+            ClusterId = clusterId;
             EndpointDetails = endpointDetails;
             ModelId = modelId;
             ModelVersion = modelVersion;
+            Namespace = @namespace;
             OciRegion = ociRegion;
             PrivateEndpointId = privateEndpointId;
         }

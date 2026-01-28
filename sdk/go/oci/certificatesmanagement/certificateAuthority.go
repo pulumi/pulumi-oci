@@ -40,12 +40,14 @@ type CertificateAuthority struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+	ExternalKeyDescription pulumi.StringPtrOutput `pulumi:"externalKeyDescription"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId pulumi.StringOutput `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// Additional information about the current CA lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -77,9 +79,6 @@ func NewCertificateAuthority(ctx *pulumi.Context,
 	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.KmsKeyId == nil {
-		return nil, errors.New("invalid value for required argument 'KmsKeyId'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CertificateAuthority
@@ -120,6 +119,8 @@ type certificateAuthorityState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description *string `pulumi:"description"`
+	// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+	ExternalKeyDescription *string `pulumi:"externalKeyDescription"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -162,6 +163,8 @@ type CertificateAuthorityState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrInput
+	// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+	ExternalKeyDescription pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -204,10 +207,12 @@ type certificateAuthorityArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description *string `pulumi:"description"`
+	// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+	ExternalKeyDescription *string `pulumi:"externalKeyDescription"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	//
 	// ** IMPORTANT **
@@ -229,10 +234,12 @@ type CertificateAuthorityArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrInput
+	// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+	ExternalKeyDescription pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-	KmsKeyId pulumi.StringInput
+	KmsKeyId pulumi.StringPtrInput
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	//
 	// ** IMPORTANT **
@@ -373,6 +380,11 @@ func (o CertificateAuthorityOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+func (o CertificateAuthorityOutput) ExternalKeyDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringPtrOutput { return v.ExternalKeyDescription }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o CertificateAuthorityOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -384,8 +396,8 @@ func (o CertificateAuthorityOutput) IssuerCertificateAuthorityId() pulumi.String
 }
 
 // The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-func (o CertificateAuthorityOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o CertificateAuthorityOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // Additional information about the current CA lifecycle state.

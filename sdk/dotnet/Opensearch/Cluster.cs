@@ -126,6 +126,12 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        /// </summary>
+        [Output("loadBalancerConfig")]
+        public Output<Outputs.ClusterLoadBalancerConfig> LoadBalancerConfig { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Details for creation of maintenance details
         /// </summary>
         [Output("maintenanceDetails")]
@@ -535,6 +541,12 @@ namespace Pulumi.Oci.Opensearch
         }
 
         /// <summary>
+        /// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        /// </summary>
+        [Input("loadBalancerConfig")]
+        public Input<Inputs.ClusterLoadBalancerConfigArgs>? LoadBalancerConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Details for creation of maintenance details
         /// </summary>
         [Input("maintenanceDetails")]
@@ -901,6 +913,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        /// </summary>
+        [Input("loadBalancerConfig")]
+        public Input<Inputs.ClusterLoadBalancerConfigGetArgs>? LoadBalancerConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Details for creation of maintenance details

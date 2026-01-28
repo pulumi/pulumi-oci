@@ -6,10 +6,13 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetDifStackAdb;
+import com.pulumi.oci.oci.outputs.GetDifStackAidataplatform;
 import com.pulumi.oci.oci.outputs.GetDifStackDataflow;
 import com.pulumi.oci.oci.outputs.GetDifStackGenai;
 import com.pulumi.oci.oci.outputs.GetDifStackGgc;
 import com.pulumi.oci.oci.outputs.GetDifStackObjectstorage;
+import com.pulumi.oci.oci.outputs.GetDifStackOke;
+import com.pulumi.oci.oci.outputs.GetDifStackOmk;
 import com.pulumi.oci.oci.outputs.GetDifStackServiceDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -25,6 +28,11 @@ public final class GetDifStackResult {
      */
     private List<GetDifStackAdb> adbs;
     private Integer addServiceTrigger;
+    /**
+     * @return AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    private List<GetDifStackAidataplatform> aidataplatforms;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -82,6 +90,16 @@ public final class GetDifStackResult {
      */
     private List<GetDifStackObjectstorage> objectstorages;
     /**
+     * @return OKE Details if oke is included in services.
+     * 
+     */
+    private List<GetDifStackOke> okes;
+    /**
+     * @return OMK Details if omk is included in services.
+     * 
+     */
+    private List<GetDifStackOmk> omks;
+    /**
      * @return Details of the service onboarded for the data intelligence stack.
      * 
      */
@@ -133,6 +151,13 @@ public final class GetDifStackResult {
     }
     public Integer addServiceTrigger() {
         return this.addServiceTrigger;
+    }
+    /**
+     * @return AI Data Platform Details if aidataplatform is included in services.
+     * 
+     */
+    public List<GetDifStackAidataplatform> aidataplatforms() {
+        return this.aidataplatforms;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -215,6 +240,20 @@ public final class GetDifStackResult {
         return this.objectstorages;
     }
     /**
+     * @return OKE Details if oke is included in services.
+     * 
+     */
+    public List<GetDifStackOke> okes() {
+        return this.okes;
+    }
+    /**
+     * @return OMK Details if omk is included in services.
+     * 
+     */
+    public List<GetDifStackOmk> omks() {
+        return this.omks;
+    }
+    /**
      * @return Details of the service onboarded for the data intelligence stack.
      * 
      */
@@ -285,6 +324,7 @@ public final class GetDifStackResult {
     public static final class Builder {
         private List<GetDifStackAdb> adbs;
         private Integer addServiceTrigger;
+        private List<GetDifStackAidataplatform> aidataplatforms;
         private String compartmentId;
         private List<GetDifStackDataflow> dataflows;
         private Map<String,String> definedTags;
@@ -297,6 +337,8 @@ public final class GetDifStackResult {
         private String lifecycleDetails;
         private String notificationEmail;
         private List<GetDifStackObjectstorage> objectstorages;
+        private List<GetDifStackOke> okes;
+        private List<GetDifStackOmk> omks;
         private List<GetDifStackServiceDetail> serviceDetails;
         private List<String> services;
         private String stackId;
@@ -311,6 +353,7 @@ public final class GetDifStackResult {
     	      Objects.requireNonNull(defaults);
     	      this.adbs = defaults.adbs;
     	      this.addServiceTrigger = defaults.addServiceTrigger;
+    	      this.aidataplatforms = defaults.aidataplatforms;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dataflows = defaults.dataflows;
     	      this.definedTags = defaults.definedTags;
@@ -323,6 +366,8 @@ public final class GetDifStackResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.notificationEmail = defaults.notificationEmail;
     	      this.objectstorages = defaults.objectstorages;
+    	      this.okes = defaults.okes;
+    	      this.omks = defaults.omks;
     	      this.serviceDetails = defaults.serviceDetails;
     	      this.services = defaults.services;
     	      this.stackId = defaults.stackId;
@@ -352,6 +397,17 @@ public final class GetDifStackResult {
             }
             this.addServiceTrigger = addServiceTrigger;
             return this;
+        }
+        @CustomType.Setter
+        public Builder aidataplatforms(List<GetDifStackAidataplatform> aidataplatforms) {
+            if (aidataplatforms == null) {
+              throw new MissingRequiredPropertyException("GetDifStackResult", "aidataplatforms");
+            }
+            this.aidataplatforms = aidataplatforms;
+            return this;
+        }
+        public Builder aidataplatforms(GetDifStackAidataplatform... aidataplatforms) {
+            return aidataplatforms(List.of(aidataplatforms));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -462,6 +518,28 @@ public final class GetDifStackResult {
             return objectstorages(List.of(objectstorages));
         }
         @CustomType.Setter
+        public Builder okes(List<GetDifStackOke> okes) {
+            if (okes == null) {
+              throw new MissingRequiredPropertyException("GetDifStackResult", "okes");
+            }
+            this.okes = okes;
+            return this;
+        }
+        public Builder okes(GetDifStackOke... okes) {
+            return okes(List.of(okes));
+        }
+        @CustomType.Setter
+        public Builder omks(List<GetDifStackOmk> omks) {
+            if (omks == null) {
+              throw new MissingRequiredPropertyException("GetDifStackResult", "omks");
+            }
+            this.omks = omks;
+            return this;
+        }
+        public Builder omks(GetDifStackOmk... omks) {
+            return omks(List.of(omks));
+        }
+        @CustomType.Setter
         public Builder serviceDetails(List<GetDifStackServiceDetail> serviceDetails) {
             if (serviceDetails == null) {
               throw new MissingRequiredPropertyException("GetDifStackResult", "serviceDetails");
@@ -546,6 +624,7 @@ public final class GetDifStackResult {
             final var _resultValue = new GetDifStackResult();
             _resultValue.adbs = adbs;
             _resultValue.addServiceTrigger = addServiceTrigger;
+            _resultValue.aidataplatforms = aidataplatforms;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dataflows = dataflows;
             _resultValue.definedTags = definedTags;
@@ -558,6 +637,8 @@ public final class GetDifStackResult {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.notificationEmail = notificationEmail;
             _resultValue.objectstorages = objectstorages;
+            _resultValue.okes = okes;
+            _resultValue.omks = omks;
             _resultValue.serviceDetails = serviceDetails;
             _resultValue.services = services;
             _resultValue.stackId = stackId;

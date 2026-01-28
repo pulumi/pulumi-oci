@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,21 @@ public final class ManagedKafkaKafkaClusterBrokerShapeArgs extends com.pulumi.re
      */
     public Output<Integer> nodeCount() {
         return this.nodeCount;
+    }
+
+    /**
+     * (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     * 
+     */
+    @Import(name="nodeShape")
+    private @Nullable Output<String> nodeShape;
+
+    /**
+     * @return (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     * 
+     */
+    public Optional<Output<String>> nodeShape() {
+        return Optional.ofNullable(this.nodeShape);
     }
 
     /**
@@ -65,6 +81,7 @@ public final class ManagedKafkaKafkaClusterBrokerShapeArgs extends com.pulumi.re
 
     private ManagedKafkaKafkaClusterBrokerShapeArgs(ManagedKafkaKafkaClusterBrokerShapeArgs $) {
         this.nodeCount = $.nodeCount;
+        this.nodeShape = $.nodeShape;
         this.ocpuCount = $.ocpuCount;
         this.storageSizeInGbs = $.storageSizeInGbs;
     }
@@ -106,6 +123,27 @@ public final class ManagedKafkaKafkaClusterBrokerShapeArgs extends com.pulumi.re
          */
         public Builder nodeCount(Integer nodeCount) {
             return nodeCount(Output.of(nodeCount));
+        }
+
+        /**
+         * @param nodeShape (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeShape(@Nullable Output<String> nodeShape) {
+            $.nodeShape = nodeShape;
+            return this;
+        }
+
+        /**
+         * @param nodeShape (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeShape(String nodeShape) {
+            return nodeShape(Output.of(nodeShape));
         }
 
         /**

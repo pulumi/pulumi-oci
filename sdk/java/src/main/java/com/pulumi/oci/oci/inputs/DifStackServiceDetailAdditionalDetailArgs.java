@@ -34,6 +34,21 @@ public final class DifStackServiceDetailAdditionalDetailArgs extends com.pulumi.
     }
 
     /**
+     * OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    @Import(name="clusterId")
+    private @Nullable Output<String> clusterId;
+
+    /**
+     * @return OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    public Optional<Output<String>> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+
+    /**
      * details of all endpoints assigned to cluster
      * 
      */
@@ -79,6 +94,21 @@ public final class DifStackServiceDetailAdditionalDetailArgs extends com.pulumi.
     }
 
     /**
+     * Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    @Import(name="namespace")
+    private @Nullable Output<String> namespace;
+
+    /**
+     * @return Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    public Optional<Output<String>> namespace() {
+        return Optional.ofNullable(this.namespace);
+    }
+
+    /**
      * region of cluster
      * 
      */
@@ -112,9 +142,11 @@ public final class DifStackServiceDetailAdditionalDetailArgs extends com.pulumi.
 
     private DifStackServiceDetailAdditionalDetailArgs(DifStackServiceDetailAdditionalDetailArgs $) {
         this.assignedConnections = $.assignedConnections;
+        this.clusterId = $.clusterId;
         this.endpointDetails = $.endpointDetails;
         this.modelId = $.modelId;
         this.modelVersion = $.modelVersion;
+        this.namespace = $.namespace;
         this.ociRegion = $.ociRegion;
         this.privateEndpointId = $.privateEndpointId;
     }
@@ -166,6 +198,27 @@ public final class DifStackServiceDetailAdditionalDetailArgs extends com.pulumi.
          */
         public Builder assignedConnections(DifStackServiceDetailAdditionalDetailAssignedConnectionArgs... assignedConnections) {
             return assignedConnections(List.of(assignedConnections));
+        }
+
+        /**
+         * @param clusterId OCID of cluster assigned to OMK cluster-namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(@Nullable Output<String> clusterId) {
+            $.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * @param clusterId OCID of cluster assigned to OMK cluster-namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(String clusterId) {
+            return clusterId(Output.of(clusterId));
         }
 
         /**
@@ -239,6 +292,27 @@ public final class DifStackServiceDetailAdditionalDetailArgs extends com.pulumi.
          */
         public Builder modelVersion(String modelVersion) {
             return modelVersion(Output.of(modelVersion));
+        }
+
+        /**
+         * @param namespace Kubernetes namespace-name of omk cluster-namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(@Nullable Output<String> namespace) {
+            $.namespace = namespace;
+            return this;
+        }
+
+        /**
+         * @param namespace Kubernetes namespace-name of omk cluster-namespace.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namespace(String namespace) {
+            return namespace(Output.of(namespace));
         }
 
         /**

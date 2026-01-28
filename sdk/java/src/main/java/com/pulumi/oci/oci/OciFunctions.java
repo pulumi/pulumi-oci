@@ -141,6 +141,8 @@ import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataPlainArgs;
 import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
@@ -289,6 +291,7 @@ import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionsResul
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClustersResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaNodeShapesResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationMappingMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationSummariesMetadataResult;
 import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationsMetadataResult;
@@ -16019,6 +16022,307 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClustersPlain(GetManagedKafkaKafkaClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", TypeShape.of(GetManagedKafkaKafkaClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapes() {
+        return getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapesPlain() {
+        return getManagedKafkaNodeShapesPlain(GetManagedKafkaNodeShapesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs args) {
+        return getManagedKafkaNodeShapes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapesPlain(GetManagedKafkaNodeShapesPlainArgs args) {
+        return getManagedKafkaNodeShapesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaNodeShapes:getManagedKafkaNodeShapes", TypeShape.of(GetManagedKafkaNodeShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaNodeShapes:getManagedKafkaNodeShapes", TypeShape.of(GetManagedKafkaNodeShapesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Node Shapes in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Returns the list of shapes allowed in the region.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaNodeShapesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNodeShapes = OciFunctions.getManagedKafkaNodeShapes(GetManagedKafkaNodeShapesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .name(nodeShapeName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaNodeShapesResult> getManagedKafkaNodeShapesPlain(GetManagedKafkaNodeShapesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaNodeShapes:getManagedKafkaNodeShapes", TypeShape.of(GetManagedKafkaNodeShapesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.

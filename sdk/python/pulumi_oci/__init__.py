@@ -6258,6 +6258,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Ocvp/managementAppliance",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/managementAppliance:ManagementAppliance": "ManagementAppliance"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Ocvp/sddc",
   "fqn": "pulumi_oci.ocvp",
   "classes": {
@@ -6878,6 +6886,14 @@ _utilities.register(
   "fqn": "pulumi_oci.psql",
   "classes": {
    "oci:Psql/dbSystem:DbSystem": "DbSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Queue/consumerGroup",
+  "fqn": "pulumi_oci.queue",
+  "classes": {
+   "oci:Queue/consumerGroup:ConsumerGroup": "ConsumerGroup"
   }
  },
  {

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Oci.Inputs
     {
         [Input("secretId", required: true)]
         private Input<string>? _secretId;
+
+        /// <summary>
+        /// Vault secret OCID containing the corresponding user password.
+        /// </summary>
         public Input<string>? SecretId
         {
             get => _secretId;
@@ -24,9 +28,15 @@ namespace Pulumi.Oci.Oci.Inputs
             }
         }
 
+        /// <summary>
+        /// Username for ADB to be created or updated.
+        /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
 
+        /// <summary>
+        /// Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+        /// </summary>
         [Input("userType", required: true)]
         public Input<string> UserType { get; set; } = null!;
 

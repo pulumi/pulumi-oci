@@ -108,14 +108,14 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
         return this.attachedShapeAttributes;
     }
     /**
-     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      * 
      */
     @Export(name="autoscaleLimitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoscaleLimitInGbs;
 
     /**
-     * @return (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * @return (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
      * 
      */
     public Output<Integer> autoscaleLimitInGbs() {

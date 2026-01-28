@@ -27,13 +27,16 @@ class GetDifStackResult:
     """
     A collection of values returned by getDifStack.
     """
-    def __init__(__self__, adbs=None, add_service_trigger=None, compartment_id=None, dataflows=None, defined_tags=None, deploy_artifacts_trigger=None, display_name=None, freeform_tags=None, genais=None, ggcs=None, id=None, lifecycle_details=None, notification_email=None, objectstorages=None, service_details=None, services=None, stack_id=None, stack_templates=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, adbs=None, add_service_trigger=None, aidataplatforms=None, compartment_id=None, dataflows=None, defined_tags=None, deploy_artifacts_trigger=None, display_name=None, freeform_tags=None, genais=None, ggcs=None, id=None, lifecycle_details=None, notification_email=None, objectstorages=None, okes=None, omks=None, service_details=None, services=None, stack_id=None, stack_templates=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if adbs and not isinstance(adbs, list):
             raise TypeError("Expected argument 'adbs' to be a list")
         pulumi.set(__self__, "adbs", adbs)
         if add_service_trigger and not isinstance(add_service_trigger, int):
             raise TypeError("Expected argument 'add_service_trigger' to be a int")
         pulumi.set(__self__, "add_service_trigger", add_service_trigger)
+        if aidataplatforms and not isinstance(aidataplatforms, list):
+            raise TypeError("Expected argument 'aidataplatforms' to be a list")
+        pulumi.set(__self__, "aidataplatforms", aidataplatforms)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,6 +73,12 @@ class GetDifStackResult:
         if objectstorages and not isinstance(objectstorages, list):
             raise TypeError("Expected argument 'objectstorages' to be a list")
         pulumi.set(__self__, "objectstorages", objectstorages)
+        if okes and not isinstance(okes, list):
+            raise TypeError("Expected argument 'okes' to be a list")
+        pulumi.set(__self__, "okes", okes)
+        if omks and not isinstance(omks, list):
+            raise TypeError("Expected argument 'omks' to be a list")
+        pulumi.set(__self__, "omks", omks)
         if service_details and not isinstance(service_details, list):
             raise TypeError("Expected argument 'service_details' to be a list")
         pulumi.set(__self__, "service_details", service_details)
@@ -110,6 +119,14 @@ class GetDifStackResult:
     @pulumi.getter(name="addServiceTrigger")
     def add_service_trigger(self) -> _builtins.int:
         return pulumi.get(self, "add_service_trigger")
+
+    @_builtins.property
+    @pulumi.getter
+    def aidataplatforms(self) -> Sequence['outputs.GetDifStackAidataplatformResult']:
+        """
+        AI Data Platform Details if aidataplatform is included in services.
+        """
+        return pulumi.get(self, "aidataplatforms")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -205,6 +222,22 @@ class GetDifStackResult:
         return pulumi.get(self, "objectstorages")
 
     @_builtins.property
+    @pulumi.getter
+    def okes(self) -> Sequence['outputs.GetDifStackOkeResult']:
+        """
+        OKE Details if oke is included in services.
+        """
+        return pulumi.get(self, "okes")
+
+    @_builtins.property
+    @pulumi.getter
+    def omks(self) -> Sequence['outputs.GetDifStackOmkResult']:
+        """
+        OMK Details if omk is included in services.
+        """
+        return pulumi.get(self, "omks")
+
+    @_builtins.property
     @pulumi.getter(name="serviceDetails")
     def service_details(self) -> Sequence['outputs.GetDifStackServiceDetailResult']:
         """
@@ -282,6 +315,7 @@ class AwaitableGetDifStackResult(GetDifStackResult):
         return GetDifStackResult(
             adbs=self.adbs,
             add_service_trigger=self.add_service_trigger,
+            aidataplatforms=self.aidataplatforms,
             compartment_id=self.compartment_id,
             dataflows=self.dataflows,
             defined_tags=self.defined_tags,
@@ -294,6 +328,8 @@ class AwaitableGetDifStackResult(GetDifStackResult):
             lifecycle_details=self.lifecycle_details,
             notification_email=self.notification_email,
             objectstorages=self.objectstorages,
+            okes=self.okes,
+            omks=self.omks,
             service_details=self.service_details,
             services=self.services,
             stack_id=self.stack_id,
@@ -332,6 +368,7 @@ def get_dif_stack(stack_id: Optional[_builtins.str] = None,
     return AwaitableGetDifStackResult(
         adbs=pulumi.get(__ret__, 'adbs'),
         add_service_trigger=pulumi.get(__ret__, 'add_service_trigger'),
+        aidataplatforms=pulumi.get(__ret__, 'aidataplatforms'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         dataflows=pulumi.get(__ret__, 'dataflows'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -344,6 +381,8 @@ def get_dif_stack(stack_id: Optional[_builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         notification_email=pulumi.get(__ret__, 'notification_email'),
         objectstorages=pulumi.get(__ret__, 'objectstorages'),
+        okes=pulumi.get(__ret__, 'okes'),
+        omks=pulumi.get(__ret__, 'omks'),
         service_details=pulumi.get(__ret__, 'service_details'),
         services=pulumi.get(__ret__, 'services'),
         stack_id=pulumi.get(__ret__, 'stack_id'),
@@ -379,6 +418,7 @@ def get_dif_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetDifStackResult(
         adbs=pulumi.get(__response__, 'adbs'),
         add_service_trigger=pulumi.get(__response__, 'add_service_trigger'),
+        aidataplatforms=pulumi.get(__response__, 'aidataplatforms'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         dataflows=pulumi.get(__response__, 'dataflows'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
@@ -391,6 +431,8 @@ def get_dif_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         notification_email=pulumi.get(__response__, 'notification_email'),
         objectstorages=pulumi.get(__response__, 'objectstorages'),
+        okes=pulumi.get(__response__, 'okes'),
+        omks=pulumi.get(__response__, 'omks'),
         service_details=pulumi.get(__response__, 'service_details'),
         services=pulumi.get(__response__, 'services'),
         stack_id=pulumi.get(__response__, 'stack_id'),

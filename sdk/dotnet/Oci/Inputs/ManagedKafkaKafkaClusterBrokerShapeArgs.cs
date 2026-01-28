@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<int> NodeCount { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+        /// </summary>
+        [Input("nodeShape")]
+        public Input<string>? NodeShape { get; set; }
+
+        /// <summary>
         /// (Updatable) Number of OCPUs per nodes
         /// </summary>
         [Input("ocpuCount", required: true)]

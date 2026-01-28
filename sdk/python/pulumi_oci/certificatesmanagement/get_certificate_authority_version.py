@@ -27,13 +27,16 @@ class GetCertificateAuthorityVersionResult:
     """
     A collection of values returned by getCertificateAuthorityVersion.
     """
-    def __init__(__self__, certificate_authority_id=None, certificate_authority_version_number=None, id=None, issuer_ca_version_number=None, revocation_statuses=None, serial_number=None, stages=None, subject_alternative_names=None, time_created=None, time_of_deletion=None, validities=None, version_name=None, version_number=None):
+    def __init__(__self__, certificate_authority_id=None, certificate_authority_version_number=None, csr_pem=None, id=None, issuer_ca_version_number=None, revocation_statuses=None, serial_number=None, stages=None, subject_alternative_names=None, time_created=None, time_of_deletion=None, validities=None, version_name=None, version_number=None):
         if certificate_authority_id and not isinstance(certificate_authority_id, str):
             raise TypeError("Expected argument 'certificate_authority_id' to be a str")
         pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
         if certificate_authority_version_number and not isinstance(certificate_authority_version_number, str):
             raise TypeError("Expected argument 'certificate_authority_version_number' to be a str")
         pulumi.set(__self__, "certificate_authority_version_number", certificate_authority_version_number)
+        if csr_pem and not isinstance(csr_pem, str):
+            raise TypeError("Expected argument 'csr_pem' to be a str")
+        pulumi.set(__self__, "csr_pem", csr_pem)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -80,6 +83,14 @@ class GetCertificateAuthorityVersionResult:
     @pulumi.getter(name="certificateAuthorityVersionNumber")
     def certificate_authority_version_number(self) -> _builtins.str:
         return pulumi.get(self, "certificate_authority_version_number")
+
+    @_builtins.property
+    @pulumi.getter(name="csrPem")
+    def csr_pem(self) -> _builtins.str:
+        """
+        The certificate signing request (in PEM format).
+        """
+        return pulumi.get(self, "csr_pem")
 
     @_builtins.property
     @pulumi.getter
@@ -175,6 +186,7 @@ class AwaitableGetCertificateAuthorityVersionResult(GetCertificateAuthorityVersi
         return GetCertificateAuthorityVersionResult(
             certificate_authority_id=self.certificate_authority_id,
             certificate_authority_version_number=self.certificate_authority_version_number,
+            csr_pem=self.csr_pem,
             id=self.id,
             issuer_ca_version_number=self.issuer_ca_version_number,
             revocation_statuses=self.revocation_statuses,
@@ -211,6 +223,7 @@ def get_certificate_authority_version(certificate_authority_id: Optional[_builti
     return AwaitableGetCertificateAuthorityVersionResult(
         certificate_authority_id=pulumi.get(__ret__, 'certificate_authority_id'),
         certificate_authority_version_number=pulumi.get(__ret__, 'certificate_authority_version_number'),
+        csr_pem=pulumi.get(__ret__, 'csr_pem'),
         id=pulumi.get(__ret__, 'id'),
         issuer_ca_version_number=pulumi.get(__ret__, 'issuer_ca_version_number'),
         revocation_statuses=pulumi.get(__ret__, 'revocation_statuses'),
@@ -244,6 +257,7 @@ def get_certificate_authority_version_output(certificate_authority_id: Optional[
     return __ret__.apply(lambda __response__: GetCertificateAuthorityVersionResult(
         certificate_authority_id=pulumi.get(__response__, 'certificate_authority_id'),
         certificate_authority_version_number=pulumi.get(__response__, 'certificate_authority_version_number'),
+        csr_pem=pulumi.get(__response__, 'csr_pem'),
         id=pulumi.get(__response__, 'id'),
         issuer_ca_version_number=pulumi.get(__response__, 'issuer_ca_version_number'),
         revocation_statuses=pulumi.get(__response__, 'revocation_statuses'),

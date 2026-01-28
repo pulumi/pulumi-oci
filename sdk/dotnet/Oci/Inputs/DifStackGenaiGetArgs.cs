@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Oci.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Id for the GGCS instance to be provisioned.
+        /// (Updatable) Id for the GenAi instance to be provisioned.
         /// </summary>
         [Input("instanceId", required: true)]
         public Input<string> InstanceId { get; set; } = null!;

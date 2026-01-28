@@ -6,6 +6,7 @@ package com.pulumi.oci.oci.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
@@ -15,6 +16,11 @@ public final class GetManagedKafkaKafkaClusterBrokerShape {
      * 
      */
     private Integer nodeCount;
+    /**
+     * @return Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     * 
+     */
+    private String nodeShape;
     /**
      * @return Number of OCPUs per nodes
      * 
@@ -33,6 +39,13 @@ public final class GetManagedKafkaKafkaClusterBrokerShape {
      */
     public Integer nodeCount() {
         return this.nodeCount;
+    }
+    /**
+     * @return Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+     * 
+     */
+    public String nodeShape() {
+        return this.nodeShape;
     }
     /**
      * @return Number of OCPUs per nodes
@@ -59,12 +72,14 @@ public final class GetManagedKafkaKafkaClusterBrokerShape {
     @CustomType.Builder
     public static final class Builder {
         private Integer nodeCount;
+        private String nodeShape;
         private Integer ocpuCount;
         private Integer storageSizeInGbs;
         public Builder() {}
         public Builder(GetManagedKafkaKafkaClusterBrokerShape defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.nodeCount = defaults.nodeCount;
+    	      this.nodeShape = defaults.nodeShape;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.storageSizeInGbs = defaults.storageSizeInGbs;
         }
@@ -75,6 +90,14 @@ public final class GetManagedKafkaKafkaClusterBrokerShape {
               throw new MissingRequiredPropertyException("GetManagedKafkaKafkaClusterBrokerShape", "nodeCount");
             }
             this.nodeCount = nodeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nodeShape(String nodeShape) {
+            if (nodeShape == null) {
+              throw new MissingRequiredPropertyException("GetManagedKafkaKafkaClusterBrokerShape", "nodeShape");
+            }
+            this.nodeShape = nodeShape;
             return this;
         }
         @CustomType.Setter
@@ -96,6 +119,7 @@ public final class GetManagedKafkaKafkaClusterBrokerShape {
         public GetManagedKafkaKafkaClusterBrokerShape build() {
             final var _resultValue = new GetManagedKafkaKafkaClusterBrokerShape();
             _resultValue.nodeCount = nodeCount;
+            _resultValue.nodeShape = nodeShape;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.storageSizeInGbs = storageSizeInGbs;
             return _resultValue;

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
 import java.lang.Boolean;
@@ -239,6 +240,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Optional<Output<String>> distributionAffinity() {
         return Optional.ofNullable(this.distributionAffinity);
+    }
+
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
 
     /**
@@ -676,6 +692,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.distributionAffinity = $.distributionAffinity;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.failoverTrigger = $.failoverTrigger;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
@@ -1036,6 +1053,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder distributionAffinity(String distributionAffinity) {
             return distributionAffinity(Output.of(distributionAffinity));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
         }
 
         /**

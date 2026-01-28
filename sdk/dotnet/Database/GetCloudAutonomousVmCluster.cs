@@ -224,7 +224,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        /// The OCID of the identity connector
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -269,6 +269,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult> MultiCloudIdentityConnectorConfigs;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         public readonly string NextMaintenanceRunId;
@@ -310,6 +314,7 @@ namespace Pulumi.Oci.Database
         /// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly double ReclaimableCpus;
+        public readonly int RegisterPkcsTrigger;
         /// <summary>
         /// The number of CPUs reserved in an Autonomous VM Cluster.
         /// </summary>
@@ -347,6 +352,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        public readonly string TdeKeyStoreType;
+        /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -374,6 +383,7 @@ namespace Pulumi.Oci.Database
         /// The total number of CPUs in an Autonomous VM Cluster.
         /// </summary>
         public readonly double TotalCpus;
+        public readonly int UnregisterPkcsTrigger;
 
         [OutputConstructor]
         private GetCloudAutonomousVmClusterResult(
@@ -451,6 +461,8 @@ namespace Pulumi.Oci.Database
 
             int memorySizeInGbs,
 
+            ImmutableArray<Outputs.GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult> multiCloudIdentityConnectorConfigs,
+
             string nextMaintenanceRunId,
 
             int nodeCount,
@@ -473,6 +485,8 @@ namespace Pulumi.Oci.Database
 
             double reclaimableCpus,
 
+            int registerPkcsTrigger,
+
             double reservedCpus,
 
             int scanListenerPortNonTls,
@@ -491,6 +505,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableDictionary<string, string> systemTags,
 
+            string tdeKeyStoreType,
+
             string timeCreated,
 
             string timeDatabaseSslCertificateExpires,
@@ -503,7 +519,9 @@ namespace Pulumi.Oci.Database
 
             int totalContainerDatabases,
 
-            double totalCpus)
+            double totalCpus,
+
+            int unregisterPkcsTrigger)
         {
             AutonomousDataStoragePercentage = autonomousDataStoragePercentage;
             AutonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
@@ -542,6 +560,7 @@ namespace Pulumi.Oci.Database
             MemoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
+            MultiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
@@ -553,6 +572,7 @@ namespace Pulumi.Oci.Database
             ProvisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;
+            RegisterPkcsTrigger = registerPkcsTrigger;
             ReservedCpus = reservedCpus;
             ScanListenerPortNonTls = scanListenerPortNonTls;
             ScanListenerPortTls = scanListenerPortTls;
@@ -562,6 +582,7 @@ namespace Pulumi.Oci.Database
             SubnetId = subnetId;
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;
+            TdeKeyStoreType = tdeKeyStoreType;
             TimeCreated = timeCreated;
             TimeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             TimeOrdsCertificateExpires = timeOrdsCertificateExpires;
@@ -569,6 +590,7 @@ namespace Pulumi.Oci.Database
             TotalAutonomousDataStorageInTbs = totalAutonomousDataStorageInTbs;
             TotalContainerDatabases = totalContainerDatabases;
             TotalCpus = totalCpus;
+            UnregisterPkcsTrigger = unregisterPkcsTrigger;
         }
     }
 }

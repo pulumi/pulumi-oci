@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class AutonomousDatabaseEncryptionKeyLocationDetailArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Provide the key OCID of a registered AWS key.
+        /// </summary>
         [Input("awsEncryptionKeyId")]
         public Input<string>? AwsEncryptionKeyId { get; set; }
 
@@ -21,6 +24,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("hsmPassword")]
         public Input<string>? HsmPassword { get; set; }
 
+        /// <summary>
+        /// Use 'AWS' for creating a new database.
+        /// </summary>
         [Input("providerType")]
         public Input<string>? ProviderType { get; set; }
 

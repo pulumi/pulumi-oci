@@ -55,6 +55,8 @@ __all__ = [
     'DifStackAdbArgsDict',
     'DifStackAdbDbCredentialArgs',
     'DifStackAdbDbCredentialArgsDict',
+    'DifStackAidataplatformArgs',
+    'DifStackAidataplatformArgsDict',
     'DifStackDataflowArgs',
     'DifStackDataflowArgsDict',
     'DifStackDataflowConnectionsArgs',
@@ -85,6 +87,22 @@ __all__ = [
     'DifStackGgcUserArgsDict',
     'DifStackObjectstorageArgs',
     'DifStackObjectstorageArgsDict',
+    'DifStackOkeArgs',
+    'DifStackOkeArgsDict',
+    'DifStackOkeComponentValueOverrideArgs',
+    'DifStackOkeComponentValueOverrideArgsDict',
+    'DifStackOkeSecretArgs',
+    'DifStackOkeSecretArgsDict',
+    'DifStackOkeSecretSecretDataArgs',
+    'DifStackOkeSecretSecretDataArgsDict',
+    'DifStackOmkArgs',
+    'DifStackOmkArgsDict',
+    'DifStackOmkComponentValueOverrideArgs',
+    'DifStackOmkComponentValueOverrideArgsDict',
+    'DifStackOmkSecretArgs',
+    'DifStackOmkSecretArgsDict',
+    'DifStackOmkSecretSecretDataArgs',
+    'DifStackOmkSecretSecretDataArgsDict',
     'DifStackServiceDetailArgs',
     'DifStackServiceDetailArgsDict',
     'DifStackServiceDetailAdditionalDetailArgs',
@@ -185,6 +203,8 @@ __all__ = [
     'GetManagedKafkaKafkaClusterConfigsFilterArgsDict',
     'GetManagedKafkaKafkaClustersFilterArgs',
     'GetManagedKafkaKafkaClustersFilterArgsDict',
+    'GetManagedKafkaNodeShapesFilterArgs',
+    'GetManagedKafkaNodeShapesFilterArgsDict',
     'GetMulticloudExternalLocationMappingMetadataFilterArgs',
     'GetMulticloudExternalLocationMappingMetadataFilterArgsDict',
     'GetMulticloudExternalLocationSummariesMetadataFilterArgs',
@@ -2016,8 +2036,17 @@ class DifStackAdbArgs:
 if not MYPY:
     class DifStackAdbDbCredentialArgsDict(TypedDict):
         secret_id: pulumi.Input[_builtins.str]
+        """
+        Vault secret OCID containing the corresponding user password.
+        """
         user_name: pulumi.Input[_builtins.str]
+        """
+        Username for ADB to be created or updated.
+        """
         user_type: pulumi.Input[_builtins.str]
+        """
+        Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+        """
 elif False:
     DifStackAdbDbCredentialArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -2027,6 +2056,11 @@ class DifStackAdbDbCredentialArgs:
                  secret_id: pulumi.Input[_builtins.str],
                  user_name: pulumi.Input[_builtins.str],
                  user_type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] secret_id: Vault secret OCID containing the corresponding user password.
+        :param pulumi.Input[_builtins.str] user_name: Username for ADB to be created or updated.
+        :param pulumi.Input[_builtins.str] user_type: Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+        """
         pulumi.set(__self__, "secret_id", secret_id)
         pulumi.set(__self__, "user_name", user_name)
         pulumi.set(__self__, "user_type", user_type)
@@ -2034,6 +2068,9 @@ class DifStackAdbDbCredentialArgs:
     @_builtins.property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Vault secret OCID containing the corresponding user password.
+        """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
@@ -2043,6 +2080,9 @@ class DifStackAdbDbCredentialArgs:
     @_builtins.property
     @pulumi.getter(name="userName")
     def user_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Username for ADB to be created or updated.
+        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -2052,11 +2092,64 @@ class DifStackAdbDbCredentialArgs:
     @_builtins.property
     @pulumi.getter(name="userType")
     def user_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+        """
         return pulumi.get(self, "user_type")
 
     @user_type.setter
     def user_type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "user_type", value)
+
+
+if not MYPY:
+    class DifStackAidataplatformArgsDict(TypedDict):
+        default_workspace_name: pulumi.Input[_builtins.str]
+        """
+        A default workspace will be created with this name.
+        """
+        instance_id: pulumi.Input[_builtins.str]
+        """
+        Identifier for AIDP instance to be provisioned.
+        """
+elif False:
+    DifStackAidataplatformArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackAidataplatformArgs:
+    def __init__(__self__, *,
+                 default_workspace_name: pulumi.Input[_builtins.str],
+                 instance_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] default_workspace_name: A default workspace will be created with this name.
+        :param pulumi.Input[_builtins.str] instance_id: Identifier for AIDP instance to be provisioned.
+        """
+        pulumi.set(__self__, "default_workspace_name", default_workspace_name)
+        pulumi.set(__self__, "instance_id", instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultWorkspaceName")
+    def default_workspace_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        A default workspace will be created with this name.
+        """
+        return pulumi.get(self, "default_workspace_name")
+
+    @default_workspace_name.setter
+    def default_workspace_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "default_workspace_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Identifier for AIDP instance to be provisioned.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "instance_id", value)
 
 
 if not MYPY:
@@ -2589,7 +2682,7 @@ if not MYPY:
         """
         instance_id: pulumi.Input[_builtins.str]
         """
-        (Updatable) Id for the GGCS instance to be provisioned.
+        (Updatable) Id for the GenAi instance to be provisioned.
         """
         oci_region: pulumi.Input[_builtins.str]
         """
@@ -2618,7 +2711,7 @@ class DifStackGenaiArgs:
         """
         :param pulumi.Input[_builtins.str] base_model: Name of the base model.
         :param pulumi.Input[_builtins.str] cluster_type: The dedicated AI cluster type.
-        :param pulumi.Input[_builtins.str] instance_id: (Updatable) Id for the GGCS instance to be provisioned.
+        :param pulumi.Input[_builtins.str] instance_id: (Updatable) Id for the GenAi instance to be provisioned.
         :param pulumi.Input[_builtins.str] oci_region: Region on which the cluster end endpoint will be provisioned.
         :param pulumi.Input[_builtins.int] unit_count: (Updatable) No of replicas of base model to be used for hosting.
         :param pulumi.Input[Sequence[pulumi.Input['DifStackGenaiEndpointArgs']]] endpoints: (Updatable) List of endpoints to provision for the GENAI cluster.
@@ -2659,7 +2752,7 @@ class DifStackGenaiArgs:
     @pulumi.getter(name="instanceId")
     def instance_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Id for the GGCS instance to be provisioned.
+        (Updatable) Id for the GenAi instance to be provisioned.
         """
         return pulumi.get(self, "instance_id")
 
@@ -3491,6 +3584,635 @@ class DifStackObjectstorageArgs:
 
 
 if not MYPY:
+    class DifStackOkeArgsDict(TypedDict):
+        cluster_id: pulumi.Input[_builtins.str]
+        """
+        OCID of existing OKE cluster.
+        """
+        instance_id: pulumi.Input[_builtins.str]
+        """
+        Unique identifier for an oke instance.
+        """
+        namespace_name: pulumi.Input[_builtins.str]
+        """
+        Kubernetes namespace-name of OKE cluster.
+        """
+        component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgsDict']]]]
+        """
+        Component overrides for stack specific parameters applied during artifact template rendering.
+        """
+        manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Object storage path for the deployment manifest.
+        """
+        secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgsDict']]]]
+        """
+        List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+        """
+elif False:
+    DifStackOkeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOkeArgs:
+    def __init__(__self__, *,
+                 cluster_id: pulumi.Input[_builtins.str],
+                 instance_id: pulumi.Input[_builtins.str],
+                 namespace_name: pulumi.Input[_builtins.str],
+                 component_value_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgs']]]] = None,
+                 manifest_object_storage_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 secrets: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cluster_id: OCID of existing OKE cluster.
+        :param pulumi.Input[_builtins.str] instance_id: Unique identifier for an oke instance.
+        :param pulumi.Input[_builtins.str] namespace_name: Kubernetes namespace-name of OKE cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgs']]] component_value_overrides: Component overrides for stack specific parameters applied during artifact template rendering.
+        :param pulumi.Input[_builtins.str] manifest_object_storage_path: Object storage path for the deployment manifest.
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgs']]] secrets: List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "namespace_name", namespace_name)
+        if component_value_overrides is not None:
+            pulumi.set(__self__, "component_value_overrides", component_value_overrides)
+        if manifest_object_storage_path is not None:
+            pulumi.set(__self__, "manifest_object_storage_path", manifest_object_storage_path)
+        if secrets is not None:
+            pulumi.set(__self__, "secrets", secrets)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of existing OKE cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Unique identifier for an oke instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namespaceName")
+    def namespace_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Kubernetes namespace-name of OKE cluster.
+        """
+        return pulumi.get(self, "namespace_name")
+
+    @namespace_name.setter
+    def namespace_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="componentValueOverrides")
+    def component_value_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgs']]]]:
+        """
+        Component overrides for stack specific parameters applied during artifact template rendering.
+        """
+        return pulumi.get(self, "component_value_overrides")
+
+    @component_value_overrides.setter
+    def component_value_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeComponentValueOverrideArgs']]]]):
+        pulumi.set(self, "component_value_overrides", value)
+
+    @_builtins.property
+    @pulumi.getter(name="manifestObjectStoragePath")
+    def manifest_object_storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Object storage path for the deployment manifest.
+        """
+        return pulumi.get(self, "manifest_object_storage_path")
+
+    @manifest_object_storage_path.setter
+    def manifest_object_storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "manifest_object_storage_path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgs']]]]:
+        """
+        List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+        """
+        return pulumi.get(self, "secrets")
+
+    @secrets.setter
+    def secrets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretArgs']]]]):
+        pulumi.set(self, "secrets", value)
+
+
+if not MYPY:
+    class DifStackOkeComponentValueOverrideArgsDict(TypedDict):
+        component_name: pulumi.Input[_builtins.str]
+        """
+        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        """
+        value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        Used for overriding the values in value.yaml artifact of the component.
+        Example: `{"WORKER_THREADS": "8"}`
+        """
+elif False:
+    DifStackOkeComponentValueOverrideArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOkeComponentValueOverrideArgs:
+    def __init__(__self__, *,
+                 component_name: pulumi.Input[_builtins.str],
+                 value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] component_name: Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] value_overrides: Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+               Used for overriding the values in value.yaml artifact of the component.
+               Example: `{"WORKER_THREADS": "8"}`
+        """
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "value_overrides", value_overrides)
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        """
+        return pulumi.get(self, "component_name")
+
+    @component_name.setter
+    def component_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "component_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueOverrides")
+    def value_overrides(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        Used for overriding the values in value.yaml artifact of the component.
+        Example: `{"WORKER_THREADS": "8"}`
+        """
+        return pulumi.get(self, "value_overrides")
+
+    @value_overrides.setter
+    def value_overrides(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "value_overrides", value)
+
+
+if not MYPY:
+    class DifStackOkeSecretArgsDict(TypedDict):
+        secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgsDict']]]
+        """
+        List of kubernetes secret data.
+        """
+        secret_name: pulumi.Input[_builtins.str]
+        """
+        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        """
+        template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+elif False:
+    DifStackOkeSecretArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOkeSecretArgs:
+    def __init__(__self__, *,
+                 secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgs']]],
+                 secret_name: pulumi.Input[_builtins.str],
+                 template_object_storage_path: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgs']]] secret_datas: List of kubernetes secret data.
+        :param pulumi.Input[_builtins.str] secret_name: Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        :param pulumi.Input[_builtins.str] template_object_storage_path: Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+        pulumi.set(__self__, "secret_datas", secret_datas)
+        pulumi.set(__self__, "secret_name", secret_name)
+        if template_object_storage_path is not None:
+            pulumi.set(__self__, "template_object_storage_path", template_object_storage_path)
+
+    @_builtins.property
+    @pulumi.getter(name="secretDatas")
+    def secret_datas(self) -> pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgs']]]:
+        """
+        List of kubernetes secret data.
+        """
+        return pulumi.get(self, "secret_datas")
+
+    @secret_datas.setter
+    def secret_datas(self, value: pulumi.Input[Sequence[pulumi.Input['DifStackOkeSecretSecretDataArgs']]]):
+        pulumi.set(self, "secret_datas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretName")
+    def secret_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        """
+        return pulumi.get(self, "secret_name")
+
+    @secret_name.setter
+    def secret_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "secret_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="templateObjectStoragePath")
+    def template_object_storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+        return pulumi.get(self, "template_object_storage_path")
+
+    @template_object_storage_path.setter
+    def template_object_storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "template_object_storage_path", value)
+
+
+if not MYPY:
+    class DifStackOkeSecretSecretDataArgsDict(TypedDict):
+        key: pulumi.Input[_builtins.str]
+        """
+        Data key in the kubernetes secret.
+        """
+        secret_id: pulumi.Input[_builtins.str]
+        """
+        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+elif False:
+    DifStackOkeSecretSecretDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOkeSecretSecretDataArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 secret_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: Data key in the kubernetes secret.
+        :param pulumi.Input[_builtins.str] secret_id: OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Data key in the kubernetes secret.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "secret_id", value)
+
+
+if not MYPY:
+    class DifStackOmkArgsDict(TypedDict):
+        cluster_id: pulumi.Input[_builtins.str]
+        """
+        OCID of cluster assigned to OMK cluster-namespace.
+        """
+        cluster_namespace_id: pulumi.Input[_builtins.str]
+        """
+        OCID of existing OMK cluster-namespace.
+        """
+        instance_id: pulumi.Input[_builtins.str]
+        """
+        Unique identifier for an omk instance.
+        """
+        namespace_name: pulumi.Input[_builtins.str]
+        """
+        Kubernetes namespace-name of OMK cluster-namespace.
+        """
+        component_value_overrides: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgsDict']]]]
+        """
+        Component overrides for stack specific parameters applied during artifact template rendering.
+        """
+        manifest_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Object storage path for the deployment manifest.
+        """
+        secrets: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgsDict']]]]
+        """
+        List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+        """
+elif False:
+    DifStackOmkArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOmkArgs:
+    def __init__(__self__, *,
+                 cluster_id: pulumi.Input[_builtins.str],
+                 cluster_namespace_id: pulumi.Input[_builtins.str],
+                 instance_id: pulumi.Input[_builtins.str],
+                 namespace_name: pulumi.Input[_builtins.str],
+                 component_value_overrides: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgs']]]] = None,
+                 manifest_object_storage_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 secrets: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cluster_id: OCID of cluster assigned to OMK cluster-namespace.
+        :param pulumi.Input[_builtins.str] cluster_namespace_id: OCID of existing OMK cluster-namespace.
+        :param pulumi.Input[_builtins.str] instance_id: Unique identifier for an omk instance.
+        :param pulumi.Input[_builtins.str] namespace_name: Kubernetes namespace-name of OMK cluster-namespace.
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgs']]] component_value_overrides: Component overrides for stack specific parameters applied during artifact template rendering.
+        :param pulumi.Input[_builtins.str] manifest_object_storage_path: Object storage path for the deployment manifest.
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgs']]] secrets: List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "cluster_namespace_id", cluster_namespace_id)
+        pulumi.set(__self__, "instance_id", instance_id)
+        pulumi.set(__self__, "namespace_name", namespace_name)
+        if component_value_overrides is not None:
+            pulumi.set(__self__, "component_value_overrides", component_value_overrides)
+        if manifest_object_storage_path is not None:
+            pulumi.set(__self__, "manifest_object_storage_path", manifest_object_storage_path)
+        if secrets is not None:
+            pulumi.set(__self__, "secrets", secrets)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of cluster assigned to OMK cluster-namespace.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterNamespaceId")
+    def cluster_namespace_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of existing OMK cluster-namespace.
+        """
+        return pulumi.get(self, "cluster_namespace_id")
+
+    @cluster_namespace_id.setter
+    def cluster_namespace_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cluster_namespace_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceId")
+    def instance_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        Unique identifier for an omk instance.
+        """
+        return pulumi.get(self, "instance_id")
+
+    @instance_id.setter
+    def instance_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namespaceName")
+    def namespace_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Kubernetes namespace-name of OMK cluster-namespace.
+        """
+        return pulumi.get(self, "namespace_name")
+
+    @namespace_name.setter
+    def namespace_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="componentValueOverrides")
+    def component_value_overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgs']]]]:
+        """
+        Component overrides for stack specific parameters applied during artifact template rendering.
+        """
+        return pulumi.get(self, "component_value_overrides")
+
+    @component_value_overrides.setter
+    def component_value_overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkComponentValueOverrideArgs']]]]):
+        pulumi.set(self, "component_value_overrides", value)
+
+    @_builtins.property
+    @pulumi.getter(name="manifestObjectStoragePath")
+    def manifest_object_storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Object storage path for the deployment manifest.
+        """
+        return pulumi.get(self, "manifest_object_storage_path")
+
+    @manifest_object_storage_path.setter
+    def manifest_object_storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "manifest_object_storage_path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def secrets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgs']]]]:
+        """
+        List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+        """
+        return pulumi.get(self, "secrets")
+
+    @secrets.setter
+    def secrets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretArgs']]]]):
+        pulumi.set(self, "secrets", value)
+
+
+if not MYPY:
+    class DifStackOmkComponentValueOverrideArgsDict(TypedDict):
+        component_name: pulumi.Input[_builtins.str]
+        """
+        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        """
+        value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        Used for overriding the values in value.yaml artifact of the component.
+        Example: `{"WORKER_THREADS": "8"}`
+        """
+elif False:
+    DifStackOmkComponentValueOverrideArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOmkComponentValueOverrideArgs:
+    def __init__(__self__, *,
+                 component_name: pulumi.Input[_builtins.str],
+                 value_overrides: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] component_name: Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] value_overrides: Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+               Used for overriding the values in value.yaml artifact of the component.
+               Example: `{"WORKER_THREADS": "8"}`
+        """
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "value_overrides", value_overrides)
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+        """
+        return pulumi.get(self, "component_name")
+
+    @component_name.setter
+    def component_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "component_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueOverrides")
+    def value_overrides(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        Used for overriding the values in value.yaml artifact of the component.
+        Example: `{"WORKER_THREADS": "8"}`
+        """
+        return pulumi.get(self, "value_overrides")
+
+    @value_overrides.setter
+    def value_overrides(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "value_overrides", value)
+
+
+if not MYPY:
+    class DifStackOmkSecretArgsDict(TypedDict):
+        secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgsDict']]]
+        """
+        List of kubernetes secret data.
+        """
+        secret_name: pulumi.Input[_builtins.str]
+        """
+        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        """
+        template_object_storage_path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+elif False:
+    DifStackOmkSecretArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOmkSecretArgs:
+    def __init__(__self__, *,
+                 secret_datas: pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgs']]],
+                 secret_name: pulumi.Input[_builtins.str],
+                 template_object_storage_path: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgs']]] secret_datas: List of kubernetes secret data.
+        :param pulumi.Input[_builtins.str] secret_name: Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        :param pulumi.Input[_builtins.str] template_object_storage_path: Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+        pulumi.set(__self__, "secret_datas", secret_datas)
+        pulumi.set(__self__, "secret_name", secret_name)
+        if template_object_storage_path is not None:
+            pulumi.set(__self__, "template_object_storage_path", template_object_storage_path)
+
+    @_builtins.property
+    @pulumi.getter(name="secretDatas")
+    def secret_datas(self) -> pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgs']]]:
+        """
+        List of kubernetes secret data.
+        """
+        return pulumi.get(self, "secret_datas")
+
+    @secret_datas.setter
+    def secret_datas(self, value: pulumi.Input[Sequence[pulumi.Input['DifStackOmkSecretSecretDataArgs']]]):
+        pulumi.set(self, "secret_datas", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretName")
+    def secret_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+        """
+        return pulumi.get(self, "secret_name")
+
+    @secret_name.setter
+    def secret_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "secret_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="templateObjectStoragePath")
+    def template_object_storage_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+        """
+        return pulumi.get(self, "template_object_storage_path")
+
+    @template_object_storage_path.setter
+    def template_object_storage_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "template_object_storage_path", value)
+
+
+if not MYPY:
+    class DifStackOmkSecretSecretDataArgsDict(TypedDict):
+        key: pulumi.Input[_builtins.str]
+        """
+        Data key in the kubernetes secret.
+        """
+        secret_id: pulumi.Input[_builtins.str]
+        """
+        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+elif False:
+    DifStackOmkSecretSecretDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DifStackOmkSecretSecretDataArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 secret_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: Data key in the kubernetes secret.
+        :param pulumi.Input[_builtins.str] secret_id: OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Data key in the kubernetes secret.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "secret_id", value)
+
+
+if not MYPY:
     class DifStackServiceDetailArgsDict(TypedDict):
         additional_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailArgsDict']]]]
         """
@@ -3668,6 +4390,10 @@ if not MYPY:
         """
         connections assigned to Golden Gate deployment
         """
+        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        OCID of cluster assigned to OMK cluster-namespace.
+        """
         endpoint_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailEndpointDetailArgsDict']]]]
         """
         details of all endpoints assigned to cluster
@@ -3679,6 +4405,10 @@ if not MYPY:
         model_version: NotRequired[pulumi.Input[_builtins.str]]
         """
         version of model
+        """
+        namespace: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Kubernetes namespace-name of omk cluster-namespace.
         """
         oci_region: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3695,27 +4425,35 @@ elif False:
 class DifStackServiceDetailAdditionalDetailArgs:
     def __init__(__self__, *,
                  assigned_connections: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailAssignedConnectionArgs']]]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  endpoint_details: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailEndpointDetailArgs']]]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
                  model_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  oci_region: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailAssignedConnectionArgs']]] assigned_connections: connections assigned to Golden Gate deployment
+        :param pulumi.Input[_builtins.str] cluster_id: OCID of cluster assigned to OMK cluster-namespace.
         :param pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailEndpointDetailArgs']]] endpoint_details: details of all endpoints assigned to cluster
         :param pulumi.Input[_builtins.str] model_id: OCID of model
         :param pulumi.Input[_builtins.str] model_version: version of model
+        :param pulumi.Input[_builtins.str] namespace: Kubernetes namespace-name of omk cluster-namespace.
         :param pulumi.Input[_builtins.str] oci_region: region of cluster
         :param pulumi.Input[_builtins.str] private_endpoint_id: OCID of model
         """
         if assigned_connections is not None:
             pulumi.set(__self__, "assigned_connections", assigned_connections)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
         if endpoint_details is not None:
             pulumi.set(__self__, "endpoint_details", endpoint_details)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
         if oci_region is not None:
             pulumi.set(__self__, "oci_region", oci_region)
         if private_endpoint_id is not None:
@@ -3732,6 +4470,18 @@ class DifStackServiceDetailAdditionalDetailArgs:
     @assigned_connections.setter
     def assigned_connections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailAdditionalDetailAssignedConnectionArgs']]]]):
         pulumi.set(self, "assigned_connections", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        OCID of cluster assigned to OMK cluster-namespace.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointDetails")
@@ -3768,6 +4518,18 @@ class DifStackServiceDetailAdditionalDetailArgs:
     @model_version.setter
     def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model_version", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Kubernetes namespace-name of omk cluster-namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="ociRegion")
@@ -4357,6 +5119,10 @@ if not MYPY:
         """
         (Updatable) Number of OCPUs per nodes
         """
+        node_shape: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+        """
         storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
         """
         (Updatable) Size of the storage per nodes.
@@ -4369,14 +5135,18 @@ class ManagedKafkaKafkaClusterBrokerShapeArgs:
     def __init__(__self__, *,
                  node_count: pulumi.Input[_builtins.int],
                  ocpu_count: pulumi.Input[_builtins.int],
+                 node_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] node_count: (Updatable) Number of Kafka broker nodes
         :param pulumi.Input[_builtins.int] ocpu_count: (Updatable) Number of OCPUs per nodes
+        :param pulumi.Input[_builtins.str] node_shape: (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
         :param pulumi.Input[_builtins.int] storage_size_in_gbs: (Updatable) Size of the storage per nodes.
         """
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if node_shape is not None:
+            pulumi.set(__self__, "node_shape", node_shape)
         if storage_size_in_gbs is not None:
             pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
 
@@ -4403,6 +5173,18 @@ class ManagedKafkaKafkaClusterBrokerShapeArgs:
     @ocpu_count.setter
     def ocpu_count(self, value: pulumi.Input[_builtins.int]):
         pulumi.set(self, "ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeShape")
+    def node_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+        """
+        return pulumi.get(self, "node_shape")
+
+    @node_shape.setter
+    def node_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "node_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInGbs")
@@ -6340,6 +7122,62 @@ class GetManagedKafkaKafkaClustersFilterArgs:
     def name(self) -> _builtins.str:
         """
         Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetManagedKafkaNodeShapesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The name to filter on.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetManagedKafkaNodeShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetManagedKafkaNodeShapesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name to filter on.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name to filter on.
         """
         return pulumi.get(self, "name")
 

@@ -27,7 +27,7 @@ class GetCertificateAuthorityResult:
     """
     A collection of values returned by getCertificateAuthority.
     """
-    def __init__(__self__, certificate_authority_configs=None, certificate_authority_id=None, certificate_authority_rules=None, certificate_revocation_list_details=None, compartment_id=None, config_type=None, current_versions=None, defined_tags=None, description=None, freeform_tags=None, id=None, issuer_certificate_authority_id=None, kms_key_id=None, lifecycle_details=None, name=None, signing_algorithm=None, state=None, subjects=None, time_created=None, time_of_deletion=None):
+    def __init__(__self__, certificate_authority_configs=None, certificate_authority_id=None, certificate_authority_rules=None, certificate_revocation_list_details=None, compartment_id=None, config_type=None, current_versions=None, defined_tags=None, description=None, external_key_description=None, freeform_tags=None, id=None, issuer_certificate_authority_id=None, kms_key_id=None, lifecycle_details=None, name=None, signing_algorithm=None, state=None, subjects=None, time_created=None, time_of_deletion=None):
         if certificate_authority_configs and not isinstance(certificate_authority_configs, list):
             raise TypeError("Expected argument 'certificate_authority_configs' to be a list")
         pulumi.set(__self__, "certificate_authority_configs", certificate_authority_configs)
@@ -55,6 +55,9 @@ class GetCertificateAuthorityResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if external_key_description and not isinstance(external_key_description, str):
+            raise TypeError("Expected argument 'external_key_description' to be a str")
+        pulumi.set(__self__, "external_key_description", external_key_description)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -157,6 +160,14 @@ class GetCertificateAuthorityResult:
         A brief description of the CA.
         """
         return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="externalKeyDescription")
+    def external_key_description(self) -> _builtins.str:
+        """
+        For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "external_key_description")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -262,6 +273,7 @@ class AwaitableGetCertificateAuthorityResult(GetCertificateAuthorityResult):
             current_versions=self.current_versions,
             defined_tags=self.defined_tags,
             description=self.description,
+            external_key_description=self.external_key_description,
             freeform_tags=self.freeform_tags,
             id=self.id,
             issuer_certificate_authority_id=self.issuer_certificate_authority_id,
@@ -309,6 +321,7 @@ def get_certificate_authority(certificate_authority_id: Optional[_builtins.str] 
         current_versions=pulumi.get(__ret__, 'current_versions'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
+        external_key_description=pulumi.get(__ret__, 'external_key_description'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         issuer_certificate_authority_id=pulumi.get(__ret__, 'issuer_certificate_authority_id'),
@@ -353,6 +366,7 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
         current_versions=pulumi.get(__response__, 'current_versions'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
+        external_key_description=pulumi.get(__response__, 'external_key_description'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         issuer_certificate_authority_id=pulumi.get(__response__, 'issuer_certificate_authority_id'),

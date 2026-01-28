@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<string>> AttachedShapeAttributes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         /// </summary>
         [Output("autoscaleLimitInGbs")]
         public Output<int> AutoscaleLimitInGbs { get; private set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? AdditionalFlashCacheInPercent { get; set; }
 
         /// <summary>
-        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         /// </summary>
         [Input("autoscaleLimitInGbs")]
         public Input<int>? AutoscaleLimitInGbs { get; set; }
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         /// </summary>
         [Input("autoscaleLimitInGbs")]
         public Input<int>? AutoscaleLimitInGbs { get; set; }

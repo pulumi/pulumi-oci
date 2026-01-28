@@ -6,6 +6,7 @@ package com.pulumi.oci.CertificatesManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigSubjectArgs;
 import com.pulumi.oci.CertificatesManagement.inputs.CertificateAuthorityCertificateAuthorityConfigValidityArgs;
 import java.lang.String;
@@ -17,6 +18,28 @@ import javax.annotation.Nullable;
 public final class CertificateAuthorityCertificateAuthorityConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final CertificateAuthorityCertificateAuthorityConfigArgs Empty = new CertificateAuthorityCertificateAuthorityConfigArgs();
+
+    @Import(name="actionDetails")
+    private @Nullable Output<CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs> actionDetails;
+
+    public Optional<Output<CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs>> actionDetails() {
+        return Optional.ofNullable(this.actionDetails);
+    }
+
+    /**
+     * (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+     * 
+     */
+    @Import(name="certificatePem")
+    private @Nullable Output<String> certificatePem;
+
+    /**
+     * @return (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+     * 
+     */
+    public Optional<Output<String>> certificatePem() {
+        return Optional.ofNullable(this.certificatePem);
+    }
 
     /**
      * (Updatable) The origin of the CA.
@@ -34,14 +57,14 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
     }
 
     /**
-     * The OCID of the private CA.
+     * The OCID of the private, external issuer CA.
      * 
      */
     @Import(name="issuerCertificateAuthorityId")
     private @Nullable Output<String> issuerCertificateAuthorityId;
 
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the private, external issuer CA.
      * 
      */
     public Optional<Output<String>> issuerCertificateAuthorityId() {
@@ -67,15 +90,15 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    @Import(name="subject", required=true)
-    private Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs> subject;
+    @Import(name="subject")
+    private @Nullable Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs> subject;
 
     /**
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    public Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs> subject() {
-        return this.subject;
+    public Optional<Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs>> subject() {
+        return Optional.ofNullable(this.subject);
     }
 
     /**
@@ -111,6 +134,8 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
     private CertificateAuthorityCertificateAuthorityConfigArgs() {}
 
     private CertificateAuthorityCertificateAuthorityConfigArgs(CertificateAuthorityCertificateAuthorityConfigArgs $) {
+        this.actionDetails = $.actionDetails;
+        this.certificatePem = $.certificatePem;
         this.configType = $.configType;
         this.issuerCertificateAuthorityId = $.issuerCertificateAuthorityId;
         this.signingAlgorithm = $.signingAlgorithm;
@@ -137,6 +162,36 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
             $ = new CertificateAuthorityCertificateAuthorityConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        public Builder actionDetails(@Nullable Output<CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs> actionDetails) {
+            $.actionDetails = actionDetails;
+            return this;
+        }
+
+        public Builder actionDetails(CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs actionDetails) {
+            return actionDetails(Output.of(actionDetails));
+        }
+
+        /**
+         * @param certificatePem (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificatePem(@Nullable Output<String> certificatePem) {
+            $.certificatePem = certificatePem;
+            return this;
+        }
+
+        /**
+         * @param certificatePem (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certificatePem(String certificatePem) {
+            return certificatePem(Output.of(certificatePem));
+        }
+
         /**
          * @param configType (Updatable) The origin of the CA.
          * 
@@ -159,7 +214,7 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the private, external issuer CA.
          * 
          * @return builder
          * 
@@ -170,7 +225,7 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
         }
 
         /**
-         * @param issuerCertificateAuthorityId The OCID of the private CA.
+         * @param issuerCertificateAuthorityId The OCID of the private, external issuer CA.
          * 
          * @return builder
          * 
@@ -206,7 +261,7 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
          * @return builder
          * 
          */
-        public Builder subject(Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs> subject) {
+        public Builder subject(@Nullable Output<CertificateAuthorityCertificateAuthorityConfigSubjectArgs> subject) {
             $.subject = subject;
             return this;
         }
@@ -266,9 +321,6 @@ public final class CertificateAuthorityCertificateAuthorityConfigArgs extends co
         public CertificateAuthorityCertificateAuthorityConfigArgs build() {
             if ($.configType == null) {
                 throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfigArgs", "configType");
-            }
-            if ($.subject == null) {
-                throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfigArgs", "subject");
             }
             return $;
         }

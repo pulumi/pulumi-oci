@@ -42,7 +42,7 @@ class ExascaleDbStorageVaultArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
         :param pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
-        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: (Updatable) Exadata Database Storage Vault description.
@@ -145,7 +145,7 @@ class ExascaleDbStorageVaultArgs:
     @pulumi.getter(name="autoscaleLimitInGbs")
     def autoscale_limit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         """
         return pulumi.get(self, "autoscale_limit_in_gbs")
 
@@ -282,7 +282,7 @@ class _ExascaleDbStorageVaultState:
         Input properties used for looking up and filtering ExascaleDbStorageVault resources.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
-        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -377,7 +377,7 @@ class _ExascaleDbStorageVaultState:
     @pulumi.getter(name="autoscaleLimitInGbs")
     def autoscale_limit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         """
         return pulumi.get(self, "autoscale_limit_in_gbs")
 
@@ -666,7 +666,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
-        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -833,7 +833,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
-        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -904,7 +904,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
     @pulumi.getter(name="autoscaleLimitInGbs")
     def autoscale_limit_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
         """
         return pulumi.get(self, "autoscale_limit_in_gbs")
 

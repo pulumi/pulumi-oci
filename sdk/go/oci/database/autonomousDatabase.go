@@ -137,7 +137,8 @@ type AutonomousDatabase struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyOutput `pulumi:"encryptionKey"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries  AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput `pulumi:"encryptionKeyHistoryEntries"`
+	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntOutput `pulumi:"failedDataRecoveryInSeconds"`
@@ -567,7 +568,8 @@ type autonomousDatabaseState struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey *AutonomousDatabaseEncryptionKey `pulumi:"encryptionKey"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries  []AutonomousDatabaseEncryptionKeyHistoryEntry   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries []AutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
+	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails []AutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
@@ -955,7 +957,8 @@ type AutonomousDatabaseState struct {
 	// (Updatable) Details of the Autonomous AI Database encryption key.
 	EncryptionKey AutonomousDatabaseEncryptionKeyPtrInput
 	// Key History Entry.
-	EncryptionKeyHistoryEntries  AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
+	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
+	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayInput
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntPtrInput
@@ -2087,6 +2090,7 @@ func (o AutonomousDatabaseOutput) EncryptionKeyHistoryEntries() AutonomousDataba
 	}).(AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
 }
 
+// Types of providers supported for managing database encryption keys
 func (o AutonomousDatabaseOutput) EncryptionKeyLocationDetails() AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
 		return v.EncryptionKeyLocationDetails

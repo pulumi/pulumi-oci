@@ -12,6 +12,15 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
 
     public sealed class CertificateAuthorityCertificateAuthorityConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("actionDetails")]
+        public Input<Inputs.CertificateAuthorityCertificateAuthorityConfigActionDetailsGetArgs>? ActionDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        /// </summary>
+        [Input("certificatePem")]
+        public Input<string>? CertificatePem { get; set; }
+
         /// <summary>
         /// (Updatable) The origin of the CA.
         /// </summary>
@@ -19,7 +28,7 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public Input<string> ConfigType { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the private CA.
+        /// The OCID of the private, external issuer CA.
         /// </summary>
         [Input("issuerCertificateAuthorityId")]
         public Input<string>? IssuerCertificateAuthorityId { get; set; }
@@ -33,8 +42,8 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         /// <summary>
         /// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         /// </summary>
-        [Input("subject", required: true)]
-        public Input<Inputs.CertificateAuthorityCertificateAuthorityConfigSubjectGetArgs> Subject { get; set; } = null!;
+        [Input("subject")]
+        public Input<Inputs.CertificateAuthorityCertificateAuthorityConfigSubjectGetArgs>? Subject { get; set; }
 
         /// <summary>
         /// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.

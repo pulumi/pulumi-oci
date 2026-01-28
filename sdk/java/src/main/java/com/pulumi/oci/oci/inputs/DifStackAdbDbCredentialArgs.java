@@ -14,23 +14,47 @@ public final class DifStackAdbDbCredentialArgs extends com.pulumi.resources.Reso
 
     public static final DifStackAdbDbCredentialArgs Empty = new DifStackAdbDbCredentialArgs();
 
+    /**
+     * Vault secret OCID containing the corresponding user password.
+     * 
+     */
     @Import(name="secretId", required=true)
     private Output<String> secretId;
 
+    /**
+     * @return Vault secret OCID containing the corresponding user password.
+     * 
+     */
     public Output<String> secretId() {
         return this.secretId;
     }
 
+    /**
+     * Username for ADB to be created or updated.
+     * 
+     */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
+    /**
+     * @return Username for ADB to be created or updated.
+     * 
+     */
     public Output<String> userName() {
         return this.userName;
     }
 
+    /**
+     * Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+     * 
+     */
     @Import(name="userType", required=true)
     private Output<String> userType;
 
+    /**
+     * @return Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+     * 
+     */
     public Output<String> userType() {
         return this.userType;
     }
@@ -61,29 +85,65 @@ public final class DifStackAdbDbCredentialArgs extends com.pulumi.resources.Reso
             $ = new DifStackAdbDbCredentialArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param secretId Vault secret OCID containing the corresponding user password.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretId(Output<String> secretId) {
             $.secretId = secretId;
             return this;
         }
 
+        /**
+         * @param secretId Vault secret OCID containing the corresponding user password.
+         * 
+         * @return builder
+         * 
+         */
         public Builder secretId(String secretId) {
             return secretId(Output.of(secretId));
         }
 
+        /**
+         * @param userName Username for ADB to be created or updated.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(Output<String> userName) {
             $.userName = userName;
             return this;
         }
 
+        /**
+         * @param userName Username for ADB to be created or updated.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
         }
 
+        /**
+         * @param userType Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userType(Output<String> userType) {
             $.userType = userType;
             return this;
         }
 
+        /**
+         * @param userType Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userType(String userType) {
             return userType(Output.of(userType));
         }

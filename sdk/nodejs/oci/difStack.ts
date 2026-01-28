@@ -40,6 +40,10 @@ import * as utilities from "../utilities";
  *             userType: stackAdbDbCredentialsUserType,
  *         }],
  *     }],
+ *     aidataplatforms: [{
+ *         defaultWorkspaceName: testWorkspace.name,
+ *         instanceId: testInstance.id,
+ *     }],
  *     dataflows: [{
  *         driverShape: stackDataflowDriverShape,
  *         executorShape: stackDataflowExecutorShape,
@@ -132,6 +136,43 @@ import * as utilities from "../utilities";
  *         storageTier: stackObjectstorageStorageTier,
  *         autoTiering: stackObjectstorageAutoTiering,
  *     }],
+ *     okes: [{
+ *         clusterId: testCluster.id,
+ *         instanceId: testInstance.id,
+ *         namespaceName: stackOkeNamespaceName,
+ *         secrets: [{
+ *             secretName: stackOkeSecretsSecretName,
+ *             templateObjectStoragePath: stackOkeSecretsTemplateObjectStoragePath,
+ *             secretDatas: [{
+ *                 key: stackOkeSecretsSecretDataKey,
+ *                 secretId: stackOkeSecretsSecretDataSecretId,
+ *             }],
+ *         }],
+ *         manifestObjectStoragePath: stackOkeManifestObjectStoragePath,
+ *         componentValueOverrides: [{
+ *             componentName: stackOkeComponentValueOverridesComponentName,
+ *             valueOverrides: stackOkeComponentValueOverridesValueOverrides,
+ *         }],
+ *     }],
+ *     omks: [{
+ *         clusterId: testCluster.id,
+ *         clusterNamespaceId: testNamespace.id,
+ *         instanceId: testInstance.id,
+ *         namespaceName: stackOmkNamespaceName,
+ *         secrets: [{
+ *             secretName: stackOmkSecretsSecretName,
+ *             templateObjectStoragePath: stackOmkSecretsTemplateObjectStoragePath,
+ *             secretDatas: [{
+ *                 key: stackOmkSecretsSecretDataKey,
+ *                 secretId: stackOmkSecretsSecretDataSecretId,
+ *             }],
+ *         }],
+ *         manifestObjectStoragePath: stackOmkManifestObjectStoragePath,
+ *         componentValueOverrides: [{
+ *             componentName: stackOmkComponentValueOverridesComponentName,
+ *             valueOverrides: stackOmkComponentValueOverridesValueOverrides,
+ *         }],
+ *     }],
  *     subnetId: stackDeployArtifactsSubnetId,
  * });
  * ```
@@ -172,6 +213,10 @@ export class DifStack extends pulumi.CustomResource {
      * (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
      */
     declare public readonly addServiceTrigger: pulumi.Output<number | undefined>;
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     */
+    declare public readonly aidataplatforms: pulumi.Output<outputs.oci.DifStackAidataplatform[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
      */
@@ -228,6 +273,14 @@ export class DifStack extends pulumi.CustomResource {
      */
     declare public readonly objectstorages: pulumi.Output<outputs.oci.DifStackObjectstorage[] | undefined>;
     /**
+     * OKE Details if oke is included in services.
+     */
+    declare public readonly okes: pulumi.Output<outputs.oci.DifStackOke[] | undefined>;
+    /**
+     * OMK Details if omk is included in services.
+     */
+    declare public readonly omks: pulumi.Output<outputs.oci.DifStackOmk[] | undefined>;
+    /**
      * Details of the service onboarded for the data intelligence stack.
      */
     declare public /*out*/ readonly serviceDetails: pulumi.Output<outputs.oci.DifStackServiceDetail[]>;
@@ -275,6 +328,7 @@ export class DifStack extends pulumi.CustomResource {
             const state = argsOrState as DifStackState | undefined;
             resourceInputs["adbs"] = state?.adbs;
             resourceInputs["addServiceTrigger"] = state?.addServiceTrigger;
+            resourceInputs["aidataplatforms"] = state?.aidataplatforms;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["dataflows"] = state?.dataflows;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -286,6 +340,8 @@ export class DifStack extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["notificationEmail"] = state?.notificationEmail;
             resourceInputs["objectstorages"] = state?.objectstorages;
+            resourceInputs["okes"] = state?.okes;
+            resourceInputs["omks"] = state?.omks;
             resourceInputs["serviceDetails"] = state?.serviceDetails;
             resourceInputs["services"] = state?.services;
             resourceInputs["stackTemplates"] = state?.stackTemplates;
@@ -310,6 +366,7 @@ export class DifStack extends pulumi.CustomResource {
             }
             resourceInputs["adbs"] = args?.adbs;
             resourceInputs["addServiceTrigger"] = args?.addServiceTrigger;
+            resourceInputs["aidataplatforms"] = args?.aidataplatforms;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["dataflows"] = args?.dataflows;
             resourceInputs["definedTags"] = args?.definedTags;
@@ -320,6 +377,8 @@ export class DifStack extends pulumi.CustomResource {
             resourceInputs["ggcs"] = args?.ggcs;
             resourceInputs["notificationEmail"] = args?.notificationEmail;
             resourceInputs["objectstorages"] = args?.objectstorages;
+            resourceInputs["okes"] = args?.okes;
+            resourceInputs["omks"] = args?.omks;
             resourceInputs["services"] = args?.services;
             resourceInputs["stackTemplates"] = args?.stackTemplates;
             resourceInputs["subnetId"] = args?.subnetId;
@@ -347,6 +406,10 @@ export interface DifStackState {
      * (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
      */
     addServiceTrigger?: pulumi.Input<number>;
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     */
+    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
      */
@@ -403,6 +466,14 @@ export interface DifStackState {
      */
     objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[]>;
     /**
+     * OKE Details if oke is included in services.
+     */
+    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[]>;
+    /**
+     * OMK Details if omk is included in services.
+     */
+    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[]>;
+    /**
      * Details of the service onboarded for the data intelligence stack.
      */
     serviceDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetail>[]>;
@@ -448,6 +519,10 @@ export interface DifStackArgs {
      * (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
      */
     addServiceTrigger?: pulumi.Input<number>;
+    /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     */
+    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
      */
@@ -499,6 +574,14 @@ export interface DifStackArgs {
      * (Updatable) Object Storage Details if object storage is included in services.
      */
     objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[]>;
+    /**
+     * OKE Details if oke is included in services.
+     */
+    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[]>;
+    /**
+     * OMK Details if omk is included in services.
+     */
+    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[]>;
     /**
      * (Updatable) List of services to be onboarded for the stack.
      */

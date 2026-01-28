@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DifStackGenaiEndpoint> Endpoints;
         /// <summary>
-        /// (Updatable) Id for the GGCS instance to be provisioned.
+        /// (Updatable) Id for the GenAi instance to be provisioned.
         /// </summary>
         public readonly string InstanceId;
         /// <summary>

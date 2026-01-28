@@ -69,7 +69,7 @@ type LookupCertificateResult struct {
 	CertificateRules []GetCertificateCertificateRule `pulumi:"certificateRules"`
 	// The OCID of the compartment where you want to create the certificate.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificateCurrentVersion `pulumi:"currentVersions"`
@@ -166,7 +166,7 @@ func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o LookupCertificateResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.ConfigType }).(pulumi.StringOutput)
 }

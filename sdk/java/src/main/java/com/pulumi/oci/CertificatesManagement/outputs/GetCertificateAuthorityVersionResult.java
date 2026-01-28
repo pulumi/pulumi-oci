@@ -21,6 +21,11 @@ public final class GetCertificateAuthorityVersionResult {
     private String certificateAuthorityId;
     private String certificateAuthorityVersionNumber;
     /**
+     * @return The certificate signing request (in PEM format).
+     * 
+     */
+    private String csrPem;
+    /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
@@ -82,6 +87,13 @@ public final class GetCertificateAuthorityVersionResult {
     }
     public String certificateAuthorityVersionNumber() {
         return this.certificateAuthorityVersionNumber;
+    }
+    /**
+     * @return The certificate signing request (in PEM format).
+     * 
+     */
+    public String csrPem() {
+        return this.csrPem;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -168,6 +180,7 @@ public final class GetCertificateAuthorityVersionResult {
     public static final class Builder {
         private String certificateAuthorityId;
         private String certificateAuthorityVersionNumber;
+        private String csrPem;
         private String id;
         private String issuerCaVersionNumber;
         private List<GetCertificateAuthorityVersionRevocationStatus> revocationStatuses;
@@ -184,6 +197,7 @@ public final class GetCertificateAuthorityVersionResult {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityId = defaults.certificateAuthorityId;
     	      this.certificateAuthorityVersionNumber = defaults.certificateAuthorityVersionNumber;
+    	      this.csrPem = defaults.csrPem;
     	      this.id = defaults.id;
     	      this.issuerCaVersionNumber = defaults.issuerCaVersionNumber;
     	      this.revocationStatuses = defaults.revocationStatuses;
@@ -211,6 +225,14 @@ public final class GetCertificateAuthorityVersionResult {
               throw new MissingRequiredPropertyException("GetCertificateAuthorityVersionResult", "certificateAuthorityVersionNumber");
             }
             this.certificateAuthorityVersionNumber = certificateAuthorityVersionNumber;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder csrPem(String csrPem) {
+            if (csrPem == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthorityVersionResult", "csrPem");
+            }
+            this.csrPem = csrPem;
             return this;
         }
         @CustomType.Setter
@@ -317,6 +339,7 @@ public final class GetCertificateAuthorityVersionResult {
             final var _resultValue = new GetCertificateAuthorityVersionResult();
             _resultValue.certificateAuthorityId = certificateAuthorityId;
             _resultValue.certificateAuthorityVersionNumber = certificateAuthorityVersionNumber;
+            _resultValue.csrPem = csrPem;
             _resultValue.id = id;
             _resultValue.issuerCaVersionNumber = issuerCaVersionNumber;
             _resultValue.revocationStatuses = revocationStatuses;

@@ -58,6 +58,8 @@ type LookupQueueArgs struct {
 
 // A collection of values returned by getQueue.
 type LookupQueueResult struct {
+	// The list of capabilities enabled on the queue
+	Capabilities []GetQueueCapability `pulumi:"capabilities"`
 	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit int `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
@@ -129,6 +131,11 @@ func (o LookupQueueResultOutput) ToLookupQueueResultOutput() LookupQueueResultOu
 
 func (o LookupQueueResultOutput) ToLookupQueueResultOutputWithContext(ctx context.Context) LookupQueueResultOutput {
 	return o
+}
+
+// The list of capabilities enabled on the queue
+func (o LookupQueueResultOutput) Capabilities() GetQueueCapabilityArrayOutput {
+	return o.ApplyT(func(v LookupQueueResult) []GetQueueCapability { return v.Capabilities }).(GetQueueCapabilityArrayOutput)
 }
 
 // The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.

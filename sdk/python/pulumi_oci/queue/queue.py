@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['QueueArgs', 'Queue']
 
@@ -21,6 +23,7 @@ class QueueArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
+                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
                  channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -35,6 +38,7 @@ class QueueArgs:
         The set of arguments for constructing a Queue resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name of the queue.
+        :param pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[_builtins.int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
@@ -51,6 +55,8 @@ class QueueArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
+        if capabilities is not None:
+            pulumi.set(__self__, "capabilities", capabilities)
         if channel_consumption_limit is not None:
             pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
         if custom_encryption_key_id is not None:
@@ -95,6 +101,18 @@ class QueueArgs:
     @display_name.setter
     def display_name(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
+        """
+        (Updatable) The capability to add on the queue
+        """
+        return pulumi.get(self, "capabilities")
+
+    @capabilities.setter
+    def capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
+        pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")
@@ -223,6 +241,7 @@ class QueueArgs:
 @pulumi.input_type
 class _QueueState:
     def __init__(__self__, *,
+                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]] = None,
                  channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -243,6 +262,7 @@ class _QueueState:
                  visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Queue resources.
+        :param pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
@@ -265,6 +285,8 @@ class _QueueState:
         :param pulumi.Input[_builtins.int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
         :param pulumi.Input[_builtins.int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
+        if capabilities is not None:
+            pulumi.set(__self__, "capabilities", capabilities)
         if channel_consumption_limit is not None:
             pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
         if compartment_id is not None:
@@ -301,6 +323,18 @@ class _QueueState:
             pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
         if visibility_in_seconds is not None:
             pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]:
+        """
+        (Updatable) The capability to add on the queue
+        """
+        return pulumi.get(self, "capabilities")
+
+    @capabilities.setter
+    def capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['QueueCapabilityArgs']]]]):
+        pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")
@@ -528,6 +562,7 @@ class Queue(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
                  channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -542,6 +577,10 @@ class Queue(pulumi.CustomResource):
                  visibility_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
+
+        Creates a new queue.
+
         ## Example Usage
 
         ```python
@@ -551,6 +590,13 @@ class Queue(pulumi.CustomResource):
         test_queue = oci.queue.Queue("test_queue",
             compartment_id=compartment_id,
             display_name=queue_display_name,
+            capabilities=[{
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
+                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
+                "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
+                "type": queue_capabilities_type,
+            }],
             channel_consumption_limit=queue_channel_consumption_limit,
             custom_encryption_key_id=test_key["id"],
             dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
@@ -577,6 +623,7 @@ class Queue(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
@@ -600,6 +647,10 @@ class Queue(pulumi.CustomResource):
                  args: QueueArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
+
+        Creates a new queue.
+
         ## Example Usage
 
         ```python
@@ -609,6 +660,13 @@ class Queue(pulumi.CustomResource):
         test_queue = oci.queue.Queue("test_queue",
             compartment_id=compartment_id,
             display_name=queue_display_name,
+            capabilities=[{
+                "is_primary_consumer_group_enabled": queue_capabilities_is_primary_consumer_group_enabled,
+                "primary_consumer_group_dead_letter_queue_delivery_count": queue_capabilities_primary_consumer_group_dead_letter_queue_delivery_count,
+                "primary_consumer_group_display_name": queue_capabilities_primary_consumer_group_display_name,
+                "primary_consumer_group_filter": queue_capabilities_primary_consumer_group_filter,
+                "type": queue_capabilities_type,
+            }],
             channel_consumption_limit=queue_channel_consumption_limit,
             custom_encryption_key_id=test_key["id"],
             dead_letter_queue_delivery_count=queue_dead_letter_queue_delivery_count,
@@ -648,6 +706,7 @@ class Queue(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
                  channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -669,6 +728,7 @@ class Queue(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = QueueArgs.__new__(QueueArgs)
 
+            __props__.__dict__["capabilities"] = capabilities
             __props__.__dict__["channel_consumption_limit"] = channel_consumption_limit
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -701,6 +761,7 @@ class Queue(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]]] = None,
             channel_consumption_limit: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             custom_encryption_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -726,6 +787,7 @@ class Queue(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict']]]] capabilities: (Updatable) The capability to add on the queue
         :param pulumi.Input[_builtins.int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         :param pulumi.Input[_builtins.str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
@@ -752,6 +814,7 @@ class Queue(pulumi.CustomResource):
 
         __props__ = _QueueState.__new__(_QueueState)
 
+        __props__.__dict__["capabilities"] = capabilities
         __props__.__dict__["channel_consumption_limit"] = channel_consumption_limit
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["custom_encryption_key_id"] = custom_encryption_key_id
@@ -771,6 +834,14 @@ class Queue(pulumi.CustomResource):
         __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
         __props__.__dict__["visibility_in_seconds"] = visibility_in_seconds
         return Queue(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> pulumi.Output[Sequence['outputs.QueueCapability']]:
+        """
+        (Updatable) The capability to add on the queue
+        """
+        return pulumi.get(self, "capabilities")
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")

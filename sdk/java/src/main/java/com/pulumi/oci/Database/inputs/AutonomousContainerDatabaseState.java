@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupDestinati
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardGroupMemberArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
@@ -366,6 +367,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<String>> dstFileVersion() {
         return Optional.ofNullable(this.dstFileVersion);
+    }
+
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Import(name="encryptionKeyLocationDetails")
+    private @Nullable Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Optional<Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs>> encryptionKeyLocationDetails() {
+        return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
 
     /**
@@ -1216,6 +1232,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.displayName = $.displayName;
         this.distributionAffinity = $.distributionAffinity;
         this.dstFileVersion = $.dstFileVersion;
+        this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.failoverTrigger = $.failoverTrigger;
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.freeformTags = $.freeformTags;
@@ -1811,6 +1828,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder dstFileVersion(String dstFileVersion) {
             return dstFileVersion(Output.of(dstFileVersion));
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(@Nullable Output<AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs> encryptionKeyLocationDetails) {
+            $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptionKeyLocationDetails(AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
         }
 
         /**

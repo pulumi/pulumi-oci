@@ -141,7 +141,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly hostname: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+     * The OCID of the identity connector
      */
     readonly id: string;
     /**
@@ -186,6 +186,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly memorySizeInGbs: number;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    readonly multiCloudIdentityConnectorConfigs: outputs.Database.GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     readonly nextMaintenanceRunId: string;
@@ -227,6 +231,7 @@ export interface GetCloudAutonomousVmClusterResult {
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
     readonly reclaimableCpus: number;
+    readonly registerPkcsTrigger: number;
     /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      */
@@ -264,6 +269,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
+     * TDE keystore type
+     */
+    readonly tdeKeyStoreType: string;
+    /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
     readonly timeCreated: string;
@@ -291,6 +300,7 @@ export interface GetCloudAutonomousVmClusterResult {
      * The total number of CPUs in an Autonomous VM Cluster.
      */
     readonly totalCpus: number;
+    readonly unregisterPkcsTrigger: number;
 }
 /**
  * This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.

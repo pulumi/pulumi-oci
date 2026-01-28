@@ -874,6 +874,9 @@ class GetAutonomousDatabaseResult:
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
     def encryption_key_location_details(self) -> Sequence['outputs.GetAutonomousDatabaseEncryptionKeyLocationDetailResult']:
+        """
+        Types of providers supported for managing database encryption keys
+        """
         return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property

@@ -30,7 +30,7 @@ public final class DifStackGenai {
      */
     private @Nullable List<DifStackGenaiEndpoint> endpoints;
     /**
-     * @return (Updatable) Id for the GGCS instance to be provisioned.
+     * @return (Updatable) Id for the GenAi instance to be provisioned.
      * 
      */
     private String instanceId;
@@ -68,7 +68,7 @@ public final class DifStackGenai {
         return this.endpoints == null ? List.of() : this.endpoints;
     }
     /**
-     * @return (Updatable) Id for the GGCS instance to be provisioned.
+     * @return (Updatable) Id for the GenAi instance to be provisioned.
      * 
      */
     public String instanceId() {

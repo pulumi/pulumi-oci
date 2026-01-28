@@ -32,6 +32,7 @@ import (
 //				PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{
 //					&core.InstancePoolPlacementConfigurationArgs{
 //						AvailabilityDomain: pulumi.Any(instancePoolPlacementConfigurationsAvailabilityDomain),
+//						ComputeClusterId:   pulumi.Any(testComputeCluster.Id),
 //						FaultDomains:       pulumi.Any(instancePoolPlacementConfigurationsFaultDomains),
 //						PrimarySubnetId:    pulumi.Any(testSubnet.Id),
 //						PrimaryVnicSubnets: &core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs{
@@ -129,7 +130,7 @@ type InstancePool struct {
 	LoadBalancers InstancePoolLoadBalancerArrayOutput `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
-	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayOutput `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntOutput `pulumi:"size"`
@@ -206,7 +207,7 @@ type instancePoolState struct {
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
-	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 	PlacementConfigurations []InstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size *int `pulumi:"size"`
@@ -242,7 +243,7 @@ type InstancePoolState struct {
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
-	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayInput
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntPtrInput
@@ -280,7 +281,7 @@ type instancePoolArgs struct {
 	LoadBalancers []InstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
-	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 	PlacementConfigurations []InstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size int `pulumi:"size"`
@@ -313,7 +314,7 @@ type InstancePoolArgs struct {
 	LoadBalancers InstancePoolLoadBalancerArrayInput
 	// (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 	//
-	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+	// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 	PlacementConfigurations InstancePoolPlacementConfigurationArrayInput
 	// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
 	Size pulumi.IntInput
@@ -463,7 +464,7 @@ func (o InstancePoolOutput) LoadBalancers() InstancePoolLoadBalancerArrayOutput 
 
 // (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 //
-// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+// To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
 func (o InstancePoolOutput) PlacementConfigurations() InstancePoolPlacementConfigurationArrayOutput {
 	return o.ApplyT(func(v *InstancePool) InstancePoolPlacementConfigurationArrayOutput { return v.PlacementConfigurations }).(InstancePoolPlacementConfigurationArrayOutput)
 }

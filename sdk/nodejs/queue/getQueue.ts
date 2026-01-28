@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -41,6 +43,10 @@ export interface GetQueueArgs {
  * A collection of values returned by getQueue.
  */
 export interface GetQueueResult {
+    /**
+     * The list of capabilities enabled on the queue
+     */
+    readonly capabilities: outputs.Queue.GetQueueCapability[];
     /**
      * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */

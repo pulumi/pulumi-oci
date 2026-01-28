@@ -122,6 +122,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     */
+    readonly loadBalancerConfigs: outputs.Opensearch.GetOpensearchClusterLoadBalancerConfig[];
+    /**
      * Details for the maintenance activity.
      */
     readonly maintenanceDetails: outputs.Opensearch.GetOpensearchClusterMaintenanceDetail[];

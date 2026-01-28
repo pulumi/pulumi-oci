@@ -102,8 +102,10 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity string `pulumi:"distributionAffinity"`
 	// DST Time-Zone File version of the Autonomous Container Database.
-	DstFileVersion  string `pulumi:"dstFileVersion"`
-	FailoverTrigger int    `pulumi:"failoverTrigger"`
+	DstFileVersion string `pulumi:"dstFileVersion"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails []GetAutonomousContainerDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	FailoverTrigger              int                                                         `pulumi:"failoverTrigger"`
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -366,6 +368,13 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DistributionAffinity() pu
 // DST Time-Zone File version of the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) DstFileVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DstFileVersion }).(pulumi.StringOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o LookupAutonomousContainerDatabaseResultOutput) EncryptionKeyLocationDetails() GetAutonomousContainerDatabaseEncryptionKeyLocationDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseEncryptionKeyLocationDetail {
+		return v.EncryptionKeyLocationDetails
+	}).(GetAutonomousContainerDatabaseEncryptionKeyLocationDetailArrayOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) FailoverTrigger() pulumi.IntOutput {

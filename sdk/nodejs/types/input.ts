@@ -7034,12 +7034,17 @@ export namespace CapacityManagement {
 
 export namespace CertificatesManagement {
     export interface CertificateAuthorityCertificateAuthorityConfig {
+        actionDetails?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfigActionDetails>;
+        /**
+         * (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+         */
+        certificatePem?: pulumi.Input<string>;
         /**
          * (Updatable) The origin of the CA.
          */
         configType: pulumi.Input<string>;
         /**
-         * The OCID of the private CA.
+         * The OCID of the private, external issuer CA.
          */
         issuerCertificateAuthorityId?: pulumi.Input<string>;
         /**
@@ -7049,7 +7054,7 @@ export namespace CertificatesManagement {
         /**
          * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
          */
-        subject: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfigSubject>;
+        subject?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfigSubject>;
         /**
          * (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
          */
@@ -7058,6 +7063,14 @@ export namespace CertificatesManagement {
          * (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
          */
         versionName?: pulumi.Input<string>;
+    }
+
+    export interface CertificateAuthorityCertificateAuthorityConfigActionDetails {
+        actionType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+         */
+        certificatePem?: pulumi.Input<string>;
     }
 
     export interface CertificateAuthorityCertificateAuthorityConfigSubject {
@@ -7152,9 +7165,50 @@ export namespace CertificatesManagement {
          */
         leafCertificateMaxValidityDuration?: pulumi.Input<string>;
         /**
-         * (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+         * A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+         */
+        nameConstraint?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRuleNameConstraint>;
+        /**
+         * The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+         */
+        pathLengthConstraint?: pulumi.Input<number>;
+        /**
+         * (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
          */
         ruleType: pulumi.Input<string>;
+    }
+
+    export interface CertificateAuthorityCertificateAuthorityRuleNameConstraint {
+        /**
+         * A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+         */
+        excludedSubtrees?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree>[]>;
+        /**
+         * A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+         */
+        permittedSubtrees?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree>[]>;
+    }
+
+    export interface CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+        /**
+         * The type of name constraint.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Name restrictions for the corresponding type of name constraint.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+        /**
+         * The type of name constraint.
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Name restrictions for the corresponding type of name constraint.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface CertificateAuthorityCertificateRevocationListDetails {
@@ -7325,7 +7379,7 @@ export namespace CertificatesManagement {
          */
         certificateProfileType?: pulumi.Input<string>;
         /**
-         * (Updatable) The origin of the certificate.
+         * (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
          */
         configType: pulumi.Input<string>;
         /**
@@ -13323,6 +13377,10 @@ export namespace Core {
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         */
+        computeClusterId?: pulumi.Input<string>;
+        /**
          * The fault domains to place instances.
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
@@ -17345,6 +17403,12 @@ export namespace Core {
          * (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
          */
         availabilityDomain: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         *
+         * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+         */
+        computeClusterId?: pulumi.Input<string>;
         /**
          * (Updatable) The fault domains to place instances.
          *
@@ -28354,6 +28418,19 @@ export namespace Database {
         transportLag?: pulumi.Input<string>;
     }
 
+    export interface AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId?: pulumi.Input<string>;
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        hsmPassword?: pulumi.Input<string>;
+        /**
+         * Use 'AWS' for creating a new database.
+         */
+        providerType?: pulumi.Input<string>;
+    }
+
     export interface AutonomousContainerDatabaseAddStandbyKeyHistoryEntry {
         /**
          * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
@@ -28797,6 +28874,25 @@ export namespace Database {
          * The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database. Example: `7 seconds`
          */
         transportLag?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousContainerDatabaseEncryptionKeyLocationDetails {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
+         * Provide the HSM password as you would in RDBMS for External HSM.
+         */
+        hsmPassword?: pulumi.Input<string>;
+        /**
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws.
+         */
+        providerType: pulumi.Input<string>;
     }
 
     export interface AutonomousContainerDatabaseKeyHistoryEntry {
@@ -29432,9 +29528,15 @@ export namespace Database {
     }
 
     export interface AutonomousDatabaseEncryptionKeyLocationDetail {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
         awsEncryptionKeyId?: pulumi.Input<string>;
         azureEncryptionKeyId?: pulumi.Input<string>;
         hsmPassword?: pulumi.Input<string>;
+        /**
+         * Use 'AWS' for creating a new database.
+         */
         providerType?: pulumi.Input<string>;
     }
 
@@ -30126,6 +30228,17 @@ export namespace Database {
          * Name of the month of the year.
          */
         name?: pulumi.Input<string>;
+    }
+
+    export interface CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider?: pulumi.Input<string>;
+        /**
+         * The OCID of the identity connector
+         */
+        id?: pulumi.Input<string>;
     }
 
     export interface CloudDatabaseManagementCredentialdetails {
@@ -87170,6 +87283,18 @@ export namespace Ocvp {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagementAppliancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagementAppliancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSddcsFilter {
         name: string;
         regex?: boolean;
@@ -87246,6 +87371,51 @@ export namespace Ocvp {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ManagementApplianceConfiguration {
+        /**
+         * (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+         */
+        isLogIngestionEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Is metrics collection and publishing is enabled for appliance.
+         */
+        isMetricsCollectionEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Array of metrics ids to collect.
+         */
+        metrics?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+         */
+        supportBundleBucketId?: pulumi.Input<string>;
+    }
+
+    export interface ManagementApplianceConnection {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+         */
+        credentialsSecretId: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of connection.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface ManagementApplianceHeartbeatConnectionState {
+        /**
+         * Information about current connection status.
+         */
+        details?: pulumi.Input<string>;
+        /**
+         * Current state of the management appliance.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * Type of connection.
+         */
+        type?: pulumi.Input<string>;
     }
 
     export interface SddcDatastore {
@@ -87809,6 +87979,21 @@ export namespace Opensearch {
          * (Updatable) certificate to be used for OpenSearch dashboard api communication
          */
         openSearchDashboardCertificateId?: pulumi.Input<string>;
+    }
+
+    export interface ClusterLoadBalancerConfig {
+        /**
+         * (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+         */
+        loadBalancerMaxBandwidthInMbps?: pulumi.Input<number>;
+        /**
+         * (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+         */
+        loadBalancerMinBandwidthInMbps?: pulumi.Input<number>;
+        /**
+         * (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+         */
+        loadBalancerServiceType: pulumi.Input<string>;
     }
 
     export interface ClusterMaintenanceDetails {
@@ -91771,6 +91956,18 @@ export namespace Psql {
 }
 
 export namespace Queue {
+    export interface GetConsumerGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetConsumerGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetQueuesFilter {
         name: string;
         regex?: boolean;
@@ -91783,6 +91980,28 @@ export namespace Queue {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface QueueCapability {
+        /**
+         * (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+         */
+        isPrimaryConsumerGroupEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+         */
+        primaryConsumerGroupDeadLetterQueueDeliveryCount?: pulumi.Input<number>;
+        /**
+         * (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+         */
+        primaryConsumerGroupDisplayName?: pulumi.Input<string>;
+        /**
+         * The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+         */
+        primaryConsumerGroupFilter?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+         */
+        type?: pulumi.Input<string>;
+    }
 }
 
 export namespace RecoveryMod {
@@ -97399,9 +97618,29 @@ export namespace oci {
     }
 
     export interface DifStackAdbDbCredential {
+        /**
+         * Vault secret OCID containing the corresponding user password.
+         */
         secretId: pulumi.Input<string>;
+        /**
+         * Username for ADB to be created or updated.
+         */
         userName: pulumi.Input<string>;
+        /**
+         * Type of the user. Allowed values are "ADMIN" or "CUSTOM" or "GGCS".
+         */
         userType: pulumi.Input<string>;
+    }
+
+    export interface DifStackAidataplatform {
+        /**
+         * A default workspace will be created with this name.
+         */
+        defaultWorkspaceName: pulumi.Input<string>;
+        /**
+         * Identifier for AIDP instance to be provisioned.
+         */
+        instanceId: pulumi.Input<string>;
     }
 
     export interface DifStackDataflow {
@@ -97528,7 +97767,7 @@ export namespace oci {
          */
         endpoints?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenaiEndpoint>[]>;
         /**
-         * (Updatable) Id for the GGCS instance to be provisioned.
+         * (Updatable) Id for the GenAi instance to be provisioned.
          */
         instanceId: pulumi.Input<string>;
         /**
@@ -97701,6 +97940,142 @@ export namespace oci {
         storageTier: pulumi.Input<string>;
     }
 
+    export interface DifStackOke {
+        /**
+         * OCID of existing OKE cluster.
+         */
+        clusterId: pulumi.Input<string>;
+        /**
+         * Component overrides for stack specific parameters applied during artifact template rendering.
+         */
+        componentValueOverrides?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOkeComponentValueOverride>[]>;
+        /**
+         * Unique identifier for an oke instance.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * Object storage path for the deployment manifest.
+         */
+        manifestObjectStoragePath?: pulumi.Input<string>;
+        /**
+         * Kubernetes namespace-name of OKE cluster.
+         */
+        namespaceName: pulumi.Input<string>;
+        /**
+         * List of kubernetes secrets to create or update in the namespace-name of the target cluster. Each entry source secret values from OCI vault.
+         */
+        secrets?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOkeSecret>[]>;
+    }
+
+    export interface DifStackOkeComponentValueOverride {
+        /**
+         * Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+         */
+        componentName: pulumi.Input<string>;
+        /**
+         * Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * Used for overriding the values in value.yaml artifact of the component.
+         * Example: `{"WORKER_THREADS": "8"}`
+         */
+        valueOverrides: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DifStackOkeSecret {
+        /**
+         * List of kubernetes secret data.
+         */
+        secretDatas: pulumi.Input<pulumi.Input<inputs.oci.DifStackOkeSecretSecretData>[]>;
+        /**
+         * Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+         */
+        secretName: pulumi.Input<string>;
+        /**
+         * Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+         */
+        templateObjectStoragePath?: pulumi.Input<string>;
+    }
+
+    export interface DifStackOkeSecretSecretData {
+        /**
+         * Data key in the kubernetes secret.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+         */
+        secretId: pulumi.Input<string>;
+    }
+
+    export interface DifStackOmk {
+        /**
+         * OCID of cluster assigned to OMK cluster-namespace.
+         */
+        clusterId: pulumi.Input<string>;
+        /**
+         * OCID of existing OMK cluster-namespace.
+         */
+        clusterNamespaceId: pulumi.Input<string>;
+        /**
+         * Component overrides for stack specific parameters applied during artifact template rendering.
+         */
+        componentValueOverrides?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmkComponentValueOverride>[]>;
+        /**
+         * Unique identifier for an omk instance.
+         */
+        instanceId: pulumi.Input<string>;
+        /**
+         * Object storage path for the deployment manifest.
+         */
+        manifestObjectStoragePath?: pulumi.Input<string>;
+        /**
+         * Kubernetes namespace-name of OMK cluster-namespace.
+         */
+        namespaceName: pulumi.Input<string>;
+        /**
+         * List of kubernetes secrets to create or update in the namespace-name of target cluster-namespace. Each entry source secret values from OCI vault.
+         */
+        secrets?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmkSecret>[]>;
+    }
+
+    export interface DifStackOmkComponentValueOverride {
+        /**
+         * Logical name of the grouping independently deployable kubernetes resource artifacts for the current deployment.
+         */
+        componentName: pulumi.Input<string>;
+        /**
+         * Free-form value overrides for the component. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * Used for overriding the values in value.yaml artifact of the component.
+         * Example: `{"WORKER_THREADS": "8"}`
+         */
+        valueOverrides: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface DifStackOmkSecret {
+        /**
+         * List of kubernetes secret data.
+         */
+        secretDatas: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmkSecretSecretData>[]>;
+        /**
+         * Name of the kubernetes secret of max length 63 and contain only lowercase alphanumeric characters or '-' and start and end with an alphabetic character.
+         */
+        secretName: pulumi.Input<string>;
+        /**
+         * Object storage path for the secret template to be used for creating secret otherwise it will be created with default template.
+         */
+        templateObjectStoragePath?: pulumi.Input<string>;
+    }
+
+    export interface DifStackOmkSecretSecretData {
+        /**
+         * Data key in the kubernetes secret.
+         */
+        key: pulumi.Input<string>;
+        /**
+         * OCID of the Oci vault secret that provides the value for this key. The latest active secret version is used at deploy time unless otherwise configured.
+         */
+        secretId: pulumi.Input<string>;
+    }
+
     export interface DifStackServiceDetail {
         /**
          * Additional details about the provisioned services
@@ -97742,6 +98117,10 @@ export namespace oci {
          */
         assignedConnections?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetailAdditionalDetailAssignedConnection>[]>;
         /**
+         * OCID of cluster assigned to OMK cluster-namespace.
+         */
+        clusterId?: pulumi.Input<string>;
+        /**
          * details of all endpoints assigned to cluster
          */
         endpointDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetailAdditionalDetailEndpointDetail>[]>;
@@ -97753,6 +98132,10 @@ export namespace oci {
          * version of model
          */
         modelVersion?: pulumi.Input<string>;
+        /**
+         * Kubernetes namespace-name of omk cluster-namespace.
+         */
+        namespace?: pulumi.Input<string>;
         /**
          * region of cluster
          */
@@ -98227,6 +98610,24 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedKafkaNodeShapesFilter {
+        /**
+         * The name to filter on.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedKafkaNodeShapesFilterArgs {
+        /**
+         * The name to filter on.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMulticloudExternalLocationMappingMetadataFilter {
         name: string;
         regex?: boolean;
@@ -98637,6 +99038,10 @@ export namespace oci {
          * (Updatable) Number of Kafka broker nodes
          */
         nodeCount: pulumi.Input<number>;
+        /**
+         * (Updatable) Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+         */
+        nodeShape?: pulumi.Input<string>;
         /**
          * (Updatable) Number of OCPUs per nodes
          */

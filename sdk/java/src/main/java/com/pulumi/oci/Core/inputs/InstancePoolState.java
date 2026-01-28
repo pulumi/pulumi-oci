@@ -174,7 +174,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      * 
      */
     @Import(name="placementConfigurations")
@@ -183,7 +183,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      * 
      */
     public Optional<Output<List<InstancePoolPlacementConfigurationArgs>>> placementConfigurations() {
@@ -501,7 +501,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
          * 
-         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
          * 
          * @return builder
          * 
@@ -514,7 +514,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
          * 
-         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param placementConfigurations (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
          * 
-         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+         * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
          * 
          * @return builder
          * 

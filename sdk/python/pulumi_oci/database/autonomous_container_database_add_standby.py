@@ -231,6 +231,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
                  dst_file_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs']]]] = None,
                  fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -297,6 +298,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param pulumi.Input[_builtins.str] dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs']]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
@@ -386,6 +388,8 @@ class _AutonomousContainerDatabaseAddStandbyState:
             pulumi.set(__self__, "distribution_affinity", distribution_affinity)
         if dst_file_version is not None:
             pulumi.set(__self__, "dst_file_version", dst_file_version)
+        if encryption_key_location_details is not None:
+            pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
             pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
@@ -703,6 +707,18 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @dst_file_version.setter
     def dst_file_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dst_file_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs']]]]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
+
+    @encryption_key_location_details.setter
+    def encryption_key_location_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs']]]]):
+        pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
@@ -1455,6 +1471,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             __props__.__dict__["display_name"] = None
             __props__.__dict__["distribution_affinity"] = None
             __props__.__dict__["dst_file_version"] = None
+            __props__.__dict__["encryption_key_location_details"] = None
             __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["infrastructure_type"] = None
             __props__.__dict__["is_data_guard_enabled"] = None
@@ -1520,6 +1537,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
             dst_file_version: Optional[pulumi.Input[_builtins.str]] = None,
+            encryption_key_location_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict']]]]] = None,
             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1591,6 +1609,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param pulumi.Input[_builtins.str] dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgs', 'AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
@@ -1665,6 +1684,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["distribution_affinity"] = distribution_affinity
         __props__.__dict__["dst_file_version"] = dst_file_version
+        __props__.__dict__["encryption_key_location_details"] = encryption_key_location_details
         __props__.__dict__["fast_start_fail_over_lag_limit_in_seconds"] = fast_start_fail_over_lag_limit_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["infrastructure_type"] = infrastructure_type
@@ -1861,6 +1881,14 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail']]:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")

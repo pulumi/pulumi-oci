@@ -21,6 +21,13 @@ public final class InstancePoolPlacementConfiguration {
      */
     private String availabilityDomain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+     * 
+     */
+    private @Nullable String computeClusterId;
+    /**
      * @return (Updatable) The fault domains to place instances.
      * 
      * If you don&#39;t provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -56,6 +63,15 @@ public final class InstancePoolPlacementConfiguration {
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     * Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+     * 
+     */
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
     /**
      * @return (Updatable) The fault domains to place instances.
@@ -104,6 +120,7 @@ public final class InstancePoolPlacementConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private @Nullable String computeClusterId;
         private @Nullable List<String> faultDomains;
         private @Nullable String primarySubnetId;
         private @Nullable InstancePoolPlacementConfigurationPrimaryVnicSubnets primaryVnicSubnets;
@@ -112,6 +129,7 @@ public final class InstancePoolPlacementConfiguration {
         public Builder(InstancePoolPlacementConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.faultDomains = defaults.faultDomains;
     	      this.primarySubnetId = defaults.primarySubnetId;
     	      this.primaryVnicSubnets = defaults.primaryVnicSubnets;
@@ -124,6 +142,12 @@ public final class InstancePoolPlacementConfiguration {
               throw new MissingRequiredPropertyException("InstancePoolPlacementConfiguration", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -159,6 +183,7 @@ public final class InstancePoolPlacementConfiguration {
         public InstancePoolPlacementConfiguration build() {
             final var _resultValue = new InstancePoolPlacementConfiguration();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.faultDomains = faultDomains;
             _resultValue.primarySubnetId = primarySubnetId;
             _resultValue.primaryVnicSubnets = primaryVnicSubnets;

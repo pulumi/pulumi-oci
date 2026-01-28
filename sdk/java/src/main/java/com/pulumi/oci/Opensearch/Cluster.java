@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opensearch.ClusterArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterState;
 import com.pulumi.oci.Opensearch.outputs.ClusterCertificateConfig;
+import com.pulumi.oci.Opensearch.outputs.ClusterLoadBalancerConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterMaintenanceDetails;
 import com.pulumi.oci.Opensearch.outputs.ClusterOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterReverseConnectionEndpoint;
@@ -273,6 +274,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    @Export(name="loadBalancerConfig", refs={ClusterLoadBalancerConfig.class}, tree="[0]")
+    private Output<ClusterLoadBalancerConfig> loadBalancerConfig;
+
+    /**
+     * @return (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    public Output<ClusterLoadBalancerConfig> loadBalancerConfig() {
+        return this.loadBalancerConfig;
     }
     /**
      * (Updatable) Details for creation of maintenance details

@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  *     instanceConfigurationId: testInstanceConfiguration.id,
  *     placementConfigurations: [{
  *         availabilityDomain: instancePoolPlacementConfigurationsAvailabilityDomain,
+ *         computeClusterId: testComputeCluster.id,
  *         faultDomains: instancePoolPlacementConfigurationsFaultDomains,
  *         primarySubnetId: testSubnet.id,
  *         primaryVnicSubnets: {
@@ -146,7 +147,7 @@ export class InstancePool extends pulumi.CustomResource {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      */
     declare public readonly placementConfigurations: pulumi.Output<outputs.Core.InstancePoolPlacementConfiguration[]>;
     /**
@@ -274,7 +275,7 @@ export interface InstancePoolState {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      */
     placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
     /**
@@ -338,7 +339,7 @@ export interface InstancePoolArgs {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      *
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      */
     placementConfigurations: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
     /**

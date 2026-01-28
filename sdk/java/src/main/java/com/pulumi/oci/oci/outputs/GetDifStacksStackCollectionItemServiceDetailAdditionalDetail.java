@@ -19,6 +19,11 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
      */
     private List<GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection> assignedConnections;
     /**
+     * @return OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    private String clusterId;
+    /**
      * @return details of all endpoints assigned to cluster
      * 
      */
@@ -33,6 +38,11 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
      * 
      */
     private String modelVersion;
+    /**
+     * @return Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    private String namespace;
     /**
      * @return region of cluster
      * 
@@ -51,6 +61,13 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
      */
     public List<GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection> assignedConnections() {
         return this.assignedConnections;
+    }
+    /**
+     * @return OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    public String clusterId() {
+        return this.clusterId;
     }
     /**
      * @return details of all endpoints assigned to cluster
@@ -72,6 +89,13 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
      */
     public String modelVersion() {
         return this.modelVersion;
+    }
+    /**
+     * @return Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    public String namespace() {
+        return this.namespace;
     }
     /**
      * @return region of cluster
@@ -98,18 +122,22 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
     @CustomType.Builder
     public static final class Builder {
         private List<GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection> assignedConnections;
+        private String clusterId;
         private List<GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail> endpointDetails;
         private String modelId;
         private String modelVersion;
+        private String namespace;
         private String ociRegion;
         private String privateEndpointId;
         public Builder() {}
         public Builder(GetDifStacksStackCollectionItemServiceDetailAdditionalDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignedConnections = defaults.assignedConnections;
+    	      this.clusterId = defaults.clusterId;
     	      this.endpointDetails = defaults.endpointDetails;
     	      this.modelId = defaults.modelId;
     	      this.modelVersion = defaults.modelVersion;
+    	      this.namespace = defaults.namespace;
     	      this.ociRegion = defaults.ociRegion;
     	      this.privateEndpointId = defaults.privateEndpointId;
         }
@@ -124,6 +152,14 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
         }
         public Builder assignedConnections(GetDifStacksStackCollectionItemServiceDetailAdditionalDetailAssignedConnection... assignedConnections) {
             return assignedConnections(List.of(assignedConnections));
+        }
+        @CustomType.Setter
+        public Builder clusterId(String clusterId) {
+            if (clusterId == null) {
+              throw new MissingRequiredPropertyException("GetDifStacksStackCollectionItemServiceDetailAdditionalDetail", "clusterId");
+            }
+            this.clusterId = clusterId;
+            return this;
         }
         @CustomType.Setter
         public Builder endpointDetails(List<GetDifStacksStackCollectionItemServiceDetailAdditionalDetailEndpointDetail> endpointDetails) {
@@ -153,6 +189,14 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
             return this;
         }
         @CustomType.Setter
+        public Builder namespace(String namespace) {
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetDifStacksStackCollectionItemServiceDetailAdditionalDetail", "namespace");
+            }
+            this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ociRegion(String ociRegion) {
             if (ociRegion == null) {
               throw new MissingRequiredPropertyException("GetDifStacksStackCollectionItemServiceDetailAdditionalDetail", "ociRegion");
@@ -171,9 +215,11 @@ public final class GetDifStacksStackCollectionItemServiceDetailAdditionalDetail 
         public GetDifStacksStackCollectionItemServiceDetailAdditionalDetail build() {
             final var _resultValue = new GetDifStacksStackCollectionItemServiceDetailAdditionalDetail();
             _resultValue.assignedConnections = assignedConnections;
+            _resultValue.clusterId = clusterId;
             _resultValue.endpointDetails = endpointDetails;
             _resultValue.modelId = modelId;
             _resultValue.modelVersion = modelVersion;
+            _resultValue.namespace = namespace;
             _resultValue.ociRegion = ociRegion;
             _resultValue.privateEndpointId = privateEndpointId;
             return _resultValue;

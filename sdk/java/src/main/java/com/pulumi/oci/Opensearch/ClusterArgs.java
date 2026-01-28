@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.inputs.ClusterCertificateConfigArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterLoadBalancerConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterSecuritySamlConfigArgs;
@@ -231,6 +232,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> inboundClusterIds() {
         return Optional.ofNullable(this.inboundClusterIds);
+    }
+
+    /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    @Import(name="loadBalancerConfig")
+    private @Nullable Output<ClusterLoadBalancerConfigArgs> loadBalancerConfig;
+
+    /**
+     * @return (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    public Optional<Output<ClusterLoadBalancerConfigArgs>> loadBalancerConfig() {
+        return Optional.ofNullable(this.loadBalancerConfig);
     }
 
     /**
@@ -736,6 +752,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.inboundClusterIds = $.inboundClusterIds;
+        this.loadBalancerConfig = $.loadBalancerConfig;
         this.maintenanceDetails = $.maintenanceDetails;
         this.masterNodeCount = $.masterNodeCount;
         this.masterNodeHostBareMetalShape = $.masterNodeHostBareMetalShape;
@@ -1090,6 +1107,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder inboundClusterIds(String... inboundClusterIds) {
             return inboundClusterIds(List.of(inboundClusterIds));
+        }
+
+        /**
+         * @param loadBalancerConfig (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerConfig(@Nullable Output<ClusterLoadBalancerConfigArgs> loadBalancerConfig) {
+            $.loadBalancerConfig = loadBalancerConfig;
+            return this;
+        }
+
+        /**
+         * @param loadBalancerConfig (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerConfig(ClusterLoadBalancerConfigArgs loadBalancerConfig) {
+            return loadBalancerConfig(Output.of(loadBalancerConfig));
         }
 
         /**

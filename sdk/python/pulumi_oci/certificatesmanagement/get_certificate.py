@@ -141,7 +141,7 @@ class GetCertificateResult:
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        The origin of the certificate.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         """
         return pulumi.get(self, "config_type")
 

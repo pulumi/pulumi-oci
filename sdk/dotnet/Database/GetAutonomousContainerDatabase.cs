@@ -210,6 +210,10 @@ namespace Pulumi.Oci.Database
         /// DST Time-Zone File version of the Autonomous Container Database.
         /// </summary>
         public readonly string DstFileVersion;
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
         public readonly int FailoverTrigger;
         /// <summary>
         /// The lag time for my preference based on data loss tolerance in seconds.
@@ -447,6 +451,8 @@ namespace Pulumi.Oci.Database
 
             string dstFileVersion,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
+
             int failoverTrigger,
 
             int fastStartFailOverLagLimitInSeconds,
@@ -585,6 +591,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             DistributionAffinity = distributionAffinity;
             DstFileVersion = dstFileVersion;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             FailoverTrigger = failoverTrigger;
             FastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             FreeformTags = freeformTags;

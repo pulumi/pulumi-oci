@@ -9,14 +9,20 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Queue.QueueArgs;
 import com.pulumi.oci.Queue.inputs.QueueState;
+import com.pulumi.oci.Queue.outputs.QueueCapability;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
+ * 
+ * Creates a new queue.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -28,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Queue.Queue;
  * import com.pulumi.oci.Queue.QueueArgs;
+ * import com.pulumi.oci.Queue.inputs.QueueCapabilityArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -44,6 +51,13 @@ import javax.annotation.Nullable;
  *         var testQueue = new Queue("testQueue", QueueArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(queueDisplayName)
+ *             .capabilities(QueueCapabilityArgs.builder()
+ *                 .isPrimaryConsumerGroupEnabled(queueCapabilitiesIsPrimaryConsumerGroupEnabled)
+ *                 .primaryConsumerGroupDeadLetterQueueDeliveryCount(queueCapabilitiesPrimaryConsumerGroupDeadLetterQueueDeliveryCount)
+ *                 .primaryConsumerGroupDisplayName(queueCapabilitiesPrimaryConsumerGroupDisplayName)
+ *                 .primaryConsumerGroupFilter(queueCapabilitiesPrimaryConsumerGroupFilter)
+ *                 .type(queueCapabilitiesType)
+ *                 .build())
  *             .channelConsumptionLimit(queueChannelConsumptionLimit)
  *             .customEncryptionKeyId(testKey.id())
  *             .deadLetterQueueDeliveryCount(queueDeadLetterQueueDeliveryCount)
@@ -72,6 +86,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Queue/queue:Queue")
 public class Queue extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) The capability to add on the queue
+     * 
+     */
+    @Export(name="capabilities", refs={List.class,QueueCapability.class}, tree="[0,1]")
+    private Output<List<QueueCapability>> capabilities;
+
+    /**
+     * @return (Updatable) The capability to add on the queue
+     * 
+     */
+    public Output<List<QueueCapability>> capabilities() {
+        return this.capabilities;
+    }
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 

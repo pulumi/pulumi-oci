@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAddStandbyState
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyBackupConfig;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyDataguard;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyDataguardGroupMember;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig;
@@ -351,6 +352,20 @@ public class AutonomousContainerDatabaseAddStandby extends com.pulumi.resources.
      */
     public Output<String> dstFileVersion() {
         return this.dstFileVersion;
+    }
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Export(name="encryptionKeyLocationDetails", refs={List.class,AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail.class}, tree="[0,1]")
+    private Output<List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Output<List<AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * The lag time for my preference based on data loss tolerance in seconds.

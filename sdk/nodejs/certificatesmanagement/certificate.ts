@@ -128,7 +128,7 @@ export class Certificate extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * The origin of the certificate.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      */
     declare public /*out*/ readonly configType: pulumi.Output<string>;
     /**
@@ -278,7 +278,7 @@ export interface CertificateState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The origin of the certificate.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      */
     configType?: pulumi.Input<string>;
     /**

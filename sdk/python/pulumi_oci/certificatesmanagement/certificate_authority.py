@@ -23,23 +23,25 @@ class CertificateAuthorityArgs:
     def __init__(__self__, *,
                  certificate_authority_config: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'],
                  compartment_id: pulumi.Input[_builtins.str],
-                 kms_key_id: pulumi.Input[_builtins.str],
                  certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
                  certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a CertificateAuthority resource.
         :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'] certificate_authority_config: (Updatable) The configuration details for creating a certificate authority (CA).
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
         :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
+        :param pulumi.Input[_builtins.str] external_key_description: (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[_builtins.str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
                
                
@@ -48,7 +50,6 @@ class CertificateAuthorityArgs:
         """
         pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
         if certificate_authority_rules is not None:
             pulumi.set(__self__, "certificate_authority_rules", certificate_authority_rules)
         if certificate_revocation_list_details is not None:
@@ -57,8 +58,12 @@ class CertificateAuthorityArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if external_key_description is not None:
+            pulumi.set(__self__, "external_key_description", external_key_description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if kms_key_id is not None:
+            pulumi.set(__self__, "kms_key_id", kms_key_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
 
@@ -85,18 +90,6 @@ class CertificateAuthorityArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "compartment_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
-        """
-        return pulumi.get(self, "kms_key_id")
-
-    @kms_key_id.setter
-    def kms_key_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityRules")
@@ -147,6 +140,18 @@ class CertificateAuthorityArgs:
         pulumi.set(self, "description", value)
 
     @_builtins.property
+    @pulumi.getter(name="externalKeyDescription")
+    def external_key_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "external_key_description")
+
+    @external_key_description.setter
+    def external_key_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "external_key_description", value)
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -157,6 +162,18 @@ class CertificateAuthorityArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @kms_key_id.setter
+    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -186,6 +203,7 @@ class _CertificateAuthorityState:
                  current_versions: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  issuer_certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -206,6 +224,7 @@ class _CertificateAuthorityState:
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
+        :param pulumi.Input[_builtins.str] external_key_description: (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -237,6 +256,8 @@ class _CertificateAuthorityState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if external_key_description is not None:
+            pulumi.set(__self__, "external_key_description", external_key_description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if issuer_certificate_authority_id is not None:
@@ -353,6 +374,18 @@ class _CertificateAuthorityState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externalKeyDescription")
+    def external_key_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "external_key_description")
+
+    @external_key_description.setter
+    def external_key_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "external_key_description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -491,6 +524,7 @@ class CertificateAuthority(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -514,6 +548,7 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment in which you want to create the CA.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
+        :param pulumi.Input[_builtins.str] external_key_description: (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[_builtins.str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -560,6 +595,7 @@ class CertificateAuthority(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -582,9 +618,8 @@ class CertificateAuthority(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
+            __props__.__dict__["external_key_description"] = external_key_description
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if kms_key_id is None and not opts.urn:
-                raise TypeError("Missing required property 'kms_key_id'")
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["name"] = name
             __props__.__dict__["config_type"] = None
@@ -614,6 +649,7 @@ class CertificateAuthority(pulumi.CustomResource):
             current_versions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
+            external_key_description: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             issuer_certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
             kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -639,6 +675,7 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict']]]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the CA.
+        :param pulumi.Input[_builtins.str] external_key_description: (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -666,6 +703,7 @@ class CertificateAuthority(pulumi.CustomResource):
         __props__.__dict__["current_versions"] = current_versions
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
+        __props__.__dict__["external_key_description"] = external_key_description
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["issuer_certificate_authority_id"] = issuer_certificate_authority_id
         __props__.__dict__["kms_key_id"] = kms_key_id
@@ -743,6 +781,14 @@ class CertificateAuthority(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @_builtins.property
+    @pulumi.getter(name="externalKeyDescription")
+    def external_key_description(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "external_key_description")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
@@ -760,7 +806,7 @@ class CertificateAuthority(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[_builtins.str]:
+    def kms_key_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         """

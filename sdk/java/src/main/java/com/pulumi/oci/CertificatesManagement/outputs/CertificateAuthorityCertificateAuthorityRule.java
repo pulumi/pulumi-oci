@@ -5,6 +5,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityRuleNameConstraint;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,7 +25,17 @@ public final class CertificateAuthorityCertificateAuthorityRule {
      */
     private @Nullable String leafCertificateMaxValidityDuration;
     /**
-     * @return (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * @return A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    private @Nullable CertificateAuthorityCertificateAuthorityRuleNameConstraint nameConstraint;
+    /**
+     * @return The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+     * 
+     */
+    private @Nullable Integer pathLengthConstraint;
+    /**
+     * @return (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     private String ruleType;
@@ -44,7 +56,21 @@ public final class CertificateAuthorityCertificateAuthorityRule {
         return Optional.ofNullable(this.leafCertificateMaxValidityDuration);
     }
     /**
-     * @return (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * @return A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    public Optional<CertificateAuthorityCertificateAuthorityRuleNameConstraint> nameConstraint() {
+        return Optional.ofNullable(this.nameConstraint);
+    }
+    /**
+     * @return The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified. Path length constraints cannot be updated.
+     * 
+     */
+    public Optional<Integer> pathLengthConstraint() {
+        return Optional.ofNullable(this.pathLengthConstraint);
+    }
+    /**
+     * @return (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     public String ruleType() {
@@ -62,12 +88,16 @@ public final class CertificateAuthorityCertificateAuthorityRule {
     public static final class Builder {
         private @Nullable String certificateAuthorityMaxValidityDuration;
         private @Nullable String leafCertificateMaxValidityDuration;
+        private @Nullable CertificateAuthorityCertificateAuthorityRuleNameConstraint nameConstraint;
+        private @Nullable Integer pathLengthConstraint;
         private String ruleType;
         public Builder() {}
         public Builder(CertificateAuthorityCertificateAuthorityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityMaxValidityDuration = defaults.certificateAuthorityMaxValidityDuration;
     	      this.leafCertificateMaxValidityDuration = defaults.leafCertificateMaxValidityDuration;
+    	      this.nameConstraint = defaults.nameConstraint;
+    	      this.pathLengthConstraint = defaults.pathLengthConstraint;
     	      this.ruleType = defaults.ruleType;
         }
 
@@ -84,6 +114,18 @@ public final class CertificateAuthorityCertificateAuthorityRule {
             return this;
         }
         @CustomType.Setter
+        public Builder nameConstraint(@Nullable CertificateAuthorityCertificateAuthorityRuleNameConstraint nameConstraint) {
+
+            this.nameConstraint = nameConstraint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pathLengthConstraint(@Nullable Integer pathLengthConstraint) {
+
+            this.pathLengthConstraint = pathLengthConstraint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             if (ruleType == null) {
               throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityRule", "ruleType");
@@ -95,6 +137,8 @@ public final class CertificateAuthorityCertificateAuthorityRule {
             final var _resultValue = new CertificateAuthorityCertificateAuthorityRule();
             _resultValue.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             _resultValue.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
+            _resultValue.nameConstraint = nameConstraint;
+            _resultValue.pathLengthConstraint = pathLengthConstraint;
             _resultValue.ruleType = ruleType;
             return _resultValue;
         }

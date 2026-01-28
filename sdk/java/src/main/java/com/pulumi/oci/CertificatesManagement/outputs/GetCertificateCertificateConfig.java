@@ -20,7 +20,7 @@ public final class GetCertificateCertificateConfig {
      */
     private String certificateProfileType;
     /**
-     * @return The origin of the certificate.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     private String configType;
@@ -70,7 +70,7 @@ public final class GetCertificateCertificateConfig {
         return this.certificateProfileType;
     }
     /**
-     * @return The origin of the certificate.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     public String configType() {

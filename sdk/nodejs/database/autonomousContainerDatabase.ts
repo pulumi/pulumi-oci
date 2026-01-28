@@ -48,6 +48,10 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     distributionAffinity: autonomousContainerDatabaseDistributionAffinity,
+ *     encryptionKeyLocationDetails: {
+ *         providerType: autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType,
+ *         awsEncryptionKeyId: testKey.id,
+ *     },
  *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
  *     freeformTags: {
  *         Department: "Finance",
@@ -232,6 +236,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * DST Time-Zone File version of the Autonomous Container Database.
      */
     declare public /*out*/ readonly dstFileVersion: pulumi.Output<string>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    declare public readonly encryptionKeyLocationDetails: pulumi.Output<outputs.Database.AutonomousContainerDatabaseEncryptionKeyLocationDetails>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */
@@ -488,6 +496,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["distributionAffinity"] = state?.distributionAffinity;
             resourceInputs["dstFileVersion"] = state?.dstFileVersion;
+            resourceInputs["encryptionKeyLocationDetails"] = state?.encryptionKeyLocationDetails;
             resourceInputs["failoverTrigger"] = state?.failoverTrigger;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = state?.fastStartFailOverLagLimitInSeconds;
             resourceInputs["freeformTags"] = state?.freeformTags;
@@ -567,6 +576,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["distributionAffinity"] = args?.distributionAffinity;
+            resourceInputs["encryptionKeyLocationDetails"] = args?.encryptionKeyLocationDetails;
             resourceInputs["failoverTrigger"] = args?.failoverTrigger;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = args?.fastStartFailOverLagLimitInSeconds;
             resourceInputs["freeformTags"] = args?.freeformTags;
@@ -730,6 +740,10 @@ export interface AutonomousContainerDatabaseState {
      * DST Time-Zone File version of the Autonomous Container Database.
      */
     dstFileVersion?: pulumi.Input<string>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    encryptionKeyLocationDetails?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseEncryptionKeyLocationDetails>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */
@@ -1012,6 +1026,10 @@ export interface AutonomousContainerDatabaseArgs {
      * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      */
     distributionAffinity?: pulumi.Input<string>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    encryptionKeyLocationDetails?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseEncryptionKeyLocationDetails>;
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
      */

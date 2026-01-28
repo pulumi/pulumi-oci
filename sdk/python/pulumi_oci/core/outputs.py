@@ -2365,6 +2365,8 @@ class ClusterNetworkInstancePoolPlacementConfiguration(dict):
         suggest = None
         if key == "availabilityDomain":
             suggest = "availability_domain"
+        elif key == "computeClusterId":
+            suggest = "compute_cluster_id"
         elif key == "faultDomains":
             suggest = "fault_domains"
         elif key == "primarySubnetId":
@@ -2387,12 +2389,14 @@ class ClusterNetworkInstancePoolPlacementConfiguration(dict):
 
     def __init__(__self__, *,
                  availability_domain: Optional[_builtins.str] = None,
+                 compute_cluster_id: Optional[_builtins.str] = None,
                  fault_domains: Optional[Sequence[_builtins.str]] = None,
                  primary_subnet_id: Optional[_builtins.str] = None,
                  primary_vnic_subnets: Optional[Sequence['outputs.ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnet']] = None,
                  secondary_vnic_subnets: Optional[Sequence['outputs.ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnet']] = None):
         """
         :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence[_builtins.str] fault_domains: The fault domains to place instances.
         :param _builtins.str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
@@ -2400,6 +2404,8 @@ class ClusterNetworkInstancePoolPlacementConfiguration(dict):
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
@@ -2416,6 +2422,14 @@ class ClusterNetworkInstancePoolPlacementConfiguration(dict):
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -12786,6 +12800,8 @@ class InstancePoolPlacementConfiguration(dict):
         suggest = None
         if key == "availabilityDomain":
             suggest = "availability_domain"
+        elif key == "computeClusterId":
+            suggest = "compute_cluster_id"
         elif key == "faultDomains":
             suggest = "fault_domains"
         elif key == "primarySubnetId":
@@ -12808,12 +12824,16 @@ class InstancePoolPlacementConfiguration(dict):
 
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 compute_cluster_id: Optional[_builtins.str] = None,
                  fault_domains: Optional[Sequence[_builtins.str]] = None,
                  primary_subnet_id: Optional[_builtins.str] = None,
                  primary_vnic_subnets: Optional['outputs.InstancePoolPlacementConfigurationPrimaryVnicSubnets'] = None,
                  secondary_vnic_subnets: Optional[Sequence['outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnet']] = None):
         """
         :param _builtins.str availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+               
+               Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
         :param Sequence[_builtins.str] fault_domains: (Updatable) The fault domains to place instances.
                
                If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -12828,6 +12848,8 @@ class InstancePoolPlacementConfiguration(dict):
         :param Sequence['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
@@ -12844,6 +12866,16 @@ class InstancePoolPlacementConfiguration(dict):
         (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+
+        Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -21129,18 +21161,21 @@ class GetClusterNetworkInstancePoolLoadBalancerResult(dict):
 class GetClusterNetworkInstancePoolPlacementConfigurationResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
                  primary_subnet_id: _builtins.str,
                  primary_vnic_subnets: Sequence['outputs.GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetResult'],
                  secondary_vnic_subnets: Sequence['outputs.GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetResult']):
         """
         :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence[_builtins.str] fault_domains: The fault domains to place instances.
         :param _builtins.str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
@@ -21153,6 +21188,14 @@ class GetClusterNetworkInstancePoolPlacementConfigurationResult(dict):
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -22121,18 +22164,21 @@ class GetClusterNetworksClusterNetworkInstancePoolLoadBalancerResult(dict):
 class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
                  primary_subnet_id: _builtins.str,
                  primary_vnic_subnets: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetResult'],
                  secondary_vnic_subnets: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetResult']):
         """
         :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence[_builtins.str] fault_domains: The fault domains to place instances.
         :param _builtins.str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
@@ -22145,6 +22191,14 @@ class GetClusterNetworksClusterNetworkInstancePoolPlacementConfigurationResult(d
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -39910,18 +39964,21 @@ class GetInstancePoolLoadBalancerResult(dict):
 class GetInstancePoolPlacementConfigurationResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
                  primary_subnet_id: _builtins.str,
                  primary_vnic_subnets: Sequence['outputs.GetInstancePoolPlacementConfigurationPrimaryVnicSubnetResult'],
                  secondary_vnic_subnets: Sequence['outputs.GetInstancePoolPlacementConfigurationSecondaryVnicSubnetResult']):
         """
         :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence[_builtins.str] fault_domains: The fault domains to place instances.
         :param _builtins.str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
@@ -39934,6 +39991,14 @@ class GetInstancePoolPlacementConfigurationResult(dict):
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -40483,18 +40548,21 @@ class GetInstancePoolsInstancePoolLoadBalancerResult(dict):
 class GetInstancePoolsInstancePoolPlacementConfigurationResult(dict):
     def __init__(__self__, *,
                  availability_domain: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  fault_domains: Sequence[_builtins.str],
                  primary_subnet_id: _builtins.str,
                  primary_vnic_subnets: Sequence['outputs.GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetResult'],
                  secondary_vnic_subnets: Sequence['outputs.GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetResult']):
         """
         :param _builtins.str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence[_builtins.str] fault_domains: The fault domains to place instances.
         :param _builtins.str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "fault_domains", fault_domains)
         pulumi.set(__self__, "primary_subnet_id", primary_subnet_id)
         pulumi.set(__self__, "primary_vnic_subnets", primary_vnic_subnets)
@@ -40507,6 +40575,14 @@ class GetInstancePoolsInstancePoolPlacementConfigurationResult(dict):
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")

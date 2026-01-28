@@ -39,7 +39,7 @@ public final class GetCertificatesCertificateCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return The origin of the certificate.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     private String configType;
@@ -147,7 +147,7 @@ public final class GetCertificatesCertificateCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return The origin of the certificate.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     public String configType() {

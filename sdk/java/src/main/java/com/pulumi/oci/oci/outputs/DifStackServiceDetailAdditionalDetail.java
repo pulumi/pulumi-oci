@@ -20,6 +20,11 @@ public final class DifStackServiceDetailAdditionalDetail {
      */
     private @Nullable List<DifStackServiceDetailAdditionalDetailAssignedConnection> assignedConnections;
     /**
+     * @return OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    private @Nullable String clusterId;
+    /**
      * @return details of all endpoints assigned to cluster
      * 
      */
@@ -34,6 +39,11 @@ public final class DifStackServiceDetailAdditionalDetail {
      * 
      */
     private @Nullable String modelVersion;
+    /**
+     * @return Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    private @Nullable String namespace;
     /**
      * @return region of cluster
      * 
@@ -52,6 +62,13 @@ public final class DifStackServiceDetailAdditionalDetail {
      */
     public List<DifStackServiceDetailAdditionalDetailAssignedConnection> assignedConnections() {
         return this.assignedConnections == null ? List.of() : this.assignedConnections;
+    }
+    /**
+     * @return OCID of cluster assigned to OMK cluster-namespace.
+     * 
+     */
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
     }
     /**
      * @return details of all endpoints assigned to cluster
@@ -73,6 +90,13 @@ public final class DifStackServiceDetailAdditionalDetail {
      */
     public Optional<String> modelVersion() {
         return Optional.ofNullable(this.modelVersion);
+    }
+    /**
+     * @return Kubernetes namespace-name of omk cluster-namespace.
+     * 
+     */
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return region of cluster
@@ -99,18 +123,22 @@ public final class DifStackServiceDetailAdditionalDetail {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<DifStackServiceDetailAdditionalDetailAssignedConnection> assignedConnections;
+        private @Nullable String clusterId;
         private @Nullable List<DifStackServiceDetailAdditionalDetailEndpointDetail> endpointDetails;
         private @Nullable String modelId;
         private @Nullable String modelVersion;
+        private @Nullable String namespace;
         private @Nullable String ociRegion;
         private @Nullable String privateEndpointId;
         public Builder() {}
         public Builder(DifStackServiceDetailAdditionalDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assignedConnections = defaults.assignedConnections;
+    	      this.clusterId = defaults.clusterId;
     	      this.endpointDetails = defaults.endpointDetails;
     	      this.modelId = defaults.modelId;
     	      this.modelVersion = defaults.modelVersion;
+    	      this.namespace = defaults.namespace;
     	      this.ociRegion = defaults.ociRegion;
     	      this.privateEndpointId = defaults.privateEndpointId;
         }
@@ -123,6 +151,12 @@ public final class DifStackServiceDetailAdditionalDetail {
         }
         public Builder assignedConnections(DifStackServiceDetailAdditionalDetailAssignedConnection... assignedConnections) {
             return assignedConnections(List.of(assignedConnections));
+        }
+        @CustomType.Setter
+        public Builder clusterId(@Nullable String clusterId) {
+
+            this.clusterId = clusterId;
+            return this;
         }
         @CustomType.Setter
         public Builder endpointDetails(@Nullable List<DifStackServiceDetailAdditionalDetailEndpointDetail> endpointDetails) {
@@ -146,6 +180,12 @@ public final class DifStackServiceDetailAdditionalDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder namespace(@Nullable String namespace) {
+
+            this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ociRegion(@Nullable String ociRegion) {
 
             this.ociRegion = ociRegion;
@@ -160,9 +200,11 @@ public final class DifStackServiceDetailAdditionalDetail {
         public DifStackServiceDetailAdditionalDetail build() {
             final var _resultValue = new DifStackServiceDetailAdditionalDetail();
             _resultValue.assignedConnections = assignedConnections;
+            _resultValue.clusterId = clusterId;
             _resultValue.endpointDetails = endpointDetails;
             _resultValue.modelId = modelId;
             _resultValue.modelVersion = modelVersion;
+            _resultValue.namespace = namespace;
             _resultValue.ociRegion = ociRegion;
             _resultValue.privateEndpointId = privateEndpointId;
             return _resultValue;

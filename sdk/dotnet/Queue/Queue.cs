@@ -10,6 +10,10 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Queue
 {
     /// <summary>
+    /// This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
+    /// 
+    /// Creates a new queue.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -24,6 +28,17 @@ namespace Pulumi.Oci.Queue
     ///     {
     ///         CompartmentId = compartmentId,
     ///         DisplayName = queueDisplayName,
+    ///         Capabilities = new[]
+    ///         {
+    ///             new Oci.Queue.Inputs.QueueCapabilityArgs
+    ///             {
+    ///                 IsPrimaryConsumerGroupEnabled = queueCapabilitiesIsPrimaryConsumerGroupEnabled,
+    ///                 PrimaryConsumerGroupDeadLetterQueueDeliveryCount = queueCapabilitiesPrimaryConsumerGroupDeadLetterQueueDeliveryCount,
+    ///                 PrimaryConsumerGroupDisplayName = queueCapabilitiesPrimaryConsumerGroupDisplayName,
+    ///                 PrimaryConsumerGroupFilter = queueCapabilitiesPrimaryConsumerGroupFilter,
+    ///                 Type = queueCapabilitiesType,
+    ///             },
+    ///         },
     ///         ChannelConsumptionLimit = queueChannelConsumptionLimit,
     ///         CustomEncryptionKeyId = testKey.Id,
     ///         DeadLetterQueueDeliveryCount = queueDeadLetterQueueDeliveryCount,
@@ -56,6 +71,12 @@ namespace Pulumi.Oci.Queue
     [OciResourceType("oci:Queue/queue:Queue")]
     public partial class Queue : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) The capability to add on the queue
+        /// </summary>
+        [Output("capabilities")]
+        public Output<ImmutableArray<Outputs.QueueCapability>> Capabilities { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         /// </summary>
@@ -213,6 +234,18 @@ namespace Pulumi.Oci.Queue
 
     public sealed class QueueArgs : global::Pulumi.ResourceArgs
     {
+        [Input("capabilities")]
+        private InputList<Inputs.QueueCapabilityArgs>? _capabilities;
+
+        /// <summary>
+        /// (Updatable) The capability to add on the queue
+        /// </summary>
+        public InputList<Inputs.QueueCapabilityArgs> Capabilities
+        {
+            get => _capabilities ?? (_capabilities = new InputList<Inputs.QueueCapabilityArgs>());
+            set => _capabilities = value;
+        }
+
         /// <summary>
         /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         /// </summary>
@@ -308,6 +341,18 @@ namespace Pulumi.Oci.Queue
 
     public sealed class QueueState : global::Pulumi.ResourceArgs
     {
+        [Input("capabilities")]
+        private InputList<Inputs.QueueCapabilityGetArgs>? _capabilities;
+
+        /// <summary>
+        /// (Updatable) The capability to add on the queue
+        /// </summary>
+        public InputList<Inputs.QueueCapabilityGetArgs> Capabilities
+        {
+            get => _capabilities ?? (_capabilities = new InputList<Inputs.QueueCapabilityGetArgs>());
+            set => _capabilities = value;
+        }
+
         /// <summary>
         /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
         /// </summary>

@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.CloudAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterState;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindowDetails;
+import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -600,6 +601,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.memorySizeInGbs;
     }
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    @Export(name="multiCloudIdentityConnectorConfigs", refs={List.class,CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig.class}, tree="[0,1]")
+    private Output<List<CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public Output<List<CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
      */
@@ -756,6 +771,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.reclaimableCpus;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    @Export(name="registerPkcsTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> registerPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> registerPkcsTrigger() {
+        return Codegen.optional(this.registerPkcsTrigger);
+    }
+    /**
      * The number of CPUs reserved in an Autonomous VM Cluster.
      * 
      */
@@ -882,6 +911,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.systemTags;
     }
     /**
+     * TDE keystore type
+     * 
+     */
+    @Export(name="tdeKeyStoreType", refs={String.class}, tree="[0]")
+    private Output<String> tdeKeyStoreType;
+
+    /**
+     * @return TDE keystore type
+     * 
+     */
+    public Output<String> tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
+    }
+    /**
      * The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
@@ -954,18 +997,12 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="totalContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalContainerDatabases;
 
     /**
      * @return (Updatable) The total number of Autonomous Container Databases that can be created.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> totalContainerDatabases() {
@@ -984,6 +1021,26 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> totalCpus() {
         return this.totalCpus;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="unregisterPkcsTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> unregisterPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> unregisterPkcsTrigger() {
+        return Codegen.optional(this.unregisterPkcsTrigger);
     }
 
     /**

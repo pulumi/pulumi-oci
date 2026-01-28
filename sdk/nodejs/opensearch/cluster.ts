@@ -114,6 +114,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     */
+    declare public readonly loadBalancerConfig: pulumi.Output<outputs.Opensearch.ClusterLoadBalancerConfig>;
+    /**
      * (Updatable) Details for creation of maintenance details
      */
     declare public readonly maintenanceDetails: pulumi.Output<outputs.Opensearch.ClusterMaintenanceDetails>;
@@ -316,6 +320,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inboundClusterIds"] = state?.inboundClusterIds;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["loadBalancerConfig"] = state?.loadBalancerConfig;
             resourceInputs["maintenanceDetails"] = state?.maintenanceDetails;
             resourceInputs["masterNodeCount"] = state?.masterNodeCount;
             resourceInputs["masterNodeHostBareMetalShape"] = state?.masterNodeHostBareMetalShape;
@@ -431,6 +436,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["inboundClusterIds"] = args?.inboundClusterIds;
+            resourceInputs["loadBalancerConfig"] = args?.loadBalancerConfig;
             resourceInputs["maintenanceDetails"] = args?.maintenanceDetails;
             resourceInputs["masterNodeCount"] = args?.masterNodeCount;
             resourceInputs["masterNodeHostBareMetalShape"] = args?.masterNodeHostBareMetalShape;
@@ -556,6 +562,10 @@ export interface ClusterState {
      * Additional information about the current lifecycle state of the cluster.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     */
+    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig>;
     /**
      * (Updatable) Details for creation of maintenance details
      */
@@ -790,6 +800,10 @@ export interface ClusterArgs {
      * List of inbound clusters that will be queried using cross cluster search
      */
     inboundClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     */
+    loadBalancerConfig?: pulumi.Input<inputs.Opensearch.ClusterLoadBalancerConfig>;
     /**
      * (Updatable) Details for creation of maintenance details
      */

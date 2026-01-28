@@ -129,6 +129,10 @@ namespace Pulumi.Oci.Oci
         public readonly ImmutableArray<Outputs.GetDifStackAdbResult> Adbs;
         public readonly int AddServiceTrigger;
         /// <summary>
+        /// AI Data Platform Details if aidataplatform is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStackAidataplatformResult> Aidataplatforms;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -174,6 +178,14 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStackObjectstorageResult> Objectstorages;
         /// <summary>
+        /// OKE Details if oke is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStackOkeResult> Okes;
+        /// <summary>
+        /// OMK Details if omk is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStackOmkResult> Omks;
+        /// <summary>
         /// Details of the service onboarded for the data intelligence stack.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStackServiceDetailResult> ServiceDetails;
@@ -213,6 +225,8 @@ namespace Pulumi.Oci.Oci
 
             int addServiceTrigger,
 
+            ImmutableArray<Outputs.GetDifStackAidataplatformResult> aidataplatforms,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetDifStackDataflowResult> dataflows,
@@ -237,6 +251,10 @@ namespace Pulumi.Oci.Oci
 
             ImmutableArray<Outputs.GetDifStackObjectstorageResult> objectstorages,
 
+            ImmutableArray<Outputs.GetDifStackOkeResult> okes,
+
+            ImmutableArray<Outputs.GetDifStackOmkResult> omks,
+
             ImmutableArray<Outputs.GetDifStackServiceDetailResult> serviceDetails,
 
             ImmutableArray<string> services,
@@ -257,6 +275,7 @@ namespace Pulumi.Oci.Oci
         {
             Adbs = adbs;
             AddServiceTrigger = addServiceTrigger;
+            Aidataplatforms = aidataplatforms;
             CompartmentId = compartmentId;
             Dataflows = dataflows;
             DefinedTags = definedTags;
@@ -269,6 +288,8 @@ namespace Pulumi.Oci.Oci
             LifecycleDetails = lifecycleDetails;
             NotificationEmail = notificationEmail;
             Objectstorages = objectstorages;
+            Okes = okes;
+            Omks = omks;
             ServiceDetails = serviceDetails;
             Services = services;
             StackId = stackId;

@@ -2,9 +2,15 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
+ *
+ * Creates a new queue.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -14,6 +20,13 @@ import * as utilities from "../utilities";
  * const testQueue = new oci.queue.Queue("test_queue", {
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
+ *     capabilities: [{
+ *         isPrimaryConsumerGroupEnabled: queueCapabilitiesIsPrimaryConsumerGroupEnabled,
+ *         primaryConsumerGroupDeadLetterQueueDeliveryCount: queueCapabilitiesPrimaryConsumerGroupDeadLetterQueueDeliveryCount,
+ *         primaryConsumerGroupDisplayName: queueCapabilitiesPrimaryConsumerGroupDisplayName,
+ *         primaryConsumerGroupFilter: queueCapabilitiesPrimaryConsumerGroupFilter,
+ *         type: queueCapabilitiesType,
+ *     }],
  *     channelConsumptionLimit: queueChannelConsumptionLimit,
  *     customEncryptionKeyId: testKey.id,
  *     deadLetterQueueDeliveryCount: queueDeadLetterQueueDeliveryCount,
@@ -67,6 +80,10 @@ export class Queue extends pulumi.CustomResource {
         return obj['__pulumiType'] === Queue.__pulumiType;
     }
 
+    /**
+     * (Updatable) The capability to add on the queue
+     */
+    declare public readonly capabilities: pulumi.Output<outputs.Queue.QueueCapability[]>;
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */
@@ -156,6 +173,7 @@ export class Queue extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueueState | undefined;
+            resourceInputs["capabilities"] = state?.capabilities;
             resourceInputs["channelConsumptionLimit"] = state?.channelConsumptionLimit;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["customEncryptionKeyId"] = state?.customEncryptionKeyId;
@@ -182,6 +200,7 @@ export class Queue extends pulumi.CustomResource {
             if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
+            resourceInputs["capabilities"] = args?.capabilities;
             resourceInputs["channelConsumptionLimit"] = args?.channelConsumptionLimit;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["customEncryptionKeyId"] = args?.customEncryptionKeyId;
@@ -210,6 +229,10 @@ export class Queue extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Queue resources.
  */
 export interface QueueState {
+    /**
+     * (Updatable) The capability to add on the queue
+     */
+    capabilities?: pulumi.Input<pulumi.Input<inputs.Queue.QueueCapability>[]>;
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */
@@ -291,6 +314,10 @@ export interface QueueState {
  * The set of arguments for constructing a Queue resource.
  */
 export interface QueueArgs {
+    /**
+     * (Updatable) The capability to add on the queue
+     */
+    capabilities?: pulumi.Input<pulumi.Input<inputs.Queue.QueueCapability>[]>;
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
      */

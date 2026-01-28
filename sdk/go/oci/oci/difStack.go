@@ -57,6 +57,12 @@ import (
 //						},
 //					},
 //				},
+//				Aidataplatforms: oci.DifStackAidataplatformArray{
+//					&oci.DifStackAidataplatformArgs{
+//						DefaultWorkspaceName: pulumi.Any(testWorkspace.Name),
+//						InstanceId:           pulumi.Any(testInstance.Id),
+//					},
+//				},
 //				Dataflows: oci.DifStackDataflowArray{
 //					&oci.DifStackDataflowArgs{
 //						DriverShape:         pulumi.Any(stackDataflowDriverShape),
@@ -171,6 +177,59 @@ import (
 //						AutoTiering:      pulumi.Any(stackObjectstorageAutoTiering),
 //					},
 //				},
+//				Okes: oci.DifStackOkeArray{
+//					&oci.DifStackOkeArgs{
+//						ClusterId:     pulumi.Any(testCluster.Id),
+//						InstanceId:    pulumi.Any(testInstance.Id),
+//						NamespaceName: pulumi.Any(stackOkeNamespaceName),
+//						Secrets: oci.DifStackOkeSecretArray{
+//							&oci.DifStackOkeSecretArgs{
+//								SecretName:                pulumi.Any(stackOkeSecretsSecretName),
+//								TemplateObjectStoragePath: pulumi.Any(stackOkeSecretsTemplateObjectStoragePath),
+//								SecretDatas: oci.DifStackOkeSecretSecretDataArray{
+//									&oci.DifStackOkeSecretSecretDataArgs{
+//										Key:      pulumi.Any(stackOkeSecretsSecretDataKey),
+//										SecretId: pulumi.Any(stackOkeSecretsSecretDataSecretId),
+//									},
+//								},
+//							},
+//						},
+//						ManifestObjectStoragePath: pulumi.Any(stackOkeManifestObjectStoragePath),
+//						ComponentValueOverrides: oci.DifStackOkeComponentValueOverrideArray{
+//							&oci.DifStackOkeComponentValueOverrideArgs{
+//								ComponentName:  pulumi.Any(stackOkeComponentValueOverridesComponentName),
+//								ValueOverrides: pulumi.Any(stackOkeComponentValueOverridesValueOverrides),
+//							},
+//						},
+//					},
+//				},
+//				Omks: oci.DifStackOmkArray{
+//					&oci.DifStackOmkArgs{
+//						ClusterId:          pulumi.Any(testCluster.Id),
+//						ClusterNamespaceId: pulumi.Any(testNamespace.Id),
+//						InstanceId:         pulumi.Any(testInstance.Id),
+//						NamespaceName:      pulumi.Any(stackOmkNamespaceName),
+//						Secrets: oci.DifStackOmkSecretArray{
+//							&oci.DifStackOmkSecretArgs{
+//								SecretName:                pulumi.Any(stackOmkSecretsSecretName),
+//								TemplateObjectStoragePath: pulumi.Any(stackOmkSecretsTemplateObjectStoragePath),
+//								SecretDatas: oci.DifStackOmkSecretSecretDataArray{
+//									&oci.DifStackOmkSecretSecretDataArgs{
+//										Key:      pulumi.Any(stackOmkSecretsSecretDataKey),
+//										SecretId: pulumi.Any(stackOmkSecretsSecretDataSecretId),
+//									},
+//								},
+//							},
+//						},
+//						ManifestObjectStoragePath: pulumi.Any(stackOmkManifestObjectStoragePath),
+//						ComponentValueOverrides: oci.DifStackOmkComponentValueOverrideArray{
+//							&oci.DifStackOmkComponentValueOverrideArgs{
+//								ComponentName:  pulumi.Any(stackOmkComponentValueOverridesComponentName),
+//								ValueOverrides: pulumi.Any(stackOmkComponentValueOverridesValueOverrides),
+//							},
+//						},
+//					},
+//				},
 //				SubnetId: pulumi.Any(stackDeployArtifactsSubnetId),
 //			})
 //			if err != nil {
@@ -188,6 +247,8 @@ type DifStack struct {
 	Adbs DifStackAdbArrayOutput `pulumi:"adbs"`
 	// (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
 	AddServiceTrigger pulumi.IntPtrOutput `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms DifStackAidataplatformArrayOutput `pulumi:"aidataplatforms"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) DATAFLOW details if dataflow is included in the services.
@@ -220,6 +281,10 @@ type DifStack struct {
 	NotificationEmail pulumi.StringPtrOutput `pulumi:"notificationEmail"`
 	// (Updatable) Object Storage Details if object storage is included in services.
 	Objectstorages DifStackObjectstorageArrayOutput `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes DifStackOkeArrayOutput `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks DifStackOmkArrayOutput `pulumi:"omks"`
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails DifStackServiceDetailArrayOutput `pulumi:"serviceDetails"`
 	// (Updatable) List of services to be onboarded for the stack.
@@ -284,6 +349,8 @@ type difStackState struct {
 	Adbs []DifStackAdb `pulumi:"adbs"`
 	// (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
 	AddServiceTrigger *int `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms []DifStackAidataplatform `pulumi:"aidataplatforms"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) DATAFLOW details if dataflow is included in the services.
@@ -316,6 +383,10 @@ type difStackState struct {
 	NotificationEmail *string `pulumi:"notificationEmail"`
 	// (Updatable) Object Storage Details if object storage is included in services.
 	Objectstorages []DifStackObjectstorage `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes []DifStackOke `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks []DifStackOmk `pulumi:"omks"`
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails []DifStackServiceDetail `pulumi:"serviceDetails"`
 	// (Updatable) List of services to be onboarded for the stack.
@@ -339,6 +410,8 @@ type DifStackState struct {
 	Adbs DifStackAdbArrayInput
 	// (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
 	AddServiceTrigger pulumi.IntPtrInput
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms DifStackAidataplatformArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) DATAFLOW details if dataflow is included in the services.
@@ -371,6 +444,10 @@ type DifStackState struct {
 	NotificationEmail pulumi.StringPtrInput
 	// (Updatable) Object Storage Details if object storage is included in services.
 	Objectstorages DifStackObjectstorageArrayInput
+	// OKE Details if oke is included in services.
+	Okes DifStackOkeArrayInput
+	// OMK Details if omk is included in services.
+	Omks DifStackOmkArrayInput
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails DifStackServiceDetailArrayInput
 	// (Updatable) List of services to be onboarded for the stack.
@@ -398,6 +475,8 @@ type difStackArgs struct {
 	Adbs []DifStackAdb `pulumi:"adbs"`
 	// (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
 	AddServiceTrigger *int `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms []DifStackAidataplatform `pulumi:"aidataplatforms"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) DATAFLOW details if dataflow is included in the services.
@@ -428,6 +507,10 @@ type difStackArgs struct {
 	NotificationEmail *string `pulumi:"notificationEmail"`
 	// (Updatable) Object Storage Details if object storage is included in services.
 	Objectstorages []DifStackObjectstorage `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes []DifStackOke `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks []DifStackOmk `pulumi:"omks"`
 	// (Updatable) List of services to be onboarded for the stack.
 	Services []string `pulumi:"services"`
 	// (Updatable) List of templates to be onboarded for the stack.
@@ -442,6 +525,8 @@ type DifStackArgs struct {
 	Adbs DifStackAdbArrayInput
 	// (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
 	AddServiceTrigger pulumi.IntPtrInput
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms DifStackAidataplatformArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) DATAFLOW details if dataflow is included in the services.
@@ -472,6 +557,10 @@ type DifStackArgs struct {
 	NotificationEmail pulumi.StringPtrInput
 	// (Updatable) Object Storage Details if object storage is included in services.
 	Objectstorages DifStackObjectstorageArrayInput
+	// OKE Details if oke is included in services.
+	Okes DifStackOkeArrayInput
+	// OMK Details if omk is included in services.
+	Omks DifStackOmkArrayInput
 	// (Updatable) List of services to be onboarded for the stack.
 	Services pulumi.StringArrayInput
 	// (Updatable) List of templates to be onboarded for the stack.
@@ -577,6 +666,11 @@ func (o DifStackOutput) AddServiceTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DifStack) pulumi.IntPtrOutput { return v.AddServiceTrigger }).(pulumi.IntPtrOutput)
 }
 
+// AI Data Platform Details if aidataplatform is included in services.
+func (o DifStackOutput) Aidataplatforms() DifStackAidataplatformArrayOutput {
+	return o.ApplyT(func(v *DifStack) DifStackAidataplatformArrayOutput { return v.Aidataplatforms }).(DifStackAidataplatformArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
 func (o DifStackOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DifStack) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -640,6 +734,16 @@ func (o DifStackOutput) NotificationEmail() pulumi.StringPtrOutput {
 // (Updatable) Object Storage Details if object storage is included in services.
 func (o DifStackOutput) Objectstorages() DifStackObjectstorageArrayOutput {
 	return o.ApplyT(func(v *DifStack) DifStackObjectstorageArrayOutput { return v.Objectstorages }).(DifStackObjectstorageArrayOutput)
+}
+
+// OKE Details if oke is included in services.
+func (o DifStackOutput) Okes() DifStackOkeArrayOutput {
+	return o.ApplyT(func(v *DifStack) DifStackOkeArrayOutput { return v.Okes }).(DifStackOkeArrayOutput)
+}
+
+// OMK Details if omk is included in services.
+func (o DifStackOutput) Omks() DifStackOmkArrayOutput {
+	return o.ApplyT(func(v *DifStack) DifStackOmkArrayOutput { return v.Omks }).(DifStackOmkArrayOutput)
 }
 
 // Details of the service onboarded for the data intelligence stack.

@@ -5,7 +5,10 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint;
+import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -21,7 +24,17 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
      */
     private String leafCertificateMaxValidityDuration;
     /**
-     * @return The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * @return A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint> nameConstraints;
+    /**
+     * @return The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified.  Path length constraints cannot be updated.
+     * 
+     */
+    private Integer pathLengthConstraint;
+    /**
+     * @return The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     private String ruleType;
@@ -42,7 +55,21 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
         return this.leafCertificateMaxValidityDuration;
     }
     /**
-     * @return The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+     * @return A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+     * 
+     */
+    public List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint> nameConstraints() {
+        return this.nameConstraints;
+    }
+    /**
+     * @return The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn&#39;t specified.  Path length constraints cannot be updated.
+     * 
+     */
+    public Integer pathLengthConstraint() {
+        return this.pathLengthConstraint;
+    }
+    /**
+     * @return The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
      * 
      */
     public String ruleType() {
@@ -60,12 +87,16 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
     public static final class Builder {
         private String certificateAuthorityMaxValidityDuration;
         private String leafCertificateMaxValidityDuration;
+        private List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint> nameConstraints;
+        private Integer pathLengthConstraint;
         private String ruleType;
         public Builder() {}
         public Builder(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.certificateAuthorityMaxValidityDuration = defaults.certificateAuthorityMaxValidityDuration;
     	      this.leafCertificateMaxValidityDuration = defaults.leafCertificateMaxValidityDuration;
+    	      this.nameConstraints = defaults.nameConstraints;
+    	      this.pathLengthConstraint = defaults.pathLengthConstraint;
     	      this.ruleType = defaults.ruleType;
         }
 
@@ -86,6 +117,25 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
             return this;
         }
         @CustomType.Setter
+        public Builder nameConstraints(List<GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint> nameConstraints) {
+            if (nameConstraints == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule", "nameConstraints");
+            }
+            this.nameConstraints = nameConstraints;
+            return this;
+        }
+        public Builder nameConstraints(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint... nameConstraints) {
+            return nameConstraints(List.of(nameConstraints));
+        }
+        @CustomType.Setter
+        public Builder pathLengthConstraint(Integer pathLengthConstraint) {
+            if (pathLengthConstraint == null) {
+              throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule", "pathLengthConstraint");
+            }
+            this.pathLengthConstraint = pathLengthConstraint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleType(String ruleType) {
             if (ruleType == null) {
               throw new MissingRequiredPropertyException("GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule", "ruleType");
@@ -97,6 +147,8 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
             final var _resultValue = new GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule();
             _resultValue.certificateAuthorityMaxValidityDuration = certificateAuthorityMaxValidityDuration;
             _resultValue.leafCertificateMaxValidityDuration = leafCertificateMaxValidityDuration;
+            _resultValue.nameConstraints = nameConstraints;
+            _resultValue.pathLengthConstraint = pathLengthConstraint;
             _resultValue.ruleType = ruleType;
             return _resultValue;
         }

@@ -736,9 +736,17 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<List<AutonomousDatabaseEncryptionKeyHistoryEntry>> encryptionKeyHistoryEntries() {
         return this.encryptionKeyHistoryEntries;
     }
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
     @Export(name="encryptionKeyLocationDetails", refs={List.class,AutonomousDatabaseEncryptionKeyLocationDetail.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseEncryptionKeyLocationDetail>> encryptionKeyLocationDetails;
 
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
     public Output<List<AutonomousDatabaseEncryptionKeyLocationDetail>> encryptionKeyLocationDetails() {
         return this.encryptionKeyLocationDetails;
     }

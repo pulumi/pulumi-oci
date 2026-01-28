@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDat
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule;
@@ -235,6 +236,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     /**
      * @return Details of the Autonomous AI Database encryption key.
      * 
@@ -999,6 +1005,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.encryptionKeyHistoryEntries;
     }
     /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
+    }
+    /**
      * @return Details of the Autonomous AI Database encryption key.
      * 
      */
@@ -1720,6 +1733,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String disasterRecoveryRegionType;
         private String displayName;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
@@ -1859,6 +1873,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
     	      this.displayName = defaults.displayName;
     	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.encryptionKeys = defaults.encryptionKeys;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -2306,6 +2321,17 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         }
         public Builder encryptionKeyHistoryEntries(GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry... encryptionKeyHistoryEntries) {
             return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
         @CustomType.Setter
         public Builder encryptionKeys(List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys) {
@@ -3168,6 +3194,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.disasterRecoveryRegionType = disasterRecoveryRegionType;
             _resultValue.displayName = displayName;
             _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.encryptionKeys = encryptionKeys;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;

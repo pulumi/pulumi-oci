@@ -11,12 +11,24 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AutonomousDatabaseEncryptionKeyLocationDetail {
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     private @Nullable String awsEncryptionKeyId;
     private @Nullable String azureEncryptionKeyId;
     private @Nullable String hsmPassword;
+    /**
+     * @return Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     private @Nullable String providerType;
 
     private AutonomousDatabaseEncryptionKeyLocationDetail() {}
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     public Optional<String> awsEncryptionKeyId() {
         return Optional.ofNullable(this.awsEncryptionKeyId);
     }
@@ -26,6 +38,10 @@ public final class AutonomousDatabaseEncryptionKeyLocationDetail {
     public Optional<String> hsmPassword() {
         return Optional.ofNullable(this.hsmPassword);
     }
+    /**
+     * @return Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     public Optional<String> providerType() {
         return Optional.ofNullable(this.providerType);
     }

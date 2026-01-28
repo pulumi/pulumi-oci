@@ -17,12 +17,20 @@ from .. import _utilities
 __all__ = [
     'CertificateAuthorityCertificateAuthorityConfigArgs',
     'CertificateAuthorityCertificateAuthorityConfigArgsDict',
+    'CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs',
+    'CertificateAuthorityCertificateAuthorityConfigActionDetailsArgsDict',
     'CertificateAuthorityCertificateAuthorityConfigSubjectArgs',
     'CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict',
     'CertificateAuthorityCertificateAuthorityConfigValidityArgs',
     'CertificateAuthorityCertificateAuthorityConfigValidityArgsDict',
     'CertificateAuthorityCertificateAuthorityRuleArgs',
     'CertificateAuthorityCertificateAuthorityRuleArgsDict',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgsDict',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs',
+    'CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgsDict',
     'CertificateAuthorityCertificateRevocationListDetailsArgs',
     'CertificateAuthorityCertificateRevocationListDetailsArgsDict',
     'CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs',
@@ -81,17 +89,22 @@ if not MYPY:
         """
         (Updatable) The origin of the CA.
         """
-        subject: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict']
+        action_details: NotRequired[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgsDict']]
+        certificate_pem: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
         """
         issuer_certificate_authority_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the private CA.
+        The OCID of the private, external issuer CA.
         """
         signing_algorithm: NotRequired[pulumi.Input[_builtins.str]]
         """
         The algorithm used to sign public key certificates that the CA issues.
+        """
+        subject: NotRequired[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgsDict']]
+        """
+        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         """
         validity: NotRequired[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigValidityArgsDict']]
         """
@@ -108,25 +121,33 @@ elif False:
 class CertificateAuthorityCertificateAuthorityConfigArgs:
     def __init__(__self__, *,
                  config_type: pulumi.Input[_builtins.str],
-                 subject: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs'],
+                 action_details: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs']] = None,
+                 certificate_pem: Optional[pulumi.Input[_builtins.str]] = None,
                  issuer_certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
                  signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 subject: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']] = None,
                  validity: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigValidityArgs']] = None,
                  version_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_type: (Updatable) The origin of the CA.
-        :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs'] subject: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the private CA.
+        :param pulumi.Input[_builtins.str] certificate_pem: (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the private, external issuer CA.
         :param pulumi.Input[_builtins.str] signing_algorithm: The algorithm used to sign public key certificates that the CA issues.
+        :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs'] subject: The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
         :param pulumi.Input['CertificateAuthorityCertificateAuthorityConfigValidityArgs'] validity: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param pulumi.Input[_builtins.str] version_name: (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
         """
         pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "subject", subject)
+        if action_details is not None:
+            pulumi.set(__self__, "action_details", action_details)
+        if certificate_pem is not None:
+            pulumi.set(__self__, "certificate_pem", certificate_pem)
         if issuer_certificate_authority_id is not None:
             pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
         if signing_algorithm is not None:
             pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
         if validity is not None:
             pulumi.set(__self__, "validity", validity)
         if version_name is not None:
@@ -145,22 +166,31 @@ class CertificateAuthorityCertificateAuthorityConfigArgs:
         pulumi.set(self, "config_type", value)
 
     @_builtins.property
-    @pulumi.getter
-    def subject(self) -> pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']:
-        """
-        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-        """
-        return pulumi.get(self, "subject")
+    @pulumi.getter(name="actionDetails")
+    def action_details(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs']]:
+        return pulumi.get(self, "action_details")
 
-    @subject.setter
-    def subject(self, value: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']):
-        pulumi.set(self, "subject", value)
+    @action_details.setter
+    def action_details(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs']]):
+        pulumi.set(self, "action_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @certificate_pem.setter
+    def certificate_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "certificate_pem", value)
 
     @_builtins.property
     @pulumi.getter(name="issuerCertificateAuthorityId")
     def issuer_certificate_authority_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the private CA.
+        The OCID of the private, external issuer CA.
         """
         return pulumi.get(self, "issuer_certificate_authority_id")
 
@@ -179,6 +209,18 @@ class CertificateAuthorityCertificateAuthorityConfigArgs:
     @signing_algorithm.setter
     def signing_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "signing_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']]:
+        """
+        The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
+        """
+        return pulumi.get(self, "subject")
+
+    @subject.setter
+    def subject(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigSubjectArgs']]):
+        pulumi.set(self, "subject", value)
 
     @_builtins.property
     @pulumi.getter
@@ -203,6 +245,51 @@ class CertificateAuthorityCertificateAuthorityConfigArgs:
     @version_name.setter
     def version_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "version_name", value)
+
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityConfigActionDetailsArgsDict(TypedDict):
+        action_type: NotRequired[pulumi.Input[_builtins.str]]
+        certificate_pem: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityConfigActionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs:
+    def __init__(__self__, *,
+                 action_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_pem: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] certificate_pem: (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        """
+        if action_type is not None:
+            pulumi.set(__self__, "action_type", action_type)
+        if certificate_pem is not None:
+            pulumi.set(__self__, "certificate_pem", certificate_pem)
+
+    @_builtins.property
+    @pulumi.getter(name="actionType")
+    def action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "action_type")
+
+    @action_type.setter
+    def action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "action_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificatePem")
+    def certificate_pem(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+        """
+        return pulumi.get(self, "certificate_pem")
+
+    @certificate_pem.setter
+    def certificate_pem(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "certificate_pem", value)
 
 
 if not MYPY:
@@ -611,7 +698,7 @@ if not MYPY:
     class CertificateAuthorityCertificateAuthorityRuleArgsDict(TypedDict):
         rule_type: pulumi.Input[_builtins.str]
         """
-        (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+        (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
         """
         certificate_authority_max_validity_duration: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -621,6 +708,14 @@ if not MYPY:
         """
         (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         """
+        name_constraint: NotRequired[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict']]
+        """
+        A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+        """
+        path_length_constraint: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+        """
 elif False:
     CertificateAuthorityCertificateAuthorityRuleArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -629,23 +724,31 @@ class CertificateAuthorityCertificateAuthorityRuleArgs:
     def __init__(__self__, *,
                  rule_type: pulumi.Input[_builtins.str],
                  certificate_authority_max_validity_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 leaf_certificate_max_validity_duration: Optional[pulumi.Input[_builtins.str]] = None):
+                 leaf_certificate_max_validity_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 name_constraint: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs']] = None,
+                 path_length_constraint: Optional[pulumi.Input[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.str] rule_type: (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+        :param pulumi.Input[_builtins.str] rule_type: (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
         :param pulumi.Input[_builtins.str] certificate_authority_max_validity_duration: (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param pulumi.Input[_builtins.str] leaf_certificate_max_validity_duration: (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+        :param pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs'] name_constraint: A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+        :param pulumi.Input[_builtins.int] path_length_constraint: The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
         """
         pulumi.set(__self__, "rule_type", rule_type)
         if certificate_authority_max_validity_duration is not None:
             pulumi.set(__self__, "certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         if leaf_certificate_max_validity_duration is not None:
             pulumi.set(__self__, "leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
+        if name_constraint is not None:
+            pulumi.set(__self__, "name_constraint", name_constraint)
+        if path_length_constraint is not None:
+            pulumi.set(__self__, "path_length_constraint", path_length_constraint)
 
     @_builtins.property
     @pulumi.getter(name="ruleType")
     def rule_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+        (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
         """
         return pulumi.get(self, "rule_type")
 
@@ -676,6 +779,186 @@ class CertificateAuthorityCertificateAuthorityRuleArgs:
     @leaf_certificate_max_validity_duration.setter
     def leaf_certificate_max_validity_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "leaf_certificate_max_validity_duration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nameConstraint")
+    def name_constraint(self) -> Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs']]:
+        """
+        A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+        """
+        return pulumi.get(self, "name_constraint")
+
+    @name_constraint.setter
+    def name_constraint(self, value: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs']]):
+        pulumi.set(self, "name_constraint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathLengthConstraint")
+    def path_length_constraint(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+        """
+        return pulumi.get(self, "path_length_constraint")
+
+    @path_length_constraint.setter
+    def path_length_constraint(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "path_length_constraint", value)
+
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict(TypedDict):
+        excluded_subtrees: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgsDict']]]]
+        """
+        A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+        """
+        permitted_subtrees: NotRequired[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgsDict']]]]
+        """
+        A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityRuleNameConstraintArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs:
+    def __init__(__self__, *,
+                 excluded_subtrees: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs']]]] = None,
+                 permitted_subtrees: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs']]] excluded_subtrees: A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+        :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs']]] permitted_subtrees: A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+        """
+        if excluded_subtrees is not None:
+            pulumi.set(__self__, "excluded_subtrees", excluded_subtrees)
+        if permitted_subtrees is not None:
+            pulumi.set(__self__, "permitted_subtrees", permitted_subtrees)
+
+    @_builtins.property
+    @pulumi.getter(name="excludedSubtrees")
+    def excluded_subtrees(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs']]]]:
+        """
+        A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+        """
+        return pulumi.get(self, "excluded_subtrees")
+
+    @excluded_subtrees.setter
+    def excluded_subtrees(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs']]]]):
+        pulumi.set(self, "excluded_subtrees", value)
+
+    @_builtins.property
+    @pulumi.getter(name="permittedSubtrees")
+    def permitted_subtrees(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs']]]]:
+        """
+        A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+        """
+        return pulumi.get(self, "permitted_subtrees")
+
+    @permitted_subtrees.setter
+    def permitted_subtrees(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs']]]]):
+        pulumi.set(self, "permitted_subtrees", value)
+
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgsDict(TypedDict):
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of name constraint.
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Name restrictions for the corresponding type of name constraint.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs:
+    def __init__(__self__, *,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: The type of name constraint.
+        :param pulumi.Input[_builtins.str] value: Name restrictions for the corresponding type of name constraint.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of name constraint.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name restrictions for the corresponding type of name constraint.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgsDict(TypedDict):
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The type of name constraint.
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Name restrictions for the corresponding type of name constraint.
+        """
+elif False:
+    CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs:
+    def __init__(__self__, *,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: The type of name constraint.
+        :param pulumi.Input[_builtins.str] value: Name restrictions for the corresponding type of name constraint.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of name constraint.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name restrictions for the corresponding type of name constraint.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:
@@ -1471,7 +1754,7 @@ if not MYPY:
     class CertificateCertificateConfigArgsDict(TypedDict):
         config_type: pulumi.Input[_builtins.str]
         """
-        (Updatable) The origin of the certificate.
+        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         """
         certificate_profile_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1526,7 +1809,7 @@ class CertificateCertificateConfigArgs:
                  validity: Optional[pulumi.Input['CertificateCertificateConfigValidityArgs']] = None,
                  version_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] config_type: (Updatable) The origin of the certificate.
+        :param pulumi.Input[_builtins.str] config_type: (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         :param pulumi.Input[_builtins.str] certificate_profile_type: The name of the profile used to create the certificate, which depends on the type of certificate you need.
         :param pulumi.Input[_builtins.str] csr_pem: (Updatable) The certificate signing request (in PEM format).
         :param pulumi.Input[_builtins.str] issuer_certificate_authority_id: The OCID of the private CA.
@@ -1561,7 +1844,7 @@ class CertificateCertificateConfigArgs:
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The origin of the certificate.
+        (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         """
         return pulumi.get(self, "config_type")
 

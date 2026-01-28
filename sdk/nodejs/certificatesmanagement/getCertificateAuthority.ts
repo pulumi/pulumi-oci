@@ -77,6 +77,10 @@ export interface GetCertificateAuthorityResult {
      */
     readonly description: string;
     /**
+     * For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+     */
+    readonly externalKeyDescription: string;
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: string};

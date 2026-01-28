@@ -65,6 +65,16 @@ export const getExsiHosts: typeof import("./getExsiHosts").getExsiHosts = null a
 export const getExsiHostsOutput: typeof import("./getExsiHosts").getExsiHostsOutput = null as any;
 utilities.lazyLoad(exports, ["getExsiHosts","getExsiHostsOutput"], () => require("./getExsiHosts"));
 
+export { GetManagementApplianceArgs, GetManagementApplianceResult, GetManagementApplianceOutputArgs } from "./getManagementAppliance";
+export const getManagementAppliance: typeof import("./getManagementAppliance").getManagementAppliance = null as any;
+export const getManagementApplianceOutput: typeof import("./getManagementAppliance").getManagementApplianceOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAppliance","getManagementApplianceOutput"], () => require("./getManagementAppliance"));
+
+export { GetManagementAppliancesArgs, GetManagementAppliancesResult, GetManagementAppliancesOutputArgs } from "./getManagementAppliances";
+export const getManagementAppliances: typeof import("./getManagementAppliances").getManagementAppliances = null as any;
+export const getManagementAppliancesOutput: typeof import("./getManagementAppliances").getManagementAppliancesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAppliances","getManagementAppliancesOutput"], () => require("./getManagementAppliances"));
+
 export { GetRetrievePasswordArgs, GetRetrievePasswordResult, GetRetrievePasswordOutputArgs } from "./getRetrievePassword";
 export const getRetrievePassword: typeof import("./getRetrievePassword").getRetrievePassword = null as any;
 export const getRetrievePasswordOutput: typeof import("./getRetrievePassword").getRetrievePasswordOutput = null as any;
@@ -100,6 +110,11 @@ export const getSupportedVmwareSoftwareVersions: typeof import("./getSupportedVm
 export const getSupportedVmwareSoftwareVersionsOutput: typeof import("./getSupportedVmwareSoftwareVersions").getSupportedVmwareSoftwareVersionsOutput = null as any;
 utilities.lazyLoad(exports, ["getSupportedVmwareSoftwareVersions","getSupportedVmwareSoftwareVersionsOutput"], () => require("./getSupportedVmwareSoftwareVersions"));
 
+export { ManagementApplianceArgs, ManagementApplianceState } from "./managementAppliance";
+export type ManagementAppliance = import("./managementAppliance").ManagementAppliance;
+export const ManagementAppliance: typeof import("./managementAppliance").ManagementAppliance = null as any;
+utilities.lazyLoad(exports, ["ManagementAppliance"], () => require("./managementAppliance"));
+
 export { SddcArgs, SddcState } from "./sddc";
 export type Sddc = import("./sddc").Sddc;
 export const Sddc: typeof import("./sddc").Sddc = null as any;
@@ -118,6 +133,8 @@ const _module = {
                 return new DatastoreCluster(name, <any>undefined, { urn })
             case "oci:Ocvp/esxiHost:EsxiHost":
                 return new EsxiHost(name, <any>undefined, { urn })
+            case "oci:Ocvp/managementAppliance:ManagementAppliance":
+                return new ManagementAppliance(name, <any>undefined, { urn })
             case "oci:Ocvp/sddc:Sddc":
                 return new Sddc(name, <any>undefined, { urn })
             default:
@@ -129,4 +146,5 @@ pulumi.runtime.registerResourceModule("oci", "Ocvp/cluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/datastore", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/datastoreCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/esxiHost", _module)
+pulumi.runtime.registerResourceModule("oci", "Ocvp/managementAppliance", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/sddc", _module)

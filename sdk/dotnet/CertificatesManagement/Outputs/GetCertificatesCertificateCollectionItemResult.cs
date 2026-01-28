@@ -31,7 +31,7 @@ namespace Pulumi.Oci.CertificatesManagement.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The origin of the certificate.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>

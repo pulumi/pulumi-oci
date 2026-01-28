@@ -91,6 +91,7 @@ from .get_managed_kafka_kafka_cluster_config_version import *
 from .get_managed_kafka_kafka_cluster_config_versions import *
 from .get_managed_kafka_kafka_cluster_configs import *
 from .get_managed_kafka_kafka_clusters import *
+from .get_managed_kafka_node_shapes import *
 from .get_multicloud_external_location_mapping_metadata import *
 from .get_multicloud_external_location_summaries_metadata import *
 from .get_multicloud_external_locations_metadata import *

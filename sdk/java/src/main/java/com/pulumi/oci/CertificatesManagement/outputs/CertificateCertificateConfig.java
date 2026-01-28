@@ -22,7 +22,7 @@ public final class CertificateCertificateConfig {
      */
     private @Nullable String certificateProfileType;
     /**
-     * @return (Updatable) The origin of the certificate.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     private String configType;
@@ -76,7 +76,7 @@ public final class CertificateCertificateConfig {
         return Optional.ofNullable(this.certificateProfileType);
     }
     /**
-     * @return (Updatable) The origin of the certificate.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     public String configType() {

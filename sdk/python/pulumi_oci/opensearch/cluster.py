@@ -47,6 +47,7 @@ class ClusterArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']] = None,
                  maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -95,6 +96,7 @@ class ClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
+        :param pulumi.Input['ClusterLoadBalancerConfigArgs'] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
         :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
@@ -153,6 +155,8 @@ class ClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if inbound_cluster_ids is not None:
             pulumi.set(__self__, "inbound_cluster_ids", inbound_cluster_ids)
+        if load_balancer_config is not None:
+            pulumi.set(__self__, "load_balancer_config", load_balancer_config)
         if maintenance_details is not None:
             pulumi.set(__self__, "maintenance_details", maintenance_details)
         if master_node_host_bare_metal_shape is not None:
@@ -507,6 +511,18 @@ class ClusterArgs:
         pulumi.set(self, "inbound_cluster_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="loadBalancerConfig")
+    def load_balancer_config(self) -> Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']]:
+        """
+        (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        """
+        return pulumi.get(self, "load_balancer_config")
+
+    @load_balancer_config.setter
+    def load_balancer_config(self, value: Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']]):
+        pulumi.set(self, "load_balancer_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="maintenanceDetails")
     def maintenance_details(self) -> Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']]:
         """
@@ -771,6 +787,7 @@ class _ClusterState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 load_balancer_config: Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']] = None,
                  maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -832,6 +849,7 @@ class _ClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
+        :param pulumi.Input['ClusterLoadBalancerConfigArgs'] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
         :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
@@ -913,6 +931,8 @@ class _ClusterState:
             pulumi.set(__self__, "inbound_cluster_ids", inbound_cluster_ids)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if load_balancer_config is not None:
+            pulumi.set(__self__, "load_balancer_config", load_balancer_config)
         if maintenance_details is not None:
             pulumi.set(__self__, "maintenance_details", maintenance_details)
         if master_node_count is not None:
@@ -1201,6 +1221,18 @@ class _ClusterState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerConfig")
+    def load_balancer_config(self) -> Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']]:
+        """
+        (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        """
+        return pulumi.get(self, "load_balancer_config")
+
+    @load_balancer_config.setter
+    def load_balancer_config(self, value: Optional[pulumi.Input['ClusterLoadBalancerConfigArgs']]):
+        pulumi.set(self, "load_balancer_config", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceDetails")
@@ -1731,6 +1763,7 @@ class Cluster(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: Optional[pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
                  maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
                  master_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1791,6 +1824,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
+        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
         :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
@@ -1874,6 +1908,7 @@ class Cluster(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 load_balancer_config: Optional[pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
                  maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
                  master_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1943,6 +1978,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["inbound_cluster_ids"] = inbound_cluster_ids
+            __props__.__dict__["load_balancer_config"] = load_balancer_config
             __props__.__dict__["maintenance_details"] = maintenance_details
             if master_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_count'")
@@ -2041,6 +2077,7 @@ class Cluster(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             inbound_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            load_balancer_config: Optional[pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']]] = None,
             maintenance_details: Optional[pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']]] = None,
             master_node_count: Optional[pulumi.Input[_builtins.int]] = None,
             master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2107,6 +2144,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] inbound_cluster_ids: List of inbound clusters that will be queried using cross cluster search
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
+        :param pulumi.Input[Union['ClusterLoadBalancerConfigArgs', 'ClusterLoadBalancerConfigArgsDict']] load_balancer_config: (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
         :param pulumi.Input[Union['ClusterMaintenanceDetailsArgs', 'ClusterMaintenanceDetailsArgsDict']] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
@@ -2175,6 +2213,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["inbound_cluster_ids"] = inbound_cluster_ids
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["load_balancer_config"] = load_balancer_config
         __props__.__dict__["maintenance_details"] = maintenance_details
         __props__.__dict__["master_node_count"] = master_node_count
         __props__.__dict__["master_node_host_bare_metal_shape"] = master_node_host_bare_metal_shape
@@ -2354,6 +2393,14 @@ class Cluster(pulumi.CustomResource):
         Additional information about the current lifecycle state of the cluster.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerConfig")
+    def load_balancer_config(self) -> pulumi.Output['outputs.ClusterLoadBalancerConfig']:
+        """
+        (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        """
+        return pulumi.get(self, "load_balancer_config")
 
     @_builtins.property
     @pulumi.getter(name="maintenanceDetails")

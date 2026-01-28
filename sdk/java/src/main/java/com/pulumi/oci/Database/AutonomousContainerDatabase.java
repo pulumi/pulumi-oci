@@ -15,6 +15,7 @@ import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseBackupDestinat
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguard;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguardGroupMember;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseMaintenanceWindowDetails;
@@ -45,6 +46,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
  * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
  * import java.util.List;
@@ -93,6 +95,10 @@ import javax.annotation.Nullable;
  *             .dbVersion(autonomousContainerDatabaseDbVersion)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .distributionAffinity(autonomousContainerDatabaseDistributionAffinity)
+ *             .encryptionKeyLocationDetails(AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs.builder()
+ *                 .providerType(autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType)
+ *                 .awsEncryptionKeyId(testKey.id())
+ *                 .build())
  *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAutomaticFailoverEnabled(autonomousContainerDatabaseIsAutomaticFailoverEnabled)
@@ -478,6 +484,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> dstFileVersion() {
         return this.dstFileVersion;
+    }
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
+    @Export(name="encryptionKeyLocationDetails", refs={AutonomousContainerDatabaseEncryptionKeyLocationDetails.class}, tree="[0]")
+    private Output<AutonomousContainerDatabaseEncryptionKeyLocationDetails> encryptionKeyLocationDetails;
+
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public Output<AutonomousContainerDatabaseEncryptionKeyLocationDetails> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
     }
     /**
      * (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.

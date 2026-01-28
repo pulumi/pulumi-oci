@@ -49,6 +49,10 @@ export interface GetDifStackResult {
     readonly adbs: outputs.oci.GetDifStackAdb[];
     readonly addServiceTrigger: number;
     /**
+     * AI Data Platform Details if aidataplatform is included in services.
+     */
+    readonly aidataplatforms: outputs.oci.GetDifStackAidataplatform[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -93,6 +97,14 @@ export interface GetDifStackResult {
      * Object Storage Details if object storage is included in services.
      */
     readonly objectstorages: outputs.oci.GetDifStackObjectstorage[];
+    /**
+     * OKE Details if oke is included in services.
+     */
+    readonly okes: outputs.oci.GetDifStackOke[];
+    /**
+     * OMK Details if omk is included in services.
+     */
+    readonly omks: outputs.oci.GetDifStackOmk[];
     /**
      * Details of the service onboarded for the data intelligence stack.
      */

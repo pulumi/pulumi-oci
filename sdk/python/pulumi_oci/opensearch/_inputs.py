@@ -17,6 +17,8 @@ from .. import _utilities
 __all__ = [
     'ClusterCertificateConfigArgs',
     'ClusterCertificateConfigArgsDict',
+    'ClusterLoadBalancerConfigArgs',
+    'ClusterLoadBalancerConfigArgsDict',
     'ClusterMaintenanceDetailsArgs',
     'ClusterMaintenanceDetailsArgsDict',
     'ClusterOutboundClusterConfigArgs',
@@ -129,6 +131,77 @@ class ClusterCertificateConfigArgs:
     @open_search_dashboard_certificate_id.setter
     def open_search_dashboard_certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "open_search_dashboard_certificate_id", value)
+
+
+if not MYPY:
+    class ClusterLoadBalancerConfigArgsDict(TypedDict):
+        load_balancer_service_type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+        """
+        load_balancer_max_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        """
+        load_balancer_min_bandwidth_in_mbps: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        """
+elif False:
+    ClusterLoadBalancerConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterLoadBalancerConfigArgs:
+    def __init__(__self__, *,
+                 load_balancer_service_type: pulumi.Input[_builtins.str],
+                 load_balancer_max_bandwidth_in_mbps: Optional[pulumi.Input[_builtins.int]] = None,
+                 load_balancer_min_bandwidth_in_mbps: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] load_balancer_service_type: (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+        :param pulumi.Input[_builtins.int] load_balancer_max_bandwidth_in_mbps: (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        :param pulumi.Input[_builtins.int] load_balancer_min_bandwidth_in_mbps: (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        """
+        pulumi.set(__self__, "load_balancer_service_type", load_balancer_service_type)
+        if load_balancer_max_bandwidth_in_mbps is not None:
+            pulumi.set(__self__, "load_balancer_max_bandwidth_in_mbps", load_balancer_max_bandwidth_in_mbps)
+        if load_balancer_min_bandwidth_in_mbps is not None:
+            pulumi.set(__self__, "load_balancer_min_bandwidth_in_mbps", load_balancer_min_bandwidth_in_mbps)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerServiceType")
+    def load_balancer_service_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Load balancer service for OpenSearch and OpenDashboard load balancer. Default value is LOAD_BALANCER.
+        """
+        return pulumi.get(self, "load_balancer_service_type")
+
+    @load_balancer_service_type.setter
+    def load_balancer_service_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "load_balancer_service_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerMaxBandwidthInMbps")
+    def load_balancer_max_bandwidth_in_mbps(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Maximum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        """
+        return pulumi.get(self, "load_balancer_max_bandwidth_in_mbps")
+
+    @load_balancer_max_bandwidth_in_mbps.setter
+    def load_balancer_max_bandwidth_in_mbps(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "load_balancer_max_bandwidth_in_mbps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loadBalancerMinBandwidthInMbps")
+    def load_balancer_min_bandwidth_in_mbps(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Minimum bandwidth (Mbps) of OpenSearch load balancer. Not applicable for network load balancer service.
+        """
+        return pulumi.get(self, "load_balancer_min_bandwidth_in_mbps")
+
+    @load_balancer_min_bandwidth_in_mbps.setter
+    def load_balancer_min_bandwidth_in_mbps(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "load_balancer_min_bandwidth_in_mbps", value)
 
 
 if not MYPY:

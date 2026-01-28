@@ -152,6 +152,10 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly dstFileVersion: pulumi.Output<string>;
     /**
+     * Types of providers supported for managing database encryption keys
+     */
+    declare public /*out*/ readonly encryptionKeyLocationDetails: pulumi.Output<outputs.Database.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail[]>;
+    /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
     declare public readonly fastStartFailOverLagLimitInSeconds: pulumi.Output<number>;
@@ -372,6 +376,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["distributionAffinity"] = state?.distributionAffinity;
             resourceInputs["dstFileVersion"] = state?.dstFileVersion;
+            resourceInputs["encryptionKeyLocationDetails"] = state?.encryptionKeyLocationDetails;
             resourceInputs["fastStartFailOverLagLimitInSeconds"] = state?.fastStartFailOverLagLimitInSeconds;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["infrastructureType"] = state?.infrastructureType;
@@ -452,6 +457,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["distributionAffinity"] = undefined /*out*/;
             resourceInputs["dstFileVersion"] = undefined /*out*/;
+            resourceInputs["encryptionKeyLocationDetails"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["isDataGuardEnabled"] = undefined /*out*/;
@@ -571,6 +577,10 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      * DST Time-Zone File version of the Autonomous Container Database.
      */
     dstFileVersion?: pulumi.Input<string>;
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
+    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>[]>;
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */

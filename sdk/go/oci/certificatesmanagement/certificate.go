@@ -115,7 +115,7 @@ type Certificate struct {
 	CertificateRules CertificateCertificateRuleArrayOutput `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayOutput `pulumi:"currentVersions"`
@@ -194,7 +194,7 @@ type certificateState struct {
 	CertificateRules []CertificateCertificateRule `pulumi:"certificateRules"`
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType *string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []CertificateCurrentVersion `pulumi:"currentVersions"`
@@ -238,7 +238,7 @@ type CertificateState struct {
 	CertificateRules CertificateCertificateRuleArrayInput
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringPtrInput
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringPtrInput
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayInput
@@ -430,7 +430,7 @@ func (o CertificateOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o CertificateOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
 }

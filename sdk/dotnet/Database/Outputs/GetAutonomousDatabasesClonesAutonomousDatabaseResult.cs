@@ -176,6 +176,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
+        /// <summary>
         /// Details of the Autonomous AI Database encryption key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult> EncryptionKeys;
@@ -643,6 +647,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryResult> encryptionKeyHistoryEntries,
 
+            ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyLocationDetailResult> encryptionKeyLocationDetails,
+
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyResult> encryptionKeys,
 
             int failedDataRecoveryInSeconds,
@@ -875,6 +881,7 @@ namespace Pulumi.Oci.Database.Outputs
             DisasterRecoveryRegionType = disasterRecoveryRegionType;
             DisplayName = displayName;
             EncryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
+            EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             EncryptionKeys = encryptionKeys;
             FailedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             FreeformTags = freeformTags;

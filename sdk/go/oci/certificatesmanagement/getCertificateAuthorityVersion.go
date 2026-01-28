@@ -39,6 +39,8 @@ type GetCertificateAuthorityVersionResult struct {
 	// The OCID of the CA.
 	CertificateAuthorityId            string `pulumi:"certificateAuthorityId"`
 	CertificateAuthorityVersionNumber string `pulumi:"certificateAuthorityVersionNumber"`
+	// The certificate signing request (in PEM format).
+	CsrPem string `pulumi:"csrPem"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The version number of the issuing CA.
@@ -104,6 +106,11 @@ func (o GetCertificateAuthorityVersionResultOutput) CertificateAuthorityId() pul
 
 func (o GetCertificateAuthorityVersionResultOutput) CertificateAuthorityVersionNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.CertificateAuthorityVersionNumber }).(pulumi.StringOutput)
+}
+
+// The certificate signing request (in PEM format).
+func (o GetCertificateAuthorityVersionResultOutput) CsrPem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityVersionResult) string { return v.CsrPem }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

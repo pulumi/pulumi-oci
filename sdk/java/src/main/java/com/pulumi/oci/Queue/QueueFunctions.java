@@ -8,16 +8,547 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+import com.pulumi.oci.Queue.inputs.GetConsumerGroupPlainArgs;
+import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+import com.pulumi.oci.Queue.inputs.GetConsumerGroupsPlainArgs;
 import com.pulumi.oci.Queue.inputs.GetQueueArgs;
 import com.pulumi.oci.Queue.inputs.GetQueuePlainArgs;
 import com.pulumi.oci.Queue.inputs.GetQueuesArgs;
 import com.pulumi.oci.Queue.inputs.GetQueuesPlainArgs;
+import com.pulumi.oci.Queue.outputs.GetConsumerGroupResult;
+import com.pulumi.oci.Queue.outputs.GetConsumerGroupsResult;
 import com.pulumi.oci.Queue.outputs.GetQueueResult;
 import com.pulumi.oci.Queue.outputs.GetQueuesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class QueueFunctions {
+    /**
+     * This data source provides details about a specific Consumer Group resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a consumer group by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args) {
+        return getConsumerGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Consumer Group resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a consumer group by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupResult> getConsumerGroupPlain(GetConsumerGroupPlainArgs args) {
+        return getConsumerGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Consumer Group resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a consumer group by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Consumer Group resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a consumer group by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupResult> getConsumerGroup(GetConsumerGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Consumer Group resource in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Gets a consumer group by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroup = QueueFunctions.getConsumerGroup(GetConsumerGroupArgs.builder()
+     *             .consumerGroupId(testConsumerGroupOciQueueConsumerGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupResult> getConsumerGroupPlain(GetConsumerGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Queue/getConsumerGroup:getConsumerGroup", TypeShape.of(GetConsumerGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups() {
+        return getConsumerGroups(GetConsumerGroupsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain() {
+        return getConsumerGroupsPlain(GetConsumerGroupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(GetConsumerGroupsArgs args) {
+        return getConsumerGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(GetConsumerGroupsPlainArgs args) {
+        return getConsumerGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(GetConsumerGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetConsumerGroupsResult> getConsumerGroups(GetConsumerGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Queue/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
+     * 
+     * Returns a list of consumer groups.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Queue.QueueFunctions;
+     * import com.pulumi.oci.Queue.inputs.GetConsumerGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConsumerGroups = QueueFunctions.getConsumerGroups(GetConsumerGroupsArgs.builder()
+     *             .displayName(consumerGroupDisplayName)
+     *             .id(consumerGroupId)
+     *             .queueId(testQueue.id())
+     *             .state(consumerGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(GetConsumerGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Queue/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
      * 

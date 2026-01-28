@@ -13,6 +13,983 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	SkipRus    []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput    `pulumi:"preference"`
+	SkipRus    pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) DaysOfWeeks() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) []int {
+		return v.HoursOfDays
+	}).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) bool {
+		return v.IsMonthlyPatchingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) int {
+		return v.LeadTimeInWeeks
+	}).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) Months() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth {
+		return v.Months
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) string {
+		return v.Preference
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) []bool {
+		return v.SkipRus
+	}).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow) []int {
+		return v.WeeksOfMonths
+	}).(pulumi.IntArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindow)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...}
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+// GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray and GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray{ GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{...} }
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput
+	ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray []GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput() GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) ToGetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth {
+		return vs[0].([]GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput)
+}
+
+type GetCloudExadataInfrastructuresFilter struct {
+	// Name of the month of the year.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetCloudExadataInfrastructuresFilterInput is an input type that accepts GetCloudExadataInfrastructuresFilterArgs and GetCloudExadataInfrastructuresFilterOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresFilterInput` via:
+//
+//	GetCloudExadataInfrastructuresFilterArgs{...}
+type GetCloudExadataInfrastructuresFilterInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresFilterOutput() GetCloudExadataInfrastructuresFilterOutput
+	ToGetCloudExadataInfrastructuresFilterOutputWithContext(context.Context) GetCloudExadataInfrastructuresFilterOutput
+}
+
+type GetCloudExadataInfrastructuresFilterArgs struct {
+	// Name of the month of the year.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetCloudExadataInfrastructuresFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresFilterArgs) ToGetCloudExadataInfrastructuresFilterOutput() GetCloudExadataInfrastructuresFilterOutput {
+	return i.ToGetCloudExadataInfrastructuresFilterOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresFilterArgs) ToGetCloudExadataInfrastructuresFilterOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresFilterOutput)
+}
+
+// GetCloudExadataInfrastructuresFilterArrayInput is an input type that accepts GetCloudExadataInfrastructuresFilterArray and GetCloudExadataInfrastructuresFilterArrayOutput values.
+// You can construct a concrete instance of `GetCloudExadataInfrastructuresFilterArrayInput` via:
+//
+//	GetCloudExadataInfrastructuresFilterArray{ GetCloudExadataInfrastructuresFilterArgs{...} }
+type GetCloudExadataInfrastructuresFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudExadataInfrastructuresFilterArrayOutput() GetCloudExadataInfrastructuresFilterArrayOutput
+	ToGetCloudExadataInfrastructuresFilterArrayOutputWithContext(context.Context) GetCloudExadataInfrastructuresFilterArrayOutput
+}
+
+type GetCloudExadataInfrastructuresFilterArray []GetCloudExadataInfrastructuresFilterInput
+
+func (GetCloudExadataInfrastructuresFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (i GetCloudExadataInfrastructuresFilterArray) ToGetCloudExadataInfrastructuresFilterArrayOutput() GetCloudExadataInfrastructuresFilterArrayOutput {
+	return i.ToGetCloudExadataInfrastructuresFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudExadataInfrastructuresFilterArray) ToGetCloudExadataInfrastructuresFilterArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudExadataInfrastructuresFilterArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresFilterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresFilterOutput) ToGetCloudExadataInfrastructuresFilterOutput() GetCloudExadataInfrastructuresFilterOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresFilterOutput) ToGetCloudExadataInfrastructuresFilterOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresFilterOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudExadataInfrastructuresFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetCloudExadataInfrastructuresFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetCloudExadataInfrastructuresFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudExadataInfrastructuresFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetCloudExadataInfrastructuresFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudExadataInfrastructuresFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudExadataInfrastructuresFilter)(nil)).Elem()
+}
+
+func (o GetCloudExadataInfrastructuresFilterArrayOutput) ToGetCloudExadataInfrastructuresFilterArrayOutput() GetCloudExadataInfrastructuresFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresFilterArrayOutput) ToGetCloudExadataInfrastructuresFilterArrayOutputWithContext(ctx context.Context) GetCloudExadataInfrastructuresFilterArrayOutput {
+	return o
+}
+
+func (o GetCloudExadataInfrastructuresFilterArrayOutput) Index(i pulumi.IntInput) GetCloudExadataInfrastructuresFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudExadataInfrastructuresFilter {
+		return vs[0].([]GetCloudExadataInfrastructuresFilter)[vs[1].(int)]
+	}).(GetCloudExadataInfrastructuresFilterOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetail struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences []GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods []GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled bool `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled bool `pulumi:"isFreezePeriodEnabled"`
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailArgs and GetCloudVmClusterCloudAutomationUpdateDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailArgs{...}
+type GetCloudVmClusterCloudAutomationUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailOutput() GetCloudVmClusterCloudAutomationUpdateDetailOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailArgs struct {
+	// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+	ApplyUpdateTimePreferences GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput `pulumi:"applyUpdateTimePreferences"`
+	// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+	FreezePeriods GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput `pulumi:"freezePeriods"`
+	// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+	IsEarlyAdoptionEnabled pulumi.BoolInput `pulumi:"isEarlyAdoptionEnabled"`
+	// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+	IsFreezePeriodEnabled pulumi.BoolInput `pulumi:"isFreezePeriodEnabled"`
+}
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailOutput() GetCloudVmClusterCloudAutomationUpdateDetailOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailArrayInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailArray and GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailArrayInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailArray{ GetCloudVmClusterCloudAutomationUpdateDetailArgs{...} }
+type GetCloudVmClusterCloudAutomationUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailArray []GetCloudVmClusterCloudAutomationUpdateDetailInput
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailArray) ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailArray) ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailOutput() GetCloudVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailOutput {
+	return o
+}
+
+// Configure the time slot for applying VM cloud automation software updates to the cluster. When nothing is selected, the default time slot is 12 AM to 2 AM UTC. Any 2-hour slot is available starting at 12 AM.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) ApplyUpdateTimePreferences() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetail) []GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return v.ApplyUpdateTimePreferences
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+// Enables a freeze period for the VM cluster prohibiting the VMs from getting cloud automation software updates during critical business cycles. Freeze period start date. Starts at 12:00 AM UTC on the selected date and ends at 11:59:59 PM UTC on the selected date. Validates to ensure the freeze period does not exceed 45 days.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) FreezePeriods() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetail) []GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return v.FreezePeriods
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+// Annotates whether the cluster should be part of early access to apply VM cloud automation software updates. Those clusters annotated as early access will download the software bits for cloud automation in the first week after the update is available, while other clusters will have to wait until the following week.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) IsEarlyAdoptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetail) bool { return v.IsEarlyAdoptionEnabled }).(pulumi.BoolOutput)
+}
+
+// Specifies if the freeze period is enabled for the VM cluster to prevent the VMs from receiving cloud automation software updates during critical business cycles. Freeze period starts at 12:00 AM UTC and ends at 11:59:59 PM UTC on the selected date. Ensure that the freezing period does not exceed 45 days.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailOutput) IsFreezePeriodEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetail) bool { return v.IsFreezePeriodEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterCloudAutomationUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterCloudAutomationUpdateDetail {
+		return vs[0].([]GetCloudVmClusterCloudAutomationUpdateDetail)[vs[1].(int)]
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime string `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime string `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs and GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...}
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs struct {
+	// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+	ApplyUpdatePreferredEndTime pulumi.StringInput `pulumi:"applyUpdatePreferredEndTime"`
+	// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+	ApplyUpdatePreferredStartTime pulumi.StringInput `pulumi:"applyUpdatePreferredStartTime"`
+}
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray and GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{ GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{...} }
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray []GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return o
+}
+
+// End time for polling VM cloud automation software updates for the cluster. If the endTime is not specified, 2 AM UTC is used by default.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredEndTime
+	}).(pulumi.StringOutput)
+}
+
+// Start time for polling VM cloud automation software updates for the cluster. If the startTime is not specified, 12 AM UTC is used by default.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput) ApplyUpdatePreferredStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference) string {
+		return v.ApplyUpdatePreferredStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference {
+		return vs[0].([]GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreference)[vs[1].(int)]
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime string `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime string `pulumi:"freezePeriodStartTime"`
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs and GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...}
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs struct {
+	// End time of the freeze period cycle.
+	FreezePeriodEndTime pulumi.StringInput `pulumi:"freezePeriodEndTime"`
+	// Start time of the freeze period cycle.
+	FreezePeriodStartTime pulumi.StringInput `pulumi:"freezePeriodStartTime"`
+}
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+// GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput is an input type that accepts GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray and GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput` via:
+//
+//	GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray{ GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{...} }
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+	ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray []GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return i.ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return o
+}
+
+// End time of the freeze period cycle.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod) string { return v.FreezePeriodEndTime }).(pulumi.StringOutput)
+}
+
+// Start time of the freeze period cycle.
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput) FreezePeriodStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod) string {
+		return v.FreezePeriodStartTime
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput() GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) ToGetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutputWithContext(ctx context.Context) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod {
+		return vs[0].([]GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriod)[vs[1].(int)]
+	}).(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput)
+}
+
+type GetCloudVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetCloudVmClusterDataCollectionOptionInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArgs and GetCloudVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionInput` via:
+//
+//	GetCloudVmClusterDataCollectionOptionArgs{...}
+type GetCloudVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput
+	ToGetCloudVmClusterDataCollectionOptionOutputWithContext(context.Context) GetCloudVmClusterDataCollectionOptionOutput
+}
+
+type GetCloudVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetCloudVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput {
+	return i.ToGetCloudVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArgs) ToGetCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterDataCollectionOptionOutput)
+}
+
+// GetCloudVmClusterDataCollectionOptionArrayInput is an input type that accepts GetCloudVmClusterDataCollectionOptionArray and GetCloudVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterDataCollectionOptionArrayInput` via:
+//
+//	GetCloudVmClusterDataCollectionOptionArray{ GetCloudVmClusterDataCollectionOptionArgs{...} }
+type GetCloudVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput
+	ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetCloudVmClusterDataCollectionOptionArray []GetCloudVmClusterDataCollectionOptionInput
+
+func (GetCloudVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterDataCollectionOptionArray) ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetCloudVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClusterDataCollectionOptionOutput() GetCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionOutput) ToGetCloudVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetCloudVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+func (o GetCloudVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+func (o GetCloudVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetCloudVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClusterDataCollectionOptionArrayOutput() GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) ToGetCloudVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetCloudVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterDataCollectionOption {
+		return vs[0].([]GetCloudVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetCloudVmClusterDataCollectionOptionOutput)
+}
+
 type GetCloudVmClusterFileSystemConfigurationDetail struct {
 	// The file system size to be allocated in GBs.
 	FileSystemSizeGb int `pulumi:"fileSystemSizeGb"`
@@ -48732,6 +49709,22 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresFilterInput)(nil)).Elem(), GetCloudExadataInfrastructuresFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudExadataInfrastructuresFilterArrayInput)(nil)).Elem(), GetCloudExadataInfrastructuresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailArrayInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayInput)(nil)).Elem(), GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterDataCollectionOptionInput)(nil)).Elem(), GetCloudVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetCloudVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetCloudVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetCloudVmClusterFileSystemConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigCacheInput)(nil)).Elem(), GetCloudVmClusterIormConfigCacheArgs{})
@@ -49392,6 +50385,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresFilterOutput{})
+	pulumi.RegisterOutputType(GetCloudExadataInfrastructuresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailApplyUpdateTimePreferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterCloudAutomationUpdateDetailFreezePeriodArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterFileSystemConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterFileSystemConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigCacheOutput{})

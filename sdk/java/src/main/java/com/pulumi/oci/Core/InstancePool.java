@@ -56,6 +56,7 @@ import javax.annotation.Nullable;
  *             .instanceConfigurationId(testInstanceConfiguration.id())
  *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()
  *                 .availabilityDomain(instancePoolPlacementConfigurationsAvailabilityDomain)
+ *                 .computeClusterId(testComputeCluster.id())
  *                 .faultDomains(instancePoolPlacementConfigurationsFaultDomains)
  *                 .primarySubnetId(testSubnet.id())
  *                 .primaryVnicSubnets(InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs.builder()
@@ -259,7 +260,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      * 
      */
     @Export(name="placementConfigurations", refs={List.class,InstancePoolPlacementConfiguration.class}, tree="[0,1]")
@@ -268,7 +269,7 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
      * 
-     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+     * To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
      * 
      */
     public Output<List<InstancePoolPlacementConfiguration>> placementConfigurations() {

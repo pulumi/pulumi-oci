@@ -72,6 +72,12 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        /// </summary>
+        [Output("externalKeyDescription")]
+        public Output<string?> ExternalKeyDescription { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -87,7 +93,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         /// </summary>
         [Output("kmsKeyId")]
-        public Output<string> KmsKeyId { get; private set; } = null!;
+        public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current CA lifecycle state.
@@ -229,6 +235,12 @@ namespace Pulumi.Oci.CertificatesManagement
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        /// </summary>
+        [Input("externalKeyDescription")]
+        public Input<string>? ExternalKeyDescription { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -244,8 +256,8 @@ namespace Pulumi.Oci.CertificatesManagement
         /// <summary>
         /// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         /// </summary>
-        [Input("kmsKeyId", required: true)]
-        public Input<string> KmsKeyId { get; set; } = null!;
+        [Input("kmsKeyId")]
+        public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
         /// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -330,6 +342,12 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+        /// </summary>
+        [Input("externalKeyDescription")]
+        public Input<string>? ExternalKeyDescription { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

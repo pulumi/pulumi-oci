@@ -19,6 +19,10 @@ namespace Pulumi.Oci.Oci.Outputs
         public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemAdbResult> Adbs;
         public readonly int AddServiceTrigger;
         /// <summary>
+        /// AI Data Platform Details if aidataplatform is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemAidataplatformResult> Aidataplatforms;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -64,6 +68,14 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemObjectstorageResult> Objectstorages;
         /// <summary>
+        /// OKE Details if oke is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemOkeResult> Okes;
+        /// <summary>
+        /// OMK Details if omk is included in services.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemOmkResult> Omks;
+        /// <summary>
         /// Details of the service onboarded for the data intelligence stack.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailResult> ServiceDetails;
@@ -102,6 +114,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             int addServiceTrigger,
 
+            ImmutableArray<Outputs.GetDifStacksStackCollectionItemAidataplatformResult> aidataplatforms,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetDifStacksStackCollectionItemDataflowResult> dataflows,
@@ -126,6 +140,10 @@ namespace Pulumi.Oci.Oci.Outputs
 
             ImmutableArray<Outputs.GetDifStacksStackCollectionItemObjectstorageResult> objectstorages,
 
+            ImmutableArray<Outputs.GetDifStacksStackCollectionItemOkeResult> okes,
+
+            ImmutableArray<Outputs.GetDifStacksStackCollectionItemOmkResult> omks,
+
             ImmutableArray<Outputs.GetDifStacksStackCollectionItemServiceDetailResult> serviceDetails,
 
             ImmutableArray<string> services,
@@ -144,6 +162,7 @@ namespace Pulumi.Oci.Oci.Outputs
         {
             Adbs = adbs;
             AddServiceTrigger = addServiceTrigger;
+            Aidataplatforms = aidataplatforms;
             CompartmentId = compartmentId;
             Dataflows = dataflows;
             DefinedTags = definedTags;
@@ -156,6 +175,8 @@ namespace Pulumi.Oci.Oci.Outputs
             LifecycleDetails = lifecycleDetails;
             NotificationEmail = notificationEmail;
             Objectstorages = objectstorages;
+            Okes = okes;
+            Omks = omks;
             ServiceDetails = serviceDetails;
             Services = services;
             StackTemplates = stackTemplates;

@@ -65,14 +65,14 @@ public final class DifStackGenaiArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Id for the GGCS instance to be provisioned.
+     * (Updatable) Id for the GenAi instance to be provisioned.
      * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
-     * @return (Updatable) Id for the GGCS instance to be provisioned.
+     * @return (Updatable) Id for the GenAi instance to be provisioned.
      * 
      */
     public Output<String> instanceId() {
@@ -212,7 +212,7 @@ public final class DifStackGenaiArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId (Updatable) Id for the GGCS instance to be provisioned.
+         * @param instanceId (Updatable) Id for the GenAi instance to be provisioned.
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class DifStackGenaiArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceId (Updatable) Id for the GGCS instance to be provisioned.
+         * @param instanceId (Updatable) Id for the GenAi instance to be provisioned.
          * 
          * @return builder
          * 

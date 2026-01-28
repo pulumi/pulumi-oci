@@ -18,6 +18,12 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// 
+        /// Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+        /// </summary>
+        public readonly string? ComputeClusterId;
+        /// <summary>
         /// (Updatable) The fault domains to place instances.
         /// 
         /// If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -46,6 +52,8 @@ namespace Pulumi.Oci.Core.Outputs
         private InstancePoolPlacementConfiguration(
             string availabilityDomain,
 
+            string? computeClusterId,
+
             ImmutableArray<string> faultDomains,
 
             string? primarySubnetId,
@@ -55,6 +63,7 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<Outputs.InstancePoolPlacementConfigurationSecondaryVnicSubnet> secondaryVnicSubnets)
         {
             AvailabilityDomain = availabilityDomain;
+            ComputeClusterId = computeClusterId;
             FaultDomains = faultDomains;
             PrimarySubnetId = primarySubnetId;
             PrimaryVnicSubnets = primaryVnicSubnets;

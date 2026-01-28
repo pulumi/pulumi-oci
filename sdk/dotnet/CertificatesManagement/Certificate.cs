@@ -136,7 +136,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The origin of the certificate.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         /// </summary>
         [Output("configType")]
         public Output<string> ConfigType { get; private set; } = null!;
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.CertificatesManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The origin of the certificate.
+        /// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }

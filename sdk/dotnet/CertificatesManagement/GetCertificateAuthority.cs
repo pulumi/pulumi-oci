@@ -157,6 +157,10 @@ namespace Pulumi.Oci.CertificatesManagement
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+        /// </summary>
+        public readonly string ExternalKeyDescription;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -221,6 +225,8 @@ namespace Pulumi.Oci.CertificatesManagement
 
             string description,
 
+            string externalKeyDescription,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
@@ -252,6 +258,7 @@ namespace Pulumi.Oci.CertificatesManagement
             CurrentVersions = currentVersions;
             DefinedTags = definedTags;
             Description = description;
+            ExternalKeyDescription = externalKeyDescription;
             FreeformTags = freeformTags;
             Id = id;
             IssuerCertificateAuthorityId = issuerCertificateAuthorityId;

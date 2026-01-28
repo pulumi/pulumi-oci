@@ -36,14 +36,14 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) The origin of the certificate.
+     * (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     @Import(name="configType", required=true)
     private Output<String> configType;
 
     /**
-     * @return (Updatable) The origin of the certificate.
+     * @return (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     public Output<String> configType() {
@@ -225,7 +225,7 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate.
+         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class CertificateCertificateConfigArgs extends com.pulumi.resources
         }
 
         /**
-         * @param configType (Updatable) The origin of the certificate.
+         * @param configType (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
          * 
          * @return builder
          * 

@@ -62,7 +62,11 @@ import (
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				DistributionAffinity:               pulumi.Any(autonomousContainerDatabaseDistributionAffinity),
+//				DistributionAffinity: pulumi.Any(autonomousContainerDatabaseDistributionAffinity),
+//				EncryptionKeyLocationDetails: &database.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs{
+//					ProviderType:       pulumi.Any(autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType),
+//					AwsEncryptionKeyId: pulumi.Any(testKey.Id),
+//				},
 //				FastStartFailOverLagLimitInSeconds: pulumi.Any(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds),
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
@@ -190,6 +194,8 @@ type AutonomousContainerDatabase struct {
 	DistributionAffinity pulumi.StringOutput `pulumi:"distributionAffinity"`
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringOutput `pulumi:"dstFileVersion"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails AutonomousContainerDatabaseEncryptionKeyLocationDetailsOutput `pulumi:"encryptionKeyLocationDetails"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrOutput `pulumi:"failoverTrigger"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -385,6 +391,8 @@ type autonomousContainerDatabaseState struct {
 	DistributionAffinity *string `pulumi:"distributionAffinity"`
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion *string `pulumi:"dstFileVersion"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails *AutonomousContainerDatabaseEncryptionKeyLocationDetails `pulumi:"encryptionKeyLocationDetails"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -545,6 +553,8 @@ type AutonomousContainerDatabaseState struct {
 	DistributionAffinity pulumi.StringPtrInput
 	// DST Time-Zone File version of the Autonomous Container Database.
 	DstFileVersion pulumi.StringPtrInput
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails AutonomousContainerDatabaseEncryptionKeyLocationDetailsPtrInput
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -693,6 +703,8 @@ type autonomousContainerDatabaseArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity *string `pulumi:"distributionAffinity"`
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails *AutonomousContainerDatabaseEncryptionKeyLocationDetails `pulumi:"encryptionKeyLocationDetails"`
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger *int `pulumi:"failoverTrigger"`
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -784,6 +796,8 @@ type AutonomousContainerDatabaseArgs struct {
 	DisplayName pulumi.StringInput
 	// Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
 	DistributionAffinity pulumi.StringPtrInput
+	// Types of providers supported for managing database encryption keys
+	EncryptionKeyLocationDetails AutonomousContainerDatabaseEncryptionKeyLocationDetailsPtrInput
 	// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
 	FailoverTrigger pulumi.IntPtrInput
 	// (Updatable) The lag time for my preference based on data loss tolerance in seconds.
@@ -1055,6 +1069,13 @@ func (o AutonomousContainerDatabaseOutput) DistributionAffinity() pulumi.StringO
 // DST Time-Zone File version of the Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) DstFileVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DstFileVersion }).(pulumi.StringOutput)
+}
+
+// Types of providers supported for managing database encryption keys
+func (o AutonomousContainerDatabaseOutput) EncryptionKeyLocationDetails() AutonomousContainerDatabaseEncryptionKeyLocationDetailsOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseEncryptionKeyLocationDetailsOutput {
+		return v.EncryptionKeyLocationDetails
+	}).(AutonomousContainerDatabaseEncryptionKeyLocationDetailsOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.

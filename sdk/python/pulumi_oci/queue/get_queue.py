@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetQueueResult',
@@ -26,7 +27,10 @@ class GetQueueResult:
     """
     A collection of values returned by getQueue.
     """
-    def __init__(__self__, channel_consumption_limit=None, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_trigger=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
+    def __init__(__self__, capabilities=None, channel_consumption_limit=None, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_trigger=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
+        if capabilities and not isinstance(capabilities, list):
+            raise TypeError("Expected argument 'capabilities' to be a list")
+        pulumi.set(__self__, "capabilities", capabilities)
         if channel_consumption_limit and not isinstance(channel_consumption_limit, int):
             raise TypeError("Expected argument 'channel_consumption_limit' to be a int")
         pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
@@ -87,6 +91,14 @@ class GetQueueResult:
         if visibility_in_seconds and not isinstance(visibility_in_seconds, int):
             raise TypeError("Expected argument 'visibility_in_seconds' to be a int")
         pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def capabilities(self) -> Sequence['outputs.GetQueueCapabilityResult']:
+        """
+        The list of capabilities enabled on the queue
+        """
+        return pulumi.get(self, "capabilities")
 
     @_builtins.property
     @pulumi.getter(name="channelConsumptionLimit")
@@ -246,6 +258,7 @@ class AwaitableGetQueueResult(GetQueueResult):
         if False:
             yield self
         return GetQueueResult(
+            capabilities=self.capabilities,
             channel_consumption_limit=self.channel_consumption_limit,
             compartment_id=self.compartment_id,
             custom_encryption_key_id=self.custom_encryption_key_id,
@@ -293,6 +306,7 @@ def get_queue(queue_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Queue/getQueue:getQueue', __args__, opts=opts, typ=GetQueueResult).value
 
     return AwaitableGetQueueResult(
+        capabilities=pulumi.get(__ret__, 'capabilities'),
         channel_consumption_limit=pulumi.get(__ret__, 'channel_consumption_limit'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         custom_encryption_key_id=pulumi.get(__ret__, 'custom_encryption_key_id'),
@@ -337,6 +351,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[_builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Queue/getQueue:getQueue', __args__, opts=opts, typ=GetQueueResult)
     return __ret__.apply(lambda __response__: GetQueueResult(
+        capabilities=pulumi.get(__response__, 'capabilities'),
         channel_consumption_limit=pulumi.get(__response__, 'channel_consumption_limit'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         custom_encryption_key_id=pulumi.get(__response__, 'custom_encryption_key_id'),

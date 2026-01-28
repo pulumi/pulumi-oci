@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public Input<string>? CertificateProfileType { get; set; }
 
         /// <summary>
-        /// (Updatable) The origin of the certificate.
+        /// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         /// </summary>
         [Input("configType", required: true)]
         public Input<string> ConfigType { get; set; } = null!;

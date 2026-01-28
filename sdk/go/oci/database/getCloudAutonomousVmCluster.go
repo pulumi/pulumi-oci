@@ -107,7 +107,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname string `pulumi:"hostname"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster bool `pulumi:"isMtlsEnabledVmCluster"`
@@ -130,6 +130,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
@@ -151,7 +153,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
 	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	ReclaimableCpus     float64 `pulumi:"reclaimableCpus"`
+	RegisterPkcsTrigger int     `pulumi:"registerPkcsTrigger"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
 	// The SCAN Listener Non TLS port. Default is 1521.
@@ -170,6 +173,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// TDE keystore type
+	TdeKeyStoreType string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -183,7 +188,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
 	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
 	// The total number of CPUs in an Autonomous VM Cluster.
-	TotalCpus float64 `pulumi:"totalCpus"`
+	TotalCpus             float64 `pulumi:"totalCpus"`
+	UnregisterPkcsTrigger int     `pulumi:"unregisterPkcsTrigger"`
 }
 
 func LookupCloudAutonomousVmClusterOutput(ctx *pulumi.Context, args LookupCloudAutonomousVmClusterOutputArgs, opts ...pulumi.InvokeOption) LookupCloudAutonomousVmClusterResultOutput {
@@ -344,7 +350,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) Hostname() pulumi.StringOutp
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+// The OCID of the identity connector
 func (o LookupCloudAutonomousVmClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -407,6 +413,13 @@ func (o LookupCloudAutonomousVmClusterResultOutput) MemorySizeInGbs() pulumi.Int
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o LookupCloudAutonomousVmClusterResultOutput) MultiCloudIdentityConnectorConfigs() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o LookupCloudAutonomousVmClusterResultOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
@@ -464,6 +477,10 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.Flo
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
+func (o LookupCloudAutonomousVmClusterResultOutput) RegisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.RegisterPkcsTrigger }).(pulumi.IntOutput)
+}
+
 // The number of CPUs reserved in an Autonomous VM Cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) ReservedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
@@ -509,6 +526,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) SystemTags() pulumi.StringMa
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// TDE keystore type
+func (o LookupCloudAutonomousVmClusterResultOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
 // The date and time that the cloud Autonomous VM cluster was created.
 func (o LookupCloudAutonomousVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -542,6 +564,10 @@ func (o LookupCloudAutonomousVmClusterResultOutput) TotalContainerDatabases() pu
 // The total number of CPUs in an Autonomous VM Cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) TotalCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.TotalCpus }).(pulumi.Float64Output)
+}
+
+func (o LookupCloudAutonomousVmClusterResultOutput) UnregisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.UnregisterPkcsTrigger }).(pulumi.IntOutput)
 }
 
 func init() {

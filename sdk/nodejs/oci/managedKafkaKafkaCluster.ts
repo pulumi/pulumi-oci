@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  *     brokerShape: {
  *         nodeCount: kafkaClusterBrokerShapeNodeCount,
  *         ocpuCount: kafkaClusterBrokerShapeOcpuCount,
+ *         nodeShape: kafkaClusterBrokerShapeNodeShape,
  *         storageSizeInGbs: kafkaClusterBrokerShapeStorageSizeInGbs,
  *     },
  *     clusterConfigId: testConfig.id,

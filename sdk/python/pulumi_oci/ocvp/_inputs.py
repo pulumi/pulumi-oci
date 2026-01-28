@@ -29,6 +29,12 @@ __all__ = [
     'DatastoreBlockVolumeDetailAttachmentArgsDict',
     'EsxiHostDatastoreAttachmentArgs',
     'EsxiHostDatastoreAttachmentArgsDict',
+    'ManagementApplianceConfigurationArgs',
+    'ManagementApplianceConfigurationArgsDict',
+    'ManagementApplianceConnectionArgs',
+    'ManagementApplianceConnectionArgsDict',
+    'ManagementApplianceHeartbeatConnectionStateArgs',
+    'ManagementApplianceHeartbeatConnectionStateArgsDict',
     'SddcDatastoreArgs',
     'SddcDatastoreArgsDict',
     'SddcHcxOnPremLicenseArgs',
@@ -53,6 +59,8 @@ __all__ = [
     'GetDatastoresFilterArgsDict',
     'GetExsiHostsFilterArgs',
     'GetExsiHostsFilterArgsDict',
+    'GetManagementAppliancesFilterArgs',
+    'GetManagementAppliancesFilterArgsDict',
     'GetSddcsFilterArgs',
     'GetSddcsFilterArgsDict',
     'GetSupportedCommitmentsFilterArgs',
@@ -818,6 +826,218 @@ class EsxiHostDatastoreAttachmentArgs:
     @volume_iqn.setter
     def volume_iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "volume_iqn", value)
+
+
+if not MYPY:
+    class ManagementApplianceConfigurationArgsDict(TypedDict):
+        is_log_ingestion_enabled: pulumi.Input[_builtins.bool]
+        """
+        (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        """
+        is_metrics_collection_enabled: pulumi.Input[_builtins.bool]
+        """
+        (Updatable) Is metrics collection and publishing is enabled for appliance.
+        """
+        metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Array of metrics ids to collect.
+        """
+        support_bundle_bucket_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+elif False:
+    ManagementApplianceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagementApplianceConfigurationArgs:
+    def __init__(__self__, *,
+                 is_log_ingestion_enabled: pulumi.Input[_builtins.bool],
+                 is_metrics_collection_enabled: pulumi.Input[_builtins.bool],
+                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 support_bundle_bucket_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_log_ingestion_enabled: (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        :param pulumi.Input[_builtins.bool] is_metrics_collection_enabled: (Updatable) Is metrics collection and publishing is enabled for appliance.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] metrics: (Updatable) Array of metrics ids to collect.
+        :param pulumi.Input[_builtins.str] support_bundle_bucket_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        pulumi.set(__self__, "is_log_ingestion_enabled", is_log_ingestion_enabled)
+        pulumi.set(__self__, "is_metrics_collection_enabled", is_metrics_collection_enabled)
+        if metrics is not None:
+            pulumi.set(__self__, "metrics", metrics)
+        if support_bundle_bucket_id is not None:
+            pulumi.set(__self__, "support_bundle_bucket_id", support_bundle_bucket_id)
+
+    @_builtins.property
+    @pulumi.getter(name="isLogIngestionEnabled")
+    def is_log_ingestion_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+        """
+        return pulumi.get(self, "is_log_ingestion_enabled")
+
+    @is_log_ingestion_enabled.setter
+    def is_log_ingestion_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_log_ingestion_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricsCollectionEnabled")
+    def is_metrics_collection_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Is metrics collection and publishing is enabled for appliance.
+        """
+        return pulumi.get(self, "is_metrics_collection_enabled")
+
+    @is_metrics_collection_enabled.setter
+    def is_metrics_collection_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_metrics_collection_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Array of metrics ids to collect.
+        """
+        return pulumi.get(self, "metrics")
+
+    @metrics.setter
+    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metrics", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportBundleBucketId")
+    def support_bundle_bucket_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+        """
+        return pulumi.get(self, "support_bundle_bucket_id")
+
+    @support_bundle_bucket_id.setter
+    def support_bundle_bucket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "support_bundle_bucket_id", value)
+
+
+if not MYPY:
+    class ManagementApplianceConnectionArgsDict(TypedDict):
+        credentials_secret_id: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Type of connection.
+        """
+elif False:
+    ManagementApplianceConnectionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagementApplianceConnectionArgs:
+    def __init__(__self__, *,
+                 credentials_secret_id: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] credentials_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        :param pulumi.Input[_builtins.str] type: (Updatable) Type of connection.
+        """
+        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialsSecretId")
+    def credentials_secret_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+        """
+        return pulumi.get(self, "credentials_secret_id")
+
+    @credentials_secret_id.setter
+    def credentials_secret_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "credentials_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class ManagementApplianceHeartbeatConnectionStateArgsDict(TypedDict):
+        details: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Information about current connection status.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Current state of the management appliance.
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Type of connection.
+        """
+elif False:
+    ManagementApplianceHeartbeatConnectionStateArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ManagementApplianceHeartbeatConnectionStateArgs:
+    def __init__(__self__, *,
+                 details: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] details: Information about current connection status.
+        :param pulumi.Input[_builtins.str] state: Current state of the management appliance.
+        :param pulumi.Input[_builtins.str] type: Type of connection.
+        """
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Information about current connection status.
+        """
+        return pulumi.get(self, "details")
+
+    @details.setter
+    def details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Current state of the management appliance.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of connection.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
 
 
 if not MYPY:
@@ -1942,6 +2162,53 @@ elif False:
 
 @pulumi.input_type
 class GetExsiHostsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetManagementAppliancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetManagementAppliancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetManagementAppliancesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

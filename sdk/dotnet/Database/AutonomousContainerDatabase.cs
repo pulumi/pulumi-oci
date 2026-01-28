@@ -63,6 +63,11 @@ namespace Pulumi.Oci.Database
     ///             { "Operations.CostCenter", "42" },
     ///         },
     ///         DistributionAffinity = autonomousContainerDatabaseDistributionAffinity,
+    ///         EncryptionKeyLocationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs
+    ///         {
+    ///             ProviderType = autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType,
+    ///             AwsEncryptionKeyId = testKey.Id,
+    ///         },
     ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
     ///         FreeformTags = 
     ///         {
@@ -284,6 +289,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dstFileVersion")]
         public Output<string> DstFileVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Output("encryptionKeyLocationDetails")]
+        public Output<Outputs.AutonomousContainerDatabaseEncryptionKeyLocationDetails> EncryptionKeyLocationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
@@ -762,6 +773,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? DistributionAffinity { get; set; }
 
         /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Input("encryptionKeyLocationDetails")]
+        public Input<Inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs>? EncryptionKeyLocationDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         /// </summary>
         [Input("failoverTrigger")]
@@ -1114,6 +1131,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("dstFileVersion")]
         public Input<string>? DstFileVersion { get; set; }
+
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
+        [Input("encryptionKeyLocationDetails")]
+        public Input<Inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsGetArgs>? EncryptionKeyLocationDetails { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.

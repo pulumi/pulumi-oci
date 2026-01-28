@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// </summary>
+        public readonly string ComputeClusterId;
+        /// <summary>
         /// The fault domains to place instances.
         /// </summary>
         public readonly ImmutableArray<string> FaultDomains;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Core.Outputs
         private GetInstancePoolPlacementConfigurationResult(
             string availabilityDomain,
 
+            string computeClusterId,
+
             ImmutableArray<string> faultDomains,
 
             string primarySubnetId,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Core.Outputs
             ImmutableArray<Outputs.GetInstancePoolPlacementConfigurationSecondaryVnicSubnetResult> secondaryVnicSubnets)
         {
             AvailabilityDomain = availabilityDomain;
+            ComputeClusterId = computeClusterId;
             FaultDomains = faultDomains;
             PrimarySubnetId = primarySubnetId;
             PrimaryVnicSubnets = primaryVnicSubnets;

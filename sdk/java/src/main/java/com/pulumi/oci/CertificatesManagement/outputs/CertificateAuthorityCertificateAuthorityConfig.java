@@ -5,6 +5,7 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityConfigActionDetails;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityConfigSubject;
 import com.pulumi.oci.CertificatesManagement.outputs.CertificateAuthorityCertificateAuthorityConfigValidity;
 import java.lang.String;
@@ -14,13 +15,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class CertificateAuthorityCertificateAuthorityConfig {
+    private @Nullable CertificateAuthorityCertificateAuthorityConfigActionDetails actionDetails;
+    /**
+     * @return (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+     * 
+     */
+    private @Nullable String certificatePem;
     /**
      * @return (Updatable) The origin of the CA.
      * 
      */
     private String configType;
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the private, external issuer CA.
      * 
      */
     private @Nullable String issuerCertificateAuthorityId;
@@ -33,7 +40,7 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    private CertificateAuthorityCertificateAuthorityConfigSubject subject;
+    private @Nullable CertificateAuthorityCertificateAuthorityConfigSubject subject;
     /**
      * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
@@ -46,6 +53,16 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
     private @Nullable String versionName;
 
     private CertificateAuthorityCertificateAuthorityConfig() {}
+    public Optional<CertificateAuthorityCertificateAuthorityConfigActionDetails> actionDetails() {
+        return Optional.ofNullable(this.actionDetails);
+    }
+    /**
+     * @return (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+     * 
+     */
+    public Optional<String> certificatePem() {
+        return Optional.ofNullable(this.certificatePem);
+    }
     /**
      * @return (Updatable) The origin of the CA.
      * 
@@ -54,7 +71,7 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
         return this.configType;
     }
     /**
-     * @return The OCID of the private CA.
+     * @return The OCID of the private, external issuer CA.
      * 
      */
     public Optional<String> issuerCertificateAuthorityId() {
@@ -71,8 +88,8 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
      * @return The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      * 
      */
-    public CertificateAuthorityCertificateAuthorityConfigSubject subject() {
-        return this.subject;
+    public Optional<CertificateAuthorityCertificateAuthorityConfigSubject> subject() {
+        return Optional.ofNullable(this.subject);
     }
     /**
      * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -98,15 +115,19 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable CertificateAuthorityCertificateAuthorityConfigActionDetails actionDetails;
+        private @Nullable String certificatePem;
         private String configType;
         private @Nullable String issuerCertificateAuthorityId;
         private @Nullable String signingAlgorithm;
-        private CertificateAuthorityCertificateAuthorityConfigSubject subject;
+        private @Nullable CertificateAuthorityCertificateAuthorityConfigSubject subject;
         private @Nullable CertificateAuthorityCertificateAuthorityConfigValidity validity;
         private @Nullable String versionName;
         public Builder() {}
         public Builder(CertificateAuthorityCertificateAuthorityConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.actionDetails = defaults.actionDetails;
+    	      this.certificatePem = defaults.certificatePem;
     	      this.configType = defaults.configType;
     	      this.issuerCertificateAuthorityId = defaults.issuerCertificateAuthorityId;
     	      this.signingAlgorithm = defaults.signingAlgorithm;
@@ -115,6 +136,18 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
     	      this.versionName = defaults.versionName;
         }
 
+        @CustomType.Setter
+        public Builder actionDetails(@Nullable CertificateAuthorityCertificateAuthorityConfigActionDetails actionDetails) {
+
+            this.actionDetails = actionDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder certificatePem(@Nullable String certificatePem) {
+
+            this.certificatePem = certificatePem;
+            return this;
+        }
         @CustomType.Setter
         public Builder configType(String configType) {
             if (configType == null) {
@@ -136,10 +169,8 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
             return this;
         }
         @CustomType.Setter
-        public Builder subject(CertificateAuthorityCertificateAuthorityConfigSubject subject) {
-            if (subject == null) {
-              throw new MissingRequiredPropertyException("CertificateAuthorityCertificateAuthorityConfig", "subject");
-            }
+        public Builder subject(@Nullable CertificateAuthorityCertificateAuthorityConfigSubject subject) {
+
             this.subject = subject;
             return this;
         }
@@ -157,6 +188,8 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
         }
         public CertificateAuthorityCertificateAuthorityConfig build() {
             final var _resultValue = new CertificateAuthorityCertificateAuthorityConfig();
+            _resultValue.actionDetails = actionDetails;
+            _resultValue.certificatePem = certificatePem;
             _resultValue.configType = configType;
             _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
             _resultValue.signingAlgorithm = signingAlgorithm;

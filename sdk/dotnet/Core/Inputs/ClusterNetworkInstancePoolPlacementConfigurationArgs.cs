@@ -18,6 +18,12 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// </summary>
+        [Input("computeClusterId")]
+        public Input<string>? ComputeClusterId { get; set; }
+
         [Input("faultDomains")]
         private InputList<string>? _faultDomains;
 

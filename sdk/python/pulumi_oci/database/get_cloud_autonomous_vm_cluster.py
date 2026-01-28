@@ -27,7 +27,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, register_pkcs_trigger=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, tde_key_store_type=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None, unregister_pkcs_trigger=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -139,6 +139,9 @@ class GetCloudAutonomousVmClusterResult:
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if multi_cloud_identity_connector_configs and not isinstance(multi_cloud_identity_connector_configs, list):
+            raise TypeError("Expected argument 'multi_cloud_identity_connector_configs' to be a list")
+        pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         if next_maintenance_run_id and not isinstance(next_maintenance_run_id, str):
             raise TypeError("Expected argument 'next_maintenance_run_id' to be a str")
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -172,6 +175,9 @@ class GetCloudAutonomousVmClusterResult:
         if reclaimable_cpus and not isinstance(reclaimable_cpus, float):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a float")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if register_pkcs_trigger and not isinstance(register_pkcs_trigger, int):
+            raise TypeError("Expected argument 'register_pkcs_trigger' to be a int")
+        pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if reserved_cpus and not isinstance(reserved_cpus, float):
             raise TypeError("Expected argument 'reserved_cpus' to be a float")
         pulumi.set(__self__, "reserved_cpus", reserved_cpus)
@@ -199,6 +205,9 @@ class GetCloudAutonomousVmClusterResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tde_key_store_type and not isinstance(tde_key_store_type, str):
+            raise TypeError("Expected argument 'tde_key_store_type' to be a str")
+        pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -220,6 +229,9 @@ class GetCloudAutonomousVmClusterResult:
         if total_cpus and not isinstance(total_cpus, float):
             raise TypeError("Expected argument 'total_cpus' to be a float")
         pulumi.set(__self__, "total_cpus", total_cpus)
+        if unregister_pkcs_trigger and not isinstance(unregister_pkcs_trigger, int):
+            raise TypeError("Expected argument 'unregister_pkcs_trigger' to be a int")
+        pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
 
     @_builtins.property
     @pulumi.getter(name="autonomousDataStoragePercentage")
@@ -422,7 +434,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+        The OCID of the identity connector
         """
         return pulumi.get(self, "id")
 
@@ -512,6 +524,14 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigResult']:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> _builtins.str:
         """
@@ -598,6 +618,11 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "reclaimable_cpus")
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> _builtins.float:
         """
@@ -670,6 +695,14 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> _builtins.str:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -725,6 +758,11 @@ class GetCloudAutonomousVmClusterResult:
         """
         return pulumi.get(self, "total_cpus")
 
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "unregister_pkcs_trigger")
+
 
 class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResult):
     # pylint: disable=using-constant-test
@@ -769,6 +807,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             memory_per_compute_unit_in_gbs=self.memory_per_compute_unit_in_gbs,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
+            multi_cloud_identity_connector_configs=self.multi_cloud_identity_connector_configs,
             next_maintenance_run_id=self.next_maintenance_run_id,
             node_count=self.node_count,
             non_provisionable_autonomous_container_databases=self.non_provisionable_autonomous_container_databases,
@@ -780,6 +819,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             provisioned_autonomous_container_databases=self.provisioned_autonomous_container_databases,
             provisioned_cpus=self.provisioned_cpus,
             reclaimable_cpus=self.reclaimable_cpus,
+            register_pkcs_trigger=self.register_pkcs_trigger,
             reserved_cpus=self.reserved_cpus,
             scan_listener_port_non_tls=self.scan_listener_port_non_tls,
             scan_listener_port_tls=self.scan_listener_port_tls,
@@ -789,13 +829,15 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             subnet_id=self.subnet_id,
             subscription_id=self.subscription_id,
             system_tags=self.system_tags,
+            tde_key_store_type=self.tde_key_store_type,
             time_created=self.time_created,
             time_database_ssl_certificate_expires=self.time_database_ssl_certificate_expires,
             time_ords_certificate_expires=self.time_ords_certificate_expires,
             time_updated=self.time_updated,
             total_autonomous_data_storage_in_tbs=self.total_autonomous_data_storage_in_tbs,
             total_container_databases=self.total_container_databases,
-            total_cpus=self.total_cpus)
+            total_cpus=self.total_cpus,
+            unregister_pkcs_trigger=self.unregister_pkcs_trigger)
 
 
 def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_builtins.str] = None,
@@ -860,6 +902,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         memory_per_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
+        multi_cloud_identity_connector_configs=pulumi.get(__ret__, 'multi_cloud_identity_connector_configs'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
         node_count=pulumi.get(__ret__, 'node_count'),
         non_provisionable_autonomous_container_databases=pulumi.get(__ret__, 'non_provisionable_autonomous_container_databases'),
@@ -871,6 +914,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         provisioned_autonomous_container_databases=pulumi.get(__ret__, 'provisioned_autonomous_container_databases'),
         provisioned_cpus=pulumi.get(__ret__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),
+        register_pkcs_trigger=pulumi.get(__ret__, 'register_pkcs_trigger'),
         reserved_cpus=pulumi.get(__ret__, 'reserved_cpus'),
         scan_listener_port_non_tls=pulumi.get(__ret__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__ret__, 'scan_listener_port_tls'),
@@ -880,13 +924,15 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tde_key_store_type=pulumi.get(__ret__, 'tde_key_store_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_database_ssl_certificate_expires=pulumi.get(__ret__, 'time_database_ssl_certificate_expires'),
         time_ords_certificate_expires=pulumi.get(__ret__, 'time_ords_certificate_expires'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_autonomous_data_storage_in_tbs=pulumi.get(__ret__, 'total_autonomous_data_storage_in_tbs'),
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
-        total_cpus=pulumi.get(__ret__, 'total_cpus'))
+        total_cpus=pulumi.get(__ret__, 'total_cpus'),
+        unregister_pkcs_trigger=pulumi.get(__ret__, 'unregister_pkcs_trigger'))
 def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAutonomousVmClusterResult]:
     """
@@ -948,6 +994,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
         memory_per_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
+        multi_cloud_identity_connector_configs=pulumi.get(__response__, 'multi_cloud_identity_connector_configs'),
         next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),
         node_count=pulumi.get(__response__, 'node_count'),
         non_provisionable_autonomous_container_databases=pulumi.get(__response__, 'non_provisionable_autonomous_container_databases'),
@@ -959,6 +1006,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
         provisioned_autonomous_container_databases=pulumi.get(__response__, 'provisioned_autonomous_container_databases'),
         provisioned_cpus=pulumi.get(__response__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__response__, 'reclaimable_cpus'),
+        register_pkcs_trigger=pulumi.get(__response__, 'register_pkcs_trigger'),
         reserved_cpus=pulumi.get(__response__, 'reserved_cpus'),
         scan_listener_port_non_tls=pulumi.get(__response__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__response__, 'scan_listener_port_tls'),
@@ -968,10 +1016,12 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        tde_key_store_type=pulumi.get(__response__, 'tde_key_store_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_database_ssl_certificate_expires=pulumi.get(__response__, 'time_database_ssl_certificate_expires'),
         time_ords_certificate_expires=pulumi.get(__response__, 'time_ords_certificate_expires'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         total_autonomous_data_storage_in_tbs=pulumi.get(__response__, 'total_autonomous_data_storage_in_tbs'),
         total_container_databases=pulumi.get(__response__, 'total_container_databases'),
-        total_cpus=pulumi.get(__response__, 'total_cpus')))
+        total_cpus=pulumi.get(__response__, 'total_cpus'),
+        unregister_pkcs_trigger=pulumi.get(__response__, 'unregister_pkcs_trigger')))

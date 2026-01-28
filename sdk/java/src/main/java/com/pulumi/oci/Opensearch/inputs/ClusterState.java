@@ -6,6 +6,7 @@ package com.pulumi.oci.Opensearch.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Opensearch.inputs.ClusterCertificateConfigArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterLoadBalancerConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterReverseConnectionEndpointArgs;
@@ -276,6 +277,21 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    @Import(name="loadBalancerConfig")
+    private @Nullable Output<ClusterLoadBalancerConfigArgs> loadBalancerConfig;
+
+    /**
+     * @return (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    public Optional<Output<ClusterLoadBalancerConfigArgs>> loadBalancerConfig() {
+        return Optional.ofNullable(this.loadBalancerConfig);
     }
 
     /**
@@ -934,6 +950,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.inboundClusterIds = $.inboundClusterIds;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.loadBalancerConfig = $.loadBalancerConfig;
         this.maintenanceDetails = $.maintenanceDetails;
         this.masterNodeCount = $.masterNodeCount;
         this.masterNodeHostBareMetalShape = $.masterNodeHostBareMetalShape;
@@ -1371,6 +1388,27 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param loadBalancerConfig (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerConfig(@Nullable Output<ClusterLoadBalancerConfigArgs> loadBalancerConfig) {
+            $.loadBalancerConfig = loadBalancerConfig;
+            return this;
+        }
+
+        /**
+         * @param loadBalancerConfig (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loadBalancerConfig(ClusterLoadBalancerConfigArgs loadBalancerConfig) {
+            return loadBalancerConfig(Output.of(loadBalancerConfig));
         }
 
         /**

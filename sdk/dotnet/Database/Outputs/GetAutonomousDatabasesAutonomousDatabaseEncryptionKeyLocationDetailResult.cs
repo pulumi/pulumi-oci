@@ -13,9 +13,15 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult
     {
+        /// <summary>
+        /// Provide the key OCID of a registered AWS key.
+        /// </summary>
         public readonly string AwsEncryptionKeyId;
         public readonly string AzureEncryptionKeyId;
         public readonly string HsmPassword;
+        /// <summary>
+        /// Use 'AWS' for creating a new database.
+        /// </summary>
         public readonly string ProviderType;
 
         [OutputConstructor]

@@ -190,14 +190,14 @@ public class Certificate extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The origin of the certificate.
+     * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
-     * @return The origin of the certificate.
+     * @return The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      * 
      */
     public Output<String> configType() {

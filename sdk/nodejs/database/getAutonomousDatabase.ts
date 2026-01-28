@@ -216,6 +216,9 @@ export interface GetAutonomousDatabaseResult {
      * Key History Entry.
      */
     readonly encryptionKeyHistoryEntries: outputs.Database.GetAutonomousDatabaseEncryptionKeyHistoryEntry[];
+    /**
+     * Types of providers supported for managing database encryption keys
+     */
     readonly encryptionKeyLocationDetails: outputs.Database.GetAutonomousDatabaseEncryptionKeyLocationDetail[];
     /**
      * Details of the Autonomous AI Database encryption key.

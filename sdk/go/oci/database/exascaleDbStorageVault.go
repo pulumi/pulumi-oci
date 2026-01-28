@@ -69,7 +69,7 @@ type ExascaleDbStorageVault struct {
 	AdditionalFlashCacheInPercent pulumi.IntOutput `pulumi:"additionalFlashCacheInPercent"`
 	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
 	AttachedShapeAttributes pulumi.StringArrayOutput `pulumi:"attachedShapeAttributes"`
-	// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 	AutoscaleLimitInGbs pulumi.IntOutput `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
@@ -158,7 +158,7 @@ type exascaleDbStorageVaultState struct {
 	AdditionalFlashCacheInPercent *int `pulumi:"additionalFlashCacheInPercent"`
 	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
 	AttachedShapeAttributes []string `pulumi:"attachedShapeAttributes"`
-	// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 	AutoscaleLimitInGbs *int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -206,7 +206,7 @@ type ExascaleDbStorageVaultState struct {
 	AdditionalFlashCacheInPercent pulumi.IntPtrInput
 	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
 	AttachedShapeAttributes pulumi.StringArrayInput
-	// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 	AutoscaleLimitInGbs pulumi.IntPtrInput
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringPtrInput
@@ -256,7 +256,7 @@ func (ExascaleDbStorageVaultState) ElementType() reflect.Type {
 type exascaleDbStorageVaultArgs struct {
 	// (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
 	AdditionalFlashCacheInPercent *int `pulumi:"additionalFlashCacheInPercent"`
-	// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 	AutoscaleLimitInGbs *int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -291,7 +291,7 @@ type exascaleDbStorageVaultArgs struct {
 type ExascaleDbStorageVaultArgs struct {
 	// (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
 	AdditionalFlashCacheInPercent pulumi.IntPtrInput
-	// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 	AutoscaleLimitInGbs pulumi.IntPtrInput
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringInput
@@ -419,7 +419,7 @@ func (o ExascaleDbStorageVaultOutput) AttachedShapeAttributes() pulumi.StringArr
 	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringArrayOutput { return v.AttachedShapeAttributes }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+// (Updatable) The maximum limit, in gigabytes, to which the Vault storage size can automatically scale when auto scaling is enabled for the Database Storage Vault
 func (o ExascaleDbStorageVaultOutput) AutoscaleLimitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.IntOutput { return v.AutoscaleLimitInGbs }).(pulumi.IntOutput)
 }

@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomous
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguard;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseDataguardGroupMember;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail;
@@ -129,6 +130,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String dstFileVersion;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     private Integer failoverTrigger;
     /**
      * @return The lag time for my preference based on data loss tolerance in seconds.
@@ -509,6 +515,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String dstFileVersion() {
         return this.dstFileVersion;
     }
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
+    public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
+        return this.encryptionKeyLocationDetails;
+    }
     public Integer failoverTrigger() {
         return this.failoverTrigger;
     }
@@ -885,6 +898,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String displayName;
         private String distributionAffinity;
         private String dstFileVersion;
+        private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private Integer failoverTrigger;
         private Integer fastStartFailOverLagLimitInSeconds;
         private Map<String,String> freeformTags;
@@ -968,6 +982,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.displayName = defaults.displayName;
     	      this.distributionAffinity = defaults.distributionAffinity;
     	      this.dstFileVersion = defaults.dstFileVersion;
+    	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.failoverTrigger = defaults.failoverTrigger;
     	      this.fastStartFailOverLagLimitInSeconds = defaults.fastStartFailOverLagLimitInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -1228,6 +1243,17 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             }
             this.dstFileVersion = dstFileVersion;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptionKeyLocationDetails(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails) {
+            if (encryptionKeyLocationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "encryptionKeyLocationDetails");
+            }
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            return this;
+        }
+        public Builder encryptionKeyLocationDetails(GetAutonomousContainerDatabasesAutonomousContainerDatabaseEncryptionKeyLocationDetail... encryptionKeyLocationDetails) {
+            return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }
         @CustomType.Setter
         public Builder failoverTrigger(Integer failoverTrigger) {
@@ -1731,6 +1757,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.displayName = displayName;
             _resultValue.distributionAffinity = distributionAffinity;
             _resultValue.dstFileVersion = dstFileVersion;
+            _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.failoverTrigger = failoverTrigger;
             _resultValue.fastStartFailOverLagLimitInSeconds = fastStartFailOverLagLimitInSeconds;
             _resultValue.freeformTags = freeformTags;

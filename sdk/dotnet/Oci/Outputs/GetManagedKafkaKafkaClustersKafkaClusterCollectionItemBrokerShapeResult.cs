@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly int NodeCount;
         /// <summary>
+        /// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+        /// </summary>
+        public readonly string NodeShape;
+        /// <summary>
         /// Number of OCPUs per nodes
         /// </summary>
         public readonly int OcpuCount;
@@ -30,11 +34,14 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult(
             int nodeCount,
 
+            string nodeShape,
+
             int ocpuCount,
 
             int storageSizeInGbs)
         {
             NodeCount = nodeCount;
+            NodeShape = nodeShape;
             OcpuCount = ocpuCount;
             StorageSizeInGbs = storageSizeInGbs;
         }

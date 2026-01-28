@@ -75,6 +75,8 @@ type LookupCertificateAuthorityResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description string `pulumi:"description"`
+	// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+	ExternalKeyDescription string `pulumi:"externalKeyDescription"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the CA.
@@ -183,6 +185,11 @@ func (o LookupCertificateAuthorityResultOutput) DefinedTags() pulumi.StringMapOu
 // A brief description of the CA.
 func (o LookupCertificateAuthorityResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateAuthorityResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+func (o LookupCertificateAuthorityResultOutput) ExternalKeyDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCertificateAuthorityResult) string { return v.ExternalKeyDescription }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

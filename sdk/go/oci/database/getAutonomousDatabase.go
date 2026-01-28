@@ -148,7 +148,8 @@ type LookupAutonomousDatabaseResult struct {
 	// If omitted or set to false the provider will not delete scheduledOperations from the Autonomous AI Database. If set to true, provider will delete scheduledOperations from the Autonomous AI Database.
 	EnableDeleteScheduledOperations bool `pulumi:"enableDeleteScheduledOperations"`
 	// Key History Entry.
-	EncryptionKeyHistoryEntries  []GetAutonomousDatabaseEncryptionKeyHistoryEntry   `pulumi:"encryptionKeyHistoryEntries"`
+	EncryptionKeyHistoryEntries []GetAutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
+	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails []GetAutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// Details of the Autonomous AI Database encryption key.
 	EncryptionKeys []GetAutonomousDatabaseEncryptionKey `pulumi:"encryptionKeys"`
@@ -637,6 +638,7 @@ func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyHistoryEntries() GetA
 	}).(GetAutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput)
 }
 
+// Types of providers supported for managing database encryption keys
 func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyLocationDetails() GetAutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKeyLocationDetail {
 		return v.EncryptionKeyLocationDetails

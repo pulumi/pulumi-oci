@@ -164,6 +164,8 @@ type CloudAutonomousVmCluster struct {
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
@@ -187,6 +189,8 @@ type CloudAutonomousVmCluster struct {
 	ProvisionedCpus pulumi.Float64Output `pulumi:"provisionedCpus"`
 	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrOutput `pulumi:"registerPkcsTrigger"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64Output `pulumi:"reservedCpus"`
 	// The SCAN Listener Non TLS port. Default is 1521.
@@ -205,6 +209,8 @@ type CloudAutonomousVmCluster struct {
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringOutput `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -216,12 +222,14 @@ type CloudAutonomousVmCluster struct {
 	// The total data disk group size for Autonomous AI Databases, in TBs.
 	TotalAutonomousDataStorageInTbs pulumi.Float64Output `pulumi:"totalAutonomousDataStorageInTbs"`
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases pulumi.IntOutput `pulumi:"totalContainerDatabases"`
 	// The total number of CPUs in an Autonomous VM Cluster.
 	TotalCpus pulumi.Float64Output `pulumi:"totalCpus"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UnregisterPkcsTrigger pulumi.IntPtrOutput `pulumi:"unregisterPkcsTrigger"`
 }
 
 // NewCloudAutonomousVmCluster registers a new resource with the given unique name, arguments, and options.
@@ -338,6 +346,8 @@ type cloudAutonomousVmClusterState struct {
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []CloudAutonomousVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The number of database servers in the cloud VM cluster.
@@ -361,6 +371,8 @@ type cloudAutonomousVmClusterState struct {
 	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus *float64 `pulumi:"reservedCpus"`
 	// The SCAN Listener Non TLS port. Default is 1521.
@@ -379,6 +391,8 @@ type cloudAutonomousVmClusterState struct {
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// TDE keystore type
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -390,12 +404,14 @@ type cloudAutonomousVmClusterState struct {
 	// The total data disk group size for Autonomous AI Databases, in TBs.
 	TotalAutonomousDataStorageInTbs *float64 `pulumi:"totalAutonomousDataStorageInTbs"`
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The total number of CPUs in an Autonomous VM Cluster.
 	TotalCpus *float64 `pulumi:"totalCpus"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UnregisterPkcsTrigger *int `pulumi:"unregisterPkcsTrigger"`
 }
 
 type CloudAutonomousVmClusterState struct {
@@ -471,6 +487,8 @@ type CloudAutonomousVmClusterState struct {
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The number of database servers in the cloud VM cluster.
@@ -494,6 +512,8 @@ type CloudAutonomousVmClusterState struct {
 	ProvisionedCpus pulumi.Float64PtrInput
 	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.Float64PtrInput
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrInput
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64PtrInput
 	// The SCAN Listener Non TLS port. Default is 1521.
@@ -512,6 +532,8 @@ type CloudAutonomousVmClusterState struct {
 	SubscriptionId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time of Database SSL certificate expiration.
@@ -523,12 +545,14 @@ type CloudAutonomousVmClusterState struct {
 	// The total data disk group size for Autonomous AI Databases, in TBs.
 	TotalAutonomousDataStorageInTbs pulumi.Float64PtrInput
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TotalContainerDatabases pulumi.IntPtrInput
 	// The total number of CPUs in an Autonomous VM Cluster.
 	TotalCpus pulumi.Float64PtrInput
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UnregisterPkcsTrigger pulumi.IntPtrInput
 }
 
 func (CloudAutonomousVmClusterState) ElementType() reflect.Type {
@@ -573,6 +597,8 @@ type cloudAutonomousVmClusterArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
 	OpcDryRun *bool `pulumi:"opcDryRun"`
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger *int `pulumi:"registerPkcsTrigger"`
 	// The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port. Default is 2484.
@@ -583,13 +609,17 @@ type cloudAutonomousVmClusterArgs struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId *string `pulumi:"subscriptionId"`
+	// TDE keystore type
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
+	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
+	UnregisterPkcsTrigger *int `pulumi:"unregisterPkcsTrigger"`
 }
 
 // The set of arguments for constructing a CloudAutonomousVmCluster resource.
@@ -631,6 +661,8 @@ type CloudAutonomousVmClusterArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
 	OpcDryRun pulumi.BoolPtrInput
+	// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+	RegisterPkcsTrigger pulumi.IntPtrInput
 	// The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// The SCAN Listener TLS port. Default is 2484.
@@ -641,13 +673,17 @@ type CloudAutonomousVmClusterArgs struct {
 	SubnetId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId pulumi.StringPtrInput
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
+	TotalContainerDatabases pulumi.IntPtrInput
+	// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	TotalContainerDatabases pulumi.IntPtrInput
+	UnregisterPkcsTrigger pulumi.IntPtrInput
 }
 
 func (CloudAutonomousVmClusterArgs) ElementType() reflect.Type {
@@ -920,6 +956,13 @@ func (o CloudAutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o CloudAutonomousVmClusterOutput) MultiCloudIdentityConnectorConfigs() CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(CloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o CloudAutonomousVmClusterOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
@@ -978,6 +1021,11 @@ func (o CloudAutonomousVmClusterOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
+// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+func (o CloudAutonomousVmClusterOutput) RegisterPkcsTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntPtrOutput { return v.RegisterPkcsTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The number of CPUs reserved in an Autonomous VM Cluster.
 func (o CloudAutonomousVmClusterOutput) ReservedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.ReservedCpus }).(pulumi.Float64Output)
@@ -1023,6 +1071,11 @@ func (o CloudAutonomousVmClusterOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// TDE keystore type
+func (o CloudAutonomousVmClusterOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
 // The date and time that the cloud Autonomous VM cluster was created.
 func (o CloudAutonomousVmClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
@@ -1049,9 +1102,6 @@ func (o CloudAutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi
 }
 
 // (Updatable) The total number of Autonomous Container Databases that can be created.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudAutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.TotalContainerDatabases }).(pulumi.IntOutput)
 }
@@ -1059,6 +1109,14 @@ func (o CloudAutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutp
 // The total number of CPUs in an Autonomous VM Cluster.
 func (o CloudAutonomousVmClusterOutput) TotalCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.TotalCpus }).(pulumi.Float64Output)
+}
+
+// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o CloudAutonomousVmClusterOutput) UnregisterPkcsTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntPtrOutput { return v.UnregisterPkcsTrigger }).(pulumi.IntPtrOutput)
 }
 
 type CloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }

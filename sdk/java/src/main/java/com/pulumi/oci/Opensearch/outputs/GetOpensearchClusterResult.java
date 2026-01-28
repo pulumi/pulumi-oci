@@ -6,6 +6,7 @@ package com.pulumi.oci.Opensearch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterCertificateConfig;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterLoadBalancerConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterMaintenanceDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterReverseConnectionEndpoint;
@@ -104,6 +105,11 @@ public final class GetOpensearchClusterResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    private List<GetOpensearchClusterLoadBalancerConfig> loadBalancerConfigs;
     /**
      * @return Details for the maintenance activity.
      * 
@@ -432,6 +438,13 @@ public final class GetOpensearchClusterResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    public List<GetOpensearchClusterLoadBalancerConfig> loadBalancerConfigs() {
+        return this.loadBalancerConfigs;
+    }
+    /**
      * @return Details for the maintenance activity.
      * 
      */
@@ -748,6 +761,7 @@ public final class GetOpensearchClusterResult {
         private String id;
         private List<String> inboundClusterIds;
         private String lifecycleDetails;
+        private List<GetOpensearchClusterLoadBalancerConfig> loadBalancerConfigs;
         private List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails;
         private Integer masterNodeCount;
         private String masterNodeHostBareMetalShape;
@@ -812,6 +826,7 @@ public final class GetOpensearchClusterResult {
     	      this.id = defaults.id;
     	      this.inboundClusterIds = defaults.inboundClusterIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.loadBalancerConfigs = defaults.loadBalancerConfigs;
     	      this.maintenanceDetails = defaults.maintenanceDetails;
     	      this.masterNodeCount = defaults.masterNodeCount;
     	      this.masterNodeHostBareMetalShape = defaults.masterNodeHostBareMetalShape;
@@ -1009,6 +1024,17 @@ public final class GetOpensearchClusterResult {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder loadBalancerConfigs(List<GetOpensearchClusterLoadBalancerConfig> loadBalancerConfigs) {
+            if (loadBalancerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "loadBalancerConfigs");
+            }
+            this.loadBalancerConfigs = loadBalancerConfigs;
+            return this;
+        }
+        public Builder loadBalancerConfigs(GetOpensearchClusterLoadBalancerConfig... loadBalancerConfigs) {
+            return loadBalancerConfigs(List.of(loadBalancerConfigs));
         }
         @CustomType.Setter
         public Builder maintenanceDetails(List<GetOpensearchClusterMaintenanceDetail> maintenanceDetails) {
@@ -1389,6 +1415,7 @@ public final class GetOpensearchClusterResult {
             _resultValue.id = id;
             _resultValue.inboundClusterIds = inboundClusterIds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.loadBalancerConfigs = loadBalancerConfigs;
             _resultValue.maintenanceDetails = maintenanceDetails;
             _resultValue.masterNodeCount = masterNodeCount;
             _resultValue.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;

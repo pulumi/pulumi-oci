@@ -10,17 +10,41 @@ import java.util.Objects;
 
 @CustomType
 public final class DifStackAdbDbCredential {
+    /**
+     * @return Vault secret OCID containing the corresponding user password.
+     * 
+     */
     private String secretId;
+    /**
+     * @return Username for ADB to be created or updated.
+     * 
+     */
     private String userName;
+    /**
+     * @return Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+     * 
+     */
     private String userType;
 
     private DifStackAdbDbCredential() {}
+    /**
+     * @return Vault secret OCID containing the corresponding user password.
+     * 
+     */
     public String secretId() {
         return this.secretId;
     }
+    /**
+     * @return Username for ADB to be created or updated.
+     * 
+     */
     public String userName() {
         return this.userName;
     }
+    /**
+     * @return Type of the user. Allowed values are &#34;ADMIN&#34; or &#34;CUSTOM&#34; or &#34;GGCS&#34;.
+     * 
+     */
     public String userType() {
         return this.userType;
     }

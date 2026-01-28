@@ -143,6 +143,21 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    @Import(name="externalKeyDescription")
+    private @Nullable Output<String> externalKeyDescription;
+
+    /**
+     * @return (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+     * 
+     */
+    public Optional<Output<String>> externalKeyDescription() {
+        return Optional.ofNullable(this.externalKeyDescription);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -309,6 +324,7 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
         this.currentVersions = $.currentVersions;
         this.definedTags = $.definedTags;
         this.description = $.description;
+        this.externalKeyDescription = $.externalKeyDescription;
         this.freeformTags = $.freeformTags;
         this.issuerCertificateAuthorityId = $.issuerCertificateAuthorityId;
         this.kmsKeyId = $.kmsKeyId;
@@ -525,6 +541,27 @@ public final class CertificateAuthorityState extends com.pulumi.resources.Resour
          */
         public Builder description(String description) {
             return description(Output.of(description));
+        }
+
+        /**
+         * @param externalKeyDescription (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyDescription(@Nullable Output<String> externalKeyDescription) {
+            $.externalKeyDescription = externalKeyDescription;
+            return this;
+        }
+
+        /**
+         * @param externalKeyDescription (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyDescription(String externalKeyDescription) {
+            return externalKeyDescription(Output.of(externalKeyDescription));
         }
 
         /**

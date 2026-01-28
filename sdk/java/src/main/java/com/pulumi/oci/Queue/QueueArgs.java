@@ -6,8 +6,10 @@ package com.pulumi.oci.Queue;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Queue.inputs.QueueCapabilityArgs;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -17,6 +19,21 @@ import javax.annotation.Nullable;
 public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final QueueArgs Empty = new QueueArgs();
+
+    /**
+     * (Updatable) The capability to add on the queue
+     * 
+     */
+    @Import(name="capabilities")
+    private @Nullable Output<List<QueueCapabilityArgs>> capabilities;
+
+    /**
+     * @return (Updatable) The capability to add on the queue
+     * 
+     */
+    public Optional<Output<List<QueueCapabilityArgs>>> capabilities() {
+        return Optional.ofNullable(this.capabilities);
+    }
 
     /**
      * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
@@ -207,6 +224,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     private QueueArgs() {}
 
     private QueueArgs(QueueArgs $) {
+        this.capabilities = $.capabilities;
         this.channelConsumptionLimit = $.channelConsumptionLimit;
         this.compartmentId = $.compartmentId;
         this.customEncryptionKeyId = $.customEncryptionKeyId;
@@ -237,6 +255,37 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(QueueArgs defaults) {
             $ = new QueueArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capabilities (Updatable) The capability to add on the queue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capabilities(@Nullable Output<List<QueueCapabilityArgs>> capabilities) {
+            $.capabilities = capabilities;
+            return this;
+        }
+
+        /**
+         * @param capabilities (Updatable) The capability to add on the queue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capabilities(List<QueueCapabilityArgs> capabilities) {
+            return capabilities(Output.of(capabilities));
+        }
+
+        /**
+         * @param capabilities (Updatable) The capability to add on the queue
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capabilities(QueueCapabilityArgs... capabilities) {
+            return capabilities(List.of(capabilities));
         }
 
         /**

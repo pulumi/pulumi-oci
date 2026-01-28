@@ -181,6 +181,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// Key History Entry.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryResult> EncryptionKeyHistoryEntries;
+        /// <summary>
+        /// Types of providers supported for managing database encryption keys
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetailResult> EncryptionKeyLocationDetails;
         /// <summary>
         /// Details of the Autonomous AI Database encryption key.

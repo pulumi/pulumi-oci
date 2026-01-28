@@ -245,6 +245,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
     private List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
     /**
      * @return Details of the Autonomous AI Database encryption key.
@@ -1075,6 +1079,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries() {
         return this.encryptionKeyHistoryEntries;
     }
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
     public List<GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails() {
         return this.encryptionKeyLocationDetails;
     }

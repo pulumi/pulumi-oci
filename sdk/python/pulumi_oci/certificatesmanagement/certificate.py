@@ -173,7 +173,7 @@ class _CertificateState:
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRevocationListDetailArgs']]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCertificateRuleArgs']]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
-        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate.
+        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateCurrentVersionArgs']]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -295,7 +295,7 @@ class _CertificateState:
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The origin of the certificate.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         """
         return pulumi.get(self, "config_type")
 
@@ -737,7 +737,7 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict']]]] certificate_revocation_list_details: The details of the certificate revocation list (CRL).
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict']]]] certificate_rules: (Updatable) An optional list of rules that control how the certificate is used and managed.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the certificate.
-        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate.
+        :param pulumi.Input[_builtins.str] config_type: The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict']]]] current_versions: The details of the certificate version. This object does not contain the certificate contents.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -825,7 +825,7 @@ class Certificate(pulumi.CustomResource):
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The origin of the certificate.
+        The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
         """
         return pulumi.get(self, "config_type")
 

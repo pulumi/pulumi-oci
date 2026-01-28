@@ -15,9 +15,17 @@ public final class AutonomousDatabaseEncryptionKeyLocationDetailArgs extends com
 
     public static final AutonomousDatabaseEncryptionKeyLocationDetailArgs Empty = new AutonomousDatabaseEncryptionKeyLocationDetailArgs();
 
+    /**
+     * Provide the key OCID of a registered AWS key.
+     * 
+     */
     @Import(name="awsEncryptionKeyId")
     private @Nullable Output<String> awsEncryptionKeyId;
 
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     public Optional<Output<String>> awsEncryptionKeyId() {
         return Optional.ofNullable(this.awsEncryptionKeyId);
     }
@@ -36,9 +44,17 @@ public final class AutonomousDatabaseEncryptionKeyLocationDetailArgs extends com
         return Optional.ofNullable(this.hsmPassword);
     }
 
+    /**
+     * Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     @Import(name="providerType")
     private @Nullable Output<String> providerType;
 
+    /**
+     * @return Use &#39;AWS&#39; for creating a new database.
+     * 
+     */
     public Optional<Output<String>> providerType() {
         return Optional.ofNullable(this.providerType);
     }
@@ -70,11 +86,23 @@ public final class AutonomousDatabaseEncryptionKeyLocationDetailArgs extends com
             $ = new AutonomousDatabaseEncryptionKeyLocationDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsEncryptionKeyId(@Nullable Output<String> awsEncryptionKeyId) {
             $.awsEncryptionKeyId = awsEncryptionKeyId;
             return this;
         }
 
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
         public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
             return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
         }
@@ -97,11 +125,23 @@ public final class AutonomousDatabaseEncryptionKeyLocationDetailArgs extends com
             return hsmPassword(Output.of(hsmPassword));
         }
 
+        /**
+         * @param providerType Use &#39;AWS&#39; for creating a new database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder providerType(@Nullable Output<String> providerType) {
             $.providerType = providerType;
             return this;
         }
 
+        /**
+         * @param providerType Use &#39;AWS&#39; for creating a new database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder providerType(String providerType) {
             return providerType(Output.of(providerType));
         }

@@ -6,6 +6,7 @@ package com.pulumi.oci.Opensearch.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfig;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint;
@@ -104,6 +105,11 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    private List<GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig> loadBalancerConfigs;
     /**
      * @return Details for the maintenance activity.
      * 
@@ -431,6 +437,13 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+     * 
+     */
+    public List<GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig> loadBalancerConfigs() {
+        return this.loadBalancerConfigs;
+    }
+    /**
      * @return Details for the maintenance activity.
      * 
      */
@@ -744,6 +757,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String id;
         private List<String> inboundClusterIds;
         private String lifecycleDetails;
+        private List<GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig> loadBalancerConfigs;
         private List<GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail> maintenanceDetails;
         private Integer masterNodeCount;
         private String masterNodeHostBareMetalShape;
@@ -807,6 +821,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.id = defaults.id;
     	      this.inboundClusterIds = defaults.inboundClusterIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.loadBalancerConfigs = defaults.loadBalancerConfigs;
     	      this.maintenanceDetails = defaults.maintenanceDetails;
     	      this.masterNodeCount = defaults.masterNodeCount;
     	      this.masterNodeHostBareMetalShape = defaults.masterNodeHostBareMetalShape;
@@ -1003,6 +1018,17 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder loadBalancerConfigs(List<GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig> loadBalancerConfigs) {
+            if (loadBalancerConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "loadBalancerConfigs");
+            }
+            this.loadBalancerConfigs = loadBalancerConfigs;
+            return this;
+        }
+        public Builder loadBalancerConfigs(GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig... loadBalancerConfigs) {
+            return loadBalancerConfigs(List.of(loadBalancerConfigs));
         }
         @CustomType.Setter
         public Builder maintenanceDetails(List<GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail> maintenanceDetails) {
@@ -1375,6 +1401,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             _resultValue.id = id;
             _resultValue.inboundClusterIds = inboundClusterIds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.loadBalancerConfigs = loadBalancerConfigs;
             _resultValue.maintenanceDetails = maintenanceDetails;
             _resultValue.masterNodeCount = masterNodeCount;
             _resultValue.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;

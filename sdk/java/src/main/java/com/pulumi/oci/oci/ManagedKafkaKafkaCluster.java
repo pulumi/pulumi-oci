@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .brokerShape(ManagedKafkaKafkaClusterBrokerShapeArgs.builder()
  *                 .nodeCount(kafkaClusterBrokerShapeNodeCount)
  *                 .ocpuCount(kafkaClusterBrokerShapeOcpuCount)
+ *                 .nodeShape(kafkaClusterBrokerShapeNodeShape)
  *                 .storageSizeInGbs(kafkaClusterBrokerShapeStorageSizeInGbs)
  *                 .build())
  *             .clusterConfigId(testConfig.id())

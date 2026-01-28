@@ -83,6 +83,10 @@ namespace Pulumi.Oci.Opensearch.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigResult> LoadBalancerConfigs;
+        /// <summary>
         /// Details for the maintenance activity.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult> MaintenanceDetails;
@@ -283,6 +287,8 @@ namespace Pulumi.Oci.Opensearch.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfigResult> loadBalancerConfigs,
+
             ImmutableArray<Outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult> maintenanceDetails,
 
             int masterNodeCount,
@@ -385,6 +391,7 @@ namespace Pulumi.Oci.Opensearch.Outputs
             Id = id;
             InboundClusterIds = inboundClusterIds;
             LifecycleDetails = lifecycleDetails;
+            LoadBalancerConfigs = loadBalancerConfigs;
             MaintenanceDetails = maintenanceDetails;
             MasterNodeCount = masterNodeCount;
             MasterNodeHostBareMetalShape = masterNodeHostBareMetalShape;

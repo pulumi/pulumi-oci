@@ -25,7 +25,19 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         public Input<string>? LeafCertificateMaxValidityDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+        /// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+        /// </summary>
+        [Input("nameConstraint")]
+        public Input<Inputs.CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs>? NameConstraint { get; set; }
+
+        /// <summary>
+        /// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+        /// </summary>
+        [Input("pathLengthConstraint")]
+        public Input<int>? PathLengthConstraint { get; set; }
+
+        /// <summary>
+        /// (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
         /// </summary>
         [Input("ruleType", required: true)]
         public Input<string> RuleType { get; set; } = null!;

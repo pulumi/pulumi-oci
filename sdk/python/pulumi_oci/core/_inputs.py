@@ -2670,6 +2670,10 @@ if not MYPY:
         """
         The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
+        compute_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
         fault_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
         The fault domains to place instances.
@@ -2693,12 +2697,14 @@ elif False:
 class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     def __init__(__self__, *,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  primary_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  primary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]]] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: The fault domains to place instances.
         :param pulumi.Input[_builtins.str] primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs']]] primary_vnic_subnets: Details about the IPv6 primary subnet.
@@ -2706,6 +2712,8 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
@@ -2726,6 +2734,18 @@ class ClusterNetworkInstancePoolPlacementConfigurationArgs:
     @availability_domain.setter
     def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
@@ -15703,6 +15723,12 @@ if not MYPY:
         """
         (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         """
+        compute_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+
+        Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+        """
         fault_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
         (Updatable) The fault domains to place instances.
@@ -15734,12 +15760,16 @@ elif False:
 class InstancePoolPlacementConfigurationArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[_builtins.str],
+                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  primary_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  primary_vnic_subnets: Optional[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs']] = None,
                  secondary_vnic_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+        :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+               
+               Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fault_domains: (Updatable) The fault domains to place instances.
                
                If you don't provide any values, the system makes a best effort to distribute instances across all fault domains based on capacity.
@@ -15754,6 +15784,8 @@ class InstancePoolPlacementConfigurationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if fault_domains is not None:
             pulumi.set(__self__, "fault_domains", fault_domains)
         if primary_subnet_id is not None:
@@ -15774,6 +15806,20 @@ class InstancePoolPlacementConfigurationArgs:
     @availability_domain.setter
     def availability_domain(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+
+        Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")

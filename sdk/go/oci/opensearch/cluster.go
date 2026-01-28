@@ -58,6 +58,8 @@ type Cluster struct {
 	InboundClusterIds pulumi.StringArrayOutput `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfig ClusterLoadBalancerConfigOutput `pulumi:"loadBalancerConfig"`
 	// (Updatable) Details for creation of maintenance details
 	MaintenanceDetails ClusterMaintenanceDetailsOutput `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -279,6 +281,8 @@ type clusterState struct {
 	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfig *ClusterLoadBalancerConfig `pulumi:"loadBalancerConfig"`
 	// (Updatable) Details for creation of maintenance details
 	MaintenanceDetails *ClusterMaintenanceDetails `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -403,6 +407,8 @@ type ClusterState struct {
 	InboundClusterIds pulumi.StringArrayInput
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfig ClusterLoadBalancerConfigPtrInput
 	// (Updatable) Details for creation of maintenance details
 	MaintenanceDetails ClusterMaintenanceDetailsPtrInput
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -525,6 +531,8 @@ type clusterArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of inbound clusters that will be queried using cross cluster search
 	InboundClusterIds []string `pulumi:"inboundClusterIds"`
+	// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfig *ClusterLoadBalancerConfig `pulumi:"loadBalancerConfig"`
 	// (Updatable) Details for creation of maintenance details
 	MaintenanceDetails *ClusterMaintenanceDetails `pulumi:"maintenanceDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -624,6 +632,8 @@ type ClusterArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// List of inbound clusters that will be queried using cross cluster search
 	InboundClusterIds pulumi.StringArrayInput
+	// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfig ClusterLoadBalancerConfigPtrInput
 	// (Updatable) Details for creation of maintenance details
 	MaintenanceDetails ClusterMaintenanceDetailsPtrInput
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -863,6 +873,11 @@ func (o ClusterOutput) InboundClusterIds() pulumi.StringArrayOutput {
 // Additional information about the current lifecycle state of the cluster.
 func (o ClusterOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+func (o ClusterOutput) LoadBalancerConfig() ClusterLoadBalancerConfigOutput {
+	return o.ApplyT(func(v *Cluster) ClusterLoadBalancerConfigOutput { return v.LoadBalancerConfig }).(ClusterLoadBalancerConfigOutput)
 }
 
 // (Updatable) Details for creation of maintenance details

@@ -14,14 +14,17 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type CertificateAuthorityCertificateAuthorityConfig struct {
+	ActionDetails *CertificateAuthorityCertificateAuthorityConfigActionDetails `pulumi:"actionDetails"`
+	// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+	CertificatePem *string `pulumi:"certificatePem"`
 	// (Updatable) The origin of the CA.
 	ConfigType string `pulumi:"configType"`
-	// The OCID of the private CA.
+	// The OCID of the private, external issuer CA.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
 	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-	Subject CertificateAuthorityCertificateAuthorityConfigSubject `pulumi:"subject"`
+	Subject *CertificateAuthorityCertificateAuthorityConfigSubject `pulumi:"subject"`
 	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validity *CertificateAuthorityCertificateAuthorityConfigValidity `pulumi:"validity"`
 	// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
@@ -40,14 +43,17 @@ type CertificateAuthorityCertificateAuthorityConfigInput interface {
 }
 
 type CertificateAuthorityCertificateAuthorityConfigArgs struct {
+	ActionDetails CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput `pulumi:"actionDetails"`
+	// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+	CertificatePem pulumi.StringPtrInput `pulumi:"certificatePem"`
 	// (Updatable) The origin of the CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
-	// The OCID of the private CA.
+	// The OCID of the private, external issuer CA.
 	IssuerCertificateAuthorityId pulumi.StringPtrInput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to sign public key certificates that the CA issues.
 	SigningAlgorithm pulumi.StringPtrInput `pulumi:"signingAlgorithm"`
 	// The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-	Subject CertificateAuthorityCertificateAuthorityConfigSubjectInput `pulumi:"subject"`
+	Subject CertificateAuthorityCertificateAuthorityConfigSubjectPtrInput `pulumi:"subject"`
 	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validity CertificateAuthorityCertificateAuthorityConfigValidityPtrInput `pulumi:"validity"`
 	// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
@@ -131,12 +137,23 @@ func (o CertificateAuthorityCertificateAuthorityConfigOutput) ToCertificateAutho
 	}).(CertificateAuthorityCertificateAuthorityConfigPtrOutput)
 }
 
+func (o CertificateAuthorityCertificateAuthorityConfigOutput) ActionDetails() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) *CertificateAuthorityCertificateAuthorityConfigActionDetails {
+		return v.ActionDetails
+	}).(CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput)
+}
+
+// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+func (o CertificateAuthorityCertificateAuthorityConfigOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) *string { return v.CertificatePem }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The origin of the CA.
 func (o CertificateAuthorityCertificateAuthorityConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
-// The OCID of the private CA.
+// The OCID of the private, external issuer CA.
 func (o CertificateAuthorityCertificateAuthorityConfigOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) *string { return v.IssuerCertificateAuthorityId }).(pulumi.StringPtrOutput)
 }
@@ -147,10 +164,10 @@ func (o CertificateAuthorityCertificateAuthorityConfigOutput) SigningAlgorithm()
 }
 
 // The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
-func (o CertificateAuthorityCertificateAuthorityConfigOutput) Subject() CertificateAuthorityCertificateAuthorityConfigSubjectOutput {
-	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) CertificateAuthorityCertificateAuthorityConfigSubject {
+func (o CertificateAuthorityCertificateAuthorityConfigOutput) Subject() CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfig) *CertificateAuthorityCertificateAuthorityConfigSubject {
 		return v.Subject
-	}).(CertificateAuthorityCertificateAuthorityConfigSubjectOutput)
+	}).(CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput)
 }
 
 // (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
@@ -189,6 +206,25 @@ func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) Elem() Certific
 	}).(CertificateAuthorityCertificateAuthorityConfigOutput)
 }
 
+func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ActionDetails() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfig) *CertificateAuthorityCertificateAuthorityConfigActionDetails {
+		if v == nil {
+			return nil
+		}
+		return v.ActionDetails
+	}).(CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput)
+}
+
+// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificatePem
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The origin of the CA.
 func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfig) *string {
@@ -199,7 +235,7 @@ func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) ConfigType() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the private CA.
+// The OCID of the private, external issuer CA.
 func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) IssuerCertificateAuthorityId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfig) *string {
 		if v == nil {
@@ -225,7 +261,7 @@ func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) Subject() Certi
 		if v == nil {
 			return nil
 		}
-		return &v.Subject
+		return v.Subject
 	}).(CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput)
 }
 
@@ -246,6 +282,158 @@ func (o CertificateAuthorityCertificateAuthorityConfigPtrOutput) VersionName() p
 			return nil
 		}
 		return v.VersionName
+	}).(pulumi.StringPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityConfigActionDetails struct {
+	ActionType *string `pulumi:"actionType"`
+	// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+	CertificatePem *string `pulumi:"certificatePem"`
+}
+
+// CertificateAuthorityCertificateAuthorityConfigActionDetailsInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs and CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigActionDetailsInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs{...}
+type CertificateAuthorityCertificateAuthorityConfigActionDetailsInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput
+	ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput
+}
+
+type CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs struct {
+	ActionType pulumi.StringPtrInput `pulumi:"actionType"`
+	// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+	CertificatePem pulumi.StringPtrInput `pulumi:"certificatePem"`
+}
+
+func (CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigActionDetails)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput)
+}
+
+func (i CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput).ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(ctx)
+}
+
+// CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput is an input type that accepts CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs, CertificateAuthorityCertificateAuthorityConfigActionDetailsPtr and CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput` via:
+//
+//	        CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput
+	ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput
+}
+
+type certificateAuthorityCertificateAuthorityConfigActionDetailsPtrType CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs
+
+func CertificateAuthorityCertificateAuthorityConfigActionDetailsPtr(v *CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput {
+	return (*certificateAuthorityCertificateAuthorityConfigActionDetailsPtrType)(v)
+}
+
+func (*certificateAuthorityCertificateAuthorityConfigActionDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertificateAuthorityCertificateAuthorityConfigActionDetails)(nil)).Elem()
+}
+
+func (i *certificateAuthorityCertificateAuthorityConfigActionDetailsPtrType) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *certificateAuthorityCertificateAuthorityConfigActionDetailsPtrType) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigActionDetails)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o.ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateAuthorityConfigActionDetails) *CertificateAuthorityCertificateAuthorityConfigActionDetails {
+		return &v
+	}).(CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput)
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfigActionDetails) *string { return v.ActionType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityConfigActionDetails) *string { return v.CertificatePem }).(pulumi.StringPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertificateAuthorityCertificateAuthorityConfigActionDetails)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput() CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) ToCertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) Elem() CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfigActionDetails) CertificateAuthorityCertificateAuthorityConfigActionDetails {
+		if v != nil {
+			return *v
+		}
+		var ret CertificateAuthorityCertificateAuthorityConfigActionDetails
+		return ret
+	}).(CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput)
+}
+
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) ActionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfigActionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ActionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The externally signed certificate (in PEM format) for the imported root CA.
+func (o CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput) CertificatePem() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityConfigActionDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CertificatePem
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -855,7 +1043,11 @@ type CertificateAuthorityCertificateAuthorityRule struct {
 	CertificateAuthorityMaxValidityDuration *string `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration *string `pulumi:"leafCertificateMaxValidityDuration"`
-	// (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraint *CertificateAuthorityCertificateAuthorityRuleNameConstraint `pulumi:"nameConstraint"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+	PathLengthConstraint *int `pulumi:"pathLengthConstraint"`
+	// (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -875,7 +1067,11 @@ type CertificateAuthorityCertificateAuthorityRuleArgs struct {
 	CertificateAuthorityMaxValidityDuration pulumi.StringPtrInput `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration pulumi.StringPtrInput `pulumi:"leafCertificateMaxValidityDuration"`
-	// (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraint CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput `pulumi:"nameConstraint"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+	PathLengthConstraint pulumi.IntPtrInput `pulumi:"pathLengthConstraint"`
+	// (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -944,7 +1140,19 @@ func (o CertificateAuthorityCertificateAuthorityRuleOutput) LeafCertificateMaxVa
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+func (o CertificateAuthorityCertificateAuthorityRuleOutput) NameConstraint() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRule) *CertificateAuthorityCertificateAuthorityRuleNameConstraint {
+		return v.NameConstraint
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput)
+}
+
+// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified. Path length constraints cannot be updated.
+func (o CertificateAuthorityCertificateAuthorityRuleOutput) PathLengthConstraint() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRule) *int { return v.PathLengthConstraint }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 func (o CertificateAuthorityCertificateAuthorityRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
@@ -967,6 +1175,386 @@ func (o CertificateAuthorityCertificateAuthorityRuleArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateAuthorityCertificateAuthorityRule {
 		return vs[0].([]CertificateAuthorityCertificateAuthorityRule)[vs[1].(int)]
 	}).(CertificateAuthorityCertificateAuthorityRuleOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraint struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees []CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees []CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree `pulumi:"permittedSubtrees"`
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs and CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{...}
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput `pulumi:"permittedSubtrees"`
+}
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput)
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput).ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(ctx)
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs, CertificateAuthorityCertificateAuthorityRuleNameConstraintPtr and CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput` via:
+//
+//	        CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{...}
+//
+//	or:
+//
+//	        nil
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput
+}
+
+type certificateAuthorityCertificateAuthorityRuleNameConstraintPtrType CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs
+
+func CertificateAuthorityCertificateAuthorityRuleNameConstraintPtr(v *CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput {
+	return (*certificateAuthorityCertificateAuthorityRuleNameConstraintPtrType)(v)
+}
+
+func (*certificateAuthorityCertificateAuthorityRuleNameConstraintPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i *certificateAuthorityCertificateAuthorityRuleNameConstraintPtrType) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(context.Background())
+}
+
+func (i *certificateAuthorityCertificateAuthorityRuleNameConstraintPtrType) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return o.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(context.Background())
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CertificateAuthorityCertificateAuthorityRuleNameConstraint) *CertificateAuthorityCertificateAuthorityRuleNameConstraint {
+		return &v
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput)
+}
+
+// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ExcludedSubtrees() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraint) []CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return v.ExcludedSubtrees
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) PermittedSubtrees() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraint) []CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return v.PermittedSubtrees
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) Elem() CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityRuleNameConstraint) CertificateAuthorityCertificateAuthorityRuleNameConstraint {
+		if v != nil {
+			return *v
+		}
+		var ret CertificateAuthorityCertificateAuthorityRuleNameConstraint
+		return ret
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput)
+}
+
+// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) ExcludedSubtrees() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityRuleNameConstraint) []CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludedSubtrees
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput) PermittedSubtrees() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o.ApplyT(func(v *CertificateAuthorityCertificateAuthorityRuleNameConstraint) []CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		if v == nil {
+			return nil
+		}
+		return v.PermittedSubtrees
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree struct {
+	// The type of name constraint.
+	Type *string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value *string `pulumi:"value"`
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs and CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...}
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray and CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{ CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...} }
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray []CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree) *string {
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return vs[0].([]CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)[vs[1].(int)]
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree struct {
+	// The type of name constraint.
+	Type *string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value *string `pulumi:"value"`
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs and CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...}
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
+}
+
+// CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput is an input type that accepts CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray and CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput values.
+// You can construct a concrete instance of `CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput` via:
+//
+//	CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{ CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...} }
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+	ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray []CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return i.ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree) *string {
+		return v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) Index(i pulumi.IntInput) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return vs[0].([]CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)[vs[1].(int)]
+	}).(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
 }
 
 type CertificateAuthorityCertificateRevocationListDetails struct {
@@ -1946,7 +2534,7 @@ func (o CertificateAuthoritySubjectArrayOutput) Index(i pulumi.IntInput) Certifi
 type CertificateCertificateConfig struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType *string `pulumi:"certificateProfileType"`
-	// (Updatable) The origin of the certificate.
+	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) The certificate signing request (in PEM format).
 	CsrPem *string `pulumi:"csrPem"`
@@ -1980,7 +2568,7 @@ type CertificateCertificateConfigInput interface {
 type CertificateCertificateConfigArgs struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringPtrInput `pulumi:"certificateProfileType"`
-	// (Updatable) The origin of the certificate.
+	// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// (Updatable) The certificate signing request (in PEM format).
 	CsrPem pulumi.StringPtrInput `pulumi:"csrPem"`
@@ -2082,7 +2670,7 @@ func (o CertificateCertificateConfigOutput) CertificateProfileType() pulumi.Stri
 	return o.ApplyT(func(v CertificateCertificateConfig) *string { return v.CertificateProfileType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The origin of the certificate.
+// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o CertificateCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v CertificateCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -2163,7 +2751,7 @@ func (o CertificateCertificateConfigPtrOutput) CertificateProfileType() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The origin of the certificate.
+// (Updatable) The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o CertificateCertificateConfigPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CertificateCertificateConfig) *string {
 		if v == nil {
@@ -4905,6 +5493,8 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItem struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description string `pulumi:"description"`
+	// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+	ExternalKeyDescription string `pulumi:"externalKeyDescription"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the CA.
@@ -4956,6 +5546,8 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs struct {
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description pulumi.StringInput `pulumi:"description"`
+	// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+	ExternalKeyDescription pulumi.StringInput `pulumi:"externalKeyDescription"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the CA.
@@ -5080,6 +5672,13 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Descr
 	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// For externally managed CAs, a description of the externally managed key. Avoid entering confidential information.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) ExternalKeyDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) string {
+		return v.ExternalKeyDescription
+	}).(pulumi.StringOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) map[string]string {
@@ -5162,6 +5761,8 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput) 
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig struct {
+	ActionDetails  []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail `pulumi:"actionDetails"`
+	CertificatePem string                                                                                              `pulumi:"certificatePem"`
 	// The origin of the CA.
 	ConfigType string `pulumi:"configType"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -5188,6 +5789,8 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs struct {
+	ActionDetails  GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayInput `pulumi:"actionDetails"`
+	CertificatePem pulumi.StringInput                                                                                          `pulumi:"certificatePem"`
 	// The origin of the CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -5253,6 +5856,18 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return o
 }
 
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ActionDetails() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail {
+		return v.ActionDetails
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput)
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
+		return v.CertificatePem
+	}).(pulumi.StringOutput)
+}
+
 // The origin of the CA.
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig) string {
@@ -5313,6 +5928,110 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfig)[vs[1].(int)]
 	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail struct {
+	ActionType     string `pulumi:"actionType"`
+	CertificatePem string `pulumi:"certificatePem"`
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs{...}
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs struct {
+	ActionType     pulumi.StringInput `pulumi:"actionType"`
+	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
+}
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput)
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs{...} }
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailInput
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail) string {
+		return v.ActionType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail) string {
+		return v.CertificatePem
+	}).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail {
+		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetail)[vs[1].(int)]
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubject struct {
@@ -5705,7 +6424,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 	CertificateAuthorityMaxValidityDuration string `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration string `pulumi:"leafCertificateMaxValidityDuration"`
-	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraints []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint `pulumi:"nameConstraints"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+	PathLengthConstraint int `pulumi:"pathLengthConstraint"`
+	// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -5725,7 +6448,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAutho
 	CertificateAuthorityMaxValidityDuration pulumi.StringInput `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration pulumi.StringInput `pulumi:"leafCertificateMaxValidityDuration"`
-	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraints GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayInput `pulumi:"nameConstraints"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+	PathLengthConstraint pulumi.IntInput `pulumi:"pathLengthConstraint"`
+	// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -5794,7 +6521,21 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	}).(pulumi.StringOutput)
 }
 
-// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) NameConstraints() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint {
+		return v.NameConstraints
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput)
+}
+
+// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) PathLengthConstraint() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) int {
+		return v.PathLengthConstraint
+	}).(pulumi.IntOutput)
+}
+
+// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule) string {
 		return v.RuleType
@@ -5819,6 +6560,336 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule {
 		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRule)[vs[1].(int)]
 	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree `pulumi:"permittedSubtrees"`
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs{...}
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput `pulumi:"permittedSubtrees"`
+}
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput)
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs{...} }
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintInput
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput) ExcludedSubtrees() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint) []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return v.ExcludedSubtrees
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput) PermittedSubtrees() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint) []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return v.PermittedSubtrees
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint {
+		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraint)[vs[1].(int)]
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree struct {
+	// The type of name constraint.
+	Type string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...}
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...} }
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeInput
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtree)[vs[1].(int)]
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree struct {
+	// The type of name constraint.
+	Type string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...}
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
+}
+
+// GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput is an input type that accepts GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray and GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput` via:
+//
+//	GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{ GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...} }
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+	ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeInput
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return i.ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToGetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return vs[0].([]GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtree)[vs[1].(int)]
+	}).(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
 }
 
 type GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail struct {
@@ -6837,6 +7908,8 @@ func (o GetCertificateAuthoritiesFilterArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfig struct {
+	ActionDetails  []GetCertificateAuthorityCertificateAuthorityConfigActionDetail `pulumi:"actionDetails"`
+	CertificatePem string                                                          `pulumi:"certificatePem"`
 	// The origin of the CA.
 	ConfigType string `pulumi:"configType"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -6863,6 +7936,8 @@ type GetCertificateAuthorityCertificateAuthorityConfigInput interface {
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfigArgs struct {
+	ActionDetails  GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayInput `pulumi:"actionDetails"`
+	CertificatePem pulumi.StringInput                                                      `pulumi:"certificatePem"`
 	// The origin of the CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -6928,6 +8003,16 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ToGetCertificat
 	return o
 }
 
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ActionDetails() GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) []GetCertificateAuthorityCertificateAuthorityConfigActionDetail {
+		return v.ActionDetails
+	}).(GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput)
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string { return v.CertificatePem }).(pulumi.StringOutput)
+}
+
 // The origin of the CA.
 func (o GetCertificateAuthorityCertificateAuthorityConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfig) string { return v.ConfigType }).(pulumi.StringOutput)
@@ -6982,6 +8067,106 @@ func (o GetCertificateAuthorityCertificateAuthorityConfigArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityConfig {
 		return vs[0].([]GetCertificateAuthorityCertificateAuthorityConfig)[vs[1].(int)]
 	}).(GetCertificateAuthorityCertificateAuthorityConfigOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetail struct {
+	ActionType     string `pulumi:"actionType"`
+	CertificatePem string `pulumi:"certificatePem"`
+}
+
+// GetCertificateAuthorityCertificateAuthorityConfigActionDetailInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs and GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigActionDetailInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs{...}
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput
+	ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs struct {
+	ActionType     pulumi.StringInput `pulumi:"actionType"`
+	CertificatePem pulumi.StringInput `pulumi:"certificatePem"`
+}
+
+func (GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput)
+}
+
+// GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray and GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray{ GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs{...} }
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput
+	ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray []GetCertificateAuthorityCertificateAuthorityConfigActionDetailInput
+
+func (GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput) ActionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigActionDetail) string { return v.ActionType }).(pulumi.StringOutput)
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput) CertificatePem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityConfigActionDetail) string { return v.CertificatePem }).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityConfigActionDetail)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput() GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput) ToGetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityConfigActionDetail {
+		return vs[0].([]GetCertificateAuthorityCertificateAuthorityConfigActionDetail)[vs[1].(int)]
+	}).(GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput)
 }
 
 type GetCertificateAuthorityCertificateAuthorityConfigSubject struct {
@@ -7342,7 +8527,11 @@ type GetCertificateAuthorityCertificateAuthorityRule struct {
 	CertificateAuthorityMaxValidityDuration string `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration string `pulumi:"leafCertificateMaxValidityDuration"`
-	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraints []GetCertificateAuthorityCertificateAuthorityRuleNameConstraint `pulumi:"nameConstraints"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+	PathLengthConstraint int `pulumi:"pathLengthConstraint"`
+	// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -7362,7 +8551,11 @@ type GetCertificateAuthorityCertificateAuthorityRuleArgs struct {
 	CertificateAuthorityMaxValidityDuration pulumi.StringInput `pulumi:"certificateAuthorityMaxValidityDuration"`
 	// A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
 	LeafCertificateMaxValidityDuration pulumi.StringInput `pulumi:"leafCertificateMaxValidityDuration"`
-	// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+	// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+	NameConstraints GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayInput `pulumi:"nameConstraints"`
+	// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+	PathLengthConstraint pulumi.IntInput `pulumi:"pathLengthConstraint"`
+	// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -7431,7 +8624,19 @@ func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) LeafCertificateMa
 	}).(pulumi.StringOutput)
 }
 
-// The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
+// A constraint that specifies permitted and excluded namespaces for the hierarchical name forms in certificates that any CA in the certificate chain issues. You can define name constraints on a directory name, DNS address, or IP address. If you have a name constraint, you must define at least one permitted namespace or one excluded namespace. Name constraints cannot be updated.
+func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) NameConstraints() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) []GetCertificateAuthorityCertificateAuthorityRuleNameConstraint {
+		return v.NameConstraints
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput)
+}
+
+// The number of levels of descendants that this certificate authority (CA) can issue. When set to zero, the CA can issue only leaf certificates. There is no limit if the constraint isn't specified.  Path length constraints cannot be updated.
+func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) PathLengthConstraint() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) int { return v.PathLengthConstraint }).(pulumi.IntOutput)
+}
+
+// The type of rule, whether an issuance rule that defines the constraints which restricts the hierarchical name forms in certificates or number of levels of descendants that any CA in the certificate chain issues or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid.
 func (o GetCertificateAuthorityCertificateAuthorityRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
@@ -7454,6 +8659,336 @@ func (o GetCertificateAuthorityCertificateAuthorityRuleArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityRule {
 		return vs[0].([]GetCertificateAuthorityCertificateAuthorityRule)[vs[1].(int)]
 	}).(GetCertificateAuthorityCertificateAuthorityRuleOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraint struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree `pulumi:"permittedSubtrees"`
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{...}
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs struct {
+	// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+	ExcludedSubtrees GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput `pulumi:"excludedSubtrees"`
+	// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+	PermittedSubtrees GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput `pulumi:"permittedSubtrees"`
+}
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput)
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray{ GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{...} }
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintInput
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return o
+}
+
+// A list that contains excluded (or prohibited) namespaces. If you have a name constraint with no permitted namespaces, you must specify at least one excluded namespace.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) ExcludedSubtrees() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraint) []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return v.ExcludedSubtrees
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+// A list that contains permitted namespaces. If you have a name constraint with no excluded namespaces, you must specify at least one permitted namespace.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput) PermittedSubtrees() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraint) []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return v.PermittedSubtrees
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraint)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityRuleNameConstraint {
+		return vs[0].([]GetCertificateAuthorityCertificateAuthorityRuleNameConstraint)[vs[1].(int)]
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree struct {
+	// The type of name constraint.
+	Type string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...}
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{ GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{...} }
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree {
+		return vs[0].([]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtree)[vs[1].(int)]
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree struct {
+	// The type of name constraint.
+	Type string `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value string `pulumi:"value"`
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...}
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs struct {
+	// The type of name constraint.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Name restrictions for the corresponding type of name constraint.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
+}
+
+// GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput is an input type that accepts GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray and GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput values.
+// You can construct a concrete instance of `GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput` via:
+//
+//	GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{ GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{...} }
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput interface {
+	pulumi.Input
+
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+	ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray []GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return i.ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(context.Background())
+}
+
+func (i GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return o
+}
+
+// The type of name constraint.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Name restrictions for the corresponding type of name constraint.
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)(nil)).Elem()
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput() GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) ToGetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutputWithContext(ctx context.Context) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput {
+	return o
+}
+
+func (o GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput) Index(i pulumi.IntInput) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree {
+		return vs[0].([]GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtree)[vs[1].(int)]
+	}).(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput)
 }
 
 type GetCertificateAuthorityCertificateRevocationListDetail struct {
@@ -9258,7 +10793,7 @@ func (o GetCertificateAuthorityVersionsFilterArrayOutput) Index(i pulumi.IntInpu
 type GetCertificateCertificateConfig struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType string `pulumi:"certificateProfileType"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType string `pulumi:"configType"`
 	CsrPem     string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
@@ -9291,7 +10826,7 @@ type GetCertificateCertificateConfigInput interface {
 type GetCertificateCertificateConfigArgs struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
@@ -9366,7 +10901,7 @@ func (o GetCertificateCertificateConfigOutput) CertificateProfileType() pulumi.S
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.CertificateProfileType }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o GetCertificateCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificateCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -12131,7 +13666,7 @@ type GetCertificatesCertificateCollectionItem struct {
 	CertificateRules []GetCertificatesCertificateCollectionItemCertificateRule `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType string `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificatesCertificateCollectionItemCurrentVersion `pulumi:"currentVersions"`
@@ -12184,7 +13719,7 @@ type GetCertificatesCertificateCollectionItemArgs struct {
 	CertificateRules GetCertificatesCertificateCollectionItemCertificateRuleArrayInput `pulumi:"certificateRules"`
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions GetCertificatesCertificateCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
@@ -12297,7 +13832,7 @@ func (o GetCertificatesCertificateCollectionItemOutput) CompartmentId() pulumi.S
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The origin of the certificate.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o GetCertificatesCertificateCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -12399,7 +13934,7 @@ func (o GetCertificatesCertificateCollectionItemArrayOutput) Index(i pulumi.IntI
 type GetCertificatesCertificateCollectionItemCertificateConfig struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType string `pulumi:"certificateProfileType"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType string `pulumi:"configType"`
 	CsrPem     string `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -12432,7 +13967,7 @@ type GetCertificatesCertificateCollectionItemCertificateConfigInput interface {
 type GetCertificatesCertificateCollectionItemCertificateConfigArgs struct {
 	// The name of the profile used to create the certificate, which depends on the type of certificate you need.
 	CertificateProfileType pulumi.StringInput `pulumi:"certificateProfileType"`
-	// The origin of the certificate.
+	// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	CsrPem     pulumi.StringInput `pulumi:"csrPem"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -12509,7 +14044,7 @@ func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) Certifi
 	}).(pulumi.StringOutput)
 }
 
-// The origin of the certificate.
+// The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
 func (o GetCertificatesCertificateCollectionItemCertificateConfigOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCertificatesCertificateCollectionItemCertificateConfig) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -14274,12 +15809,20 @@ func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificat
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigPtrInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigActionDetailsInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigActionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigSubjectInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigSubjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigSubjectPtrInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigSubjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigValidityInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigValidityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityConfigValidityPtrInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityConfigValidityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleArrayInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput)(nil)).Elem(), CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateRevocationListDetailsInput)(nil)).Elem(), CertificateAuthorityCertificateRevocationListDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateRevocationListDetailsPtrInput)(nil)).Elem(), CertificateAuthorityCertificateRevocationListDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigInput)(nil)).Elem(), CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs{})
@@ -14334,12 +15877,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigInput)(nil)).Elem(), GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs{})
@@ -14356,12 +15907,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthoritiesFilterArrayInput)(nil)).Elem(), GetCertificateAuthoritiesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigActionDetailInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigActionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigActionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigSubjectInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigSubjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigSubjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigValidityInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigValidityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityConfigValidityArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityConfigValidityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateRevocationListDetailInput)(nil)).Elem(), GetCertificateAuthorityCertificateRevocationListDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateRevocationListDetailArrayInput)(nil)).Elem(), GetCertificateAuthorityCertificateRevocationListDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigInput)(nil)).Elem(), GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs{})
@@ -14464,12 +16023,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCertificatesFilterArrayInput)(nil)).Elem(), GetCertificatesFilterArray{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigPtrOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigActionDetailsOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigActionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigSubjectOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigSubjectPtrOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigValidityOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityConfigValidityPtrOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleArrayOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintPtrOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput{})
+	pulumi.RegisterOutputType(CertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateRevocationListDetailsOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateRevocationListDetailsPtrOutput{})
 	pulumi.RegisterOutputType(CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigOutput{})
@@ -14524,12 +16091,20 @@ func init() {
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigActionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigOutput{})
@@ -14546,12 +16121,20 @@ func init() {
 	pulumi.RegisterOutputType(GetCertificateAuthoritiesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigActionDetailOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigActionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigSubjectOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigSubjectArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigValidityOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityConfigValidityArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintExcludedSubtreeArrayOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeOutput{})
+	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateAuthorityRuleNameConstraintPermittedSubtreeArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateRevocationListDetailOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateRevocationListDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigOutput{})

@@ -102,6 +102,8 @@ type GetOpensearchClusterResult struct {
 	InboundClusterIds []string `pulumi:"inboundClusterIds"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+	LoadBalancerConfigs []GetOpensearchClusterLoadBalancerConfig `pulumi:"loadBalancerConfigs"`
 	// Details for the maintenance activity.
 	MaintenanceDetails []GetOpensearchClusterMaintenanceDetail `pulumi:"maintenanceDetails"`
 	// The number of master nodes configured for the cluster.
@@ -310,6 +312,13 @@ func (o GetOpensearchClusterResultOutput) InboundClusterIds() pulumi.StringArray
 // Additional information about the current lifecycle state of the cluster.
 func (o GetOpensearchClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// This config is used to choose the load balancer service and bandwidth for OpenSearch and OpenDashboard load balancers.
+func (o GetOpensearchClusterResultOutput) LoadBalancerConfigs() GetOpensearchClusterLoadBalancerConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterLoadBalancerConfig {
+		return v.LoadBalancerConfigs
+	}).(GetOpensearchClusterLoadBalancerConfigArrayOutput)
 }
 
 // Details for the maintenance activity.

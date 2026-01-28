@@ -13,6 +13,676 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type QueueCapability struct {
+	// (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+	IsPrimaryConsumerGroupEnabled *bool `pulumi:"isPrimaryConsumerGroupEnabled"`
+	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	PrimaryConsumerGroupDeadLetterQueueDeliveryCount *int `pulumi:"primaryConsumerGroupDeadLetterQueueDeliveryCount"`
+	// (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+	PrimaryConsumerGroupDisplayName *string `pulumi:"primaryConsumerGroupDisplayName"`
+	// The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+	PrimaryConsumerGroupFilter *string `pulumi:"primaryConsumerGroupFilter"`
+	// (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+	Type *string `pulumi:"type"`
+}
+
+// QueueCapabilityInput is an input type that accepts QueueCapabilityArgs and QueueCapabilityOutput values.
+// You can construct a concrete instance of `QueueCapabilityInput` via:
+//
+//	QueueCapabilityArgs{...}
+type QueueCapabilityInput interface {
+	pulumi.Input
+
+	ToQueueCapabilityOutput() QueueCapabilityOutput
+	ToQueueCapabilityOutputWithContext(context.Context) QueueCapabilityOutput
+}
+
+type QueueCapabilityArgs struct {
+	// (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+	IsPrimaryConsumerGroupEnabled pulumi.BoolPtrInput `pulumi:"isPrimaryConsumerGroupEnabled"`
+	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	PrimaryConsumerGroupDeadLetterQueueDeliveryCount pulumi.IntPtrInput `pulumi:"primaryConsumerGroupDeadLetterQueueDeliveryCount"`
+	// (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+	PrimaryConsumerGroupDisplayName pulumi.StringPtrInput `pulumi:"primaryConsumerGroupDisplayName"`
+	// The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+	PrimaryConsumerGroupFilter pulumi.StringPtrInput `pulumi:"primaryConsumerGroupFilter"`
+	// (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (QueueCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*QueueCapability)(nil)).Elem()
+}
+
+func (i QueueCapabilityArgs) ToQueueCapabilityOutput() QueueCapabilityOutput {
+	return i.ToQueueCapabilityOutputWithContext(context.Background())
+}
+
+func (i QueueCapabilityArgs) ToQueueCapabilityOutputWithContext(ctx context.Context) QueueCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(QueueCapabilityOutput)
+}
+
+// QueueCapabilityArrayInput is an input type that accepts QueueCapabilityArray and QueueCapabilityArrayOutput values.
+// You can construct a concrete instance of `QueueCapabilityArrayInput` via:
+//
+//	QueueCapabilityArray{ QueueCapabilityArgs{...} }
+type QueueCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToQueueCapabilityArrayOutput() QueueCapabilityArrayOutput
+	ToQueueCapabilityArrayOutputWithContext(context.Context) QueueCapabilityArrayOutput
+}
+
+type QueueCapabilityArray []QueueCapabilityInput
+
+func (QueueCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]QueueCapability)(nil)).Elem()
+}
+
+func (i QueueCapabilityArray) ToQueueCapabilityArrayOutput() QueueCapabilityArrayOutput {
+	return i.ToQueueCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i QueueCapabilityArray) ToQueueCapabilityArrayOutputWithContext(ctx context.Context) QueueCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(QueueCapabilityArrayOutput)
+}
+
+type QueueCapabilityOutput struct{ *pulumi.OutputState }
+
+func (QueueCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*QueueCapability)(nil)).Elem()
+}
+
+func (o QueueCapabilityOutput) ToQueueCapabilityOutput() QueueCapabilityOutput {
+	return o
+}
+
+func (o QueueCapabilityOutput) ToQueueCapabilityOutputWithContext(ctx context.Context) QueueCapabilityOutput {
+	return o
+}
+
+// (Updatable) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+func (o QueueCapabilityOutput) IsPrimaryConsumerGroupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v QueueCapability) *bool { return v.IsPrimaryConsumerGroupEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+func (o QueueCapabilityOutput) PrimaryConsumerGroupDeadLetterQueueDeliveryCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v QueueCapability) *int { return v.PrimaryConsumerGroupDeadLetterQueueDeliveryCount }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+func (o QueueCapabilityOutput) PrimaryConsumerGroupDisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QueueCapability) *string { return v.PrimaryConsumerGroupDisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+func (o QueueCapabilityOutput) PrimaryConsumerGroupFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QueueCapability) *string { return v.PrimaryConsumerGroupFilter }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+func (o QueueCapabilityOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v QueueCapability) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type QueueCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (QueueCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]QueueCapability)(nil)).Elem()
+}
+
+func (o QueueCapabilityArrayOutput) ToQueueCapabilityArrayOutput() QueueCapabilityArrayOutput {
+	return o
+}
+
+func (o QueueCapabilityArrayOutput) ToQueueCapabilityArrayOutputWithContext(ctx context.Context) QueueCapabilityArrayOutput {
+	return o
+}
+
+func (o QueueCapabilityArrayOutput) Index(i pulumi.IntInput) QueueCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) QueueCapability {
+		return vs[0].([]QueueCapability)[vs[1].(int)]
+	}).(QueueCapabilityOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollection struct {
+	Items []GetConsumerGroupsConsumerGroupCollectionItem `pulumi:"items"`
+}
+
+// GetConsumerGroupsConsumerGroupCollectionInput is an input type that accepts GetConsumerGroupsConsumerGroupCollectionArgs and GetConsumerGroupsConsumerGroupCollectionOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsConsumerGroupCollectionInput` via:
+//
+//	GetConsumerGroupsConsumerGroupCollectionArgs{...}
+type GetConsumerGroupsConsumerGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsConsumerGroupCollectionOutput() GetConsumerGroupsConsumerGroupCollectionOutput
+	ToGetConsumerGroupsConsumerGroupCollectionOutputWithContext(context.Context) GetConsumerGroupsConsumerGroupCollectionOutput
+}
+
+type GetConsumerGroupsConsumerGroupCollectionArgs struct {
+	Items GetConsumerGroupsConsumerGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConsumerGroupsConsumerGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollection)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionArgs) ToGetConsumerGroupsConsumerGroupCollectionOutput() GetConsumerGroupsConsumerGroupCollectionOutput {
+	return i.ToGetConsumerGroupsConsumerGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionArgs) ToGetConsumerGroupsConsumerGroupCollectionOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsConsumerGroupCollectionOutput)
+}
+
+// GetConsumerGroupsConsumerGroupCollectionArrayInput is an input type that accepts GetConsumerGroupsConsumerGroupCollectionArray and GetConsumerGroupsConsumerGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsConsumerGroupCollectionArrayInput` via:
+//
+//	GetConsumerGroupsConsumerGroupCollectionArray{ GetConsumerGroupsConsumerGroupCollectionArgs{...} }
+type GetConsumerGroupsConsumerGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsConsumerGroupCollectionArrayOutput() GetConsumerGroupsConsumerGroupCollectionArrayOutput
+	ToGetConsumerGroupsConsumerGroupCollectionArrayOutputWithContext(context.Context) GetConsumerGroupsConsumerGroupCollectionArrayOutput
+}
+
+type GetConsumerGroupsConsumerGroupCollectionArray []GetConsumerGroupsConsumerGroupCollectionInput
+
+func (GetConsumerGroupsConsumerGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsConsumerGroupCollection)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionArray) ToGetConsumerGroupsConsumerGroupCollectionArrayOutput() GetConsumerGroupsConsumerGroupCollectionArrayOutput {
+	return i.ToGetConsumerGroupsConsumerGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionArray) ToGetConsumerGroupsConsumerGroupCollectionArrayOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsConsumerGroupCollectionArrayOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsConsumerGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollection)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionOutput) ToGetConsumerGroupsConsumerGroupCollectionOutput() GetConsumerGroupsConsumerGroupCollectionOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionOutput) ToGetConsumerGroupsConsumerGroupCollectionOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionOutput) Items() GetConsumerGroupsConsumerGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollection) []GetConsumerGroupsConsumerGroupCollectionItem {
+		return v.Items
+	}).(GetConsumerGroupsConsumerGroupCollectionItemArrayOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsConsumerGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsConsumerGroupCollection)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionArrayOutput) ToGetConsumerGroupsConsumerGroupCollectionArrayOutput() GetConsumerGroupsConsumerGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionArrayOutput) ToGetConsumerGroupsConsumerGroupCollectionArrayOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetConsumerGroupsConsumerGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConsumerGroupsConsumerGroupCollection {
+		return vs[0].([]GetConsumerGroupsConsumerGroupCollection)[vs[1].(int)]
+	}).(GetConsumerGroupsConsumerGroupCollectionOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollectionItem struct {
+	// The filter used by the consumer group. Only messages matching the filter will be available by consumers of the consumer group. An empty value means that all messages will be available in the group. The primary consumer group cannot have any filter.
+	ConsumerGroupFilter string `pulumi:"consumerGroupFilter"`
+	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	DeadLetterQueueDeliveryCount int `pulumi:"deadLetterQueueDeliveryCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The unique consumer group identifier.
+	Id        string `pulumi:"id"`
+	IsEnabled bool   `pulumi:"isEnabled"`
+	// Any additional details about the current state of the consumer group.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The unique queue identifier.
+	QueueId string `pulumi:"queueId"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time that the consumer group was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time that the consumer group was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetConsumerGroupsConsumerGroupCollectionItemInput is an input type that accepts GetConsumerGroupsConsumerGroupCollectionItemArgs and GetConsumerGroupsConsumerGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsConsumerGroupCollectionItemInput` via:
+//
+//	GetConsumerGroupsConsumerGroupCollectionItemArgs{...}
+type GetConsumerGroupsConsumerGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsConsumerGroupCollectionItemOutput() GetConsumerGroupsConsumerGroupCollectionItemOutput
+	ToGetConsumerGroupsConsumerGroupCollectionItemOutputWithContext(context.Context) GetConsumerGroupsConsumerGroupCollectionItemOutput
+}
+
+type GetConsumerGroupsConsumerGroupCollectionItemArgs struct {
+	// The filter used by the consumer group. Only messages matching the filter will be available by consumers of the consumer group. An empty value means that all messages will be available in the group. The primary consumer group cannot have any filter.
+	ConsumerGroupFilter pulumi.StringInput `pulumi:"consumerGroupFilter"`
+	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	DeadLetterQueueDeliveryCount pulumi.IntInput `pulumi:"deadLetterQueueDeliveryCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The unique consumer group identifier.
+	Id        pulumi.StringInput `pulumi:"id"`
+	IsEnabled pulumi.BoolInput   `pulumi:"isEnabled"`
+	// Any additional details about the current state of the consumer group.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The unique queue identifier.
+	QueueId pulumi.StringInput `pulumi:"queueId"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time that the consumer group was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time that the consumer group was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetConsumerGroupsConsumerGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionItemArgs) ToGetConsumerGroupsConsumerGroupCollectionItemOutput() GetConsumerGroupsConsumerGroupCollectionItemOutput {
+	return i.ToGetConsumerGroupsConsumerGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionItemArgs) ToGetConsumerGroupsConsumerGroupCollectionItemOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsConsumerGroupCollectionItemOutput)
+}
+
+// GetConsumerGroupsConsumerGroupCollectionItemArrayInput is an input type that accepts GetConsumerGroupsConsumerGroupCollectionItemArray and GetConsumerGroupsConsumerGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsConsumerGroupCollectionItemArrayInput` via:
+//
+//	GetConsumerGroupsConsumerGroupCollectionItemArray{ GetConsumerGroupsConsumerGroupCollectionItemArgs{...} }
+type GetConsumerGroupsConsumerGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutput() GetConsumerGroupsConsumerGroupCollectionItemArrayOutput
+	ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutputWithContext(context.Context) GetConsumerGroupsConsumerGroupCollectionItemArrayOutput
+}
+
+type GetConsumerGroupsConsumerGroupCollectionItemArray []GetConsumerGroupsConsumerGroupCollectionItemInput
+
+func (GetConsumerGroupsConsumerGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsConsumerGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionItemArray) ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutput() GetConsumerGroupsConsumerGroupCollectionItemArrayOutput {
+	return i.ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsConsumerGroupCollectionItemArray) ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsConsumerGroupCollectionItemArrayOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsConsumerGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) ToGetConsumerGroupsConsumerGroupCollectionItemOutput() GetConsumerGroupsConsumerGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) ToGetConsumerGroupsConsumerGroupCollectionItemOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionItemOutput {
+	return o
+}
+
+// The filter used by the consumer group. Only messages matching the filter will be available by consumers of the consumer group. An empty value means that all messages will be available in the group. The primary consumer group cannot have any filter.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) ConsumerGroupFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.ConsumerGroupFilter }).(pulumi.StringOutput)
+}
+
+// The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) DeadLetterQueueDeliveryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) int { return v.DeadLetterQueueDeliveryCount }).(pulumi.IntOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The unique consumer group identifier.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// Any additional details about the current state of the consumer group.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The unique queue identifier.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) QueueId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.QueueId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time that the consumer group was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time that the consumer group was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+func (o GetConsumerGroupsConsumerGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsConsumerGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetConsumerGroupsConsumerGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsConsumerGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsConsumerGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemArrayOutput) ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutput() GetConsumerGroupsConsumerGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemArrayOutput) ToGetConsumerGroupsConsumerGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetConsumerGroupsConsumerGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsConsumerGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConsumerGroupsConsumerGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConsumerGroupsConsumerGroupCollectionItem {
+		return vs[0].([]GetConsumerGroupsConsumerGroupCollectionItem)[vs[1].(int)]
+	}).(GetConsumerGroupsConsumerGroupCollectionItemOutput)
+}
+
+type GetConsumerGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConsumerGroupsFilterInput is an input type that accepts GetConsumerGroupsFilterArgs and GetConsumerGroupsFilterOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsFilterInput` via:
+//
+//	GetConsumerGroupsFilterArgs{...}
+type GetConsumerGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsFilterOutput() GetConsumerGroupsFilterOutput
+	ToGetConsumerGroupsFilterOutputWithContext(context.Context) GetConsumerGroupsFilterOutput
+}
+
+type GetConsumerGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConsumerGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsFilter)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsFilterArgs) ToGetConsumerGroupsFilterOutput() GetConsumerGroupsFilterOutput {
+	return i.ToGetConsumerGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsFilterArgs) ToGetConsumerGroupsFilterOutputWithContext(ctx context.Context) GetConsumerGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsFilterOutput)
+}
+
+// GetConsumerGroupsFilterArrayInput is an input type that accepts GetConsumerGroupsFilterArray and GetConsumerGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConsumerGroupsFilterArrayInput` via:
+//
+//	GetConsumerGroupsFilterArray{ GetConsumerGroupsFilterArgs{...} }
+type GetConsumerGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConsumerGroupsFilterArrayOutput() GetConsumerGroupsFilterArrayOutput
+	ToGetConsumerGroupsFilterArrayOutputWithContext(context.Context) GetConsumerGroupsFilterArrayOutput
+}
+
+type GetConsumerGroupsFilterArray []GetConsumerGroupsFilterInput
+
+func (GetConsumerGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsFilter)(nil)).Elem()
+}
+
+func (i GetConsumerGroupsFilterArray) ToGetConsumerGroupsFilterArrayOutput() GetConsumerGroupsFilterArrayOutput {
+	return i.ToGetConsumerGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConsumerGroupsFilterArray) ToGetConsumerGroupsFilterArrayOutputWithContext(ctx context.Context) GetConsumerGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConsumerGroupsFilterArrayOutput)
+}
+
+type GetConsumerGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConsumerGroupsFilter)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsFilterOutput) ToGetConsumerGroupsFilterOutput() GetConsumerGroupsFilterOutput {
+	return o
+}
+
+func (o GetConsumerGroupsFilterOutput) ToGetConsumerGroupsFilterOutputWithContext(ctx context.Context) GetConsumerGroupsFilterOutput {
+	return o
+}
+
+func (o GetConsumerGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConsumerGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConsumerGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConsumerGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConsumerGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConsumerGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConsumerGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConsumerGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConsumerGroupsFilter)(nil)).Elem()
+}
+
+func (o GetConsumerGroupsFilterArrayOutput) ToGetConsumerGroupsFilterArrayOutput() GetConsumerGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsFilterArrayOutput) ToGetConsumerGroupsFilterArrayOutputWithContext(ctx context.Context) GetConsumerGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetConsumerGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetConsumerGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConsumerGroupsFilter {
+		return vs[0].([]GetConsumerGroupsFilter)[vs[1].(int)]
+	}).(GetConsumerGroupsFilterOutput)
+}
+
+type GetQueueCapability struct {
+	// (Applicable when type=CONSUMER_GROUPS) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+	IsPrimaryConsumerGroupEnabled bool `pulumi:"isPrimaryConsumerGroupEnabled"`
+	// (Applicable when type=CONSUMER_GROUPS) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	PrimaryConsumerGroupDeadLetterQueueDeliveryCount int `pulumi:"primaryConsumerGroupDeadLetterQueueDeliveryCount"`
+	// (Applicable when type=CONSUMER_GROUPS) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+	PrimaryConsumerGroupDisplayName string `pulumi:"primaryConsumerGroupDisplayName"`
+	// (Applicable when type=CONSUMER_GROUPS) The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+	PrimaryConsumerGroupFilter string `pulumi:"primaryConsumerGroupFilter"`
+	// The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+	Type string `pulumi:"type"`
+}
+
+// GetQueueCapabilityInput is an input type that accepts GetQueueCapabilityArgs and GetQueueCapabilityOutput values.
+// You can construct a concrete instance of `GetQueueCapabilityInput` via:
+//
+//	GetQueueCapabilityArgs{...}
+type GetQueueCapabilityInput interface {
+	pulumi.Input
+
+	ToGetQueueCapabilityOutput() GetQueueCapabilityOutput
+	ToGetQueueCapabilityOutputWithContext(context.Context) GetQueueCapabilityOutput
+}
+
+type GetQueueCapabilityArgs struct {
+	// (Applicable when type=CONSUMER_GROUPS) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+	IsPrimaryConsumerGroupEnabled pulumi.BoolInput `pulumi:"isPrimaryConsumerGroupEnabled"`
+	// (Applicable when type=CONSUMER_GROUPS) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+	PrimaryConsumerGroupDeadLetterQueueDeliveryCount pulumi.IntInput `pulumi:"primaryConsumerGroupDeadLetterQueueDeliveryCount"`
+	// (Applicable when type=CONSUMER_GROUPS) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+	PrimaryConsumerGroupDisplayName pulumi.StringInput `pulumi:"primaryConsumerGroupDisplayName"`
+	// (Applicable when type=CONSUMER_GROUPS) The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+	PrimaryConsumerGroupFilter pulumi.StringInput `pulumi:"primaryConsumerGroupFilter"`
+	// The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetQueueCapabilityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQueueCapability)(nil)).Elem()
+}
+
+func (i GetQueueCapabilityArgs) ToGetQueueCapabilityOutput() GetQueueCapabilityOutput {
+	return i.ToGetQueueCapabilityOutputWithContext(context.Background())
+}
+
+func (i GetQueueCapabilityArgs) ToGetQueueCapabilityOutputWithContext(ctx context.Context) GetQueueCapabilityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQueueCapabilityOutput)
+}
+
+// GetQueueCapabilityArrayInput is an input type that accepts GetQueueCapabilityArray and GetQueueCapabilityArrayOutput values.
+// You can construct a concrete instance of `GetQueueCapabilityArrayInput` via:
+//
+//	GetQueueCapabilityArray{ GetQueueCapabilityArgs{...} }
+type GetQueueCapabilityArrayInput interface {
+	pulumi.Input
+
+	ToGetQueueCapabilityArrayOutput() GetQueueCapabilityArrayOutput
+	ToGetQueueCapabilityArrayOutputWithContext(context.Context) GetQueueCapabilityArrayOutput
+}
+
+type GetQueueCapabilityArray []GetQueueCapabilityInput
+
+func (GetQueueCapabilityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQueueCapability)(nil)).Elem()
+}
+
+func (i GetQueueCapabilityArray) ToGetQueueCapabilityArrayOutput() GetQueueCapabilityArrayOutput {
+	return i.ToGetQueueCapabilityArrayOutputWithContext(context.Background())
+}
+
+func (i GetQueueCapabilityArray) ToGetQueueCapabilityArrayOutputWithContext(ctx context.Context) GetQueueCapabilityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetQueueCapabilityArrayOutput)
+}
+
+type GetQueueCapabilityOutput struct{ *pulumi.OutputState }
+
+func (GetQueueCapabilityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetQueueCapability)(nil)).Elem()
+}
+
+func (o GetQueueCapabilityOutput) ToGetQueueCapabilityOutput() GetQueueCapabilityOutput {
+	return o
+}
+
+func (o GetQueueCapabilityOutput) ToGetQueueCapabilityOutputWithContext(ctx context.Context) GetQueueCapabilityOutput {
+	return o
+}
+
+// (Applicable when type=CONSUMER_GROUPS) Specifies if the primary consumer group should be automatically enabled after adding the capability.
+func (o GetQueueCapabilityOutput) IsPrimaryConsumerGroupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetQueueCapability) bool { return v.IsPrimaryConsumerGroupEnabled }).(pulumi.BoolOutput)
+}
+
+// (Applicable when type=CONSUMER_GROUPS) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't set, it will be using the value defined at the queue level.
+func (o GetQueueCapabilityOutput) PrimaryConsumerGroupDeadLetterQueueDeliveryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetQueueCapability) int { return v.PrimaryConsumerGroupDeadLetterQueueDeliveryCount }).(pulumi.IntOutput)
+}
+
+// (Applicable when type=CONSUMER_GROUPS) Name of the primary consumer group. If omitted, it will be named "Primary Consumer Group".
+func (o GetQueueCapabilityOutput) PrimaryConsumerGroupDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQueueCapability) string { return v.PrimaryConsumerGroupDisplayName }).(pulumi.StringOutput)
+}
+
+// (Applicable when type=CONSUMER_GROUPS) The primary consumer group cannot have any filter hence this field will always be empty. An empty value means that all messages will be available in the primary consumer group.
+func (o GetQueueCapabilityOutput) PrimaryConsumerGroupFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQueueCapability) string { return v.PrimaryConsumerGroupFilter }).(pulumi.StringOutput)
+}
+
+// The type of the capability. Could be CONSUMER_GROUPS and/or LARGE_MESSAGES
+func (o GetQueueCapabilityOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetQueueCapability) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetQueueCapabilityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetQueueCapabilityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetQueueCapability)(nil)).Elem()
+}
+
+func (o GetQueueCapabilityArrayOutput) ToGetQueueCapabilityArrayOutput() GetQueueCapabilityArrayOutput {
+	return o
+}
+
+func (o GetQueueCapabilityArrayOutput) ToGetQueueCapabilityArrayOutputWithContext(ctx context.Context) GetQueueCapabilityArrayOutput {
+	return o
+}
+
+func (o GetQueueCapabilityArrayOutput) Index(i pulumi.IntInput) GetQueueCapabilityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueueCapability {
+		return vs[0].([]GetQueueCapability)[vs[1].(int)]
+	}).(GetQueueCapabilityOutput)
+}
+
 type GetQueuesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -214,6 +884,8 @@ func (o GetQueuesQueueCollectionArrayOutput) Index(i pulumi.IntInput) GetQueuesQ
 }
 
 type GetQueuesQueueCollectionItem struct {
+	// The list of capabilities enabled on the queue
+	Capabilities []string `pulumi:"capabilities"`
 	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit int `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -264,6 +936,8 @@ type GetQueuesQueueCollectionItemInput interface {
 }
 
 type GetQueuesQueueCollectionItemArgs struct {
+	// The list of capabilities enabled on the queue
+	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
 	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
 	ChannelConsumptionLimit pulumi.IntInput `pulumi:"channelConsumptionLimit"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -351,6 +1025,11 @@ func (o GetQueuesQueueCollectionItemOutput) ToGetQueuesQueueCollectionItemOutput
 
 func (o GetQueuesQueueCollectionItemOutput) ToGetQueuesQueueCollectionItemOutputWithContext(ctx context.Context) GetQueuesQueueCollectionItemOutput {
 	return o
+}
+
+// The list of capabilities enabled on the queue
+func (o GetQueuesQueueCollectionItemOutput) Capabilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) []string { return v.Capabilities }).(pulumi.StringArrayOutput)
 }
 
 // The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
@@ -467,12 +1146,32 @@ func (o GetQueuesQueueCollectionItemArrayOutput) Index(i pulumi.IntInput) GetQue
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*QueueCapabilityInput)(nil)).Elem(), QueueCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*QueueCapabilityArrayInput)(nil)).Elem(), QueueCapabilityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionInput)(nil)).Elem(), GetConsumerGroupsConsumerGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionArrayInput)(nil)).Elem(), GetConsumerGroupsConsumerGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionItemInput)(nil)).Elem(), GetConsumerGroupsConsumerGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsConsumerGroupCollectionItemArrayInput)(nil)).Elem(), GetConsumerGroupsConsumerGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsFilterInput)(nil)).Elem(), GetConsumerGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConsumerGroupsFilterArrayInput)(nil)).Elem(), GetConsumerGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQueueCapabilityInput)(nil)).Elem(), GetQueueCapabilityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetQueueCapabilityArrayInput)(nil)).Elem(), GetQueueCapabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesFilterInput)(nil)).Elem(), GetQueuesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesFilterArrayInput)(nil)).Elem(), GetQueuesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesQueueCollectionInput)(nil)).Elem(), GetQueuesQueueCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesQueueCollectionArrayInput)(nil)).Elem(), GetQueuesQueueCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesQueueCollectionItemInput)(nil)).Elem(), GetQueuesQueueCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueuesQueueCollectionItemArrayInput)(nil)).Elem(), GetQueuesQueueCollectionItemArray{})
+	pulumi.RegisterOutputType(QueueCapabilityOutput{})
+	pulumi.RegisterOutputType(QueueCapabilityArrayOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsConsumerGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsConsumerGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsConsumerGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsConsumerGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetConsumerGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetQueueCapabilityOutput{})
+	pulumi.RegisterOutputType(GetQueueCapabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetQueuesFilterOutput{})
 	pulumi.RegisterOutputType(GetQueuesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetQueuesQueueCollectionOutput{})

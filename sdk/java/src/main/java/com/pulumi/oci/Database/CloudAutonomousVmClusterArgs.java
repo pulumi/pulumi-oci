@@ -284,6 +284,21 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    @Import(name="registerPkcsTrigger")
+    private @Nullable Output<Integer> registerPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> registerPkcsTrigger() {
+        return Optional.ofNullable(this.registerPkcsTrigger);
+    }
+
+    /**
      * The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
@@ -359,6 +374,21 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * TDE keystore type
+     * 
+     */
+    @Import(name="tdeKeyStoreType")
+    private @Nullable Output<String> tdeKeyStoreType;
+
+    /**
+     * @return TDE keystore type
+     * 
+     */
+    public Optional<Output<String>> tdeKeyStoreType() {
+        return Optional.ofNullable(this.tdeKeyStoreType);
+    }
+
+    /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
@@ -376,9 +406,6 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     /**
      * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="totalContainerDatabases")
     private @Nullable Output<Integer> totalContainerDatabases;
@@ -386,12 +413,30 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     /**
      * @return (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
+     */
+    public Optional<Output<Integer>> totalContainerDatabases() {
+        return Optional.ofNullable(this.totalContainerDatabases);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Integer>> totalContainerDatabases() {
-        return Optional.ofNullable(this.totalContainerDatabases);
+    @Import(name="unregisterPkcsTrigger")
+    private @Nullable Output<Integer> unregisterPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> unregisterPkcsTrigger() {
+        return Optional.ofNullable(this.unregisterPkcsTrigger);
     }
 
     private CloudAutonomousVmClusterArgs() {}
@@ -414,13 +459,16 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.nsgIds = $.nsgIds;
         this.opcDryRun = $.opcDryRun;
+        this.registerPkcsTrigger = $.registerPkcsTrigger;
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
         this.securityAttributes = $.securityAttributes;
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
+        this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeUpdated = $.timeUpdated;
         this.totalContainerDatabases = $.totalContainerDatabases;
+        this.unregisterPkcsTrigger = $.unregisterPkcsTrigger;
     }
 
     public static Builder builder() {
@@ -826,6 +874,27 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param registerPkcsTrigger (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registerPkcsTrigger(@Nullable Output<Integer> registerPkcsTrigger) {
+            $.registerPkcsTrigger = registerPkcsTrigger;
+            return this;
+        }
+
+        /**
+         * @param registerPkcsTrigger (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registerPkcsTrigger(Integer registerPkcsTrigger) {
+            return registerPkcsTrigger(Output.of(registerPkcsTrigger));
+        }
+
+        /**
          * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
          * 
          * @return builder
@@ -931,6 +1000,27 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param tdeKeyStoreType TDE keystore type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(@Nullable Output<String> tdeKeyStoreType) {
+            $.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+
+        /**
+         * @param tdeKeyStoreType TDE keystore type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            return tdeKeyStoreType(Output.of(tdeKeyStoreType));
+        }
+
+        /**
          * @param timeUpdated The last date and time that the cloud Autonomous VM cluster was updated.
          * 
          * @return builder
@@ -954,9 +1044,6 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         /**
          * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -968,14 +1055,38 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         /**
          * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
+         * @return builder
+         * 
+         */
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            return totalContainerDatabases(Output.of(totalContainerDatabases));
+        }
+
+        /**
+         * @param unregisterPkcsTrigger (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
-            return totalContainerDatabases(Output.of(totalContainerDatabases));
+        public Builder unregisterPkcsTrigger(@Nullable Output<Integer> unregisterPkcsTrigger) {
+            $.unregisterPkcsTrigger = unregisterPkcsTrigger;
+            return this;
+        }
+
+        /**
+         * @param unregisterPkcsTrigger (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder unregisterPkcsTrigger(Integer unregisterPkcsTrigger) {
+            return unregisterPkcsTrigger(Output.of(unregisterPkcsTrigger));
         }
 
         public CloudAutonomousVmClusterArgs build() {

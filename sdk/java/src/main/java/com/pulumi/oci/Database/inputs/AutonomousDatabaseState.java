@@ -769,9 +769,17 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.encryptionKeyHistoryEntries);
     }
 
+    /**
+     * Types of providers supported for managing database encryption keys
+     * 
+     */
     @Import(name="encryptionKeyLocationDetails")
     private @Nullable Output<List<AutonomousDatabaseEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails;
 
+    /**
+     * @return Types of providers supported for managing database encryption keys
+     * 
+     */
     public Optional<Output<List<AutonomousDatabaseEncryptionKeyLocationDetailArgs>>> encryptionKeyLocationDetails() {
         return Optional.ofNullable(this.encryptionKeyLocationDetails);
     }
@@ -3814,15 +3822,33 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
             return encryptionKeyHistoryEntries(List.of(encryptionKeyHistoryEntries));
         }
 
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder encryptionKeyLocationDetails(@Nullable Output<List<AutonomousDatabaseEncryptionKeyLocationDetailArgs>> encryptionKeyLocationDetails) {
             $.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             return this;
         }
 
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder encryptionKeyLocationDetails(List<AutonomousDatabaseEncryptionKeyLocationDetailArgs> encryptionKeyLocationDetails) {
             return encryptionKeyLocationDetails(Output.of(encryptionKeyLocationDetails));
         }
 
+        /**
+         * @param encryptionKeyLocationDetails Types of providers supported for managing database encryption keys
+         * 
+         * @return builder
+         * 
+         */
         public Builder encryptionKeyLocationDetails(AutonomousDatabaseEncryptionKeyLocationDetailArgs... encryptionKeyLocationDetails) {
             return encryptionKeyLocationDetails(List.of(encryptionKeyLocationDetails));
         }

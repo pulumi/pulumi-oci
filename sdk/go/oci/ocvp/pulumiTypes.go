@@ -1158,6 +1158,421 @@ func (o EsxiHostDatastoreAttachmentArrayOutput) Index(i pulumi.IntInput) EsxiHos
 	}).(EsxiHostDatastoreAttachmentOutput)
 }
 
+type ManagementApplianceConfiguration struct {
+	// (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled bool `pulumi:"isLogIngestionEnabled"`
+	// (Updatable) Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled bool `pulumi:"isMetricsCollectionEnabled"`
+	// (Updatable) Array of metrics ids to collect.
+	Metrics []string `pulumi:"metrics"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId *string `pulumi:"supportBundleBucketId"`
+}
+
+// ManagementApplianceConfigurationInput is an input type that accepts ManagementApplianceConfigurationArgs and ManagementApplianceConfigurationOutput values.
+// You can construct a concrete instance of `ManagementApplianceConfigurationInput` via:
+//
+//	ManagementApplianceConfigurationArgs{...}
+type ManagementApplianceConfigurationInput interface {
+	pulumi.Input
+
+	ToManagementApplianceConfigurationOutput() ManagementApplianceConfigurationOutput
+	ToManagementApplianceConfigurationOutputWithContext(context.Context) ManagementApplianceConfigurationOutput
+}
+
+type ManagementApplianceConfigurationArgs struct {
+	// (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled pulumi.BoolInput `pulumi:"isLogIngestionEnabled"`
+	// (Updatable) Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled pulumi.BoolInput `pulumi:"isMetricsCollectionEnabled"`
+	// (Updatable) Array of metrics ids to collect.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId pulumi.StringPtrInput `pulumi:"supportBundleBucketId"`
+}
+
+func (ManagementApplianceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (i ManagementApplianceConfigurationArgs) ToManagementApplianceConfigurationOutput() ManagementApplianceConfigurationOutput {
+	return i.ToManagementApplianceConfigurationOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceConfigurationArgs) ToManagementApplianceConfigurationOutputWithContext(ctx context.Context) ManagementApplianceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceConfigurationOutput)
+}
+
+func (i ManagementApplianceConfigurationArgs) ToManagementApplianceConfigurationPtrOutput() ManagementApplianceConfigurationPtrOutput {
+	return i.ToManagementApplianceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceConfigurationArgs) ToManagementApplianceConfigurationPtrOutputWithContext(ctx context.Context) ManagementApplianceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceConfigurationOutput).ToManagementApplianceConfigurationPtrOutputWithContext(ctx)
+}
+
+// ManagementApplianceConfigurationPtrInput is an input type that accepts ManagementApplianceConfigurationArgs, ManagementApplianceConfigurationPtr and ManagementApplianceConfigurationPtrOutput values.
+// You can construct a concrete instance of `ManagementApplianceConfigurationPtrInput` via:
+//
+//	        ManagementApplianceConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagementApplianceConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToManagementApplianceConfigurationPtrOutput() ManagementApplianceConfigurationPtrOutput
+	ToManagementApplianceConfigurationPtrOutputWithContext(context.Context) ManagementApplianceConfigurationPtrOutput
+}
+
+type managementApplianceConfigurationPtrType ManagementApplianceConfigurationArgs
+
+func ManagementApplianceConfigurationPtr(v *ManagementApplianceConfigurationArgs) ManagementApplianceConfigurationPtrInput {
+	return (*managementApplianceConfigurationPtrType)(v)
+}
+
+func (*managementApplianceConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (i *managementApplianceConfigurationPtrType) ToManagementApplianceConfigurationPtrOutput() ManagementApplianceConfigurationPtrOutput {
+	return i.ToManagementApplianceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *managementApplianceConfigurationPtrType) ToManagementApplianceConfigurationPtrOutputWithContext(ctx context.Context) ManagementApplianceConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceConfigurationPtrOutput)
+}
+
+type ManagementApplianceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (o ManagementApplianceConfigurationOutput) ToManagementApplianceConfigurationOutput() ManagementApplianceConfigurationOutput {
+	return o
+}
+
+func (o ManagementApplianceConfigurationOutput) ToManagementApplianceConfigurationOutputWithContext(ctx context.Context) ManagementApplianceConfigurationOutput {
+	return o
+}
+
+func (o ManagementApplianceConfigurationOutput) ToManagementApplianceConfigurationPtrOutput() ManagementApplianceConfigurationPtrOutput {
+	return o.ToManagementApplianceConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ManagementApplianceConfigurationOutput) ToManagementApplianceConfigurationPtrOutputWithContext(ctx context.Context) ManagementApplianceConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagementApplianceConfiguration) *ManagementApplianceConfiguration {
+		return &v
+	}).(ManagementApplianceConfigurationPtrOutput)
+}
+
+// (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+func (o ManagementApplianceConfigurationOutput) IsLogIngestionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ManagementApplianceConfiguration) bool { return v.IsLogIngestionEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Is metrics collection and publishing is enabled for appliance.
+func (o ManagementApplianceConfigurationOutput) IsMetricsCollectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ManagementApplianceConfiguration) bool { return v.IsMetricsCollectionEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Array of metrics ids to collect.
+func (o ManagementApplianceConfigurationOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ManagementApplianceConfiguration) []string { return v.Metrics }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+func (o ManagementApplianceConfigurationOutput) SupportBundleBucketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementApplianceConfiguration) *string { return v.SupportBundleBucketId }).(pulumi.StringPtrOutput)
+}
+
+type ManagementApplianceConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (o ManagementApplianceConfigurationPtrOutput) ToManagementApplianceConfigurationPtrOutput() ManagementApplianceConfigurationPtrOutput {
+	return o
+}
+
+func (o ManagementApplianceConfigurationPtrOutput) ToManagementApplianceConfigurationPtrOutputWithContext(ctx context.Context) ManagementApplianceConfigurationPtrOutput {
+	return o
+}
+
+func (o ManagementApplianceConfigurationPtrOutput) Elem() ManagementApplianceConfigurationOutput {
+	return o.ApplyT(func(v *ManagementApplianceConfiguration) ManagementApplianceConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ManagementApplianceConfiguration
+		return ret
+	}).(ManagementApplianceConfigurationOutput)
+}
+
+// (Updatable) Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+func (o ManagementApplianceConfigurationPtrOutput) IsLogIngestionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagementApplianceConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsLogIngestionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Is metrics collection and publishing is enabled for appliance.
+func (o ManagementApplianceConfigurationPtrOutput) IsMetricsCollectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagementApplianceConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsMetricsCollectionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Array of metrics ids to collect.
+func (o ManagementApplianceConfigurationPtrOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ManagementApplianceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+func (o ManagementApplianceConfigurationPtrOutput) SupportBundleBucketId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagementApplianceConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SupportBundleBucketId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ManagementApplianceConnection struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId string `pulumi:"credentialsSecretId"`
+	// (Updatable) Type of connection.
+	Type string `pulumi:"type"`
+}
+
+// ManagementApplianceConnectionInput is an input type that accepts ManagementApplianceConnectionArgs and ManagementApplianceConnectionOutput values.
+// You can construct a concrete instance of `ManagementApplianceConnectionInput` via:
+//
+//	ManagementApplianceConnectionArgs{...}
+type ManagementApplianceConnectionInput interface {
+	pulumi.Input
+
+	ToManagementApplianceConnectionOutput() ManagementApplianceConnectionOutput
+	ToManagementApplianceConnectionOutputWithContext(context.Context) ManagementApplianceConnectionOutput
+}
+
+type ManagementApplianceConnectionArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
+	// (Updatable) Type of connection.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ManagementApplianceConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceConnection)(nil)).Elem()
+}
+
+func (i ManagementApplianceConnectionArgs) ToManagementApplianceConnectionOutput() ManagementApplianceConnectionOutput {
+	return i.ToManagementApplianceConnectionOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceConnectionArgs) ToManagementApplianceConnectionOutputWithContext(ctx context.Context) ManagementApplianceConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceConnectionOutput)
+}
+
+// ManagementApplianceConnectionArrayInput is an input type that accepts ManagementApplianceConnectionArray and ManagementApplianceConnectionArrayOutput values.
+// You can construct a concrete instance of `ManagementApplianceConnectionArrayInput` via:
+//
+//	ManagementApplianceConnectionArray{ ManagementApplianceConnectionArgs{...} }
+type ManagementApplianceConnectionArrayInput interface {
+	pulumi.Input
+
+	ToManagementApplianceConnectionArrayOutput() ManagementApplianceConnectionArrayOutput
+	ToManagementApplianceConnectionArrayOutputWithContext(context.Context) ManagementApplianceConnectionArrayOutput
+}
+
+type ManagementApplianceConnectionArray []ManagementApplianceConnectionInput
+
+func (ManagementApplianceConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementApplianceConnection)(nil)).Elem()
+}
+
+func (i ManagementApplianceConnectionArray) ToManagementApplianceConnectionArrayOutput() ManagementApplianceConnectionArrayOutput {
+	return i.ToManagementApplianceConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceConnectionArray) ToManagementApplianceConnectionArrayOutputWithContext(ctx context.Context) ManagementApplianceConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceConnectionArrayOutput)
+}
+
+type ManagementApplianceConnectionOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceConnection)(nil)).Elem()
+}
+
+func (o ManagementApplianceConnectionOutput) ToManagementApplianceConnectionOutput() ManagementApplianceConnectionOutput {
+	return o
+}
+
+func (o ManagementApplianceConnectionOutput) ToManagementApplianceConnectionOutputWithContext(ctx context.Context) ManagementApplianceConnectionOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+func (o ManagementApplianceConnectionOutput) CredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementApplianceConnection) string { return v.CredentialsSecretId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of connection.
+func (o ManagementApplianceConnectionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ManagementApplianceConnection) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ManagementApplianceConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementApplianceConnection)(nil)).Elem()
+}
+
+func (o ManagementApplianceConnectionArrayOutput) ToManagementApplianceConnectionArrayOutput() ManagementApplianceConnectionArrayOutput {
+	return o
+}
+
+func (o ManagementApplianceConnectionArrayOutput) ToManagementApplianceConnectionArrayOutputWithContext(ctx context.Context) ManagementApplianceConnectionArrayOutput {
+	return o
+}
+
+func (o ManagementApplianceConnectionArrayOutput) Index(i pulumi.IntInput) ManagementApplianceConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementApplianceConnection {
+		return vs[0].([]ManagementApplianceConnection)[vs[1].(int)]
+	}).(ManagementApplianceConnectionOutput)
+}
+
+type ManagementApplianceHeartbeatConnectionState struct {
+	// Information about current connection status.
+	Details *string `pulumi:"details"`
+	// Current state of the management appliance.
+	State *string `pulumi:"state"`
+	// Type of connection.
+	Type *string `pulumi:"type"`
+}
+
+// ManagementApplianceHeartbeatConnectionStateInput is an input type that accepts ManagementApplianceHeartbeatConnectionStateArgs and ManagementApplianceHeartbeatConnectionStateOutput values.
+// You can construct a concrete instance of `ManagementApplianceHeartbeatConnectionStateInput` via:
+//
+//	ManagementApplianceHeartbeatConnectionStateArgs{...}
+type ManagementApplianceHeartbeatConnectionStateInput interface {
+	pulumi.Input
+
+	ToManagementApplianceHeartbeatConnectionStateOutput() ManagementApplianceHeartbeatConnectionStateOutput
+	ToManagementApplianceHeartbeatConnectionStateOutputWithContext(context.Context) ManagementApplianceHeartbeatConnectionStateOutput
+}
+
+type ManagementApplianceHeartbeatConnectionStateArgs struct {
+	// Information about current connection status.
+	Details pulumi.StringPtrInput `pulumi:"details"`
+	// Current state of the management appliance.
+	State pulumi.StringPtrInput `pulumi:"state"`
+	// Type of connection.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ManagementApplianceHeartbeatConnectionStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i ManagementApplianceHeartbeatConnectionStateArgs) ToManagementApplianceHeartbeatConnectionStateOutput() ManagementApplianceHeartbeatConnectionStateOutput {
+	return i.ToManagementApplianceHeartbeatConnectionStateOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceHeartbeatConnectionStateArgs) ToManagementApplianceHeartbeatConnectionStateOutputWithContext(ctx context.Context) ManagementApplianceHeartbeatConnectionStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceHeartbeatConnectionStateOutput)
+}
+
+// ManagementApplianceHeartbeatConnectionStateArrayInput is an input type that accepts ManagementApplianceHeartbeatConnectionStateArray and ManagementApplianceHeartbeatConnectionStateArrayOutput values.
+// You can construct a concrete instance of `ManagementApplianceHeartbeatConnectionStateArrayInput` via:
+//
+//	ManagementApplianceHeartbeatConnectionStateArray{ ManagementApplianceHeartbeatConnectionStateArgs{...} }
+type ManagementApplianceHeartbeatConnectionStateArrayInput interface {
+	pulumi.Input
+
+	ToManagementApplianceHeartbeatConnectionStateArrayOutput() ManagementApplianceHeartbeatConnectionStateArrayOutput
+	ToManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(context.Context) ManagementApplianceHeartbeatConnectionStateArrayOutput
+}
+
+type ManagementApplianceHeartbeatConnectionStateArray []ManagementApplianceHeartbeatConnectionStateInput
+
+func (ManagementApplianceHeartbeatConnectionStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i ManagementApplianceHeartbeatConnectionStateArray) ToManagementApplianceHeartbeatConnectionStateArrayOutput() ManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return i.ToManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(context.Background())
+}
+
+func (i ManagementApplianceHeartbeatConnectionStateArray) ToManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) ManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagementApplianceHeartbeatConnectionStateArrayOutput)
+}
+
+type ManagementApplianceHeartbeatConnectionStateOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceHeartbeatConnectionStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o ManagementApplianceHeartbeatConnectionStateOutput) ToManagementApplianceHeartbeatConnectionStateOutput() ManagementApplianceHeartbeatConnectionStateOutput {
+	return o
+}
+
+func (o ManagementApplianceHeartbeatConnectionStateOutput) ToManagementApplianceHeartbeatConnectionStateOutputWithContext(ctx context.Context) ManagementApplianceHeartbeatConnectionStateOutput {
+	return o
+}
+
+// Information about current connection status.
+func (o ManagementApplianceHeartbeatConnectionStateOutput) Details() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementApplianceHeartbeatConnectionState) *string { return v.Details }).(pulumi.StringPtrOutput)
+}
+
+// Current state of the management appliance.
+func (o ManagementApplianceHeartbeatConnectionStateOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementApplianceHeartbeatConnectionState) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// Type of connection.
+func (o ManagementApplianceHeartbeatConnectionStateOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagementApplianceHeartbeatConnectionState) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ManagementApplianceHeartbeatConnectionStateArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagementApplianceHeartbeatConnectionStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o ManagementApplianceHeartbeatConnectionStateArrayOutput) ToManagementApplianceHeartbeatConnectionStateArrayOutput() ManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o ManagementApplianceHeartbeatConnectionStateArrayOutput) ToManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) ManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o ManagementApplianceHeartbeatConnectionStateArrayOutput) Index(i pulumi.IntInput) ManagementApplianceHeartbeatConnectionStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagementApplianceHeartbeatConnectionState {
+		return vs[0].([]ManagementApplianceHeartbeatConnectionState)[vs[1].(int)]
+	}).(ManagementApplianceHeartbeatConnectionStateOutput)
+}
+
 type SddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -6245,6 +6660,1184 @@ func (o GetExsiHostsFilterArrayOutput) Index(i pulumi.IntInput) GetExsiHostsFilt
 	}).(GetExsiHostsFilterOutput)
 }
 
+type GetManagementApplianceConfiguration struct {
+	// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled bool `pulumi:"isLogIngestionEnabled"`
+	// Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled bool `pulumi:"isMetricsCollectionEnabled"`
+	// Array of metrics ids to collect.
+	Metrics []string `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId string `pulumi:"supportBundleBucketId"`
+}
+
+// GetManagementApplianceConfigurationInput is an input type that accepts GetManagementApplianceConfigurationArgs and GetManagementApplianceConfigurationOutput values.
+// You can construct a concrete instance of `GetManagementApplianceConfigurationInput` via:
+//
+//	GetManagementApplianceConfigurationArgs{...}
+type GetManagementApplianceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceConfigurationOutput() GetManagementApplianceConfigurationOutput
+	ToGetManagementApplianceConfigurationOutputWithContext(context.Context) GetManagementApplianceConfigurationOutput
+}
+
+type GetManagementApplianceConfigurationArgs struct {
+	// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled pulumi.BoolInput `pulumi:"isLogIngestionEnabled"`
+	// Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled pulumi.BoolInput `pulumi:"isMetricsCollectionEnabled"`
+	// Array of metrics ids to collect.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId pulumi.StringInput `pulumi:"supportBundleBucketId"`
+}
+
+func (GetManagementApplianceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (i GetManagementApplianceConfigurationArgs) ToGetManagementApplianceConfigurationOutput() GetManagementApplianceConfigurationOutput {
+	return i.ToGetManagementApplianceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceConfigurationArgs) ToGetManagementApplianceConfigurationOutputWithContext(ctx context.Context) GetManagementApplianceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceConfigurationOutput)
+}
+
+// GetManagementApplianceConfigurationArrayInput is an input type that accepts GetManagementApplianceConfigurationArray and GetManagementApplianceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetManagementApplianceConfigurationArrayInput` via:
+//
+//	GetManagementApplianceConfigurationArray{ GetManagementApplianceConfigurationArgs{...} }
+type GetManagementApplianceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceConfigurationArrayOutput() GetManagementApplianceConfigurationArrayOutput
+	ToGetManagementApplianceConfigurationArrayOutputWithContext(context.Context) GetManagementApplianceConfigurationArrayOutput
+}
+
+type GetManagementApplianceConfigurationArray []GetManagementApplianceConfigurationInput
+
+func (GetManagementApplianceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (i GetManagementApplianceConfigurationArray) ToGetManagementApplianceConfigurationArrayOutput() GetManagementApplianceConfigurationArrayOutput {
+	return i.ToGetManagementApplianceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceConfigurationArray) ToGetManagementApplianceConfigurationArrayOutputWithContext(ctx context.Context) GetManagementApplianceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceConfigurationArrayOutput)
+}
+
+type GetManagementApplianceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (o GetManagementApplianceConfigurationOutput) ToGetManagementApplianceConfigurationOutput() GetManagementApplianceConfigurationOutput {
+	return o
+}
+
+func (o GetManagementApplianceConfigurationOutput) ToGetManagementApplianceConfigurationOutputWithContext(ctx context.Context) GetManagementApplianceConfigurationOutput {
+	return o
+}
+
+// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+func (o GetManagementApplianceConfigurationOutput) IsLogIngestionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementApplianceConfiguration) bool { return v.IsLogIngestionEnabled }).(pulumi.BoolOutput)
+}
+
+// Is metrics collection and publishing is enabled for appliance.
+func (o GetManagementApplianceConfigurationOutput) IsMetricsCollectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementApplianceConfiguration) bool { return v.IsMetricsCollectionEnabled }).(pulumi.BoolOutput)
+}
+
+// Array of metrics ids to collect.
+func (o GetManagementApplianceConfigurationOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementApplianceConfiguration) []string { return v.Metrics }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+func (o GetManagementApplianceConfigurationOutput) SupportBundleBucketId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceConfiguration) string { return v.SupportBundleBucketId }).(pulumi.StringOutput)
+}
+
+type GetManagementApplianceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceConfiguration)(nil)).Elem()
+}
+
+func (o GetManagementApplianceConfigurationArrayOutput) ToGetManagementApplianceConfigurationArrayOutput() GetManagementApplianceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceConfigurationArrayOutput) ToGetManagementApplianceConfigurationArrayOutputWithContext(ctx context.Context) GetManagementApplianceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceConfigurationArrayOutput) Index(i pulumi.IntInput) GetManagementApplianceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementApplianceConfiguration {
+		return vs[0].([]GetManagementApplianceConfiguration)[vs[1].(int)]
+	}).(GetManagementApplianceConfigurationOutput)
+}
+
+type GetManagementApplianceConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId string `pulumi:"credentialsSecretId"`
+	// Type of connection.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementApplianceConnectionInput is an input type that accepts GetManagementApplianceConnectionArgs and GetManagementApplianceConnectionOutput values.
+// You can construct a concrete instance of `GetManagementApplianceConnectionInput` via:
+//
+//	GetManagementApplianceConnectionArgs{...}
+type GetManagementApplianceConnectionInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceConnectionOutput() GetManagementApplianceConnectionOutput
+	ToGetManagementApplianceConnectionOutputWithContext(context.Context) GetManagementApplianceConnectionOutput
+}
+
+type GetManagementApplianceConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
+	// Type of connection.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementApplianceConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceConnection)(nil)).Elem()
+}
+
+func (i GetManagementApplianceConnectionArgs) ToGetManagementApplianceConnectionOutput() GetManagementApplianceConnectionOutput {
+	return i.ToGetManagementApplianceConnectionOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceConnectionArgs) ToGetManagementApplianceConnectionOutputWithContext(ctx context.Context) GetManagementApplianceConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceConnectionOutput)
+}
+
+// GetManagementApplianceConnectionArrayInput is an input type that accepts GetManagementApplianceConnectionArray and GetManagementApplianceConnectionArrayOutput values.
+// You can construct a concrete instance of `GetManagementApplianceConnectionArrayInput` via:
+//
+//	GetManagementApplianceConnectionArray{ GetManagementApplianceConnectionArgs{...} }
+type GetManagementApplianceConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceConnectionArrayOutput() GetManagementApplianceConnectionArrayOutput
+	ToGetManagementApplianceConnectionArrayOutputWithContext(context.Context) GetManagementApplianceConnectionArrayOutput
+}
+
+type GetManagementApplianceConnectionArray []GetManagementApplianceConnectionInput
+
+func (GetManagementApplianceConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceConnection)(nil)).Elem()
+}
+
+func (i GetManagementApplianceConnectionArray) ToGetManagementApplianceConnectionArrayOutput() GetManagementApplianceConnectionArrayOutput {
+	return i.ToGetManagementApplianceConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceConnectionArray) ToGetManagementApplianceConnectionArrayOutputWithContext(ctx context.Context) GetManagementApplianceConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceConnectionArrayOutput)
+}
+
+type GetManagementApplianceConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceConnection)(nil)).Elem()
+}
+
+func (o GetManagementApplianceConnectionOutput) ToGetManagementApplianceConnectionOutput() GetManagementApplianceConnectionOutput {
+	return o
+}
+
+func (o GetManagementApplianceConnectionOutput) ToGetManagementApplianceConnectionOutputWithContext(ctx context.Context) GetManagementApplianceConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+func (o GetManagementApplianceConnectionOutput) CredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceConnection) string { return v.CredentialsSecretId }).(pulumi.StringOutput)
+}
+
+// Type of connection.
+func (o GetManagementApplianceConnectionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceConnection) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementApplianceConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceConnection)(nil)).Elem()
+}
+
+func (o GetManagementApplianceConnectionArrayOutput) ToGetManagementApplianceConnectionArrayOutput() GetManagementApplianceConnectionArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceConnectionArrayOutput) ToGetManagementApplianceConnectionArrayOutputWithContext(ctx context.Context) GetManagementApplianceConnectionArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceConnectionArrayOutput) Index(i pulumi.IntInput) GetManagementApplianceConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementApplianceConnection {
+		return vs[0].([]GetManagementApplianceConnection)[vs[1].(int)]
+	}).(GetManagementApplianceConnectionOutput)
+}
+
+type GetManagementApplianceHeartbeatConnectionState struct {
+	// Information about current connection status.
+	Details string `pulumi:"details"`
+	// Current state of the management appliance.
+	State string `pulumi:"state"`
+	// Type of connection.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementApplianceHeartbeatConnectionStateInput is an input type that accepts GetManagementApplianceHeartbeatConnectionStateArgs and GetManagementApplianceHeartbeatConnectionStateOutput values.
+// You can construct a concrete instance of `GetManagementApplianceHeartbeatConnectionStateInput` via:
+//
+//	GetManagementApplianceHeartbeatConnectionStateArgs{...}
+type GetManagementApplianceHeartbeatConnectionStateInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceHeartbeatConnectionStateOutput() GetManagementApplianceHeartbeatConnectionStateOutput
+	ToGetManagementApplianceHeartbeatConnectionStateOutputWithContext(context.Context) GetManagementApplianceHeartbeatConnectionStateOutput
+}
+
+type GetManagementApplianceHeartbeatConnectionStateArgs struct {
+	// Information about current connection status.
+	Details pulumi.StringInput `pulumi:"details"`
+	// Current state of the management appliance.
+	State pulumi.StringInput `pulumi:"state"`
+	// Type of connection.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementApplianceHeartbeatConnectionStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i GetManagementApplianceHeartbeatConnectionStateArgs) ToGetManagementApplianceHeartbeatConnectionStateOutput() GetManagementApplianceHeartbeatConnectionStateOutput {
+	return i.ToGetManagementApplianceHeartbeatConnectionStateOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceHeartbeatConnectionStateArgs) ToGetManagementApplianceHeartbeatConnectionStateOutputWithContext(ctx context.Context) GetManagementApplianceHeartbeatConnectionStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceHeartbeatConnectionStateOutput)
+}
+
+// GetManagementApplianceHeartbeatConnectionStateArrayInput is an input type that accepts GetManagementApplianceHeartbeatConnectionStateArray and GetManagementApplianceHeartbeatConnectionStateArrayOutput values.
+// You can construct a concrete instance of `GetManagementApplianceHeartbeatConnectionStateArrayInput` via:
+//
+//	GetManagementApplianceHeartbeatConnectionStateArray{ GetManagementApplianceHeartbeatConnectionStateArgs{...} }
+type GetManagementApplianceHeartbeatConnectionStateArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementApplianceHeartbeatConnectionStateArrayOutput() GetManagementApplianceHeartbeatConnectionStateArrayOutput
+	ToGetManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(context.Context) GetManagementApplianceHeartbeatConnectionStateArrayOutput
+}
+
+type GetManagementApplianceHeartbeatConnectionStateArray []GetManagementApplianceHeartbeatConnectionStateInput
+
+func (GetManagementApplianceHeartbeatConnectionStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i GetManagementApplianceHeartbeatConnectionStateArray) ToGetManagementApplianceHeartbeatConnectionStateArrayOutput() GetManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return i.ToGetManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementApplianceHeartbeatConnectionStateArray) ToGetManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) GetManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementApplianceHeartbeatConnectionStateArrayOutput)
+}
+
+type GetManagementApplianceHeartbeatConnectionStateOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceHeartbeatConnectionStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o GetManagementApplianceHeartbeatConnectionStateOutput) ToGetManagementApplianceHeartbeatConnectionStateOutput() GetManagementApplianceHeartbeatConnectionStateOutput {
+	return o
+}
+
+func (o GetManagementApplianceHeartbeatConnectionStateOutput) ToGetManagementApplianceHeartbeatConnectionStateOutputWithContext(ctx context.Context) GetManagementApplianceHeartbeatConnectionStateOutput {
+	return o
+}
+
+// Information about current connection status.
+func (o GetManagementApplianceHeartbeatConnectionStateOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceHeartbeatConnectionState) string { return v.Details }).(pulumi.StringOutput)
+}
+
+// Current state of the management appliance.
+func (o GetManagementApplianceHeartbeatConnectionStateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceHeartbeatConnectionState) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Type of connection.
+func (o GetManagementApplianceHeartbeatConnectionStateOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementApplianceHeartbeatConnectionState) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementApplianceHeartbeatConnectionStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementApplianceHeartbeatConnectionStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementApplianceHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o GetManagementApplianceHeartbeatConnectionStateArrayOutput) ToGetManagementApplianceHeartbeatConnectionStateArrayOutput() GetManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceHeartbeatConnectionStateArrayOutput) ToGetManagementApplianceHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) GetManagementApplianceHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o GetManagementApplianceHeartbeatConnectionStateArrayOutput) Index(i pulumi.IntInput) GetManagementApplianceHeartbeatConnectionStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementApplianceHeartbeatConnectionState {
+		return vs[0].([]GetManagementApplianceHeartbeatConnectionState)[vs[1].(int)]
+	}).(GetManagementApplianceHeartbeatConnectionStateOutput)
+}
+
+type GetManagementAppliancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagementAppliancesFilterInput is an input type that accepts GetManagementAppliancesFilterArgs and GetManagementAppliancesFilterOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesFilterInput` via:
+//
+//	GetManagementAppliancesFilterArgs{...}
+type GetManagementAppliancesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesFilterOutput() GetManagementAppliancesFilterOutput
+	ToGetManagementAppliancesFilterOutputWithContext(context.Context) GetManagementAppliancesFilterOutput
+}
+
+type GetManagementAppliancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagementAppliancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesFilter)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesFilterArgs) ToGetManagementAppliancesFilterOutput() GetManagementAppliancesFilterOutput {
+	return i.ToGetManagementAppliancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesFilterArgs) ToGetManagementAppliancesFilterOutputWithContext(ctx context.Context) GetManagementAppliancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesFilterOutput)
+}
+
+// GetManagementAppliancesFilterArrayInput is an input type that accepts GetManagementAppliancesFilterArray and GetManagementAppliancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesFilterArrayInput` via:
+//
+//	GetManagementAppliancesFilterArray{ GetManagementAppliancesFilterArgs{...} }
+type GetManagementAppliancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesFilterArrayOutput() GetManagementAppliancesFilterArrayOutput
+	ToGetManagementAppliancesFilterArrayOutputWithContext(context.Context) GetManagementAppliancesFilterArrayOutput
+}
+
+type GetManagementAppliancesFilterArray []GetManagementAppliancesFilterInput
+
+func (GetManagementAppliancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesFilter)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesFilterArray) ToGetManagementAppliancesFilterArrayOutput() GetManagementAppliancesFilterArrayOutput {
+	return i.ToGetManagementAppliancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesFilterArray) ToGetManagementAppliancesFilterArrayOutputWithContext(ctx context.Context) GetManagementAppliancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesFilterArrayOutput)
+}
+
+type GetManagementAppliancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesFilter)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesFilterOutput) ToGetManagementAppliancesFilterOutput() GetManagementAppliancesFilterOutput {
+	return o
+}
+
+func (o GetManagementAppliancesFilterOutput) ToGetManagementAppliancesFilterOutputWithContext(ctx context.Context) GetManagementAppliancesFilterOutput {
+	return o
+}
+
+func (o GetManagementAppliancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAppliancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagementAppliancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagementAppliancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagementAppliancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesFilter)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesFilterArrayOutput) ToGetManagementAppliancesFilterArrayOutput() GetManagementAppliancesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesFilterArrayOutput) ToGetManagementAppliancesFilterArrayOutputWithContext(ctx context.Context) GetManagementAppliancesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesFilterArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesFilter {
+		return vs[0].([]GetManagementAppliancesFilter)[vs[1].(int)]
+	}).(GetManagementAppliancesFilterOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollection struct {
+	Items []GetManagementAppliancesManagementApplianceCollectionItem `pulumi:"items"`
+}
+
+// GetManagementAppliancesManagementApplianceCollectionInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionArgs and GetManagementAppliancesManagementApplianceCollectionOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionArgs{...}
+type GetManagementAppliancesManagementApplianceCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionOutput() GetManagementAppliancesManagementApplianceCollectionOutput
+	ToGetManagementAppliancesManagementApplianceCollectionOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionArgs struct {
+	Items GetManagementAppliancesManagementApplianceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagementAppliancesManagementApplianceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollection)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionArgs) ToGetManagementAppliancesManagementApplianceCollectionOutput() GetManagementAppliancesManagementApplianceCollectionOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionArgs) ToGetManagementAppliancesManagementApplianceCollectionOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionOutput)
+}
+
+// GetManagementAppliancesManagementApplianceCollectionArrayInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionArray and GetManagementAppliancesManagementApplianceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionArrayInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionArray{ GetManagementAppliancesManagementApplianceCollectionArgs{...} }
+type GetManagementAppliancesManagementApplianceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionArrayOutput
+	ToGetManagementAppliancesManagementApplianceCollectionArrayOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionArrayOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionArray []GetManagementAppliancesManagementApplianceCollectionInput
+
+func (GetManagementAppliancesManagementApplianceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollection)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionArray) ToGetManagementAppliancesManagementApplianceCollectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionArrayOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionArray) ToGetManagementAppliancesManagementApplianceCollectionArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollection)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionOutput) ToGetManagementAppliancesManagementApplianceCollectionOutput() GetManagementAppliancesManagementApplianceCollectionOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionOutput) ToGetManagementAppliancesManagementApplianceCollectionOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionOutput) Items() GetManagementAppliancesManagementApplianceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollection) []GetManagementAppliancesManagementApplianceCollectionItem {
+		return v.Items
+	}).(GetManagementAppliancesManagementApplianceCollectionItemArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollection)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesManagementApplianceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesManagementApplianceCollection {
+		return vs[0].([]GetManagementAppliancesManagementApplianceCollection)[vs[1].(int)]
+	}).(GetManagementAppliancesManagementApplianceCollectionOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
+	ComputeInstanceId string `pulumi:"computeInstanceId"`
+	// Configuration of management appliance.
+	Configurations []GetManagementAppliancesManagementApplianceCollectionItemConfiguration `pulumi:"configurations"`
+	// Array of connections for management appliance.
+	Connections []GetManagementAppliancesManagementApplianceCollectionItemConnection `pulumi:"connections"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Current states of connections.
+	HeartbeatConnectionStates []GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState `pulumi:"heartbeatConnectionStates"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
+	Id string `pulumi:"id"`
+	// Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	PublicSshKeys     string `pulumi:"publicSshKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+	SddcId string `pulumi:"sddcId"`
+	// The lifecycle state of the management appliance.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeConfigurationUpdated string `pulumi:"timeConfigurationUpdated"`
+	// The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastHeartbeat string `pulumi:"timeLastHeartbeat"`
+	// The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemArgs and GetManagementAppliancesManagementApplianceCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemArgs{...}
+type GetManagementAppliancesManagementApplianceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemOutput() GetManagementAppliancesManagementApplianceCollectionItemOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
+	ComputeInstanceId pulumi.StringInput `pulumi:"computeInstanceId"`
+	// Configuration of management appliance.
+	Configurations GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayInput `pulumi:"configurations"`
+	// Array of connections for management appliance.
+	Connections GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput `pulumi:"connections"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Current states of connections.
+	HeartbeatConnectionStates GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput `pulumi:"heartbeatConnectionStates"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	PublicSshKeys     pulumi.StringInput `pulumi:"publicSshKeys"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+	SddcId pulumi.StringInput `pulumi:"sddcId"`
+	// The lifecycle state of the management appliance.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeConfigurationUpdated pulumi.StringInput `pulumi:"timeConfigurationUpdated"`
+	// The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeLastHeartbeat pulumi.StringInput `pulumi:"timeLastHeartbeat"`
+	// The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagementAppliancesManagementApplianceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemArgs) ToGetManagementAppliancesManagementApplianceCollectionItemOutput() GetManagementAppliancesManagementApplianceCollectionItemOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemArgs) ToGetManagementAppliancesManagementApplianceCollectionItemOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemOutput)
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemArrayInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemArray and GetManagementAppliancesManagementApplianceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemArrayInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemArray{ GetManagementAppliancesManagementApplianceCollectionItemArgs{...} }
+type GetManagementAppliancesManagementApplianceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemArrayOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemArrayOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemArray []GetManagementAppliancesManagementApplianceCollectionItemInput
+
+func (GetManagementAppliancesManagementApplianceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemArray) ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemArrayOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemArray) ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) ToGetManagementAppliancesManagementApplianceCollectionItemOutput() GetManagementAppliancesManagementApplianceCollectionItemOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) ToGetManagementAppliancesManagementApplianceCollectionItemOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) ComputeInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
+}
+
+// Configuration of management appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) Configurations() GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) []GetManagementAppliancesManagementApplianceCollectionItemConfiguration {
+		return v.Configurations
+	}).(GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput)
+}
+
+// Array of connections for management appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) Connections() GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) []GetManagementAppliancesManagementApplianceCollectionItemConnection {
+		return v.Connections
+	}).(GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Current states of connections.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) HeartbeatConnectionStates() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) []GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState {
+		return v.HeartbeatConnectionStates
+	}).(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) PublicSshKeys() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.PublicSshKeys }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) SddcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.SddcId }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the management appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) TimeConfigurationUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string {
+		return v.TimeConfigurationUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) TimeLastHeartbeat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.TimeLastHeartbeat }).(pulumi.StringOutput)
+}
+
+// The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetManagementAppliancesManagementApplianceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesManagementApplianceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesManagementApplianceCollectionItem {
+		return vs[0].([]GetManagementAppliancesManagementApplianceCollectionItem)[vs[1].(int)]
+	}).(GetManagementAppliancesManagementApplianceCollectionItemOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConfiguration struct {
+	// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled bool `pulumi:"isLogIngestionEnabled"`
+	// Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled bool `pulumi:"isMetricsCollectionEnabled"`
+	// Array of metrics ids to collect.
+	Metrics []string `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId string `pulumi:"supportBundleBucketId"`
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemConfigurationInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs and GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemConfigurationInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs{...}
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs struct {
+	// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+	IsLogIngestionEnabled pulumi.BoolInput `pulumi:"isLogIngestionEnabled"`
+	// Is metrics collection and publishing is enabled for appliance.
+	IsMetricsCollectionEnabled pulumi.BoolInput `pulumi:"isMetricsCollectionEnabled"`
+	// Array of metrics ids to collect.
+	Metrics pulumi.StringArrayInput `pulumi:"metrics"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+	SupportBundleBucketId pulumi.StringInput `pulumi:"supportBundleBucketId"`
+}
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput)
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray and GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray{ GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs{...} }
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray []GetManagementAppliancesManagementApplianceCollectionItemConfigurationInput
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput {
+	return o
+}
+
+// Is log ingestion from SDDC to Oracle Cloud Infrastructure enabled.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) IsLogIngestionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConfiguration) bool {
+		return v.IsLogIngestionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Is metrics collection and publishing is enabled for appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) IsMetricsCollectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConfiguration) bool {
+		return v.IsMetricsCollectionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Array of metrics ids to collect.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) Metrics() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConfiguration) []string {
+		return v.Metrics
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of support bundle Object Storage bucket.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput) SupportBundleBucketId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConfiguration) string {
+		return v.SupportBundleBucketId
+	}).(pulumi.StringOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemConfiguration)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesManagementApplianceCollectionItemConfiguration {
+		return vs[0].([]GetManagementAppliancesManagementApplianceCollectionItemConfiguration)[vs[1].(int)]
+	}).(GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId string `pulumi:"credentialsSecretId"`
+	// Type of connection.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemConnectionInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs and GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemConnectionInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs{...}
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
+	// Type of connection.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConnection)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput)
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemConnectionArray and GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemConnectionArray{ GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs{...} }
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionArray []GetManagementAppliancesManagementApplianceCollectionItemConnectionInput
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemConnection)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConnectionArray) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemConnectionArray) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConnection)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret in Oracle Cloud Infrastructure vault, that is used for storage of username and password in JSON format.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput) CredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConnection) string {
+		return v.CredentialsSecretId
+	}).(pulumi.StringOutput)
+}
+
+// Type of connection.
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemConnection) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemConnection)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesManagementApplianceCollectionItemConnection {
+		return vs[0].([]GetManagementAppliancesManagementApplianceCollectionItemConnection)[vs[1].(int)]
+	}).(GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState struct {
+	// Information about current connection status.
+	Details string `pulumi:"details"`
+	// The lifecycle state of the management appliance.
+	State string `pulumi:"state"`
+	// Type of connection.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs and GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs{...}
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs struct {
+	// Information about current connection status.
+	Details pulumi.StringInput `pulumi:"details"`
+	// The lifecycle state of the management appliance.
+	State pulumi.StringInput `pulumi:"state"`
+	// Type of connection.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput)
+}
+
+// GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput is an input type that accepts GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray and GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput values.
+// You can construct a concrete instance of `GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput` via:
+//
+//	GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray{ GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs{...} }
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput
+	ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutputWithContext(context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray []GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput
+
+func (GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput {
+	return i.ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput {
+	return o
+}
+
+// Information about current connection status.
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) Details() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState) string {
+		return v.Details
+	}).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the management appliance.
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Type of connection.
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState)(nil)).Elem()
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput() GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput) ToGetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutputWithContext(ctx context.Context) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput {
+	return o
+}
+
+func (o GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput) Index(i pulumi.IntInput) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState {
+		return vs[0].([]GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionState)[vs[1].(int)]
+	}).(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput)
+}
+
 type GetSddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -10391,6 +11984,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatastoreBlockVolumeDetailAttachmentArrayInput)(nil)).Elem(), DatastoreBlockVolumeDetailAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EsxiHostDatastoreAttachmentInput)(nil)).Elem(), EsxiHostDatastoreAttachmentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EsxiHostDatastoreAttachmentArrayInput)(nil)).Elem(), EsxiHostDatastoreAttachmentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceConfigurationInput)(nil)).Elem(), ManagementApplianceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceConfigurationPtrInput)(nil)).Elem(), ManagementApplianceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceConnectionInput)(nil)).Elem(), ManagementApplianceConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceConnectionArrayInput)(nil)).Elem(), ManagementApplianceConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceHeartbeatConnectionStateInput)(nil)).Elem(), ManagementApplianceHeartbeatConnectionStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagementApplianceHeartbeatConnectionStateArrayInput)(nil)).Elem(), ManagementApplianceHeartbeatConnectionStateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreInput)(nil)).Elem(), SddcDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreArrayInput)(nil)).Elem(), SddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseInput)(nil)).Elem(), SddcHcxOnPremLicenseArgs{})
@@ -10457,6 +12056,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionDatastoreAttachmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterInput)(nil)).Elem(), GetExsiHostsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterArrayInput)(nil)).Elem(), GetExsiHostsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceConfigurationInput)(nil)).Elem(), GetManagementApplianceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceConfigurationArrayInput)(nil)).Elem(), GetManagementApplianceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceConnectionInput)(nil)).Elem(), GetManagementApplianceConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceConnectionArrayInput)(nil)).Elem(), GetManagementApplianceConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceHeartbeatConnectionStateInput)(nil)).Elem(), GetManagementApplianceHeartbeatConnectionStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementApplianceHeartbeatConnectionStateArrayInput)(nil)).Elem(), GetManagementApplianceHeartbeatConnectionStateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesFilterInput)(nil)).Elem(), GetManagementAppliancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesFilterArrayInput)(nil)).Elem(), GetManagementAppliancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConfigurationInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConnectionInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayInput)(nil)).Elem(), GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreInput)(nil)).Elem(), GetSddcDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreArrayInput)(nil)).Elem(), GetSddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArgs{})
@@ -10525,6 +12142,12 @@ func init() {
 	pulumi.RegisterOutputType(DatastoreBlockVolumeDetailAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(EsxiHostDatastoreAttachmentOutput{})
 	pulumi.RegisterOutputType(EsxiHostDatastoreAttachmentArrayOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceConfigurationOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceConnectionOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceConnectionArrayOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceHeartbeatConnectionStateOutput{})
+	pulumi.RegisterOutputType(ManagementApplianceHeartbeatConnectionStateArrayOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseOutput{})
@@ -10591,6 +12214,24 @@ func init() {
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionDatastoreAttachmentArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceConnectionOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceHeartbeatConnectionStateOutput{})
+	pulumi.RegisterOutputType(GetManagementApplianceHeartbeatConnectionStateArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemConfigurationOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemConnectionOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateOutput{})
+	pulumi.RegisterOutputType(GetManagementAppliancesManagementApplianceCollectionItemHeartbeatConnectionStateArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcDatastoreOutput{})
 	pulumi.RegisterOutputType(GetSddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseOutput{})

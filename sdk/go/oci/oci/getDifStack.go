@@ -61,6 +61,8 @@ type LookupDifStackResult struct {
 	// ADB details if adb is included in the services.
 	Adbs              []GetDifStackAdb `pulumi:"adbs"`
 	AddServiceTrigger int              `pulumi:"addServiceTrigger"`
+	// AI Data Platform Details if aidataplatform is included in services.
+	Aidataplatforms []GetDifStackAidataplatform `pulumi:"aidataplatforms"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// DATAFLOW details if dataflow is included in the services.
@@ -84,6 +86,10 @@ type LookupDifStackResult struct {
 	NotificationEmail string `pulumi:"notificationEmail"`
 	// Object Storage Details if object storage is included in services.
 	Objectstorages []GetDifStackObjectstorage `pulumi:"objectstorages"`
+	// OKE Details if oke is included in services.
+	Okes []GetDifStackOke `pulumi:"okes"`
+	// OMK Details if omk is included in services.
+	Omks []GetDifStackOmk `pulumi:"omks"`
 	// Details of the service onboarded for the data intelligence stack.
 	ServiceDetails []GetDifStackServiceDetail `pulumi:"serviceDetails"`
 	// List of services to be onboarded for the stack.
@@ -146,6 +152,11 @@ func (o LookupDifStackResultOutput) AddServiceTrigger() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDifStackResult) int { return v.AddServiceTrigger }).(pulumi.IntOutput)
 }
 
+// AI Data Platform Details if aidataplatform is included in services.
+func (o LookupDifStackResultOutput) Aidataplatforms() GetDifStackAidataplatformArrayOutput {
+	return o.ApplyT(func(v LookupDifStackResult) []GetDifStackAidataplatform { return v.Aidataplatforms }).(GetDifStackAidataplatformArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupDifStackResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDifStackResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -203,6 +214,16 @@ func (o LookupDifStackResultOutput) NotificationEmail() pulumi.StringOutput {
 // Object Storage Details if object storage is included in services.
 func (o LookupDifStackResultOutput) Objectstorages() GetDifStackObjectstorageArrayOutput {
 	return o.ApplyT(func(v LookupDifStackResult) []GetDifStackObjectstorage { return v.Objectstorages }).(GetDifStackObjectstorageArrayOutput)
+}
+
+// OKE Details if oke is included in services.
+func (o LookupDifStackResultOutput) Okes() GetDifStackOkeArrayOutput {
+	return o.ApplyT(func(v LookupDifStackResult) []GetDifStackOke { return v.Okes }).(GetDifStackOkeArrayOutput)
+}
+
+// OMK Details if omk is included in services.
+func (o LookupDifStackResultOutput) Omks() GetDifStackOmkArrayOutput {
+	return o.ApplyT(func(v LookupDifStackResult) []GetDifStackOmk { return v.Omks }).(GetDifStackOmkArrayOutput)
 }
 
 // Details of the service onboarded for the data intelligence stack.

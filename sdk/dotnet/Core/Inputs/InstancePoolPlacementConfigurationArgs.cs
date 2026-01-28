@@ -18,6 +18,14 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("availabilityDomain", required: true)]
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// 
+        /// Make sure the compute cluster belongs to the same availability domain as specified in placement configuration otherwise the request will be rejected with 400. Once this field is set, it cannot be updated. Also any update to the availability domain in placement configuration will be blocked.
+        /// </summary>
+        [Input("computeClusterId")]
+        public Input<string>? ComputeClusterId { get; set; }
+
         [Input("faultDomains")]
         private InputList<string>? _faultDomains;
 

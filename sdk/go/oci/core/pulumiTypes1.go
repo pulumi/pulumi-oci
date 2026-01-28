@@ -11661,6 +11661,8 @@ func (o GetInstancePoolLoadBalancerArrayOutput) Index(i pulumi.IntInput) GetInst
 type GetInstancePoolPlacementConfiguration struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+	ComputeClusterId string `pulumi:"computeClusterId"`
 	// The fault domains to place instances.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
@@ -11685,6 +11687,8 @@ type GetInstancePoolPlacementConfigurationInput interface {
 type GetInstancePoolPlacementConfigurationArgs struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
 	// The fault domains to place instances.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
@@ -11749,6 +11753,11 @@ func (o GetInstancePoolPlacementConfigurationOutput) ToGetInstancePoolPlacementC
 // The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 func (o GetInstancePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+func (o GetInstancePoolPlacementConfigurationOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolPlacementConfiguration) string { return v.ComputeClusterId }).(pulumi.StringOutput)
 }
 
 // The fault domains to place instances.
@@ -13151,6 +13160,8 @@ func (o GetInstancePoolsInstancePoolLoadBalancerArrayOutput) Index(i pulumi.IntI
 type GetInstancePoolsInstancePoolPlacementConfiguration struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+	ComputeClusterId string `pulumi:"computeClusterId"`
 	// The fault domains to place instances.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
@@ -13175,6 +13186,8 @@ type GetInstancePoolsInstancePoolPlacementConfigurationInput interface {
 type GetInstancePoolsInstancePoolPlacementConfigurationArgs struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+	ComputeClusterId pulumi.StringInput `pulumi:"computeClusterId"`
 	// The fault domains to place instances.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
@@ -13239,6 +13252,11 @@ func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) ToGetInstanceP
 // The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.ComputeClusterId }).(pulumi.StringOutput)
 }
 
 // The fault domains to place instances.

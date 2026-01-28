@@ -39,7 +39,7 @@ class InstancePoolArgs:
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         :param pulumi.Input[_builtins.int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -105,7 +105,7 @@ class InstancePoolArgs:
         """
         (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         """
         return pulumi.get(self, "placement_configurations")
 
@@ -257,7 +257,7 @@ class _InstancePoolState:
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         :param pulumi.Input[_builtins.int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
@@ -421,7 +421,7 @@ class _InstancePoolState:
         """
         (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         """
         return pulumi.get(self, "placement_configurations")
 
@@ -501,6 +501,7 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id=test_instance_configuration["id"],
             placement_configurations=[{
                 "availability_domain": instance_pool_placement_configurations_availability_domain,
+                "compute_cluster_id": test_compute_cluster["id"],
                 "fault_domains": instance_pool_placement_configurations_fault_domains,
                 "primary_subnet_id": test_subnet["id"],
                 "primary_vnic_subnets": {
@@ -570,7 +571,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         :param pulumi.Input[_builtins.int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
@@ -596,6 +597,7 @@ class InstancePool(pulumi.CustomResource):
             instance_configuration_id=test_instance_configuration["id"],
             placement_configurations=[{
                 "availability_domain": instance_pool_placement_configurations_availability_domain,
+                "compute_cluster_id": test_compute_cluster["id"],
                 "fault_domains": instance_pool_placement_configurations_fault_domains,
                 "primary_subnet_id": test_subnet["id"],
                 "primary_vnic_subnets": {
@@ -753,7 +755,7 @@ class InstancePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]] load_balancers: The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]] placement_configurations: (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
                
-               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+               To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         :param pulumi.Input[_builtins.int] size: (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
@@ -868,7 +870,7 @@ class InstancePool(pulumi.CustomResource):
         """
         (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 
-        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration.
+        To use the instance pool with a regional subnet, provide a placement configuration for each availability domain, and include the regional subnet in each placement configuration. To use compute cluster with instance pool, provide a single placement configuration.
         """
         return pulumi.get(self, "placement_configurations")
 

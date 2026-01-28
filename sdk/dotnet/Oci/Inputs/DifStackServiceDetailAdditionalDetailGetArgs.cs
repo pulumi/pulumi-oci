@@ -24,6 +24,12 @@ namespace Pulumi.Oci.Oci.Inputs
             set => _assignedConnections = value;
         }
 
+        /// <summary>
+        /// OCID of cluster assigned to OMK cluster-namespace.
+        /// </summary>
+        [Input("clusterId")]
+        public Input<string>? ClusterId { get; set; }
+
         [Input("endpointDetails")]
         private InputList<Inputs.DifStackServiceDetailAdditionalDetailEndpointDetailGetArgs>? _endpointDetails;
 
@@ -47,6 +53,12 @@ namespace Pulumi.Oci.Oci.Inputs
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
+
+        /// <summary>
+        /// Kubernetes namespace-name of omk cluster-namespace.
+        /// </summary>
+        [Input("namespace")]
+        public Input<string>? Namespace { get; set; }
 
         /// <summary>
         /// region of cluster

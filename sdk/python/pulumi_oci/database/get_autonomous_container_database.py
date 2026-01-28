@@ -27,7 +27,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, customer_contacts=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, okv_end_point_group_name=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, customer_contacts=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, encryption_key_location_details=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, okv_end_point_group_name=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
         if associated_backup_configuration_details and not isinstance(associated_backup_configuration_details, list):
             raise TypeError("Expected argument 'associated_backup_configuration_details' to be a list")
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
@@ -100,6 +100,9 @@ class GetAutonomousContainerDatabaseResult:
         if dst_file_version and not isinstance(dst_file_version, str):
             raise TypeError("Expected argument 'dst_file_version' to be a str")
         pulumi.set(__self__, "dst_file_version", dst_file_version)
+        if encryption_key_location_details and not isinstance(encryption_key_location_details, list):
+            raise TypeError("Expected argument 'encryption_key_location_details' to be a list")
+        pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         if failover_trigger and not isinstance(failover_trigger, int):
             raise TypeError("Expected argument 'failover_trigger' to be a int")
         pulumi.set(__self__, "failover_trigger", failover_trigger)
@@ -454,6 +457,14 @@ class GetAutonomousContainerDatabaseResult:
         DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyLocationDetails")
+    def encryption_key_location_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseEncryptionKeyLocationDetailResult']:
+        """
+        Types of providers supported for managing database encryption keys
+        """
+        return pulumi.get(self, "encryption_key_location_details")
 
     @_builtins.property
     @pulumi.getter(name="failoverTrigger")
@@ -900,6 +911,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             display_name=self.display_name,
             distribution_affinity=self.distribution_affinity,
             dst_file_version=self.dst_file_version,
+            encryption_key_location_details=self.encryption_key_location_details,
             failover_trigger=self.failover_trigger,
             fast_start_fail_over_lag_limit_in_seconds=self.fast_start_fail_over_lag_limit_in_seconds,
             freeform_tags=self.freeform_tags,
@@ -1008,6 +1020,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         display_name=pulumi.get(__ret__, 'display_name'),
         distribution_affinity=pulumi.get(__ret__, 'distribution_affinity'),
         dst_file_version=pulumi.get(__ret__, 'dst_file_version'),
+        encryption_key_location_details=pulumi.get(__ret__, 'encryption_key_location_details'),
         failover_trigger=pulumi.get(__ret__, 'failover_trigger'),
         fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__ret__, 'fast_start_fail_over_lag_limit_in_seconds'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -1113,6 +1126,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         display_name=pulumi.get(__response__, 'display_name'),
         distribution_affinity=pulumi.get(__response__, 'distribution_affinity'),
         dst_file_version=pulumi.get(__response__, 'dst_file_version'),
+        encryption_key_location_details=pulumi.get(__response__, 'encryption_key_location_details'),
         failover_trigger=pulumi.get(__response__, 'failover_trigger'),
         fast_start_fail_over_lag_limit_in_seconds=pulumi.get(__response__, 'fast_start_fail_over_lag_limit_in_seconds'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),

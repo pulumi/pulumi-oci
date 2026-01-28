@@ -93,6 +93,10 @@ namespace Pulumi.Oci.CertificatesManagement
         public readonly string CertificateAuthorityId;
         public readonly string CertificateAuthorityVersionNumber;
         /// <summary>
+        /// The certificate signing request (in PEM format).
+        /// </summary>
+        public readonly string CsrPem;
+        /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
@@ -140,6 +144,8 @@ namespace Pulumi.Oci.CertificatesManagement
 
             string certificateAuthorityVersionNumber,
 
+            string csrPem,
+
             string id,
 
             string issuerCaVersionNumber,
@@ -164,6 +170,7 @@ namespace Pulumi.Oci.CertificatesManagement
         {
             CertificateAuthorityId = certificateAuthorityId;
             CertificateAuthorityVersionNumber = certificateAuthorityVersionNumber;
+            CsrPem = csrPem;
             Id = id;
             IssuerCaVersionNumber = issuerCaVersionNumber;
             RevocationStatuses = revocationStatuses;

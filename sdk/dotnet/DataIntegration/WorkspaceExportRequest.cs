@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
+    /// This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceExportRequest
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+    /// 
+    /// Export Metadata Object
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +45,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Import
     /// 
-    /// WorkspaceExportRequests can be imported using the `id`, e.g.
+    /// WorkspaceExportRequests can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest test_workspace_export_request "workspaces/{workspaceId}/exportRequests/{exportRequestKey}"

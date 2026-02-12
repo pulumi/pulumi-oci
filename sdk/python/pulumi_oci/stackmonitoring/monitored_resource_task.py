@@ -317,6 +317,13 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourceTask
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Create a new stack monitoring resource task.
+
         ## Example Usage
 
         ```python
@@ -416,6 +423,13 @@ class MonitoredResourceTask(pulumi.CustomResource):
                  args: MonitoredResourceTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourceTask
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Create a new stack monitoring resource task.
+
         ## Example Usage
 
         ```python

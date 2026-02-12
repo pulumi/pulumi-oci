@@ -61,7 +61,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Import
     /// 
-    /// ImportedModels can be imported using the `id`, e.g.
+    /// ImportedModels can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GenerativeAi/importedModel:ImportedModel test_imported_model "id"

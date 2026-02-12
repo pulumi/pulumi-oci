@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Blockchain
 {
     /// <summary>
+    /// This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/blockchain/latest/BlockchainPlatform
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/blockchain
+    /// 
+    /// Creates a new Blockchain Platform.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +54,7 @@ namespace Pulumi.Oci.Blockchain
     /// 
     /// ## Import
     /// 
-    /// BlockchainPlatforms can be imported using the `id`, e.g.
+    /// BlockchainPlatforms can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Blockchain/blockchainPlatform:BlockchainPlatform test_blockchain_platform "id"

@@ -16,7 +16,14 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbAzureConnector
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+ * 
+ * Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
+ * 
+ *   Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
  * 
  * ## Import
  * 

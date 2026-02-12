@@ -578,7 +578,12 @@ class VbInstance(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/visual-builder/latest/VbInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/visula_builder
+
+        Creates a new Vb Instance.
 
         ## Import
 
@@ -613,7 +618,12 @@ class VbInstance(pulumi.CustomResource):
                  args: VbInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/visual-builder/latest/VbInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/visula_builder
+
+        Creates a new Vb Instance.
 
         ## Import
 

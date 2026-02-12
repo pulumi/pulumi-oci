@@ -25,15 +25,10 @@ __all__ = [
     'GetControlsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetAccessRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAccessRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAccessRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAccessRequestsFilterArgs:
@@ -74,16 +69,13 @@ class GetAccessRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire display name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire display name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetActionsFilterArgs:
@@ -130,13 +122,10 @@ class GetActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetControlAssignmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetControlAssignmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetControlAssignmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetControlAssignmentsFilterArgs:
@@ -177,13 +166,10 @@ class GetControlAssignmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetControlsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetControlsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetControlsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetControlsFilterArgs:

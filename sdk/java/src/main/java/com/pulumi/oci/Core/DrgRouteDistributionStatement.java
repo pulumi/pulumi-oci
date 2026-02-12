@@ -16,6 +16,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteDistributionStatement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Adds one route distribution statement to the specified route distribution.
+ * 
  * ## Example Usage
  * 
  * <pre>

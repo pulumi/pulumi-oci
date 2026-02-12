@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
+    /// This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/DataMaskRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+    /// 
+    /// Creates a new DataMaskRule resource definition.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -49,7 +56,7 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// ## Import
     /// 
-    /// DataMaskRules can be imported using the `id`, e.g.
+    /// DataMaskRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudGuard/dataMaskRule:DataMaskRule test_data_mask_rule "id"

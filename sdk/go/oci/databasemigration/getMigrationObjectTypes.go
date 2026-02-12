@@ -11,6 +11,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
+//
+// Display sample object types to exclude or include for a Migration.
+//
+// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+//
 // ## Example Usage
 //
 // ```go

@@ -17,6 +17,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SensitiveDataModelReferentialRelation
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+ * 
+ * Creates a new referential relation in the specified sensitive data model.
+ * 
  * ## Example Usage
  * 
  * <pre>

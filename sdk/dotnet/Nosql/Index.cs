@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql
 {
     /// <summary>
+    /// This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/Index
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+    /// 
+    /// Create a new index on the table identified by tableNameOrId.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// ## Import
     /// 
-    /// Indexes can be imported using the `id`, e.g.
+    /// Indexes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Nosql/index:Index test_index "tables/{tableNameOrId}/indexes/{indexName}"

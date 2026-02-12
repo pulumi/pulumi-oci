@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/PublicIpPool
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a public IP pool.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// PublicIpPools can be imported using the `id`, e.g.
+    /// PublicIpPools can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/publicIpPool:PublicIpPool test_public_ip_pool "id"

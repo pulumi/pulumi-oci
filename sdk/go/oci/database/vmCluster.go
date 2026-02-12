@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmCluster
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+//
+// Creates an Exadata Cloud@Customer VM cluster.
+//
 // ## Example Usage
 //
 // ```go
@@ -100,7 +107,8 @@ type VmCluster struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
-	CpuCoreCount pulumi.IntOutput    `pulumi:"cpuCoreCount"`
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntOutput `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -225,7 +233,8 @@ type vmClusterState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel *string `pulumi:"computeModel"`
-	CpuCoreCount *int    `pulumi:"cpuCoreCount"`
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// The number of enabled CPU cores.
 	CpusEnabled *int `pulumi:"cpusEnabled"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -300,6 +309,7 @@ type VmClusterState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringPtrInput
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
 	CpuCoreCount pulumi.IntPtrInput
 	// The number of enabled CPU cores.
 	CpusEnabled pulumi.IntPtrInput
@@ -375,7 +385,8 @@ type vmClusterArgs struct {
 	CloudAutomationUpdateDetails *VmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	CpuCoreCount  int    `pulumi:"cpuCoreCount"`
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions *VmClusterDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// (Updatable) The data disk group size to be allocated in GBs.
@@ -430,7 +441,8 @@ type VmClusterArgs struct {
 	CloudAutomationUpdateDetails VmClusterCloudAutomationUpdateDetailsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	CpuCoreCount  pulumi.IntInput
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+	CpuCoreCount pulumi.IntInput
 	// (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions VmClusterDataCollectionOptionsPtrInput
 	// (Updatable) The data disk group size to be allocated in GBs.
@@ -586,6 +598,7 @@ func (o VmClusterOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
+// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
 func (o VmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }

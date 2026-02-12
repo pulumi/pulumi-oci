@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/NamedCredential
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates a named credential.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +58,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// NamedCredentials can be imported using the `id`, e.g.
+    /// NamedCredentials can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/namedCredential:NamedCredential test_named_credential "id"

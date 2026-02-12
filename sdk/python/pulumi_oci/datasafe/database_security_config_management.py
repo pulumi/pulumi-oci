@@ -418,6 +418,13 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfigManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the database security configuration.
+
         ## Example Usage
 
         ```python
@@ -468,6 +475,13 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  args: Optional[DatabaseSecurityConfigManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/DatabaseSecurityConfigManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Updates the database security configuration.
+
         ## Example Usage
 
         ```python

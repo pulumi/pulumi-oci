@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/NewsReport
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+//
+// Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
+//
 // ## Example Usage
 //
 // ```go

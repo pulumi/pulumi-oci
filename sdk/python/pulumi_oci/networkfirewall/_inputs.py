@@ -67,20 +67,15 @@ __all__ = [
     'GetNetworkFirewallsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class NetworkFirewallNatConfigurationArgsDict(TypedDict):
-        must_enable_private_nat: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
-        """
-        nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
-        """
-elif False:
-    NetworkFirewallNatConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallNatConfigurationArgsDict(TypedDict):
+    must_enable_private_nat: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) To allocate private NAT IPs to the firewall. The attached network firewall policy must also have NAT rules to enable NAT on any traffic passing through the firewall. The value of this field can not be false to release the NAT IPs given that the attached network firewall policy does not contains any NAT rules. The value of this field should be set to true if the network firewall policy being applied contains NAT rules.
+    """
+    nat_ip_address_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    An array of NAT IP addresses that are associated with the Network Firewall. These IPs are reserved for NAT and shouldn't be used for any other purpose in the subnet.
+    """
 
 @pulumi.input_type
 class NetworkFirewallNatConfigurationArgs:
@@ -120,18 +115,15 @@ class NetworkFirewallNatConfigurationArgs:
         pulumi.set(self, "nat_ip_address_lists", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
-        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        """
-        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
-elif False:
-    NetworkFirewallPolicyDecryptionRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyDecryptionRuleConditionArgsDict(TypedDict):
+    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic destination address.
+    """
+    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic source address.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyDecryptionRuleConditionArgs:
@@ -172,22 +164,19 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
         pulumi.set(self, "source_addresses", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyDecryptionRulePositionArgsDict(TypedDict):
-        after_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
-        before_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule before which this rule lies.
+class NetworkFirewallPolicyDecryptionRulePositionArgsDict(TypedDict):
+    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule after which this rule lies.
+    """
+    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule before which this rule lies.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    NetworkFirewallPolicyDecryptionRulePositionArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyDecryptionRulePositionArgs:
@@ -236,22 +225,19 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
         pulumi.set(self, "before_rule", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
-        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
-        """
-        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of IP address list names to be evaluated against the traffic source address.
-        """
-elif False:
-    NetworkFirewallPolicyNatRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyNatRuleConditionArgsDict(TypedDict):
+    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A Service name to be evaluated against the traffic protocol and protocol-specific parameters.
+    """
+    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of IP address list names to be evaluated against the traffic source address.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyNatRuleConditionArgs:
@@ -308,18 +294,15 @@ class NetworkFirewallPolicyNatRuleConditionArgs:
         pulumi.set(self, "source_addresses", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyNatRulePositionArgsDict(TypedDict):
-        after_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
-        before_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule before which this rule lies.
-        """
-elif False:
-    NetworkFirewallPolicyNatRulePositionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyNatRulePositionArgsDict(TypedDict):
+    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule after which this rule lies.
+    """
+    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule before which this rule lies.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyNatRulePositionArgs:
@@ -360,30 +343,27 @@ class NetworkFirewallPolicyNatRulePositionArgs:
         pulumi.set(self, "before_rule", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicySecurityRuleConditionArgsDict(TypedDict):
-        applications: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
-        """
-        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        """
-        services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
-        """
-        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
-        urls: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
-        """
-elif False:
-    NetworkFirewallPolicySecurityRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicySecurityRuleConditionArgsDict(TypedDict):
+    applications: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of application group names to be evaluated against the traffic protocol and protocol-specific parameters.
+    """
+    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic destination address.
+    """
+    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+    """
+    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic source address.
+    """
+    urls: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of URL list names to be evaluated against the HTTP(S) request target.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicySecurityRuleConditionArgs:
@@ -472,22 +452,19 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
         pulumi.set(self, "urls", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicySecurityRulePositionArgsDict(TypedDict):
-        after_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
-        before_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule before which this rule lies.
+class NetworkFirewallPolicySecurityRulePositionArgsDict(TypedDict):
+    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule after which this rule lies.
+    """
+    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule before which this rule lies.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    NetworkFirewallPolicySecurityRulePositionArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicySecurityRulePositionArgs:
@@ -536,18 +513,15 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
         pulumi.set(self, "before_rule", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyServicePortRangeArgsDict(TypedDict):
-        minimum_port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
-        """
-        maximum_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
-        """
-elif False:
-    NetworkFirewallPolicyServicePortRangeArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyServicePortRangeArgsDict(TypedDict):
+    minimum_port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The minimum port in the range (inclusive), or the sole port of a single-port range.
+    """
+    maximum_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum port in the range (inclusive), which may be absent for a single-port range.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyServicePortRangeArgs:
@@ -587,18 +561,15 @@ class NetworkFirewallPolicyServicePortRangeArgs:
         pulumi.set(self, "maximum_port", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict(TypedDict):
-        destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic destination address.
-        """
-        source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of address list names to be evaluated against the traffic source address.
-        """
-elif False:
-    NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict(TypedDict):
+    destination_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic destination address.
+    """
+    source_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of address list names to be evaluated against the traffic source address.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRuleConditionArgs:
@@ -639,18 +610,15 @@ class NetworkFirewallPolicyTunnelInspectionRuleConditionArgs:
         pulumi.set(self, "source_addresses", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict(TypedDict):
-        after_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule after which this rule lies.
-        """
-        before_rule: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Identifier for rule before which this rule lies.
-        """
-elif False:
-    NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict(TypedDict):
+    after_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule after which this rule lies.
+    """
+    before_rule: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Identifier for rule before which this rule lies.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRulePositionArgs:
@@ -691,14 +659,11 @@ class NetworkFirewallPolicyTunnelInspectionRulePositionArgs:
         pulumi.set(self, "before_rule", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict(TypedDict):
-        must_return_traffic_to_source: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Return scanned VXLAN tunnel traffic to source.
-        """
-elif False:
-    NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict: TypeAlias = Mapping[str, Any]
+class NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict(TypedDict):
+    must_return_traffic_to_source: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Return scanned VXLAN tunnel traffic to source.
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyTunnelInspectionRuleProfileArgs:
@@ -723,23 +688,20 @@ class NetworkFirewallPolicyTunnelInspectionRuleProfileArgs:
         pulumi.set(self, "must_return_traffic_to_source", value)
 
 
-if not MYPY:
-    class NetworkFirewallPolicyUrlListUrlArgsDict(TypedDict):
-        pattern: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of pattern.
-        * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
+class NetworkFirewallPolicyUrlListUrlArgsDict(TypedDict):
+    pattern: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of pattern.
+    * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    NetworkFirewallPolicyUrlListUrlArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class NetworkFirewallPolicyUrlListUrlArgs:
@@ -788,13 +750,10 @@ class NetworkFirewallPolicyUrlListUrlArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPoliciesFilterArgs:
@@ -835,16 +794,13 @@ class GetNetworkFirewallPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyAddressListsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique name to identify the group of addresses to be used in the policy rules.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyAddressListsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyAddressListsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique name to identify the group of addresses to be used in the policy rules.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyAddressListsFilterArgs:
@@ -891,16 +847,13 @@ class GetNetworkFirewallPolicyAddressListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the application Group.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the application Group.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyApplicationGroupsFilterArgs:
@@ -947,16 +900,13 @@ class GetNetworkFirewallPolicyApplicationGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the application.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the application.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyApplicationsFilterArgs:
@@ -1003,16 +953,13 @@ class GetNetworkFirewallPolicyApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique Name of the decryption profile.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyDecryptionProfilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique Name of the decryption profile.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyDecryptionProfilesFilterArgs:
@@ -1059,16 +1006,13 @@ class GetNetworkFirewallPolicyDecryptionProfilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name for the decryption rule, must be unique within the policy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name for the decryption rule, must be unique within the policy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
@@ -1115,16 +1059,13 @@ class GetNetworkFirewallPolicyDecryptionRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyNatRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name for the NAT rule, must be unique within the policy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyNatRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyNatRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name for the NAT rule, must be unique within the policy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyNatRulesFilterArgs:
@@ -1171,16 +1112,13 @@ class GetNetworkFirewallPolicyNatRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicySecurityRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name for the Security rule, must be unique within the policy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicySecurityRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicySecurityRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name for the Security rule, must be unique within the policy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicySecurityRulesFilterArgs:
@@ -1227,16 +1165,13 @@ class GetNetworkFirewallPolicySecurityRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyServiceListsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the service Group.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyServiceListsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyServiceListsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the service Group.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyServiceListsFilterArgs:
@@ -1283,16 +1218,13 @@ class GetNetworkFirewallPolicyServiceListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the service.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the service.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyServicesFilterArgs:
@@ -1339,16 +1271,13 @@ class GetNetworkFirewallPolicyServicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name for the Tunnel Inspection Rule, must be unique within the policy.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name for the Tunnel Inspection Rule, must be unique within the policy.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs:
@@ -1395,16 +1324,13 @@ class GetNetworkFirewallPolicyTunnelInspectionRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallPolicyUrlListsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Unique name identifier for the URL list.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallPolicyUrlListsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallPolicyUrlListsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Unique name identifier for the URL list.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallPolicyUrlListsFilterArgs:
@@ -1451,13 +1377,10 @@ class GetNetworkFirewallPolicyUrlListsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNetworkFirewallsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNetworkFirewallsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNetworkFirewallsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNetworkFirewallsFilterArgs:

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Managed Instance Group Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupAttachSoftwareSourcesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Attaches software sources to the specified managed instance group. The software sources must be compatible with the type of instances in the group.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// ManagedInstanceGroupAttachSoftwareSourcesManagement can be imported using the `id`, e.g.
+    /// ManagedInstanceGroupAttachSoftwareSourcesManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/managedInstanceGroupAttachSoftwareSourcesManagement:ManagedInstanceGroupAttachSoftwareSourcesManagement test_managed_instance_group_attach_software_sources_management "id"

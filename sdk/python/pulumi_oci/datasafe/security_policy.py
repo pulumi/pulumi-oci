@@ -316,6 +316,13 @@ class SecurityPolicy(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a Data Safe security policy.
+
         ## Example Usage
 
         ```python
@@ -361,6 +368,13 @@ class SecurityPolicy(pulumi.CustomResource):
                  args: SecurityPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicy
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a Data Safe security policy.
+
         ## Example Usage
 
         ```python

@@ -22,6 +22,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmCluster
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Creates an Exadata Cloud{@literal @}Customer VM cluster.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -167,9 +174,17 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
     public Output<String> computeModel() {
         return this.computeModel;
     }
+    /**
+     * (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+     * 
+     */
     @Export(name="cpuCoreCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCount;
 
+    /**
+     * @return (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+     * 
+     */
     public Output<Integer> cpuCoreCount() {
         return this.cpuCoreCount;
     }

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
+    /// This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/Application
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+    /// 
+    /// Creates an application.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -83,7 +90,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Import
     /// 
-    /// Applications can be imported using the `id`, e.g.
+    /// Applications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataFlow/application:Application test_application "id"

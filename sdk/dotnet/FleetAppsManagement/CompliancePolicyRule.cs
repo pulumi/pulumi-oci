@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
+    /// This resource provides the Compliance Policy Rule resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/CompliancePolicyRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Creates a compliance policy rule.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -54,7 +61,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// 
     /// ## Import
     /// 
-    /// CompliancePolicyRules can be imported using the `id`, e.g.
+    /// CompliancePolicyRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule test_compliance_policy_rule "id"

@@ -43,20 +43,15 @@ __all__ = [
     'GetPeersFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class BlockchainPlatformComponentDetailArgsDict(TypedDict):
-        osns: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgsDict']]]]
-        """
-        List of OSNs
-        """
-        peers: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgsDict']]]]
-        """
-        List of Peers
-        """
-elif False:
-    BlockchainPlatformComponentDetailArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformComponentDetailArgsDict(TypedDict):
+    osns: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgsDict']]]]
+    """
+    List of OSNs
+    """
+    peers: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgsDict']]]]
+    """
+    List of Peers
+    """
 
 @pulumi.input_type
 class BlockchainPlatformComponentDetailArgs:
@@ -97,26 +92,23 @@ class BlockchainPlatformComponentDetailArgs:
         pulumi.set(self, "peers", value)
 
 
-if not MYPY:
-    class BlockchainPlatformComponentDetailOsnArgsDict(TypedDict):
-        ad: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Availability Domain of peer
-        """
-        ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict']]]]
-        """
-        OCPU allocation parameter
-        """
-        osn_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OSN identifier
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Platform Instance.
-        """
-elif False:
-    BlockchainPlatformComponentDetailOsnArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformComponentDetailOsnArgsDict(TypedDict):
+    ad: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Availability Domain of peer
+    """
+    ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict']]]]
+    """
+    OCPU allocation parameter
+    """
+    osn_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OSN identifier
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Platform Instance.
+    """
 
 @pulumi.input_type
 class BlockchainPlatformComponentDetailOsnArgs:
@@ -189,14 +181,11 @@ class BlockchainPlatformComponentDetailOsnArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict(TypedDict):
-        ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of OCPU allocation
-        """
-elif False:
-    BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict(TypedDict):
+    ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of OCPU allocation
+    """
 
 @pulumi.input_type
 class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs:
@@ -221,38 +210,35 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs:
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
-if not MYPY:
-    class BlockchainPlatformComponentDetailPeerArgsDict(TypedDict):
-        ad: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Availability Domain of peer
-        """
-        alias: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        peer alias
-        """
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name of VM
-        """
-        ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict']]]]
-        """
-        OCPU allocation parameter
-        """
-        peer_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        peer identifier
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Peer role
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the Platform Instance.
-        """
-elif False:
-    BlockchainPlatformComponentDetailPeerArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformComponentDetailPeerArgsDict(TypedDict):
+    ad: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Availability Domain of peer
+    """
+    alias: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    peer alias
+    """
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name of VM
+    """
+    ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict']]]]
+    """
+    OCPU allocation parameter
+    """
+    peer_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    peer identifier
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Peer role
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the Platform Instance.
+    """
 
 @pulumi.input_type
 class BlockchainPlatformComponentDetailPeerArgs:
@@ -373,14 +359,11 @@ class BlockchainPlatformComponentDetailPeerArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict(TypedDict):
-        ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of OCPU allocation
-        """
-elif False:
-    BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict(TypedDict):
+    ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of OCPU allocation
+    """
 
 @pulumi.input_type
 class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs:
@@ -405,22 +388,19 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs:
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
-if not MYPY:
-    class BlockchainPlatformHostOcpuUtilizationInfoArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Host name of VM
-        """
-        ocpu_capacity_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of total OCPU capacity on the host
-        """
-        ocpu_utilization_number: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Number of OCPU utilized
-        """
-elif False:
-    BlockchainPlatformHostOcpuUtilizationInfoArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformHostOcpuUtilizationInfoArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Host name of VM
+    """
+    ocpu_capacity_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of total OCPU capacity on the host
+    """
+    ocpu_utilization_number: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Number of OCPU utilized
+    """
 
 @pulumi.input_type
 class BlockchainPlatformHostOcpuUtilizationInfoArgs:
@@ -477,22 +457,19 @@ class BlockchainPlatformHostOcpuUtilizationInfoArgs:
         pulumi.set(self, "ocpu_utilization_number", value)
 
 
-if not MYPY:
-    class BlockchainPlatformReplicasArgsDict(TypedDict):
-        ca_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of CA replicas
-        """
-        console_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of console replicas
-        """
-        proxy_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of REST proxy replicas
-        """
-elif False:
-    BlockchainPlatformReplicasArgsDict: TypeAlias = Mapping[str, Any]
+class BlockchainPlatformReplicasArgsDict(TypedDict):
+    ca_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of CA replicas
+    """
+    console_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of console replicas
+    """
+    proxy_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of REST proxy replicas
+    """
 
 @pulumi.input_type
 class BlockchainPlatformReplicasArgs:
@@ -549,18 +526,15 @@ class BlockchainPlatformReplicasArgs:
         pulumi.set(self, "proxy_count", value)
 
 
-if not MYPY:
-    class OsnOcpuAllocationParamArgsDict(TypedDict):
-        ocpu_allocation_number: pulumi.Input[_builtins.float]
-        """
-        (Updatable) Number of OCPU allocation
+class OsnOcpuAllocationParamArgsDict(TypedDict):
+    ocpu_allocation_number: pulumi.Input[_builtins.float]
+    """
+    (Updatable) Number of OCPU allocation
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    OsnOcpuAllocationParamArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class OsnOcpuAllocationParamArgs:
@@ -592,14 +566,11 @@ class OsnOcpuAllocationParamArgs:
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
-if not MYPY:
-    class PeerOcpuAllocationParamArgsDict(TypedDict):
-        ocpu_allocation_number: pulumi.Input[_builtins.float]
-        """
-        (Updatable) Number of OCPU allocation
-        """
-elif False:
-    PeerOcpuAllocationParamArgsDict: TypeAlias = Mapping[str, Any]
+class PeerOcpuAllocationParamArgsDict(TypedDict):
+    ocpu_allocation_number: pulumi.Input[_builtins.float]
+    """
+    (Updatable) Number of OCPU allocation
+    """
 
 @pulumi.input_type
 class PeerOcpuAllocationParamArgs:
@@ -623,13 +594,10 @@ class PeerOcpuAllocationParamArgs:
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
-if not MYPY:
-    class GetBlockchainPlatformPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBlockchainPlatformPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBlockchainPlatformPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBlockchainPlatformPatchesFilterArgs:
@@ -670,13 +638,10 @@ class GetBlockchainPlatformPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetBlockchainPlatformsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBlockchainPlatformsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBlockchainPlatformsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBlockchainPlatformsFilterArgs:
@@ -717,13 +682,10 @@ class GetBlockchainPlatformsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOsnsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOsnsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOsnsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOsnsFilterArgs:
@@ -764,13 +726,10 @@ class GetOsnsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPeersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPeersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPeersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPeersFilterArgs:

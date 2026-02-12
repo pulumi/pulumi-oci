@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource is used to manage the `cidrBlocks` of Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+ * Adds a Cidr from the named Byoip Range prefix to the referenced Public IP Pool. The cidr must be a subset of the Byoip Range in question. The cidr must not overlap with any other cidr already added to this or any other Public Ip Pool.
+ *
+ * **Note:** When a new `oci.Core.PublicIpPoolCapacity` resource is created or removed, terraform needs to be refreshed to update the `cidrBlocks` of `oci.Core.PublicIpPool` resource in state file.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesSearchAssociation
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Search associations in the given compartment based on the search criteria.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -37,7 +44,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// MonitoredResourcesSearchAssociations can be imported using the `id`, e.g.
+    /// MonitoredResourcesSearchAssociations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation test_monitored_resources_search_association "id"

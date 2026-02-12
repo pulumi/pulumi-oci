@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/service-catalog/latest/ServiceCatalog
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/service_catalog
+ * 
+ * Creates a brand new service catalog in a given compartment.
+ * 
  * ## Example Usage
  * 
  * <pre>

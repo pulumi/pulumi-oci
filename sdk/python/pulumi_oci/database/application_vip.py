@@ -347,6 +347,13 @@ class ApplicationVip(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ApplicationVip
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
+
         ## Example Usage
 
         ```python
@@ -390,6 +397,13 @@ class ApplicationVip(pulumi.CustomResource):
                  args: ApplicationVipArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ApplicationVip
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
+
         ## Example Usage
 
         ```python

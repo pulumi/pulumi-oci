@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/Profile
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ *
+ * Creates a registration profile. A profile defines the content applied to the instance when registering it with the service.
+ *
  * ## Example Usage
  *
  * ```typescript

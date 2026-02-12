@@ -21,18 +21,13 @@ __all__ = [
     'GetContainerInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetContainerInstanceShapesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name identifying the shape.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainerInstanceShapesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainerInstanceShapesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name identifying the shape.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainerInstanceShapesFilterArgs:
@@ -79,16 +74,13 @@ class GetContainerInstanceShapesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetContainerInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the volume. This must be unique within a single container instance.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetContainerInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetContainerInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the volume. This must be unique within a single container instance.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetContainerInstancesFilterArgs:

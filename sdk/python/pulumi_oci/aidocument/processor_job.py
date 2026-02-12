@@ -299,6 +299,13 @@ class ProcessorJob(pulumi.CustomResource):
                  processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/ProcessorJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a processor job for document analysis.
+
         ## Example Usage
 
         ```python
@@ -369,6 +376,13 @@ class ProcessorJob(pulumi.CustomResource):
                  args: ProcessorJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/ProcessorJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a processor job for document analysis.
+
         ## Example Usage
 
         ```python

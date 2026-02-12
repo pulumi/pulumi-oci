@@ -172,7 +172,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Import
     /// 
-    /// Schedules can be imported using the `id`, e.g.
+    /// Schedules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataScience/schedule:Schedule test_schedule "id"

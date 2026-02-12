@@ -85,14 +85,9 @@ __all__ = [
     'GetZonesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ActionCreateZoneFromZoneFileDnssecConfigArgsDict(TypedDict):
-        ksk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict']]]]
-        zsk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict']]]]
-elif False:
-    ActionCreateZoneFromZoneFileDnssecConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileDnssecConfigArgsDict(TypedDict):
+    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict']]]]
+    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict']]]]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileDnssecConfigArgs:
@@ -123,27 +118,24 @@ class ActionCreateZoneFromZoneFileDnssecConfigArgs:
         pulumi.set(self, "zsk_dnssec_key_versions", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
-        algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        ds_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]
-        key_tag: NotRequired[pulumi.Input[_builtins.int]]
-        length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        time_expired: NotRequired[pulumi.Input[_builtins.str]]
-        time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
-        time_promoted: NotRequired[pulumi.Input[_builtins.str]]
-        time_published: NotRequired[pulumi.Input[_builtins.str]]
-        time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
-        uuid: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
+    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    ds_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]
+    key_tag: NotRequired[pulumi.Input[_builtins.int]]
+    length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
+    time_expired: NotRequired[pulumi.Input[_builtins.str]]
+    time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
+    time_promoted: NotRequired[pulumi.Input[_builtins.str]]
+    time_published: NotRequired[pulumi.Input[_builtins.str]]
+    time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
+    uuid: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs:
@@ -324,12 +316,9 @@ class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionArgs:
         pulumi.set(self, "uuid", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict(TypedDict):
-        digest_type: NotRequired[pulumi.Input[_builtins.str]]
-        rdata: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgsDict(TypedDict):
+    digest_type: NotRequired[pulumi.Input[_builtins.str]]
+    rdata: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs:
@@ -360,26 +349,23 @@ class ActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionDsDataArgs:
         pulumi.set(self, "rdata", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict(TypedDict):
-        algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        key_tag: NotRequired[pulumi.Input[_builtins.int]]
-        length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        time_expired: NotRequired[pulumi.Input[_builtins.str]]
-        time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
-        time_promoted: NotRequired[pulumi.Input[_builtins.str]]
-        time_published: NotRequired[pulumi.Input[_builtins.str]]
-        time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
-        uuid: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgsDict(TypedDict):
+    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    key_tag: NotRequired[pulumi.Input[_builtins.int]]
+    length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
+    time_expired: NotRequired[pulumi.Input[_builtins.str]]
+    time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
+    time_promoted: NotRequired[pulumi.Input[_builtins.str]]
+    time_published: NotRequired[pulumi.Input[_builtins.str]]
+    time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
+    uuid: NotRequired[pulumi.Input[_builtins.str]]
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs:
@@ -548,22 +534,19 @@ class ActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionArgs:
         pulumi.set(self, "uuid", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileExternalDownstreamArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The server's port.
-        """
-        tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the TSIG key.
-        """
-elif False:
-    ActionCreateZoneFromZoneFileExternalDownstreamArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileExternalDownstreamArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The server's IP address (IPv4 or IPv6).
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The server's port.
+    """
+    tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the TSIG key.
+    """
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
@@ -620,22 +603,19 @@ class ActionCreateZoneFromZoneFileExternalDownstreamArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileExternalMasterArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The server's port.
-        """
-        tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the TSIG key.
-        """
-elif False:
-    ActionCreateZoneFromZoneFileExternalMasterArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileExternalMasterArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The server's IP address (IPv4 or IPv6).
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The server's port.
+    """
+    tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the TSIG key.
+    """
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileExternalMasterArgs:
@@ -692,14 +672,11 @@ class ActionCreateZoneFromZoneFileExternalMasterArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileNameserverArgsDict(TypedDict):
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname of the nameserver.
-        """
-elif False:
-    ActionCreateZoneFromZoneFileNameserverArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileNameserverArgsDict(TypedDict):
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname of the nameserver.
+    """
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileNameserverArgs:
@@ -724,26 +701,23 @@ class ActionCreateZoneFromZoneFileNameserverArgs:
         pulumi.set(self, "hostname", value)
 
 
-if not MYPY:
-    class ActionCreateZoneFromZoneFileZoneTransferServerArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
-        is_transfer_destination: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
-        is_transfer_source: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The server's port.
-        """
-elif False:
-    ActionCreateZoneFromZoneFileZoneTransferServerArgsDict: TypeAlias = Mapping[str, Any]
+class ActionCreateZoneFromZoneFileZoneTransferServerArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The server's IP address (IPv4 or IPv6).
+    """
+    is_transfer_destination: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the server is a zone data transfer destination.
+    """
+    is_transfer_source: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the server is a zone data transfer source.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The server's port.
+    """
 
 @pulumi.input_type
 class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
@@ -816,14 +790,11 @@ class ActionCreateZoneFromZoneFileZoneTransferServerArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class ResolverAttachedViewArgsDict(TypedDict):
-        view_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the view.
-        """
-elif False:
-    ResolverAttachedViewArgsDict: TypeAlias = Mapping[str, Any]
+class ResolverAttachedViewArgsDict(TypedDict):
+    view_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the view.
+    """
 
 @pulumi.input_type
 class ResolverAttachedViewArgs:
@@ -847,58 +818,55 @@ class ResolverAttachedViewArgs:
         pulumi.set(self, "view_id", value)
 
 
-if not MYPY:
-    class ResolverEndpointArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the owning compartment.
-        """
-        endpoint_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of resolver endpoint. VNIC is currently the only supported type.
-        """
-        forwarding_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-        """
-        is_forwarding: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-        """
-        is_listening: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the resolver endpoint is for listening.
-        """
-        listening_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-        """
-        self: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The canonical absolute URL of the resource.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the resource.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-elif False:
-    ResolverEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class ResolverEndpointArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the owning compartment.
+    """
+    endpoint_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of resolver endpoint. VNIC is currently the only supported type.
+    """
+    forwarding_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+    """
+    is_forwarding: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+    """
+    is_listening: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the resolver endpoint is for listening.
+    """
+    listening_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+    """
+    self: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The canonical absolute URL of the resource.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the resource.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
 
 @pulumi.input_type
 class ResolverEndpointArgs:
@@ -1099,31 +1067,28 @@ class ResolverEndpointArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class ResolverRuleArgsDict(TypedDict):
-        action: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
-        * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
-        """
-        destination_addresses: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
-        """
-        source_endpoint_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
-        """
-        client_address_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
-        """
-        qname_cover_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
-        """
-elif False:
-    ResolverRuleArgsDict: TypeAlias = Mapping[str, Any]
+class ResolverRuleArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+    * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
+    """
+    destination_addresses: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
+    """
+    source_endpoint_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
+    """
+    client_address_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
+    """
+    qname_cover_conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) A list of domain names. The query must be covered by one of the domains in order for the rule action to apply.
+    """
 
 @pulumi.input_type
 class ResolverRuleArgs:
@@ -1211,38 +1176,35 @@ class ResolverRuleArgs:
         pulumi.set(self, "qname_cover_conditions", value)
 
 
-if not MYPY:
-    class RrsetItemArgsDict(TypedDict):
-        domain: pulumi.Input[_builtins.str]
-        """
-        The fully qualified domain name where the record can be located.
-        """
-        rdata: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
-        rtype: pulumi.Input[_builtins.str]
-        """
-        The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-        """
-        ttl: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
-        """
-        is_protected: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
-        """
-        record_hash: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A unique identifier for the record within its zone.
-        """
-        rrset_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The latest version of the record's zone in which its RRSet differs from the preceding version.
-        """
-elif False:
-    RrsetItemArgsDict: TypeAlias = Mapping[str, Any]
+class RrsetItemArgsDict(TypedDict):
+    domain: pulumi.Input[_builtins.str]
+    """
+    The fully qualified domain name where the record can be located.
+    """
+    rdata: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+    """
+    rtype: pulumi.Input[_builtins.str]
+    """
+    The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+    """
+    ttl: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
+    """
+    is_protected: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
+    """
+    record_hash: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A unique identifier for the record within its zone.
+    """
+    rrset_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The latest version of the record's zone in which its RRSet differs from the preceding version.
+    """
 
 @pulumi.input_type
 class RrsetItemArgs:
@@ -1359,30 +1321,27 @@ class RrsetItemArgs:
         pulumi.set(self, "rrset_version", value)
 
 
-if not MYPY:
-    class SteeringPolicyAnswerArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
-        rdata: pulumi.Input[_builtins.str]
-        """
-        The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
-        rtype: pulumi.Input[_builtins.str]
-        """
-        The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
-        """
-        is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
-        """
-        pool: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
-        """
-elif False:
-    SteeringPolicyAnswerArgsDict: TypeAlias = Mapping[str, Any]
+class SteeringPolicyAnswerArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+    """
+    rdata: pulumi.Input[_builtins.str]
+    """
+    The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+    """
+    rtype: pulumi.Input[_builtins.str]
+    """
+    The type of DNS record, such as A or CNAME. Only A, AAAA, and CNAME are supported. For more information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+    """
+    is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+    """
+    pool: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
+    """
 
 @pulumi.input_type
 class SteeringPolicyAnswerArgs:
@@ -1468,35 +1427,32 @@ class SteeringPolicyAnswerArgs:
         pulumi.set(self, "pool", value)
 
 
-if not MYPY:
-    class SteeringPolicyRuleArgsDict(TypedDict):
-        rule_type: pulumi.Input[_builtins.str]
-        """
-        The type of a rule determines its sorting/filtering behavior.
-        * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
-        * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
-        * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
-        * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
-        """
-        cases: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgsDict']]]]
-        """
-        An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
-        """
-        default_answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgsDict']]]]
-        """
-        Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
-        """
-        default_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-defined description of the rule's purpose or behavior.
-        """
-elif False:
-    SteeringPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
+class SteeringPolicyRuleArgsDict(TypedDict):
+    rule_type: pulumi.Input[_builtins.str]
+    """
+    The type of a rule determines its sorting/filtering behavior.
+    * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+    * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+    * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+    * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+    * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
+    """
+    cases: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgsDict']]]]
+    """
+    An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
+    """
+    default_answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgsDict']]]]
+    """
+    Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
+    """
+    default_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-defined description of the rule's purpose or behavior.
+    """
 
 @pulumi.input_type
 class SteeringPolicyRuleArgs:
@@ -1594,22 +1550,19 @@ class SteeringPolicyRuleArgs:
         pulumi.set(self, "description", value)
 
 
-if not MYPY:
-    class SteeringPolicyRuleCaseArgsDict(TypedDict):
-        answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgsDict']]]]
-        """
-        An array of `SteeringPolicyPriorityAnswerData` objects.
-        """
-        case_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
-        """
-        count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
-        """
-elif False:
-    SteeringPolicyRuleCaseArgsDict: TypeAlias = Mapping[str, Any]
+class SteeringPolicyRuleCaseArgsDict(TypedDict):
+    answer_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseAnswerDataArgsDict']]]]
+    """
+    An array of `SteeringPolicyPriorityAnswerData` objects.
+    """
+    case_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An expression that uses conditions at the time of a DNS query to indicate whether a case matches. Conditions may include the geographical location, IP subnet, or ASN the DNS query originated. **Example:** If you have an office that uses the subnet `192.0.2.0/24` you could use a `caseCondition` expression `query.client.address in ('192.0.2.0/24')` to define a case that matches queries from that office.
+    """
+    count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
+    """
 
 @pulumi.input_type
 class SteeringPolicyRuleCaseArgs:
@@ -1666,22 +1619,19 @@ class SteeringPolicyRuleCaseArgs:
         pulumi.set(self, "count", value)
 
 
-if not MYPY:
-    class SteeringPolicyRuleCaseAnswerDataArgsDict(TypedDict):
-        answer_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
-        should_keep: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Keeps the answer only if the value is `true`.
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-elif False:
-    SteeringPolicyRuleCaseAnswerDataArgsDict: TypeAlias = Mapping[str, Any]
+class SteeringPolicyRuleCaseAnswerDataArgsDict(TypedDict):
+    answer_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+    """
+    should_keep: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Keeps the answer only if the value is `true`.
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+    """
 
 @pulumi.input_type
 class SteeringPolicyRuleCaseAnswerDataArgs:
@@ -1738,22 +1688,19 @@ class SteeringPolicyRuleCaseAnswerDataArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class SteeringPolicyRuleDefaultAnswerDataArgsDict(TypedDict):
-        answer_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
-        """
-        should_keep: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Keeps the answer only if the value is `true`.
-        """
-        value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
-        """
-elif False:
-    SteeringPolicyRuleDefaultAnswerDataArgsDict: TypeAlias = Mapping[str, Any]
+class SteeringPolicyRuleDefaultAnswerDataArgsDict(TypedDict):
+    answer_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+    """
+    should_keep: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Keeps the answer only if the value is `true`.
+    """
+    value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The rank assigned to the set of answers that match the expression in `answerCondition`. Answers with the lowest values move to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+    """
 
 @pulumi.input_type
 class SteeringPolicyRuleDefaultAnswerDataArgs:
@@ -1810,18 +1757,15 @@ class SteeringPolicyRuleDefaultAnswerDataArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ZoneDnssecConfigArgsDict(TypedDict):
-        ksk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionArgsDict']]]]
-        """
-        A read-only array of key signing key (KSK) versions.
-        """
-        zsk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigZskDnssecKeyVersionArgsDict']]]]
-        """
-        A read-only array of zone signing key (ZSK) versions.
-        """
-elif False:
-    ZoneDnssecConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneDnssecConfigArgsDict(TypedDict):
+    ksk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionArgsDict']]]]
+    """
+    A read-only array of key signing key (KSK) versions.
+    """
+    zsk_dnssec_key_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigZskDnssecKeyVersionArgsDict']]]]
+    """
+    A read-only array of zone signing key (ZSK) versions.
+    """
 
 @pulumi.input_type
 class ZoneDnssecConfigArgs:
@@ -1862,66 +1806,63 @@ class ZoneDnssecConfigArgs:
         pulumi.set(self, "zsk_dnssec_key_versions", value)
 
 
-if not MYPY:
-    class ZoneDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
-        algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The signing algorithm used for the key.
-        """
-        ds_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]
-        """
-        An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
-        """
-        key_tag: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
-        """
-        length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The length of the corresponding private key in bytes, expressed as an integer.
-        """
-        predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
-        """
-        successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        time_expired: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
-        """
-        time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
-        """
-        time_promoted: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
-        """
-        time_published: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
-        """
-        time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
-        """
-        uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The UUID of the `DnssecKeyVersion`.
-        """
-elif False:
-    ZoneDnssecConfigKskDnssecKeyVersionArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneDnssecConfigKskDnssecKeyVersionArgsDict(TypedDict):
+    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The signing algorithm used for the key.
+    """
+    ds_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict']]]]
+    """
+    An array of data for DS records corresponding with this key version. An entry will exist for each supported DS digest algorithm.
+    """
+    key_tag: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+    """
+    length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The length of the corresponding private key in bytes, expressed as an integer.
+    """
+    predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+    """
+    successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
+    time_expired: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+    """
+    time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+    """
+    time_promoted: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+    """
+    time_published: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+    """
+    time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+    """
+    uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The UUID of the `DnssecKeyVersion`.
+    """
 
 @pulumi.input_type
 class ZoneDnssecConfigKskDnssecKeyVersionArgs:
@@ -2154,18 +2095,15 @@ class ZoneDnssecConfigKskDnssecKeyVersionArgs:
         pulumi.set(self, "uuid", value)
 
 
-if not MYPY:
-    class ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict(TypedDict):
-        digest_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the digest associated with the rdata.
-        """
-        rdata: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        """
-elif False:
-    ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneDnssecConfigKskDnssecKeyVersionDsDataArgsDict(TypedDict):
+    digest_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the digest associated with the rdata.
+    """
+    rdata: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Presentation-format DS record data that must be added to the parent zone. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
+    """
 
 @pulumi.input_type
 class ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs:
@@ -2206,62 +2144,59 @@ class ZoneDnssecConfigKskDnssecKeyVersionDsDataArgs:
         pulumi.set(self, "rdata", value)
 
 
-if not MYPY:
-    class ZoneDnssecConfigZskDnssecKeyVersionArgsDict(TypedDict):
-        algorithm: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The signing algorithm used for the key.
-        """
-        key_tag: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
-        """
-        length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The length of the corresponding private key in bytes, expressed as an integer.
-        """
-        predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
-        """
-        successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
-        """
-        time_activated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        """
-        time_expired: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
-        """
-        time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
-        """
-        time_promoted: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was promoted expressed in RFC 3339 timestamp format.
-        """
-        time_published: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
-        """
-        time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
-        """
-        uuid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The UUID of the `DnssecKeyVersion`.
-        """
-elif False:
-    ZoneDnssecConfigZskDnssecKeyVersionArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneDnssecConfigZskDnssecKeyVersionArgsDict(TypedDict):
+    algorithm: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The signing algorithm used for the key.
+    """
+    key_tag: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The key tag associated with the `DnssecKeyVersion`. This key tag will be present in the RRSIG and DS records associated with the key material for this `DnssecKeyVersion`. For more information about key tags, see [RFC 4034](https://tools.ietf.org/html/rfc4034).
+    """
+    length_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The length of the corresponding private key in bytes, expressed as an integer.
+    """
+    predecessor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When populated, this is the UUID of the `DnssecKeyVersion` that this `DnssecKeyVersion` will replace or has replaced.
+    """
+    successor_dnssec_key_version_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When populated, this is the UUID of the `DnssecKeyVersion` that will replace, or has replaced, this `DnssecKeyVersion`.
+    """
+    time_activated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version went, or will go, active, expressed in RFC 3339 timestamp format. This is when the key material will be used to generate RRSIGs.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+    """
+    time_expired: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time at which the recommended key version publication/activation lifetime ends, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY should no longer exist in zone contents and no longer be used to generate RRSIGs. For a key sigining key (KSK), if `PromoteZoneDnssecKeyVersion` has not been called on this `DnssecKeyVersion`'s successor then it will remain active for arbitrarily long past its recommended lifetime. This prevents service disruption at the potential increased risk of key compromise.
+    """
+    time_inactivated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version went, or will go, inactive, expressed in RFC 3339 timestamp format. This is when the key material will no longer be used to generate RRSIGs. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+    """
+    time_promoted: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was promoted expressed in RFC 3339 timestamp format.
+    """
+    time_published: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was, or will be, published, expressed in RFC 3339 timestamp format. This is when the zone contents will include a DNSKEY record corresponding to the key material.
+    """
+    time_unpublished: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the key version was, or will be, unpublished, expressed in RFC 3339 timestamp format. This is when the corresponding DNSKEY will be removed from zone contents. For a key signing key (KSK) `DnssecKeyVersion`, this is populated after `PromoteZoneDnssecKeyVersion` has been called on its successor `DnssecKeyVersion`.
+    """
+    uuid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The UUID of the `DnssecKeyVersion`.
+    """
 
 @pulumi.input_type
 class ZoneDnssecConfigZskDnssecKeyVersionArgs:
@@ -2478,22 +2413,19 @@ class ZoneDnssecConfigZskDnssecKeyVersionArgs:
         pulumi.set(self, "uuid", value)
 
 
-if not MYPY:
-    class ZoneExternalDownstreamArgsDict(TypedDict):
-        address: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
-        tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
-        """
-elif False:
-    ZoneExternalDownstreamArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneExternalDownstreamArgsDict(TypedDict):
+    address: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The server's IP address (IPv4 or IPv6).
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+    """
+    tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
+    """
 
 @pulumi.input_type
 class ZoneExternalDownstreamArgs:
@@ -2549,22 +2481,19 @@ class ZoneExternalDownstreamArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
-if not MYPY:
-    class ZoneExternalMasterArgsDict(TypedDict):
-        address: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The server's IP address (IPv4 or IPv6).
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        """
-        tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the TSIG key.
-        """
-elif False:
-    ZoneExternalMasterArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneExternalMasterArgsDict(TypedDict):
+    address: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The server's IP address (IPv4 or IPv6).
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+    """
+    tsig_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the TSIG key.
+    """
 
 @pulumi.input_type
 class ZoneExternalMasterArgs:
@@ -2620,14 +2549,11 @@ class ZoneExternalMasterArgs:
         pulumi.set(self, "tsig_key_id", value)
 
 
-if not MYPY:
-    class ZoneNameserverArgsDict(TypedDict):
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname of the nameserver.
-        """
-elif False:
-    ZoneNameserverArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneNameserverArgsDict(TypedDict):
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname of the nameserver.
+    """
 
 @pulumi.input_type
 class ZoneNameserverArgs:
@@ -2652,26 +2578,23 @@ class ZoneNameserverArgs:
         pulumi.set(self, "hostname", value)
 
 
-if not MYPY:
-    class ZoneZoneTransferServerArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The server's IP address (IPv4 or IPv6).
-        """
-        is_transfer_destination: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer destination.
-        """
-        is_transfer_source: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        A Boolean flag indicating whether or not the server is a zone data transfer source.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The server's port.
-        """
-elif False:
-    ZoneZoneTransferServerArgsDict: TypeAlias = Mapping[str, Any]
+class ZoneZoneTransferServerArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The server's IP address (IPv4 or IPv6).
+    """
+    is_transfer_destination: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the server is a zone data transfer destination.
+    """
+    is_transfer_source: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    A Boolean flag indicating whether or not the server is a zone data transfer source.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The server's port.
+    """
 
 @pulumi.input_type
 class ZoneZoneTransferServerArgs:
@@ -2744,13 +2667,10 @@ class ZoneZoneTransferServerArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class GetRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecordsFilterArgs:
@@ -2791,16 +2711,13 @@ class GetRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResolverEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of a resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResolverEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResolverEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of a resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResolverEndpointsFilterArgs:
@@ -2847,13 +2764,10 @@ class GetResolverEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetResolversFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetResolversFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetResolversFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetResolversFilterArgs:
@@ -2894,13 +2808,10 @@ class GetResolversFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRrsetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRrsetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRrsetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRrsetsFilterArgs:
@@ -2941,16 +2852,13 @@ class GetRrsetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSteeringPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSteeringPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSteeringPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSteeringPoliciesFilterArgs:
@@ -2997,13 +2905,10 @@ class GetSteeringPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSteeringPolicyAttachmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSteeringPolicyAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSteeringPolicyAttachmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSteeringPolicyAttachmentsFilterArgs:
@@ -3044,16 +2949,13 @@ class GetSteeringPolicyAttachmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTsigKeysFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of a resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTsigKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTsigKeysFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of a resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTsigKeysFilterArgs:
@@ -3100,13 +3002,10 @@ class GetTsigKeysFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetViewsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetViewsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetViewsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetViewsFilterArgs:
@@ -3147,16 +3046,13 @@ class GetViewsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetZonesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetZonesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetZonesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetZonesFilterArgs:

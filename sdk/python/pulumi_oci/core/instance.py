@@ -64,6 +64,11 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment.
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+               * If `async` is true, all the creation and deletion of instances are asynchronous
+               * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+               
+               > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
@@ -72,6 +77,13 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] extended_metadata: (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
         :param pulumi.Input[_builtins.str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -289,6 +301,13 @@ class InstanceArgs:
     @_builtins.property
     @pulumi.getter(name="async")
     def async_(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+        * If `async` is true, all the creation and deletion of instances are asynchronous
+        * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+
+        > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+        """
         return pulumi.get(self, "async_")
 
     @async_.setter
@@ -394,6 +413,15 @@ class InstanceArgs:
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -822,6 +850,11 @@ class _InstanceState:
         """
         Input properties used for looking up and filtering Instance resources.
         :param pulumi.Input['InstanceAgentConfigArgs'] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+               * If `async` is true, all the creation and deletion of instances are asynchronous
+               * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+               
+               > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
         :param pulumi.Input['InstanceAvailabilityConfigArgs'] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
@@ -833,6 +866,13 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] extended_metadata: (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
         :param pulumi.Input[_builtins.str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1061,6 +1101,13 @@ class _InstanceState:
     @_builtins.property
     @pulumi.getter(name="async")
     def async_(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+        * If `async` is true, all the creation and deletion of instances are asynchronous
+        * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+
+        > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+        """
         return pulumi.get(self, "async_")
 
     @async_.setter
@@ -1202,6 +1249,15 @@ class _InstanceState:
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -1734,7 +1790,60 @@ class Instance(pulumi.CustomResource):
                  update_operation_constraint: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Instance resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Instance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new instance in the specified compartment and the specified availability domain.
+        For general information about instances, see
+        [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+
+        For information about access control and compartments, see
+        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+        For information about availability domains, see
+        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        To get a list of availability domains, use the `ListAvailabilityDomains` operation
+        in the Identity and Access Management Service API.
+
+        All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
+        unique ID called an Oracle Cloud Identifier (OCID).
+        When you create a resource, you can find its OCID in the response. You can
+        also retrieve a resource's OCID by using a List API operation
+        on that resource type, or by viewing the resource in the Console.
+
+        To launch an instance using an image or a boot volume use the `sourceDetails` parameter in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails).
+
+        When you launch an instance, it is automatically attached to a virtual
+        network interface card (VNIC), called the *primary VNIC*. The VNIC
+        has a private IP address from the subnet's CIDR. You can either assign a
+        private IP address of your choice or let Oracle automatically assign one.
+        You can choose whether the instance has a public IP address. To retrieve the
+        addresses, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        operation to get the VNIC ID for the instance, and then call
+        [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+
+        You can later add secondary VNICs to an instance. For more information, see
+        [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+
+        To launch an instance from a Marketplace image listing, you must provide the image ID of the
+        listing resource version that you want, but you also must subscribe to the listing before you try
+        to launch the instance. To subscribe to the listing, use the [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+        operation to get the signature for the terms of use agreement for the desired listing resource version.
+        Then, call [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+        with the signature. To get the image ID for the LaunchInstance operation, call
+        [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
+
+        When launching an instance, you may provide the `securityAttributes` parameter in
+        [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+        or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+        via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+        400 Bad Request response.
+
+        To determine whether capacity is available for a specific shape before you create an instance,
+        use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
+        operation.
 
         ## Import
 
@@ -1747,6 +1856,11 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+               * If `async` is true, all the creation and deletion of instances are asynchronous
+               * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+               
+               > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
         :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] capacity_reservation_id: (Updatable) The OCID of the compute capacity reservation this instance is launched under. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
@@ -1757,6 +1871,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] extended_metadata: (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
         :param pulumi.Input[_builtins.str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1858,7 +1979,60 @@ class Instance(pulumi.CustomResource):
                  args: InstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Instance resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Instance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a new instance in the specified compartment and the specified availability domain.
+        For general information about instances, see
+        [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+
+        For information about access control and compartments, see
+        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+
+        For information about availability domains, see
+        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        To get a list of availability domains, use the `ListAvailabilityDomains` operation
+        in the Identity and Access Management Service API.
+
+        All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
+        unique ID called an Oracle Cloud Identifier (OCID).
+        When you create a resource, you can find its OCID in the response. You can
+        also retrieve a resource's OCID by using a List API operation
+        on that resource type, or by viewing the resource in the Console.
+
+        To launch an instance using an image or a boot volume use the `sourceDetails` parameter in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails).
+
+        When you launch an instance, it is automatically attached to a virtual
+        network interface card (VNIC), called the *primary VNIC*. The VNIC
+        has a private IP address from the subnet's CIDR. You can either assign a
+        private IP address of your choice or let Oracle automatically assign one.
+        You can choose whether the instance has a public IP address. To retrieve the
+        addresses, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
+        operation to get the VNIC ID for the instance, and then call
+        [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
+
+        You can later add secondary VNICs to an instance. For more information, see
+        [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+
+        To launch an instance from a Marketplace image listing, you must provide the image ID of the
+        listing resource version that you want, but you also must subscribe to the listing before you try
+        to launch the instance. To subscribe to the listing, use the [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
+        operation to get the signature for the terms of use agreement for the desired listing resource version.
+        Then, call [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
+        with the signature. To get the image ID for the LaunchInstance operation, call
+        [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
+
+        When launching an instance, you may provide the `securityAttributes` parameter in
+        [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
+        or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
+        via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+        400 Bad Request response.
+
+        To determine whether capacity is available for a specific shape before you create an instance,
+        use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
+        operation.
 
         ## Import
 
@@ -2048,6 +2222,11 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['InstanceAgentConfigArgs', 'InstanceAgentConfigArgsDict']] agent_config: (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        :param pulumi.Input[_builtins.bool] async_: Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+               * If `async` is true, all the creation and deletion of instances are asynchronous
+               * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+               
+               > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
         :param pulumi.Input[Union['InstanceAvailabilityConfigArgs', 'InstanceAvailabilityConfigArgsDict']] availability_config: (Updatable) Options for VM migration during infrastructure maintenance events and for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] boot_volume_id: The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
@@ -2059,6 +2238,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] extended_metadata: (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+               
+               They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+               
+               The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+               
+               Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
         :param pulumi.Input[_builtins.str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -2231,6 +2417,13 @@ class Instance(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="async")
     def async_(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+        * If `async` is true, all the creation and deletion of instances are asynchronous
+        * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+
+        > Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+        """
         return pulumi.get(self, "async_")
 
     @_builtins.property
@@ -2324,6 +2517,15 @@ class Instance(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
+        Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+        """
         return pulumi.get(self, "extended_metadata")
 
     @_builtins.property

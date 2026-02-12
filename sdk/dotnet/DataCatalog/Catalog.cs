@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
+    /// This resource provides the Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Catalog
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+    /// 
+    /// Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
+    /// For more information, please see the documentation.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +47,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Import
     /// 
-    /// Catalogs can be imported using the `id`, e.g.
+    /// Catalogs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataCatalog/catalog:Catalog test_catalog "id"

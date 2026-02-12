@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
+    /// This resource provides the Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicyUrlList
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+    /// 
+    /// Creates a new Url List for the Network Firewall Policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// ## Import
     /// 
-    /// NetworkFirewallPolicyUrlLists can be imported using the `id`, e.g.
+    /// NetworkFirewallPolicyUrlLists can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList test_network_firewall_policy_url_list "networkFirewallPolicies/{networkFirewallPolicyId}/urlLists/{urlListName}"

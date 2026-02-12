@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/UnsetSecurityAssessmentBaseline
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+    /// If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
+    /// Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +40,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// UnsetSecurityAssessmentBaseline can be imported using the `id`, e.g.
+    /// UnsetSecurityAssessmentBaseline can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline test_unset_security_assessment_baseline "id"

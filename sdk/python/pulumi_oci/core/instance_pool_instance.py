@@ -332,6 +332,17 @@ class InstancePoolInstance(pulumi.CustomResource):
                  instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/InstancePoolInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Attaches an instance to an instance pool. For information about the prerequisites
+        that an instance must meet before you can attach it to a pool, see
+        [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
+
+        Using this resource will impact the size of the instance pool, attach will increment the size of the pool
+
         ## Example Usage
 
         ```python
@@ -367,6 +378,17 @@ class InstancePoolInstance(pulumi.CustomResource):
                  args: InstancePoolInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/InstancePoolInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Attaches an instance to an instance pool. For information about the prerequisites
+        that an instance must meet before you can attach it to a pool, see
+        [Attaching an Instance to an Instance Pool](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/updatinginstancepool.htm#attach-instance).
+
+        Using this resource will impact the size of the instance pool, attach will increment the size of the pool
+
         ## Example Usage
 
         ```python

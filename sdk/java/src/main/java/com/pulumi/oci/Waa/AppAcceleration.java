@@ -15,6 +15,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waa/latest/WebAppAcceleration
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_acceleration
+ * 
+ * Creates a new WebAppAcceleration.
+ * 
  * ## Example Usage
  * 
  * <pre>

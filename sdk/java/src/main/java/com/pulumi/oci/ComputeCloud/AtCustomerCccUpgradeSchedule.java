@@ -17,6 +17,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/compute-cloud-at-customer/latest/CccUpgradeSchedule
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/computecloudatcustomer
+ * 
+ * Creates a new Compute Cloud{@literal @}Customer upgrade schedule.
+ * 
  * ## Example Usage
  * 
  * <pre>

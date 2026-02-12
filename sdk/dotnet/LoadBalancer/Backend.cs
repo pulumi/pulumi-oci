@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
+    /// This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/Backend
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+    /// 
+    /// Adds a backend server to a backend set.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +45,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Import
     /// 
-    /// Backends can be imported using the `id`, e.g.
+    /// Backends can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LoadBalancer/backend:Backend test_backend "loadBalancers/{loadBalancerId}/backendSets/{backendSetName}/backends/{backendName}"

@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudVmClusterIormConfig
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Updates IORM settings for the specified Cloud Vm Cluster.
+    /// 
+    /// The [UpdateCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/UpdateCloudVmClusterIormConfig/) API is used for Cloud Vm Cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +48,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+    /// CloudVmClusterIormConfigs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"

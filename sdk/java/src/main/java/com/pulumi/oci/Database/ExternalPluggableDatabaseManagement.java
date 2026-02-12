@@ -15,6 +15,15 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the External Pluggable Database Management resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalPluggableDatabaseManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Enable Database Management Service for the external pluggable database.
+ * For more information about the Database Management Service, see
+ * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+ * 
  * ## Example Usage
  * 
  * <pre>

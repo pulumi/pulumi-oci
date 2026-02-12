@@ -640,6 +640,19 @@ class DbHome(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbHome
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
+
+        **Important:** Unless `enable_database_delete` is explicitly set to true:
+        * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
+        * This leads to dangling resources which are not managed via Terraform unless explicitly imported
+
+        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+
         ## Example Usage
 
         ## Import
@@ -654,13 +667,13 @@ class DbHome(pulumi.CustomResource):
 
         database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
 
+        ```sh
             lifecycle {
-            
                 ignore_changes = ["database.0.admin_password"]
-            
             }
+        ```
 
-        The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
+        The creation of an Database.DbSystem requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "Database.DbHome".
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -693,6 +706,19 @@ class DbHome(pulumi.CustomResource):
                  args: Optional[DbHomeArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Db Home resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/DbHome
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new Database Home in the specified database system based on the request parameters you provide. Applies only to bare metal and Exadata systems.
+
+        **Important:** Unless `enable_database_delete` is explicitly set to true:
+        * Terraform will not delete the database within the Db Home configuration but rather remove it from the config and state file.
+        * This leads to dangling resources which are not managed via Terraform unless explicitly imported
+
+        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+
         ## Example Usage
 
         ## Import
@@ -707,13 +733,13 @@ class DbHome(pulumi.CustomResource):
 
         database.0.admin_password is not returned by the service for security reasons. Add the following to the resource:
 
+        ```sh
             lifecycle {
-            
                 ignore_changes = ["database.0.admin_password"]
-            
             }
+        ```
 
-        The creation of an oci_database_db_system requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "oci_database_db_home".
+        The creation of an Database.DbSystem requires that it be created with exactly one oci_database_db_home. Therefore the first db home will have to be a property of the db system resource and any further db homes to be added to the db system will have to be added as first class resources using "Database.DbHome".
 
         :param str resource_name: The name of the resource.
         :param DbHomeArgs args: The arguments to use to populate this resource's properties.

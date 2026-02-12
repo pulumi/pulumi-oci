@@ -10,6 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a secondary VNIC and attaches it to the specified instance.
+    /// For more information about secondary VNICs, see
+    /// [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +59,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// VnicAttachments can be imported using the `id`, e.g.
+    /// VnicAttachments can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/vnicAttachment:VnicAttachment test_vnic_attachment "id"

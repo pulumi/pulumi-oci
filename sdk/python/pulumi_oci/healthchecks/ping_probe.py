@@ -299,6 +299,16 @@ class PingProbe(pulumi.CustomResource):
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/PingProbe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+
+        Creates an on-demand ping probe. The location response header contains the URL for
+        fetching probe results.
+
+        *Note:* The on-demand probe configuration is not saved.
+
         ## Example Usage
 
         ```python
@@ -342,6 +352,16 @@ class PingProbe(pulumi.CustomResource):
                  args: PingProbeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/healthchecks/latest/PingProbe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/health_checks
+
+        Creates an on-demand ping probe. The location response header contains the URL for
+        fetching probe results.
+
+        *Note:* The on-demand probe configuration is not saved.
+
         ## Example Usage
 
         ```python

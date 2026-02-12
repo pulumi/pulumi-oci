@@ -1043,6 +1043,13 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SecurityQuestion
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a security question.
+
         ## Example Usage
 
         ```python
@@ -1176,6 +1183,13 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
                  args: DomainsSecurityQuestionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/SecurityQuestion
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a security question.
+
         ## Example Usage
 
         ```python

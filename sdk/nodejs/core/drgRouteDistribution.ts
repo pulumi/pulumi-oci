@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteDistribution
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new route distribution for the specified DRG.
+ * Assign the route distribution as an import distribution to a DRG route table using the `UpdateDrgRouteTable` or `CreateDrgRouteTable` operations.
+ * Assign the route distribution as an export distribution to a DRG attachment
+ * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
+ *
  * ## Example Usage
  *
  * ```typescript

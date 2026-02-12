@@ -5,6 +5,14 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SecurityZone
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ *
+ * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+ * through a CreateSecurityZoneDetails resource.
+ *
  * ## Example Usage
  *
  * ```typescript

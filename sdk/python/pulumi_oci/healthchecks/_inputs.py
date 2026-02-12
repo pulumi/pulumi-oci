@@ -27,15 +27,10 @@ __all__ = [
     'GetVantagePointsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetHttpMonitorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHttpMonitorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHttpMonitorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHttpMonitorsFilterArgs:
@@ -76,13 +71,10 @@ class GetHttpMonitorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetHttpProbeResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetHttpProbeResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetHttpProbeResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetHttpProbeResultsFilterArgs:
@@ -123,13 +115,10 @@ class GetHttpProbeResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPingMonitorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPingMonitorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPingMonitorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPingMonitorsFilterArgs:
@@ -170,13 +159,10 @@ class GetPingMonitorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPingProbeResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPingProbeResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPingProbeResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPingProbeResultsFilterArgs:
@@ -217,16 +203,13 @@ class GetPingProbeResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVantagePointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Filters results that exactly match the `name` field.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVantagePointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVantagePointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Filters results that exactly match the `name` field.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVantagePointsFilterArgs:

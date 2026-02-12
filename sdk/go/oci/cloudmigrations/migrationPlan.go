@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationPlan
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+//
+// Creates a migration plan.
 //
 // ## Import
 //

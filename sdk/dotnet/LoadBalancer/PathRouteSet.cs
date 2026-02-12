@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
+    /// This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/loadbalancer/latest/PathRouteSet
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/load_balancer
+    /// 
+    /// Adds a path route set to a load balancer. For more information, see
+    /// [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +51,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Import
     /// 
-    /// PathRouteSets can be imported using the `id`, e.g.
+    /// PathRouteSets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LoadBalancer/pathRouteSet:PathRouteSet test_path_route_set "loadBalancers/{loadBalancerId}/pathRouteSets/{pathRouteSetName}"

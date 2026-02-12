@@ -120,6 +120,14 @@ class CompareUserAssessment(pulumi.CustomResource):
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/CompareUserAssessment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
+        As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
+
         ## Example Usage
 
         ```python
@@ -155,6 +163,14 @@ class CompareUserAssessment(pulumi.CustomResource):
                  args: CompareUserAssessmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/CompareUserAssessment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
+        As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
+
         ## Example Usage
 
         ```python

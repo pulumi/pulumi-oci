@@ -20,6 +20,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/ProductLicense
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+ * 
+ * Creates a new product license.
+ * 
  * ## Example Usage
  * 
  * <pre>

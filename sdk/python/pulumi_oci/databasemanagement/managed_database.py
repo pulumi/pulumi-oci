@@ -460,7 +460,12 @@ class ManagedDatabase(pulumi.CustomResource):
                  managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ManagedDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the Managed Database specified by managedDatabaseId.
 
         ## Import
 
@@ -487,7 +492,12 @@ class ManagedDatabase(pulumi.CustomResource):
                  args: ManagedDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ManagedDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the Managed Database specified by managedDatabaseId.
 
         ## Import
 

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
+    /// This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Schedule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+    /// 
+    /// Returns the created schedule.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -76,7 +83,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Import
     /// 
-    /// Schedules can be imported using the `id`, e.g.
+    /// Schedules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MeteringComputation/schedule:Schedule test_schedule "id"

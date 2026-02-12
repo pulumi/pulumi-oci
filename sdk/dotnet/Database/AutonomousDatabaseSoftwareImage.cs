@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseSoftwareImage
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// create Autonomous AI Database Software Image in the specified compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -38,7 +45,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// AutonomousDatabaseSoftwareImages can be imported using the `id`, e.g.
+    /// AutonomousDatabaseSoftwareImages can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage test_autonomous_database_software_image "id"

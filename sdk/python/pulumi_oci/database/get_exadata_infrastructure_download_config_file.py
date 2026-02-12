@@ -98,6 +98,7 @@ def get_exadata_infrastructure_download_config_file(base64_encode_content: Optio
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
@@ -130,6 +131,7 @@ def get_exadata_infrastructure_download_config_file_output(base64_encode_content
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded zipped config in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false`.
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()

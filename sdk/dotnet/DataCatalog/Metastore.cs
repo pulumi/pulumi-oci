@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
+    /// This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Metastore
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+    /// 
+    /// Creates a new metastore.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// ## Import
     /// 
-    /// Metastores can be imported using the `id`, e.g.
+    /// Metastores can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataCatalog/metastore:Metastore test_metastore "id"

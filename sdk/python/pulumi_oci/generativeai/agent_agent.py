@@ -401,6 +401,13 @@ class AgentAgent(pulumi.CustomResource):
                  welcome_message: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Agent
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates an agent.
+
         ## Example Usage
 
         ```python
@@ -456,6 +463,13 @@ class AgentAgent(pulumi.CustomResource):
                  args: AgentAgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Agent
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates an agent.
+
         ## Example Usage
 
         ```python

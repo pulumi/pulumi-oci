@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
+    /// This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceApplication
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+    /// 
+    /// Creates an application.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -61,7 +68,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Import
     /// 
-    /// WorkspaceApplications can be imported using the `id`, e.g.
+    /// WorkspaceApplications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataIntegration/workspaceApplication:WorkspaceApplication test_workspace_application "workspaces/{workspaceId}/applications/{applicationKey}"

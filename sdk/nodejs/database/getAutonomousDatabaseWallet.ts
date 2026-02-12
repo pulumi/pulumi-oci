@@ -33,6 +33,9 @@ export interface GetAutonomousDatabaseWalletArgs {
      * @deprecated The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.
      */
     autonomousDatabaseId: string;
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     */
     base64EncodeContent?: boolean;
     /**
      * The type of wallet to generate.
@@ -99,6 +102,9 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
      * @deprecated The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.
      */
     autonomousDatabaseId: pulumi.Input<string>;
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * The type of wallet to generate.

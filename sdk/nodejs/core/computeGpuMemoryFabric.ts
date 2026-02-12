@@ -7,7 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeGpuMemoryFabric
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Customer can update displayName, tags and  desired firmware bundle, recycle level for
+ * compute GPU memory fabric record
  *
  * ## Import
  *

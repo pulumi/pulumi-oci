@@ -1155,7 +1155,12 @@ class DomainsMappedAttribute(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsMappedAttributeTagArgs', 'DomainsMappedAttributeTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MappedAttribute
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace a Mapped Attribute
 
         ## Import
 
@@ -1273,7 +1278,12 @@ class DomainsMappedAttribute(pulumi.CustomResource):
                  args: DomainsMappedAttributeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Mapped Attribute resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MappedAttribute
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace a Mapped Attribute
 
         ## Import
 

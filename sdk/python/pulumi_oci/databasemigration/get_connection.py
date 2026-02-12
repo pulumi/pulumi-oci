@@ -539,6 +539,12 @@ class AwaitableGetConnectionResult(GetConnectionResult):
 def get_connection(connection_id: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConnectionResult:
     """
+    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+
+    Display Database Connection details.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
 
     ```python
@@ -603,6 +609,12 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
 def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionResult]:
     """
+    This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Database Migration service.
+
+    Display Database Connection details.
+
+    Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+
     ## Example Usage
 
     ```python

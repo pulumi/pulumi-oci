@@ -334,6 +334,13 @@ class AgentKnowledgeBase(pulumi.CustomResource):
                  index_config: Optional[pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/KnowledgeBase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a knowledge base.
+
         ## Example Usage
 
         ```python
@@ -404,6 +411,13 @@ class AgentKnowledgeBase(pulumi.CustomResource):
                  args: AgentKnowledgeBaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/KnowledgeBase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a knowledge base.
+
         ## Example Usage
 
         ```python

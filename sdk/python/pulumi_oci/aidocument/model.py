@@ -818,7 +818,14 @@ class Model(pulumi.CustomResource):
                  validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a new model.
+
+          Updates the model metadata only selected path parameter.
 
         ## Import
 
@@ -856,7 +863,14 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Model
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+
+        Create a new model.
+
+          Updates the model metadata only selected path parameter.
 
         ## Import
 

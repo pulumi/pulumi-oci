@@ -513,6 +513,13 @@ class Backup(pulumi.CustomResource):
                  source_backup_details: Optional[pulumi.Input[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/Backup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+
+        Creates a new backup.
+
         ## Example Usage
 
         ```python
@@ -563,6 +570,13 @@ class Backup(pulumi.CustomResource):
                  args: BackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Backup resource in Oracle Cloud Infrastructure Psql service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/postgresql/latest/Backup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/psql
+
+        Creates a new backup.
+
         ## Example Usage
 
         ```python

@@ -14712,6 +14712,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResul
         """
         :param _builtins.str application_key: The application key.
         :param _builtins.str auth_mode: The authorization mode for the task.
+        :param _builtins.str config_provider_delegate: The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
         :param _builtins.str description: The description of the aggregator.
         :param _builtins.str end_time_millis: The end time in milliseconds.
         :param _builtins.float expected_duration: The expected duration of the task execution.
@@ -14785,6 +14786,9 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemResul
     @_builtins.property
     @pulumi.getter(name="configProviderDelegate")
     def config_provider_delegate(self) -> _builtins.str:
+        """
+        The information about the configuration provider. First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
+        """
         return pulumi.get(self, "config_provider_delegate")
 
     @_builtins.property

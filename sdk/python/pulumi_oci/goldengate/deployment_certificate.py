@@ -457,6 +457,13 @@ class DeploymentCertificate(pulumi.CustomResource):
                  key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/DeploymentCertificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new certificate to truststore.
+
         ## Example Usage
 
         ```python
@@ -496,6 +503,13 @@ class DeploymentCertificate(pulumi.CustomResource):
                  args: DeploymentCertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/DeploymentCertificate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+
+        Creates a new certificate to truststore.
+
         ## Example Usage
 
         ```python

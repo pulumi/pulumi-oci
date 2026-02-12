@@ -12,6 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Metric Extension Metric Extension On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MetricExtensionMetricExtensionOnGivenResourcesManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+// Submits a request to enable matching metric extension Id for the given Resource IDs
+//
 // ## Example Usage
 //
 // ```go

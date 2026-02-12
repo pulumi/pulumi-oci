@@ -482,6 +482,13 @@ class TargetDatabase(pulumi.CustomResource):
                  tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
+
         ## Example Usage
 
         ```python
@@ -580,6 +587,13 @@ class TargetDatabase(pulumi.CustomResource):
                  args: TargetDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
+
         ## Example Usage
 
         ```python

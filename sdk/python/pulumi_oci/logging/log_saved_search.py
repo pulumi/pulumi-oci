@@ -300,6 +300,13 @@ class LogSavedSearch(pulumi.CustomResource):
                  query: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogSavedSearch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Creates a new LogSavedSearch.
+
         ## Example Usage
 
         ```python
@@ -347,6 +354,13 @@ class LogSavedSearch(pulumi.CustomResource):
                  args: LogSavedSearchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/LogSavedSearch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Creates a new LogSavedSearch.
+
         ## Example Usage
 
         ```python

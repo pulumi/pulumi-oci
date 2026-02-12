@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions
 {
     /// <summary>
+    /// This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/functions/latest/InvokeFunction
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/functions
+    /// 
+    /// Invokes a function
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,6 +47,9 @@ namespace Pulumi.Oci.Functions
     [OciResourceType("oci:Functions/invokeFunction:InvokeFunction")]
     public partial class InvokeFunction : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Encodes the response returned, if any, in base64. It is recommended to set this to `True` to avoid corrupting the returned response, if any, in Terraform state. The default value is `False`.
+        /// </summary>
         [Output("base64EncodeContent")]
         public Output<bool?> Base64EncodeContent { get; private set; } = null!;
 
@@ -85,6 +95,9 @@ namespace Pulumi.Oci.Functions
         [Output("invokeFunctionBody")]
         public Output<string> InvokeFunctionBody { get; private set; } = null!;
 
+        /// <summary>
+        /// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `InvokeFunctionBody` or `InputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// </summary>
         [Output("invokeFunctionBodyBase64Encoded")]
         public Output<string> InvokeFunctionBodyBase64Encoded { get; private set; } = null!;
 
@@ -140,6 +153,9 @@ namespace Pulumi.Oci.Functions
 
     public sealed class InvokeFunctionArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Encodes the response returned, if any, in base64. It is recommended to set this to `True` to avoid corrupting the returned response, if any, in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 
@@ -176,6 +192,9 @@ namespace Pulumi.Oci.Functions
         [Input("invokeFunctionBody")]
         public Input<string>? InvokeFunctionBody { get; set; }
 
+        /// <summary>
+        /// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `InvokeFunctionBody` or `InputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// </summary>
         [Input("invokeFunctionBodyBase64Encoded")]
         public Input<string>? InvokeFunctionBodyBase64Encoded { get; set; }
 
@@ -193,6 +212,9 @@ namespace Pulumi.Oci.Functions
 
     public sealed class InvokeFunctionState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Encodes the response returned, if any, in base64. It is recommended to set this to `True` to avoid corrupting the returned response, if any, in Terraform state. The default value is `False`.
+        /// </summary>
         [Input("base64EncodeContent")]
         public Input<bool>? Base64EncodeContent { get; set; }
 
@@ -238,6 +260,9 @@ namespace Pulumi.Oci.Functions
         [Input("invokeFunctionBody")]
         public Input<string>? InvokeFunctionBody { get; set; }
 
+        /// <summary>
+        /// The Base64 encoded body of the function invocation. Base64 encoded input avoids corruption in Terraform state. Cannot be defined if `InvokeFunctionBody` or `InputBodySourcePath` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// </summary>
         [Input("invokeFunctionBodyBase64Encoded")]
         public Input<string>? InvokeFunctionBodyBase64Encoded { get; set; }
 

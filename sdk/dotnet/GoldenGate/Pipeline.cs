@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
+    /// This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/Pipeline
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+    /// 
+    /// Creates a new Pipeline.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -77,7 +84,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Import
     /// 
-    /// Pipelines can be imported using the `id`, e.g.
+    /// Pipelines can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GoldenGate/pipeline:Pipeline test_pipeline "id"

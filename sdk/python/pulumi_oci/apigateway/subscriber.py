@@ -391,6 +391,13 @@ class Subscriber(pulumi.CustomResource):
                  usage_plans: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/Subscriber
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new subscriber.
+
         ## Example Usage
 
         ```python
@@ -446,6 +453,13 @@ class Subscriber(pulumi.CustomResource):
                  args: SubscriberArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/Subscriber
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new subscriber.
+
         ## Example Usage
 
         ```python

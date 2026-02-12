@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Repository
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+    /// 
+    /// Creates a new repository.
     /// 
     /// ## Import
     /// 
-    /// Repositories can be imported using the `id`, e.g.
+    /// Repositories can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DevOps/repository:Repository test_repository "id"

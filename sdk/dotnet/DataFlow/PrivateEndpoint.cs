@@ -10,9 +10,60 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
+    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/PrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+    /// 
+    /// Creates a private endpoint to be used by applications.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testPrivateEndpoint = new Oci.DataFlow.PrivateEndpoint("test_private_endpoint", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DnsZones = privateEndpointDnsZones,
+    ///         SubnetId = testSubnet.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = privateEndpointDescription,
+    ///         DisplayName = privateEndpointDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         MaxHostCount = privateEndpointMaxHostCount,
+    ///         NsgIds = privateEndpointNsgIds,
+    ///         ScanDetails = new[]
+    ///         {
+    ///             new Oci.DataFlow.Inputs.PrivateEndpointScanDetailArgs
+    ///             {
+    ///                 Fqdn = privateEndpointScanDetailsFqdn,
+    ///                 Port = privateEndpointScanDetailsPort,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Note
+    /// 
+    /// When a Private Endpoint resource is created it will be in `INACTIVE` state. When user runs an application using a Private Endpoint resource only then it moves to `ACTIVE` state. Also if there is already a Private Endpoint resource that is in `ACTIVE` state then on running the new application, the new Private Endpoint will be moved to `ACTIVE` state while the old one will be moved to `INACTIVE` state by the service. To update these states in your terraform state file user needs to do a `terraform refresh`.
+    /// 
     /// ## Import
     /// 
-    /// PrivateEndpoints can be imported using the `id`, e.g.
+    /// PrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataFlow/privateEndpoint:PrivateEndpoint test_private_endpoint "id"

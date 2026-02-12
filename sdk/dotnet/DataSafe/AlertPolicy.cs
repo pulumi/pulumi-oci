@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AlertPolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Creates a new user-defined alert policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +58,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// AlertPolicies can be imported using the `id`, e.g.
+    /// AlertPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/alertPolicy:AlertPolicy test_alert_policy "id"

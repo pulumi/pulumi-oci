@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelGroupVersionHistory
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+ *
+ * Creates a new modelGroupVersionHistory.
+ *
  * ## Example Usage
  *
  * ```typescript

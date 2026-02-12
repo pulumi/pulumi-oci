@@ -462,6 +462,13 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccAvailabilityCatalog
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create availability catalog
+
         ## Example Usage
 
         ```python
@@ -517,6 +524,13 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  args: OccAvailabilityCatalogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccAvailabilityCatalog
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create availability catalog
+
         ## Example Usage
 
         ```python

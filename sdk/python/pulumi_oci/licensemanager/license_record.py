@@ -494,6 +494,13 @@ class LicenseRecord(pulumi.CustomResource):
                  support_end_date: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/LicenseRecord
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+
+        Creates a new license record for the given product license ID.
+
         ## Example Usage
 
         ```python
@@ -549,6 +556,13 @@ class LicenseRecord(pulumi.CustomResource):
                  args: LicenseRecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/LicenseRecord
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+
+        Creates a new license record for the given product license ID.
+
         ## Example Usage
 
         ```python

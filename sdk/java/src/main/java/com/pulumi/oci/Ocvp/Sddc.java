@@ -25,6 +25,102 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Sddc
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+ * 
+ * Creates an Oracle Cloud VMware Solution software-defined data center (SDDC).
+ * 
+ * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+ * creation of the SDDC.
+ * 
+ * **Important:** You must configure the SDDC&#39;s networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Ocvp.Sddc;
+ * import com.pulumi.oci.Ocvp.SddcArgs;
+ * import com.pulumi.oci.Ocvp.inputs.SddcInitialConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSddc = new Sddc("testSddc", SddcArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .initialConfigurations(SddcInitialConfigurationArgs.builder()
+ *                 .initialClusterConfigurations(SddcInitialConfigurationInitialClusterConfigurationArgs.builder()
+ *                     .computeAvailabilityDomain(sddcInitialConfigurationInitialClusterConfigurationsComputeAvailabilityDomain)
+ *                     .esxiHostsCount(sddcInitialConfigurationInitialClusterConfigurationsEsxiHostsCount)
+ *                     .networkConfiguration(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs.builder()
+ *                         .nsxEdgeVtepVlanId(testVlan.id())
+ *                         .nsxVtepVlanId(testVlan.id())
+ *                         .provisioningSubnetId(testSubnet.id())
+ *                         .vmotionVlanId(testVlan.id())
+ *                         .vsanVlanId(testVlan.id())
+ *                         .hcxVlanId(testVlan.id())
+ *                         .nsxEdgeUplink1vlanId(testNsxEdgeUplink1vlan.id())
+ *                         .nsxEdgeUplink2vlanId(testNsxEdgeUplink2vlan.id())
+ *                         .provisioningVlanId(testVlan.id())
+ *                         .replicationVlanId(testVlan.id())
+ *                         .vsphereVlanId(testVlan.id())
+ *                         .build())
+ *                     .vsphereType(sddcInitialConfigurationInitialClusterConfigurationsVsphereType)
+ *                     .capacityReservationId(testCapacityReservation.id())
+ *                     .datastoreClusterIds(sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds)
+ *                     .datastores(SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs.builder()
+ *                         .blockVolumeIds(sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds)
+ *                         .datastoreType(sddcInitialConfigurationInitialClusterConfigurationsDatastoresDatastoreType)
+ *                         .build())
+ *                     .displayName(sddcInitialConfigurationInitialClusterConfigurationsDisplayName)
+ *                     .initialCommitment(sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment)
+ *                     .initialHostOcpuCount(sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount)
+ *                     .initialHostShapeName(testShape.name())
+ *                     .instanceDisplayNamePrefix(sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix)
+ *                     .isShieldedInstanceEnabled(sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled)
+ *                     .workloadNetworkCidr(sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr)
+ *                     .build())
+ *                 .build())
+ *             .sshAuthorizedKeys(sddcSshAuthorizedKeys)
+ *             .vmwareSoftwareVersion(sddcVmwareSoftwareVersion)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(sddcDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isSingleHostSddc(sddcIsSingleHostSddc)
+ *             .hcxAction(hcxAction)
+ *             .isHcxEnabled(sddcIsHcxEnabled)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## How to migrate from deprecated fields to new fields
+ * 
+ * 1. Before starting migration, back up your terraform state file.
+ * 2. Get the SDDC OCID for the `oci.Ocvp.Sddc` resource you plan to migrate.
+ * 3. Remove the `oci.Ocvp.Sddc` resource from Terraform state via command: terraform state rm \&lt;resource address\&gt;
+ * 4. Update `oci.Ocvp.Sddc` resource config. Remove all deprecated fields and add corresponding new fields to the resource config. Note: Remove and do not add `hcxAction` or `refreshHcxLicenseStatus` because these fields will not be imported.
+ * 5. Import `oci.Ocvp.Sddc` resource to Terraform state using command: terraform import \&lt;resource address\&gt; \&lt;SDDC OCID\&gt;.
+ * 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.Sddc` resource. If there is any planned change, update `oci.Ocvp.Sddc` resource config until there is no planned change.
+ * 
  * ## Import
  * 
  * Sddcs can be imported using the `id`, e.g.
@@ -214,9 +310,17 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     * 
+     */
     @Export(name="hcxAction", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> hcxAction;
 
+    /**
+     * @return (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     * 
+     */
     public Output<Optional<String>> hcxAction() {
         return Codegen.optional(this.hcxAction);
     }

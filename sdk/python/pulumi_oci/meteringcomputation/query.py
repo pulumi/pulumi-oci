@@ -106,6 +106,13 @@ class Query(pulumi.CustomResource):
                  query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Query
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created query.
+
         ## Example Usage
 
         ```python
@@ -166,6 +173,13 @@ class Query(pulumi.CustomResource):
                  args: QueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Query
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+
+        Returns the created query.
+
         ## Example Usage
 
         ```python

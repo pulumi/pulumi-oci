@@ -10,6 +10,18 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
+    /// This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Cluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+    /// 
+    /// Create a vSphere Cluster in software-defined data center (SDDC).
+    /// 
+    /// Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+    /// creation of the Cluster.
+    /// 
+    /// **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -73,7 +85,7 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// ## Import
     /// 
-    /// Clusters can be imported using the `id`, e.g.
+    /// Clusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ocvp/cluster:Cluster test_cluster "id"

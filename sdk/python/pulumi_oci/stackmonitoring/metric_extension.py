@@ -525,6 +525,13 @@ class MetricExtension(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MetricExtension
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new metric extension resource for a given compartment
+
         ## Example Usage
 
         ```python
@@ -614,6 +621,13 @@ class MetricExtension(pulumi.CustomResource):
                  args: MetricExtensionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MetricExtension
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new metric extension resource for a given compartment
+
         ## Example Usage
 
         ```python

@@ -10,6 +10,27 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new cross-connect group to use with Oracle Cloud Infrastructure
+    /// FastConnect. For more information, see
+    /// [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
+    /// 
+    /// For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+    /// compartment where you want the cross-connect group to reside. If you're
+    /// not sure which compartment to use, put the cross-connect group in the
+    /// same compartment with your VCN. For more information about
+    /// compartments and access control, see
+    /// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+    /// For information about OCIDs, see
+    /// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    /// 
+    /// You may optionally specify a *display name* for the cross-connect group.
+    /// It does not have to be unique, and you can change it. Avoid entering confidential information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +72,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// CrossConnectGroups can be imported using the `id`, e.g.
+    /// CrossConnectGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/crossConnectGroup:CrossConnectGroup test_cross_connect_group "id"

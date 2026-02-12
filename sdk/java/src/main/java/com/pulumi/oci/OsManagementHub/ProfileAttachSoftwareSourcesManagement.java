@@ -15,6 +15,13 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Profile Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ProfileAttachSoftwareSourcesManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ * 
+ * Attaches the specified software sources to a profile.
+ * 
  * ## Example Usage
  * 
  * <pre>

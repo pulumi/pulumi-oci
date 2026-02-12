@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cost Anomaly Monitor Costanomalymonitorenabletoggles Management resource in Oracle Cloud Infrastructure Budget service.
+ *
+ * Enables the cost anomaly monitor. This (re)starts the cost anomaly detection for targeted resource(s).
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyMonitor/Enable
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+ *
  * ## Example Usage
  *
  * ```typescript

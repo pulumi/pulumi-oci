@@ -479,6 +479,13 @@ class DrPlan(pulumi.CustomResource):
                  verify_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/disaster-recovery/latest/DrPlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/disaster_recovery
+
+        Create a DR plan of the specified DR plan type.
+
         ## Example Usage
 
         ```python
@@ -528,6 +535,13 @@ class DrPlan(pulumi.CustomResource):
                  args: DrPlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/disaster-recovery/latest/DrPlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/disaster_recovery
+
+        Create a DR plan of the specified DR plan type.
+
         ## Example Usage
 
         ```python

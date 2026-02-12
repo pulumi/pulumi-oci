@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// ExadataInfrastructureConfigureExascaleManagement can be imported using the `id`, e.g.
+    /// ExadataInfrastructureConfigureExascaleManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/exadataInfrastructureConfigureExascaleManagement:ExadataInfrastructureConfigureExascaleManagement test_exadata_infrastructure_configure_exascale_management "id"

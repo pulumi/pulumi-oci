@@ -71,20 +71,15 @@ __all__ = [
     'GetSqlEndpointsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ApplicationApplicationLogConfigArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The log group id for where log objects will be for Data Flow Runs.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-elif False:
-    ApplicationApplicationLogConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationApplicationLogConfigArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The log group id for where log objects will be for Data Flow Runs.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+    """
 
 @pulumi.input_type
 class ApplicationApplicationLogConfigArgs:
@@ -123,18 +118,15 @@ class ApplicationApplicationLogConfigArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class ApplicationDriverShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    ApplicationDriverShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationDriverShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class ApplicationDriverShapeConfigArgs:
@@ -175,18 +167,15 @@ class ApplicationDriverShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class ApplicationExecutorShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    ApplicationExecutorShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationExecutorShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class ApplicationExecutorShapeConfigArgs:
@@ -227,18 +216,15 @@ class ApplicationExecutorShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class ApplicationParameterArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-elif False:
-    ApplicationParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationParameterArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
+    """
 
 @pulumi.input_type
 class ApplicationParameterArgs:
@@ -277,18 +263,15 @@ class ApplicationParameterArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class InvokeRunApplicationLogConfigArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        The log group id for where log objects will be for Data Flow Runs.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        The log id of the log object the Application Logs of Data Flow Run will be shipped to.
-        """
-elif False:
-    InvokeRunApplicationLogConfigArgsDict: TypeAlias = Mapping[str, Any]
+class InvokeRunApplicationLogConfigArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    The log group id for where log objects will be for Data Flow Runs.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    The log id of the log object the Application Logs of Data Flow Run will be shipped to.
+    """
 
 @pulumi.input_type
 class InvokeRunApplicationLogConfigArgs:
@@ -327,18 +310,15 @@ class InvokeRunApplicationLogConfigArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class InvokeRunDriverShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    InvokeRunDriverShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class InvokeRunDriverShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class InvokeRunDriverShapeConfigArgs:
@@ -379,18 +359,15 @@ class InvokeRunDriverShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class InvokeRunExecutorShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    InvokeRunExecutorShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class InvokeRunExecutorShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class InvokeRunExecutorShapeConfigArgs:
@@ -431,18 +408,15 @@ class InvokeRunExecutorShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class InvokeRunParameterArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
-        """
-elif False:
-    InvokeRunParameterArgsDict: TypeAlias = Mapping[str, Any]
+class InvokeRunParameterArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    The value of the parameter. It must be a string of 0 or more characters of any kind. Examples: "" (empty string), "10", "mydata.xml", "${x}"
+    """
 
 @pulumi.input_type
 class InvokeRunParameterArgs:
@@ -481,26 +455,23 @@ class InvokeRunParameterArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class PoolConfigurationArgsDict(TypedDict):
-        max: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Maximum number of compute instances in the pool for a given compute shape.
-        """
-        min: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Minimum number of compute instances in the pool for a given compute shape.
-        """
-        shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The compute shape of the resources you would like to provision.
-        """
-        shape_config: NotRequired[pulumi.Input['PoolConfigurationShapeConfigArgsDict']]
-        """
-        (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
-        """
-elif False:
-    PoolConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class PoolConfigurationArgsDict(TypedDict):
+    max: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Maximum number of compute instances in the pool for a given compute shape.
+    """
+    min: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Minimum number of compute instances in the pool for a given compute shape.
+    """
+    shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The compute shape of the resources you would like to provision.
+    """
+    shape_config: NotRequired[pulumi.Input['PoolConfigurationShapeConfigArgsDict']]
+    """
+    (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
+    """
 
 @pulumi.input_type
 class PoolConfigurationArgs:
@@ -573,18 +544,15 @@ class PoolConfigurationArgs:
         pulumi.set(self, "shape_config", value)
 
 
-if not MYPY:
-    class PoolConfigurationShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    PoolConfigurationShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class PoolConfigurationShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    (Updatable) The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class PoolConfigurationShapeConfigArgs:
@@ -625,34 +593,31 @@ class PoolConfigurationShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class PoolPoolMetricArgsDict(TypedDict):
-        active_runs_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The number of runs that are currently running that are using this pool.
-        """
-        actively_used_node_counts: NotRequired[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgsDict']]]]
-        """
-        A count of the nodes that are currently being used for each shape in this pool.
-        """
-        time_last_metrics_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last time the mertics were updated for this.
-        """
-        time_last_started: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last time this pool was started.
-        """
-        time_last_stopped: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last time this pool was stopped.
-        """
-        time_last_used: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last time a run used this pool.
-        """
-elif False:
-    PoolPoolMetricArgsDict: TypeAlias = Mapping[str, Any]
+class PoolPoolMetricArgsDict(TypedDict):
+    active_runs_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The number of runs that are currently running that are using this pool.
+    """
+    actively_used_node_counts: NotRequired[pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricActivelyUsedNodeCountArgsDict']]]]
+    """
+    A count of the nodes that are currently being used for each shape in this pool.
+    """
+    time_last_metrics_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last time the mertics were updated for this.
+    """
+    time_last_started: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last time this pool was started.
+    """
+    time_last_stopped: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last time this pool was stopped.
+    """
+    time_last_used: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last time a run used this pool.
+    """
 
 @pulumi.input_type
 class PoolPoolMetricArgs:
@@ -757,18 +722,15 @@ class PoolPoolMetricArgs:
         pulumi.set(self, "time_last_used", value)
 
 
-if not MYPY:
-    class PoolPoolMetricActivelyUsedNodeCountArgsDict(TypedDict):
-        logical_shape: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The compute shape of the nodes that the count is for.
-        """
-        pool_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The node count of this compute shape.
-        """
-elif False:
-    PoolPoolMetricActivelyUsedNodeCountArgsDict: TypeAlias = Mapping[str, Any]
+class PoolPoolMetricActivelyUsedNodeCountArgsDict(TypedDict):
+    logical_shape: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The compute shape of the nodes that the count is for.
+    """
+    pool_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The node count of this compute shape.
+    """
 
 @pulumi.input_type
 class PoolPoolMetricActivelyUsedNodeCountArgs:
@@ -809,22 +771,19 @@ class PoolPoolMetricActivelyUsedNodeCountArgs:
         pulumi.set(self, "pool_count", value)
 
 
-if not MYPY:
-    class PoolScheduleArgsDict(TypedDict):
-        day_of_week: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Day of the week SUN-SAT
-        """
-        start_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Hour of the day to start or stop pool.
-        """
-        stop_time: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Hour of the day to stop the pool.
-        """
-elif False:
-    PoolScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class PoolScheduleArgsDict(TypedDict):
+    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Day of the week SUN-SAT
+    """
+    start_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Hour of the day to start or stop pool.
+    """
+    stop_time: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Hour of the day to stop the pool.
+    """
 
 @pulumi.input_type
 class PoolScheduleArgs:
@@ -881,18 +840,15 @@ class PoolScheduleArgs:
         pulumi.set(self, "stop_time", value)
 
 
-if not MYPY:
-    class PrivateEndpointScanDetailArgsDict(TypedDict):
-        fqdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A fully-qualified domain name (FQDN).
-        """
-        port: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The port number of the FQDN
-        """
-elif False:
-    PrivateEndpointScanDetailArgsDict: TypeAlias = Mapping[str, Any]
+class PrivateEndpointScanDetailArgsDict(TypedDict):
+    fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A fully-qualified domain name (FQDN).
+    """
+    port: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The port number of the FQDN
+    """
 
 @pulumi.input_type
 class PrivateEndpointScanDetailArgs:
@@ -933,30 +889,27 @@ class PrivateEndpointScanDetailArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class RunStatementOutputArgsDict(TypedDict):
-        datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgsDict']]]]
-        """
-        An object representing execution output of a statement.
-        """
-        error_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the error in the statement output.
-        """
-        error_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value of the error in the statement output.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Status of the statement output.
-        """
-        tracebacks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The traceback of the statement output.
-        """
-elif False:
-    RunStatementOutputArgsDict: TypeAlias = Mapping[str, Any]
+class RunStatementOutputArgsDict(TypedDict):
+    datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputDataArgsDict']]]]
+    """
+    An object representing execution output of a statement.
+    """
+    error_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the error in the statement output.
+    """
+    error_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value of the error in the statement output.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Status of the statement output.
+    """
+    tracebacks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The traceback of the statement output.
+    """
 
 @pulumi.input_type
 class RunStatementOutputArgs:
@@ -1045,18 +998,15 @@ class RunStatementOutputArgs:
         pulumi.set(self, "tracebacks", value)
 
 
-if not MYPY:
-    class RunStatementOutputDataArgsDict(TypedDict):
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The statement code execution output in html format.
-        """
-elif False:
-    RunStatementOutputDataArgsDict: TypeAlias = Mapping[str, Any]
+class RunStatementOutputDataArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The statement code execution output in html format.
+    """
 
 @pulumi.input_type
 class RunStatementOutputDataArgs:
@@ -1097,18 +1047,15 @@ class RunStatementOutputDataArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class SqlEndpointDriverShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    SqlEndpointDriverShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class SqlEndpointDriverShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class SqlEndpointDriverShapeConfigArgs:
@@ -1149,18 +1096,15 @@ class SqlEndpointDriverShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class SqlEndpointExecutorShapeConfigArgsDict(TypedDict):
-        memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The amount of memory used for the driver or executors.
-        """
-        ocpus: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
-        """
-elif False:
-    SqlEndpointExecutorShapeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class SqlEndpointExecutorShapeConfigArgsDict(TypedDict):
+    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The amount of memory used for the driver or executors.
+    """
+    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total number of OCPUs used for the driver or executors. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
+    """
 
 @pulumi.input_type
 class SqlEndpointExecutorShapeConfigArgs:
@@ -1201,42 +1145,39 @@ class SqlEndpointExecutorShapeConfigArgs:
         pulumi.set(self, "ocpus", value)
 
 
-if not MYPY:
-    class SqlEndpointNetworkConfigurationArgsDict(TypedDict):
-        network_type: pulumi.Input[_builtins.str]
-        """
-        The type of network configuration.
-        """
-        access_control_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgsDict']]]]
-        """
-        A list of SecureAccessControlRule's to which access is limited to
-        """
-        host_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name prefix.
-        """
-        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The OCIDs of Network Security Groups (NSGs).
-        """
-        private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Ip Address of private endpoint
-        """
-        public_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Ip Address of public endpoint
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VCN Subnet OCID.
-        """
-        vcn_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VCN OCID.
-        """
-elif False:
-    SqlEndpointNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class SqlEndpointNetworkConfigurationArgsDict(TypedDict):
+    network_type: pulumi.Input[_builtins.str]
+    """
+    The type of network configuration.
+    """
+    access_control_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgsDict']]]]
+    """
+    A list of SecureAccessControlRule's to which access is limited to
+    """
+    host_name_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name prefix.
+    """
+    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The OCIDs of Network Security Groups (NSGs).
+    """
+    private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Ip Address of private endpoint
+    """
+    public_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Ip Address of public endpoint
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VCN Subnet OCID.
+    """
+    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VCN OCID.
+    """
 
 @pulumi.input_type
 class SqlEndpointNetworkConfigurationArgs:
@@ -1372,22 +1313,19 @@ class SqlEndpointNetworkConfigurationArgs:
         pulumi.set(self, "vcn_id", value)
 
 
-if not MYPY:
-    class SqlEndpointNetworkConfigurationAccessControlRuleArgsDict(TypedDict):
-        ip_notation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of IP notation.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The associated value of the selected IP notation.
-        """
-        vcn_ips: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-        """
-elif False:
-    SqlEndpointNetworkConfigurationAccessControlRuleArgsDict: TypeAlias = Mapping[str, Any]
+class SqlEndpointNetworkConfigurationAccessControlRuleArgsDict(TypedDict):
+    ip_notation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of IP notation.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The associated value of the selected IP notation.
+    """
+    vcn_ips: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+    """
 
 @pulumi.input_type
 class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
@@ -1444,16 +1382,13 @@ class SqlEndpointNetworkConfigurationAccessControlRuleArgs:
         pulumi.set(self, "vcn_ips", value)
 
 
-if not MYPY:
-    class GetApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApplicationsFilterArgs:
@@ -1500,16 +1435,13 @@ class GetApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInvokeRunsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInvokeRunsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInvokeRunsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInvokeRunsFilterArgs:
@@ -1556,13 +1488,10 @@ class GetInvokeRunsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPoolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPoolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPoolsFilterArgs:
@@ -1603,13 +1532,10 @@ class GetPoolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateEndpointsFilterArgs:
@@ -1650,13 +1576,10 @@ class GetPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunLogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunLogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunLogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunLogsFilterArgs:
@@ -1697,13 +1620,10 @@ class GetRunLogsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunStatementsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunStatementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunStatementsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunStatementsFilterArgs:
@@ -1744,13 +1664,10 @@ class GetRunStatementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSqlEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSqlEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSqlEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSqlEndpointsFilterArgs:

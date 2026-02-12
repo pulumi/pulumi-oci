@@ -15,7 +15,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbHome
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * 
+ * Updates the cloud DB home specified by `cloudDbHomeId`.
  * 
  * ## Import
  * 

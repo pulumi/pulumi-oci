@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager
 {
     /// <summary>
+    /// This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/licensemanager/latest/Configuration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/license_manager
+    /// 
+    /// Updates the configuration for the compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// ## Import
     /// 
-    /// Configurations can be imported using the `id`, e.g.
+    /// Configurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LicenseManager/configuration:Configuration test_configuration "configuration/compartmentId/{compartmentId}"

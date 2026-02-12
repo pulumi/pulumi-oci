@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceGenerateMetadataManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Regenerates metadata for the specified custom software source.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -30,7 +37,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// SoftwareSourceGenerateMetadataManagement can be imported using the `id`, e.g.
+    /// SoftwareSourceGenerateMetadataManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement test_software_source_generate_metadata_management "id"

@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyEvent
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+    /// 
+    /// Update a CostAnomalyEvent identified by the OCID.
     /// 
     /// ## Import
     /// 
-    /// CostAnomalyEvents can be imported using the `id`, e.g.
+    /// CostAnomalyEvents can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Budget/costAnomalyEvent:CostAnomalyEvent test_cost_anomaly_event "id"

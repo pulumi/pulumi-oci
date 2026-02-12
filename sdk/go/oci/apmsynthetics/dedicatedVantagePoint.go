@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Dedicated Vantage Point resource in Oracle Cloud Infrastructure Apm Synthetics service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/latest/DedicatedVantagePoint
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_synthetics
+//
+// Registers a new dedicated vantage point.
+//
 // ## Example Usage
 //
 // ```go

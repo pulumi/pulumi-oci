@@ -17,6 +17,16 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Rrset
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+ * 
+ *   Updates records in the specified RRSet.
+ * 
+ * When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+ * parameter then the viewId query parameter is required.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -68,12 +78,14 @@ import javax.annotation.Nullable;
  * ```sh
  * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}&#34;
  * ```
- * For Rrsets created using `scope` and `view_id`, these Rrsets can be imported using the `id`, e.g.
+ * 
+ * For Rrsets created using `scope` and `viewId`, these Rrsets can be imported using the `id`, e.g.
  * 
  * ```sh
  * $ pulumi import oci:Dns/rrset:Rrset test_rrset &#34;zoneNameOrId/{zoneNameOrId}/domain/{domain}/rtype/{rtype}/scope/{scope}/viewId/{viewId}&#34;
  * ```
- * skip adding `{view_id}` at the end if Rrset was created without `view_id`.
+ * 
+ * skip adding `{view_id}` at the end if Rrset was created without `viewId`.
  * 
  */
 @ResourceType(type="oci:Dns/rrset:Rrset")

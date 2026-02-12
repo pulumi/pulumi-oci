@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/BackupDestination
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates a backup destination in an Exadata Cloud@Customer system.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -47,7 +54,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// BackupDestinations can be imported using the `id`, e.g.
+    /// BackupDestinations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/backupDestination:BackupDestination test_backup_destination "id"

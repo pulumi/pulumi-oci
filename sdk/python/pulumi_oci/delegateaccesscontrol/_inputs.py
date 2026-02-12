@@ -31,15 +31,10 @@ __all__ = [
     'GetServiceProvidersFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetDelegatedResourceAccessRequestHistoriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDelegatedResourceAccessRequestHistoriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDelegatedResourceAccessRequestHistoriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDelegatedResourceAccessRequestHistoriesFilterArgs:
@@ -80,13 +75,10 @@ class GetDelegatedResourceAccessRequestHistoriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDelegatedResourceAccessRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDelegatedResourceAccessRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDelegatedResourceAccessRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDelegatedResourceAccessRequestsFilterArgs:
@@ -127,13 +119,10 @@ class GetDelegatedResourceAccessRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDelegationControlResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDelegationControlResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDelegationControlResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDelegationControlResourcesFilterArgs:
@@ -174,13 +163,10 @@ class GetDelegationControlResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDelegationControlsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDelegationControlsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDelegationControlsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDelegationControlsFilterArgs:
@@ -221,13 +207,10 @@ class GetDelegationControlsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDelegationSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDelegationSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDelegationSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDelegationSubscriptionsFilterArgs:
@@ -268,16 +251,13 @@ class GetDelegationSubscriptionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetServiceProviderActionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServiceProviderActionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServiceProviderActionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServiceProviderActionsFilterArgs:
@@ -324,16 +304,13 @@ class GetServiceProviderActionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetServiceProvidersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return Service Provider resources that match the given name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServiceProvidersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServiceProvidersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return Service Provider resources that match the given name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServiceProvidersFilterArgs:

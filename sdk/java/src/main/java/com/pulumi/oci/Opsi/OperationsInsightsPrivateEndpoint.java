@@ -17,6 +17,14 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/OperationsInsightsPrivateEndpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+ * 
+ * Create a private endpoint resource for the tenant in Ops Insights.
+ * This resource will be created in customer compartment.
+ * 
  * ## Example Usage
  * 
  * <pre>

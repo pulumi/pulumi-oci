@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new digital twin model.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// DigitalTwinModels can be imported using the `id`, e.g.
+    /// DigitalTwinModels can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/iotDigitalTwinModel:IotDigitalTwinModel test_digital_twin_model "id"

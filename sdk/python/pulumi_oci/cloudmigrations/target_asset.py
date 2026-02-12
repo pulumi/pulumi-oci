@@ -476,6 +476,13 @@ class TargetAsset(pulumi.CustomResource):
                  user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/TargetAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a target asset.
+
         ## Example Usage
 
         ```python
@@ -582,6 +589,13 @@ class TargetAsset(pulumi.CustomResource):
                  args: TargetAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/TargetAsset
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a target asset.
+
         ## Example Usage
 
         ```python

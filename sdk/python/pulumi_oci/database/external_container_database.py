@@ -428,6 +428,13 @@ class ExternalContainerDatabase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new external container database resource.
+
         ## Example Usage
 
         ```python
@@ -469,6 +476,13 @@ class ExternalContainerDatabase(pulumi.CustomResource):
                  args: ExternalContainerDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new external container database resource.
+
         ## Example Usage
 
         ```python

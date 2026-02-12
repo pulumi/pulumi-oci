@@ -5,7 +5,12 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalClusterInstance
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ *
+ * Updates the external cluster instance specified by `externalClusterInstanceId`.
  *
  * ## Import
  *

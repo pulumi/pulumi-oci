@@ -83,9 +83,17 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.computeModel);
     }
 
+    /**
+     * (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+     * 
+     */
     @Import(name="cpuCoreCount")
     private @Nullable Output<Integer> cpuCoreCount;
 
+    /**
+     * @return (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+     * 
+     */
     public Optional<Output<Integer>> cpuCoreCount() {
         return Optional.ofNullable(this.cpuCoreCount);
     }
@@ -688,11 +696,23 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
             return computeModel(Output.of(computeModel));
         }
 
+        /**
+         * @param cpuCoreCount (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpuCoreCount(@Nullable Output<Integer> cpuCoreCount) {
             $.cpuCoreCount = cpuCoreCount;
             return this;
         }
 
+        /**
+         * @param cpuCoreCount (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. *Note:* If `cpuCoreCount` is modified in `DISCONNECTED` state, the provider could experience a drift in Terraform state. To remediate this, refresh your Terraform state and update the configuration file when the Oracle Cloud Infrastructure connection is established.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             return cpuCoreCount(Output.of(cpuCoreCount));
         }

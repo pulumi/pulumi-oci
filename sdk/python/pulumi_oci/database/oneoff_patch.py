@@ -444,6 +444,13 @@ class OneoffPatch(pulumi.CustomResource):
                  release_update: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/OneoffPatch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates one-off patch for specified database version to download.
+
         ## Example Usage
 
         ```python
@@ -492,6 +499,13 @@ class OneoffPatch(pulumi.CustomResource):
                  args: OneoffPatchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/OneoffPatch
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates one-off patch for specified database version to download.
+
         ## Example Usage
 
         ```python

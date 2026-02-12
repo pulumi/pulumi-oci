@@ -21,35 +21,30 @@ __all__ = [
     'GetOpaInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class OpaInstanceAttachmentArgsDict(TypedDict):
-        is_implicit: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        * If role == `PARENT`, the attached instance was created by this service instance
-        * If role == `CHILD`, this instance was created from attached instance on behalf of a user
-        """
-        target_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
-        """
-        target_instance_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The dataplane instance URL of the attached instance
-        """
-        target_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the target attachment. 
-        * `PARENT` - The target instance is the parent of this attachment.
-        * `CHILD` - The target instance is the child of this attachment.
-        """
-        target_service_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the target instance, such as "FUSION".
-        """
-elif False:
-    OpaInstanceAttachmentArgsDict: TypeAlias = Mapping[str, Any]
+class OpaInstanceAttachmentArgsDict(TypedDict):
+    is_implicit: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    * If role == `PARENT`, the attached instance was created by this service instance
+    * If role == `CHILD`, this instance was created from attached instance on behalf of a user
+    """
+    target_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
+    """
+    target_instance_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The dataplane instance URL of the attached instance
+    """
+    target_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the target attachment. 
+    * `PARENT` - The target instance is the parent of this attachment.
+    * `CHILD` - The target instance is the child of this attachment.
+    """
+    target_service_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the target instance, such as "FUSION".
+    """
 
 @pulumi.input_type
 class OpaInstanceAttachmentArgs:
@@ -144,13 +139,10 @@ class OpaInstanceAttachmentArgs:
         pulumi.set(self, "target_service_type", value)
 
 
-if not MYPY:
-    class GetOpaInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOpaInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOpaInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOpaInstancesFilterArgs:

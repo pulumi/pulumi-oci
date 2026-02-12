@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// InstanceMaintenanceEvents can be imported using the `id`, e.g.
+    /// InstanceMaintenanceEvents can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent test_instance_maintenance_event "id"

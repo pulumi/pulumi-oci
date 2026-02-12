@@ -10,6 +10,22 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
+    /// This resource provides the Zone Promote Dnssec Key Version resource in Oracle Cloud Infrastructure DNS service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/ZonePromoteDnssecKeyVersion
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+    /// 
+    /// Promotes a specified `DnssecKeyVersion` on the zone.
+    /// 
+    /// If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that is replacing
+    /// another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for removal from the zone.
+    /// 
+    /// For key signing keys (KSKs), you must create the DS record with the new key information **before** promoting
+    /// the new key to establish a chain of trust. To avoid a service disruption, remove the old DS record as soon
+    /// as its TTL (time to live) expires.
+    /// 
+    /// For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

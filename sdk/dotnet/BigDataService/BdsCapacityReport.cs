@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
+    /// This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsCapacityReport
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+    /// 
+    /// Create a detailed capacity report for BDS service
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Import
     /// 
-    /// BdsCapacityReports can be imported using the `id`, e.g.
+    /// BdsCapacityReports can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:BigDataService/bdsCapacityReport:BdsCapacityReport test_bds_capacity_report "id"

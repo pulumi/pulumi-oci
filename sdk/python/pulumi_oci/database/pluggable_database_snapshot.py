@@ -283,6 +283,13 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
                  pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/PluggableDatabaseSnapshot
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a Pluggable Database Snapshot
+
         ## Example Usage
 
         ```python
@@ -324,6 +331,13 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
                  args: PluggableDatabaseSnapshotArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/PluggableDatabaseSnapshot
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a Pluggable Database Snapshot
+
         ## Example Usage
 
         ```python

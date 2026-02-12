@@ -688,6 +688,13 @@ class Provision(pulumi.CustomResource):
                  tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Provision
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Creates a Provision.
+
         ## Example Usage
 
         ```python
@@ -747,6 +754,13 @@ class Provision(pulumi.CustomResource):
                  args: ProvisionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Provision
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+
+        Creates a Provision.
+
         ## Example Usage
 
         ```python

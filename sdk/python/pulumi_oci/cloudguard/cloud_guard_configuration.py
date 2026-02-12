@@ -185,6 +185,14 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/CloudGuardConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        The reporting region cannot be updated once created.
+
         ## Example Usage
 
         ```python
@@ -224,6 +232,14 @@ class CloudGuardConfiguration(pulumi.CustomResource):
                  args: CloudGuardConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/CloudGuardConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        The reporting region cannot be updated once created.
+
         ## Example Usage
 
         ```python

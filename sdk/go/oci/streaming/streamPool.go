@@ -12,6 +12,15 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/streaming
+//
+// Starts the provisioning of a new stream pool.
+// To track the progress of the provisioning, you can periodically call GetStreamPool.
+// In the response, the `lifecycleState` parameter of the object tells you its current state.
+//
 // ## Example Usage
 //
 // ```go

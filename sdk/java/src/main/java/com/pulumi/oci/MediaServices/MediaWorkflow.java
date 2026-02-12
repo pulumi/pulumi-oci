@@ -19,6 +19,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflow
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+ * 
+ * Creates a new MediaWorkflow.
+ * 
  * ## Example Usage
  * 
  * <pre>

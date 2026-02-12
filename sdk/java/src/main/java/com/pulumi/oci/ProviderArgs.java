@@ -95,9 +95,17 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.fingerprint);
     }
 
+    /**
+     * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+     * 
+     */
     @Import(name="ignoreDefinedTags", json=true)
     private @Nullable Output<List<String>> ignoreDefinedTags;
 
+    /**
+     * @return (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+     * 
+     */
     public Optional<Output<List<String>>> ignoreDefinedTags() {
         return Optional.ofNullable(this.ignoreDefinedTags);
     }
@@ -396,15 +404,33 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
             return fingerprint(Output.of(fingerprint));
         }
 
+        /**
+         * @param ignoreDefinedTags (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+         * 
+         * @return builder
+         * 
+         */
         public Builder ignoreDefinedTags(@Nullable Output<List<String>> ignoreDefinedTags) {
             $.ignoreDefinedTags = ignoreDefinedTags;
             return this;
         }
 
+        /**
+         * @param ignoreDefinedTags (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+         * 
+         * @return builder
+         * 
+         */
         public Builder ignoreDefinedTags(List<String> ignoreDefinedTags) {
             return ignoreDefinedTags(Output.of(ignoreDefinedTags));
         }
 
+        /**
+         * @param ignoreDefinedTags (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+         * 
+         * @return builder
+         * 
+         */
         public Builder ignoreDefinedTags(String... ignoreDefinedTags) {
             return ignoreDefinedTags(List.of(ignoreDefinedTags));
         }

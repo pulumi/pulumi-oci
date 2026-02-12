@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/MlApplication
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+ *
+ * Creates a new MlApplication.
+ *
  * ## Example Usage
  *
  * ```typescript

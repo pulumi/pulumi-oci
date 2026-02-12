@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the External Db System Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalDbSystemStackMonitoringsManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+// Enables Stack Monitoring for all the components of the specified
+// external DB system (except databases).
+//
 // ## Example Usage
 //
 // ```go

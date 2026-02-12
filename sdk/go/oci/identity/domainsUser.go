@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/User
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+//
+// Create a user.
+//
 // ## Example Usage
 //
 // ```go
@@ -479,7 +486,8 @@ type DomainsUser struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringOutput  `pulumi:"externalId"`
+	ExternalId pulumi.StringOutput `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrOutput `pulumi:"forceDelete"`
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
@@ -1029,8 +1037,9 @@ type domainsUserState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  *string `pulumi:"externalId"`
-	ForceDelete *bool   `pulumi:"forceDelete"`
+	ExternalId *string `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
 	// **SCIM++ Properties:**
@@ -1534,7 +1543,8 @@ type DomainsUserState struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringPtrInput
+	ExternalId pulumi.StringPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrInput
 	// (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 	//
@@ -2007,8 +2017,9 @@ type domainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  *string `pulumi:"externalId"`
-	ForceDelete *bool   `pulumi:"forceDelete"`
+	ExternalId *string `pulumi:"externalId"`
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+	ForceDelete *bool `pulumi:"forceDelete"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
 	// (Updatable) User's instant messaging addresses
@@ -2392,7 +2403,8 @@ type DomainsUserArgs struct {
 	// * returned: default
 	// * type: string
 	// * uniqueness: none
-	ExternalId  pulumi.StringPtrInput
+	ExternalId pulumi.StringPtrInput
+	// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 	ForceDelete pulumi.BoolPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
@@ -2938,6 +2950,7 @@ func (o DomainsUserOutput) ExternalId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsUser) pulumi.StringOutput { return v.ExternalId }).(pulumi.StringOutput)
 }
 
+// (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
 func (o DomainsUserOutput) ForceDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DomainsUser) pulumi.BoolPtrOutput { return v.ForceDelete }).(pulumi.BoolPtrOutput)
 }

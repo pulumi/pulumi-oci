@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Heat Wave Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/HeatWaveCluster
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+ *
+ * Updates the HeatWave cluster.
+ *
  * ## Example Usage
  *
  * ```typescript

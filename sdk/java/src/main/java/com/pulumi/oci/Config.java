@@ -50,6 +50,10 @@ public final class Config {
     public Optional<String> fingerprint() {
         return Codegen.stringProp("fingerprint").config(config).get();
     }
+/**
+ * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+ * 
+ */
     public Optional<List<String>> ignoreDefinedTags() {
         return Codegen.objectProp("ignoreDefinedTags", TypeShape.<List<String>>builder(List.class).addParameter(String.class).build()).config(config).get();
     }

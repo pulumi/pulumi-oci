@@ -19,6 +19,28 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/SecurityList
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Creates a new security list for the specified VCN. For more information
+ * about security lists, see [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
+ * For information on the number of rules you can have in a security list, see
+ * [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
+ * 
+ * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the security
+ * list to reside. Notice that the security list doesn&#39;t have to be in the same compartment as the VCN, subnets,
+ * or other Networking Service components. If you&#39;re not sure which compartment to use, put the security
+ * list in the same compartment as the VCN. For more information about compartments and access control, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * 
+ * You may optionally specify a *display name* for the security list, otherwise a default is provided.
+ * It does not have to be unique, and you can change it. Avoid entering confidential information.
+ * 
+ * For more information on configuring a VCN&#39;s default security list, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -172,6 +172,13 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
                  monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesListMember
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
         ## Example Usage
 
         ```python
@@ -209,6 +216,13 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
                  args: MonitoredResourcesListMemberArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResourcesListMember
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        List the member resources for the given monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+
         ## Example Usage
 
         ```python

@@ -18,6 +18,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/latest/ClusterPlacementGroup
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cluster_placement_groups
+ * 
+ * Creates a new cluster placement group in the specified compartment.
+ * 
  * ## Example Usage
  * 
  * <pre>

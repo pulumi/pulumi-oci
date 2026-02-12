@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseAddStandby
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+ * [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -130,6 +138,9 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     declare public /*out*/ readonly dbSplitThreshold: pulumi.Output<number>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     declare public /*out*/ readonly dbUniqueName: pulumi.Output<string>;
     /**
      * Oracle AI Database version of the Autonomous Container Database.
@@ -556,6 +567,9 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     dbSplitThreshold?: pulumi.Input<number>;
+    /**
+     * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+     */
     dbUniqueName?: pulumi.Input<string>;
     /**
      * Oracle AI Database version of the Autonomous Container Database.

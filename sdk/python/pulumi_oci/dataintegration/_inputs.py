@@ -307,40 +307,35 @@ __all__ = [
     'GetWorkspacesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class WorkspaceApplicationDependentObjectMetadataArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Currently not used on application creation. Reserved for future.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The object version.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationDependentObjectMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationDependentObjectMetadataArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The patch action indicating if object was created, updated, or deleted.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currently not used on application creation. Reserved for future.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified path of the published object, which would include its project and folder.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The object version.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationDependentObjectMetadataArgs:
@@ -461,66 +456,63 @@ class WorkspaceApplicationDependentObjectMetadataArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the application was created, in the timestamp format defined by RFC3339.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceApplicationMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the application was created, in the timestamp format defined by RFC3339.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationMetadataArgs:
@@ -753,30 +745,27 @@ class WorkspaceApplicationMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Currently not used on application creation. Reserved for future.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currently not used on application creation. Reserved for future.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationMetadataAggregatorArgs:
@@ -865,14 +854,11 @@ class WorkspaceApplicationMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceApplicationMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationMetadataCountStatisticArgs:
@@ -897,18 +883,15 @@ class WorkspaceApplicationMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs:
@@ -949,18 +932,15 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationParentRefArgs:
@@ -1001,38 +981,35 @@ class WorkspaceApplicationParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchDependentObjectMetadataArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object's key.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The object version.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationPatchDependentObjectMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchDependentObjectMetadataArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The patch action indicating if object was created, updated, or deleted.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object's key.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified path of the published object, which would include its project and folder.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The object version.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchDependentObjectMetadataArgs:
@@ -1153,66 +1130,63 @@ class WorkspaceApplicationPatchDependentObjectMetadataArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceApplicationPatchMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchMetadataArgs:
@@ -1445,30 +1419,27 @@ class WorkspaceApplicationPatchMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object's key.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationPatchMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object's key.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchMetadataAggregatorArgs:
@@ -1557,14 +1528,11 @@ class WorkspaceApplicationPatchMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceApplicationPatchMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchMetadataCountStatisticArgs:
@@ -1589,18 +1557,15 @@ class WorkspaceApplicationPatchMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs:
@@ -1641,18 +1606,15 @@ class WorkspaceApplicationPatchMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationPatchParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchParentRefArgs:
@@ -1693,38 +1655,35 @@ class WorkspaceApplicationPatchParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchPatchObjectMetadataArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object's key.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The object version.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationPatchPatchObjectMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchPatchObjectMetadataArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The patch action indicating if object was created, updated, or deleted.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object's key.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified path of the published object, which would include its project and folder.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The object version.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchPatchObjectMetadataArgs:
@@ -1845,30 +1804,27 @@ class WorkspaceApplicationPatchPatchObjectMetadataArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPatchRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version.
-        """
-elif False:
-    WorkspaceApplicationPatchRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPatchRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPatchRegistryMetadataArgs:
@@ -1957,38 +1913,35 @@ class WorkspaceApplicationPatchRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationPublishedObjectMetadataArgsDict(TypedDict):
-        action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The patch action indicating if object was created, updated, or deleted.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Currently not used on application creation. Reserved for future.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The fully qualified path of the published object, which would include its project and folder.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The object version.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object in patch.
-        """
-elif False:
-    WorkspaceApplicationPublishedObjectMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationPublishedObjectMetadataArgsDict(TypedDict):
+    action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The patch action indicating if object was created, updated, or deleted.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currently not used on application creation. Reserved for future.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The fully qualified path of the published object, which would include its project and folder.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The object version.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object in patch.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationPublishedObjectMetadataArgs:
@@ -2109,30 +2062,27 @@ class WorkspaceApplicationPublishedObjectMetadataArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version.
-        """
-elif False:
-    WorkspaceApplicationRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationRegistryMetadataArgs:
@@ -2221,42 +2171,39 @@ class WorkspaceApplicationRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleFrequencyDetailsArgsDict(TypedDict):
-        model_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the model
-        """
-        custom_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
-        """
-        day_of_week: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the day of the week on which the schedule should be triggered.
-        """
-        days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
-        """
-        frequency: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) the frequency of the schedule.
-        """
-        interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-        """
-        time: NotRequired[pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict']]
-        """
-        (Updatable) A model to hold time in hour:minute:second format.
-        """
-        week_of_month: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the week of the month in which the schedule should be triggered.
-        """
-elif False:
-    WorkspaceApplicationScheduleFrequencyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleFrequencyDetailsArgsDict(TypedDict):
+    model_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the model
+    """
+    custom_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+    """
+    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the day of the week on which the schedule should be triggered.
+    """
+    days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+    """
+    frequency: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) the frequency of the schedule.
+    """
+    interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+    """
+    time: NotRequired[pulumi.Input['WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict']]
+    """
+    (Updatable) A model to hold time in hour:minute:second format.
+    """
+    week_of_month: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the week of the month in which the schedule should be triggered.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleFrequencyDetailsArgs:
@@ -2392,22 +2339,19 @@ class WorkspaceApplicationScheduleFrequencyDetailsArgs:
         pulumi.set(self, "week_of_month", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict(TypedDict):
-        hour: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The hour value.
-        """
-        minute: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minute value.
-        """
-        second: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The second value.
-        """
-elif False:
-    WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleFrequencyDetailsTimeArgsDict(TypedDict):
+    hour: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The hour value.
+    """
+    minute: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minute value.
+    """
+    second: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The second value.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleFrequencyDetailsTimeArgs:
@@ -2464,66 +2408,63 @@ class WorkspaceApplicationScheduleFrequencyDetailsTimeArgs:
         pulumi.set(self, "second", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceApplicationScheduleMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleMetadataArgs:
@@ -2756,30 +2697,27 @@ class WorkspaceApplicationScheduleMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the aggregator.
-        """
-elif False:
-    WorkspaceApplicationScheduleMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the aggregator.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleMetadataAggregatorArgs:
@@ -2868,14 +2806,11 @@ class WorkspaceApplicationScheduleMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceApplicationScheduleMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleMetadataCountStatisticArgs:
@@ -2900,18 +2835,15 @@ class WorkspaceApplicationScheduleMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs:
@@ -2952,18 +2884,15 @@ class WorkspaceApplicationScheduleMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationScheduleParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleParentRefArgs:
@@ -3004,30 +2933,27 @@ class WorkspaceApplicationScheduleParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationScheduleRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version.
-        """
-elif False:
-    WorkspaceApplicationScheduleRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationScheduleRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationScheduleRegistryMetadataArgs:
@@ -3116,30 +3042,27 @@ class WorkspaceApplicationScheduleRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationSourceApplicationInfoArgsDict(TypedDict):
-        application_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source application key to use when creating the application.
-        """
-        application_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source application version of the application.
-        """
-        copy_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
-        """
-        last_patch_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The last patch key for the application.
-        """
-        workspace_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
-        """
-elif False:
-    WorkspaceApplicationSourceApplicationInfoArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationSourceApplicationInfoArgsDict(TypedDict):
+    application_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source application key to use when creating the application.
+    """
+    application_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source application version of the application.
+    """
+    copy_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
+    """
+    last_patch_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The last patch key for the application.
+    """
+    workspace_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationSourceApplicationInfoArgs:
@@ -3228,50 +3151,47 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
         pulumi.set(self, "workspace_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleLastRunDetailArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-        """
-        last_run_time_millis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Time in milliseconds for the pervious schedule.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        """
-        parent_reves: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict']]]]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleLastRunDetailArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleLastRunDetailArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
+    """
+    last_run_time_millis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Time in milliseconds for the pervious schedule.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+    """
+    parent_reves: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict']]]]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
@@ -3440,18 +3360,15 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
         pulumi.set(self, "parent_reves", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs:
@@ -3492,66 +3409,63 @@ class WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleMetadataArgs:
@@ -3784,30 +3698,27 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the aggregator.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the aggregator.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
@@ -3896,14 +3807,11 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs:
@@ -3928,18 +3836,15 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs:
@@ -3980,18 +3885,15 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListA
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleParentRefArgs:
@@ -4032,30 +3934,27 @@ class WorkspaceApplicationTaskScheduleParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
@@ -4144,62 +4043,59 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        frequency_details: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict']]
-        """
-        (Updatable) The model that holds the frequency details.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        is_daylight_adjustment_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag to indicate daylight saving.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
-        """
-        metadata: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict']]
-        """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        timezone: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The timezone for the schedule.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    frequency_details: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict']]
+    """
+    (Updatable) The model that holds the frequency details.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    is_daylight_adjustment_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag to indicate daylight saving.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
+    """
+    metadata: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict']]
+    """
+    (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    timezone: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The timezone for the schedule.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefArgs:
@@ -4416,42 +4312,39 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgs:
         pulumi.set(self, "timezone", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict(TypedDict):
-        model_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the model
-        """
-        custom_expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
-        """
-        day_of_week: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the day of the week on which the schedule should be triggered.
-        """
-        days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
-        """
-        (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
-        """
-        frequency: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) the frequency of the schedule.
-        """
-        interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-        """
-        time: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict']]
-        """
-        (Updatable) A model to hold time in hour:minute:second format.
-        """
-        week_of_month: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This holds the week of the month in which the schedule should be triggered.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgsDict(TypedDict):
+    model_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the model
+    """
+    custom_expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
+    """
+    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the day of the week on which the schedule should be triggered.
+    """
+    days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    """
+    (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
+    """
+    frequency: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) the frequency of the schedule.
+    """
+    interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+    """
+    time: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict']]
+    """
+    (Updatable) A model to hold time in hour:minute:second format.
+    """
+    week_of_month: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This holds the week of the month in which the schedule should be triggered.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs:
@@ -4587,22 +4480,19 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs:
         pulumi.set(self, "week_of_month", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict(TypedDict):
-        hour: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The hour value.
-        """
-        minute: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The minute value.
-        """
-        second: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The second value.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgsDict(TypedDict):
+    hour: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The hour value.
+    """
+    minute: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The minute value.
+    """
+    second: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The second value.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs:
@@ -4659,66 +4549,63 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs:
         pulumi.set(self, "second", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict(TypedDict):
-        aggregator: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict']]
-        """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The owning object key for this object.
-        """
-        count_statistics: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict']]
-        """
-        (Updatable) A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user that updated the object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgsDict(TypedDict):
+    aggregator: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict']]
+    """
+    (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The owning object key for this object.
+    """
+    count_statistics: NotRequired[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict']]
+    """
+    (Updatable) A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs:
@@ -4951,30 +4838,27 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the aggregator.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifier of the aggregator.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key of the aggregator object.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the aggregator.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the aggregator.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the aggregator.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifier of the aggregator.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the aggregator object.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the aggregator.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the aggregator.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs:
@@ -5063,14 +4947,11 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict(TypedDict):
-        object_type_count_lists: pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgsDict']]]
-        """
-        (Updatable) The array of statistics.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgsDict(TypedDict):
+    object_type_count_lists: pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgsDict']]]
+    """
+    (Updatable) The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs:
@@ -5094,18 +4975,15 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListArgs:
@@ -5146,18 +5024,15 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTy
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceApplicationTaskScheduleScheduleRefParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs:
@@ -5198,42 +5073,39 @@ class WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceExportRequestExportedItemArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Aggregator key
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object identifier
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Export object request key
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the export request.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object name path
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object type
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object version
-        """
-        time_updated_in_millis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        time at which this object was last updated.
-        """
-elif False:
-    WorkspaceExportRequestExportedItemArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceExportRequestExportedItemArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Aggregator key
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object identifier
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Export object request key
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the export request.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object name path
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object type
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object version
+    """
+    time_updated_in_millis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    time at which this object was last updated.
+    """
 
 @pulumi.input_type
 class WorkspaceExportRequestExportedItemArgs:
@@ -5370,66 +5242,63 @@ class WorkspaceExportRequestExportedItemArgs:
         pulumi.set(self, "time_updated_in_millis", value)
 
 
-if not MYPY:
-    class WorkspaceFolderMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceFolderMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderMetadataArgs:
@@ -5662,30 +5531,27 @@ class WorkspaceFolderMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceFolderMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user defined description for the folder.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Currently not used on folder creation. Reserved for future.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the aggregator.
-        """
-elif False:
-    WorkspaceFolderMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user defined description for the folder.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Currently not used on folder creation. Reserved for future.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the aggregator.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderMetadataAggregatorArgs:
@@ -5774,14 +5640,11 @@ class WorkspaceFolderMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceFolderMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceFolderMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderMetadataCountStatisticArgs:
@@ -5806,18 +5669,15 @@ class WorkspaceFolderMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs:
@@ -5858,18 +5718,15 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceFolderParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the root document object.
-        """
-elif False:
-    WorkspaceFolderParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderParentRefArgs:
@@ -5910,30 +5767,27 @@ class WorkspaceFolderParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceFolderRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version.
-        """
-elif False:
-    WorkspaceFolderRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceFolderRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceFolderRegistryMetadataArgs:
@@ -6022,22 +5876,19 @@ class WorkspaceFolderRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceImportRequestImportConflictResolutionArgsDict(TypedDict):
-        import_conflict_resolution_type: pulumi.Input[_builtins.str]
-        """
-        Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
-        """
-        duplicate_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        In case of DUPLICATE mode, prefix will be used to disambiguate the object.
-        """
-        duplicate_suffix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        In case of DUPLICATE mode, suffix will be used to disambiguate the object.
-        """
-elif False:
-    WorkspaceImportRequestImportConflictResolutionArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceImportRequestImportConflictResolutionArgsDict(TypedDict):
+    import_conflict_resolution_type: pulumi.Input[_builtins.str]
+    """
+    Import Objects Conflict resolution Type (RETAIN/DUPLICATE/REPLACE).
+    """
+    duplicate_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    In case of DUPLICATE mode, prefix will be used to disambiguate the object.
+    """
+    duplicate_suffix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    In case of DUPLICATE mode, suffix will be used to disambiguate the object.
+    """
 
 @pulumi.input_type
 class WorkspaceImportRequestImportConflictResolutionArgs:
@@ -6093,50 +5944,47 @@ class WorkspaceImportRequestImportConflictResolutionArgs:
         pulumi.set(self, "duplicate_suffix", value)
 
 
-if not MYPY:
-    class WorkspaceImportRequestImportedObjectArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Aggregator key
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object identifier
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the import request.
-        """
-        name_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object name path
-        """
-        new_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        New key of the object
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object type
-        """
-        object_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object version
-        """
-        old_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Old key of the object
-        """
-        resolution_action: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object resolution action
-        """
-        time_updated_in_millis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        time at which this object was last updated.
-        """
-elif False:
-    WorkspaceImportRequestImportedObjectArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceImportRequestImportedObjectArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Aggregator key
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object identifier
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the import request.
+    """
+    name_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object name path
+    """
+    new_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    New key of the object
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object type
+    """
+    object_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object version
+    """
+    old_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Old key of the object
+    """
+    resolution_action: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object resolution action
+    """
+    time_updated_in_millis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    time at which this object was last updated.
+    """
 
 @pulumi.input_type
 class WorkspaceImportRequestImportedObjectArgs:
@@ -6305,66 +6153,63 @@ class WorkspaceImportRequestImportedObjectArgs:
         pulumi.set(self, "time_updated_in_millis", value)
 
 
-if not MYPY:
-    class WorkspaceProjectMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version of the object.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceProjectMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version of the object.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectMetadataArgs:
@@ -6597,30 +6442,27 @@ class WorkspaceProjectMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceProjectMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user defined description for the project.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify project.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the aggregator.
-        """
-elif False:
-    WorkspaceProjectMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user defined description for the project.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify project.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the aggregator.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectMetadataAggregatorArgs:
@@ -6709,14 +6551,11 @@ class WorkspaceProjectMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceProjectMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceProjectMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectMetadataCountStatisticArgs:
@@ -6741,18 +6580,15 @@ class WorkspaceProjectMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs:
@@ -6793,18 +6629,15 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceProjectParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Key of the root document object.
-        """
-elif False:
-    WorkspaceProjectParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectParentRefArgs:
@@ -6845,30 +6678,27 @@ class WorkspaceProjectParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceProjectRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version.
-        """
-elif False:
-    WorkspaceProjectRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceProjectRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceProjectRegistryMetadataArgs:
@@ -6957,30 +6787,27 @@ class WorkspaceProjectRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceTaskAuthConfigArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify this object.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The specific authentication configuration to be used for Generic REST invocation.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The model version of an object.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskAuthConfigParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        resource_principal_source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
-        """
-elif False:
-    WorkspaceTaskAuthConfigArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskAuthConfigArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify this object.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The specific authentication configuration to be used for Generic REST invocation.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The model version of an object.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskAuthConfigParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    resource_principal_source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
+    """
 
 @pulumi.input_type
 class WorkspaceTaskAuthConfigArgs:
@@ -7069,18 +6896,15 @@ class WorkspaceTaskAuthConfigArgs:
         pulumi.set(self, "resource_principal_source", value)
 
 
-if not MYPY:
-    class WorkspaceTaskAuthConfigParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskAuthConfigParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskAuthConfigParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskAuthConfigParentRefArgs:
@@ -7121,30 +6945,27 @@ class WorkspaceTaskAuthConfigParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        method_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The REST method to use.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The headers for the REST call.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    method_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The REST method to use.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The headers for the REST call.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigArgs:
@@ -7233,18 +7054,15 @@ class WorkspaceTaskCancelRestCallConfigArgs:
         pulumi.set(self, "request_headers", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesArgs:
@@ -7285,12 +7103,9 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-        request_payload: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
-        request_url: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
+    request_payload: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
+    request_url: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -7321,18 +7136,15 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "request_url", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs:
@@ -7373,22 +7185,19 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
         pulumi.set(self, "ref_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
-        """
-        Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
+    """
+    Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs:
@@ -7445,14 +7254,11 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
         pulumi.set(self, "model_type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
-        """
-        The configuration parameter values.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
+    """
+    The configuration parameter values.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs:
@@ -7477,11 +7283,8 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
         pulumi.set(self, "config_param_values", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-        data_param: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
+    data_param: NotRequired[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -7500,14 +7303,11 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
         pulumi.set(self, "data_param", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs:
@@ -7532,14 +7332,11 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs:
@@ -7564,18 +7361,15 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlAr
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs:
@@ -7616,14 +7410,11 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskConfigProviderDelegateArgsDict(TypedDict):
-        bindings: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingArgsDict']]]]
-        """
-        bindings
-        """
-elif False:
-    WorkspaceTaskConfigProviderDelegateArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskConfigProviderDelegateArgsDict(TypedDict):
+    bindings: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingArgsDict']]]]
+    """
+    bindings
+    """
 
 @pulumi.input_type
 class WorkspaceTaskConfigProviderDelegateArgs:
@@ -7648,15 +7439,12 @@ class WorkspaceTaskConfigProviderDelegateArgs:
         pulumi.set(self, "bindings", value)
 
 
-if not MYPY:
-    class WorkspaceTaskConfigProviderDelegateBindingArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        parameter_values: NotRequired[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict']]
-elif False:
-    WorkspaceTaskConfigProviderDelegateBindingArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskConfigProviderDelegateBindingArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    parameter_values: NotRequired[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskConfigProviderDelegateBindingArgs:
@@ -7693,18 +7481,15 @@ class WorkspaceTaskConfigProviderDelegateBindingArgs:
         pulumi.set(self, "parameter_values", value)
 
 
-if not MYPY:
-    class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict(TypedDict):
-        root_object_value: NotRequired[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict']]
-        """
-        The root object value, used in custom parameters.
-        """
-        simple_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A simple value for the parameter.
-        """
-elif False:
-    WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgsDict(TypedDict):
+    root_object_value: NotRequired[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict']]
+    """
+    The root object value, used in custom parameters.
+    """
+    simple_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A simple value for the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
@@ -7745,26 +7530,23 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
         pulumi.set(self, "simple_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object's model version.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-elif False:
-    WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object's model version.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs:
@@ -7837,30 +7619,27 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
         pulumi.set(self, "object_status", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        method_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The REST method to use.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The headers for the REST call.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    method_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The REST method to use.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The headers for the REST call.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigArgs:
@@ -7949,18 +7728,15 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
         pulumi.set(self, "request_headers", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesArgs:
@@ -8001,12 +7777,9 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-        request_payload: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
-        request_url: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
+    request_payload: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
+    request_url: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -8037,18 +7810,15 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "request_url", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs:
@@ -8089,22 +7859,19 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
         pulumi.set(self, "ref_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
-        """
-        Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
+    """
+    Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs:
@@ -8161,14 +7928,11 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
         pulumi.set(self, "model_type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
-        """
-        The configuration parameter values.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
+    """
+    The configuration parameter values.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs:
@@ -8193,11 +7957,8 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
         pulumi.set(self, "config_param_values", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-        data_param: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
+    data_param: NotRequired[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -8216,14 +7977,11 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
         pulumi.set(self, "data_param", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs:
@@ -8248,14 +8006,11 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs:
@@ -8280,18 +8035,15 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlA
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs:
@@ -8332,50 +8084,47 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskInputPortArgsDict(TypedDict):
-        model_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the types object.
-        """
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of fields.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key of the object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The model version of an object.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskInputPortParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        port_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The port details for the data asset.Type.
-        """
-elif False:
-    WorkspaceTaskInputPortArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskInputPortArgsDict(TypedDict):
+    model_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the types object.
+    """
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of fields.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The model version of an object.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskInputPortParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    port_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The port details for the data asset.Type.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskInputPortArgs:
@@ -8543,18 +8292,15 @@ class WorkspaceTaskInputPortArgs:
         pulumi.set(self, "port_type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskInputPortConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskInputPortConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskInputPortConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskInputPortConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskInputPortConfigValuesArgs:
@@ -8595,34 +8341,31 @@ class WorkspaceTaskInputPortConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) An integer value of the parameter.
-        """
-        object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An object value of the parameter.
-        """
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The root object reference value.
-        """
-        root_object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The root object value, used in custom parameters.
-        """
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskInputPortConfigValuesConfigParamValuesArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) An integer value of the parameter.
+    """
+    object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An object value of the parameter.
+    """
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The root object reference value.
+    """
+    root_object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The root object value, used in custom parameters.
+    """
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs:
@@ -8727,18 +8470,15 @@ class WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskInputPortConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskInputPortConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskInputPortConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskInputPortConfigValuesParentRefArgs:
@@ -8779,18 +8519,15 @@ class WorkspaceTaskInputPortConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskInputPortParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskInputPortParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskInputPortParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskInputPortParentRefArgs:
@@ -8831,66 +8568,63 @@ class WorkspaceTaskInputPortParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskMetadataArgsDict(TypedDict):
-        aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The owning object's key for this object.
-        """
-        aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgsDict']]]]
-        """
-        A summary type containing information about the object's aggregator including its type, key, name and description.
-        """
-        count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgsDict']]]]
-        """
-        A count statistics.
-        """
-        created_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        created_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that created the object.
-        """
-        identifier_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full path to identify this object.
-        """
-        info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        Information property fields.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Specifies whether this object is a favorite or not.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The registry version.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was created.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time that the object was updated.
-        """
-        updated_by: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-        updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user that updated the object.
-        """
-elif False:
-    WorkspaceTaskMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskMetadataArgsDict(TypedDict):
+    aggregator_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The owning object's key for this object.
+    """
+    aggregators: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgsDict']]]]
+    """
+    A summary type containing information about the object's aggregator including its type, key, name and description.
+    """
+    count_statistics: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgsDict']]]]
+    """
+    A count statistics.
+    """
+    created_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    created_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that created the object.
+    """
+    identifier_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full path to identify this object.
+    """
+    info_fields: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    Information property fields.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Specifies whether this object is a favorite or not.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The registry version.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was created.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time that the object was updated.
+    """
+    updated_by: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
+    updated_by_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user that updated the object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskMetadataArgs:
@@ -9123,30 +8857,27 @@ class WorkspaceTaskMetadataArgs:
         pulumi.set(self, "updated_by_name", value)
 
 
-if not MYPY:
-    class WorkspaceTaskMetadataAggregatorArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        identifier: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object type.
-        """
-elif False:
-    WorkspaceTaskMetadataAggregatorArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskMetadataAggregatorArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object type.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskMetadataAggregatorArgs:
@@ -9235,14 +8966,11 @@ class WorkspaceTaskMetadataAggregatorArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskMetadataCountStatisticArgsDict(TypedDict):
-        object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict']]]]
-        """
-        The array of statistics.
-        """
-elif False:
-    WorkspaceTaskMetadataCountStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskMetadataCountStatisticArgsDict(TypedDict):
+    object_type_count_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict']]]]
+    """
+    The array of statistics.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskMetadataCountStatisticArgs:
@@ -9267,18 +8995,15 @@ class WorkspaceTaskMetadataCountStatisticArgs:
         pulumi.set(self, "object_type_count_lists", value)
 
 
-if not MYPY:
-    class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
-        object_count: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The value for the count statistic object.
-        """
-        object_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of object for the count statistic object.
-        """
-elif False:
-    WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgsDict(TypedDict):
+    object_count: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The value for the count statistic object.
+    """
+    object_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of object for the count statistic object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
@@ -9319,18 +9044,15 @@ class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
         pulumi.set(self, "object_type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesArgs:
@@ -9371,15 +9093,12 @@ class WorkspaceTaskOpConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict(TypedDict):
-        config_param_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict']]
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesConfigParamValuesArgsDict(TypedDict):
+    config_param_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict']]
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesConfigParamValuesArgs:
@@ -9416,34 +9135,31 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "key", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        An integer value of the parameter.
-        """
-        object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An object value of the parameter.
-        """
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-        root_object_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]
-        """
-        The root object value, used in custom parameters.
-        """
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    An integer value of the parameter.
+    """
+    object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An object value of the parameter.
+    """
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
+    root_object_value: NotRequired[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]
+    """
+    The root object value, used in custom parameters.
+    """
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
@@ -9548,30 +9264,27 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object's model version.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object's model version.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
@@ -9660,26 +9373,23 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
         pulumi.set(self, "object_status", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object's model version.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object's model version.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs:
@@ -9752,18 +9462,15 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValu
         pulumi.set(self, "object_status", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOpConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskOpConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOpConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOpConfigValuesParentRefArgs:
@@ -9804,50 +9511,47 @@ class WorkspaceTaskOpConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOutputPortArgsDict(TypedDict):
-        model_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the types object.
-        """
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) An array of fields.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key of the object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The model version of an object.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOutputPortParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        port_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The port details for the data asset.Type.
-        """
-elif False:
-    WorkspaceTaskOutputPortArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOutputPortArgsDict(TypedDict):
+    model_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the types object.
+    """
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) An array of fields.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The model version of an object.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOutputPortParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    port_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The port details for the data asset.Type.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOutputPortArgs:
@@ -10015,18 +9719,15 @@ class WorkspaceTaskOutputPortArgs:
         pulumi.set(self, "port_type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOutputPortConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskOutputPortConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOutputPortConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskOutputPortConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOutputPortConfigValuesArgs:
@@ -10067,34 +9768,31 @@ class WorkspaceTaskOutputPortConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) An integer value of the parameter.
-        """
-        object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An object value of the parameter.
-        """
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The root object reference value.
-        """
-        root_object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The root object value, used in custom parameters.
-        """
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) An integer value of the parameter.
+    """
+    object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An object value of the parameter.
+    """
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The root object reference value.
+    """
+    root_object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The root object value, used in custom parameters.
+    """
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs:
@@ -10199,18 +9897,15 @@ class WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOutputPortConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskOutputPortConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOutputPortConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOutputPortConfigValuesParentRefArgs:
@@ -10251,18 +9946,15 @@ class WorkspaceTaskOutputPortConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskOutputPortParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskOutputPortParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskOutputPortParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskOutputPortParentRefArgs:
@@ -10303,74 +9995,71 @@ class WorkspaceTaskOutputPortParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterArgsDict(TypedDict):
-        model_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the types object.
-        """
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        default_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The default value of the parameter.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        is_input: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether the parameter is input value.
-        """
-        is_output: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether the parameter is output value.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key of the object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The model version of an object.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        output_aggregation_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The output aggregation type.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskParameterParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        root_object_default_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This can either be a string value referencing the type or a BaseType object.
-        """
-        type_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of value the parameter was created for.
-        """
-        used_for: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
-        """
-elif False:
-    WorkspaceTaskParameterArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterArgsDict(TypedDict):
+    model_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the types object.
+    """
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The default value of the parameter.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    is_input: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether the parameter is input value.
+    """
+    is_output: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether the parameter is output value.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The model version of an object.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    output_aggregation_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The output aggregation type.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskParameterParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    root_object_default_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This can either be a string value referencing the type or a BaseType object.
+    """
+    type_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of value the parameter was created for.
+    """
+    used_for: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterArgs:
@@ -10634,18 +10323,15 @@ class WorkspaceTaskParameterArgs:
         pulumi.set(self, "used_for", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesArgs:
@@ -10686,15 +10372,12 @@ class WorkspaceTaskParameterConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict(TypedDict):
-        config_param_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict']]
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesConfigParamValuesArgsDict(TypedDict):
+    config_param_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict']]
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesConfigParamValuesArgs:
@@ -10731,34 +10414,31 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "key", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        An integer value of the parameter.
-        """
-        object_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        An object value of the parameter.
-        """
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-        root_object_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]
-        """
-        The root object value, used in custom parameters.
-        """
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    An integer value of the parameter.
+    """
+    object_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    An object value of the parameter.
+    """
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
+    root_object_value: NotRequired[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict']]
+    """
+    The root object value, used in custom parameters.
+    """
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
@@ -10863,30 +10543,27 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object's model version.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object's model version.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
@@ -10975,26 +10652,23 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValu
         pulumi.set(self, "object_status", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict(TypedDict):
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object's model version.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object's model version.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs:
@@ -11067,18 +10741,15 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObj
         pulumi.set(self, "object_status", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskParameterConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterConfigValuesParentRefArgs:
@@ -11119,18 +10790,15 @@ class WorkspaceTaskParameterConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParameterParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskParameterParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParameterParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParameterParentRefArgs:
@@ -11171,18 +10839,15 @@ class WorkspaceTaskParameterParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskParentRefArgs:
@@ -11223,30 +10888,27 @@ class WorkspaceTaskParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        method_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The REST method to use.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The headers for the REST call.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    method_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The REST method to use.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    request_headers: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The headers for the REST call.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigArgs:
@@ -11335,18 +10997,15 @@ class WorkspaceTaskPollRestCallConfigArgs:
         pulumi.set(self, "request_headers", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesArgs:
@@ -11387,17 +11046,14 @@ class WorkspaceTaskPollRestCallConfigConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
-        poll_condition: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict']]
-        poll_interval: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict']]
-        poll_interval_unit: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict']]
-        poll_max_duration: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict']]
-        poll_max_duration_unit: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict']]
-        request_payload: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
-        request_url: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgsDict(TypedDict):
+    poll_condition: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict']]
+    poll_interval: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict']]
+    poll_interval_unit: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict']]
+    poll_max_duration: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict']]
+    poll_max_duration_unit: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict']]
+    request_payload: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict']]
+    request_url: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs:
@@ -11488,18 +11144,15 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "request_url", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict(TypedDict):
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgsDict(TypedDict):
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgs:
@@ -11540,26 +11193,23 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionA
         pulumi.set(self, "ref_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict(TypedDict):
-        expr_string: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The expression string for the object.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgsDict(TypedDict):
+    expr_string: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The expression string for the object.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs:
@@ -11632,14 +11282,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionR
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict(TypedDict):
-        object_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        An object value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgsDict(TypedDict):
+    object_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    An object value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgs:
@@ -11664,14 +11311,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalAr
         pulumi.set(self, "object_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitArgs:
@@ -11696,14 +11340,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUn
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict(TypedDict):
-        object_value: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        An object value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgsDict(TypedDict):
+    object_value: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    An object value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationArgs:
@@ -11728,14 +11369,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
         pulumi.set(self, "object_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitArgs:
@@ -11760,18 +11398,15 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
-        parameter_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Reference to the parameter by its key.
-        """
-        ref_value: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
-        """
-        The root object reference value.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgsDict(TypedDict):
+    parameter_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Reference to the parameter by its key.
+    """
+    ref_value: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict']]
+    """
+    The root object reference value.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadArgs:
@@ -11812,26 +11447,23 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
         pulumi.set(self, "ref_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
-        """
-        Configuration values can be string, objects, or parameters.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the task.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict']]
+    """
+    Configuration values can be string, objects, or parameters.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the task.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs:
@@ -11904,14 +11536,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
-        """
-        The configuration parameter values.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict']]
+    """
+    The configuration parameter values.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs:
@@ -11936,11 +11565,8 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
         pulumi.set(self, "config_param_values", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
-        data_param: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgsDict(TypedDict):
+    data_param: NotRequired[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs:
@@ -11959,14 +11585,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
         pulumi.set(self, "data_param", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs:
@@ -11991,14 +11614,11 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
-        string_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string value of the parameter.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgsDict(TypedDict):
+    string_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs:
@@ -12023,18 +11643,15 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs
         pulumi.set(self, "string_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs:
@@ -12075,30 +11692,27 @@ class WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskRegistryMetadataArgsDict(TypedDict):
-        aggregator_key: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The owning object's key for this object.
-        """
-        is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether this object is a favorite or not.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The identifying key for the object.
-        """
-        labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        """
-        registry_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The registry version.
-        """
-elif False:
-    WorkspaceTaskRegistryMetadataArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskRegistryMetadataArgsDict(TypedDict):
+    aggregator_key: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The owning object's key for this object.
+    """
+    is_favorite: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether this object is a favorite or not.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The identifying key for the object.
+    """
+    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+    """
+    registry_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The registry version.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskRegistryMetadataArgs:
@@ -12186,50 +11800,47 @@ class WorkspaceTaskRegistryMetadataArgs:
         pulumi.set(self, "registry_version", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionArgsDict(TypedDict):
-        config_values: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesArgsDict']]
-        """
-        (Updatable) Configuration values can be string, objects, or parameters.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Detailed description for the object.
-        """
-        expression: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The expression string for the object.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The key of the object.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of the types object.
-        """
-        model_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The model version of an object.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        """
-        object_status: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The object type.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionArgsDict(TypedDict):
+    config_values: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesArgsDict']]
+    """
+    (Updatable) Configuration values can be string, objects, or parameters.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Detailed description for the object.
+    """
+    expression: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The expression string for the object.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The key of the object.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of the types object.
+    """
+    model_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The model version of an object.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+    """
+    object_status: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The object type.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionArgs:
@@ -12398,18 +12009,15 @@ class WorkspaceTaskTypedExpressionArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionConfigValuesArgsDict(TypedDict):
-        config_param_values: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict']]
-        """
-        (Updatable) The configuration parameter values.
-        """
-        parent_ref: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict']]
-        """
-        (Updatable) A reference to the object's parent.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionConfigValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionConfigValuesArgsDict(TypedDict):
+    config_param_values: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict']]
+    """
+    (Updatable) The configuration parameter values.
+    """
+    parent_ref: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict']]
+    """
+    (Updatable) A reference to the object's parent.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesArgs:
@@ -12450,12 +12058,9 @@ class WorkspaceTaskTypedExpressionConfigValuesArgs:
         pulumi.set(self, "parent_ref", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict(TypedDict):
-        length: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict']]
-        scale: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict']]
-elif False:
-    WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgsDict(TypedDict):
+    length: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict']]
+    scale: NotRequired[pulumi.Input['WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict']]
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs:
@@ -12486,14 +12091,11 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs:
         pulumi.set(self, "scale", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        An integer value of the parameter.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    An integer value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs:
@@ -12518,14 +12120,11 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs:
         pulumi.set(self, "int_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict(TypedDict):
-        int_value: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        An integer value of the parameter.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgsDict(TypedDict):
+    int_value: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    An integer value of the parameter.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs:
@@ -12550,18 +12149,15 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs:
         pulumi.set(self, "int_value", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionConfigValuesParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionConfigValuesParentRefArgs:
@@ -12602,18 +12198,15 @@ class WorkspaceTaskTypedExpressionConfigValuesParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class WorkspaceTaskTypedExpressionParentRefArgsDict(TypedDict):
-        parent: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the parent object.
-        """
-        root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Key of the root document object.
-        """
-elif False:
-    WorkspaceTaskTypedExpressionParentRefArgsDict: TypeAlias = Mapping[str, Any]
+class WorkspaceTaskTypedExpressionParentRefArgsDict(TypedDict):
+    parent: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the parent object.
+    """
+    root_doc_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Key of the root document object.
+    """
 
 @pulumi.input_type
 class WorkspaceTaskTypedExpressionParentRefArgs:
@@ -12654,16 +12247,13 @@ class WorkspaceTaskTypedExpressionParentRefArgs:
         pulumi.set(self, "root_doc_id", value)
 
 
-if not MYPY:
-    class GetWorkspaceApplicationPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceApplicationPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceApplicationPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceApplicationPatchesFilterArgs:
@@ -12710,16 +12300,13 @@ class GetWorkspaceApplicationPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceApplicationSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceApplicationSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceApplicationSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceApplicationSchedulesFilterArgs:
@@ -12766,16 +12353,13 @@ class GetWorkspaceApplicationSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceApplicationTaskSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceApplicationTaskSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceApplicationTaskSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceApplicationTaskSchedulesFilterArgs:
@@ -12822,16 +12406,13 @@ class GetWorkspaceApplicationTaskSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceApplicationsFilterArgs:
@@ -12878,16 +12459,13 @@ class GetWorkspaceApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceExportRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceExportRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceExportRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceExportRequestsFilterArgs:
@@ -12934,16 +12512,13 @@ class GetWorkspaceExportRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceFoldersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceFoldersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceFoldersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceFoldersFilterArgs:
@@ -12990,16 +12565,13 @@ class GetWorkspaceFoldersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceImportRequestsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceImportRequestsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceImportRequestsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceImportRequestsFilterArgs:
@@ -13046,16 +12618,13 @@ class GetWorkspaceImportRequestsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceProjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceProjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceProjectsFilterArgs:
@@ -13102,16 +12671,13 @@ class GetWorkspaceProjectsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspaceTasksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspaceTasksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspaceTasksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspaceTasksFilterArgs:
@@ -13158,16 +12724,13 @@ class GetWorkspaceTasksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetWorkspacesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Used to filter by the name of the object.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetWorkspacesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetWorkspacesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Used to filter by the name of the object.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetWorkspacesFilterArgs:

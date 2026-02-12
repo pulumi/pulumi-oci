@@ -762,6 +762,15 @@ class MonitoredResource(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new monitored resource for the given resource type with the details and submits
+        a work request for promoting the resource to agent. Once the resource is successfully
+        added to agent, resource state will be marked active.
+
         ## Example Usage
 
         ```python
@@ -882,6 +891,15 @@ class MonitoredResource(pulumi.CustomResource):
                  args: MonitoredResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoredResource
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new monitored resource for the given resource type with the details and submits
+        a work request for promoting the resource to agent. Once the resource is successfully
+        added to agent, resource state will be marked active.
+
         ## Example Usage
 
         ```python

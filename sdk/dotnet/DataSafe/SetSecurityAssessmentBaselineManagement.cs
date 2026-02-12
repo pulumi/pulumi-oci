@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// SetSecurityAssessmentBaselineManagement can be imported using the `id`, e.g.
+    /// SetSecurityAssessmentBaselineManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement test_set_security_assessment_baseline_management "id"

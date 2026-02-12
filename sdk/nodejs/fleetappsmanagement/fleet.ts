@@ -7,7 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/Fleet
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+ *
+ * Create a fleet in Fleet Application Management.
  *
  * ## Import
  *

@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// ExecutionActions can be imported using the `id`, e.g.
+    /// ExecutionActions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/executionAction:ExecutionAction test_execution_action "id"

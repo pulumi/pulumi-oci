@@ -17,6 +17,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/DbManagementPrivateEndpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * 
+ * Creates a new Database Management private endpoint.
+ * 
  * ## Example Usage
  * 
  * <pre>

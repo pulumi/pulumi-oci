@@ -7,7 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * ## Example Usage
+ * This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osp_gateway
+ *
+ * Update plan of the subscription.
  *
  * ## Import
  *

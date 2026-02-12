@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/ApprovalWorkflowStep
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create ApprovalWorkflowStep
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -64,7 +71,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// ApprovalWorkflowSteps can be imported using the `id`, e.g.
+    /// ApprovalWorkflowSteps can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep test_approval_workflow_step "idcsEndpoint/{idcsEndpoint}/approvalWorkflowSteps/{approvalWorkflowStepId}"

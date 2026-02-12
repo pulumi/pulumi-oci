@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Zpr
 {
     /// <summary>
+    /// This resource provides the Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/latest/ZprPolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/zpr
+    /// 
+    /// Creates a ZprPolicy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.Zpr
     /// 
     /// ## Import
     /// 
-    /// ZprPolicies can be imported using the `id`, e.g.
+    /// ZprPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Zpr/zprPolicy:ZprPolicy test_zpr_policy "id"

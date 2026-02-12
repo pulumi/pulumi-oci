@@ -21,15 +21,10 @@ __all__ = [
     'GetStacksFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateEndpointsFilterArgs:
@@ -70,13 +65,10 @@ class GetPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetStacksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetStacksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetStacksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetStacksFilterArgs:

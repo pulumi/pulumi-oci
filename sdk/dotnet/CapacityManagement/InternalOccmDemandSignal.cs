@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CapacityManagement
 {
     /// <summary>
+    /// This resource provides the Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/InternalOccmDemandSignal
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+    /// 
+    /// This is a internal PUT API which shall be used to update the metadata of the demand signal.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.CapacityManagement
     /// 
     /// ## Import
     /// 
-    /// InternalOccmDemandSignals can be imported using the `id`, e.g.
+    /// InternalOccmDemandSignals can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal test_internal_occm_demand_signal "internal/occmDemandSignals/{occmDemandSignalId}"

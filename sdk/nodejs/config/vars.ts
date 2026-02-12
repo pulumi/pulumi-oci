@@ -63,6 +63,9 @@ Object.defineProperty(exports, "fingerprint", {
     enumerable: true,
 });
 
+/**
+ * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+ */
 export declare const ignoreDefinedTags: string[] | undefined;
 Object.defineProperty(exports, "ignoreDefinedTags", {
     get() {

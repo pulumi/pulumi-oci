@@ -121,20 +121,15 @@ __all__ = [
     'GetModelsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AgentAgentEndpointContentModerationConfigArgsDict(TypedDict):
-        should_enable_on_input: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag to enable or disable content moderation on input.
-        """
-        should_enable_on_output: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A flag to enable or disable content moderation on output.
-        """
-elif False:
-    AgentAgentEndpointContentModerationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointContentModerationConfigArgsDict(TypedDict):
+    should_enable_on_input: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag to enable or disable content moderation on input.
+    """
+    should_enable_on_output: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A flag to enable or disable content moderation on output.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointContentModerationConfigArgs:
@@ -175,22 +170,19 @@ class AgentAgentEndpointContentModerationConfigArgs:
         pulumi.set(self, "should_enable_on_output", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointGuardrailConfigArgsDict(TypedDict):
-        content_moderation_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict']]
-        """
-        (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
-        """
-        personally_identifiable_information_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict']]
-        """
-        (Updatable) The configuration details for Personally Identifiable Information.
-        """
-        prompt_injection_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict']]
-        """
-        (Updatable) The configuration details for Prompt Injection.
-        """
-elif False:
-    AgentAgentEndpointGuardrailConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointGuardrailConfigArgsDict(TypedDict):
+    content_moderation_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict']]
+    """
+    (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+    """
+    personally_identifiable_information_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict']]
+    """
+    (Updatable) The configuration details for Personally Identifiable Information.
+    """
+    prompt_injection_config: NotRequired[pulumi.Input['AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict']]
+    """
+    (Updatable) The configuration details for Prompt Injection.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigArgs:
@@ -247,18 +239,15 @@ class AgentAgentEndpointGuardrailConfigArgs:
         pulumi.set(self, "prompt_injection_config", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict(TypedDict):
-        input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An input guardrail mode for content moderation.
-        """
-        output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An output guardrail mode for content moderation.
-        """
-elif False:
-    AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointGuardrailConfigContentModerationConfigArgsDict(TypedDict):
+    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An input guardrail mode for content moderation.
+    """
+    output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An output guardrail mode for content moderation.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigContentModerationConfigArgs:
@@ -299,18 +288,15 @@ class AgentAgentEndpointGuardrailConfigContentModerationConfigArgs:
         pulumi.set(self, "output_guardrail_mode", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict(TypedDict):
-        input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An input guardrail mode for personally identifiable information.
-        """
-        output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An output guardrail mode for personally identifiable information.
-        """
-elif False:
-    AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgsDict(TypedDict):
+    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An input guardrail mode for personally identifiable information.
+    """
+    output_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An output guardrail mode for personally identifiable information.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs:
@@ -351,14 +337,11 @@ class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigAr
         pulumi.set(self, "output_guardrail_mode", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict(TypedDict):
-        input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An input guardrail mode for prompt injection.
-        """
-elif False:
-    AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgsDict(TypedDict):
+    input_guardrail_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An input guardrail mode for prompt injection.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs:
@@ -383,14 +366,11 @@ class AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs:
         pulumi.set(self, "input_guardrail_mode", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointHumanInputConfigArgsDict(TypedDict):
-        should_enable_human_input: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
-        """
-elif False:
-    AgentAgentEndpointHumanInputConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointHumanInputConfigArgsDict(TypedDict):
+    should_enable_human_input: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointHumanInputConfigArgs:
@@ -414,18 +394,15 @@ class AgentAgentEndpointHumanInputConfigArgs:
         pulumi.set(self, "should_enable_human_input", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointOutputConfigArgsDict(TypedDict):
-        output_location: pulumi.Input['AgentAgentEndpointOutputConfigOutputLocationArgsDict']
-        """
-        (Updatable) Location of the output.
-        """
-        retention_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Retention duration of the output data.
-        """
-elif False:
-    AgentAgentEndpointOutputConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointOutputConfigArgsDict(TypedDict):
+    output_location: pulumi.Input['AgentAgentEndpointOutputConfigOutputLocationArgsDict']
+    """
+    (Updatable) Location of the output.
+    """
+    retention_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Retention duration of the output data.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointOutputConfigArgs:
@@ -465,26 +442,23 @@ class AgentAgentEndpointOutputConfigArgs:
         pulumi.set(self, "retention_period_in_minutes", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointOutputConfigOutputLocationArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the bucket.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The namespace of the object storage.
-        """
-        output_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of OutputLocation.
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The prefix of the object storage.
-        """
-elif False:
-    AgentAgentEndpointOutputConfigOutputLocationArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointOutputConfigOutputLocationArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the bucket.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The namespace of the object storage.
+    """
+    output_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of OutputLocation.
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The prefix of the object storage.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointOutputConfigOutputLocationArgs:
@@ -554,14 +528,11 @@ class AgentAgentEndpointOutputConfigOutputLocationArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class AgentAgentEndpointSessionConfigArgsDict(TypedDict):
-        idle_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The session will become inactive after this timeout.
-        """
-elif False:
-    AgentAgentEndpointSessionConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentEndpointSessionConfigArgsDict(TypedDict):
+    idle_timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The session will become inactive after this timeout.
+    """
 
 @pulumi.input_type
 class AgentAgentEndpointSessionConfigArgs:
@@ -586,14 +557,11 @@ class AgentAgentEndpointSessionConfigArgs:
         pulumi.set(self, "idle_timeout_in_seconds", value)
 
 
-if not MYPY:
-    class AgentAgentLlmConfigArgsDict(TypedDict):
-        routing_llm_customization: NotRequired[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgsDict']]
-        """
-        (Updatable) Configuration to customize LLM.
-        """
-elif False:
-    AgentAgentLlmConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentLlmConfigArgsDict(TypedDict):
+    routing_llm_customization: NotRequired[pulumi.Input['AgentAgentLlmConfigRoutingLlmCustomizationArgsDict']]
+    """
+    (Updatable) Configuration to customize LLM.
+    """
 
 @pulumi.input_type
 class AgentAgentLlmConfigArgs:
@@ -618,14 +586,11 @@ class AgentAgentLlmConfigArgs:
         pulumi.set(self, "routing_llm_customization", value)
 
 
-if not MYPY:
-    class AgentAgentLlmConfigRoutingLlmCustomizationArgsDict(TypedDict):
-        instruction: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If specified, the default instruction is replaced with provided instruction.
-        """
-elif False:
-    AgentAgentLlmConfigRoutingLlmCustomizationArgsDict: TypeAlias = Mapping[str, Any]
+class AgentAgentLlmConfigRoutingLlmCustomizationArgsDict(TypedDict):
+    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If specified, the default instruction is replaced with provided instruction.
+    """
 
 @pulumi.input_type
 class AgentAgentLlmConfigRoutingLlmCustomizationArgs:
@@ -650,26 +615,23 @@ class AgentAgentLlmConfigRoutingLlmCustomizationArgs:
         pulumi.set(self, "instruction", value)
 
 
-if not MYPY:
-    class AgentDataIngestionJobDataIngestionJobStatisticArgsDict(TypedDict):
-        duration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The duration of this ingestion job.
-        """
-        number_of_failed_files: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of files that have failed during the ingestion.
-        """
-        number_of_ignored_files: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of files that have been ignored during the ingestion.
-        """
-        number_of_ingested_files: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of files that have been successfully ingested during the ingestion.
-        """
-elif False:
-    AgentDataIngestionJobDataIngestionJobStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class AgentDataIngestionJobDataIngestionJobStatisticArgsDict(TypedDict):
+    duration_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The duration of this ingestion job.
+    """
+    number_of_failed_files: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of files that have failed during the ingestion.
+    """
+    number_of_ignored_files: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of files that have been ignored during the ingestion.
+    """
+    number_of_ingested_files: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of files that have been successfully ingested during the ingestion.
+    """
 
 @pulumi.input_type
 class AgentDataIngestionJobDataIngestionJobStatisticArgs:
@@ -742,14 +704,11 @@ class AgentDataIngestionJobDataIngestionJobStatisticArgs:
         pulumi.set(self, "number_of_ingested_files", value)
 
 
-if not MYPY:
-    class AgentDataIngestionJobDataIngestionJobTypeArgsDict(TypedDict):
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of ingestionJob.
-        """
-elif False:
-    AgentDataIngestionJobDataIngestionJobTypeArgsDict: TypeAlias = Mapping[str, Any]
+class AgentDataIngestionJobDataIngestionJobTypeArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of ingestionJob.
+    """
 
 @pulumi.input_type
 class AgentDataIngestionJobDataIngestionJobTypeArgs:
@@ -774,18 +733,15 @@ class AgentDataIngestionJobDataIngestionJobTypeArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class AgentDataSourceDataSourceConfigArgsDict(TypedDict):
-        data_source_config_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the tool.
-        """
-        object_storage_prefixes: pulumi.Input[Sequence[pulumi.Input['AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict']]]
-        """
-        (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
-        """
-elif False:
-    AgentDataSourceDataSourceConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentDataSourceDataSourceConfigArgsDict(TypedDict):
+    data_source_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the tool.
+    """
+    object_storage_prefixes: pulumi.Input[Sequence[pulumi.Input['AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict']]]
+    """
+    (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
+    """
 
 @pulumi.input_type
 class AgentDataSourceDataSourceConfigArgs:
@@ -824,22 +780,19 @@ class AgentDataSourceDataSourceConfigArgs:
         pulumi.set(self, "object_storage_prefixes", value)
 
 
-if not MYPY:
-    class AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The bucket name of an object.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The namespace name of an object.
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The prefix of file object(s) or folder prefix.
-        """
-elif False:
-    AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict: TypeAlias = Mapping[str, Any]
+class AgentDataSourceDataSourceConfigObjectStoragePrefixArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The bucket name of an object.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The namespace name of an object.
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The prefix of file object(s) or folder prefix.
+    """
 
 @pulumi.input_type
 class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs:
@@ -894,42 +847,39 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefixArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
-        index_config_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of index.
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
-        """
-        database_connection: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict']]
-        """
-        (Updatable) The connection type for Databases.
-        """
-        database_functions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict']]]]
-        """
-        (Updatable) Array of Database functions to be used.
-        """
-        indexes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgsDict']]]]
-        """
-        (Updatable) Index configuration for open search.
-        """
-        secret_detail: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgsDict']]
-        """
-        (Updatable) The details of configured security configuration on OpenSearch.
-        """
-        should_enable_hybrid_search: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
+class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
+    index_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of index.
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
+    """
+    database_connection: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict']]
+    """
+    (Updatable) The connection type for Databases.
+    """
+    database_functions: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict']]]]
+    """
+    (Updatable) Array of Database functions to be used.
+    """
+    indexes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgsDict']]]]
+    """
+    (Updatable) Index configuration for open search.
+    """
+    secret_detail: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgsDict']]
+    """
+    (Updatable) The details of configured security configuration on OpenSearch.
+    """
+    should_enable_hybrid_search: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigArgs:
@@ -1057,18 +1007,15 @@ class AgentKnowledgeBaseIndexConfigArgs:
         pulumi.set(self, "should_enable_hybrid_search", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict(TypedDict):
-        connection_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
-        """
-        connection_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of Database connection.
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgsDict(TypedDict):
+    connection_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+    """
+    connection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of Database connection.
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs:
@@ -1107,14 +1054,11 @@ class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs:
         pulumi.set(self, "connection_type", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the Database function.
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the Database function.
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs:
@@ -1139,18 +1083,15 @@ class AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigIndexArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The index name in opensearch.
-        """
-        schema: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict']]
-        """
-        (Updatable) The index schema details.
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigIndexArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseIndexConfigIndexArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The index name in opensearch.
+    """
+    schema: NotRequired[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict']]
+    """
+    (Updatable) The index schema details.
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigIndexArgs:
@@ -1191,26 +1132,23 @@ class AgentKnowledgeBaseIndexConfigIndexArgs:
         pulumi.set(self, "schema", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict(TypedDict):
-        body_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Body key name.
-        """
-        embedding_body_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
-        """
-        title_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Title key that stores the Title of a document, if available.
-        """
-        url_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) URL key that stores the URL of a document, if available.
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseIndexConfigIndexSchemaArgsDict(TypedDict):
+    body_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Body key name.
+    """
+    embedding_body_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Field within customer managed Oracle Cloud Infrastructure OpenSearch document containing the vector embedding for queries.
+    """
+    title_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Title key that stores the Title of a document, if available.
+    """
+    url_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) URL key that stores the URL of a document, if available.
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigIndexSchemaArgs:
@@ -1283,30 +1221,27 @@ class AgentKnowledgeBaseIndexConfigIndexSchemaArgs:
         pulumi.set(self, "url_key", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseIndexConfigSecretDetailArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of OpenID.
-        """
-        vault_secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The IDCS Connect clientId.
-        """
-        idcs_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The URL represent authentication url of the IDCS.
-        """
-        scope_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Fully qualified scope url
-        """
-elif False:
-    AgentKnowledgeBaseIndexConfigSecretDetailArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseIndexConfigSecretDetailArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of OpenID.
+    """
+    vault_secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The IDCS Connect clientId.
+    """
+    idcs_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The URL represent authentication url of the IDCS.
+    """
+    scope_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Fully qualified scope url
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseIndexConfigSecretDetailArgs:
@@ -1393,18 +1328,15 @@ class AgentKnowledgeBaseIndexConfigSecretDetailArgs:
         pulumi.set(self, "scope_url", value)
 
 
-if not MYPY:
-    class AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict(TypedDict):
-        size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Knowledge Base size in bytes.
-        """
-        total_ingested_files: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Total number of ingested files in Knowledge Base.
-        """
-elif False:
-    AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict: TypeAlias = Mapping[str, Any]
+class AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict(TypedDict):
+    size_in_bytes: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Knowledge Base size in bytes.
+    """
+    total_ingested_files: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Total number of ingested files in Knowledge Base.
+    """
 
 @pulumi.input_type
 class AgentKnowledgeBaseKnowledgeBaseStatisticArgs:
@@ -1445,81 +1377,78 @@ class AgentKnowledgeBaseKnowledgeBaseStatisticArgs:
         pulumi.set(self, "total_ingested_files", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigArgsDict(TypedDict):
-        tool_config_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the Tool config. The allowed values are:
-        * `SQL_TOOL_CONFIG`: The config for sql Tool.
-        * `RAG_TOOL_CONFIG`: The config for rag Tool.
-        * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+class AgentToolToolConfigArgsDict(TypedDict):
+    tool_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the Tool config. The allowed values are:
+    * `SQL_TOOL_CONFIG`: The config for sql Tool.
+    * `RAG_TOOL_CONFIG`: The config for rag Tool.
+    * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        agent_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
-        """
-        api_schema: NotRequired[pulumi.Input['AgentToolToolConfigApiSchemaArgsDict']]
-        """
-        (Updatable) The input location definition for Api schema.
-        """
-        database_connection: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgsDict']]
-        """
-        (Updatable) The connection type for Databases.
-        """
-        database_schema: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgsDict']]
-        """
-        (Updatable) The input location definition.
-        """
-        dialect: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Dialect to be used for SQL generation.
-        """
-        function: NotRequired[pulumi.Input['AgentToolToolConfigFunctionArgsDict']]
-        """
-        (Updatable) Details of Function for Function calling tool.
-        """
-        generation_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgsDict']]
-        """
-        (Updatable) Configuration to customize LLM.
-        """
-        http_endpoint_auth_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgsDict']]
-        """
-        (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
-        """
-        icl_examples: NotRequired[pulumi.Input['AgentToolToolConfigIclExamplesArgsDict']]
-        """
-        (Updatable) The input location definition.
-        """
-        knowledge_base_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgsDict']]]]
-        """
-        (Updatable) The KnowledgeBase configurations that this RAG Tool uses
-        """
-        model_size: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Size of the model.
-        """
-        should_enable_self_correction: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) To enable/disable self correction.
-        """
-        should_enable_sql_execution: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) To enable/disable SQL execution.
-        """
-        subnet_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
-        """
-        table_and_column_description: NotRequired[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgsDict']]
-        """
-        (Updatable) The input location definition.
-        """
-elif False:
-    AgentToolToolConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    agent_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+    """
+    api_schema: NotRequired[pulumi.Input['AgentToolToolConfigApiSchemaArgsDict']]
+    """
+    (Updatable) The input location definition for Api schema.
+    """
+    database_connection: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseConnectionArgsDict']]
+    """
+    (Updatable) The connection type for Databases.
+    """
+    database_schema: NotRequired[pulumi.Input['AgentToolToolConfigDatabaseSchemaArgsDict']]
+    """
+    (Updatable) The input location definition.
+    """
+    dialect: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Dialect to be used for SQL generation.
+    """
+    function: NotRequired[pulumi.Input['AgentToolToolConfigFunctionArgsDict']]
+    """
+    (Updatable) Details of Function for Function calling tool.
+    """
+    generation_llm_customization: NotRequired[pulumi.Input['AgentToolToolConfigGenerationLlmCustomizationArgsDict']]
+    """
+    (Updatable) Configuration to customize LLM.
+    """
+    http_endpoint_auth_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigArgsDict']]
+    """
+    (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+    """
+    icl_examples: NotRequired[pulumi.Input['AgentToolToolConfigIclExamplesArgsDict']]
+    """
+    (Updatable) The input location definition.
+    """
+    knowledge_base_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigKnowledgeBaseConfigArgsDict']]]]
+    """
+    (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+    """
+    model_size: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Size of the model.
+    """
+    should_enable_self_correction: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) To enable/disable self correction.
+    """
+    should_enable_sql_execution: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) To enable/disable SQL execution.
+    """
+    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+    """
+    table_and_column_description: NotRequired[pulumi.Input['AgentToolToolConfigTableAndColumnDescriptionArgsDict']]
+    """
+    (Updatable) The input location definition.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigArgs:
@@ -1797,32 +1726,29 @@ class AgentToolToolConfigArgs:
         pulumi.set(self, "table_and_column_description", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigApiSchemaArgsDict(TypedDict):
-        api_schema_input_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of Api Schema InputLocation. The allowed values are:
-        * `INLINE`: The Api schema input location is inline.
-        * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name of an object.
-        """
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Inline content as input.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace name of an object.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The location/name of object.
-        """
-elif False:
-    AgentToolToolConfigApiSchemaArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigApiSchemaArgsDict(TypedDict):
+    api_schema_input_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of Api Schema InputLocation. The allowed values are:
+    * `INLINE`: The Api schema input location is inline.
+    * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name of an object.
+    """
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inline content as input.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace name of an object.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The location/name of object.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigApiSchemaArgs:
@@ -1914,19 +1840,16 @@ class AgentToolToolConfigApiSchemaArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigDatabaseConnectionArgsDict(TypedDict):
-        connection_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
-        """
-        connection_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of Database connection. The allowed values are:
-        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
-        """
-elif False:
-    AgentToolToolConfigDatabaseConnectionArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigDatabaseConnectionArgsDict(TypedDict):
+    connection_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+    """
+    connection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of Database connection. The allowed values are:
+    * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigDatabaseConnectionArgs:
@@ -1967,32 +1890,29 @@ class AgentToolToolConfigDatabaseConnectionArgs:
         pulumi.set(self, "connection_type", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigDatabaseSchemaArgsDict(TypedDict):
-        input_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of InputLocation. The allowed values are:
-        * `INLINE`: The input location is inline.
-        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name of an object.
-        """
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Inline content as input.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace name of an object.
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The prefix of file object(s) or folder prefix.
-        """
-elif False:
-    AgentToolToolConfigDatabaseSchemaArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigDatabaseSchemaArgsDict(TypedDict):
+    input_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of InputLocation. The allowed values are:
+    * `INLINE`: The input location is inline.
+    * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name of an object.
+    """
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inline content as input.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace name of an object.
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The prefix of file object(s) or folder prefix.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigDatabaseSchemaArgs:
@@ -2084,22 +2004,19 @@ class AgentToolToolConfigDatabaseSchemaArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigFunctionArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A description of the function.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the function to invoke.
-        """
-        parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
-        """
-elif False:
-    AgentToolToolConfigFunctionArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigFunctionArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A description of the function.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the function to invoke.
+    """
+    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigFunctionArgs:
@@ -2156,14 +2073,11 @@ class AgentToolToolConfigFunctionArgs:
         pulumi.set(self, "parameters", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigGenerationLlmCustomizationArgsDict(TypedDict):
-        instruction: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If specified, the default instruction is replaced with provided instruction.
-        """
-elif False:
-    AgentToolToolConfigGenerationLlmCustomizationArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigGenerationLlmCustomizationArgsDict(TypedDict):
+    instruction: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If specified, the default instruction is replaced with provided instruction.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigGenerationLlmCustomizationArgs:
@@ -2188,14 +2102,11 @@ class AgentToolToolConfigGenerationLlmCustomizationArgs:
         pulumi.set(self, "instruction", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigHttpEndpointAuthConfigArgsDict(TypedDict):
-        http_endpoint_auth_sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict']]]]
-        """
-        (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
-        """
-elif False:
-    AgentToolToolConfigHttpEndpointAuthConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigHttpEndpointAuthConfigArgsDict(TypedDict):
+    http_endpoint_auth_sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict']]]]
+    """
+    (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigHttpEndpointAuthConfigArgs:
@@ -2220,18 +2131,15 @@ class AgentToolToolConfigHttpEndpointAuthConfigArgs:
         pulumi.set(self, "http_endpoint_auth_sources", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict(TypedDict):
-        http_endpoint_auth_scope: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specifies the level from which credentials should be resolved.
-        """
-        http_endpoint_auth_scope_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict']]
-        """
-        (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
-        """
-elif False:
-    AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgsDict(TypedDict):
+    http_endpoint_auth_scope: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specifies the level from which credentials should be resolved.
+    """
+    http_endpoint_auth_scope_config: NotRequired[pulumi.Input['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict']]
+    """
+    (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs:
@@ -2272,38 +2180,35 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs:
         pulumi.set(self, "http_endpoint_auth_scope_config", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict(TypedDict):
-        http_endpoint_auth_scope_config_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of authentication to be applied for this HTTP Endpoint.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) IDCS client ID.
-        """
-        idcs_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) IDCS OpenID discovery endpoint.
-        """
-        key_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The location of the API key in the request.
-        """
-        key_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the key parameter in the location.
-        """
-        scope_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OAuth2 scopes for token generation.
-        """
-        vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
-        """
-elif False:
-    AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgsDict(TypedDict):
+    http_endpoint_auth_scope_config_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) IDCS client ID.
+    """
+    idcs_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) IDCS OpenID discovery endpoint.
+    """
+    key_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The location of the API key in the request.
+    """
+    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the key parameter in the location.
+    """
+    scope_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OAuth2 scopes for token generation.
+    """
+    vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs:
@@ -2423,32 +2328,29 @@ class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpoin
         pulumi.set(self, "vault_secret_id", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigIclExamplesArgsDict(TypedDict):
-        input_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of InputLocation. The allowed values are:
-        * `INLINE`: The input location is inline.
-        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name of an object.
-        """
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Inline content as input.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace name of an object.
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The prefix of file object(s) or folder prefix.
-        """
-elif False:
-    AgentToolToolConfigIclExamplesArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigIclExamplesArgsDict(TypedDict):
+    input_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of InputLocation. The allowed values are:
+    * `INLINE`: The input location is inline.
+    * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name of an object.
+    """
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inline content as input.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace name of an object.
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The prefix of file object(s) or folder prefix.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigIclExamplesArgs:
@@ -2540,14 +2442,11 @@ class AgentToolToolConfigIclExamplesArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigKnowledgeBaseConfigArgsDict(TypedDict):
-        knowledge_base_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
-        """
-elif False:
-    AgentToolToolConfigKnowledgeBaseConfigArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigKnowledgeBaseConfigArgsDict(TypedDict):
+    knowledge_base_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigKnowledgeBaseConfigArgs:
@@ -2572,32 +2471,29 @@ class AgentToolToolConfigKnowledgeBaseConfigArgs:
         pulumi.set(self, "knowledge_base_id", value)
 
 
-if not MYPY:
-    class AgentToolToolConfigTableAndColumnDescriptionArgsDict(TypedDict):
-        input_location_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of InputLocation. The allowed values are:
-        * `INLINE`: The input location is inline.
-        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The bucket name of an object.
-        """
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Inline content as input.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The namespace name of an object.
-        """
-        prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The prefix of file object(s) or folder prefix.
-        """
-elif False:
-    AgentToolToolConfigTableAndColumnDescriptionArgsDict: TypeAlias = Mapping[str, Any]
+class AgentToolToolConfigTableAndColumnDescriptionArgsDict(TypedDict):
+    input_location_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of InputLocation. The allowed values are:
+    * `INLINE`: The input location is inline.
+    * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The bucket name of an object.
+    """
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Inline content as input.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The namespace name of an object.
+    """
+    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The prefix of file object(s) or folder prefix.
+    """
 
 @pulumi.input_type
 class AgentToolToolConfigTableAndColumnDescriptionArgs:
@@ -2689,22 +2585,19 @@ class AgentToolToolConfigTableAndColumnDescriptionArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class DedicatedAiClusterCapacityArgsDict(TypedDict):
-        capacity_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the dedicated AI cluster capacity.
-        """
-        total_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The total number of endpoints that can be hosted on this dedicated AI cluster.
-        """
-        used_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of endpoints hosted on this dedicated AI cluster.
-        """
-elif False:
-    DedicatedAiClusterCapacityArgsDict: TypeAlias = Mapping[str, Any]
+class DedicatedAiClusterCapacityArgsDict(TypedDict):
+    capacity_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the dedicated AI cluster capacity.
+    """
+    total_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The total number of endpoints that can be hosted on this dedicated AI cluster.
+    """
+    used_endpoint_capacity: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of endpoints hosted on this dedicated AI cluster.
+    """
 
 @pulumi.input_type
 class DedicatedAiClusterCapacityArgs:
@@ -2761,22 +2654,19 @@ class DedicatedAiClusterCapacityArgs:
         pulumi.set(self, "used_endpoint_capacity", value)
 
 
-if not MYPY:
-    class EndpointContentModerationConfigArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Whether to enable the content moderation feature.
-        """
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Enum for the modes of operation for inference protection.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the model used for the feature.
-        """
-elif False:
-    EndpointContentModerationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class EndpointContentModerationConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Whether to enable the content moderation feature.
+    """
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Enum for the modes of operation for inference protection.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the model used for the feature.
+    """
 
 @pulumi.input_type
 class EndpointContentModerationConfigArgs:
@@ -2832,46 +2722,43 @@ class EndpointContentModerationConfigArgs:
         pulumi.set(self, "model_id", value)
 
 
-if not MYPY:
-    class ImportedModelDataSourceArgsDict(TypedDict):
-        access_token: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
-        """
-        branch: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket.
-        """
-        commit: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace of the Object Storage where the files are stored.
-        """
-        prefix_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The prefix path (or folder) within the bucket where files are located.
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
-        """
-        source_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Specifies the source type for model import.
-        """
-elif False:
-    ImportedModelDataSourceArgsDict: TypeAlias = Mapping[str, Any]
+class ImportedModelDataSourceArgsDict(TypedDict):
+    access_token: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
+    """
+    branch: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the branch in the Hugging Face repository to import the model from.  If not specified, "main" will be used by default.  If you provide both a branch and a commit hash, the model will be imported from the specified commit.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket.
+    """
+    commit: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The commit hash in the Hugging Face repository to import the model from.  If both a branch and a commit are provided, the commit hash will be used.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full model OCID from Hugging Face, typically in the format "org/model-name" (e.g., "meta-llama/Llama-2-7b").
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace of the Object Storage where the files are stored.
+    """
+    prefix_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The prefix path (or folder) within the bucket where files are located.
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The full canonical Oracle Cloud region identifier (e.g., "us-ashburn-1") where the object storage bucket  containing the files resides.
+    """
+    source_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Specifies the source type for model import.
+    """
 
 @pulumi.input_type
 class ImportedModelDataSourceArgs:
@@ -3024,24 +2911,21 @@ class ImportedModelDataSourceArgs:
         pulumi.set(self, "source_type", value)
 
 
-if not MYPY:
-    class ModelFineTuneDetailsArgsDict(TypedDict):
-        dedicated_ai_cluster_id: pulumi.Input[_builtins.str]
-        """
-        The OCID of the dedicated AI cluster this fine-tuning runs on.
-        """
-        training_dataset: pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgsDict']
-        """
-        The dataset used to fine-tune the model. 
+class ModelFineTuneDetailsArgsDict(TypedDict):
+    dedicated_ai_cluster_id: pulumi.Input[_builtins.str]
+    """
+    The OCID of the dedicated AI cluster this fine-tuning runs on.
+    """
+    training_dataset: pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgsDict']
+    """
+    The dataset used to fine-tune the model. 
 
-        Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
-        """
-        training_config: NotRequired[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgsDict']]
-        """
-        The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-        """
-elif False:
-    ModelFineTuneDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+    """
+    training_config: NotRequired[pulumi.Input['ModelFineTuneDetailsTrainingConfigArgsDict']]
+    """
+    The fine-tuning method and hyperparameters used for fine-tuning a custom model.
+    """
 
 @pulumi.input_type
 class ModelFineTuneDetailsArgs:
@@ -3100,56 +2984,53 @@ class ModelFineTuneDetailsArgs:
         pulumi.set(self, "training_config", value)
 
 
-if not MYPY:
-    class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
-        training_config_type: pulumi.Input[_builtins.str]
-        """
-        The fine-tuning method for training a custom model.
-        """
-        early_stopping_patience: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
-        """
-        early_stopping_threshold: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        How much the loss must improve to prevent early stopping.
-        """
-        learning_rate: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The initial learning rate to be used during training
-        """
-        log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Determines how frequently to log model metrics. 
+class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
+    training_config_type: pulumi.Input[_builtins.str]
+    """
+    The fine-tuning method for training a custom model.
+    """
+    early_stopping_patience: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
+    """
+    early_stopping_threshold: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    How much the loss must improve to prevent early stopping.
+    """
+    learning_rate: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The initial learning rate to be used during training
+    """
+    log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Determines how frequently to log model metrics. 
 
-        Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
-        """
-        lora_alpha: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        This parameter represents the scaling factor for the weight matrices in LoRA.
-        """
-        lora_dropout: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        This parameter indicates the dropout probability for LoRA layers.
-        """
-        lora_r: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        This parameter represents the LoRA rank of the update matrices.
-        """
-        num_of_last_layers: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of last layers to be fine-tuned.
-        """
-        total_training_epochs: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum number of training epochs to run for.
-        """
-        training_batch_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The batch size used during training.
-        """
-elif False:
-    ModelFineTuneDetailsTrainingConfigArgsDict: TypeAlias = Mapping[str, Any]
+    Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
+    """
+    lora_alpha: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    This parameter represents the scaling factor for the weight matrices in LoRA.
+    """
+    lora_dropout: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    This parameter indicates the dropout probability for LoRA layers.
+    """
+    lora_r: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    This parameter represents the LoRA rank of the update matrices.
+    """
+    num_of_last_layers: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of last layers to be fine-tuned.
+    """
+    total_training_epochs: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum number of training epochs to run for.
+    """
+    training_batch_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The batch size used during training.
+    """
 
 @pulumi.input_type
 class ModelFineTuneDetailsTrainingConfigArgs:
@@ -3337,26 +3218,23 @@ class ModelFineTuneDetailsTrainingConfigArgs:
         pulumi.set(self, "training_batch_size", value)
 
 
-if not MYPY:
-    class ModelFineTuneDetailsTrainingDatasetArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The Object Storage bucket name.
-        """
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The type of the data asset.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        The Object Storage namespace.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        The Object Storage object name.
-        """
-elif False:
-    ModelFineTuneDetailsTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+class ModelFineTuneDetailsTrainingDatasetArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The Object Storage bucket name.
+    """
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The type of the data asset.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    The Object Storage namespace.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    The Object Storage object name.
+    """
 
 @pulumi.input_type
 class ModelFineTuneDetailsTrainingDatasetArgs:
@@ -3425,22 +3303,19 @@ class ModelFineTuneDetailsTrainingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ModelModelMetricArgsDict(TypedDict):
-        final_accuracy: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Fine-tuned model accuracy.
-        """
-        final_loss: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Fine-tuned model loss.
-        """
-        model_metrics_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the model metrics. Each type of model can expect a different set of model metrics.
-        """
-elif False:
-    ModelModelMetricArgsDict: TypeAlias = Mapping[str, Any]
+class ModelModelMetricArgsDict(TypedDict):
+    final_accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Fine-tuned model accuracy.
+    """
+    final_loss: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Fine-tuned model loss.
+    """
+    model_metrics_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the model metrics. Each type of model can expect a different set of model metrics.
+    """
 
 @pulumi.input_type
 class ModelModelMetricArgs:
@@ -3497,13 +3372,10 @@ class ModelModelMetricArgs:
         pulumi.set(self, "model_metrics_type", value)
 
 
-if not MYPY:
-    class GetAgentAgentEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentAgentEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentAgentEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentAgentEndpointsFilterArgs:
@@ -3544,13 +3416,10 @@ class GetAgentAgentEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentAgentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentAgentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentAgentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentAgentsFilterArgs:
@@ -3591,13 +3460,10 @@ class GetAgentAgentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentDataIngestionJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentDataIngestionJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentDataIngestionJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentDataIngestionJobsFilterArgs:
@@ -3638,13 +3504,10 @@ class GetAgentDataIngestionJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentDataSourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentDataSourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentDataSourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentDataSourcesFilterArgs:
@@ -3685,16 +3548,13 @@ class GetAgentDataSourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentKnowledgeBasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The index name in opensearch.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentKnowledgeBasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentKnowledgeBasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The index name in opensearch.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentKnowledgeBasesFilterArgs:
@@ -3741,16 +3601,13 @@ class GetAgentKnowledgeBasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAgentToolsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the function to invoke.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentToolsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentToolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the function to invoke.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentToolsFilterArgs:
@@ -3797,13 +3654,10 @@ class GetAgentToolsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDedicatedAiClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDedicatedAiClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDedicatedAiClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDedicatedAiClustersFilterArgs:
@@ -3844,13 +3698,10 @@ class GetDedicatedAiClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEndpointsFilterArgs:
@@ -3891,13 +3742,10 @@ class GetEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetGenerativeAiPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetGenerativeAiPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetGenerativeAiPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetGenerativeAiPrivateEndpointsFilterArgs:
@@ -3938,13 +3786,10 @@ class GetGenerativeAiPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetImportedModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetImportedModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetImportedModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetImportedModelsFilterArgs:
@@ -3985,13 +3830,10 @@ class GetImportedModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelsFilterArgs:

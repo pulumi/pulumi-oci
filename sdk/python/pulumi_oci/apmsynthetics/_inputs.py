@@ -91,20 +91,15 @@ __all__ = [
     'GetVantagePointsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ConfigAvailabilityConfigurationArgsDict(TypedDict):
-        max_allowed_failures_per_interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
-        """
-        min_allowed_runs_per_interval: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
-        """
-elif False:
-    ConfigAvailabilityConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigAvailabilityConfigurationArgsDict(TypedDict):
+    max_allowed_failures_per_interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+    """
+    min_allowed_runs_per_interval: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+    """
 
 @pulumi.input_type
 class ConfigAvailabilityConfigurationArgs:
@@ -145,146 +140,143 @@ class ConfigAvailabilityConfigurationArgs:
         pulumi.set(self, "min_allowed_runs_per_interval", value)
 
 
-if not MYPY:
-    class ConfigConfigurationArgsDict(TypedDict):
-        client_certificate_details: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgsDict']]
-        """
-        (Updatable) Details for client certificate.
-        """
-        config_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of configuration.
-        """
-        connection_string: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Database connection string.
-        """
-        database_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgsDict']]
-        """
-        (Updatable) Details for basic authentication.
-        """
-        database_connection_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
-        """
-        database_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Database role.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Database type.
-        """
-        database_wallet_details: NotRequired[pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgsDict']]
-        """
-        (Updatable) Details for database wallet.
-        """
-        dns_configuration: NotRequired[pulumi.Input['ConfigConfigurationDnsConfigurationArgsDict']]
-        """
-        (Updatable) Information about the DNS settings.
-        """
-        download_size_limit_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
-        """
-        ftp_basic_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict']]
-        """
-        (Updatable) Details for basic authentication.
-        """
-        ftp_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) FTP protocol type.
-        """
-        ftp_request_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) FTP monitor request type.
-        """
-        is_active_mode: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
-        """
-        is_certificate_validation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
-        """
-        is_default_snapshot_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If disabled, auto snapshots are not collected.
-        """
-        is_failure_retried: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
-        """
-        is_query_recursive: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
-        """
-        is_redirection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
-        """
-        name_server: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the server that will be used to perform DNS lookup.
-        """
-        network_configuration: NotRequired[pulumi.Input['ConfigConfigurationNetworkConfigurationArgsDict']]
-        """
-        (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of protocol.
-        """
-        query: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) SQL query to be executed.
-        """
-        record_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) DNS record type.
-        """
-        req_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgsDict']]
-        """
-        (Updatable) Details for request HTTP authentication.
-        """
-        req_authentication_scheme: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request HTTP authentication scheme.
-        """
-        request_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgsDict']]]]
-        """
-        (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
-        request_method: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request HTTP method.
-        """
-        request_post_body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request post body content.
-        """
-        request_query_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgsDict']]]]
-        """
-        (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
-        """
-        upload_file_size_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
-        """
-        verify_response_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
-        """
-        verify_response_content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
-        """
-        verify_texts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgsDict']]]]
-        """
-        (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
-        """
-elif False:
-    ConfigConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationArgsDict(TypedDict):
+    client_certificate_details: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgsDict']]
+    """
+    (Updatable) Details for client certificate.
+    """
+    config_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of configuration.
+    """
+    connection_string: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Database connection string.
+    """
+    database_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgsDict']]
+    """
+    (Updatable) Details for basic authentication.
+    """
+    database_connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+    """
+    database_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Database role.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Database type.
+    """
+    database_wallet_details: NotRequired[pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgsDict']]
+    """
+    (Updatable) Details for database wallet.
+    """
+    dns_configuration: NotRequired[pulumi.Input['ConfigConfigurationDnsConfigurationArgsDict']]
+    """
+    (Updatable) Information about the DNS settings.
+    """
+    download_size_limit_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+    """
+    ftp_basic_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict']]
+    """
+    (Updatable) Details for basic authentication.
+    """
+    ftp_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) FTP protocol type.
+    """
+    ftp_request_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) FTP monitor request type.
+    """
+    is_active_mode: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If enabled, Active mode will be used for the FTP connection. Not supported for SFTP protocol.
+    """
+    is_certificate_validation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
+    """
+    is_default_snapshot_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If disabled, auto snapshots are not collected.
+    """
+    is_failure_retried: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
+    """
+    is_query_recursive: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If isQueryRecursive is enabled, then queries will be sent recursively to the target server.
+    """
+    is_redirection_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If redirection is enabled, then redirects will be allowed while accessing target URL.
+    """
+    name_server: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the server that will be used to perform DNS lookup.
+    """
+    network_configuration: NotRequired[pulumi.Input['ConfigConfigurationNetworkConfigurationArgsDict']]
+    """
+    (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of protocol.
+    """
+    query: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) SQL query to be executed.
+    """
+    record_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) DNS record type.
+    """
+    req_authentication_details: NotRequired[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgsDict']]
+    """
+    (Updatable) Details for request HTTP authentication.
+    """
+    req_authentication_scheme: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request HTTP authentication scheme.
+    """
+    request_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestHeaderArgsDict']]]]
+    """
+    (Updatable) List of request headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
+    """
+    request_method: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request HTTP method.
+    """
+    request_post_body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request post body content.
+    """
+    request_query_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgsDict']]]]
+    """
+    (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
+    """
+    upload_file_size_in_bytes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+    """
+    verify_response_codes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+    """
+    verify_response_content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
+    """
+    verify_texts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgsDict']]]]
+    """
+    (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationArgs:
@@ -837,18 +829,15 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "verify_texts", value)
 
 
-if not MYPY:
-    class ConfigConfigurationClientCertificateDetailsArgsDict(TypedDict):
-        client_certificate: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict']]
-        """
-        (Updatable) Client certificate in PEM format.
-        """
-        private_key: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict']]
-        """
-        (Updatable) The private key associated with the client certificate in PEM format.
-        """
-elif False:
-    ConfigConfigurationClientCertificateDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationClientCertificateDetailsArgsDict(TypedDict):
+    client_certificate: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict']]
+    """
+    (Updatable) Client certificate in PEM format.
+    """
+    private_key: NotRequired[pulumi.Input['ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict']]
+    """
+    (Updatable) The private key associated with the client certificate in PEM format.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationClientCertificateDetailsArgs:
@@ -889,18 +878,15 @@ class ConfigConfigurationClientCertificateDetailsArgs:
         pulumi.set(self, "private_key", value)
 
 
-if not MYPY:
-    class ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict(TypedDict):
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Content of the client certificate file.
-        """
-        file_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the certificate file. The name should not contain any confidential information.
-        """
-elif False:
-    ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationClientCertificateDetailsClientCertificateArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Content of the client certificate file.
+    """
+    file_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the certificate file. The name should not contain any confidential information.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
@@ -941,18 +927,15 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
         pulumi.set(self, "file_name", value)
 
 
-if not MYPY:
-    class ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict(TypedDict):
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Content of the private key file.
-        """
-        file_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the private key file.
-        """
-elif False:
-    ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationClientCertificateDetailsPrivateKeyArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Content of the private key file.
+    """
+    file_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the private key file.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
@@ -993,18 +976,15 @@ class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
         pulumi.set(self, "file_name", value)
 
 
-if not MYPY:
-    class ConfigConfigurationDatabaseAuthenticationDetailsArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict']]
-        """
-        (Updatable) Password.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Username for authentication.
-        """
-elif False:
-    ConfigConfigurationDatabaseAuthenticationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationDatabaseAuthenticationDetailsArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict']]
+    """
+    (Updatable) Password.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Username for authentication.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationDatabaseAuthenticationDetailsArgs:
@@ -1045,22 +1025,19 @@ class ConfigConfigurationDatabaseAuthenticationDetailsArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Password.
-        """
-        password_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of method to pass password.
-        """
-        vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Vault secret OCID.
-        """
-elif False:
-    ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Password.
+    """
+    password_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of method to pass password.
+    """
+    vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Vault secret OCID.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs:
@@ -1117,18 +1094,15 @@ class ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs:
         pulumi.set(self, "vault_secret_id", value)
 
 
-if not MYPY:
-    class ConfigConfigurationDatabaseWalletDetailsArgsDict(TypedDict):
-        database_wallet: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The database wallet configuration zip file.
-        """
-        service_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Service name of the database.
-        """
-elif False:
-    ConfigConfigurationDatabaseWalletDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationDatabaseWalletDetailsArgsDict(TypedDict):
+    database_wallet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The database wallet configuration zip file.
+    """
+    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Service name of the database.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationDatabaseWalletDetailsArgs:
@@ -1169,18 +1143,15 @@ class ConfigConfigurationDatabaseWalletDetailsArgs:
         pulumi.set(self, "service_name", value)
 
 
-if not MYPY:
-    class ConfigConfigurationDnsConfigurationArgsDict(TypedDict):
-        is_override_dns: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
-        """
-        override_dns_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
-        """
-elif False:
-    ConfigConfigurationDnsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationDnsConfigurationArgsDict(TypedDict):
+    is_override_dns: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
+    """
+    override_dns_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationDnsConfigurationArgs:
@@ -1221,18 +1192,15 @@ class ConfigConfigurationDnsConfigurationArgs:
         pulumi.set(self, "override_dns_ip", value)
 
 
-if not MYPY:
-    class ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict']]
-        """
-        (Updatable) Password.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Username for authentication.
-        """
-elif False:
-    ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationFtpBasicAuthenticationDetailsArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict']]
+    """
+    (Updatable) Password.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Username for authentication.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationFtpBasicAuthenticationDetailsArgs:
@@ -1273,22 +1241,19 @@ class ConfigConfigurationFtpBasicAuthenticationDetailsArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Password.
-        """
-        password_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of method to pass password.
-        """
-        vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Vault secret OCID.
-        """
-elif False:
-    ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Password.
+    """
+    password_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of method to pass password.
+    """
+    vault_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Vault secret OCID.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs:
@@ -1345,30 +1310,27 @@ class ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs:
         pulumi.set(self, "vault_secret_id", value)
 
 
-if not MYPY:
-    class ConfigConfigurationNetworkConfigurationArgsDict(TypedDict):
-        number_of_hops: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of hops.
-        """
-        probe_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of probe mode when TCP protocol is selected.
-        """
-        probe_per_hop: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of probes per hop.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of protocol.
-        """
-        transmission_rate: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Number of probe packets sent out simultaneously.
-        """
-elif False:
-    ConfigConfigurationNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationNetworkConfigurationArgsDict(TypedDict):
+    number_of_hops: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of hops.
+    """
+    probe_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of probe mode when TCP protocol is selected.
+    """
+    probe_per_hop: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of probes per hop.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of protocol.
+    """
+    transmission_rate: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Number of probe packets sent out simultaneously.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationNetworkConfigurationArgs:
@@ -1457,42 +1419,39 @@ class ConfigConfigurationNetworkConfigurationArgs:
         pulumi.set(self, "transmission_rate", value)
 
 
-if not MYPY:
-    class ConfigConfigurationReqAuthenticationDetailsArgsDict(TypedDict):
-        auth_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict']]]]
-        """
-        (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
-        """
-        auth_request_method: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request method.
-        """
-        auth_request_post_body: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request post body.
-        """
-        auth_token: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Authentication token.
-        """
-        auth_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) URL to get authentication token.
-        """
-        auth_user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User name for authentication.
-        """
-        auth_user_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User password for authentication.
-        """
-        oauth_scheme: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Request HTTP OAuth scheme.
-        """
-elif False:
-    ConfigConfigurationReqAuthenticationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationReqAuthenticationDetailsArgsDict(TypedDict):
+    auth_headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict']]]]
+    """
+    (Updatable) List of authentication headers. Example: `[{"headerName": "content-type", "headerValue":"json"}]`
+    """
+    auth_request_method: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request method.
+    """
+    auth_request_post_body: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request post body.
+    """
+    auth_token: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Authentication token.
+    """
+    auth_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) URL to get authentication token.
+    """
+    auth_user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User name for authentication.
+    """
+    auth_user_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User password for authentication.
+    """
+    oauth_scheme: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Request HTTP OAuth scheme.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationReqAuthenticationDetailsArgs:
@@ -1629,18 +1588,15 @@ class ConfigConfigurationReqAuthenticationDetailsArgs:
         pulumi.set(self, "oauth_scheme", value)
 
 
-if not MYPY:
-    class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict(TypedDict):
-        header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the header.
-        """
-        header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of the header.
-        """
-elif False:
-    ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgsDict(TypedDict):
+    header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the header.
+    """
+    header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of the header.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs:
@@ -1681,18 +1637,15 @@ class ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs:
         pulumi.set(self, "header_value", value)
 
 
-if not MYPY:
-    class ConfigConfigurationRequestHeaderArgsDict(TypedDict):
-        header_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the header.
-        """
-        header_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of the header.
-        """
-elif False:
-    ConfigConfigurationRequestHeaderArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationRequestHeaderArgsDict(TypedDict):
+    header_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the header.
+    """
+    header_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of the header.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationRequestHeaderArgs:
@@ -1733,18 +1686,15 @@ class ConfigConfigurationRequestHeaderArgs:
         pulumi.set(self, "header_value", value)
 
 
-if not MYPY:
-    class ConfigConfigurationRequestQueryParamArgsDict(TypedDict):
-        param_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of request query parameter.
-        """
-        param_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of request query parameter.
-        """
-elif False:
-    ConfigConfigurationRequestQueryParamArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationRequestQueryParamArgsDict(TypedDict):
+    param_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of request query parameter.
+    """
+    param_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of request query parameter.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationRequestQueryParamArgs:
@@ -1785,14 +1735,11 @@ class ConfigConfigurationRequestQueryParamArgs:
         pulumi.set(self, "param_value", value)
 
 
-if not MYPY:
-    class ConfigConfigurationVerifyTextArgsDict(TypedDict):
-        text: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Verification text in the response.
-        """
-elif False:
-    ConfigConfigurationVerifyTextArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigConfigurationVerifyTextArgsDict(TypedDict):
+    text: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Verification text in the response.
+    """
 
 @pulumi.input_type
 class ConfigConfigurationVerifyTextArgs:
@@ -1817,18 +1764,15 @@ class ConfigConfigurationVerifyTextArgs:
         pulumi.set(self, "text", value)
 
 
-if not MYPY:
-    class ConfigMaintenanceWindowScheduleArgsDict(TypedDict):
-        time_ended: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
-        time_started: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
-elif False:
-    ConfigMaintenanceWindowScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigMaintenanceWindowScheduleArgsDict(TypedDict):
+    time_ended: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) End time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+    """
+    time_started: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Start time of the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+    """
 
 @pulumi.input_type
 class ConfigMaintenanceWindowScheduleArgs:
@@ -1869,30 +1813,27 @@ class ConfigMaintenanceWindowScheduleArgs:
         pulumi.set(self, "time_started", value)
 
 
-if not MYPY:
-    class ConfigScriptParameterArgsDict(TypedDict):
-        param_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the parameter.
-        """
-        param_value: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Value of the parameter.
-        """
-        is_overwritten: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If parameter value is default or overwritten.
-        """
-        is_secret: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
-        """
-        monitor_script_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgsDict']]]]
-        """
-        Details of the script parameter that can be used to overwrite the parameter present in the script.
-        """
-elif False:
-    ConfigScriptParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigScriptParameterArgsDict(TypedDict):
+    param_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the parameter.
+    """
+    param_value: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Value of the parameter.
+    """
+    is_overwritten: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If parameter value is default or overwritten.
+    """
+    is_secret: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Describes if  the parameter value is secret and should be kept confidential. isSecret is specified in either CreateScript or UpdateScript API.
+    """
+    monitor_script_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterMonitorScriptParameterArgsDict']]]]
+    """
+    Details of the script parameter that can be used to overwrite the parameter present in the script.
+    """
 
 @pulumi.input_type
 class ConfigScriptParameterArgs:
@@ -1979,18 +1920,15 @@ class ConfigScriptParameterArgs:
         pulumi.set(self, "monitor_script_parameters", value)
 
 
-if not MYPY:
-    class ConfigScriptParameterMonitorScriptParameterArgsDict(TypedDict):
-        param_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the parameter.
-        """
-        param_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the parameter.
-        """
-elif False:
-    ConfigScriptParameterMonitorScriptParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigScriptParameterMonitorScriptParameterArgsDict(TypedDict):
+    param_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the parameter.
+    """
+    param_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the parameter.
+    """
 
 @pulumi.input_type
 class ConfigScriptParameterMonitorScriptParameterArgs:
@@ -2031,22 +1969,19 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
         pulumi.set(self, "param_value", value)
 
 
-if not MYPY:
-    class ConfigVantagePointArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        Name of the vantage point.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
-        worker_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        List of workers running the assigned monitor.
-        """
-elif False:
-    ConfigVantagePointArgsDict: TypeAlias = Mapping[str, Any]
+class ConfigVantagePointArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of the vantage point.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique name that can be edited. The name should not contain any confidential information.
+    """
+    worker_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    List of workers running the assigned monitor.
+    """
 
 @pulumi.input_type
 class ConfigVantagePointArgs:
@@ -2102,26 +2037,23 @@ class ConfigVantagePointArgs:
         pulumi.set(self, "worker_lists", value)
 
 
-if not MYPY:
-    class DedicatedVantagePointDvpStackDetailsArgsDict(TypedDict):
-        dvp_stack_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
-        dvp_stack_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of stack.
-        """
-        dvp_stream_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
-        """
-        dvp_version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Version of the dedicated vantage point.
-        """
-elif False:
-    DedicatedVantagePointDvpStackDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DedicatedVantagePointDvpStackDetailsArgsDict(TypedDict):
+    dvp_stack_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+    """
+    dvp_stack_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of stack.
+    """
+    dvp_stream_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
+    """
+    dvp_version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Version of the dedicated vantage point.
+    """
 
 @pulumi.input_type
 class DedicatedVantagePointDvpStackDetailsArgs:
@@ -2190,26 +2122,23 @@ class DedicatedVantagePointDvpStackDetailsArgs:
         pulumi.set(self, "dvp_version", value)
 
 
-if not MYPY:
-    class DedicatedVantagePointMonitorStatusCountMapArgsDict(TypedDict):
-        disabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of disabled monitors using the script.
-        """
-        enabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of enabled monitors using the script.
-        """
-        invalid: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of invalid monitors using the script.
-        """
-        total: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of monitors using the script.
-        """
-elif False:
-    DedicatedVantagePointMonitorStatusCountMapArgsDict: TypeAlias = Mapping[str, Any]
+class DedicatedVantagePointMonitorStatusCountMapArgsDict(TypedDict):
+    disabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of disabled monitors using the script.
+    """
+    enabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of enabled monitors using the script.
+    """
+    invalid: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of invalid monitors using the script.
+    """
+    total: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of monitors using the script.
+    """
 
 @pulumi.input_type
 class DedicatedVantagePointMonitorStatusCountMapArgs:
@@ -2282,22 +2211,19 @@ class DedicatedVantagePointMonitorStatusCountMapArgs:
         pulumi.set(self, "total", value)
 
 
-if not MYPY:
-    class OnPremiseVantagePointWorkerIdentityInfoArgsDict(TypedDict):
-        apm_short_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Domain short id of the On-premise VP worker.
-        """
-        collector_end_point: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Collector endpoint of the On-premise VP worker.
-        """
-        region_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Domain region of the On-premise VP worker.
-        """
-elif False:
-    OnPremiseVantagePointWorkerIdentityInfoArgsDict: TypeAlias = Mapping[str, Any]
+class OnPremiseVantagePointWorkerIdentityInfoArgsDict(TypedDict):
+    apm_short_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Domain short id of the On-premise VP worker.
+    """
+    collector_end_point: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Collector endpoint of the On-premise VP worker.
+    """
+    region_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Domain region of the On-premise VP worker.
+    """
 
 @pulumi.input_type
 class OnPremiseVantagePointWorkerIdentityInfoArgs:
@@ -2354,30 +2280,27 @@ class OnPremiseVantagePointWorkerIdentityInfoArgs:
         pulumi.set(self, "region_name", value)
 
 
-if not MYPY:
-    class OnPremiseVantagePointWorkerMonitorListArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique name that can be edited. The name should not contain any confidential information.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
-        """
-        is_run_now: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If isRunNow is enabled, then the monitor will run immediately.
-        """
-        monitor_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of monitor.
-        """
-        time_assigned: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
-        """
-elif False:
-    OnPremiseVantagePointWorkerMonitorListArgsDict: TypeAlias = Mapping[str, Any]
+class OnPremiseVantagePointWorkerMonitorListArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique name that can be edited. The name should not contain any confidential information.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+    """
+    is_run_now: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If isRunNow is enabled, then the monitor will run immediately.
+    """
+    monitor_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of monitor.
+    """
+    time_assigned: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the resource was last assigned to an On-premise vantage point worker, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+    """
 
 @pulumi.input_type
 class OnPremiseVantagePointWorkerMonitorListArgs:
@@ -2466,22 +2389,19 @@ class OnPremiseVantagePointWorkerMonitorListArgs:
         pulumi.set(self, "time_assigned", value)
 
 
-if not MYPY:
-    class OnPremiseVantagePointWorkerVersionDetailArgsDict(TypedDict):
-        latest_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Latest image version of the On-premise VP worker.
-        """
-        min_supported_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Minimum supported image version of the On-premise VP worker.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Image version of the On-premise VP worker.
-        """
-elif False:
-    OnPremiseVantagePointWorkerVersionDetailArgsDict: TypeAlias = Mapping[str, Any]
+class OnPremiseVantagePointWorkerVersionDetailArgsDict(TypedDict):
+    latest_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Latest image version of the On-premise VP worker.
+    """
+    min_supported_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Minimum supported image version of the On-premise VP worker.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Image version of the On-premise VP worker.
+    """
 
 @pulumi.input_type
 class OnPremiseVantagePointWorkerVersionDetailArgs:
@@ -2538,34 +2458,31 @@ class OnPremiseVantagePointWorkerVersionDetailArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class OnPremiseVantagePointWorkersSummaryArgsDict(TypedDict):
-        available: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of available workers in a specific On-premise vantage point.
-        """
-        available_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict']]]]
-        """
-        List of available capabilities in a specific On-premise vantage point.
-        """
-        disabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of disabled workers in a specific On-premise vantage point.
-        """
-        min_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Minimum version among the workers in a specific On-premise vantage point.
-        """
-        total: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of workers in a specific On-premise vantage point.
-        """
-        used: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of occupied workers in a specific On-premise vantage point.
-        """
-elif False:
-    OnPremiseVantagePointWorkersSummaryArgsDict: TypeAlias = Mapping[str, Any]
+class OnPremiseVantagePointWorkersSummaryArgsDict(TypedDict):
+    available: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of available workers in a specific On-premise vantage point.
+    """
+    available_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict']]]]
+    """
+    List of available capabilities in a specific On-premise vantage point.
+    """
+    disabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of disabled workers in a specific On-premise vantage point.
+    """
+    min_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Minimum version among the workers in a specific On-premise vantage point.
+    """
+    total: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of workers in a specific On-premise vantage point.
+    """
+    used: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of occupied workers in a specific On-premise vantage point.
+    """
 
 @pulumi.input_type
 class OnPremiseVantagePointWorkersSummaryArgs:
@@ -2670,18 +2587,15 @@ class OnPremiseVantagePointWorkersSummaryArgs:
         pulumi.set(self, "used", value)
 
 
-if not MYPY:
-    class OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict(TypedDict):
-        capability: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Capability of an On-premise vantage point worker.
-        """
-        on_premise_vantage_point_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Count of available capability in a specific On-premise vantage point.
-        """
-elif False:
-    OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict: TypeAlias = Mapping[str, Any]
+class OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgsDict(TypedDict):
+    capability: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Capability of an On-premise vantage point worker.
+    """
+    on_premise_vantage_point_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Count of available capability in a specific On-premise vantage point.
+    """
 
 @pulumi.input_type
 class OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs:
@@ -2722,26 +2636,23 @@ class OnPremiseVantagePointWorkersSummaryAvailableCapabilityArgs:
         pulumi.set(self, "on_premise_vantage_point_count", value)
 
 
-if not MYPY:
-    class ScriptMonitorStatusCountMapArgsDict(TypedDict):
-        disabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of disabled monitors using the script.
-        """
-        enabled: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of enabled monitors using the script.
-        """
-        invalid: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of invalid monitors using the script.
-        """
-        total: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total number of monitors using the script.
-        """
-elif False:
-    ScriptMonitorStatusCountMapArgsDict: TypeAlias = Mapping[str, Any]
+class ScriptMonitorStatusCountMapArgsDict(TypedDict):
+    disabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of disabled monitors using the script.
+    """
+    enabled: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of enabled monitors using the script.
+    """
+    invalid: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of invalid monitors using the script.
+    """
+    total: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total number of monitors using the script.
+    """
 
 @pulumi.input_type
 class ScriptMonitorStatusCountMapArgs:
@@ -2814,34 +2725,31 @@ class ScriptMonitorStatusCountMapArgs:
         pulumi.set(self, "total", value)
 
 
-if not MYPY:
-    class ScriptParameterArgsDict(TypedDict):
-        param_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the parameter.
-        """
-        is_overwritten: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If parameter value is default or overwritten.
-        """
-        is_secret: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
-        param_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Value of the parameter.
+class ScriptParameterArgsDict(TypedDict):
+    param_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the parameter.
+    """
+    is_overwritten: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If parameter value is default or overwritten.
+    """
+    is_secret: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+    """
+    param_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Value of the parameter.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        script_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScriptParameterScriptParameterArgsDict']]]]
-        """
-        Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
-        """
-elif False:
-    ScriptParameterArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    script_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScriptParameterScriptParameterArgsDict']]]]
+    """
+    Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
+    """
 
 @pulumi.input_type
 class ScriptParameterArgs:
@@ -2937,22 +2845,19 @@ class ScriptParameterArgs:
         pulumi.set(self, "script_parameters", value)
 
 
-if not MYPY:
-    class ScriptParameterScriptParameterArgsDict(TypedDict):
-        is_secret: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        """
-        param_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the parameter.
-        """
-        param_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the parameter.
-        """
-elif False:
-    ScriptParameterScriptParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ScriptParameterScriptParameterArgsDict(TypedDict):
+    is_secret: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    If the parameter value is secret and should be kept confidential, then set isSecret to true.
+    """
+    param_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the parameter.
+    """
+    param_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the parameter.
+    """
 
 @pulumi.input_type
 class ScriptParameterScriptParameterArgs:
@@ -3009,16 +2914,13 @@ class ScriptParameterScriptParameterArgs:
         pulumi.set(self, "param_value", value)
 
 
-if not MYPY:
-    class GetDedicatedVantagePointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only the resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDedicatedVantagePointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDedicatedVantagePointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only the resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDedicatedVantagePointsFilterArgs:
@@ -3065,16 +2967,13 @@ class GetDedicatedVantagePointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMonitorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the vantage point.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMonitorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMonitorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the vantage point.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMonitorsFilterArgs:
@@ -3121,16 +3020,13 @@ class GetMonitorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOnPremiseVantagePointWorkersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only the resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOnPremiseVantagePointWorkersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOnPremiseVantagePointWorkersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only the resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOnPremiseVantagePointWorkersFilterArgs:
@@ -3177,16 +3073,13 @@ class GetOnPremiseVantagePointWorkersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOnPremiseVantagePointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only the resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOnPremiseVantagePointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOnPremiseVantagePointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only the resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOnPremiseVantagePointsFilterArgs:
@@ -3233,13 +3126,10 @@ class GetOnPremiseVantagePointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetScriptsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetScriptsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetScriptsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetScriptsFilterArgs:
@@ -3280,16 +3170,13 @@ class GetScriptsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVantagePointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only the resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVantagePointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVantagePointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only the resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVantagePointsFilterArgs:

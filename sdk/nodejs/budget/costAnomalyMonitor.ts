@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Cost Anomaly Monitor resource in Oracle Cloud Infrastructure Budget service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyMonitor
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+ *
+ * Creates a new costAnomaly Monitor.
+ *
  * ## Example Usage
  *
  * ```typescript

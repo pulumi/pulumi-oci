@@ -311,41 +311,39 @@ __all__ = [
     'GetTaskRecordsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class CatalogItemCatalogResultPayloadArgsDict(TypedDict):
-        branch_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        branch Name
-        """
-        config_result_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        config result type.
-        """
-        configuration_source_provider_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        configuration Source Provider [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
-        package_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        package url
-        """
-        repository_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        repository Url
-        """
-        template_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        template id
-        """
-        time_expires: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        working_directory: NotRequired[pulumi.Input[_builtins.str]]
-elif False:
-    CatalogItemCatalogResultPayloadArgsDict: TypeAlias = Mapping[str, Any]
+class CatalogItemCatalogResultPayloadArgsDict(TypedDict):
+    branch_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    branch Name
+    """
+    config_result_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    config result type.
+    """
+    configuration_source_provider_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    configuration Source Provider [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    package_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    package url
+    """
+    repository_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    repository Url
+    """
+    template_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    template id
+    """
+    time_expires: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+    """
+    working_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    File path to the directory to use for running Terraform. If not specified, the root directory is used.
+    """
 
 @pulumi.input_type
 class CatalogItemCatalogResultPayloadArgs:
@@ -366,6 +364,7 @@ class CatalogItemCatalogResultPayloadArgs:
         :param pulumi.Input[_builtins.str] repository_url: repository Url
         :param pulumi.Input[_builtins.str] template_id: template id
         :param pulumi.Input[_builtins.str] time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         """
         if branch_name is not None:
             pulumi.set(__self__, "branch_name", branch_name)
@@ -471,6 +470,9 @@ class CatalogItemCatalogResultPayloadArgs:
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
@@ -478,71 +480,71 @@ class CatalogItemCatalogResultPayloadArgs:
         pulumi.set(self, "working_directory", value)
 
 
-if not MYPY:
-    class CatalogItemCatalogSourcePayloadArgsDict(TypedDict):
-        config_source_type: pulumi.Input[_builtins.str]
-        """
-        config source type.
-        """
-        access_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        access uri
-        """
-        branch_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        branch Name
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        bucket name
-        """
-        configuration_source_provider_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        configuration Source Provider [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Template Description
-        """
-        listing_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This listing Id parameter of Payload.
-        """
-        long_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Template Long Description
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        nameSpace
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        object name
-        """
-        repository_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        repository Url
-        """
-        template_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Template Display Name
-        """
-        time_expires: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This version parameter of Payload.
-        """
-        working_directory: NotRequired[pulumi.Input[_builtins.str]]
-        zip_file_base64encoded: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
-        """
-elif False:
-    CatalogItemCatalogSourcePayloadArgsDict: TypeAlias = Mapping[str, Any]
+class CatalogItemCatalogSourcePayloadArgsDict(TypedDict):
+    config_source_type: pulumi.Input[_builtins.str]
+    """
+    config source type.
+    """
+    access_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    access uri
+    """
+    branch_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    branch Name
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    bucket name
+    """
+    configuration_source_provider_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    configuration Source Provider [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Template Description
+    """
+    listing_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This listing Id parameter of Payload.
+    """
+    long_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Template Long Description
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    nameSpace
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    object name
+    """
+    repository_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    repository Url
+    """
+    template_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Template Display Name
+    """
+    time_expires: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This version parameter of Payload.
+    """
+    working_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    File path to the directory to use for running Terraform. If not specified, the root directory is used.
+    """
+    zip_file_base64encoded: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
+    """
 
 @pulumi.input_type
 class CatalogItemCatalogSourcePayloadArgs:
@@ -578,6 +580,7 @@ class CatalogItemCatalogSourcePayloadArgs:
         :param pulumi.Input[_builtins.str] template_display_name: Template Display Name
         :param pulumi.Input[_builtins.str] time_expires: The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] version: This version parameter of Payload.
+        :param pulumi.Input[_builtins.str] working_directory: File path to the directory to use for running Terraform. If not specified, the root directory is used.
         :param pulumi.Input[_builtins.str] zip_file_base64encoded: The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
         """
         pulumi.set(__self__, "config_source_type", config_source_type)
@@ -783,6 +786,9 @@ class CatalogItemCatalogSourcePayloadArgs:
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        File path to the directory to use for running Terraform. If not specified, the root directory is used.
+        """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
@@ -802,26 +808,23 @@ class CatalogItemCatalogSourcePayloadArgs:
         pulumi.set(self, "zip_file_base64encoded", value)
 
 
-if not MYPY:
-    class CompliancePolicyRulePatchSelectionArgsDict(TypedDict):
-        selection_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Selection type for the Patch.
-        """
-        days_since_release: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Days passed since patch release.
-        """
-        patch_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Patch Name.
-        """
-        patch_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Patch Name.
-        """
-elif False:
-    CompliancePolicyRulePatchSelectionArgsDict: TypeAlias = Mapping[str, Any]
+class CompliancePolicyRulePatchSelectionArgsDict(TypedDict):
+    selection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Selection type for the Patch.
+    """
+    days_since_release: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Days passed since patch release.
+    """
+    patch_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Patch Name.
+    """
+    patch_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Patch Name.
+    """
 
 @pulumi.input_type
 class CompliancePolicyRulePatchSelectionArgs:
@@ -893,18 +896,15 @@ class CompliancePolicyRulePatchSelectionArgs:
         pulumi.set(self, "patch_name", value)
 
 
-if not MYPY:
-    class CompliancePolicyRuleProductVersionArgsDict(TypedDict):
-        version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Product version the rule is applicable.
-        """
-        is_applicable_for_all_higher_versions: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is rule applicable to all higher versions also
-        """
-elif False:
-    CompliancePolicyRuleProductVersionArgsDict: TypeAlias = Mapping[str, Any]
+class CompliancePolicyRuleProductVersionArgsDict(TypedDict):
+    version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Product version the rule is applicable.
+    """
+    is_applicable_for_all_higher_versions: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is rule applicable to all higher versions also
+    """
 
 @pulumi.input_type
 class CompliancePolicyRuleProductVersionArgs:
@@ -944,30 +944,27 @@ class CompliancePolicyRuleProductVersionArgs:
         pulumi.set(self, "is_applicable_for_all_higher_versions", value)
 
 
-if not MYPY:
-    class FleetCredentialArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Compartment OCID
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        entity_specifics: pulumi.Input['FleetCredentialEntitySpecificsArgsDict']
-        """
-        Credential specific Details.
-        """
-        password: pulumi.Input['FleetCredentialPasswordArgsDict']
-        """
-        Credential Details.
-        """
-        user: pulumi.Input['FleetCredentialUserArgsDict']
-        """
-        Credential Details.
-        """
-elif False:
-    FleetCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class FleetCredentialArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Compartment OCID
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    entity_specifics: pulumi.Input['FleetCredentialEntitySpecificsArgsDict']
+    """
+    Credential specific Details.
+    """
+    password: pulumi.Input['FleetCredentialPasswordArgsDict']
+    """
+    Credential Details.
+    """
+    user: pulumi.Input['FleetCredentialUserArgsDict']
+    """
+    Credential Details.
+    """
 
 @pulumi.input_type
 class FleetCredentialArgs:
@@ -1051,26 +1048,23 @@ class FleetCredentialArgs:
         pulumi.set(self, "user", value)
 
 
-if not MYPY:
-    class FleetCredentialEntitySpecificsArgsDict(TypedDict):
-        credential_level: pulumi.Input[_builtins.str]
-        """
-        (Updatable) At what level the credential is provided?
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the resource associated with the target for which the credential is created.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Target name for which the credential is provided.
-        """
-        variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetCredentialEntitySpecificsVariableArgsDict']]]]
-        """
-        (Updatable) List of fleet credential variables.
-        """
-elif False:
-    FleetCredentialEntitySpecificsArgsDict: TypeAlias = Mapping[str, Any]
+class FleetCredentialEntitySpecificsArgsDict(TypedDict):
+    credential_level: pulumi.Input[_builtins.str]
+    """
+    (Updatable) At what level the credential is provided?
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the resource associated with the target for which the credential is created.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Target name for which the credential is provided.
+    """
+    variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetCredentialEntitySpecificsVariableArgsDict']]]]
+    """
+    (Updatable) List of fleet credential variables.
+    """
 
 @pulumi.input_type
 class FleetCredentialEntitySpecificsArgs:
@@ -1142,18 +1136,15 @@ class FleetCredentialEntitySpecificsArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class FleetCredentialEntitySpecificsVariableArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the variable.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value corresponding to the variable name.
-        """
-elif False:
-    FleetCredentialEntitySpecificsVariableArgsDict: TypeAlias = Mapping[str, Any]
+class FleetCredentialEntitySpecificsVariableArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the variable.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value corresponding to the variable name.
+    """
 
 @pulumi.input_type
 class FleetCredentialEntitySpecificsVariableArgs:
@@ -1194,38 +1185,35 @@ class FleetCredentialEntitySpecificsVariableArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class FleetCredentialPasswordArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Credential Type.
-        """
-        key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-        """
-        key_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Vault Key version.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
-        """
-        secret_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The secret version.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value corresponding to the credential.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-        """
-elif False:
-    FleetCredentialPasswordArgsDict: TypeAlias = Mapping[str, Any]
+class FleetCredentialPasswordArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Credential Type.
+    """
+    key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+    """
+    key_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Vault Key version.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+    """
+    secret_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The secret version.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value corresponding to the credential.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+    """
 
 @pulumi.input_type
 class FleetCredentialPasswordArgs:
@@ -1345,42 +1333,39 @@ class FleetCredentialPasswordArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class FleetCredentialUserArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Credential Type.
-        """
-        key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
-        """
-        key_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Vault Key version.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
-        """
-        secret_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The secret version.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value corresponding to the credential.
-        """
-        vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
+class FleetCredentialUserArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Credential Type.
+    """
+    key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID for the Vault Key that will be used to encrypt/decrypt the value given.
+    """
+    key_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Vault Key version.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret.
+    """
+    secret_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The secret version.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value corresponding to the credential.
+    """
+    vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FleetCredentialUserArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FleetCredentialUserArgs:
@@ -1508,14 +1493,11 @@ class FleetCredentialUserArgs:
         pulumi.set(self, "vault_id", value)
 
 
-if not MYPY:
-    class FleetDetailsArgsDict(TypedDict):
-        fleet_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
-        """
-elif False:
-    FleetDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class FleetDetailsArgsDict(TypedDict):
+    fleet_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type. ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
+    """
 
 @pulumi.input_type
 class FleetDetailsArgs:
@@ -1540,22 +1522,19 @@ class FleetDetailsArgs:
         pulumi.set(self, "fleet_type", value)
 
 
-if not MYPY:
-    class FleetNotificationPreferenceArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Compartment ID the topic belongs to.
-        """
-        topic_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
-        """
-        preferences: NotRequired[pulumi.Input['FleetNotificationPreferencePreferencesArgsDict']]
-        """
-        (Updatable) Preferences to send notifications on the fleet activities.
-        """
-elif False:
-    FleetNotificationPreferenceArgsDict: TypeAlias = Mapping[str, Any]
+class FleetNotificationPreferenceArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Compartment ID the topic belongs to.
+    """
+    topic_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Topic Id where the notifications will be directed. A topic is a communication channel for sending messages on chosen events to subscriptions.
+    """
+    preferences: NotRequired[pulumi.Input['FleetNotificationPreferencePreferencesArgsDict']]
+    """
+    (Updatable) Preferences to send notifications on the fleet activities.
+    """
 
 @pulumi.input_type
 class FleetNotificationPreferenceArgs:
@@ -1610,58 +1589,55 @@ class FleetNotificationPreferenceArgs:
         pulumi.set(self, "preferences", value)
 
 
-if not MYPY:
-    class FleetNotificationPreferencePreferencesArgsDict(TypedDict):
-        on_job_canceled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on job canceled.
-        """
-        on_job_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Job Failures.
-        """
-        on_job_schedule_change: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on job schedule change.
-        """
-        on_job_start: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on job start.
-        """
-        on_job_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on job success.
-        """
-        on_resource_non_compliance: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification when fleet resource becomes non compliant.
-        """
-        on_runbook_newer_version: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification when a newer version of runbook associated with a fleet is available
-        """
-        on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on task failure.
-        """
-        on_task_pause: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification when a task is paused.
-        """
-        on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on task success.
-        """
-        on_topology_modification: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
-        """
-        upcoming_schedule: NotRequired[pulumi.Input['FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict']]
-        """
-        (Updatable) Enables notification on upcoming schedule.
-        """
-elif False:
-    FleetNotificationPreferencePreferencesArgsDict: TypeAlias = Mapping[str, Any]
+class FleetNotificationPreferencePreferencesArgsDict(TypedDict):
+    on_job_canceled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on job canceled.
+    """
+    on_job_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Job Failures.
+    """
+    on_job_schedule_change: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on job schedule change.
+    """
+    on_job_start: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on job start.
+    """
+    on_job_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on job success.
+    """
+    on_resource_non_compliance: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification when fleet resource becomes non compliant.
+    """
+    on_runbook_newer_version: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification when a newer version of runbook associated with a fleet is available
+    """
+    on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on task failure.
+    """
+    on_task_pause: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification when a task is paused.
+    """
+    on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on task success.
+    """
+    on_topology_modification: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Environment Fleet Topology Modification.
+    """
+    upcoming_schedule: NotRequired[pulumi.Input['FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict']]
+    """
+    (Updatable) Enables notification on upcoming schedule.
+    """
 
 @pulumi.input_type
 class FleetNotificationPreferencePreferencesArgs:
@@ -1862,18 +1838,15 @@ class FleetNotificationPreferencePreferencesArgs:
         pulumi.set(self, "upcoming_schedule", value)
 
 
-if not MYPY:
-    class FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict(TypedDict):
-        notify_before: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Specify when the notification should be sent.
-        """
-        on_upcoming_schedule: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables notification on upcoming schedule.
-        """
-elif False:
-    FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class FleetNotificationPreferencePreferencesUpcomingScheduleArgsDict(TypedDict):
+    notify_before: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Specify when the notification should be sent.
+    """
+    on_upcoming_schedule: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables notification on upcoming schedule.
+    """
 
 @pulumi.input_type
 class FleetNotificationPreferencePreferencesUpcomingScheduleArgs:
@@ -1914,30 +1887,27 @@ class FleetNotificationPreferencePreferencesUpcomingScheduleArgs:
         pulumi.set(self, "on_upcoming_schedule", value)
 
 
-if not MYPY:
-    class FleetPropertyArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) compartment OCID
-        """
-        fleet_property_type: pulumi.Input[_builtins.str]
-        """
-        Type of the FleetProperty.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        is_required: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Property is required or not.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Value of the Property.
-        """
-elif False:
-    FleetPropertyArgsDict: TypeAlias = Mapping[str, Any]
+class FleetPropertyArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) compartment OCID
+    """
+    fleet_property_type: pulumi.Input[_builtins.str]
+    """
+    Type of the FleetProperty.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    is_required: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Property is required or not.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Value of the Property.
+    """
 
 @pulumi.input_type
 class FleetPropertyArgs:
@@ -2024,30 +1994,27 @@ class FleetPropertyArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class FleetResourceArgsDict(TypedDict):
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Compartment Identifier[OCID].
-        """
-        resource_id: pulumi.Input[_builtins.str]
-        """
-        OCID of the resource.
-        """
-        tenancy_id: pulumi.Input[_builtins.str]
-        """
-        Tenancy Identifier[OCID].
+class FleetResourceArgsDict(TypedDict):
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Compartment Identifier[OCID].
+    """
+    resource_id: pulumi.Input[_builtins.str]
+    """
+    OCID of the resource.
+    """
+    tenancy_id: pulumi.Input[_builtins.str]
+    """
+    Tenancy Identifier[OCID].
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        fleet_resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Type of the FleetResource.
-        """
-elif False:
-    FleetResourceArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    fleet_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Type of the FleetResource.
+    """
 
 @pulumi.input_type
 class FleetResourceArgs:
@@ -2125,18 +2092,15 @@ class FleetResourceArgs:
         pulumi.set(self, "fleet_resource_type", value)
 
 
-if not MYPY:
-    class FleetResourceSelectionArgsDict(TypedDict):
-        resource_selection_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
-        """
-        rule_selection_criteria: NotRequired[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaArgsDict']]
-        """
-        (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
-        """
-elif False:
-    FleetResourceSelectionArgsDict: TypeAlias = Mapping[str, Any]
+class FleetResourceSelectionArgsDict(TypedDict):
+    resource_selection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of resource selection in a Fleet. Select resources manually or select resources based on rules.
+    """
+    rule_selection_criteria: NotRequired[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaArgsDict']]
+    """
+    (Updatable) Rule Selection Criteria for DYNAMIC resource selection for a GENERIC fleet. Rules define what resources are members of this fleet. All resources that meet the criteria are added automatically.
+    """
 
 @pulumi.input_type
 class FleetResourceSelectionArgs:
@@ -2176,18 +2140,15 @@ class FleetResourceSelectionArgs:
         pulumi.set(self, "rule_selection_criteria", value)
 
 
-if not MYPY:
-    class FleetResourceSelectionRuleSelectionCriteriaArgsDict(TypedDict):
-        match_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
-        """
-        rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict']]]]
-        """
-        (Updatable) Rules.
-        """
-elif False:
-    FleetResourceSelectionRuleSelectionCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+class FleetResourceSelectionRuleSelectionCriteriaArgsDict(TypedDict):
+    match_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules.
+    """
+    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict']]]]
+    """
+    (Updatable) Rules.
+    """
 
 @pulumi.input_type
 class FleetResourceSelectionRuleSelectionCriteriaArgs:
@@ -2228,34 +2189,31 @@ class FleetResourceSelectionRuleSelectionCriteriaArgs:
         pulumi.set(self, "rules", value)
 
 
-if not MYPY:
-    class FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict(TypedDict):
-        basis: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Compartment Id for which the rule is created.
-        """
-        compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
-        """
-        conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict']]]]
-        """
-        (Updatable) Rule Conditions
-        """
-        match_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
-        """
-        resource_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
-        """
-elif False:
-    FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict: TypeAlias = Mapping[str, Any]
+class FleetResourceSelectionRuleSelectionCriteriaRuleArgsDict(TypedDict):
+    basis: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Based on what the rule is created. It can be based on a resourceProperty or a tag.   If based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be 'inventoryProperties'
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Compartment Id for which the rule is created.
+    """
+    compartment_id_in_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel. Default value for `compartmentIdInSubtree` is false
+    """
+    conditions: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict']]]]
+    """
+    (Updatable) Rule Conditions
+    """
+    match_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Match condition for the rule selection. Include resources that match all rules or any of the rules. Default value for `matchCondition` is ANY
+    """
+    resource_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Compartment ID to dynamically search resources. Provide the compartment ID to which the rule is applicable.
+    """
 
 @pulumi.input_type
 class FleetResourceSelectionRuleSelectionCriteriaRuleArgs:
@@ -2360,22 +2318,19 @@ class FleetResourceSelectionRuleSelectionCriteriaRuleArgs:
         pulumi.set(self, "resource_compartment_id", value)
 
 
-if not MYPY:
-    class FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict(TypedDict):
-        attr_group: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
-        """
-        attr_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
-        """
-        attr_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
-        """
-elif False:
-    FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict: TypeAlias = Mapping[str, Any]
+class FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgsDict(TypedDict):
+    attr_group: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type if the rule is based on a resource property.
+    """
+    attr_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name if the rule is based on a resource property.
+    """
+    attr_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property value if the rule is based on a resource property.
+    """
 
 @pulumi.input_type
 class FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs:
@@ -2432,31 +2387,28 @@ class FleetResourceSelectionRuleSelectionCriteriaRuleConditionArgs:
         pulumi.set(self, "attr_value", value)
 
 
-if not MYPY:
-    class OnboardingAppliedPolicyArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique id of the resource.
-        """
-        statements: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Policy statements.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-        `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
-elif False:
-    OnboardingAppliedPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class OnboardingAppliedPolicyArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique id of the resource.
+    """
+    statements: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Policy statements.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+    `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was created. An RFC3339 formatted datetime string.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time this resource was last updated. An RFC3339 formatted datetime string.
+    """
 
 @pulumi.input_type
 class OnboardingAppliedPolicyArgs:
@@ -2547,22 +2499,19 @@ class OnboardingAppliedPolicyArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class PatchArtifactDetailsArgsDict(TypedDict):
-        category: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Artifact category details.
-        """
-        artifact: NotRequired[pulumi.Input['PatchArtifactDetailsArtifactArgsDict']]
-        """
-        (Updatable) Patch artifact metadata Details which is common for all platforms.
-        """
-        artifacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['PatchArtifactDetailsArtifactArgsDict']]]]
-        """
-        (Updatable) Artifacts.
-        """
-elif False:
-    PatchArtifactDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PatchArtifactDetailsArgsDict(TypedDict):
+    category: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Artifact category details.
+    """
+    artifact: NotRequired[pulumi.Input['PatchArtifactDetailsArtifactArgsDict']]
+    """
+    (Updatable) Patch artifact metadata Details which is common for all platforms.
+    """
+    artifacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['PatchArtifactDetailsArtifactArgsDict']]]]
+    """
+    (Updatable) Artifacts.
+    """
 
 @pulumi.input_type
 class PatchArtifactDetailsArgs:
@@ -2618,22 +2567,19 @@ class PatchArtifactDetailsArgs:
         pulumi.set(self, "artifacts", value)
 
 
-if not MYPY:
-    class PatchArtifactDetailsArtifactArgsDict(TypedDict):
-        architecture: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) System architecture.
-        """
-        content: NotRequired[pulumi.Input['PatchArtifactDetailsArtifactContentArgsDict']]
-        """
-        (Updatable) Content Source details.
-        """
-        os_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OS type the patch is applicable for.
-        """
-elif False:
-    PatchArtifactDetailsArtifactArgsDict: TypeAlias = Mapping[str, Any]
+class PatchArtifactDetailsArtifactArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) System architecture.
+    """
+    content: NotRequired[pulumi.Input['PatchArtifactDetailsArtifactContentArgsDict']]
+    """
+    (Updatable) Content Source details.
+    """
+    os_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OS type the patch is applicable for.
+    """
 
 @pulumi.input_type
 class PatchArtifactDetailsArtifactArgs:
@@ -2690,30 +2636,27 @@ class PatchArtifactDetailsArtifactArgs:
         pulumi.set(self, "os_type", value)
 
 
-if not MYPY:
-    class PatchArtifactDetailsArtifactContentArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Bucket Name.
-        """
-        checksum: pulumi.Input[_builtins.str]
-        """
-        (Updatable) md5 checksum of the artifact.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Namespace.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Object Name.
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source type details.
-        """
-elif False:
-    PatchArtifactDetailsArtifactContentArgsDict: TypeAlias = Mapping[str, Any]
+class PatchArtifactDetailsArtifactContentArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Bucket Name.
+    """
+    checksum: pulumi.Input[_builtins.str]
+    """
+    (Updatable) md5 checksum of the artifact.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Namespace.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Object Name.
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source type details.
+    """
 
 @pulumi.input_type
 class PatchArtifactDetailsArtifactContentArgs:
@@ -2797,14 +2740,11 @@ class PatchArtifactDetailsArtifactContentArgs:
         pulumi.set(self, "source_type", value)
 
 
-if not MYPY:
-    class PatchDependentPatchArgsDict(TypedDict):
-        id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PatchDependentPatchArgsDict: TypeAlias = Mapping[str, Any]
+class PatchDependentPatchArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PatchDependentPatchArgs:
@@ -2828,14 +2768,11 @@ class PatchDependentPatchArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PatchPatchTypeArgsDict(TypedDict):
-        platform_configuration_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) PlatformConfiguration Id corresponding to the Patch Type
-        """
-elif False:
-    PatchPatchTypeArgsDict: TypeAlias = Mapping[str, Any]
+class PatchPatchTypeArgsDict(TypedDict):
+    platform_configuration_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) PlatformConfiguration Id corresponding to the Patch Type
+    """
 
 @pulumi.input_type
 class PatchPatchTypeArgs:
@@ -2859,18 +2796,15 @@ class PatchPatchTypeArgs:
         pulumi.set(self, "platform_configuration_id", value)
 
 
-if not MYPY:
-    class PatchProductArgsDict(TypedDict):
-        platform_configuration_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) PlatformConfiguration Id corresponding to the Product
-        """
-        version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) product version.
-        """
-elif False:
-    PatchProductArgsDict: TypeAlias = Mapping[str, Any]
+class PatchProductArgsDict(TypedDict):
+    platform_configuration_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) PlatformConfiguration Id corresponding to the Product
+    """
+    version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) product version.
+    """
 
 @pulumi.input_type
 class PatchProductArgs:
@@ -2909,62 +2843,59 @@ class PatchProductArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsArgsDict(TypedDict):
-        config_category: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Category of configuration
-        """
-        compatible_products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict']]]]
-        """
-        (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
-        """
-        components: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
-        """
-        credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgsDict']]]]
-        """
-        (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
-        """
-        instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        is_compliance_policy_required_for_softlink: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
-        """
-        is_softlink: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specify if the product is softlink product or not
-        """
-        link_product_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
-        """
-        patch_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict']]]]
-        """
-        (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
-        """
-        products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgsDict']]]]
-        """
-        (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
-        """
-        sub_category_details: NotRequired[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict']]
-        """
-        (Updatable) ProductStack Config Category Details.
-        """
-        versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsArgsDict(TypedDict):
+    config_category: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Category of configuration
+    """
+    compatible_products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict']]]]
+    """
+    (Updatable) Products compatible with this Product. Provide products from the list of other products you have created that are compatible with the present one. This property is not applicable if isSoftlink is set to true.
+    """
+    components: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite. This property is not applicable if isSoftlink is set to true.
+    """
+    credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsCredentialArgsDict']]]]
+    """
+    (Updatable) OCID for the Credential name to be associated with the Product. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server. This property is not applicable if isSoftlink is set to true.
+    """
+    instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    is_compliance_policy_required_for_softlink: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If set true ,compliance policies will be created for softlink product. This property is applicable only if isSoftlink is set to true
+    """
+    is_softlink: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specify if the product is softlink product or not
+    """
+    link_product_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the product that would be the target for the softlink. This property is applicable only if isSoftlink is set to true
+    """
+    patch_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict']]]]
+    """
+    (Updatable) Patch Types associated with this Product. This property is not applicable if isSoftlink is set to true.
+    """
+    products: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsProductArgsDict']]]]
+    """
+    (Updatable) Products that belong to the stack. For example, Oracle WebLogic and Java for the Oracle Fusion Middleware product stack.
+    """
+    sub_category_details: NotRequired[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict']]
+    """
+    (Updatable) ProductStack Config Category Details.
+    """
+    versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Versions associated with the PRODUCT. Mandatory if product is not softlink product.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsArgs:
@@ -3180,18 +3111,15 @@ class PlatformConfigurationConfigCategoryDetailsArgs:
         pulumi.set(self, "versions", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsCompatibleProductArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs:
@@ -3232,18 +3160,15 @@ class PlatformConfigurationConfigCategoryDetailsCompatibleProductArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsCredentialArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsCredentialArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsCredentialArgs:
@@ -3284,18 +3209,15 @@ class PlatformConfigurationConfigCategoryDetailsCredentialArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsPatchTypeArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsPatchTypeArgs:
@@ -3336,18 +3258,15 @@ class PlatformConfigurationConfigCategoryDetailsPatchTypeArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsProductArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsProductArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsProductArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsProductArgs:
@@ -3388,30 +3307,27 @@ class PlatformConfigurationConfigCategoryDetailsProductArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict(TypedDict):
-        sub_category: pulumi.Input[_builtins.str]
-        """
-        (Updatable) SubCategory of Product Stack.
-        """
-        components: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
-        """
-        credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict']]]]
-        """
-        (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
-        """
-        patch_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict']]]]
-        """
-        (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
-        """
-        versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Versions associated with the PRODUCT .
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgsDict(TypedDict):
+    sub_category: pulumi.Input[_builtins.str]
+    """
+    (Updatable) SubCategory of Product Stack.
+    """
+    components: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Various components of the Product. For example:The administration server or node manager can be the components of the Oracle WebLogic Application server. Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+    """
+    credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict']]]]
+    """
+    (Updatable) OCID for the Credential name to be associated with the Product Stack. These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+    """
+    patch_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict']]]]
+    """
+    (Updatable) Patch Types associated with this Product Stack which will be considered as Product.
+    """
+    versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Versions associated with the PRODUCT .
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs:
@@ -3499,18 +3415,15 @@ class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsArgs:
         pulumi.set(self, "versions", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgs:
@@ -3551,18 +3464,15 @@ class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsCredentialArgs
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict: TypeAlias = Mapping[str, Any]
+class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgs:
@@ -3603,30 +3513,27 @@ class PlatformConfigurationConfigCategoryDetailsSubCategoryDetailsPatchTypeArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ProvisionDeployedResourceArgsDict(TypedDict):
-        mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The mode of the resource. Example: "managed"
-        """
-        resource_instance_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgsDict']]]]
-        """
-        Collection of InstanceSummary
-        """
-        resource_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the resource
-        """
-        resource_provider: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Provider
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
-        """
-elif False:
-    ProvisionDeployedResourceArgsDict: TypeAlias = Mapping[str, Any]
+class ProvisionDeployedResourceArgsDict(TypedDict):
+    mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The mode of the resource. Example: "managed"
+    """
+    resource_instance_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgsDict']]]]
+    """
+    Collection of InstanceSummary
+    """
+    resource_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the resource
+    """
+    resource_provider: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Provider
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+    """
 
 @pulumi.input_type
 class ProvisionDeployedResourceArgs:
@@ -3715,22 +3622,19 @@ class ProvisionDeployedResourceArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class ProvisionDeployedResourceResourceInstanceListArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the FamProvision.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current state of the FamProvision.
-        """
-elif False:
-    ProvisionDeployedResourceResourceInstanceListArgsDict: TypeAlias = Mapping[str, Any]
+class ProvisionDeployedResourceResourceInstanceListArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the FamProvision.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current state of the FamProvision.
+    """
 
 @pulumi.input_type
 class ProvisionDeployedResourceResourceInstanceListArgs:
@@ -3787,30 +3691,27 @@ class ProvisionDeployedResourceResourceInstanceListArgs:
         pulumi.set(self, "state", value)
 
 
-if not MYPY:
-    class ProvisionTfOutputArgsDict(TypedDict):
-        is_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        The indicator if the data for this parameter is sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
-        """
-        output_description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The output description
-        """
-        output_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The output name
-        """
-        output_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The output type
-        """
-        output_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The output value
-        """
-elif False:
-    ProvisionTfOutputArgsDict: TypeAlias = Mapping[str, Any]
+class ProvisionTfOutputArgsDict(TypedDict):
+    is_sensitive: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    The indicator if the data for this parameter is sensitive (e.g. should the data be hidden in UI, encrypted if stored, etc.)
+    """
+    output_description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The output description
+    """
+    output_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The output name
+    """
+    output_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The output type
+    """
+    output_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The output value
+    """
 
 @pulumi.input_type
 class ProvisionTfOutputArgs:
@@ -3899,34 +3800,31 @@ class ProvisionTfOutputArgs:
         pulumi.set(self, "output_value", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionArgsDict(TypedDict):
-        execution_workflow_details: pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsArgsDict']
-        """
-        Execution Workflow details.
-        """
-        groups: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionGroupArgsDict']]]
-        """
-        The groups of the runbook.
-        """
-        tasks: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskArgsDict']]]
-        """
-        A set of tasks to execute in the runbook.
-        """
-        is_latest: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is this version the latest?
-        """
-        rollback_workflow_details: NotRequired[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsArgsDict']]
-        """
-        Rollback Workflow details.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of the runbook.
-        """
-elif False:
-    RunbookRunbookVersionArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionArgsDict(TypedDict):
+    execution_workflow_details: pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsArgsDict']
+    """
+    Execution Workflow details.
+    """
+    groups: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionGroupArgsDict']]]
+    """
+    The groups of the runbook.
+    """
+    tasks: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskArgsDict']]]
+    """
+    A set of tasks to execute in the runbook.
+    """
+    is_latest: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is this version the latest?
+    """
+    rollback_workflow_details: NotRequired[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsArgsDict']]
+    """
+    Rollback Workflow details.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of the runbook.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionArgs:
@@ -4028,14 +3926,11 @@ class RunbookRunbookVersionArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionExecutionWorkflowDetailsArgsDict(TypedDict):
-        workflows: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgsDict']]]
-        """
-        Execution Workflow for the runbook.
-        """
-elif False:
-    RunbookRunbookVersionExecutionWorkflowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionExecutionWorkflowDetailsArgsDict(TypedDict):
+    workflows: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgsDict']]]
+    """
+    Execution Workflow for the runbook.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionExecutionWorkflowDetailsArgs:
@@ -4059,22 +3954,19 @@ class RunbookRunbookVersionExecutionWorkflowDetailsArgs:
         pulumi.set(self, "workflows", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgsDict(TypedDict):
-        group_name: pulumi.Input[_builtins.str]
-        """
-        Name of the group.
-        """
-        steps: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict']]]
-        """
-        Steps within the Group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        Workflow Group  Details.
-        """
-elif False:
-    RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgsDict(TypedDict):
+    group_name: pulumi.Input[_builtins.str]
+    """
+    Name of the group.
+    """
+    steps: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict']]]
+    """
+    Steps within the Group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Workflow Group  Details.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgs:
@@ -4128,26 +4020,23 @@ class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Content Source Details.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the group.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide StepName for the Task.
-        """
-        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Tasks within the Group. Provide the stepName for all applicable tasks.
-        """
-elif False:
-    RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Content Source Details.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the group.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide StepName for the Task.
+    """
+    steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Tasks within the Group. Provide the stepName for all applicable tasks.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgs:
@@ -4219,22 +4108,19 @@ class RunbookRunbookVersionExecutionWorkflowDetailsWorkflowStepArgs:
         pulumi.set(self, "steps", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of the group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
-        """
-        properties: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesArgsDict']]
-        """
-        The properties of the component.
-        """
-elif False:
-    RunbookRunbookVersionGroupArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+    """
+    properties: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesArgsDict']]
+    """
+    The properties of the component.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupArgs:
@@ -4289,30 +4175,27 @@ class RunbookRunbookVersionGroupArgs:
         pulumi.set(self, "properties", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesArgsDict(TypedDict):
-        action_on_failure: pulumi.Input[_builtins.str]
-        """
-        The action to be taken in case of a failure.
-        """
-        notification_preferences: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]
-        """
-        Preferences to send notifications on the task activities.
-        """
-        pause_details: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict']]
-        """
-        Pause Details
-        """
-        pre_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Build control flow conditions that determine the relevance of the task execution.
-        """
-        run_on: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnArgsDict']]
-        """
-        The runon conditions
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesArgsDict(TypedDict):
+    action_on_failure: pulumi.Input[_builtins.str]
+    """
+    The action to be taken in case of a failure.
+    """
+    notification_preferences: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]
+    """
+    Preferences to send notifications on the task activities.
+    """
+    pause_details: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict']]
+    """
+    Pause Details
+    """
+    pre_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Build control flow conditions that determine the relevance of the task execution.
+    """
+    run_on: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnArgsDict']]
+    """
+    The runon conditions
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesArgs:
@@ -4400,22 +4283,19 @@ class RunbookRunbookVersionGroupPropertiesArgs:
         pulumi.set(self, "run_on", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict(TypedDict):
-        should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables notification on pause.
-        """
-        should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables or disables notification on Task Failures.
-        """
-        should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables or disables notification on Task Success.
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgsDict(TypedDict):
+    should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables notification on pause.
+    """
+    should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables or disables notification on Task Failures.
+    """
+    should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables or disables notification on Task Success.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgs:
@@ -4472,18 +4352,15 @@ class RunbookRunbookVersionGroupPropertiesNotificationPreferencesArgs:
         pulumi.set(self, "should_notify_on_task_success", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        Pause based On.
-        """
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Time in minutes to apply Pause.
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesPauseDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    Pause based On.
+    """
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Time in minutes to apply Pause.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesPauseDetailsArgs:
@@ -4523,26 +4400,23 @@ class RunbookRunbookVersionGroupPropertiesPauseDetailsArgs:
         pulumi.set(self, "duration_in_minutes", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        Run on based On.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Build control flow conditions that determine the relevance of the task execution against targets.
-        """
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the self hosted instance.
-        """
-        previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
-        """
-        Previous Task Instance Details
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesRunOnArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    Run on based On.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Build control flow conditions that determine the relevance of the task execution against targets.
+    """
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the self hosted instance.
+    """
+    previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
+    """
+    Previous Task Instance Details
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesRunOnArgs:
@@ -4614,22 +4488,19 @@ class RunbookRunbookVersionGroupPropertiesRunOnArgs:
         pulumi.set(self, "previous_task_instance_details", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-        output_variable_details: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
-        """
-        The details of the output variable that will be used for mapping.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource Ocid.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource Type.
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
+    output_variable_details: NotRequired[pulumi.Input['RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
+    """
+    The details of the output variable that will be used for mapping.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource Ocid.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource Type.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs:
@@ -4686,18 +4557,15 @@ class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the output variable whose value has to be mapped.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the task step the output variable belongs to.
-        """
-elif False:
-    RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the output variable whose value has to be mapped.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the task step the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs:
@@ -4738,18 +4606,15 @@ class RunbookRunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputV
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionRollbackWorkflowDetailsArgsDict(TypedDict):
-        scope: pulumi.Input[_builtins.str]
-        """
-        rollback Scope
-        """
-        workflows: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgsDict']]]
-        """
-        Rollback Workflow for the runbook.
-        """
-elif False:
-    RunbookRunbookVersionRollbackWorkflowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionRollbackWorkflowDetailsArgsDict(TypedDict):
+    scope: pulumi.Input[_builtins.str]
+    """
+    rollback Scope
+    """
+    workflows: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgsDict']]]
+    """
+    Rollback Workflow for the runbook.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionRollbackWorkflowDetailsArgs:
@@ -4788,22 +4653,19 @@ class RunbookRunbookVersionRollbackWorkflowDetailsArgs:
         pulumi.set(self, "workflows", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgsDict(TypedDict):
-        group_name: pulumi.Input[_builtins.str]
-        """
-        Name of the group.
-        """
-        steps: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict']]]
-        """
-        Steps within the Group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        Workflow Group  Details.
-        """
-elif False:
-    RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgsDict(TypedDict):
+    group_name: pulumi.Input[_builtins.str]
+    """
+    Name of the group.
+    """
+    steps: pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict']]]
+    """
+    Steps within the Group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Workflow Group  Details.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgs:
@@ -4857,26 +4719,23 @@ class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Content Source Details.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the group.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Provide StepName for the Task.
-        """
-        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Tasks within the Group. Provide the stepName for all applicable tasks.
-        """
-elif False:
-    RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Content Source Details.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the group.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Provide StepName for the Task.
+    """
+    steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Tasks within the Group. Provide the stepName for all applicable tasks.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgs:
@@ -4948,26 +4807,23 @@ class RunbookRunbookVersionRollbackWorkflowDetailsWorkflowStepArgs:
         pulumi.set(self, "steps", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskArgsDict(TypedDict):
-        step_name: pulumi.Input[_builtins.str]
-        """
-        The name of the task step.
-        """
-        task_record_details: pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsArgsDict']
-        """
-        The details of the task.
-        """
-        output_variable_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingArgsDict']]]]
-        """
-        Mapping output variables of previous tasks to the input variables of the current task.
-        """
-        step_properties: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesArgsDict']]
-        """
-        The properties of the component.
-        """
-elif False:
-    RunbookRunbookVersionTaskArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskArgsDict(TypedDict):
+    step_name: pulumi.Input[_builtins.str]
+    """
+    The name of the task step.
+    """
+    task_record_details: pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsArgsDict']
+    """
+    The details of the task.
+    """
+    output_variable_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingArgsDict']]]]
+    """
+    Mapping output variables of previous tasks to the input variables of the current task.
+    """
+    step_properties: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesArgsDict']]
+    """
+    The properties of the component.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskArgs:
@@ -5038,18 +4894,15 @@ class RunbookRunbookVersionTaskArgs:
         pulumi.set(self, "step_properties", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskOutputVariableMappingArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The name of the input variable.
-        """
-        output_variable_details: pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict']
-        """
-        The details of the output variable that will be used for mapping.
-        """
-elif False:
-    RunbookRunbookVersionTaskOutputVariableMappingArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskOutputVariableMappingArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The name of the input variable.
+    """
+    output_variable_details: pulumi.Input['RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict']
+    """
+    The details of the output variable that will be used for mapping.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskOutputVariableMappingArgs:
@@ -5088,18 +4941,15 @@ class RunbookRunbookVersionTaskOutputVariableMappingArgs:
         pulumi.set(self, "output_variable_details", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: pulumi.Input[_builtins.str]
-        """
-        The name of the output variable whose value has to be mapped.
-        """
-        step_name: pulumi.Input[_builtins.str]
-        """
-        The name of the task step the output variable belongs to.
-        """
-elif False:
-    RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: pulumi.Input[_builtins.str]
+    """
+    The name of the output variable whose value has to be mapped.
+    """
+    step_name: pulumi.Input[_builtins.str]
+    """
+    The name of the task step the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs:
@@ -5138,30 +4988,27 @@ class RunbookRunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs:
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesArgsDict(TypedDict):
-        action_on_failure: pulumi.Input[_builtins.str]
-        """
-        The action to be taken in case of a failure.
-        """
-        notification_preferences: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]
-        """
-        Preferences to send notifications on the task activities.
-        """
-        pause_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]
-        """
-        Pause Details
-        """
-        pre_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Build control flow conditions that determine the relevance of the task execution.
-        """
-        run_on: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict']]
-        """
-        The runon conditions
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesArgsDict(TypedDict):
+    action_on_failure: pulumi.Input[_builtins.str]
+    """
+    The action to be taken in case of a failure.
+    """
+    notification_preferences: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]
+    """
+    Preferences to send notifications on the task activities.
+    """
+    pause_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]
+    """
+    Pause Details
+    """
+    pre_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Build control flow conditions that determine the relevance of the task execution.
+    """
+    run_on: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict']]
+    """
+    The runon conditions
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesArgs:
@@ -5249,22 +5096,19 @@ class RunbookRunbookVersionTaskStepPropertiesArgs:
         pulumi.set(self, "run_on", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict(TypedDict):
-        should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables notification on pause.
-        """
-        should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables or disables notification on Task Failures.
-        """
-        should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Enables or disables notification on Task Success.
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict(TypedDict):
+    should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables notification on pause.
+    """
+    should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables or disables notification on Task Failures.
+    """
+    should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Enables or disables notification on Task Success.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgs:
@@ -5321,18 +5165,15 @@ class RunbookRunbookVersionTaskStepPropertiesNotificationPreferencesArgs:
         pulumi.set(self, "should_notify_on_task_success", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        Pause based On.
-        """
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Time in minutes to apply Pause.
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    Pause based On.
+    """
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Time in minutes to apply Pause.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgs:
@@ -5372,26 +5213,23 @@ class RunbookRunbookVersionTaskStepPropertiesPauseDetailsArgs:
         pulumi.set(self, "duration_in_minutes", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        Run on based On.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Build control flow conditions that determine the relevance of the task execution against targets.
-        """
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the self hosted instance.
-        """
-        previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
-        """
-        Previous Task Instance Details
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    Run on based On.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Build control flow conditions that determine the relevance of the task execution against targets.
+    """
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the self hosted instance.
+    """
+    previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
+    """
+    Previous Task Instance Details
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesRunOnArgs:
@@ -5463,22 +5301,19 @@ class RunbookRunbookVersionTaskStepPropertiesRunOnArgs:
         pulumi.set(self, "previous_task_instance_details", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-        output_variable_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
-        """
-        The details of the output variable that will be used for mapping.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource Ocid.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Resource Type.
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
+    output_variable_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
+    """
+    The details of the output variable that will be used for mapping.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource Ocid.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Resource Type.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs:
@@ -5535,18 +5370,15 @@ class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the output variable whose value has to be mapped.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the task step the output variable belongs to.
-        """
-elif False:
-    RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the output variable whose value has to be mapped.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the task step the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs:
@@ -5587,54 +5419,51 @@ class RunbookRunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutp
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
-        scope: pulumi.Input[_builtins.str]
-        """
-        The scope of the task.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The description of the task.
-        """
-        execution_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]
-        """
-        Execution details.
-        """
-        is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is this an Apply Subject Task? Ex. Patch Execution Task
-        """
-        is_copy_to_library_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Make a copy of this task in Library
-        """
-        is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is this a discovery output task?
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the task
-        """
-        os_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OS for the task.
-        """
-        platform: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The platform of the runbook.
-        """
-        properties: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]
-        """
-        The properties of the task.
-        """
-        task_record_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of taskRecord.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
+    scope: pulumi.Input[_builtins.str]
+    """
+    The scope of the task.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The description of the task.
+    """
+    execution_details: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]
+    """
+    Execution details.
+    """
+    is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is this an Apply Subject Task? Ex. Patch Execution Task
+    """
+    is_copy_to_library_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Make a copy of this task in Library
+    """
+    is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is this a discovery output task?
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the task
+    """
+    os_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OS for the task.
+    """
+    platform: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The platform of the runbook.
+    """
+    properties: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]
+    """
+    The properties of the task.
+    """
+    task_record_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of taskRecord.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsArgs:
@@ -5818,59 +5647,59 @@ class RunbookRunbookVersionTaskTaskRecordDetailsArgs:
         pulumi.set(self, "task_record_id", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
-        execution_type: pulumi.Input[_builtins.str]
-        """
-        The action type of the task
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        command: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
-        """
-        config_file: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Catalog Id having config file.
-        """
-        content: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]
-        """
-        Content Source details.
-        """
-        credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
-        """
-        Credentials required for executing the task.
-        """
-        endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Endpoint to be invoked.
-        """
-        is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the Content an executable file?
-        """
-        is_locked: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is the script locked to prevent changes directly in Object Storage?
-        """
-        is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Is read output variable enabled
-        """
-        system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of system variables.
-        """
-        target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the compartment to which the resource belongs to.
-        """
-        variables: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]
-        """
-        The variable of the task. At least one of the dynamicArguments or output needs to be provided.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
+    execution_type: pulumi.Input[_builtins.str]
+    """
+    The action type of the task
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Catalog Id having terraform package.
+    """
+    command: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+    """
+    config_file: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Catalog Id having config file.
+    """
+    content: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]
+    """
+    Content Source details.
+    """
+    credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
+    """
+    Credentials required for executing the task.
+    """
+    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Endpoint to be invoked.
+    """
+    is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the Content an executable file?
+    """
+    is_locked: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is the script locked to prevent changes directly in Object Storage?
+    """
+    is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Is read output variable enabled
+    """
+    system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of system variables.
+    """
+    target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the compartment to which the resource belongs to.
+    """
+    variables: NotRequired[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]
+    """
+    The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
@@ -5890,6 +5719,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
                  variables: Optional[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] execution_type: The action type of the task
+        :param pulumi.Input[_builtins.str] catalog_id: Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] command: Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param pulumi.Input[_builtins.str] config_file: Catalog Id having config file.
         :param pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs'] content: Content Source details.
@@ -5943,6 +5773,9 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -6082,31 +5915,31 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
-        source_type: pulumi.Input[_builtins.str]
-        """
-        Content Source type details.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Bucket Name.
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        checksum: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        md5 checksum of the artifact.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Namespace.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Object Name.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    Content Source type details.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Bucket Name.
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Catalog Id having terraform package.
+    """
+    checksum: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    md5 checksum of the artifact.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Namespace.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Object Name.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
@@ -6120,6 +5953,7 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
         """
         :param pulumi.Input[_builtins.str] source_type: Content Source type details.
         :param pulumi.Input[_builtins.str] bucket: Bucket Name.
+        :param pulumi.Input[_builtins.str] catalog_id: Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] checksum: md5 checksum of the artifact.
         :param pulumi.Input[_builtins.str] namespace: Namespace.
         :param pulumi.Input[_builtins.str] object: Object Name.
@@ -6163,6 +5997,9 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -6206,18 +6043,15 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the resource.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the resource.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
@@ -6258,18 +6092,15 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-        input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
-        """
-        The input variables for the task.
-        """
-        output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of output variables.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
+    input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
+    """
+    The input variables for the task.
+    """
+    output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of output variables.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs:
@@ -6310,22 +6141,19 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs:
         pulumi.set(self, "output_variables", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The description of the argument.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the argument.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Input argument Type.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The description of the argument.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the argument.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Input argument Type.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs:
@@ -6382,18 +6210,15 @@ class RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVa
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict(TypedDict):
-        num_retries: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of retries allowed.
-        """
-        timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The timeout in seconds for the task.
-        """
-elif False:
-    RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgsDict(TypedDict):
+    num_retries: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of retries allowed.
+    """
+    timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The timeout in seconds for the task.
+    """
 
 @pulumi.input_type
 class RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgs:
@@ -6434,14 +6259,11 @@ class RunbookRunbookVersionTaskTaskRecordDetailsPropertiesArgs:
         pulumi.set(self, "timeout_in_seconds", value)
 
 
-if not MYPY:
-    class RunbookVersionExecutionWorkflowDetailsArgsDict(TypedDict):
-        workflows: pulumi.Input[Sequence[pulumi.Input['RunbookVersionExecutionWorkflowDetailsWorkflowArgsDict']]]
-        """
-        (Updatable) Execution Workflow for the runbook.
-        """
-elif False:
-    RunbookVersionExecutionWorkflowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionExecutionWorkflowDetailsArgsDict(TypedDict):
+    workflows: pulumi.Input[Sequence[pulumi.Input['RunbookVersionExecutionWorkflowDetailsWorkflowArgsDict']]]
+    """
+    (Updatable) Execution Workflow for the runbook.
+    """
 
 @pulumi.input_type
 class RunbookVersionExecutionWorkflowDetailsArgs:
@@ -6465,22 +6287,19 @@ class RunbookVersionExecutionWorkflowDetailsArgs:
         pulumi.set(self, "workflows", value)
 
 
-if not MYPY:
-    class RunbookVersionExecutionWorkflowDetailsWorkflowArgsDict(TypedDict):
-        group_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the group.
-        """
-        steps: pulumi.Input[Sequence[pulumi.Input['RunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict']]]
-        """
-        (Updatable) Steps within the Group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Workflow Group  Details.
-        """
-elif False:
-    RunbookVersionExecutionWorkflowDetailsWorkflowArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionExecutionWorkflowDetailsWorkflowArgsDict(TypedDict):
+    group_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the group.
+    """
+    steps: pulumi.Input[Sequence[pulumi.Input['RunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict']]]
+    """
+    (Updatable) Steps within the Group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Workflow Group  Details.
+    """
 
 @pulumi.input_type
 class RunbookVersionExecutionWorkflowDetailsWorkflowArgs:
@@ -6534,26 +6353,23 @@ class RunbookVersionExecutionWorkflowDetailsWorkflowArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source Details.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the group.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provide StepName for the Task.
-        """
-        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
-        """
-elif False:
-    RunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source Details.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the group.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provide StepName for the Task.
+    """
+    steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Tasks within the Group. Provide the stepName for all applicable tasks.
+    """
 
 @pulumi.input_type
 class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs:
@@ -6625,25 +6441,22 @@ class RunbookVersionExecutionWorkflowDetailsWorkflowStepArgs:
         pulumi.set(self, "steps", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
-        inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
-        Executes tasks across resources in a rolling order.
-        >>>>>>> theirs
-        """
-        properties: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesArgsDict']]
-        """
-        (Updatable) The properties of the component.
-        """
-elif False:
-    RunbookVersionGroupArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
+    inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
+    Executes tasks across resources in a rolling order.
+    >>>>>>> theirs
+    """
+    properties: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesArgsDict']]
+    """
+    (Updatable) The properties of the component.
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupArgs:
@@ -6704,31 +6517,28 @@ class RunbookVersionGroupArgs:
         pulumi.set(self, "properties", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesArgsDict(TypedDict):
-        action_on_failure: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action to be taken in case of a failure.
-        """
-        notification_preferences: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]
-        """
-        (Updatable) Preferences to send notifications on the task activities.
-        """
-        pause_details: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesPauseDetailsArgsDict']]
-        """
-        (Updatable) Pause Details
-        """
-        pre_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Build control flow conditions that determine the relevance of the
-        task execution.
-        """
-        run_on: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesRunOnArgsDict']]
-        """
-        (Updatable) The runon conditions
-        """
-elif False:
-    RunbookVersionGroupPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesArgsDict(TypedDict):
+    action_on_failure: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action to be taken in case of a failure.
+    """
+    notification_preferences: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesNotificationPreferencesArgsDict']]
+    """
+    (Updatable) Preferences to send notifications on the task activities.
+    """
+    pause_details: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesPauseDetailsArgsDict']]
+    """
+    (Updatable) Pause Details
+    """
+    pre_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Build control flow conditions that determine the relevance of the
+    task execution.
+    """
+    run_on: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesRunOnArgsDict']]
+    """
+    (Updatable) The runon conditions
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesArgs:
@@ -6818,23 +6628,20 @@ class RunbookVersionGroupPropertiesArgs:
         pulumi.set(self, "run_on", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesNotificationPreferencesArgsDict(TypedDict):
-        should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables notification on pause.
-        """
-        should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Task
-        Failures.
-        """
-        should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Task Success.
-        """
-elif False:
-    RunbookVersionGroupPropertiesNotificationPreferencesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesNotificationPreferencesArgsDict(TypedDict):
+    should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables notification on pause.
+    """
+    should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Task
+    Failures.
+    """
+    should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Task Success.
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesNotificationPreferencesArgs:
@@ -6893,18 +6700,15 @@ class RunbookVersionGroupPropertiesNotificationPreferencesArgs:
         pulumi.set(self, "should_notify_on_task_success", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesPauseDetailsArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Pause based On.
-        """
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Time in minutes to apply Pause.
-        """
-elif False:
-    RunbookVersionGroupPropertiesPauseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesPauseDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Pause based On.
+    """
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Time in minutes to apply Pause.
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesPauseDetailsArgs:
@@ -6944,28 +6748,25 @@ class RunbookVersionGroupPropertiesPauseDetailsArgs:
         pulumi.set(self, "duration_in_minutes", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Run on based On.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Build control flow conditions that
-        determine the relevance of the task execution.
-        """
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the self hosted instance.
-        """
-        previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
-        """
-        (Updatable) Previous Task
-        Instance Details
-        """
-elif False:
-    RunbookVersionGroupPropertiesRunOnArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesRunOnArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Run on based On.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Build control flow conditions that
+    determine the relevance of the task execution.
+    """
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the self hosted instance.
+    """
+    previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
+    """
+    (Updatable) Previous Task
+    Instance Details
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesRunOnArgs:
@@ -7041,23 +6842,20 @@ class RunbookVersionGroupPropertiesRunOnArgs:
         pulumi.set(self, "previous_task_instance_details", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-        output_variable_details: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
-        """
-        (Updatable) The details of
-        the output variable that will be used for mapping.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource Ocid.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource Type.
-        """
-elif False:
-    RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
+    output_variable_details: NotRequired[pulumi.Input['RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
+    """
+    (Updatable) The details of
+    the output variable that will be used for mapping.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource Ocid.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource Type.
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs:
@@ -7116,20 +6914,17 @@ class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the
-        output variable whose value has to be mapped.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the task step
-        the output variable belongs to.
-        """
-elif False:
-    RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the
+    output variable whose value has to be mapped.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the task step
+    the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs:
@@ -7174,18 +6969,15 @@ class RunbookVersionGroupPropertiesRunOnPreviousTaskInstanceDetailOutputVariable
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookVersionRollbackWorkflowDetailsArgsDict(TypedDict):
-        scope: pulumi.Input[_builtins.str]
-        """
-        (Updatable) rollback Scope
-        """
-        workflows: pulumi.Input[Sequence[pulumi.Input['RunbookVersionRollbackWorkflowDetailsWorkflowArgsDict']]]
-        """
-        (Updatable) Rollback Workflow for the runbook.
-        """
-elif False:
-    RunbookVersionRollbackWorkflowDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionRollbackWorkflowDetailsArgsDict(TypedDict):
+    scope: pulumi.Input[_builtins.str]
+    """
+    (Updatable) rollback Scope
+    """
+    workflows: pulumi.Input[Sequence[pulumi.Input['RunbookVersionRollbackWorkflowDetailsWorkflowArgsDict']]]
+    """
+    (Updatable) Rollback Workflow for the runbook.
+    """
 
 @pulumi.input_type
 class RunbookVersionRollbackWorkflowDetailsArgs:
@@ -7224,22 +7016,19 @@ class RunbookVersionRollbackWorkflowDetailsArgs:
         pulumi.set(self, "workflows", value)
 
 
-if not MYPY:
-    class RunbookVersionRollbackWorkflowDetailsWorkflowArgsDict(TypedDict):
-        group_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the group.
-        """
-        steps: pulumi.Input[Sequence[pulumi.Input['RunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict']]]
-        """
-        (Updatable) Steps within the Group.
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Workflow Group Details.
-        """
-elif False:
-    RunbookVersionRollbackWorkflowDetailsWorkflowArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionRollbackWorkflowDetailsWorkflowArgsDict(TypedDict):
+    group_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the group.
+    """
+    steps: pulumi.Input[Sequence[pulumi.Input['RunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict']]]
+    """
+    (Updatable) Steps within the Group.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Workflow Group Details.
+    """
 
 @pulumi.input_type
 class RunbookVersionRollbackWorkflowDetailsWorkflowArgs:
@@ -7293,27 +7082,24 @@ class RunbookVersionRollbackWorkflowDetailsWorkflowArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source Details.
-        """
-        group_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Name of the group.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provide StepName for the Task.
-        """
-        steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Tasks within the Group. Provide the
-        stepName for all applicable tasks.
-        """
-elif False:
-    RunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionRollbackWorkflowDetailsWorkflowStepArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source Details.
+    """
+    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Name of the group.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provide StepName for the Task.
+    """
+    steps: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Tasks within the Group. Provide the
+    stepName for all applicable tasks.
+    """
 
 @pulumi.input_type
 class RunbookVersionRollbackWorkflowDetailsWorkflowStepArgs:
@@ -7387,26 +7173,23 @@ class RunbookVersionRollbackWorkflowDetailsWorkflowStepArgs:
         pulumi.set(self, "steps", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskArgsDict(TypedDict):
-        step_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the task step.
-        """
-        task_record_details: pulumi.Input['RunbookVersionTaskTaskRecordDetailsArgsDict']
-        """
-        (Updatable) The details of the task.
-        """
-        output_variable_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskOutputVariableMappingArgsDict']]]]
-        """
-        (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
-        """
-        step_properties: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesArgsDict']]
-        """
-        (Updatable) The properties of the component.
-        """
-elif False:
-    RunbookVersionTaskArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskArgsDict(TypedDict):
+    step_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the task step.
+    """
+    task_record_details: pulumi.Input['RunbookVersionTaskTaskRecordDetailsArgsDict']
+    """
+    (Updatable) The details of the task.
+    """
+    output_variable_mappings: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskOutputVariableMappingArgsDict']]]]
+    """
+    (Updatable) Mapping output variables of previous tasks to the input variables of the current task.
+    """
+    step_properties: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesArgsDict']]
+    """
+    (Updatable) The properties of the component.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskArgs:
@@ -7477,18 +7260,15 @@ class RunbookVersionTaskArgs:
         pulumi.set(self, "step_properties", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskOutputVariableMappingArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the input variable.
-        """
-        output_variable_details: pulumi.Input['RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict']
-        """
-        (Updatable) The details of the output variable that will be used for mapping.
-        """
-elif False:
-    RunbookVersionTaskOutputVariableMappingArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskOutputVariableMappingArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the input variable.
+    """
+    output_variable_details: pulumi.Input['RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict']
+    """
+    (Updatable) The details of the output variable that will be used for mapping.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskOutputVariableMappingArgs:
@@ -7527,18 +7307,15 @@ class RunbookVersionTaskOutputVariableMappingArgs:
         pulumi.set(self, "output_variable_details", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the output variable whose value has to be mapped.
-        """
-        step_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the task step the output variable belongs to.
-        """
-elif False:
-    RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the output variable whose value has to be mapped.
+    """
+    step_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the task step the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs:
@@ -7577,30 +7354,27 @@ class RunbookVersionTaskOutputVariableMappingOutputVariableDetailsArgs:
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesArgsDict(TypedDict):
-        action_on_failure: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action to be taken in case of a failure.
-        """
-        notification_preferences: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]
-        """
-        (Updatable) Preferences to send notifications on the task activities.
-        """
-        pause_details: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]
-        """
-        (Updatable) Pause Details
-        """
-        pre_condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Build control flow conditions that determine the relevance of the task execution.
-        """
-        run_on: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnArgsDict']]
-        """
-        (Updatable) The runon conditions
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesArgsDict(TypedDict):
+    action_on_failure: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action to be taken in case of a failure.
+    """
+    notification_preferences: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict']]
+    """
+    (Updatable) Preferences to send notifications on the task activities.
+    """
+    pause_details: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesPauseDetailsArgsDict']]
+    """
+    (Updatable) Pause Details
+    """
+    pre_condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Build control flow conditions that determine the relevance of the task execution.
+    """
+    run_on: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnArgsDict']]
+    """
+    (Updatable) The runon conditions
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesArgs:
@@ -7688,22 +7462,19 @@ class RunbookVersionTaskStepPropertiesArgs:
         pulumi.set(self, "run_on", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict(TypedDict):
-        should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables notification on pause.
-        """
-        should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Task Failures.
-        """
-        should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables or disables notification on Task Success.
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesNotificationPreferencesArgsDict(TypedDict):
+    should_notify_on_pause: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables notification on pause.
+    """
+    should_notify_on_task_failure: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Task Failures.
+    """
+    should_notify_on_task_success: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables or disables notification on Task Success.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesNotificationPreferencesArgs:
@@ -7760,18 +7531,15 @@ class RunbookVersionTaskStepPropertiesNotificationPreferencesArgs:
         pulumi.set(self, "should_notify_on_task_success", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesPauseDetailsArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Pause based On.
-        """
-        duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Time in minutes to apply Pause.
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesPauseDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesPauseDetailsArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Pause based On.
+    """
+    duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Time in minutes to apply Pause.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesPauseDetailsArgs:
@@ -7811,26 +7579,23 @@ class RunbookVersionTaskStepPropertiesPauseDetailsArgs:
         pulumi.set(self, "duration_in_minutes", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Run on based On.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
-        """
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the self hosted instance.
-        """
-        previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
-        """
-        (Updatable) Previous Task Instance Details
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesRunOnArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesRunOnArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Run on based On.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Build control flow conditions that determine the relevance of the task execution against targets.
+    """
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the self hosted instance.
+    """
+    previous_task_instance_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict']]]]
+    """
+    (Updatable) Previous Task Instance Details
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesRunOnArgs:
@@ -7902,22 +7667,19 @@ class RunbookVersionTaskStepPropertiesRunOnArgs:
         pulumi.set(self, "previous_task_instance_details", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
-        output_variable_details: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
-        """
-        (Updatable) The details of the output variable that will be used for mapping.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource Ocid.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Resource Type.
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgsDict(TypedDict):
+    output_variable_details: NotRequired[pulumi.Input['RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict']]
+    """
+    (Updatable) The details of the output variable that will be used for mapping.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource Ocid.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Resource Type.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs:
@@ -7974,18 +7736,15 @@ class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailArgs:
         pulumi.set(self, "resource_type", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
-        output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the output variable whose value has to be mapped.
-        """
-        step_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the task step the output variable belongs to.
-        """
-elif False:
-    RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgsDict(TypedDict):
+    output_variable_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the output variable whose value has to be mapped.
+    """
+    step_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the task step the output variable belongs to.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVariableDetailsArgs:
@@ -8026,54 +7785,51 @@ class RunbookVersionTaskStepPropertiesRunOnPreviousTaskInstanceDetailOutputVaria
         pulumi.set(self, "step_name", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
-        scope: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The scope of the task.
-        """
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the task.
-        """
-        execution_details: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]
-        """
-        (Updatable) Execution details.
-        """
-        is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
-        """
-        is_copy_to_library_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Make a copy of this task in Library
-        """
-        is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is this a discovery output task?
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the task
-        """
-        os_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OS for the task.
-        """
-        platform: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The platform of the runbook.
-        """
-        properties: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]
-        """
-        (Updatable) The properties of the task.
-        """
-        task_record_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The ID of taskRecord.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsArgsDict(TypedDict):
+    scope: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The scope of the task.
+    """
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the task.
+    """
+    execution_details: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict']]
+    """
+    (Updatable) Execution details.
+    """
+    is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is this an Apply Subject Task? Ex. Patch Execution Task
+    """
+    is_copy_to_library_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Make a copy of this task in Library
+    """
+    is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is this a discovery output task?
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the task
+    """
+    os_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OS for the task.
+    """
+    platform: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The platform of the runbook.
+    """
+    properties: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict']]
+    """
+    (Updatable) The properties of the task.
+    """
+    task_record_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of taskRecord.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsArgs:
@@ -8257,59 +8013,59 @@ class RunbookVersionTaskTaskRecordDetailsArgs:
         pulumi.set(self, "task_record_id", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
-        execution_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action type of the task
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        command: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
-        """
-        config_file: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Catalog Id having config file.
-        """
-        content: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]
-        """
-        (Updatable) Content Source details.
-        """
-        credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
-        """
-        (Updatable) Credentials required for executing the task.
-        """
-        endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Endpoint to be invoked.
-        """
-        is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is the Content an executable file?
-        """
-        is_locked: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is the script locked to prevent changes directly in Object Storage?
-        """
-        is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is read output variable enabled
-        """
-        system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of system variables.
-        """
-        target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the compartment to which the resource belongs to.
-        """
-        variables: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]
-        """
-        (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
+    execution_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action type of the task
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having terraform package.
+    """
+    command: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+    """
+    config_file: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having config file.
+    """
+    content: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict']]
+    """
+    (Updatable) Content Source details.
+    """
+    credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
+    """
+    (Updatable) Credentials required for executing the task.
+    """
+    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Endpoint to be invoked.
+    """
+    is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is the Content an executable file?
+    """
+    is_locked: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is the script locked to prevent changes directly in Object Storage?
+    """
+    is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is read output variable enabled
+    """
+    system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of system variables.
+    """
+    target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the compartment to which the resource belongs to.
+    """
+    variables: NotRequired[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict']]
+    """
+    (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
@@ -8329,6 +8085,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
                  variables: Optional[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] execution_type: (Updatable) The action type of the task
+        :param pulumi.Input[_builtins.str] catalog_id: (Updatable) Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param pulumi.Input[_builtins.str] config_file: (Updatable) Catalog Id having config file.
         :param pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs'] content: (Updatable) Content Source details.
@@ -8382,6 +8139,9 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -8521,31 +8281,31 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source type details.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Bucket Name.
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        checksum: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) md5 checksum of the artifact.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Object Name.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source type details.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Bucket Name.
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having terraform package.
+    """
+    checksum: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) md5 checksum of the artifact.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Object Name.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
@@ -8559,6 +8319,7 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
         """
         :param pulumi.Input[_builtins.str] source_type: (Updatable) Content Source type details.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Bucket Name.
+        :param pulumi.Input[_builtins.str] catalog_id: (Updatable) Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] checksum: (Updatable) md5 checksum of the artifact.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace.
         :param pulumi.Input[_builtins.str] object: (Updatable) Object Name.
@@ -8602,6 +8363,9 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -8645,18 +8409,15 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
@@ -8697,18 +8458,15 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsCredentialArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-        input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
-        """
-        (Updatable) The input variables for the task.
-        """
-        output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of output variables.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
+    input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
+    """
+    (Updatable) The input variables for the task.
+    """
+    output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of output variables.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs:
@@ -8749,22 +8507,19 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesArgs:
         pulumi.set(self, "output_variables", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the argument.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the argument.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Input argument Type.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the argument.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the argument.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Input argument Type.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableArgs:
@@ -8821,18 +8576,15 @@ class RunbookVersionTaskTaskRecordDetailsExecutionDetailsVariablesInputVariableA
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict(TypedDict):
-        num_retries: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The number of retries allowed.
-        """
-        timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The timeout in seconds for the task.
-        """
-elif False:
-    RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class RunbookVersionTaskTaskRecordDetailsPropertiesArgsDict(TypedDict):
+    num_retries: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The number of retries allowed.
+    """
+    timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The timeout in seconds for the task.
+    """
 
 @pulumi.input_type
 class RunbookVersionTaskTaskRecordDetailsPropertiesArgs:
@@ -8873,34 +8625,31 @@ class RunbookVersionTaskTaskRecordDetailsPropertiesArgs:
         pulumi.set(self, "timeout_in_seconds", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionActionGroupArgsDict(TypedDict):
-        fleet_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) ID of the fleet
-        """
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Action Group kind
-        """
-        runbook_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) ID of the runbook
-        """
-        runbook_version_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the runbook version
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        sequence: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Sequence of the Action Group. Action groups will be executed in a seuential order. All Action Groups having the same sequence will be executed parallely. If no value is provided a default value of 1 will be given.
-        """
-elif False:
-    SchedulerDefinitionActionGroupArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulerDefinitionActionGroupArgsDict(TypedDict):
+    fleet_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) ID of the fleet
+    """
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Action Group kind
+    """
+    runbook_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) ID of the runbook
+    """
+    runbook_version_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the runbook version
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    sequence: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Sequence of the Action Group. Action groups will be executed in a seuential order. All Action Groups having the same sequence will be executed parallely. If no value is provided a default value of 1 will be given.
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionActionGroupArgs:
@@ -9001,22 +8750,19 @@ class SchedulerDefinitionActionGroupArgs:
         pulumi.set(self, "sequence", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionRunBookArgsDict(TypedDict):
-        runbook_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The ID of the Runbook
-        """
-        runbook_version_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The runbook version name
-        """
-        input_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgsDict']]]]
-        """
-        (Updatable) Input Parameters for the Task
-        """
-elif False:
-    SchedulerDefinitionRunBookArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulerDefinitionRunBookArgsDict(TypedDict):
+    runbook_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The ID of the Runbook
+    """
+    runbook_version_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The runbook version name
+    """
+    input_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgsDict']]]]
+    """
+    (Updatable) Input Parameters for the Task
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionRunBookArgs:
@@ -9071,18 +8817,15 @@ class SchedulerDefinitionRunBookArgs:
         pulumi.set(self, "input_parameters", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionRunBookInputParameterArgsDict(TypedDict):
-        step_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) stepName for which the input parameters are provided
-        """
-        arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentArgsDict']]]]
-        """
-        (Updatable) Arguments for the Task
-        """
-elif False:
-    SchedulerDefinitionRunBookInputParameterArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulerDefinitionRunBookInputParameterArgsDict(TypedDict):
+    step_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) stepName for which the input parameters are provided
+    """
+    arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentArgsDict']]]]
+    """
+    (Updatable) Arguments for the Task
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionRunBookInputParameterArgs:
@@ -9122,26 +8865,23 @@ class SchedulerDefinitionRunBookInputParameterArgs:
         pulumi.set(self, "arguments", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionRunBookInputParameterArgumentArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Task argument kind
-        """
-        name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the input variable
-        """
-        content: NotRequired[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict']]
-        """
-        (Updatable) Content Source details.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The task input
-        """
-elif False:
-    SchedulerDefinitionRunBookInputParameterArgumentArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulerDefinitionRunBookInputParameterArgumentArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Task argument kind
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the input variable
+    """
+    content: NotRequired[pulumi.Input['SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict']]
+    """
+    (Updatable) Content Source details.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The task input
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionRunBookInputParameterArgumentArgs:
@@ -9212,30 +8952,27 @@ class SchedulerDefinitionRunBookInputParameterArgumentArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Bucket Name.
-        """
-        checksum: pulumi.Input[_builtins.str]
-        """
-        (Updatable) md5 checksum of the artifact.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Namespace.
-        """
-        object: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Object Name.
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source type details.
-        """
-elif False:
-    SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict: TypeAlias = Mapping[str, Any]
+class SchedulerDefinitionRunBookInputParameterArgumentContentArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Bucket Name.
+    """
+    checksum: pulumi.Input[_builtins.str]
+    """
+    (Updatable) md5 checksum of the artifact.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Namespace.
+    """
+    object: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Object Name.
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source type details.
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionRunBookInputParameterArgumentContentArgs:
@@ -9319,34 +9056,31 @@ class SchedulerDefinitionRunBookInputParameterArgumentContentArgs:
         pulumi.set(self, "source_type", value)
 
 
-if not MYPY:
-    class SchedulerDefinitionScheduleArgsDict(TypedDict):
-        execution_startdate: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
-        """
-        type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Schedule Type
+class SchedulerDefinitionScheduleArgsDict(TypedDict):
+    execution_startdate: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Schedule Type
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Duration of the schedule.
-        """
-        maintenance_window_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Provide MaintenanceWindowId
-        """
-        recurrences: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Recurrence rule specification if recurring
-        """
-elif False:
-    SchedulerDefinitionScheduleArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Duration of the schedule.
+    """
+    maintenance_window_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Provide MaintenanceWindowId
+    """
+    recurrences: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Recurrence rule specification if recurring
+    """
 
 @pulumi.input_type
 class SchedulerDefinitionScheduleArgs:
@@ -9441,42 +9175,39 @@ class SchedulerDefinitionScheduleArgs:
         pulumi.set(self, "recurrences", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsArgsDict(TypedDict):
-        execution_details: pulumi.Input['TaskRecordDetailsExecutionDetailsArgsDict']
-        """
-        (Updatable) Execution details.
-        """
-        scope: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The scope of the task
-        """
-        is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
-        """
-        is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is this a discovery output task?
-        """
-        operation: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The lifecycle operation performed by the runbook.
-        """
-        os_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OS for the task
-        """
-        platform: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The platform of the runbook.
-        """
-        properties: NotRequired[pulumi.Input['TaskRecordDetailsPropertiesArgsDict']]
-        """
-        (Updatable) The properties of the task.
-        """
-elif False:
-    TaskRecordDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsArgsDict(TypedDict):
+    execution_details: pulumi.Input['TaskRecordDetailsExecutionDetailsArgsDict']
+    """
+    (Updatable) Execution details.
+    """
+    scope: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The scope of the task
+    """
+    is_apply_subject_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is this an Apply Subject Task?  Set this to true for a Patch Execution Task which applies patches(subjects) on a target.
+    """
+    is_discovery_output_task: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is this a discovery output task?
+    """
+    operation: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The lifecycle operation performed by the runbook.
+    """
+    os_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OS for the task
+    """
+    platform: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The platform of the runbook.
+    """
+    properties: NotRequired[pulumi.Input['TaskRecordDetailsPropertiesArgsDict']]
+    """
+    (Updatable) The properties of the task.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsArgs:
@@ -9611,59 +9342,59 @@ class TaskRecordDetailsArgs:
         pulumi.set(self, "properties", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
-        execution_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The action type of the task
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        command: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
-        """
-        config_file: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Catalog Id having config file.
-        """
-        content: NotRequired[pulumi.Input['TaskRecordDetailsExecutionDetailsContentArgsDict']]
-        """
-        (Updatable) Content Source details.
-        """
-        credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
-        """
-        (Updatable) Credentials required for executing the task.
-        """
-        endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Endpoint to be invoked.
-        """
-        is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is the Content an executable file?
-        """
-        is_locked: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is the script locked to prevent changes directly in Object Storage?
-        """
-        is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Is read output variable enabled
-        """
-        system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of system variables.
-        """
-        target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the compartment to which the resource belongs to.
-        """
-        variables: NotRequired[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesArgsDict']]
-        """
-        (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
-        """
-elif False:
-    TaskRecordDetailsExecutionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsExecutionDetailsArgsDict(TypedDict):
+    execution_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The action type of the task
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having terraform package.
+    """
+    command: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
+    """
+    config_file: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having config file.
+    """
+    content: NotRequired[pulumi.Input['TaskRecordDetailsExecutionDetailsContentArgsDict']]
+    """
+    (Updatable) Content Source details.
+    """
+    credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsCredentialArgsDict']]]]
+    """
+    (Updatable) Credentials required for executing the task.
+    """
+    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Endpoint to be invoked.
+    """
+    is_executable_content: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is the Content an executable file?
+    """
+    is_locked: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is the script locked to prevent changes directly in Object Storage?
+    """
+    is_read_output_variable_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Is read output variable enabled
+    """
+    system_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of system variables.
+    """
+    target_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the compartment to which the resource belongs to.
+    """
+    variables: NotRequired[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesArgsDict']]
+    """
+    (Updatable) The variable of the task. At least one of the dynamicArguments or output needs to be provided.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsExecutionDetailsArgs:
@@ -9683,6 +9414,7 @@ class TaskRecordDetailsExecutionDetailsArgs:
                  variables: Optional[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] execution_type: (Updatable) The action type of the task
+        :param pulumi.Input[_builtins.str] catalog_id: (Updatable) Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] command: (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
         :param pulumi.Input[_builtins.str] config_file: (Updatable) Catalog Id having config file.
         :param pulumi.Input['TaskRecordDetailsExecutionDetailsContentArgs'] content: (Updatable) Content Source details.
@@ -9736,6 +9468,9 @@ class TaskRecordDetailsExecutionDetailsArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -9875,31 +9610,31 @@ class TaskRecordDetailsExecutionDetailsArgs:
         pulumi.set(self, "variables", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
-        source_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Content Source type details.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Bucket Name.
-        """
-        catalog_id: NotRequired[pulumi.Input[_builtins.str]]
-        checksum: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) md5 checksum of the artifact.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Namespace.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Object Name.
-        """
-elif False:
-    TaskRecordDetailsExecutionDetailsContentArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsExecutionDetailsContentArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Content Source type details.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Bucket Name.
+    """
+    catalog_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Catalog Id having terraform package.
+    """
+    checksum: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) md5 checksum of the artifact.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Namespace.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Object Name.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsExecutionDetailsContentArgs:
@@ -9913,6 +9648,7 @@ class TaskRecordDetailsExecutionDetailsContentArgs:
         """
         :param pulumi.Input[_builtins.str] source_type: (Updatable) Content Source type details.
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Bucket Name.
+        :param pulumi.Input[_builtins.str] catalog_id: (Updatable) Catalog Id having terraform package.
         :param pulumi.Input[_builtins.str] checksum: (Updatable) md5 checksum of the artifact.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace.
         :param pulumi.Input[_builtins.str] object: (Updatable) Object Name.
@@ -9956,6 +9692,9 @@ class TaskRecordDetailsExecutionDetailsContentArgs:
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Catalog Id having terraform package.
+        """
         return pulumi.get(self, "catalog_id")
 
     @catalog_id.setter
@@ -9999,18 +9738,15 @@ class TaskRecordDetailsExecutionDetailsContentArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the resource.
-        """
-elif False:
-    TaskRecordDetailsExecutionDetailsCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsExecutionDetailsCredentialArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the resource.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsExecutionDetailsCredentialArgs:
@@ -10051,18 +9787,15 @@ class TaskRecordDetailsExecutionDetailsCredentialArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
-        input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
-        """
-        (Updatable) The input variables for the task.
-        """
-        output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of output variables.
-        """
-elif False:
-    TaskRecordDetailsExecutionDetailsVariablesArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsExecutionDetailsVariablesArgsDict(TypedDict):
+    input_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict']]]]
+    """
+    (Updatable) The input variables for the task.
+    """
+    output_variables: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of output variables.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsExecutionDetailsVariablesArgs:
@@ -10103,22 +9836,19 @@ class TaskRecordDetailsExecutionDetailsVariablesArgs:
         pulumi.set(self, "output_variables", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
-        description: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The description of the argument.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the argument.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Input argument Type.
-        """
-elif False:
-    TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsExecutionDetailsVariablesInputVariableArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The description of the argument.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the argument.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Input argument Type.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsExecutionDetailsVariablesInputVariableArgs:
@@ -10175,18 +9905,15 @@ class TaskRecordDetailsExecutionDetailsVariablesInputVariableArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class TaskRecordDetailsPropertiesArgsDict(TypedDict):
-        num_retries: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The number of retries allowed.
-        """
-        timeout_in_seconds: pulumi.Input[_builtins.int]
-        """
-        (Updatable) The timeout in seconds for the task.
-        """
-elif False:
-    TaskRecordDetailsPropertiesArgsDict: TypeAlias = Mapping[str, Any]
+class TaskRecordDetailsPropertiesArgsDict(TypedDict):
+    num_retries: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The number of retries allowed.
+    """
+    timeout_in_seconds: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The timeout in seconds for the task.
+    """
 
 @pulumi.input_type
 class TaskRecordDetailsPropertiesArgs:
@@ -10225,13 +9952,10 @@ class TaskRecordDetailsPropertiesArgs:
         pulumi.set(self, "timeout_in_seconds", value)
 
 
-if not MYPY:
-    class GetAnnouncementsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAnnouncementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAnnouncementsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAnnouncementsFilterArgs:
@@ -10272,13 +9996,10 @@ class GetAnnouncementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCatalogItemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCatalogItemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCatalogItemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCatalogItemsFilterArgs:
@@ -10319,13 +10040,10 @@ class GetCatalogItemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCompliancePoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCompliancePoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCompliancePoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCompliancePoliciesFilterArgs:
@@ -10366,13 +10084,10 @@ class GetCompliancePoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCompliancePolicyRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCompliancePolicyRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCompliancePolicyRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCompliancePolicyRulesFilterArgs:
@@ -10413,13 +10128,10 @@ class GetCompliancePolicyRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetComplianceRecordCountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetComplianceRecordCountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetComplianceRecordCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetComplianceRecordCountsFilterArgs:
@@ -10460,13 +10172,10 @@ class GetComplianceRecordCountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetComplianceRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetComplianceRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetComplianceRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetComplianceRecordsFilterArgs:
@@ -10507,16 +10216,13 @@ class GetComplianceRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetCredentialsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the variable.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetCredentialsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetCredentialsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the variable.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetCredentialsFilterArgs:
@@ -10563,13 +10269,10 @@ class GetFleetCredentialsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetProductsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetProductsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetProductsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetProductsFilterArgs:
@@ -10610,13 +10313,10 @@ class GetFleetProductsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetPropertiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetPropertiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetPropertiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetPropertiesFilterArgs:
@@ -10657,13 +10357,10 @@ class GetFleetPropertiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetResourcesFilterArgs:
@@ -10704,13 +10401,10 @@ class GetFleetResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetTargetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetTargetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetTargetsFilterArgs:
@@ -10751,16 +10445,13 @@ class GetFleetTargetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the variable.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the variable.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetsFilterArgs:
@@ -10807,13 +10498,10 @@ class GetFleetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInstalledPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInstalledPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInstalledPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInstalledPatchesFilterArgs:
@@ -10854,16 +10542,13 @@ class GetInstalledPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInventoryRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the inventory target property.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInventoryRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInventoryRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the inventory target property.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInventoryRecordsFilterArgs:
@@ -10910,13 +10595,10 @@ class GetInventoryRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInventoryResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInventoryResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInventoryResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInventoryResourcesFilterArgs:
@@ -10957,13 +10639,10 @@ class GetInventoryResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMaintenanceWindowsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMaintenanceWindowsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMaintenanceWindowsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMaintenanceWindowsFilterArgs:
@@ -11004,13 +10683,10 @@ class GetMaintenanceWindowsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedEntityCountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedEntityCountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedEntityCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedEntityCountsFilterArgs:
@@ -11051,13 +10727,10 @@ class GetManagedEntityCountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOnboardingPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOnboardingPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOnboardingPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOnboardingPoliciesFilterArgs:
@@ -11098,13 +10771,10 @@ class GetOnboardingPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOnboardingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOnboardingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOnboardingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOnboardingsFilterArgs:
@@ -11145,16 +10815,13 @@ class GetOnboardingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPatchesFilterArgs:
@@ -11201,13 +10868,10 @@ class GetPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPlatformConfigurationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPlatformConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPlatformConfigurationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPlatformConfigurationsFilterArgs:
@@ -11248,16 +10912,13 @@ class GetPlatformConfigurationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPropertiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        """
-        Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
-        """
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPropertiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPropertiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    """
+    Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
+    """
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPropertiesFilterArgs:
@@ -11304,13 +10965,10 @@ class GetPropertiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProvisionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProvisionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProvisionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProvisionsFilterArgs:
@@ -11351,13 +11009,10 @@ class GetProvisionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecommendedPatchesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecommendedPatchesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecommendedPatchesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecommendedPatchesFilterArgs:
@@ -11398,16 +11053,13 @@ class GetRecommendedPatchesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReportMetadataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of Report.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReportMetadataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReportMetadataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of Report.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReportMetadataFilterArgs:
@@ -11454,13 +11106,10 @@ class GetReportMetadataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunbookExportStatusesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunbookExportStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunbookExportStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunbookExportStatusesFilterArgs:
@@ -11501,13 +11150,10 @@ class GetRunbookExportStatusesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunbookImportStatusesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunbookImportStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunbookImportStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunbookImportStatusesFilterArgs:
@@ -11548,16 +11194,13 @@ class GetRunbookImportStatusesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunbookVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunbookVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunbookVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunbookVersionsFilterArgs:
@@ -11604,16 +11247,13 @@ class GetRunbookVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRunbooksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the task
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRunbooksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRunbooksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the task
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRunbooksFilterArgs:
@@ -11660,13 +11300,10 @@ class GetRunbooksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerDefinitionScheduledFleetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerDefinitionScheduledFleetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerDefinitionScheduledFleetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerDefinitionScheduledFleetsFilterArgs:
@@ -11707,16 +11344,13 @@ class GetSchedulerDefinitionScheduledFleetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerDefinitionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the input variable
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerDefinitionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the input variable
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerDefinitionsFilterArgs:
@@ -11763,13 +11397,10 @@ class GetSchedulerDefinitionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerExecutionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerExecutionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerExecutionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerExecutionsFilterArgs:
@@ -11810,13 +11441,10 @@ class GetSchedulerExecutionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerJobCountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerJobCountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerJobCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerJobCountsFilterArgs:
@@ -11857,13 +11485,10 @@ class GetSchedulerJobCountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerJobJobActivityResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerJobJobActivityResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerJobJobActivityResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerJobJobActivityResourcesFilterArgs:
@@ -11904,13 +11529,10 @@ class GetSchedulerJobJobActivityResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSchedulerJobJobActivityStepsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulerJobJobActivityStepsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulerJobJobActivityStepsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulerJobJobActivityStepsFilterArgs:
@@ -11951,16 +11573,13 @@ class GetSchedulerJobJobActivityStepsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetComponentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Target Component Name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetComponentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetComponentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Target Component Name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetComponentsFilterArgs:
@@ -12007,16 +11626,13 @@ class GetTargetComponentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTargetPropertiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the property.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTargetPropertiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTargetPropertiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the property.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTargetPropertiesFilterArgs:
@@ -12063,16 +11679,13 @@ class GetTargetPropertiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTaskRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the argument.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTaskRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTaskRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the argument.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTaskRecordsFilterArgs:

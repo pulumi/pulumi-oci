@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/ResourceAnalyticsInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a ResourceAnalyticsInstance.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// ResourceAnalyticsInstances can be imported using the `id`, e.g.
+    /// ResourceAnalyticsInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance test_resource_analytics_instance "id"

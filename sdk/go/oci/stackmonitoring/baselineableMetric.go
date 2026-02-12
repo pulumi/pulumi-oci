@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/BaselineableMetric
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+//
+// # Creates the specified Baseline-able metric
+//
 // ## Example Usage
 //
 // ```go

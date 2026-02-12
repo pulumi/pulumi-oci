@@ -159,16 +159,11 @@ __all__ = [
     'GetUtilsPerformanceTuningAnalysisFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs:
@@ -193,18 +188,15 @@ class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
-        """
-        summarized_events_log: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict']]
-        """
-        (Updatable) Summarized events log for advanced feature.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+    """
+    summarized_events_log: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict']]
+    """
+    (Updatable) Summarized events log for advanced feature.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs:
@@ -245,18 +237,15 @@ class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs:
         pulumi.set(self, "summarized_events_log", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs:
@@ -295,14 +284,11 @@ class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArg
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs:
@@ -327,14 +313,11 @@ class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationJfrRecordingArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) JfrRecording flag to store enabled or disabled status.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationJfrRecordingArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationJfrRecordingArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) JfrRecording flag to store enabled or disabled status.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationJfrRecordingArgs:
@@ -359,18 +342,15 @@ class FleetAdvancedFeatureConfigurationJfrRecordingArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Lifecycle management flag to store enabled or disabled status.
-        """
-        post_installation_actions: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict']]
-        """
-        (Updatable) List of available post actions you can execute after the successful Java installation.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Lifecycle management flag to store enabled or disabled status.
+    """
+    post_installation_actions: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict']]
+    """
+    (Updatable) List of available post actions you can execute after the successful Java installation.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmArgs:
@@ -411,36 +391,33 @@ class FleetAdvancedFeatureConfigurationLcmArgs:
         pulumi.set(self, "post_installation_actions", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict(TypedDict):
-        add_logging_handler: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
-        """
-        disabled_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The following post JRE installation actions are supported by the field:
-        * Disable TLS 1.0 , TLS 1.1
-        """
-        global_logging_level: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Sets the logging level in logging.properties file.
-        """
-        minimum_key_size_settings: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict']]
-        """
-        (Updatable) test
-        """
-        proxies: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict']]
-        """
-        (Updatable) List of proxy properties to be configured in net.properties file.
-        """
-        should_replace_certificates_operating_system: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
-        * Replace JDK root certificates with a list provided by the operating system.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgsDict(TypedDict):
+    add_logging_handler: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+    """
+    disabled_tls_versions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The following post JRE installation actions are supported by the field:
+    * Disable TLS 1.0 , TLS 1.1
+    """
+    global_logging_level: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Sets the logging level in logging.properties file.
+    """
+    minimum_key_size_settings: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict']]
+    """
+    (Updatable) test
+    """
+    proxies: NotRequired[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict']]
+    """
+    (Updatable) List of proxy properties to be configured in net.properties file.
+    """
+    should_replace_certificates_operating_system: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+    * Replace JDK root certificates with a list provided by the operating system.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
@@ -549,29 +526,26 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
         pulumi.set(self, "should_replace_certificates_operating_system", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict(TypedDict):
-        certpaths: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict']]]]
-        """
-        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for RSA signed jars
-        * Changing minimum key length for EC
-        * Changing minimum key length for DSA
-        """
-        jars: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict']]]]
-        """
-        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for RSA signed jars
-        * Changing minimum key length for EC
-        * Changing minimum key length for DSA
-        """
-        tls: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict']]]]
-        """
-        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
-        * Changing minimum key length for Diffie-Hellman
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgsDict(TypedDict):
+    certpaths: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict']]]]
+    """
+    (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+    * Changing minimum key length for RSA signed jars
+    * Changing minimum key length for EC
+    * Changing minimum key length for DSA
+    """
+    jars: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict']]]]
+    """
+    (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+    * Changing minimum key length for RSA signed jars
+    * Changing minimum key length for EC
+    * Changing minimum key length for DSA
+    """
+    tls: NotRequired[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict']]]]
+    """
+    (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+    * Changing minimum key length for Diffie-Hellman
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs:
@@ -642,18 +616,15 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "tls", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict(TypedDict):
-        key_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm name.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgsDict(TypedDict):
+    key_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm name.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs:
@@ -694,18 +665,15 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict(TypedDict):
-        key_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm name.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgsDict(TypedDict):
+    key_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm name.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs:
@@ -746,18 +714,15 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict(TypedDict):
-        key_size: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The algorithm name.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgsDict(TypedDict):
+    key_size: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The algorithm name.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs:
@@ -798,46 +763,43 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeS
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict(TypedDict):
-        ftp_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Ftp host to be set in net.properties file.
-        """
-        ftp_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Ftp port number to be set in net.properties file.
-        """
-        http_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Http host to be set in net.properties file.
-        """
-        http_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Http port number to be set in net.properties file.
-        """
-        https_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Https host to be set in net.properties file.
-        """
-        https_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Https port number to be set in net.properties file.
-        """
-        socks_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Socks host to be set in net.properties file.
-        """
-        socks_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Socks port number to be set in net.properties file.
-        """
-        use_system_proxies: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict(TypedDict):
+    ftp_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Ftp host to be set in net.properties file.
+    """
+    ftp_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Ftp port number to be set in net.properties file.
+    """
+    http_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Http host to be set in net.properties file.
+    """
+    http_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Http port number to be set in net.properties file.
+    """
+    https_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Https host to be set in net.properties file.
+    """
+    https_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Https port number to be set in net.properties file.
+    """
+    socks_proxy_host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Socks host to be set in net.properties file.
+    """
+    socks_proxy_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Socks port number to be set in net.properties file.
+    """
+    use_system_proxies: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs:
@@ -990,18 +952,15 @@ class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs:
         pulumi.set(self, "use_system_proxies", value)
 
 
-if not MYPY:
-    class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
@@ -1034,18 +993,15 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class FleetAgentConfigurationLinuxConfigurationArgsDict(TypedDict):
-        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-elif False:
-    FleetAgentConfigurationLinuxConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAgentConfigurationLinuxConfigurationArgsDict(TypedDict):
+    exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
+    include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
 
 @pulumi.input_type
 class FleetAgentConfigurationLinuxConfigurationArgs:
@@ -1084,18 +1040,15 @@ class FleetAgentConfigurationLinuxConfigurationArgs:
         pulumi.set(self, "include_paths", value)
 
 
-if not MYPY:
-    class FleetAgentConfigurationMacOsConfigurationArgsDict(TypedDict):
-        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-elif False:
-    FleetAgentConfigurationMacOsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAgentConfigurationMacOsConfigurationArgsDict(TypedDict):
+    exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
+    include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
 
 @pulumi.input_type
 class FleetAgentConfigurationMacOsConfigurationArgs:
@@ -1134,18 +1087,15 @@ class FleetAgentConfigurationMacOsConfigurationArgs:
         pulumi.set(self, "include_paths", value)
 
 
-if not MYPY:
-    class FleetAgentConfigurationWindowsConfigurationArgsDict(TypedDict):
-        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-        """
-        (Updatable) An array of file system paths (environment variables supported).
-        """
-elif False:
-    FleetAgentConfigurationWindowsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class FleetAgentConfigurationWindowsConfigurationArgsDict(TypedDict):
+    exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
+    include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) An array of file system paths (environment variables supported).
+    """
 
 @pulumi.input_type
 class FleetAgentConfigurationWindowsConfigurationArgs:
@@ -1184,18 +1134,15 @@ class FleetAgentConfigurationWindowsConfigurationArgs:
         pulumi.set(self, "include_paths", value)
 
 
-if not MYPY:
-    class FleetInventoryLogArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-        """
-elif False:
-    FleetInventoryLogArgsDict: TypeAlias = Mapping[str, Any]
+class FleetInventoryLogArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+    """
 
 @pulumi.input_type
 class FleetInventoryLogArgs:
@@ -1234,22 +1181,19 @@ class FleetInventoryLogArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class FleetOperationLogArgsDict(TypedDict):
-        log_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        """
-        log_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+class FleetOperationLogArgsDict(TypedDict):
+    log_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+    """
+    log_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FleetOperationLogArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FleetOperationLogArgs:
@@ -1296,22 +1240,19 @@ class FleetOperationLogArgs:
         pulumi.set(self, "log_id", value)
 
 
-if not MYPY:
-    class JavaDownloadsJavaDownloadReportCreatedByArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Display name for the Java download report.
-        """
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email of the principal.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
-        """
-elif False:
-    JavaDownloadsJavaDownloadReportCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+class JavaDownloadsJavaDownloadReportCreatedByArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Display name for the Java download report.
+    """
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email of the principal.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+    """
 
 @pulumi.input_type
 class JavaDownloadsJavaDownloadReportCreatedByArgs:
@@ -1368,22 +1309,19 @@ class JavaDownloadsJavaDownloadReportCreatedByArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class JavaDownloadsJavaDownloadTokenCreatedByArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User provided display name of the JavaDownloadToken.
-        """
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email of the principal.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-        """
-elif False:
-    JavaDownloadsJavaDownloadTokenCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+class JavaDownloadsJavaDownloadTokenCreatedByArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User provided display name of the JavaDownloadToken.
+    """
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email of the principal.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+    """
 
 @pulumi.input_type
 class JavaDownloadsJavaDownloadTokenCreatedByArgs:
@@ -1440,22 +1378,19 @@ class JavaDownloadsJavaDownloadTokenCreatedByArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) User provided display name of the JavaDownloadToken.
-        """
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email of the principal.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-        """
-elif False:
-    JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict: TypeAlias = Mapping[str, Any]
+class JavaDownloadsJavaDownloadTokenLastUpdatedByArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) User provided display name of the JavaDownloadToken.
+    """
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email of the principal.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+    """
 
 @pulumi.input_type
 class JavaDownloadsJavaDownloadTokenLastUpdatedByArgs:
@@ -1512,22 +1447,19 @@ class JavaDownloadsJavaDownloadTokenLastUpdatedByArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the principal.
-        """
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email of the principal.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-        """
-elif False:
-    JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict: TypeAlias = Mapping[str, Any]
+class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the principal.
+    """
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email of the principal.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+    """
 
 @pulumi.input_type
 class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs:
@@ -1584,22 +1516,19 @@ class JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict(TypedDict):
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the principal.
-        """
-        email: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The email of the principal.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
-        """
-elif False:
-    JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict: TypeAlias = Mapping[str, Any]
+class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict(TypedDict):
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the principal.
+    """
+    email: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The email of the principal.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+    """
 
 @pulumi.input_type
 class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs:
@@ -1656,54 +1585,51 @@ class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsArgsDict(TypedDict):
-        task_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of task.
+class TaskScheduleTaskDetailsArgsDict(TypedDict):
+    task_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of task.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        add_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict']]
-        """
-        (Updatable) The list of Java installation sites to add.
-        """
-        crypto_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgsDict']]
-        """
-        (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
-        """
-        deployed_application_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict']]
-        """
-        (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
-        """
-        java_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict']]
-        """
-        (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
-        """
-        jfr_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgsDict']]
-        """
-        (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
-        """
-        performance_tuning_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict']]
-        """
-        (Updatable) Details of the request to start a JFR performance tuning analysis.
-        """
-        remove_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict']]
-        """
-        (Updatable) The list of Java installation sites to remove.
-        """
-        scan_java_server_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict']]
-        """
-        (Updatable) The list of managed instances to scan.
-        """
-        scan_library_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict']]
-        """
-        (Updatable) The list of managed instances to scan.
-        """
-elif False:
-    TaskScheduleTaskDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    add_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict']]
+    """
+    (Updatable) The list of Java installation sites to add.
+    """
+    crypto_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgsDict']]
+    """
+    (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+    """
+    deployed_application_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict']]
+    """
+    (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+    """
+    java_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict']]
+    """
+    (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+    """
+    jfr_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgsDict']]
+    """
+    (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+    """
+    performance_tuning_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict']]
+    """
+    (Updatable) Details of the request to start a JFR performance tuning analysis.
+    """
+    remove_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict']]
+    """
+    (Updatable) The list of Java installation sites to remove.
+    """
+    scan_java_server_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict']]
+    """
+    (Updatable) The list of managed instances to scan.
+    """
+    scan_library_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict']]
+    """
+    (Updatable) The list of managed instances to scan.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsArgs:
@@ -1879,18 +1805,15 @@ class TaskScheduleTaskDetailsArgs:
         pulumi.set(self, "scan_library_task_request", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict(TypedDict):
-        installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
-        """
-        (Updatable) The list of installation sites to add.
-        """
-        post_installation_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Optional list of post java installation actions
-        """
-elif False:
-    TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict(TypedDict):
+    installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
+    """
+    (Updatable) The list of installation sites to add.
+    """
+    post_installation_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Optional list of post java installation actions
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs:
@@ -1931,34 +1854,31 @@ class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs:
         pulumi.set(self, "post_installation_actions", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
-        artifact_content_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Artifact content type for the Java version.
-        """
-        force_install: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Forces the installation request even if a more recent release is already present in the host.
-        """
-        headless_mode: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
-        """
-        installation_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Custom path to install new Java installation site.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
-        """
-        release_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The release version of the Java Runtime.
-        """
-elif False:
-    TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
+    artifact_content_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Artifact content type for the Java version.
+    """
+    force_install: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Forces the installation request even if a more recent release is already present in the host.
+    """
+    headless_mode: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+    """
+    installation_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Custom path to install new Java installation site.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+    """
+    release_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The release version of the Java Runtime.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs:
@@ -2063,22 +1983,19 @@ class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs:
         pulumi.set(self, "release_version", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsCryptoTaskRequestArgsDict(TypedDict):
-        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Duration of the JFR recording in minutes.
-        """
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict']]]]
-        """
-        (Updatable) The attachment targets to start JFR.
-        """
-        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
-        """
-elif False:
-    TaskScheduleTaskDetailsCryptoTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsCryptoTaskRequestArgsDict(TypedDict):
+    recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Duration of the JFR recording in minutes.
+    """
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict']]]]
+    """
+    (Updatable) The attachment targets to start JFR.
+    """
+    waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsCryptoTaskRequestArgs:
@@ -2135,30 +2052,27 @@ class TaskScheduleTaskDetailsCryptoTaskRequestArgs:
         pulumi.set(self, "waiting_period_in_minutes", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict(TypedDict):
-        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application installation for JFR data collection.
-        """
-        application_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application for JFR data collection.
-        """
-        container_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the container for JFR data collection.
-        """
-        jre_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identify the JVM for JFR data collection.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the Managed Instance to collect JFR data.
-        """
-elif False:
-    TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict(TypedDict):
+    application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application installation for JFR data collection.
+    """
+    application_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application for JFR data collection.
+    """
+    container_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the container for JFR data collection.
+    """
+    jre_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identify the JVM for JFR data collection.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the Managed Instance to collect JFR data.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs:
@@ -2247,14 +2161,11 @@ class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs:
         pulumi.set(self, "managed_instance_id", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict(TypedDict):
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict']]]]
-        """
-        (Updatable) An array of migration analyses requests.
-        """
-elif False:
-    TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict(TypedDict):
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict']]]]
+    """
+    (Updatable) An array of migration analyses requests.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs:
@@ -2279,34 +2190,31 @@ class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs:
         pulumi.set(self, "targets", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict(TypedDict):
-        deployed_application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
-        """
-        exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
-        """
-        include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
-        """
-        source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The JDK version the application is currently running on.
-        """
-        target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
-        """
-elif False:
-    TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict(TypedDict):
+    deployed_application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+    """
+    exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+    """
+    include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+    """
+    source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The JDK version the application is currently running on.
+    """
+    target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs:
@@ -2411,14 +2319,11 @@ class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs:
         pulumi.set(self, "target_jdk_version", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict(TypedDict):
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict']]]]
-        """
-        (Updatable) An array of migration analysis requests.
-        """
-elif False:
-    TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict(TypedDict):
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict']]]]
+    """
+    (Updatable) An array of migration analysis requests.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs:
@@ -2443,34 +2348,31 @@ class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs:
         pulumi.set(self, "targets", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict(TypedDict):
-        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
-        """
-        exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
-        """
-        include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
-        """
-        source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The JDK version the application is currently running on.
-        """
-        target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
-        """
-elif False:
-    TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict(TypedDict):
+    application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+    """
+    exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+    """
+    include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+    """
+    source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The JDK version the application is currently running on.
+    """
+    target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs:
@@ -2575,38 +2477,35 @@ class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs:
         pulumi.set(self, "target_jdk_version", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsJfrTaskRequestArgsDict(TypedDict):
-        jfc_profile_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
-        """
-        jfc_v1: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
-        """
-        jfc_v2: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
-        """
-        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Duration of the JFR recording in minutes.
-        """
-        recording_size_in_mb: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum size limit for the JFR file collected.
-        """
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict']]]]
-        """
-        (Updatable) The attachment targets to start JFR.
-        """
-        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
-        """
-elif False:
-    TaskScheduleTaskDetailsJfrTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsJfrTaskRequestArgsDict(TypedDict):
+    jfc_profile_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+    """
+    jfc_v1: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+    """
+    jfc_v2: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+    """
+    recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Duration of the JFR recording in minutes.
+    """
+    recording_size_in_mb: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum size limit for the JFR file collected.
+    """
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict']]]]
+    """
+    (Updatable) The attachment targets to start JFR.
+    """
+    waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsJfrTaskRequestArgs:
@@ -2727,30 +2626,27 @@ class TaskScheduleTaskDetailsJfrTaskRequestArgs:
         pulumi.set(self, "waiting_period_in_minutes", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict(TypedDict):
-        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application installation for JFR data collection.
-        """
-        application_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application for JFR data collection.
-        """
-        container_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the container for JFR data collection.
-        """
-        jre_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identify the JVM for JFR data collection.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the Managed Instance to collect JFR data.
-        """
-elif False:
-    TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict(TypedDict):
+    application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application installation for JFR data collection.
+    """
+    application_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application for JFR data collection.
+    """
+    container_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the container for JFR data collection.
+    """
+    jre_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identify the JVM for JFR data collection.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the Managed Instance to collect JFR data.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsJfrTaskRequestTargetArgs:
@@ -2839,22 +2735,19 @@ class TaskScheduleTaskDetailsJfrTaskRequestTargetArgs:
         pulumi.set(self, "managed_instance_id", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict(TypedDict):
-        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Duration of the JFR recording in minutes.
-        """
-        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict']]]]
-        """
-        (Updatable) The attachment targets to start JFR.
-        """
-        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
-        """
-elif False:
-    TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict(TypedDict):
+    recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Duration of the JFR recording in minutes.
+    """
+    targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict']]]]
+    """
+    (Updatable) The attachment targets to start JFR.
+    """
+    waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs:
@@ -2911,30 +2804,27 @@ class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs:
         pulumi.set(self, "waiting_period_in_minutes", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict(TypedDict):
-        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application installation for JFR data collection.
-        """
-        application_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the application for JFR data collection.
-        """
-        container_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identifies the container for JFR data collection.
-        """
-        jre_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Unique key that identify the JVM for JFR data collection.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) OCID of the Managed Instance to collect JFR data.
-        """
-elif False:
-    TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict(TypedDict):
+    application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application installation for JFR data collection.
+    """
+    application_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the application for JFR data collection.
+    """
+    container_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identifies the container for JFR data collection.
+    """
+    jre_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Unique key that identify the JVM for JFR data collection.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) OCID of the Managed Instance to collect JFR data.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs:
@@ -3023,14 +2913,11 @@ class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs:
         pulumi.set(self, "managed_instance_id", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict(TypedDict):
-        installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
-        """
-        (Updatable) The list of installation sites to remove.
-        """
-elif False:
-    TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict(TypedDict):
+    installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
+    """
+    (Updatable) The list of installation sites to remove.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs:
@@ -3055,18 +2942,15 @@ class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs:
         pulumi.set(self, "installation_sites", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
-        installation_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
-        """
-        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
-        """
-elif False:
-    TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
+    installation_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+    """
+    managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs:
@@ -3107,14 +2991,11 @@ class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteAr
         pulumi.set(self, "managed_instance_id", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict(TypedDict):
-        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
-        """
-elif False:
-    TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict(TypedDict):
+    managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs:
@@ -3139,22 +3020,19 @@ class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs:
         pulumi.set(self, "managed_instance_ids", value)
 
 
-if not MYPY:
-    class TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict(TypedDict):
-        dynamic_scan_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The duration of the dynamic scan in minutes.
-        """
-        is_dynamic_scan: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Indicates whether the scan is dynamic or static.
-        """
-        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
-        """
-elif False:
-    TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+class TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict(TypedDict):
+    dynamic_scan_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The duration of the dynamic scan in minutes.
+    """
+    is_dynamic_scan: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Indicates whether the scan is dynamic or static.
+    """
+    managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+    """
 
 @pulumi.input_type
 class TaskScheduleTaskDetailsScanLibraryTaskRequestArgs:
@@ -3211,13 +3089,10 @@ class TaskScheduleTaskDetailsScanLibraryTaskRequestArgs:
         pulumi.set(self, "managed_instance_ids", value)
 
 
-if not MYPY:
-    class GetAgentInstallersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAgentInstallersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAgentInstallersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAgentInstallersFilterArgs:
@@ -3258,13 +3133,10 @@ class GetAgentInstallersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAnnouncementsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAnnouncementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAnnouncementsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAnnouncementsFilterArgs:
@@ -3305,13 +3177,10 @@ class GetAnnouncementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetBlocklistsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetBlocklistsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetBlocklistsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetBlocklistsFilterArgs:
@@ -3352,13 +3221,10 @@ class GetFleetBlocklistsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetContainersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetContainersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetContainersFilterArgs:
@@ -3399,13 +3265,10 @@ class GetFleetContainersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetCryptoAnalysisResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetCryptoAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetCryptoAnalysisResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetCryptoAnalysisResultsFilterArgs:
@@ -3446,13 +3309,10 @@ class GetFleetCryptoAnalysisResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetDiagnosesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetDiagnosesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetDiagnosesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetDiagnosesFilterArgs:
@@ -3493,13 +3353,10 @@ class GetFleetDiagnosesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetDrsFilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetDrsFilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetDrsFilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetDrsFilesFilterArgs:
@@ -3540,13 +3397,10 @@ class GetFleetDrsFilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetErrorAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetErrorAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetErrorAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetErrorAnalyticsFilterArgs:
@@ -3587,13 +3441,10 @@ class GetFleetErrorAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetErrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetErrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetErrorsFilterArgs:
@@ -3634,13 +3485,10 @@ class GetFleetErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetJavaMigrationAnalysisResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetJavaMigrationAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetJavaMigrationAnalysisResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetJavaMigrationAnalysisResultsFilterArgs:
@@ -3681,13 +3529,10 @@ class GetFleetJavaMigrationAnalysisResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetLibraryApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetLibraryApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetLibraryApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetLibraryApplicationsFilterArgs:
@@ -3728,13 +3573,10 @@ class GetFleetLibraryApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetLibraryManagedInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetLibraryManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetLibraryManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetLibraryManagedInstancesFilterArgs:
@@ -3775,13 +3617,10 @@ class GetFleetLibraryManagedInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetPerformanceTuningAnalysisResultsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetPerformanceTuningAnalysisResultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetPerformanceTuningAnalysisResultsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetPerformanceTuningAnalysisResultsFilterArgs:
@@ -3822,13 +3661,10 @@ class GetFleetPerformanceTuningAnalysisResultsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetUncorrelatedPackageApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetUncorrelatedPackageApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetUncorrelatedPackageApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetUncorrelatedPackageApplicationsFilterArgs:
@@ -3869,13 +3705,10 @@ class GetFleetUncorrelatedPackageApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetUncorrelatedPackageManagedInstancesFilterArgs:
@@ -3916,13 +3749,10 @@ class GetFleetUncorrelatedPackageManagedInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetUncorrelatedPackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetUncorrelatedPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetUncorrelatedPackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetUncorrelatedPackagesFilterArgs:
@@ -3963,13 +3793,10 @@ class GetFleetUncorrelatedPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFleetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFleetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFleetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFleetsFilterArgs:
@@ -4010,16 +3837,13 @@ class GetFleetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInstallationSitesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the operating system as provided by the Java system property os.name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInstallationSitesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInstallationSitesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the operating system as provided by the Java system property os.name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInstallationSitesFilterArgs:
@@ -4066,13 +3890,10 @@ class GetInstallationSitesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaDownloadsJavaDownloadRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaDownloadsJavaDownloadRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaDownloadsJavaDownloadRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadRecordsFilterArgs:
@@ -4113,13 +3934,10 @@ class GetJavaDownloadsJavaDownloadRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaDownloadsJavaDownloadReportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaDownloadsJavaDownloadReportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaDownloadsJavaDownloadReportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadReportsFilterArgs:
@@ -4160,13 +3978,10 @@ class GetJavaDownloadsJavaDownloadReportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaDownloadsJavaDownloadTokensFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaDownloadsJavaDownloadTokensFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaDownloadsJavaDownloadTokensFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaDownloadTokensFilterArgs:
@@ -4207,13 +4022,10 @@ class GetJavaDownloadsJavaDownloadTokensFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs:
@@ -4254,13 +4066,10 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaDownloadsJavaLicensesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaDownloadsJavaLicensesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaDownloadsJavaLicensesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaDownloadsJavaLicensesFilterArgs:
@@ -4301,13 +4110,10 @@ class GetJavaDownloadsJavaLicensesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaFamiliesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaFamiliesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaFamiliesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaFamiliesFilterArgs:
@@ -4348,13 +4154,10 @@ class GetJavaFamiliesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJavaReleasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJavaReleasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJavaReleasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJavaReleasesFilterArgs:
@@ -4395,13 +4198,10 @@ class GetJavaReleasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJmsPluginsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJmsPluginsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJmsPluginsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJmsPluginsFilterArgs:
@@ -4442,13 +4242,10 @@ class GetJmsPluginsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPluginErrorAnalyticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPluginErrorAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPluginErrorAnalyticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPluginErrorAnalyticsFilterArgs:
@@ -4489,13 +4286,10 @@ class GetPluginErrorAnalyticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPluginErrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPluginErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPluginErrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPluginErrorsFilterArgs:
@@ -4536,16 +4330,13 @@ class GetPluginErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTaskSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The task name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTaskSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTaskSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The task name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTaskSchedulesFilterArgs:
@@ -4592,13 +4383,10 @@ class GetTaskSchedulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUtilsJavaMigrationAnalysisFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUtilsJavaMigrationAnalysisFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUtilsJavaMigrationAnalysisFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUtilsJavaMigrationAnalysisFilterArgs:
@@ -4639,13 +4427,10 @@ class GetUtilsJavaMigrationAnalysisFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetUtilsPerformanceTuningAnalysisFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetUtilsPerformanceTuningAnalysisFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetUtilsPerformanceTuningAnalysisFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetUtilsPerformanceTuningAnalysisFilterArgs:

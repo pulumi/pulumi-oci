@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
+    /// This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceProject
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+    /// 
+    /// Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Import
     /// 
-    /// WorkspaceProjects can be imported using the `id`, e.g.
+    /// WorkspaceProjects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataIntegration/workspaceProject:WorkspaceProject test_workspace_project "workspaces/{workspaceId}/projects/{projectKey}"

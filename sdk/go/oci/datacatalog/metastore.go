@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-catalog/latest/Metastore
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datacatalog
+//
+// Creates a new metastore.
+//
 // ## Example Usage
 //
 // ```go

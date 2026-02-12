@@ -41,6 +41,9 @@ export interface GetPrivateApplicationPackageArgs {
  * A collection of values returned by getPrivateApplicationPackage.
  */
 export interface GetPrivateApplicationPackageResult {
+    /**
+     * The content URL of the terraform configuration.
+     */
     readonly contentUrl: string;
     /**
      * The display name of the package.
@@ -50,6 +53,9 @@ export interface GetPrivateApplicationPackageResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The MIME type of the terraform configuration.
+     */
     readonly mimeType: string;
     /**
      * The specified package's type.

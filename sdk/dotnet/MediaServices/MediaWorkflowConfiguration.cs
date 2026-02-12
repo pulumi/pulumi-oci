@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
+    /// This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflowConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+    /// 
+    /// Creates a new MediaWorkflowConfiguration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -51,7 +58,7 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// ## Import
     /// 
-    /// MediaWorkflowConfigurations can be imported using the `id`, e.g.
+    /// MediaWorkflowConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration test_media_workflow_configuration "id"

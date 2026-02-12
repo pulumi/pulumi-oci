@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ai-data-platform/latest/AiDataPlatform
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a AiDataPlatform.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// AiDataPlatforms can be imported using the `id`, e.g.
+    /// AiDataPlatforms can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform test_ai_data_platform "id"

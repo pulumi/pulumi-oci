@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Adm
 {
     /// <summary>
+    /// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/adm/latest/KnowledgeBase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/adm
+    /// 
+    /// Creates a new Knowledge Base.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +46,7 @@ namespace Pulumi.Oci.Adm
     /// 
     /// ## Import
     /// 
-    /// KnowledgeBases can be imported using the `id`, e.g.
+    /// KnowledgeBases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Adm/knowledgeBase:KnowledgeBase test_knowledge_base "id"

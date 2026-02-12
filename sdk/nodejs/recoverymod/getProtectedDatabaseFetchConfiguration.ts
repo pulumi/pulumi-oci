@@ -35,6 +35,9 @@ export function getProtectedDatabaseFetchConfiguration(args: GetProtectedDatabas
  * A collection of arguments for invoking getProtectedDatabaseFetchConfiguration.
  */
 export interface GetProtectedDatabaseFetchConfigurationArgs {
+    /**
+     * Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
+     */
     base64EncodeContent?: boolean;
     /**
      * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
@@ -93,6 +96,9 @@ export function getProtectedDatabaseFetchConfigurationOutput(args: GetProtectedD
  * A collection of arguments for invoking getProtectedDatabaseFetchConfiguration.
  */
 export interface GetProtectedDatabaseFetchConfigurationOutputArgs {
+    /**
+     * Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
+     */
     base64EncodeContent?: pulumi.Input<boolean>;
     /**
      * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.

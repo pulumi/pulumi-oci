@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// ## Import
     /// 
-    /// AutomaticDrConfigurations can be imported using the `id`, e.g.
+    /// AutomaticDrConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DisasterRecovery/automaticDrConfiguration:AutomaticDrConfiguration test_automatic_dr_configuration "id"

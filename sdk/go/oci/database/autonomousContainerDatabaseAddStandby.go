@@ -12,6 +12,14 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseAddStandby
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+//
+// Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+// [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
+//
 // ## Example Usage
 //
 // ```go
@@ -99,8 +107,9 @@ type AutonomousContainerDatabaseAddStandby struct {
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName pulumi.StringOutput `pulumi:"dbName"`
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-	DbSplitThreshold pulumi.IntOutput    `pulumi:"dbSplitThreshold"`
-	DbUniqueName     pulumi.StringOutput `pulumi:"dbUniqueName"`
+	DbSplitThreshold pulumi.IntOutput `pulumi:"dbSplitThreshold"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// Oracle AI Database version of the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -268,8 +277,9 @@ type autonomousContainerDatabaseAddStandbyState struct {
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName *string `pulumi:"dbName"`
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-	DbSplitThreshold *int    `pulumi:"dbSplitThreshold"`
-	DbUniqueName     *string `pulumi:"dbUniqueName"`
+	DbSplitThreshold *int `pulumi:"dbSplitThreshold"`
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// Oracle AI Database version of the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -406,7 +416,8 @@ type AutonomousContainerDatabaseAddStandbyState struct {
 	DbName pulumi.StringPtrInput
 	// The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
 	DbSplitThreshold pulumi.IntPtrInput
-	DbUniqueName     pulumi.StringPtrInput
+	// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+	DbUniqueName pulumi.StringPtrInput
 	// Oracle AI Database version of the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -741,6 +752,7 @@ func (o AutonomousContainerDatabaseAddStandbyOutput) DbSplitThreshold() pulumi.I
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.IntOutput { return v.DbSplitThreshold }).(pulumi.IntOutput)
 }
 
+// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
 func (o AutonomousContainerDatabaseAddStandbyOutput) DbUniqueName() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.StringOutput { return v.DbUniqueName }).(pulumi.StringOutput)
 }

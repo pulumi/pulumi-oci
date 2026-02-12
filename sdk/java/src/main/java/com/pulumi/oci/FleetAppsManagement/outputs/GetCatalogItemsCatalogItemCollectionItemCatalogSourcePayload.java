@@ -80,6 +80,10 @@ public final class GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayload 
      * 
      */
     private String version;
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     private String workingDirectory;
     /**
      * @return The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
@@ -186,6 +190,10 @@ public final class GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayload 
     public String version() {
         return this.version;
     }
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     public String workingDirectory() {
         return this.workingDirectory;
     }

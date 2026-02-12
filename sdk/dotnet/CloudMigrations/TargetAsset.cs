@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudMigrations
 {
     /// <summary>
+    /// This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/TargetAsset
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+    /// 
+    /// Creates a target asset.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -117,7 +124,7 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// ## Import
     /// 
-    /// TargetAssets can be imported using the `id`, e.g.
+    /// TargetAssets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:CloudMigrations/targetAsset:TargetAsset test_target_asset "id"

@@ -12,6 +12,52 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Network Firewall Policy resource in Oracle Cloud Infrastructure Network Firewall service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicy
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+//
+// Creates a new Network Firewall Policy.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkfirewall.NewNetworkFirewallPolicy(ctx, "test_network_firewall_policy", &networkfirewall.NetworkFirewallPolicyArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(networkFirewallPolicyDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Note
+//
+// * We are introducing significant enhancements in network firewall policy. The policy components have been decomposed to support higher limits.
+// * Network firewall policies created using older versions will not be accessible using this version. Older policies will continue to function using older SDKs.
+// * To access the policies using the latest version of terraform, upgrade the older policies to use the latest features using CLI, SDKs, or console. Once upgraded, the policy can't be rolled back to the older version. Refer [here](https://docs.oracle.com/en-us/iaas/Content/network-firewall/upgrade.htm) for further details on this.
+//
 // ## Import
 //
 // NetworkFirewallPolicies can be imported using the `id`, e.g.

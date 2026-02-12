@@ -37,32 +37,27 @@ __all__ = [
     'GetAtCustomerCccUpgradeSchedulesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureInventoryArgsDict(TypedDict):
-        capacity_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
-        """
-        compute_node_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
-        """
-        management_node_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
-        """
-        performance_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
-        """
-        serial_number: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The serial number of the Compute Cloud@Customer infrastructure rack.
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureInventoryArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureInventoryArgsDict(TypedDict):
+    capacity_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+    """
+    compute_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+    """
+    management_node_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+    """
+    performance_storage_tray_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+    """
+    serial_number: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The serial number of the Compute Cloud@Customer infrastructure rack.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureInventoryArgs:
@@ -151,70 +146,67 @@ class AtCustomerCccInfrastructureInfrastructureInventoryArgs:
         pulumi.set(self, "serial_number", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict(TypedDict):
-        dns_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
-        """
-        infrastructure_routing_dynamics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict']]]]
-        """
-        Dynamic routing information for the Compute Cloud@Customer infrastructure.
-        """
-        infrastructure_routing_statics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict']]]]
-        """
-        Static routing information for a rack.
-        """
-        management_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict']]]]
-        """
-        Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
-        """
-        mgmt_vip_hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The hostname corresponding to the virtual IP (VIP) address of the management nodes.
-        """
-        mgmt_vip_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The IP address used as the virtual IP (VIP) address of the management nodes.
-        """
-        spine_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        Addresses of the network spine switches.
-        """
-        spine_vip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
-        """
-        uplink_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Domain name to be used as the base domain for the internal network and by  public facing services.
-        """
-        uplink_gateway_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
-        """
-        uplink_netmask: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
-        """
-        uplink_port_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
-        """
-        uplink_port_forward_error_correction: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
-        """
-        uplink_port_speed_in_gbps: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
-        """
-        uplink_vlan_mtu: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict(TypedDict):
+    dns_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+    """
+    infrastructure_routing_dynamics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict']]]]
+    """
+    Dynamic routing information for the Compute Cloud@Customer infrastructure.
+    """
+    infrastructure_routing_statics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict']]]]
+    """
+    Static routing information for a rack.
+    """
+    management_nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict']]]]
+    """
+    Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+    """
+    mgmt_vip_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The hostname corresponding to the virtual IP (VIP) address of the management nodes.
+    """
+    mgmt_vip_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The IP address used as the virtual IP (VIP) address of the management nodes.
+    """
+    spine_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    Addresses of the network spine switches.
+    """
+    spine_vip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+    """
+    uplink_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Domain name to be used as the base domain for the internal network and by  public facing services.
+    """
+    uplink_gateway_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+    """
+    uplink_netmask: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+    """
+    uplink_port_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
+    """
+    uplink_port_forward_error_correction: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+    """
+    uplink_port_speed_in_gbps: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
+    """
+    uplink_vlan_mtu: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs:
@@ -463,22 +455,19 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs:
         pulumi.set(self, "uplink_vlan_mtu", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict(TypedDict):
-        bgp_topology: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The topology in use for the Border Gateway Protocol (BGP) configuration.
-        """
-        oracle_asn: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
-        """
-        peer_informations: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict']]]]
-        """
-        The list of peer devices in the dynamic routing configuration.
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgsDict(TypedDict):
+    bgp_topology: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The topology in use for the Border Gateway Protocol (BGP) configuration.
+    """
+    oracle_asn: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
+    """
+    peer_informations: NotRequired[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict']]]]
+    """
+    The list of peer devices in the dynamic routing configuration.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicArgs:
@@ -535,18 +524,15 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         pulumi.set(self, "peer_informations", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict(TypedDict):
-        asn: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The Autonomous System Number (ASN) of the peer network.
-        """
-        ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Address of the management node.
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgsDict(TypedDict):
+    asn: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The Autonomous System Number (ASN) of the peer network.
+    """
+    ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Address of the management node.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationArgs:
@@ -587,18 +573,15 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         pulumi.set(self, "ip", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict(TypedDict):
-        uplink_hsrp_group: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
-        """
-        uplink_vlan: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgsDict(TypedDict):
+    uplink_hsrp_group: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+    """
+    uplink_vlan: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticArgs:
@@ -639,18 +622,15 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructur
         pulumi.set(self, "uplink_vlan", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict(TypedDict):
-        hostname: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Hostname for interface to the management node.
-        """
-        ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Address of the management node.
-        """
-elif False:
-    AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgsDict(TypedDict):
+    hostname: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Hostname for interface to the management node.
+    """
+    ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Address of the management node.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodeArgs:
@@ -691,26 +671,23 @@ class AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNod
         pulumi.set(self, "ip", value)
 
 
-if not MYPY:
-    class AtCustomerCccInfrastructureUpgradeInformationArgsDict(TypedDict):
-        current_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current version of software installed on the Compute Cloud@Customer infrastructure.
-        """
-        is_active: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
-        """
-        scheduled_upgrade_duration: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
-        """
-        time_of_scheduled_upgrade: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
-        """
-elif False:
-    AtCustomerCccInfrastructureUpgradeInformationArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccInfrastructureUpgradeInformationArgsDict(TypedDict):
+    current_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current version of software installed on the Compute Cloud@Customer infrastructure.
+    """
+    is_active: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+    """
+    scheduled_upgrade_duration: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+    """
+    time_of_scheduled_upgrade: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+    """
 
 @pulumi.input_type
 class AtCustomerCccInfrastructureUpgradeInformationArgs:
@@ -783,30 +760,27 @@ class AtCustomerCccInfrastructureUpgradeInformationArgs:
         pulumi.set(self, "time_of_scheduled_upgrade", value)
 
 
-if not MYPY:
-    class AtCustomerCccUpgradeScheduleEventArgsDict(TypedDict):
-        description: pulumi.Input[_builtins.str]
-        """
-        (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
-        """
-        schedule_event_duration: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
-        """
-        time_start: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Generated name associated with the event.
-        """
-        schedule_event_recurrences: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
-        """
-elif False:
-    AtCustomerCccUpgradeScheduleEventArgsDict: TypeAlias = Mapping[str, Any]
+class AtCustomerCccUpgradeScheduleEventArgsDict(TypedDict):
+    description: pulumi.Input[_builtins.str]
+    """
+    (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+    """
+    schedule_event_duration: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
+    """
+    time_start: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Generated name associated with the event.
+    """
+    schedule_event_recurrences: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
+    """
 
 @pulumi.input_type
 class AtCustomerCccUpgradeScheduleEventArgs:
@@ -892,13 +866,10 @@ class AtCustomerCccUpgradeScheduleEventArgs:
         pulumi.set(self, "schedule_event_recurrences", value)
 
 
-if not MYPY:
-    class GetAtCustomerCccInfrastructuresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAtCustomerCccInfrastructuresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAtCustomerCccInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAtCustomerCccInfrastructuresFilterArgs:
@@ -939,16 +910,13 @@ class GetAtCustomerCccInfrastructuresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAtCustomerCccUpgradeSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Generated name associated with the event.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAtCustomerCccUpgradeSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAtCustomerCccUpgradeSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Generated name associated with the event.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAtCustomerCccUpgradeSchedulesFilterArgs:

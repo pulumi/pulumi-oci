@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
     [OutputType]
     public sealed class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
     {
+        /// <summary>
+        /// The content URL of the terraform configuration.
+        /// </summary>
         public readonly string ContentUrl;
         /// <summary>
         /// Exact match name filter.
@@ -22,6 +25,9 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The MIME type of the terraform configuration.
+        /// </summary>
         public readonly string MimeType;
         /// <summary>
         /// Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.

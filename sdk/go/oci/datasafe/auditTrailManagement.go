@@ -11,6 +11,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/AuditTrailManagement
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+//
+// Updates one or more attributes of the specified audit trail.
+//
 // ## Example Usage
 //
 // ```go

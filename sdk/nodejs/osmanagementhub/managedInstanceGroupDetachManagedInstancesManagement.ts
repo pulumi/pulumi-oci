@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupDetachManagedInstancesManagement
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+ *
+ * Removes a managed instance from the specified managed instance group.
+ *
  * ## Example Usage
  *
  * ```typescript

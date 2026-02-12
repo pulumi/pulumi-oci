@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/FleetCredential
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+//
+// Add credentials to a fleet in Fleet Application Management.
+//
 // ## Example Usage
 //
 // ```go

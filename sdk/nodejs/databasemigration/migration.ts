@@ -7,6 +7,17 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Migration resource in Oracle Cloud Infrastructure Database Migration service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-migration/latest/Migration
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemigration
+ *
+ * Create a Migration resource that contains all the details to perform the
+ * database migration operation, such as source and destination database
+ * details, credentials, etc.
+ *
+ * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+ *
  * ## Example Usage
  *
  * ```typescript

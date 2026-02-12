@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeGpuMemoryCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Create a compute GPU memory cluster instance on a specific compute GPU memory fabric
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// ComputeGpuMemoryClusters can be imported using the `id`, e.g.
+    /// ComputeGpuMemoryClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster test_compute_gpu_memory_cluster "id"

@@ -334,6 +334,13 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                  tls_config: Optional[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabasePeerTargetDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates the peer target database under the primary target database in Data Safe.
+
         ## Example Usage
 
         ```python
@@ -390,6 +397,13 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
                  args: TargetDatabasePeerTargetDatabaseInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Target Database Peer Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/TargetDatabasePeerTargetDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates the peer target database under the primary target database in Data Safe.
+
         ## Example Usage
 
         ```python

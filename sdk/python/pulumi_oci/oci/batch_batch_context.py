@@ -482,6 +482,13 @@ class BatchBatchContext(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Batch Context resource in Oracle Cloud Infrastructure Batch service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+
+        Creates a batch context.
+
         ## Example Usage
 
         ```python
@@ -559,6 +566,13 @@ class BatchBatchContext(pulumi.CustomResource):
                  args: BatchBatchContextArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Batch Context resource in Oracle Cloud Infrastructure Batch service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+
+        Creates a batch context.
+
         ## Example Usage
 
         ```python

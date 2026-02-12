@@ -2496,7 +2496,12 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  yubico_otp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/AuthenticationFactorSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace Authentication Factor Settings
 
         ## Import
 
@@ -2806,7 +2811,12 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                  args: DomainsAuthenticationFactorSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/AuthenticationFactorSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace Authentication Factor Settings
 
         ## Import
 

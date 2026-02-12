@@ -19,15 +19,10 @@ __all__ = [
     'GetEventsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetEventsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetEventsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetEventsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetEventsFilterArgs:

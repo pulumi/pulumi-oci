@@ -626,6 +626,14 @@ class OccCapacityRequest(pulumi.CustomResource):
                  request_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCapacityRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create Capacity Request.
+          Updates the OccCapacityRequest by evaluating a sequence of instructions.
+
         ## Example Usage
 
         ```python
@@ -715,6 +723,14 @@ class OccCapacityRequest(pulumi.CustomResource):
                  args: OccCapacityRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Occ Capacity Request resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCapacityRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create Capacity Request.
+          Updates the OccCapacityRequest by evaluating a sequence of instructions.
+
         ## Example Usage
 
         ```python

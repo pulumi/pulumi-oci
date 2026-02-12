@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/IdentitySetting
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Replace an Identity setting.
     /// 
     /// ## Import
     /// 
-    /// IdentitySettings can be imported using the `id`, e.g.
+    /// IdentitySettings can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsIdentitySetting:DomainsIdentitySetting test_identity_setting "idcsEndpoint/{idcsEndpoint}/identitySettings/{identitySettingId}"

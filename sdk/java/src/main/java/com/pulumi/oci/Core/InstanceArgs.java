@@ -46,9 +46,25 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.agentConfig);
     }
 
+    /**
+     * Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+     * * If `async` is true, all the creation and deletion of instances are asynchronous
+     * * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+     * 
+     * &gt; Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+     * 
+     */
     @Import(name="async")
     private @Nullable Output<Boolean> async;
 
+    /**
+     * @return Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+     * * If `async` is true, all the creation and deletion of instances are asynchronous
+     * * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+     * 
+     * &gt; Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+     * 
+     */
     public Optional<Output<Boolean>> async() {
         return Optional.ofNullable(this.async);
     }
@@ -203,9 +219,29 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.displayName);
     }
 
+    /**
+     * (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+     * 
+     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+     * 
+     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+     * 
+     * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+     * 
+     */
     @Import(name="extendedMetadata")
     private @Nullable Output<Map<String,String>> extendedMetadata;
 
+    /**
+     * @return (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+     * 
+     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+     * 
+     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+     * 
+     * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+     * 
+     */
     public Optional<Output<Map<String,String>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
@@ -793,11 +829,31 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
             return agentConfig(Output.of(agentConfig));
         }
 
+        /**
+         * @param async Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+         * * If `async` is true, all the creation and deletion of instances are asynchronous
+         * * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+         * 
+         * &gt; Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder async(@Nullable Output<Boolean> async) {
             $.async = async;
             return this;
         }
 
+        /**
+         * @param async Whether Terraform creates and destroys the resource asynchronously. The default value is false.
+         * * If `async` is true, all the creation and deletion of instances are asynchronous
+         * * If `async` is false, all the creation and deletion of instances are synchronous as normal behavior
+         * 
+         * &gt; Please follow this guideline Terraform support asynchronous operation for more detail of this advanced option.
+         * 
+         * @return builder
+         * 
+         */
         public Builder async(Boolean async) {
             return async(Output.of(async));
         }
@@ -1012,11 +1068,35 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param extendedMetadata (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         * 
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         * 
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         * 
+         * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extendedMetadata(@Nullable Output<Map<String,String>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
 
+        /**
+         * @param extendedMetadata (Updatable) Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+         * 
+         * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+         * 
+         * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+         * 
+         * Input in terraform is the same as metadata but allows nested metadata if you pass a valid JSON string as a value. See the example above.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }

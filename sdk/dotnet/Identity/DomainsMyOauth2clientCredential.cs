@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/MyOAuth2ClientCredential
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create a user's own OAuth2 client credential.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -64,7 +71,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// MyOAuth2ClientCredentials can be imported using the `id`, e.g.
+    /// MyOAuth2ClientCredentials can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential test_my_oauth2client_credential "idcsEndpoint/{idcsEndpoint}/myOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"

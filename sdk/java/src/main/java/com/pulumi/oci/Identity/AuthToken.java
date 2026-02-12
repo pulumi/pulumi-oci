@@ -14,6 +14,22 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/AuthToken
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * Creates a new auth token for the specified user. For information about what auth tokens are for, see
+ * [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
+ * 
+ * You must specify a *description* for the auth token (although it can be an empty string). It does not
+ * have to be unique, and you can change it anytime with
+ * [UpdateAuthToken](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/UpdateAuthToken).
+ * 
+ * Every user has permission to create an auth token for *their own user ID*. An administrator in your organization
+ * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+ * tenancy can use this operation to create an auth token for any user, including themselves.
+ * 
  * ## Example Usage
  * 
  * <pre>

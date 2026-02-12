@@ -109,6 +109,7 @@ def get_protected_database_fetch_configuration(base64_encode_content: Optional[_
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
     :param _builtins.str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
     :param _builtins.str protected_database_id: The protected database OCID.
     """
@@ -146,6 +147,7 @@ def get_protected_database_fetch_configuration_output(base64_encode_content: Opt
     ```
 
 
+    :param _builtins.bool base64_encode_content: Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
     :param _builtins.str configuration_type: Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
     :param _builtins.str protected_database_id: The protected database OCID.
     """

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
+    /// This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/bigdata/latest/BdsInstanceResourcePrincipalConfiguration
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/big_data_service
+    /// 
+    /// Create a resource principal session token configuration.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +40,7 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// ## Import
     /// 
-    /// BdsInstanceResourcePrincipalConfigurations can be imported using the `id`, e.g.
+    /// BdsInstanceResourcePrincipalConfigurations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration test_bds_instance_resource_principal_configuration "bdsInstances/{bdsInstanceId}/resourcePrincipalConfigurations/{resourcePrincipalConfigurationId}"

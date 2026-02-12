@@ -302,6 +302,13 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  priority_order: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicySecurityRule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+
+        Creates a new Security Rule for the Network Firewall Policy.
+
         ## Example Usage
 
         ```python
@@ -356,6 +363,13 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                  args: NetworkFirewallPolicySecurityRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/network-firewall/latest/NetworkFirewallPolicySecurityRule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_firewall
+
+        Creates a new Security Rule for the Network Firewall Policy.
+
         ## Example Usage
 
         ```python

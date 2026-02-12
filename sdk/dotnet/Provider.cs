@@ -155,6 +155,10 @@ namespace Pulumi.Oci
 
         [Input("ignoreDefinedTags", json: true)]
         private InputList<string>? _ignoreDefinedTags;
+
+        /// <summary>
+        /// (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+        /// </summary>
         public InputList<string> IgnoreDefinedTags
         {
             get => _ignoreDefinedTags ?? (_ignoreDefinedTags = new InputList<string>());

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
+    /// This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/DataSciencePrivateEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+    /// 
+    /// Creates a Data Science private endpoint to be used by a Data Science resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -44,7 +51,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Import
     /// 
-    /// DataSciencePrivateEndpoints can be imported using the `id`, e.g.
+    /// DataSciencePrivateEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"

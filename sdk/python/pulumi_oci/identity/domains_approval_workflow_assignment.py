@@ -962,6 +962,13 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsApprovalWorkflowAssignmentTagArgs', 'DomainsApprovalWorkflowAssignmentTagArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/ApprovalWorkflowAssignment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create Approval Workflow Assignment
+
         ## Example Usage
 
         ```python
@@ -1083,6 +1090,13 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
                  args: DomainsApprovalWorkflowAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/ApprovalWorkflowAssignment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create Approval Workflow Assignment
+
         ## Example Usage
 
         ```python

@@ -405,24 +405,19 @@ __all__ = [
     'GetNamedCredentialsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        connector_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        database_connection_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
-        """
-        The connection details required to connect to the database.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    connector_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    database_connection_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    """
+    The connection details required to connect to the database.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs:
@@ -478,30 +473,27 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArg
         pulumi.set(self, "database_connection_details", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -582,18 +574,15 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-        connection_credentials: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
-        """
-        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_string: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
-        """
-        The details of the Oracle Database connection string.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
+    connection_credentials: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    """
+    The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_string: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    """
+    The details of the Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
@@ -634,36 +623,33 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
         pulumi.set(self, "connection_string", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
-        For example: inventorydb.abc112233445566778899
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the database.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the database.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the database.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+    For example: inventorydb.abc112233445566778899
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the database.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the database.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the database.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
@@ -772,27 +758,24 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-        connection_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * BASIC: Basic connection details
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number used to connect to the database.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the database.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the database.
-        """
-elif False:
-    AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
+    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * BASIC: Basic connection details
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number used to connect to the database.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the database.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the database.
+    """
 
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
@@ -867,46 +850,43 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudAsmServicedDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
-        """
-        database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database installation.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the cloud database.
-        """
-        dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
-        """
-        disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of ASM disk groups used by the database.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
-        """
-        is_managed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
-elif False:
-    CloudAsmServicedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class CloudAsmServicedDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+    """
+    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database installation.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the cloud database.
+    """
+    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    """
+    disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of ASM disk groups used by the database.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+    """
+    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the database is a Managed Database or not.
+    """
 
 @pulumi.input_type
 class CloudAsmServicedDatabaseArgs:
@@ -1059,22 +1039,19 @@ class CloudAsmServicedDatabaseArgs:
         pulumi.set(self, "is_managed", value)
 
 
-if not MYPY:
-    class CloudClusterNetworkConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        network_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network type.
-        """
-        subnet: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet for the network.
-        """
-elif False:
-    CloudClusterNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudClusterNetworkConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network type.
+    """
+    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet for the network.
+    """
 
 @pulumi.input_type
 class CloudClusterNetworkConfigurationArgs:
@@ -1131,26 +1108,23 @@ class CloudClusterNetworkConfigurationArgs:
         pulumi.set(self, "subnet", value)
 
 
-if not MYPY:
-    class CloudClusterScanConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        scan_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the SCAN listener.
-        """
-        scan_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number of the SCAN listener.
-        """
-        scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol of the SCAN listener.
-        """
-elif False:
-    CloudClusterScanConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudClusterScanConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the SCAN listener.
+    """
+    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number of the SCAN listener.
+    """
+    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol of the SCAN listener.
+    """
 
 @pulumi.input_type
 class CloudClusterScanConfigurationArgs:
@@ -1223,22 +1197,19 @@ class CloudClusterScanConfigurationArgs:
         pulumi.set(self, "scan_protocol", value)
 
 
-if not MYPY:
-    class CloudClusterVipConfigurationArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VIP name or IP address.
-        """
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-elif False:
-    CloudClusterVipConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudClusterVipConfigurationArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VIP name or IP address.
+    """
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
 
 @pulumi.input_type
 class CloudClusterVipConfigurationArgs:
@@ -1295,22 +1266,19 @@ class CloudClusterVipConfigurationArgs:
         pulumi.set(self, "node_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: pulumi.Input[_builtins.str]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    CloudDbSystemConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: pulumi.Input[_builtins.str]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class CloudDbSystemConnectorConnectionInfoArgs:
@@ -1366,38 +1334,35 @@ class CloudDbSystemConnectorConnectionInfoArgs:
         pulumi.set(self, "connection_strings", value)
 
 
-if not MYPY:
-    class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the ASM instance.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the ASM instance.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the ASM instance.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the ASM instance.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs:
@@ -1518,30 +1483,27 @@ class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemConnectorConnectionInfoConnectionStringArgs:
@@ -1630,18 +1592,15 @@ class CloudDbSystemConnectorConnectionInfoConnectionStringArgs:
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudDbSystemDatabaseManagementConfigArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        The status of the associated service.
-        """
-        metadata: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The associated service-specific inputs in JSON string format, which Database Management can identify.
-        """
-elif False:
-    CloudDbSystemDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDatabaseManagementConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    The status of the associated service.
+    """
+    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The associated service-specific inputs in JSON string format, which Database Management can identify.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDatabaseManagementConfigArgs:
@@ -1681,218 +1640,215 @@ class CloudDbSystemDatabaseManagementConfigArgs:
         pulumi.set(self, "metadata", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
-        """
-        The list of asm instances for the cloud Asm.
-        """
-        associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
-        """
-        The list of associated components.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the Oracle cluster.
-        """
-        cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
-        """
-        The list of cluster instances for the cloud cluster.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
-        """
-        component_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the discovered DB system component.
-        """
-        component_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the discovered DB system component.
-        """
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the cloud DB system component.
-        """
-        container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
-        cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The number of CPU cores available on the DB node.
-        """
-        crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
-        db_edition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database edition.
-        """
-        db_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database ID.
-        """
-        db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
-        """
-        The list of database instances.
-        """
-        db_node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the DB node.
-        """
-        db_packs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database packs licensed for the cloud Oracle Database.
-        """
-        db_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the Oracle Database in Oracle Data Guard configuration.
-        """
-        db_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The `DB_UNIQUE_NAME` of the cloud database.
-        """
-        db_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database version.
-        """
-        dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
-        """
-        The list of protocol addresses the listener is configured to listen on.
-        """
-        grid_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
-        guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the PDB.
-        """
-        home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of the DB home.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Oracle Database is part of a cluster.
-        """
-        is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the cluster is an Oracle Flex Cluster or not.
-        """
-        is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Oracle Flex ASM is enabled or not.
-        """
-        is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
-        listener_alias: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The listener alias.
-        """
-        listener_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of listener.
-        """
-        log_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The destination directory of the listener log file.
-        """
-        memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
-        network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
-        """
-        The list of network address configurations of the cloud cluster.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-        node_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the cluster node.
-        """
-        ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of the Oracle Cluster Registry (OCR) file.
-        """
-        oracle_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle home location of the DB instance.
-        """
-        pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
-        """
-        The list of Pluggable Databases.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
-        scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
-        """
-        The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the discovered DB system component.
-        """
-        trace_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The destination directory of the listener trace file.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of Oracle Clusterware running in the cluster.
-        """
-        vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
-        """
-        The list of Virtual IP (VIP) configurations of the cloud cluster.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
+    """
+    The list of asm instances for the cloud Asm.
+    """
+    associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
+    """
+    The list of associated components.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the Oracle cluster.
+    """
+    cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
+    """
+    The list of cluster instances for the cloud cluster.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+    """
+    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the discovered DB system component.
+    """
+    component_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the discovered DB system component.
+    """
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the cloud DB system component.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the parent Container Database (CDB).
+    """
+    cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The number of CPU cores available on the DB node.
+    """
+    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle base location of Cluster Ready Services (CRS).
+    """
+    db_edition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database edition.
+    """
+    db_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database ID.
+    """
+    db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
+    """
+    The list of database instances.
+    """
+    db_node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the DB node.
+    """
+    db_packs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database packs licensed for the cloud Oracle Database.
+    """
+    db_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the Oracle Database in Oracle Data Guard configuration.
+    """
+    db_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The `DB_UNIQUE_NAME` of the cloud database.
+    """
+    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database version.
+    """
+    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
+    """
+    The list of protocol addresses the listener is configured to listen on.
+    """
+    grid_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The directory in which Oracle Grid Infrastructure is installed.
+    """
+    guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the PDB.
+    """
+    home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of the DB home.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Oracle Database is part of a cluster.
+    """
+    is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the cluster is an Oracle Flex Cluster or not.
+    """
+    is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Oracle Flex ASM is enabled or not.
+    """
+    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+    """
+    listener_alias: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The listener alias.
+    """
+    listener_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of listener.
+    """
+    log_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The destination directory of the listener log file.
+    """
+    memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total memory in gigabytes (GB) on the DB node.
+    """
+    network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
+    """
+    The list of network address configurations of the cloud cluster.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
+    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the cluster node.
+    """
+    ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of the Oracle Cluster Registry (OCR) file.
+    """
+    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle home location of the DB instance.
+    """
+    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
+    """
+    The list of Pluggable Databases.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+    """
+    scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
+    """
+    The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the discovered DB system component.
+    """
+    trace_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The destination directory of the listener trace file.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of Oracle Clusterware running in the cluster.
+    """
+    vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
+    """
+    The list of Virtual IP (VIP) configurations of the cloud cluster.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentArgs:
@@ -2733,22 +2689,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
         pulumi.set(self, "vip_configurations", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
@@ -2805,22 +2758,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
         pulumi.set(self, "instance_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
-        association_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The association type.
-        """
-        component_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the discovered DB system component.
-        """
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
+    association_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The association type.
+    """
+    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the discovered DB system component.
+    """
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
@@ -2877,34 +2827,31 @@ class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
         pulumi.set(self, "component_type", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the Oracle cluster.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the cloud DB system component.
-        """
-        crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        node_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the cluster node.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the Oracle cluster.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the cloud DB system component.
+    """
+    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle base location of Cluster Ready Services (CRS).
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the cluster node.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
@@ -3009,38 +2956,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
         pulumi.set(self, "node_role", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to a cloud DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the cloud DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the cloud DB system connector was last updated.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to a cloud DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the cloud DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the cloud DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
@@ -3161,22 +3105,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs:
@@ -3233,38 +3174,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
         pulumi.set(self, "connection_strings", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the ASM instance.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the ASM instance.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the ASM instance.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the ASM instance.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
@@ -3385,30 +3323,27 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs:
@@ -3497,38 +3432,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to a cloud DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the cloud DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the cloud DB system connector was last updated.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to a cloud DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the cloud DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the cloud DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs:
@@ -3649,22 +3581,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs:
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
@@ -3721,38 +3650,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
         pulumi.set(self, "connection_strings", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the ASM instance.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the ASM instance.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the ASM instance.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the ASM instance.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
@@ -3873,30 +3799,27 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs:
@@ -3985,30 +3908,27 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-        oracle_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle home location of the DB instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
+    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle home location of the DB instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
@@ -4097,30 +4017,27 @@ class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
         pulumi.set(self, "oracle_home", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name or IP address.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the service.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of services registered with the listener.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name or IP address.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the service.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of services registered with the listener.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs:
@@ -4209,22 +4126,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs:
         pulumi.set(self, "services", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        network_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network type.
-        """
-        subnet: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet for the network.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network type.
+    """
+    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet for the network.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
@@ -4281,26 +4195,23 @@ class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
         pulumi.set(self, "subnet", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the cloud DB system component.
-        """
-        container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
-        guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the PDB.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the cloud DB system component.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the parent Container Database (CDB).
+    """
+    guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the PDB.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
@@ -4373,38 +4284,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
         pulumi.set(self, "guid", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to a cloud DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the cloud DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the cloud DB system connector was last updated.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to a cloud DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the cloud DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the cloud DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
@@ -4525,22 +4433,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs:
@@ -4597,38 +4502,35 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
         pulumi.set(self, "connection_strings", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the ASM instance.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the ASM instance.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the ASM instance.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the ASM instance.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
@@ -4749,30 +4651,27 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs:
@@ -4861,26 +4760,23 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        scan_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the SCAN listener.
-        """
-        scan_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number of the SCAN listener.
-        """
-        scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol of the SCAN listener.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the SCAN listener.
+    """
+    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number of the SCAN listener.
+    """
+    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol of the SCAN listener.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
@@ -4953,22 +4849,19 @@ class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
         pulumi.set(self, "scan_protocol", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VIP name or IP address.
-        """
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-elif False:
-    CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VIP name or IP address.
+    """
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
@@ -5025,26 +4918,23 @@ class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
         pulumi.set(self, "node_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `MERGE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgsDict']]
-        """
-        (Updatable) 
+class CloudDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `MERGE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgsDict']]
+    """
+    (Updatable) 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationArgs:
@@ -5107,26 +4997,23 @@ class CloudDbSystemDiscoveryPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
-        """
-        connector: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
-        """
-        The connector details used to connect to the cloud DB system component.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationValueArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+    """
+    connector: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
+    """
+    The connector details used to connect to the cloud DB system component.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueArgs:
@@ -5199,26 +5086,23 @@ class CloudDbSystemDiscoveryPatchOperationValueArgs:
         pulumi.set(self, "is_selected_for_monitoring", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
-        connector_type: pulumi.Input[_builtins.str]
-        """
-        The type of connector.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
-        """
-        connection_info: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
-        """
-        The connection details required to connect to a cloud DB system component.
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
+    connector_type: pulumi.Input[_builtins.str]
+    """
+    The type of connector.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+    """
+    connection_info: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
+    """
+    The connection details required to connect to a cloud DB system component.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueConnectorArgs:
@@ -5289,22 +5173,19 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorArgs:
         pulumi.set(self, "connection_info", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: pulumi.Input[_builtins.str]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
-        """
-        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_string: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: pulumi.Input[_builtins.str]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
+    """
+    The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_string: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
@@ -5360,34 +5241,31 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
         pulumi.set(self, "connection_string", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        The type of credential used to connect to the ASM instance.
-        """
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the ASM instance.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    The type of credential used to connect to the ASM instance.
+    """
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the ASM instance.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs:
@@ -5491,30 +5369,27 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs:
@@ -5603,22 +5478,19 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class CloudDbSystemStackMonitoringConfigArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        The status of the associated service.
-        """
-        metadata: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The associated service-specific inputs in JSON string format, which Database Management can identify.
+class CloudDbSystemStackMonitoringConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    The status of the associated service.
+    """
+    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The associated service-specific inputs in JSON string format, which Database Management can identify.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    CloudDbSystemStackMonitoringConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class CloudDbSystemStackMonitoringConfigArgs:
@@ -5666,30 +5538,27 @@ class CloudDbSystemStackMonitoringConfigArgs:
         pulumi.set(self, "metadata", value)
 
 
-if not MYPY:
-    class CloudListenerEndpointArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name or IP address.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the service.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The listener protocol.
-        """
-        services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of services registered with the listener.
-        """
-elif False:
-    CloudListenerEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class CloudListenerEndpointArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name or IP address.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the service.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The listener protocol.
+    """
+    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of services registered with the listener.
+    """
 
 @pulumi.input_type
 class CloudListenerEndpointArgs:
@@ -5778,22 +5647,19 @@ class CloudListenerEndpointArgs:
         pulumi.set(self, "services", value)
 
 
-if not MYPY:
-    class CloudListenerServicedAsmArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
-        """
-elif False:
-    CloudListenerServicedAsmArgsDict: TypeAlias = Mapping[str, Any]
+class CloudListenerServicedAsmArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+    """
 
 @pulumi.input_type
 class CloudListenerServicedAsmArgs:
@@ -5850,42 +5716,39 @@ class CloudListenerServicedAsmArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class CloudListenerServicedDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
-        """
-        database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database installation.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the cloud database.
-        """
-        dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
-        """
-        is_managed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
-elif False:
-    CloudListenerServicedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class CloudListenerServicedDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+    """
+    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database installation.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the cloud database.
+    """
+    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+    """
+    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the database is a Managed Database or not.
+    """
 
 @pulumi.input_type
 class CloudListenerServicedDatabaseArgs:
@@ -6022,34 +5885,31 @@ class CloudListenerServicedDatabaseArgs:
         pulumi.set(self, "is_managed", value)
 
 
-if not MYPY:
-    class DatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        connector_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        database_connection_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
-        """
-        The connection details required to connect to the database.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        management_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
-        """
-elif False:
-    DatabaseDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    connector_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    database_connection_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    """
+    The connection details required to connect to the database.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
+    """
 
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
@@ -6153,30 +6013,27 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
         pulumi.set(self, "management_type", value)
 
 
-if not MYPY:
-    class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -6257,18 +6114,15 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-        connection_credentials: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
-        """
-        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_string: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
-        """
-        The details of the Oracle Database connection string.
-        """
-elif False:
-    DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
+    connection_credentials: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    """
+    The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_string: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    """
+    The details of the Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
@@ -6309,40 +6163,37 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
         pulumi.set(self, "connection_string", value)
 
 
-if not MYPY:
-    class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
-        For example: inventorydb.abc112233445566778899
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the database.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the database.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the database.
-        """
-elif False:
-    DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+    For example: inventorydb.abc112233445566778899
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the database.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the database.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the database.
+    """
 
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
@@ -6467,27 +6318,24 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-        connection_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * BASIC: Basic connection details
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number used to connect to the database.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the database.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the database.
-        """
-elif False:
-    DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
+    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * BASIC: Basic connection details
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number used to connect to the database.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the database.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the database.
+    """
 
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
@@ -6562,42 +6410,39 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalAsmServicedDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
-        database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database installation.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the external database.
-        """
-        disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of ASM disk groups used by the database.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
-        is_managed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
-elif False:
-    ExternalAsmServicedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalAsmServicedDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+    """
+    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database installation.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the external database.
+    """
+    disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of ASM disk groups used by the database.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+    """
+    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the database is a Managed Database or not.
+    """
 
 @pulumi.input_type
 class ExternalAsmServicedDatabaseArgs:
@@ -6734,22 +6579,19 @@ class ExternalAsmServicedDatabaseArgs:
         pulumi.set(self, "is_managed", value)
 
 
-if not MYPY:
-    class ExternalClusterNetworkConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        network_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network type.
-        """
-        subnet: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet for the network.
-        """
-elif False:
-    ExternalClusterNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalClusterNetworkConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network type.
+    """
+    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet for the network.
+    """
 
 @pulumi.input_type
 class ExternalClusterNetworkConfigurationArgs:
@@ -6806,26 +6648,23 @@ class ExternalClusterNetworkConfigurationArgs:
         pulumi.set(self, "subnet", value)
 
 
-if not MYPY:
-    class ExternalClusterScanConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        scan_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the SCAN listener.
-        """
-        scan_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number of the SCAN listener.
-        """
-        scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol of the SCAN listener.
-        """
-elif False:
-    ExternalClusterScanConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalClusterScanConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the SCAN listener.
+    """
+    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number of the SCAN listener.
+    """
+    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol of the SCAN listener.
+    """
 
 @pulumi.input_type
 class ExternalClusterScanConfigurationArgs:
@@ -6898,22 +6737,19 @@ class ExternalClusterScanConfigurationArgs:
         pulumi.set(self, "scan_protocol", value)
 
 
-if not MYPY:
-    class ExternalClusterVipConfigurationArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VIP name or IP address.
-        """
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-elif False:
-    ExternalClusterVipConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalClusterVipConfigurationArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VIP name or IP address.
+    """
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
 
 @pulumi.input_type
 class ExternalClusterVipConfigurationArgs:
@@ -6970,26 +6806,23 @@ class ExternalClusterVipConfigurationArgs:
         pulumi.set(self, "node_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: pulumi.Input[_builtins.str]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-        database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
-        """
-        The credential to connect to the database to perform tablespace administration tasks.
-        """
-elif False:
-    ExternalDbSystemConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: pulumi.Input[_builtins.str]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
+    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    """
+    The credential to connect to the database to perform tablespace administration tasks.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoArgs:
@@ -7061,38 +6894,35 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
         pulumi.set(self, "database_credentials", value)
 
 
-if not MYPY:
-    class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
@@ -7213,30 +7043,27 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
@@ -7325,34 +7152,31 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs:
@@ -7457,14 +7281,11 @@ class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDatabaseManagementConfigArgsDict(TypedDict):
-        license_model: pulumi.Input[_builtins.str]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalDbSystemDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDatabaseManagementConfigArgsDict(TypedDict):
+    license_model: pulumi.Input[_builtins.str]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDatabaseManagementConfigArgs:
@@ -7488,208 +7309,205 @@ class ExternalDbSystemDatabaseManagementConfigArgs:
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
-        associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
-        """
-        The list of associated components.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the Oracle cluster.
-        """
-        cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
-        component_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the discovered DB system component.
-        """
-        component_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the discovered DB system component.
-        """
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the external DB system component.
-        """
-        container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
-        cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The number of CPU cores available on the DB node.
-        """
-        crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
-        db_edition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database edition.
-        """
-        db_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database ID.
-        """
-        db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
-        """
-        The list of database instances.
-        """
-        db_node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the DB node.
-        """
-        db_packs: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database packs licensed for the external Oracle Database.
-        """
-        db_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the Oracle Database in Oracle Data Guard configuration.
-        """
-        db_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The `DB_UNIQUE_NAME` of the external database.
-        """
-        db_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle Database version.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
-        """
-        The list of protocol addresses the listener is configured to listen on.
-        """
-        grid_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The directory in which Oracle Grid Infrastructure is installed.
-        """
-        guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the PDB.
-        """
-        home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of the DB home.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the Oracle Database is part of a cluster.
-        """
-        is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the cluster is an Oracle Flex Cluster or not.
-        """
-        is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Oracle Flex ASM is enabled or not.
-        """
-        is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
-        listener_alias: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The listener alias.
-        """
-        listener_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of listener.
-        """
-        log_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The destination directory of the listener log file.
-        """
-        memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The total memory in gigabytes (GB) on the DB node.
-        """
-        network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
-        """
-        The list of network address configurations of the external cluster.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-        node_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the cluster node.
-        """
-        ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The location of the Oracle Cluster Registry (OCR) file.
-        """
-        oracle_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle home location of the DB instance.
-        """
-        pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
-        """
-        The list of Pluggable Databases.
-        """
-        resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
-        """
-        scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
-        """
-        The list of Single Client Access Name (SCAN) configurations of the external cluster.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the discovered DB system component.
-        """
-        trace_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The destination directory of the listener trace file.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of Oracle Clusterware running in the cluster.
-        """
-        vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
-        """
-        The list of Virtual IP (VIP) configurations of the external cluster.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
+    associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
+    """
+    The list of associated components.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the Oracle cluster.
+    """
+    cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+    """
+    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the discovered DB system component.
+    """
+    component_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the discovered DB system component.
+    """
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the external DB system component.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the parent Container Database (CDB).
+    """
+    cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The number of CPU cores available on the DB node.
+    """
+    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle base location of Cluster Ready Services (CRS).
+    """
+    db_edition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database edition.
+    """
+    db_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database ID.
+    """
+    db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
+    """
+    The list of database instances.
+    """
+    db_node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the DB node.
+    """
+    db_packs: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database packs licensed for the external Oracle Database.
+    """
+    db_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the Oracle Database in Oracle Data Guard configuration.
+    """
+    db_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The `DB_UNIQUE_NAME` of the external database.
+    """
+    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle Database version.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
+    """
+    The list of protocol addresses the listener is configured to listen on.
+    """
+    grid_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The directory in which Oracle Grid Infrastructure is installed.
+    """
+    guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the PDB.
+    """
+    home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of the DB home.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the Oracle Database is part of a cluster.
+    """
+    is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the cluster is an Oracle Flex Cluster or not.
+    """
+    is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Oracle Flex ASM is enabled or not.
+    """
+    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+    """
+    listener_alias: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The listener alias.
+    """
+    listener_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of listener.
+    """
+    log_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The destination directory of the listener log file.
+    """
+    memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The total memory in gigabytes (GB) on the DB node.
+    """
+    network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
+    """
+    The list of network address configurations of the external cluster.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
+    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the cluster node.
+    """
+    ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The location of the Oracle Cluster Registry (OCR) file.
+    """
+    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle home location of the DB instance.
+    """
+    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
+    """
+    The list of Pluggable Databases.
+    """
+    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+    """
+    scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
+    """
+    The list of Single Client Access Name (SCAN) configurations of the external cluster.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the discovered DB system component.
+    """
+    trace_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The destination directory of the listener trace file.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of Oracle Clusterware running in the cluster.
+    """
+    vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
+    """
+    The list of Virtual IP (VIP) configurations of the external cluster.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
@@ -8506,22 +8324,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
         pulumi.set(self, "vip_configurations", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
@@ -8578,22 +8393,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
         pulumi.set(self, "instance_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
-        association_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The association type.
-        """
-        component_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The identifier of the discovered DB system component.
-        """
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
+    association_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The association type.
+    """
+    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The identifier of the discovered DB system component.
+    """
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
@@ -8650,34 +8462,31 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
         pulumi.set(self, "component_type", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        cluster_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the Oracle cluster.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the external DB system component.
-        """
-        crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle base location of Cluster Ready Services (CRS).
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        node_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the cluster node.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the Oracle cluster.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the external DB system component.
+    """
+    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle base location of Cluster Ready Services (CRS).
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the cluster node.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
@@ -8782,38 +8591,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
         pulumi.set(self, "node_role", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to an external DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the external DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to an external DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the external DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the external DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
@@ -8934,26 +8740,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-        database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
-        """
-        The credential to connect to the database to perform tablespace administration tasks.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
+    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    """
+    The credential to connect to the database to perform tablespace administration tasks.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs:
@@ -9026,38 +8829,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         pulumi.set(self, "database_credentials", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
@@ -9178,30 +8978,27 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs:
@@ -9290,34 +9087,31 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs:
@@ -9422,38 +9216,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to an external DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the external DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to an external DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the external DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the external DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
@@ -9574,26 +9365,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-        database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
-        """
-        The credential to connect to the database to perform tablespace administration tasks.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
+    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    """
+    The credential to connect to the database to perform tablespace administration tasks.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
@@ -9666,38 +9454,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
         pulumi.set(self, "database_credentials", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
@@ -9818,30 +9603,27 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs:
@@ -9930,34 +9712,31 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs:
@@ -10062,30 +9841,27 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabas
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
-        adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
-        """
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        instance_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the ASM instance.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-        oracle_home: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle home location of the DB instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
+    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+    """
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the ASM instance.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
+    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle home location of the DB instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
@@ -10174,30 +9950,27 @@ class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
         pulumi.set(self, "oracle_home", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name or IP address.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the service.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of services registered with the listener.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name or IP address.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the service.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of services registered with the listener.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
@@ -10286,22 +10059,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
         pulumi.set(self, "services", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        network_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The network type.
-        """
-        subnet: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subnet for the network.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The network type.
+    """
+    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subnet for the network.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
@@ -10358,26 +10128,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
         pulumi.set(self, "subnet", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
-        connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
-        """
-        The connector details used to connect to the external DB system component.
-        """
-        container_database_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the parent Container Database (CDB).
-        """
-        guid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier of the PDB.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+    """
+    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
+    """
+    The connector details used to connect to the external DB system component.
+    """
+    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the parent Container Database (CDB).
+    """
+    guid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier of the PDB.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
@@ -10450,38 +10217,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
         pulumi.set(self, "guid", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
-        connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The error message indicating the reason for connection failure or `null` if the connection was successful.
-        """
-        connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
-        """
-        The connection details required to connect to an external DB system component.
-        """
-        connection_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of connectivity to the external DB system component.
-        """
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of connector.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the connectionStatus of the external DB system connector was last updated.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+    """
+    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The error message indicating the reason for connection failure or `null` if the connection was successful.
+    """
+    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
+    """
+    The connection details required to connect to an external DB system component.
+    """
+    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of connectivity to the external DB system component.
+    """
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of connector.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the connectionStatus of the external DB system connector was last updated.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
@@ -10602,26 +10366,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
-        """
-        The Oracle Database connection string.
-        """
-        database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
-        """
-        The credential to connect to the database to perform tablespace administration tasks.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
+    """
+    The Oracle Database connection string.
+    """
+    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    """
+    The credential to connect to the database to perform tablespace administration tasks.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs:
@@ -10694,38 +10455,35 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         pulumi.set(self, "database_credentials", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
@@ -10846,30 +10604,27 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs:
@@ -10958,34 +10713,31 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs:
@@ -11090,26 +10842,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        scan_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the SCAN listener.
-        """
-        scan_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number of the SCAN listener.
-        """
-        scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol of the SCAN listener.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the SCAN listener.
+    """
+    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number of the SCAN listener.
+    """
+    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol of the SCAN listener.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
@@ -11182,22 +10931,19 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
         pulumi.set(self, "scan_protocol", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
-        address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The VIP name or IP address.
-        """
-        network_number: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The network number from which VIPs are obtained.
-        """
-        node_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the node with the VIP.
-        """
-elif False:
-    ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
+    address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The VIP name or IP address.
+    """
+    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The network number from which VIPs are obtained.
+    """
+    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the node with the VIP.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
@@ -11254,26 +11000,23 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
         pulumi.set(self, "node_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
-        operation: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The operation can be one of these values: `MERGE`
-        """
-        selection: pulumi.Input[_builtins.str]
-        """
-        (Updatable)
-        """
-        value: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgsDict']]
-        """
-        (Updatable) 
+class ExternalDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
+    operation: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The operation can be one of these values: `MERGE`
+    """
+    selection: pulumi.Input[_builtins.str]
+    """
+    (Updatable)
+    """
+    value: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgsDict']]
+    """
+    (Updatable) 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationArgs:
@@ -11336,26 +11079,23 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
-        """
-        connector: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
-        """
-        The connector details used to connect to the external DB system component.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationValueArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
+    """
+    connector: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
+    """
+    The connector details used to connect to the external DB system component.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueArgs:
@@ -11428,26 +11168,23 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
         pulumi.set(self, "is_selected_for_monitoring", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
-        connector_type: pulumi.Input[_builtins.str]
-        """
-        The type of connector.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
-        """
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
-        """
-        connection_info: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
-        """
-        The connection details required to connect to an external DB system component.
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
+    connector_type: pulumi.Input[_builtins.str]
+    """
+    The type of connector.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+    """
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
+    """
+    connection_info: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
+    """
+    The connection details required to connect to an external DB system component.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
@@ -11518,22 +11255,19 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
         pulumi.set(self, "connection_info", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(TypedDict):
-        component_type: pulumi.Input[_builtins.str]
-        """
-        The component type.
-        """
-        connection_credentials: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
-        """
-        The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_string: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
-        """
-        The Oracle Database connection string.
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(TypedDict):
+    component_type: pulumi.Input[_builtins.str]
+    """
+    The component type.
+    """
+    connection_credentials: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
+    """
+    The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_string: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
+    """
+    The Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
@@ -11589,34 +11323,31 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
         pulumi.set(self, "connection_string", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs:
@@ -11720,30 +11451,27 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-        host_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name of the database or the SCAN name in case of a RAC database.
-        """
-        hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of host names of the ASM instances.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port used to connect to the ASM instance.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the ASM instance.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the ASM instance.
-        """
-elif False:
-    ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
+    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name of the database or the SCAN name in case of a RAC database.
+    """
+    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of host names of the ASM instances.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port used to connect to the ASM instance.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the ASM instance.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the ASM instance.
+    """
 
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs:
@@ -11832,22 +11560,19 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ExternalDbSystemStackMonitoringConfigArgsDict(TypedDict):
-        is_enabled: pulumi.Input[_builtins.bool]
-        """
-        The status of the associated service.
-        """
-        metadata: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The associated service-specific inputs in JSON string format, which Database Management can identify.
+class ExternalDbSystemStackMonitoringConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    The status of the associated service.
+    """
+    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The associated service-specific inputs in JSON string format, which Database Management can identify.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ExternalDbSystemStackMonitoringConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ExternalDbSystemStackMonitoringConfigArgs:
@@ -11895,58 +11620,55 @@ class ExternalDbSystemStackMonitoringConfigArgs:
         pulumi.set(self, "metadata", value)
 
 
-if not MYPY:
-    class ExternalExadataInfrastructureDatabaseSystemArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
-        internal_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The internal ID of the Exadata resource.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Oracle license model that applies to the database management resources.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the database resource.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Exadata resource.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of the Exadata resource.
-        """
-elif False:
-    ExternalExadataInfrastructureDatabaseSystemArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalExadataInfrastructureDatabaseSystemArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the Exadata infrastructure.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+    """
+    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The internal ID of the Exadata resource.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Oracle license model that applies to the database management resources.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the lifecycle state of the Exadata resource.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the database resource.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Exadata resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the creation of the Exadata resource.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the last update of the Exadata resource.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of the Exadata resource.
+    """
 
 @pulumi.input_type
 class ExternalExadataInfrastructureDatabaseSystemArgs:
@@ -12147,54 +11869,51 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class ExternalExadataInfrastructureStorageGridArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the Exadata infrastructure.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
-        internal_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The internal ID of the Exadata resource.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
-        server_count: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The number of Exadata storage servers in the Exadata infrastructure.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the database resource.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Exadata resource.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of the Exadata resource.
-        """
-elif False:
-    ExternalExadataInfrastructureStorageGridArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalExadataInfrastructureStorageGridArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the Exadata infrastructure.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+    """
+    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The internal ID of the Exadata resource.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the lifecycle state of the Exadata resource.
+    """
+    server_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The number of Exadata storage servers in the Exadata infrastructure.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the database resource.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Exadata resource.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the creation of the Exadata resource.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the last update of the Exadata resource.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of the Exadata resource.
+    """
 
 @pulumi.input_type
 class ExternalExadataInfrastructureStorageGridArgs:
@@ -12379,30 +12098,27 @@ class ExternalExadataInfrastructureStorageGridArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class ExternalExadataStorageConnectorCredentialInfoArgsDict(TypedDict):
-        password: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The password of the user.
-        """
-        username: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the user.
-        """
-        ssl_trust_store_location: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The full path of the SSL truststore location in the agent.
-        """
-        ssl_trust_store_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The password of the SSL truststore location in the agent.
-        """
-        ssl_trust_store_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The SSL truststore type.
-        """
-elif False:
-    ExternalExadataStorageConnectorCredentialInfoArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalExadataStorageConnectorCredentialInfoArgsDict(TypedDict):
+    password: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The password of the user.
+    """
+    username: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the user.
+    """
+    ssl_trust_store_location: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The full path of the SSL truststore location in the agent.
+    """
+    ssl_trust_store_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The password of the SSL truststore location in the agent.
+    """
+    ssl_trust_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The SSL truststore type.
+    """
 
 @pulumi.input_type
 class ExternalExadataStorageConnectorCredentialInfoArgs:
@@ -12489,106 +12205,103 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
         pulumi.set(self, "ssl_trust_store_type", value)
 
 
-if not MYPY:
-    class ExternalExadataStorageGridStorageServerArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
-        connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
-        """
-        cpu_count: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The CPU count of the Exadata storage server.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+class ExternalExadataStorageGridStorageServerArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+    """
+    connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
+    """
+    cpu_count: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The CPU count of the Exadata storage server.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
-        internal_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The internal ID of the Exadata resource.
-        """
-        ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The IP address of the Exadata storage server.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
-        make_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The make model of the Exadata storage server.
-        """
-        max_flash_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum flash disk IO operations per second of the Exadata storage server.
-        """
-        max_flash_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
-        """
-        max_hard_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum hard disk IO operations per second of the Exadata storage server.
-        """
-        max_hard_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
-        """
-        memory_gb: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        The Exadata storage server memory size in GB.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Exadata resource.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the database resource.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Exadata resource.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of the Exadata resource.
-        """
-elif False:
-    ExternalExadataStorageGridStorageServerArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+    """
+    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The internal ID of the Exadata resource.
+    """
+    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The IP address of the Exadata storage server.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the lifecycle state of the Exadata resource.
+    """
+    make_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The make model of the Exadata storage server.
+    """
+    max_flash_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum flash disk IO operations per second of the Exadata storage server.
+    """
+    max_flash_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum flash disk IO throughput in MB/s of the Exadata storage server.
+    """
+    max_hard_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum hard disk IO operations per second of the Exadata storage server.
+    """
+    max_hard_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum hard disk IO throughput in MB/s of the Exadata storage server.
+    """
+    memory_gb: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    The Exadata storage server memory size in GB.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Exadata resource.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the database resource.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Exadata resource.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the creation of the Exadata resource.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the last update of the Exadata resource.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of the Exadata resource.
+    """
 
 @pulumi.input_type
 class ExternalExadataStorageGridStorageServerArgs:
@@ -12973,82 +12686,79 @@ class ExternalExadataStorageGridStorageServerArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class ExternalExadataStorageServerConnectorArgsDict(TypedDict):
-        additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
-        agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
-        """
-        connection_uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
+class ExternalExadataStorageServerConnectorArgsDict(TypedDict):
+    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+    """
+    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
+    """
+    connection_uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
-        internal_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The internal ID of the Exadata resource.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
-        resource_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Exadata resource.
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The current lifecycle state of the database resource.
-        """
-        status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The status of the Exadata resource.
-        """
-        storage_server_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
-        version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The version of the Exadata resource.
-        """
-elif False:
-    ExternalExadataStorageServerConnectorArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
+    """
+    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The internal ID of the Exadata resource.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The details of the lifecycle state of the Exadata resource.
+    """
+    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Exadata resource.
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The current lifecycle state of the database resource.
+    """
+    status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The status of the Exadata resource.
+    """
+    storage_server_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the creation of the Exadata resource.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The timestamp of the last update of the Exadata resource.
+    """
+    version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The version of the Exadata resource.
+    """
 
 @pulumi.input_type
 class ExternalExadataStorageServerConnectorArgs:
@@ -13337,30 +13047,27 @@ class ExternalExadataStorageServerConnectorArgs:
         pulumi.set(self, "version", value)
 
 
-if not MYPY:
-    class ExternalListenerEndpointArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The host name or IP address.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the service.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The listener protocol.
-        """
-        services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The list of services registered with the listener.
-        """
-elif False:
-    ExternalListenerEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalListenerEndpointArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The host name or IP address.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the service.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The listener protocol.
+    """
+    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The list of services registered with the listener.
+    """
 
 @pulumi.input_type
 class ExternalListenerEndpointArgs:
@@ -13449,22 +13156,19 @@ class ExternalListenerEndpointArgs:
         pulumi.set(self, "services", value)
 
 
-if not MYPY:
-    class ExternalListenerServicedAsmArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
-elif False:
-    ExternalListenerServicedAsmArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalListenerServicedAsmArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+    """
 
 @pulumi.input_type
 class ExternalListenerServicedAsmArgs:
@@ -13521,38 +13225,35 @@ class ExternalListenerServicedAsmArgs:
         pulumi.set(self, "id", value)
 
 
-if not MYPY:
-    class ExternalListenerServicedDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
-        """
-        database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database installation.
-        """
-        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique name of the external database.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user-friendly name for the database. The name does not have to be unique.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
-        """
-        is_managed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether the database is a Managed Database or not.
-        """
-elif False:
-    ExternalListenerServicedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalListenerServicedDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
+    """
+    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database installation.
+    """
+    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique name of the external database.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user-friendly name for the database. The name does not have to be unique.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
+    """
+    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether the database is a Managed Database or not.
+    """
 
 @pulumi.input_type
 class ExternalListenerServicedDatabaseArgs:
@@ -13673,42 +13374,39 @@ class ExternalListenerServicedDatabaseArgs:
         pulumi.set(self, "is_managed", value)
 
 
-if not MYPY:
-    class ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Type of the credential.
-        """
-        display_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) External MySQL Database Connector Name.
-        """
-        external_database_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) OCID of MySQL Database resource.
-        """
-        host_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Host name for Connector.
-        """
-        macs_agent_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Agent Id of the MACS agent.
-        """
-        network_protocol: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
-        """
-        port: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Port number to connect to External MySQL Database.
-        """
-        ssl_secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
-        """
-elif False:
-    ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Type of the credential.
+    """
+    display_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) External MySQL Database Connector Name.
+    """
+    external_database_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) OCID of MySQL Database resource.
+    """
+    host_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Host name for Connector.
+    """
+    macs_agent_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Agent Id of the MACS agent.
+    """
+    network_protocol: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+    """
+    port: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Port number to connect to External MySQL Database.
+    """
+    ssl_secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) If using existing SSL secret to connect, OCID for the secret resource.
+    """
 
 @pulumi.input_type
 class ExternalMySqlDatabaseConnectorConnectorDetailsArgs:
@@ -13837,30 +13535,27 @@ class ExternalMySqlDatabaseConnectorConnectorDetailsArgs:
         pulumi.set(self, "ssl_secret_id", value)
 
 
-if not MYPY:
-    class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        connector_details: NotRequired[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    connector_details: NotRequired[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs:
@@ -13948,30 +13643,27 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -14052,30 +13744,27 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        connector_details: NotRequired[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    connector_details: NotRequired[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs:
@@ -14163,30 +13852,27 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -14267,18 +13953,15 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        connector_details: NotRequired[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-elif False:
-    ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    connector_details: NotRequired[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
 
 @pulumi.input_type
 class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs:
@@ -14318,30 +14001,27 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
         pulumi.set(self, "connector_details", value)
 
 
-if not MYPY:
-    class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -14422,30 +14102,27 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class ManagedDatabaseDbmgmtFeatureConfigArgsDict(TypedDict):
-        connector_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict']]]]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        database_connection_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict']]]]
-        """
-        The connection details required to connect to the database.
-        """
-        feature: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Database Management feature.
-        """
-        feature_status: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of statuses for Database Management features.
-        """
-        license_model: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Oracle license model that applies to the external database.
-        """
-elif False:
-    ManagedDatabaseDbmgmtFeatureConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseDbmgmtFeatureConfigArgsDict(TypedDict):
+    connector_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict']]]]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    database_connection_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict']]]]
+    """
+    The connection details required to connect to the database.
+    """
+    feature: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Database Management feature.
+    """
+    feature_status: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of statuses for Database Management features.
+    """
+    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Oracle license model that applies to the external database.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigArgs:
@@ -14534,29 +14211,26 @@ class ManagedDatabaseDbmgmtFeatureConfigArgs:
         pulumi.set(self, "license_model", value)
 
 
-if not MYPY:
-    class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
@@ -14635,18 +14309,15 @@ class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict(TypedDict):
-        connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict']]]]
-        """
-        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict']]]]
-        """
-        The details of the Oracle Database connection string.
-        """
-elif False:
-    ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict(TypedDict):
+    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict']]]]
+    """
+    The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict']]]]
+    """
+    The details of the Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs:
@@ -14687,38 +14358,35 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs:
         pulumi.set(self, "connection_strings", value)
 
 
-if not MYPY:
-    class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the database.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the database.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the database.
-        """
-elif False:
-    ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the database.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the database.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the database.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs:
@@ -14839,27 +14507,24 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCreden
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict(TypedDict):
-        connection_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * BASIC: Basic connection details
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number used to connect to the database.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the database.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the database.
-        """
-elif False:
-    ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict(TypedDict):
+    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * BASIC: Basic connection details
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number used to connect to the database.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the database.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the database.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs:
@@ -14934,58 +14599,55 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class ManagedDatabaseGroupManagedDatabaseArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
-        database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
-        """
-        database_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of Oracle Database installation.
-        """
-        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
-        deployment_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The infrastructure used to deploy the Oracle Database.
-        """
-        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
+class ManagedDatabaseGroupManagedDatabaseArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+    """
+    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+    """
+    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of Oracle Database installation.
+    """
+    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+    """
+    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The infrastructure used to deploy the Oracle Database.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
-        """
-        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
-        time_added: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the Managed Database was added to the group.
-        """
-        workload_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The workload type of the Autonomous Database.
-        """
-elif False:
-    ManagedDatabaseGroupManagedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
+    """
+    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+    """
+    time_added: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the Managed Database was added to the group.
+    """
+    workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The workload type of the Autonomous Database.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseGroupManagedDatabaseArgs:
@@ -15178,22 +14840,19 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
         pulumi.set(self, "workload_type", value)
 
 
-if not MYPY:
-    class ManagedDatabaseManagedDatabaseGroupArgsDict(TypedDict):
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Managed Database.
-        """
-elif False:
-    ManagedDatabaseManagedDatabaseGroupArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabaseManagedDatabaseGroupArgsDict(TypedDict):
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Managed Database.
+    """
 
 @pulumi.input_type
 class ManagedDatabaseManagedDatabaseGroupArgs:
@@ -15250,26 +14909,23 @@ class ManagedDatabaseManagedDatabaseGroupArgs:
         pulumi.set(self, "name", value)
 
 
-if not MYPY:
-    class ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password for the database user name.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user name used to perform management activity.
-        """
-elif False:
-    ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password for the database user name.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user. Indicates whether the database user is a normal user or sysdba.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user name used to perform management activity.
+    """
 
 @pulumi.input_type
 class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
@@ -15342,34 +14998,31 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs:
@@ -15473,22 +15126,19 @@ class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class ManagedDatabasesChangeDatabaseParameterParameterArgsDict(TypedDict):
-        name: pulumi.Input[_builtins.str]
-        """
-        The parameter name.
-        """
-        value: pulumi.Input[_builtins.str]
-        """
-        The parameter value.
-        """
-        update_comment: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
-        """
-elif False:
-    ManagedDatabasesChangeDatabaseParameterParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabasesChangeDatabaseParameterParameterArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    The parameter name.
+    """
+    value: pulumi.Input[_builtins.str]
+    """
+    The parameter value.
+    """
+    update_comment: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
+    """
 
 @pulumi.input_type
 class ManagedDatabasesChangeDatabaseParameterParameterArgs:
@@ -15543,26 +15193,23 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
         pulumi.set(self, "update_comment", value)
 
 
-if not MYPY:
-    class ManagedDatabasesResetDatabaseParameterCredentialsArgsDict(TypedDict):
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The password for the database user name.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user. Indicates whether the database user is a normal user or sysdba.
-        """
-        secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user name used to perform management activity.
-        """
-elif False:
-    ManagedDatabasesResetDatabaseParameterCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabasesResetDatabaseParameterCredentialsArgsDict(TypedDict):
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The password for the database user name.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user. Indicates whether the database user is a normal user or sysdba.
+    """
+    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user name used to perform management activity.
+    """
 
 @pulumi.input_type
 class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
@@ -15635,34 +15282,31 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        The type of the credential for tablespace administration tasks.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
-        """
-        password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The database user's password encoded using BASE64 scheme.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the database user.
-        """
-        username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user to connect to the database.
-        """
-elif False:
-    ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict: TypeAlias = Mapping[str, Any]
+class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    The type of the credential for tablespace administration tasks.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
+    """
+    password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The database user's password encoded using BASE64 scheme.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the database user.
+    """
+    username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user to connect to the database.
+    """
 
 @pulumi.input_type
 class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs:
@@ -15766,30 +15410,27 @@ class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs:
         pulumi.set(self, "username", value)
 
 
-if not MYPY:
-    class NamedCredentialContentArgsDict(TypedDict):
-        credential_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of named credential. Only 'BASIC' is supported currently.
-        """
-        password_secret_access_mode: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The mechanism used to access the password plain text value.
-        """
-        password_secret_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
-        """
-        role: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The role of the database user.
-        """
-        user_name: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The user name used to connect to the database.
-        """
-elif False:
-    NamedCredentialContentArgsDict: TypeAlias = Mapping[str, Any]
+class NamedCredentialContentArgsDict(TypedDict):
+    credential_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of named credential. Only 'BASIC' is supported currently.
+    """
+    password_secret_access_mode: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The mechanism used to access the password plain text value.
+    """
+    password_secret_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Vault service secret that contains the database user password.
+    """
+    role: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The role of the database user.
+    """
+    user_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The user name used to connect to the database.
+    """
 
 @pulumi.input_type
 class NamedCredentialContentArgs:
@@ -15873,34 +15514,31 @@ class NamedCredentialContentArgs:
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
-        feature: pulumi.Input[_builtins.str]
-        """
-        The name of the Database Management feature.
-        """
-        can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
-        """
-        connector_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
-        """
-        The connector details required to connect to an Oracle cloud database.
-        """
-        database_connection_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
-        """
-        The connection details required to connect to the database.
-        """
-        is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        """
-        management_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
-        """
-elif False:
-    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
+    feature: pulumi.Input[_builtins.str]
+    """
+    The name of the Database Management feature.
+    """
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+    """
+    connector_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    """
+    The connector details required to connect to an Oracle cloud database.
+    """
+    database_connection_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    """
+    The connection details required to connect to the database.
+    """
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+    """
+    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
+    """
 
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
@@ -16004,30 +15642,27 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
         pulumi.set(self, "management_type", value)
 
 
-if not MYPY:
-    class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-        connector_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * PE: Private endpoint
-        * MACS: Management agent
-        * EXTERNAL: External database connector
-        * DIRECT: Direct connection
-        """
-        database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
-        """
-        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
-        """
-        private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
-        """
-elif False:
-    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
+    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * PE: Private endpoint
+    * MACS: Management agent
+    * EXTERNAL: External database connector
+    * DIRECT: Direct connection
+    """
+    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+    """
+    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+    """
+    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    """
 
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
@@ -16108,18 +15743,15 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
         pulumi.set(self, "private_end_point_id", value)
 
 
-if not MYPY:
-    class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-        connection_credentials: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
-        """
-        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
-        """
-        connection_string: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
-        """
-        The details of the Oracle Database connection string.
-        """
-elif False:
-    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
+    connection_credentials: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    """
+    The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+    """
+    connection_string: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    """
+    The details of the Oracle Database connection string.
+    """
 
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
@@ -16160,40 +15792,37 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         pulumi.set(self, "connection_string", value)
 
 
-if not MYPY:
-    class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-        credential_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
+    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
-        For example: inventorydb.abc112233445566778899
-        """
-        credential_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of credential used to connect to the database.
-        """
-        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
-        """
-        role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The role of the user connecting to the database.
-        """
-        ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
-        """
-        user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The user name used to connect to the database.
-        """
-elif False:
-    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict: TypeAlias = Mapping[str, Any]
+    For example: inventorydb.abc112233445566778899
+    """
+    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of credential used to connect to the database.
+    """
+    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+    """
+    role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The role of the user connecting to the database.
+    """
+    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+    """
+    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The user name used to connect to the database.
+    """
 
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
@@ -16318,27 +15947,24 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         pulumi.set(self, "user_name", value)
 
 
-if not MYPY:
-    class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-        connection_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The list of supported connection types:
-        * BASIC: Basic connection details
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number used to connect to the database.
-        """
-        protocol: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The protocol used to connect to the database.
-        """
-        service: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The service name of the database.
-        """
-elif False:
-    PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
+    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The list of supported connection types:
+    * BASIC: Basic connection details
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number used to connect to the database.
+    """
+    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The protocol used to connect to the database.
+    """
+    service: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The service name of the database.
+    """
 
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
@@ -16413,16 +16039,13 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         pulumi.set(self, "service", value)
 
 
-if not MYPY:
-    class GetCloudAsmDiskGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the ASM disk group.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAsmDiskGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAsmDiskGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the ASM disk group.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAsmDiskGroupsFilterArgs:
@@ -16469,13 +16092,10 @@ class GetCloudAsmDiskGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudAsmInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAsmInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAsmInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAsmInstancesFilterArgs:
@@ -16516,16 +16136,13 @@ class GetCloudAsmInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudAsmUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the ASM user.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAsmUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAsmUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the ASM user.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAsmUsersFilterArgs:
@@ -16572,13 +16189,10 @@ class GetCloudAsmUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudAsmsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudAsmsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudAsmsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudAsmsFilterArgs:
@@ -16619,13 +16233,10 @@ class GetCloudAsmsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudClusterInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudClusterInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudClusterInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudClusterInstancesFilterArgs:
@@ -16666,13 +16277,10 @@ class GetCloudClusterInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudClustersFilterArgs:
@@ -16713,13 +16321,10 @@ class GetCloudClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDatabasesFilterArgs:
@@ -16760,13 +16365,10 @@ class GetCloudDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDbHomesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDbHomesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDbHomesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDbHomesFilterArgs:
@@ -16807,13 +16409,10 @@ class GetCloudDbHomesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDbNodesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDbNodesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDbNodesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDbNodesFilterArgs:
@@ -16854,13 +16453,10 @@ class GetCloudDbNodesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDbSystemConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDbSystemConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDbSystemConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDbSystemConnectorsFilterArgs:
@@ -16901,13 +16497,10 @@ class GetCloudDbSystemConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDbSystemDiscoveriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDbSystemDiscoveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDbSystemDiscoveriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDbSystemDiscoveriesFilterArgs:
@@ -16948,13 +16541,10 @@ class GetCloudDbSystemDiscoveriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudDbSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudDbSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudDbSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudDbSystemsFilterArgs:
@@ -16995,16 +16585,13 @@ class GetCloudDbSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudListenerServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the service.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudListenerServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudListenerServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the service.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudListenerServicesFilterArgs:
@@ -17051,13 +16638,10 @@ class GetCloudListenerServicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetCloudListenersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetCloudListenersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetCloudListenersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetCloudListenersFilterArgs:
@@ -17098,16 +16682,13 @@ class GetCloudListenersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the database.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the database.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs:
@@ -17154,16 +16735,13 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDbManagementPrivateEndpointsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDbManagementPrivateEndpointsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDbManagementPrivateEndpointsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDbManagementPrivateEndpointsFilterArgs:
@@ -17210,16 +16788,13 @@ class GetDbManagementPrivateEndpointsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalAsmDiskGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the ASM disk group.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalAsmDiskGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalAsmDiskGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the ASM disk group.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalAsmDiskGroupsFilterArgs:
@@ -17266,13 +16841,10 @@ class GetExternalAsmDiskGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalAsmInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalAsmInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalAsmInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalAsmInstancesFilterArgs:
@@ -17313,16 +16885,13 @@ class GetExternalAsmInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalAsmUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the ASM user.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalAsmUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalAsmUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the ASM user.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalAsmUsersFilterArgs:
@@ -17369,13 +16938,10 @@ class GetExternalAsmUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalAsmsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalAsmsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalAsmsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalAsmsFilterArgs:
@@ -17416,13 +16982,10 @@ class GetExternalAsmsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalClusterInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalClusterInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalClusterInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalClusterInstancesFilterArgs:
@@ -17463,13 +17026,10 @@ class GetExternalClusterInstancesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalClustersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalClustersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalClustersFilterArgs:
@@ -17510,13 +17070,10 @@ class GetExternalClustersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDatabasesFilterArgs:
@@ -17557,13 +17114,10 @@ class GetExternalDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDbHomesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDbHomesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDbHomesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDbHomesFilterArgs:
@@ -17604,13 +17158,10 @@ class GetExternalDbHomesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDbNodesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDbNodesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDbNodesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDbNodesFilterArgs:
@@ -17651,13 +17202,10 @@ class GetExternalDbNodesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDbSystemConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDbSystemConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDbSystemConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDbSystemConnectorsFilterArgs:
@@ -17698,13 +17246,10 @@ class GetExternalDbSystemConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDbSystemDiscoveriesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDbSystemDiscoveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDbSystemDiscoveriesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDbSystemDiscoveriesFilterArgs:
@@ -17745,13 +17290,10 @@ class GetExternalDbSystemDiscoveriesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalDbSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalDbSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalDbSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalDbSystemsFilterArgs:
@@ -17792,13 +17334,10 @@ class GetExternalDbSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalExadataInfrastructuresFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalExadataInfrastructuresFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalExadataInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalExadataInfrastructuresFilterArgs:
@@ -17839,13 +17378,10 @@ class GetExternalExadataInfrastructuresFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalExadataStorageConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalExadataStorageConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalExadataStorageConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalExadataStorageConnectorsFilterArgs:
@@ -17886,13 +17422,10 @@ class GetExternalExadataStorageConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalExadataStorageServersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalExadataStorageServersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalExadataStorageServersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalExadataStorageServersFilterArgs:
@@ -17933,16 +17466,13 @@ class GetExternalExadataStorageServersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalListenerServicesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the service.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalListenerServicesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalListenerServicesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the service.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalListenerServicesFilterArgs:
@@ -17989,13 +17519,10 @@ class GetExternalListenerServicesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalListenersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalListenersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalListenersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalListenersFilterArgs:
@@ -18036,16 +17563,13 @@ class GetExternalListenersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalMySqlDatabaseConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The parameter to filter by MySQL Database System type.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalMySqlDatabaseConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalMySqlDatabaseConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The parameter to filter by MySQL Database System type.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalMySqlDatabaseConnectorsFilterArgs:
@@ -18092,16 +17616,13 @@ class GetExternalMySqlDatabaseConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExternalMySqlDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The parameter to filter by MySQL Database System type.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExternalMySqlDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExternalMySqlDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The parameter to filter by MySQL Database System type.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExternalMySqlDatabasesFilterArgs:
@@ -18148,16 +17669,13 @@ class GetExternalMySqlDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetJobExecutionsStatusesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetJobExecutionsStatusesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetJobExecutionsStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetJobExecutionsStatusesFilterArgs:
@@ -18204,13 +17722,10 @@ class GetJobExecutionsStatusesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseAddmTasksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseAddmTasksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseAddmTasksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseAddmTasksFilterArgs:
@@ -18251,13 +17766,10 @@ class GetManagedDatabaseAddmTasksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseAlertLogCountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseAlertLogCountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseAlertLogCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseAlertLogCountsFilterArgs:
@@ -18298,13 +17810,10 @@ class GetManagedDatabaseAlertLogCountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseAttentionLogCountsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseAttentionLogCountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseAttentionLogCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseAttentionLogCountsFilterArgs:
@@ -18345,13 +17854,10 @@ class GetManagedDatabaseAttentionLogCountsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseCursorCacheStatementsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseCursorCacheStatementsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseCursorCacheStatementsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseCursorCacheStatementsFilterArgs:
@@ -18392,16 +17898,13 @@ class GetManagedDatabaseCursorCacheStatementsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseGroupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseGroupsFilterArgs:
@@ -18448,16 +17951,13 @@ class GetManagedDatabaseGroupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the rule.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the rule.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs:
@@ -18504,13 +18004,10 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs:
@@ -18551,16 +18048,13 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the Managed Database.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the Managed Database.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
@@ -18607,16 +18101,13 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlPlanBaselineJobsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return the SQL plan baseline jobs that match the name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlPlanBaselineJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlPlanBaselineJobsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return the SQL plan baseline jobs that match the name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
@@ -18663,13 +18154,10 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlPlanBaselinesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlPlanBaselinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlPlanBaselinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlPlanBaselinesFilterArgs:
@@ -18710,16 +18198,13 @@ class GetManagedDatabaseSqlPlanBaselinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The optional query parameter to filter the SQL Tuning Advisor task list by name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The optional query parameter to filter the SQL Tuning Advisor task list by name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs:
@@ -18766,13 +18251,10 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs:
@@ -18813,13 +18295,10 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs:
@@ -18860,16 +18339,13 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseSqlTuningSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the SQL tuning set.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseSqlTuningSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseSqlTuningSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the SQL tuning set.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseSqlTuningSetsFilterArgs:
@@ -18916,13 +18392,10 @@ class GetManagedDatabaseSqlTuningSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseTableStatisticsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseTableStatisticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseTableStatisticsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseTableStatisticsFilterArgs:
@@ -18963,16 +18436,13 @@ class GetManagedDatabaseTableStatisticsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs:
@@ -19019,16 +18489,13 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUserDataAccessContainersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUserDataAccessContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUserDataAccessContainersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUserDataAccessContainersFilterArgs:
@@ -19075,16 +18542,13 @@ class GetManagedDatabaseUserDataAccessContainersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUserObjectPrivilegesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUserObjectPrivilegesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUserObjectPrivilegesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUserObjectPrivilegesFilterArgs:
@@ -19131,16 +18595,13 @@ class GetManagedDatabaseUserObjectPrivilegesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUserProxiedForUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUserProxiedForUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUserProxiedForUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUserProxiedForUsersFilterArgs:
@@ -19187,16 +18648,13 @@ class GetManagedDatabaseUserProxiedForUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUserRolesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUserRolesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUserRolesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUserRolesFilterArgs:
@@ -19243,16 +18701,13 @@ class GetManagedDatabaseUserRolesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabaseUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabaseUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabaseUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabaseUsersFilterArgs:
@@ -19299,16 +18754,13 @@ class GetManagedDatabaseUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabasesAsmPropertiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabasesAsmPropertiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabasesAsmPropertiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabasesAsmPropertiesFilterArgs:
@@ -19355,16 +18807,13 @@ class GetManagedDatabasesAsmPropertiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabasesDatabaseParametersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return all parameters that have the text given in their names.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabasesDatabaseParametersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabasesDatabaseParametersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return all parameters that have the text given in their names.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabasesDatabaseParametersFilterArgs:
@@ -19411,16 +18860,13 @@ class GetManagedDatabasesDatabaseParametersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabasesFilterArgs:
@@ -19467,16 +18913,13 @@ class GetManagedDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabasesUserProxyUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabasesUserProxyUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabasesUserProxyUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabasesUserProxyUsersFilterArgs:
@@ -19523,16 +18966,13 @@ class GetManagedDatabasesUserProxyUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedDatabasesUserSystemPrivilegesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedDatabasesUserSystemPrivilegesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedDatabasesUserSystemPrivilegesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedDatabasesUserSystemPrivilegesFilterArgs:
@@ -19579,16 +19019,13 @@ class GetManagedDatabasesUserSystemPrivilegesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseConfigurationDataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of variable
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseConfigurationDataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseConfigurationDataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of variable
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseConfigurationDataFilterArgs:
@@ -19635,13 +19072,10 @@ class GetManagedMySqlDatabaseConfigurationDataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseDigestErrorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseDigestErrorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseDigestErrorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseDigestErrorsFilterArgs:
@@ -19682,13 +19116,10 @@ class GetManagedMySqlDatabaseDigestErrorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs:
@@ -19729,13 +19160,10 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseInboundReplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseInboundReplicationsFilterArgs:
@@ -19776,13 +19204,10 @@ class GetManagedMySqlDatabaseInboundReplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseOutboundReplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseOutboundReplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseOutboundReplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseOutboundReplicationsFilterArgs:
@@ -19823,13 +19248,10 @@ class GetManagedMySqlDatabaseOutboundReplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabaseSqlDataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabaseSqlDataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabaseSqlDataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabaseSqlDataFilterArgs:
@@ -19870,16 +19292,13 @@ class GetManagedMySqlDatabaseSqlDataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetManagedMySqlDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the Managed MySQL Database.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetManagedMySqlDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetManagedMySqlDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the Managed MySQL Database.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetManagedMySqlDatabasesFilterArgs:
@@ -19926,16 +19345,13 @@ class GetManagedMySqlDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetNamedCredentialsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the named credential.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNamedCredentialsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNamedCredentialsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the named credential.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNamedCredentialsFilterArgs:

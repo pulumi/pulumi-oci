@@ -106,6 +106,13 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
                  managed_instance_details: Optional[pulumi.Input[Union['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageAttachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+
         ## Example Usage
 
         ```python
@@ -143,6 +150,13 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
                  args: LifecycleStageAttachManagedInstancesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageAttachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+
         ## Example Usage
 
         ```python

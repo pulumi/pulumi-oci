@@ -17,9 +17,17 @@ public final class GetVmClusterNetworkDownloadConfigFileArgs extends com.pulumi.
 
     public static final GetVmClusterNetworkDownloadConfigFileArgs Empty = new GetVmClusterNetworkDownloadConfigFileArgs();
 
+    /**
+     * Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     * 
+     */
     @Import(name="base64EncodeContent")
     private @Nullable Output<Boolean> base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+     * 
+     */
     public Optional<Output<Boolean>> base64EncodeContent() {
         return Optional.ofNullable(this.base64EncodeContent);
     }
@@ -80,11 +88,23 @@ public final class GetVmClusterNetworkDownloadConfigFileArgs extends com.pulumi.
             $ = new GetVmClusterNetworkDownloadConfigFileArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(@Nullable Output<Boolean> base64EncodeContent) {
             $.base64EncodeContent = base64EncodeContent;
             return this;
         }
 
+        /**
+         * @param base64EncodeContent Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
+         * 
+         * @return builder
+         * 
+         */
         public Builder base64EncodeContent(Boolean base64EncodeContent) {
             return base64EncodeContent(Output.of(base64EncodeContent));
         }

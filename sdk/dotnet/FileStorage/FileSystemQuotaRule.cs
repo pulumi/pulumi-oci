@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
+    /// This resource provides the File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/FileSystemQuotaRule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Create an FS level, user or group quota rule given the `fileSystemId`, `principalId`, `principalType` and
+    /// `isHardQuota` parameters.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +43,7 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// ## Import
     /// 
-    /// FileSystemQuotaRules can be imported using the `id`, e.g.
+    /// FileSystemQuotaRules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule test_file_system_quota_rule "fileSystems/{fileSystemId}/quotaRules/{quotaRuleId}"

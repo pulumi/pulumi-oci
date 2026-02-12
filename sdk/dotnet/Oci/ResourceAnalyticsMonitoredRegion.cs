@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/MonitoredRegion
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a MonitoredRegion.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -31,7 +38,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// MonitoredRegions can be imported using the `id`, e.g.
+    /// MonitoredRegions can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion test_monitored_region "id"

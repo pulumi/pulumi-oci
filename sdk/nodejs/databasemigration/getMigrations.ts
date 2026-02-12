@@ -7,6 +7,12 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * List all Migrations.
+ *
+ * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+ *
  * ## Example Usage
  */
 export function getMigrations(args: GetMigrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationsResult> {
@@ -137,6 +143,12 @@ export interface GetMigrationsResult {
     readonly waitAfter: string;
 }
 /**
+ * This data source provides the list of Migrations in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * List all Migrations.
+ *
+ * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
+ *
  * ## Example Usage
  */
 export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationsResult> {

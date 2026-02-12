@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Batch Task Environment resource in Oracle Cloud Infrastructure Batch service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/batch
+ *
+ * Creates a batch task environment.
+ *
  * ## Example Usage
  *
  * ```typescript

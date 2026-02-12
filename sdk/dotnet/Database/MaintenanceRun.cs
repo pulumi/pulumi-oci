@@ -10,6 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/MaintenanceRun
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates a maintenance run with one of the following:
+    /// The latest available release update patch (RUP) for the Autonomous Container Database.
+    /// The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+    /// Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +46,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// MaintenanceRuns can be imported using the `id`, e.g.
+    /// MaintenanceRuns can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/maintenanceRun:MaintenanceRun test_maintenance_run "id"

@@ -31,24 +31,19 @@ __all__ = [
     'GetServiceCatalogsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class PrivateApplicationLogoArgsDict(TypedDict):
-        content_url: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The content URL of the uploaded data.
-        """
-        display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the private application.
-        """
-        mime_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The MIME type of the uploaded data.
-        """
-elif False:
-    PrivateApplicationLogoArgsDict: TypeAlias = Mapping[str, Any]
+class PrivateApplicationLogoArgsDict(TypedDict):
+    content_url: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The content URL of the uploaded data.
+    """
+    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the private application.
+    """
+    mime_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The MIME type of the uploaded data.
+    """
 
 @pulumi.input_type
 class PrivateApplicationLogoArgs:
@@ -105,19 +100,19 @@ class PrivateApplicationLogoArgs:
         pulumi.set(self, "mime_type", value)
 
 
-if not MYPY:
-    class PrivateApplicationPackageDetailsArgsDict(TypedDict):
-        package_type: pulumi.Input[_builtins.str]
-        """
-        The package's type.
-        """
-        version: pulumi.Input[_builtins.str]
-        """
-        The package version.
-        """
-        zip_file_base64encoded: pulumi.Input[_builtins.str]
-elif False:
-    PrivateApplicationPackageDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PrivateApplicationPackageDetailsArgsDict(TypedDict):
+    package_type: pulumi.Input[_builtins.str]
+    """
+    The package's type.
+    """
+    version: pulumi.Input[_builtins.str]
+    """
+    The package version.
+    """
+    zip_file_base64encoded: pulumi.Input[_builtins.str]
+    """
+    Base-64 payload of the Terraform zip package.
+    """
 
 @pulumi.input_type
 class PrivateApplicationPackageDetailsArgs:
@@ -128,6 +123,7 @@ class PrivateApplicationPackageDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] package_type: The package's type.
         :param pulumi.Input[_builtins.str] version: The package version.
+        :param pulumi.Input[_builtins.str] zip_file_base64encoded: Base-64 payload of the Terraform zip package.
         """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
@@ -160,6 +156,9 @@ class PrivateApplicationPackageDetailsArgs:
     @_builtins.property
     @pulumi.getter(name="zipFileBase64encoded")
     def zip_file_base64encoded(self) -> pulumi.Input[_builtins.str]:
+        """
+        Base-64 payload of the Terraform zip package.
+        """
         return pulumi.get(self, "zip_file_base64encoded")
 
     @zip_file_base64encoded.setter
@@ -167,13 +166,10 @@ class PrivateApplicationPackageDetailsArgs:
         pulumi.set(self, "zip_file_base64encoded", value)
 
 
-if not MYPY:
-    class GetAllApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAllApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAllApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAllApplicationsFilterArgs:
@@ -214,13 +210,10 @@ class GetAllApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPrivateApplicationPackagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateApplicationPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateApplicationPackagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateApplicationPackagesFilterArgs:
@@ -261,13 +254,10 @@ class GetPrivateApplicationPackagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPrivateApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPrivateApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPrivateApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPrivateApplicationsFilterArgs:
@@ -308,13 +298,10 @@ class GetPrivateApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetServiceCatalogAssociationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServiceCatalogAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServiceCatalogAssociationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServiceCatalogAssociationsFilterArgs:
@@ -355,13 +342,10 @@ class GetServiceCatalogAssociationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetServiceCatalogsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServiceCatalogsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServiceCatalogsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServiceCatalogsFilterArgs:

@@ -286,6 +286,13 @@ class ModelProvenance(pulumi.CustomResource):
                  training_script: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelProvenance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates provenance information for the specified model.
+
         ## Example Usage
 
         ```python
@@ -331,6 +338,13 @@ class ModelProvenance(pulumi.CustomResource):
                  args: ModelProvenanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ModelProvenance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates provenance information for the specified model.
+
         ## Example Usage
 
         ```python

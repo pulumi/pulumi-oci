@@ -139,6 +139,13 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Managed Instance Group Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupAttachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Adds managed instances to the specified managed instance group. After adding instances to the group, any operation applied to the group will be applied to all instances in the group.
+
         ## Example Usage
 
         ```python
@@ -175,6 +182,13 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
                  args: ManagedInstanceGroupAttachManagedInstancesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Managed Instance Group Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstanceGroupAttachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Adds managed instances to the specified managed instance group. After adding instances to the group, any operation applied to the group will be applied to all instances in the group.
+
         ## Example Usage
 
         ```python

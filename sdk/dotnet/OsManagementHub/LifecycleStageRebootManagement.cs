@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
+    /// This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageRebootManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Reboots all managed instances in the specified lifecycle stage.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// ## Import
     /// 
-    /// LifecycleStageRebootManagement can be imported using the `id`, e.g.
+    /// LifecycleStageRebootManagement can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement test_lifecycle_stage_reboot_management "id"

@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/Profile
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+//
+// Creates a new profile.
+//
 // ## Example Usage
 //
 // ```go

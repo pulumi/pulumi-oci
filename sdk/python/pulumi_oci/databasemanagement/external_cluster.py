@@ -461,7 +461,12 @@ class ExternalCluster(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the external cluster specified by `externalClusterId`.
 
         ## Import
 
@@ -489,7 +494,12 @@ class ExternalCluster(pulumi.CustomResource):
                  args: ExternalClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the External Cluster resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Updates the external cluster specified by `externalClusterId`.
 
         ## Import
 

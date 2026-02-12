@@ -219,6 +219,13 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Iot Domain Configure Data Access resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/IotDomain/ConfigureDataAccess
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Updates an IoT domain Data Access.
+
         ## Example Usage
 
         ```python
@@ -256,6 +263,13 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
                  args: IotIotDomainConfigureDataAccessArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Iot Domain Configure Data Access resource in Oracle Cloud Infrastructure Iot service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iot/latest/IotDomain/ConfigureDataAccess
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/iot
+
+        Updates an IoT domain Data Access.
+
         ## Example Usage
 
         ```python

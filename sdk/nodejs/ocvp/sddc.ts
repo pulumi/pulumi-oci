@@ -7,6 +7,83 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Sddc
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+ *
+ * Creates an Oracle Cloud VMware Solution software-defined data center (SDDC).
+ *
+ * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+ * creation of the SDDC.
+ *
+ * **Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSddc = new oci.ocvp.Sddc("test_sddc", {
+ *     compartmentId: compartmentId,
+ *     initialConfigurations: [{
+ *         initialClusterConfigurations: [{
+ *             computeAvailabilityDomain: sddcInitialConfigurationInitialClusterConfigurationsComputeAvailabilityDomain,
+ *             esxiHostsCount: sddcInitialConfigurationInitialClusterConfigurationsEsxiHostsCount,
+ *             networkConfiguration: {
+ *                 nsxEdgeVtepVlanId: testVlan.id,
+ *                 nsxVtepVlanId: testVlan.id,
+ *                 provisioningSubnetId: testSubnet.id,
+ *                 vmotionVlanId: testVlan.id,
+ *                 vsanVlanId: testVlan.id,
+ *                 hcxVlanId: testVlan.id,
+ *                 nsxEdgeUplink1vlanId: testNsxEdgeUplink1vlan.id,
+ *                 nsxEdgeUplink2vlanId: testNsxEdgeUplink2vlan.id,
+ *                 provisioningVlanId: testVlan.id,
+ *                 replicationVlanId: testVlan.id,
+ *                 vsphereVlanId: testVlan.id,
+ *             },
+ *             vsphereType: sddcInitialConfigurationInitialClusterConfigurationsVsphereType,
+ *             capacityReservationId: testCapacityReservation.id,
+ *             datastoreClusterIds: sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds,
+ *             datastores: [{
+ *                 blockVolumeIds: sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds,
+ *                 datastoreType: sddcInitialConfigurationInitialClusterConfigurationsDatastoresDatastoreType,
+ *             }],
+ *             displayName: sddcInitialConfigurationInitialClusterConfigurationsDisplayName,
+ *             initialCommitment: sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
+ *             initialHostOcpuCount: sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
+ *             initialHostShapeName: testShape.name,
+ *             instanceDisplayNamePrefix: sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix,
+ *             isShieldedInstanceEnabled: sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled,
+ *             workloadNetworkCidr: sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr,
+ *         }],
+ *     }],
+ *     sshAuthorizedKeys: sddcSshAuthorizedKeys,
+ *     vmwareSoftwareVersion: sddcVmwareSoftwareVersion,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: sddcDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     isSingleHostSddc: sddcIsSingleHostSddc,
+ *     hcxAction: hcxAction,
+ *     isHcxEnabled: sddcIsHcxEnabled,
+ * });
+ * ```
+ *
+ * ## How to migrate from deprecated fields to new fields
+ *
+ * 1. Before starting migration, back up your terraform state file.
+ * 2. Get the SDDC OCID for the `oci.Ocvp.Sddc` resource you plan to migrate.
+ * 3. Remove the `oci.Ocvp.Sddc` resource from Terraform state via command: terraform state rm \<resource address\>
+ * 4. Update `oci.Ocvp.Sddc` resource config. Remove all deprecated fields and add corresponding new fields to the resource config. Note: Remove and do not add `hcxAction` or `refreshHcxLicenseStatus` because these fields will not be imported.
+ * 5. Import `oci.Ocvp.Sddc` resource to Terraform state using command: terraform import \<resource address\> \<SDDC OCID\>.
+ * 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.Sddc` resource. If there is any planned change, update `oci.Ocvp.Sddc` resource config until there is no planned change.
+ *
  * ## Import
  *
  * Sddcs can be imported using the `id`, e.g.
@@ -99,6 +176,9 @@ export class Sddc extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     */
     declare public readonly hcxAction: pulumi.Output<string | undefined>;
     /**
      * The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -581,6 +661,9 @@ export interface SddcState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     */
     hcxAction?: pulumi.Input<string>;
     /**
      * The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -898,6 +981,9 @@ export interface SddcArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     */
     hcxAction?: pulumi.Input<string>;
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcxVlanId` of `networkConfiguration` instead.

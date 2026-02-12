@@ -140,6 +140,15 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the External Pluggable Database Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalPluggableDatabaseManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enable Database Management Service for the external pluggable database.
+        For more information about the Database Management Service, see
+        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+
         ## Example Usage
 
         ```python
@@ -170,6 +179,15 @@ class ExternalPluggableDatabaseManagement(pulumi.CustomResource):
                  args: ExternalPluggableDatabaseManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Pluggable Database Management resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalPluggableDatabaseManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Enable Database Management Service for the external pluggable database.
+        For more information about the Database Management Service, see
+        [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+
         ## Example Usage
 
         ```python

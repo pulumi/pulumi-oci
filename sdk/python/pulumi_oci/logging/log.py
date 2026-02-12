@@ -399,6 +399,14 @@ class Log(pulumi.CustomResource):
                  retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/Log
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Creates a log within the specified log group. This call fails if a log group has already been created
+        with the same displayName or (service, resource, category) triplet.
+
         ## Example Usage
 
         ```python
@@ -459,6 +467,14 @@ class Log(pulumi.CustomResource):
                  args: LogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logging-management/latest/Log
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/logging
+
+        Creates a log within the specified log group. This call fails if a log group has already been created
+        with the same displayName or (service, resource, category) triplet.
+
         ## Example Usage
 
         ```python

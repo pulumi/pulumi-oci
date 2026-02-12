@@ -58,6 +58,9 @@ class GetPrivateApplicationPackageResult:
     @_builtins.property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> _builtins.str:
+        """
+        The content URL of the terraform configuration.
+        """
         return pulumi.get(self, "content_url")
 
     @_builtins.property
@@ -79,6 +82,9 @@ class GetPrivateApplicationPackageResult:
     @_builtins.property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> _builtins.str:
+        """
+        The MIME type of the terraform configuration.
+        """
         return pulumi.get(self, "mime_type")
 
     @_builtins.property

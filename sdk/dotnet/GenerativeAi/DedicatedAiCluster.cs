@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
+    /// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai/latest/DedicatedAiCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai
+    /// 
+    /// Creates a dedicated AI cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,7 +50,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Import
     /// 
-    /// DedicatedAiClusters can be imported using the `id`, e.g.
+    /// DedicatedAiClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster test_dedicated_ai_cluster "id"

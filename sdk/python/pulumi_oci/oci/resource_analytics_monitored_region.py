@@ -200,6 +200,13 @@ class ResourceAnalyticsMonitoredRegion(pulumi.CustomResource):
                  resource_analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/MonitoredRegion
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a MonitoredRegion.
+
         ## Example Usage
 
         ```python
@@ -235,6 +242,13 @@ class ResourceAnalyticsMonitoredRegion(pulumi.CustomResource):
                  args: ResourceAnalyticsMonitoredRegionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/resource-analytics/latest/MonitoredRegion
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a MonitoredRegion.
+
         ## Example Usage
 
         ```python

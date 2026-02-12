@@ -545,6 +545,13 @@ class MonitoringTemplate(pulumi.CustomResource):
                  repeat_notification_duration: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoringTemplate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new monitoring template for a given compartment.
+
         ## Example Usage
 
         ```python
@@ -606,6 +613,13 @@ class MonitoringTemplate(pulumi.CustomResource):
                  args: MonitoringTemplateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoringTemplate
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+
+        Creates a new monitoring template for a given compartment.
+
         ## Example Usage
 
         ```python

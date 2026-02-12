@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/DbCredential
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+    /// 
+    /// Creates a new DB credential for the specified user.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

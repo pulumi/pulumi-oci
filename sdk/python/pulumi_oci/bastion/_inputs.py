@@ -25,16 +25,11 @@ __all__ = [
     'GetSessionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class SessionKeyDetailsArgsDict(TypedDict):
-        public_key_content: pulumi.Input[_builtins.str]
-        """
-        The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
-        """
-elif False:
-    SessionKeyDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class SessionKeyDetailsArgsDict(TypedDict):
+    public_key_content: pulumi.Input[_builtins.str]
+    """
+    The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
+    """
 
 @pulumi.input_type
 class SessionKeyDetailsArgs:
@@ -58,42 +53,39 @@ class SessionKeyDetailsArgs:
         pulumi.set(self, "public_key_content", value)
 
 
-if not MYPY:
-    class SessionTargetResourceDetailsArgsDict(TypedDict):
-        session_type: pulumi.Input[_builtins.str]
-        """
-        The session type.
-        """
-        target_resource_display_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The display name of the target Compute instance that the session connects to.
-        """
-        target_resource_fqdn: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Fully Qualified Domain Name of the target resource that the session connects to.
-        """
-        target_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
-        """
-        target_resource_operating_system_user_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the user on the target resource operating system that the session uses for the connection.
-        """
-        target_resource_port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The port number to connect to on the target resource.
-        """
-        target_resource_private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The private IP address of the target resource that the session connects to.
+class SessionTargetResourceDetailsArgsDict(TypedDict):
+    session_type: pulumi.Input[_builtins.str]
+    """
+    The session type.
+    """
+    target_resource_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The display name of the target Compute instance that the session connects to.
+    """
+    target_resource_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Fully Qualified Domain Name of the target resource that the session connects to.
+    """
+    target_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
+    """
+    target_resource_operating_system_user_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the user on the target resource operating system that the session uses for the connection.
+    """
+    target_resource_port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The port number to connect to on the target resource.
+    """
+    target_resource_private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The private IP address of the target resource that the session connects to.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    SessionTargetResourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class SessionTargetResourceDetailsArgs:
@@ -221,16 +213,13 @@ class SessionTargetResourceDetailsArgs:
         pulumi.set(self, "target_resource_private_ip_address", value)
 
 
-if not MYPY:
-    class GetBastionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetBastionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetBastionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetBastionsFilterArgs:
@@ -277,13 +266,10 @@ class GetBastionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSessionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSessionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSessionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSessionsFilterArgs:

@@ -21,18 +21,13 @@ __all__ = [
     'GetInstanceAvailablePluginFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetInstanceAgentPluginsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The plugin name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInstanceAgentPluginsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInstanceAgentPluginsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The plugin name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInstanceAgentPluginsFilterArgs:
@@ -79,16 +74,13 @@ class GetInstanceAgentPluginsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetInstanceAvailablePluginFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The plugin name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetInstanceAvailablePluginFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetInstanceAvailablePluginFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The plugin name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetInstanceAvailablePluginFilterArgs:

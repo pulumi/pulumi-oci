@@ -598,6 +598,16 @@ class Zone(pulumi.CustomResource):
                  zone_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Zone
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        Creates a new zone in the specified compartment.
+
+        Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+        within the default protected view of a VCN-dedicated resolver is not permitted.
+
         ## Example Usage
 
         ```python
@@ -674,6 +684,16 @@ class Zone(pulumi.CustomResource):
                  args: ZoneArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/Zone
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        Creates a new zone in the specified compartment.
+
+        Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+        within the default protected view of a VCN-dedicated resolver is not permitted.
+
         ## Example Usage
 
         ```python

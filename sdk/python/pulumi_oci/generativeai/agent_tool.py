@@ -366,6 +366,13 @@ class AgentTool(pulumi.CustomResource):
                  tool_config: Optional[pulumi.Input[Union['AgentToolToolConfigArgs', 'AgentToolToolConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Tool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a tool.
+
         ## Example Usage
 
         ```python
@@ -478,6 +485,13 @@ class AgentTool(pulumi.CustomResource):
                  args: AgentToolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/Tool
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+
+        Creates a tool.
+
         ## Example Usage
 
         ```python

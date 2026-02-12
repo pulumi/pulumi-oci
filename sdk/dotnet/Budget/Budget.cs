@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
+    /// This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/Budget
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+    /// 
+    /// Creates a new budget.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.Budget
     /// 
     /// ## Import
     /// 
-    /// Budgets can be imported using the `id`, e.g.
+    /// Budgets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Budget/budget:Budget test_budget "id"

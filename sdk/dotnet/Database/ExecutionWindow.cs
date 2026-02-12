@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// ExecutionWindows can be imported using the `id`, e.g.
+    /// ExecutionWindows can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/executionWindow:ExecutionWindow test_execution_window "id"

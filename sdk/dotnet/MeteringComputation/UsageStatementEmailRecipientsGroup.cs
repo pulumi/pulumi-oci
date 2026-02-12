@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
+    /// This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/UsageStatementEmailRecipientsGroup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+    /// 
+    /// Creates a list of email recipients that can receive usage statements for the subscription.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +48,7 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// ## Import
     /// 
-    /// UsageStatementEmailRecipientsGroups can be imported using the `id`, e.g.
+    /// UsageStatementEmailRecipientsGroups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup test_usage_statement_email_recipients_group "usageStatements/{subscriptionId}/emailRecipientsGroups/{emailRecipientsGroupId}/compartmentId/{compartmentId}"

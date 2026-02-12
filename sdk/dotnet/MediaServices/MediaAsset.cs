@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaAsset
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+    /// 
+    /// Creates a new MediaAsset.
     /// 
     /// ## Import
     /// 
-    /// MediaAssets can be imported using the `id`, e.g.
+    /// MediaAssets can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:MediaServices/mediaAsset:MediaAsset test_media_asset "id"

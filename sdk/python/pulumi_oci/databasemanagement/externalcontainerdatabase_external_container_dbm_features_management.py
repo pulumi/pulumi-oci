@@ -205,6 +205,12 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  feature_details: Optional[pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified external container database.
+
         ## Example Usage
 
         ```python
@@ -246,6 +252,12 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                  args: ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+        Enables a Database Management feature for the specified external container database.
+
         ## Example Usage
 
         ```python

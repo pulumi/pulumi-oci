@@ -266,6 +266,13 @@ class Inventory(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Inventory
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Creates an inventory.
+
         ## Example Usage
 
         ```python
@@ -309,6 +316,13 @@ class Inventory(pulumi.CustomResource):
                  args: InventoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/OCB/latest/Inventory
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudBridge
+
+        Creates an inventory.
+
         ## Example Usage
 
         ```python

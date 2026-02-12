@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -146,7 +153,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// AutonomousContainerDatabases can be imported using the `id`, e.g.
+    /// AutonomousContainerDatabases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
@@ -257,6 +264,9 @@ namespace Pulumi.Oci.Database
         [Output("dbSplitThreshold")]
         public Output<int> DbSplitThreshold { get; private set; } = null!;
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Output("dbUniqueName")]
         public Output<string> DbUniqueName { get; private set; } = null!;
 
@@ -491,6 +501,9 @@ namespace Pulumi.Oci.Database
         [Output("peerCloudAutonomousVmClusterId")]
         public Output<string> PeerCloudAutonomousVmClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Output("peerDbUniqueName")]
         public Output<string> PeerDbUniqueName { get; private set; } = null!;
 
@@ -739,6 +752,9 @@ namespace Pulumi.Oci.Database
         [Input("dbSplitThreshold")]
         public Input<int>? DbSplitThreshold { get; set; }
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 
@@ -889,6 +905,9 @@ namespace Pulumi.Oci.Database
         [Input("peerCloudAutonomousVmClusterId")]
         public Input<string>? PeerCloudAutonomousVmClusterId { get; set; }
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Input("peerDbUniqueName")]
         public Input<string>? PeerDbUniqueName { get; set; }
 
@@ -1093,6 +1112,9 @@ namespace Pulumi.Oci.Database
         [Input("dbSplitThreshold")]
         public Input<int>? DbSplitThreshold { get; set; }
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 
@@ -1357,6 +1379,9 @@ namespace Pulumi.Oci.Database
         [Input("peerCloudAutonomousVmClusterId")]
         public Input<string>? PeerCloudAutonomousVmClusterId { get; set; }
 
+        /// <summary>
+        /// **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        /// </summary>
         [Input("peerDbUniqueName")]
         public Input<string>? PeerDbUniqueName { get; set; }
 

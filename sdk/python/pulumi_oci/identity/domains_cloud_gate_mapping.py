@@ -1434,6 +1434,13 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  upstream_server_group: Optional[pulumi.Input[Union['DomainsCloudGateMappingUpstreamServerGroupArgs', 'DomainsCloudGateMappingUpstreamServerGroupArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/CloudGateMapping
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a Cloud Gate mapping
+
         ## Example Usage
 
         ```python
@@ -1631,6 +1638,13 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
                  args: DomainsCloudGateMappingInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/CloudGateMapping
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a Cloud Gate mapping
+
         ## Example Usage
 
         ```python

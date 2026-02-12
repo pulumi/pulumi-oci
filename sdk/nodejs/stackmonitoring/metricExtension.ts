@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MetricExtension
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+ *
+ * Creates a new metric extension resource for a given compartment
+ *
  * ## Example Usage
  *
  * ```typescript

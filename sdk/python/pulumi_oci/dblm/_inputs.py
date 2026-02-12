@@ -29,15 +29,10 @@ __all__ = [
     'GetVulnerabilityVulnerabilitiesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetPatchManagementDatabasesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPatchManagementDatabasesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPatchManagementDatabasesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPatchManagementDatabasesFilterArgs:
@@ -78,13 +73,10 @@ class GetPatchManagementDatabasesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVulnerabilityAggregatedVulnerabilityDataFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVulnerabilityAggregatedVulnerabilityDataFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVulnerabilityAggregatedVulnerabilityDataFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVulnerabilityAggregatedVulnerabilityDataFilterArgs:
@@ -125,13 +117,10 @@ class GetVulnerabilityAggregatedVulnerabilityDataFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVulnerabilityNotificationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVulnerabilityNotificationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVulnerabilityNotificationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVulnerabilityNotificationsFilterArgs:
@@ -172,16 +161,13 @@ class GetVulnerabilityNotificationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVulnerabilityResourcesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the resource.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVulnerabilityResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVulnerabilityResourcesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the resource.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVulnerabilityResourcesFilterArgs:
@@ -228,13 +214,10 @@ class GetVulnerabilityResourcesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVulnerabilityScansFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVulnerabilityScansFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVulnerabilityScansFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVulnerabilityScansFilterArgs:
@@ -275,13 +258,10 @@ class GetVulnerabilityScansFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetVulnerabilityVulnerabilitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetVulnerabilityVulnerabilitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetVulnerabilityVulnerabilitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetVulnerabilityVulnerabilitiesFilterArgs:

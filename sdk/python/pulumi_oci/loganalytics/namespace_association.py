@@ -504,6 +504,13 @@ class NamespaceAssociation(pulumi.CustomResource):
                  source_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Namespace Association resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/Association/Upsert
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Creates or updates associations between sources and entities. The entity should belong to the specified input compartment.
+
         ## Example Usage
 
         ```python
@@ -556,6 +563,13 @@ class NamespaceAssociation(pulumi.CustomResource):
                  args: NamespaceAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Namespace Association resource in Oracle Cloud Infrastructure Log Analytics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/Association/Upsert
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+
+        Creates or updates associations between sources and entities. The entity should belong to the specified input compartment.
+
         ## Example Usage
 
         ```python

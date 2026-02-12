@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics
 {
     /// <summary>
+    /// This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure Apm Synthetics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/latest/OnPremiseVantagePointWorker
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_synthetics
+    /// 
+    /// Registers a new worker.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +53,7 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// ## Import
     /// 
-    /// OnPremiseVantagePointWorkers can be imported using the `id`, e.g.
+    /// OnPremiseVantagePointWorkers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker test_on_premise_vantage_point_worker "onPremiseVantagePoints/{onPremiseVantagePointId}/workers/{workerId}/apmDomainId/{apmDomainId}"

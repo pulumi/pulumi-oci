@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/ProcessSet
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+ *
+ * API to create Process Set.
+ *
  * ## Example Usage
  *
  * ```typescript

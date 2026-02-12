@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Grant
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+//
+// # Add a Grantee to an AppRole
+//
 // ## Example Usage
 //
 // ```go

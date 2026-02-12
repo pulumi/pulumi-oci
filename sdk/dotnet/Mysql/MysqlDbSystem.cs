@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Mysql
 {
     /// <summary>
+    /// This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/mysql/latest/MysqlDbSystem
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/mysql
+    /// 
+    /// Creates and launches a DB System.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -146,7 +153,7 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// ## Import
     /// 
-    /// MysqlDbSystems can be imported using the `id`, e.g.
+    /// MysqlDbSystems can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Mysql/mysqlDbSystem:MysqlDbSystem test_mysql_db_system "id"

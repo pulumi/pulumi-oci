@@ -298,6 +298,13 @@ class ReplicationSchedule(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/ReplicationSchedule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a replication schedule.
+
         ## Example Usage
 
         ```python
@@ -343,6 +350,13 @@ class ReplicationSchedule(pulumi.CustomResource):
                  args: ReplicationScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Replication Schedule resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/ReplicationSchedule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a replication schedule.
+
         ## Example Usage
 
         ```python

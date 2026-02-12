@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalNonContainerDatabase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates a new ExternalNonContainerDatabase resource
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -36,7 +43,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// ExternalNonContainerDatabases can be imported using the `id`, e.g.
+    /// ExternalNonContainerDatabases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase test_external_non_container_database "id"

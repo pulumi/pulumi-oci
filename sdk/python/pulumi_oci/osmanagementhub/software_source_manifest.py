@@ -121,6 +121,13 @@ class SoftwareSourceManifest(pulumi.CustomResource):
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the package list document for the software source.
+
         ## Example Usage
 
         ```python
@@ -156,6 +163,13 @@ class SoftwareSourceManifest(pulumi.CustomResource):
                  args: SoftwareSourceManifestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/SoftwareSourceManifest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Updates the package list document for the software source.
+
         ## Example Usage
 
         ```python

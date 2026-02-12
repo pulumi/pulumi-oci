@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SensitiveTypeGroupGroupedSensitiveType
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    ///   Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
+    /// sensitive type ids in a sensitive type group.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -39,7 +47,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// SensitiveTypeGroupGroupedSensitiveTypes can be imported using the `id`, e.g.
+    /// SensitiveTypeGroupGroupedSensitiveTypes can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType test_sensitive_type_group_grouped_sensitive_type "sensitiveTypeGroups/{sensitiveTypeGroupId}/groupedSensitiveTypes"

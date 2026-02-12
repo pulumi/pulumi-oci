@@ -138,6 +138,9 @@ class GetWorkspaceApplicationTaskScheduleResult:
     @_builtins.property
     @pulumi.getter(name="configProviderDelegate")
     def config_provider_delegate(self) -> _builtins.str:
+        """
+        The information about the configuration provider.First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
+        """
         return pulumi.get(self, "config_provider_delegate")
 
     @_builtins.property

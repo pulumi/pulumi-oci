@@ -194,9 +194,17 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     * 
+     */
     @Import(name="hcxAction")
     private @Nullable Output<String> hcxAction;
 
+    /**
+     * @return (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+     * 
+     */
     public Optional<Output<String>> hcxAction() {
         return Optional.ofNullable(this.hcxAction);
     }
@@ -1007,11 +1015,23 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param hcxAction (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hcxAction(@Nullable Output<String> hcxAction) {
             $.hcxAction = hcxAction;
             return this;
         }
 
+        /**
+         * @param hcxAction (Updatable) The action to be performed upon HCX licenses. &#34;UPGRADE&#34; will upgrade the SDDC from HCX Advanced to HCX Enterprise. &#34;DOWNGRADE&#34; will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. &#34;CANCEL_DOWNGRADE&#34; will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If &#34;UPGRADE&#34; is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hcxAction(String hcxAction) {
             return hcxAction(Output.of(hcxAction));
         }

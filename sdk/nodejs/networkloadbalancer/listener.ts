@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/latest/Listener
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/network_load_balancer
+ *
+ * Adds a listener to a network load balancer.
+ *
  * ## Example Usage
  *
  * ```typescript

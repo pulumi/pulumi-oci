@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
+    /// This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/PasswordPolicy
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+    /// 
+    /// Create a password policy.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -91,7 +98,7 @@ namespace Pulumi.Oci.Identity
     /// 
     /// ## Import
     /// 
-    /// PasswordPolicies can be imported using the `id`, e.g.
+    /// PasswordPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy test_password_policy "idcsEndpoint/{idcsEndpoint}/passwordPolicies/{passwordPolicyId}"

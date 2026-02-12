@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/AwrHubSource
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+ *
+ * Register Awr Hub source
+ *
  * ## Example Usage
  *
  * ```typescript

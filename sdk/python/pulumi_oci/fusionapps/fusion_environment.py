@@ -722,6 +722,13 @@ class FusionEnvironment(pulumi.CustomResource):
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new FusionEnvironment.
+
         ## Example Usage
 
         ```python
@@ -795,6 +802,13 @@ class FusionEnvironment(pulumi.CustomResource):
                  args: FusionEnvironmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+
+        Creates a new FusionEnvironment.
+
         ## Example Usage
 
         ```python

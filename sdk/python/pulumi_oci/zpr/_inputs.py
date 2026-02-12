@@ -19,18 +19,13 @@ __all__ = [
     'GetZprPoliciesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetZprPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire display name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetZprPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetZprPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire display name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetZprPoliciesFilterArgs:

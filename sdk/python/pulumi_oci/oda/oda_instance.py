@@ -561,6 +561,16 @@ class OdaInstance(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/digital-assistant/latest/OdaInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/oracle_digital_assistant
+
+        Starts an asynchronous job to create a Digital Assistant instance.
+
+        To monitor the status of the job, take the `opc-work-request-id` response
+        header value and use it to call `GET /workRequests/{workRequestId}`.
+
         ## Example Usage
 
         ```python
@@ -613,6 +623,16 @@ class OdaInstance(pulumi.CustomResource):
                  args: OdaInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/digital-assistant/latest/OdaInstance
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/oracle_digital_assistant
+
+        Starts an asynchronous job to create a Digital Assistant instance.
+
+        To monitor the status of the job, take the `opc-work-request-id` response
+        header value and use it to call `GET /workRequests/{workRequestId}`.
+
         ## Example Usage
 
         ```python

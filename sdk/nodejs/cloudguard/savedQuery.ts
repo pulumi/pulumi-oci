@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/SavedQuery
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ *
+ * Creates a SavedQuery resource.
+ *
  * ## Example Usage
  *
  * ```typescript

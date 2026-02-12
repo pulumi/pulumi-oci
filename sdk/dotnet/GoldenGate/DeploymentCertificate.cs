@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
+    /// This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/DeploymentCertificate
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+    /// 
+    /// Creates a new certificate to truststore.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +40,7 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// ## Import
     /// 
-    /// DeploymentCertificates can be imported using the `id`, e.g.
+    /// DeploymentCertificates can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GoldenGate/deploymentCertificate:DeploymentCertificate test_deployment_certificate "deployments/{deploymentId}/certificates/{certificateKey}"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
+    /// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/KnowledgeBase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+    /// 
+    /// Creates a knowledge base.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -80,7 +87,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// 
     /// ## Import
     /// 
-    /// KnowledgeBases can be imported using the `id`, e.g.
+    /// KnowledgeBases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase test_knowledge_base "id"

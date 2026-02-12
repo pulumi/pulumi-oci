@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/NodePool
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+ *
+ * Create a new node pool.
+ *
  * ## Example Usage
  *
  * ```typescript

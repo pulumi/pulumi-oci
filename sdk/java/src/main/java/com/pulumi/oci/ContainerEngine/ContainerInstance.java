@@ -23,6 +23,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/container-instances/latest/ContainerInstance
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_instances
+ * 
+ * Creates a container instance and deploys the containers on it.
+ * 
  * ## Example Usage
  * 
  * <pre>

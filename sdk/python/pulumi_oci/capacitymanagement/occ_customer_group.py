@@ -384,6 +384,13 @@ class OccCustomerGroup(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCustomerGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create customer group.
+
         ## Example Usage
 
         ```python
@@ -440,6 +447,13 @@ class OccCustomerGroup(pulumi.CustomResource):
                  args: OccCustomerGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/occcm/latest/OccCustomerGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/capacity_management
+
+        Create customer group.
+
         ## Example Usage
 
         ```python

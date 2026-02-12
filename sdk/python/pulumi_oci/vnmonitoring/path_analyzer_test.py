@@ -399,6 +399,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/NetMonitor/latest/PathAnalyzerTest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/vn_monitoring
+
+        Creates a new `PathAnalyzerTest` resource.
+
         ## Example Usage
 
         ```python
@@ -478,6 +485,13 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  args: PathAnalyzerTestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/NetMonitor/latest/PathAnalyzerTest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/vn_monitoring
+
+        Creates a new `PathAnalyzerTest` resource.
+
         ## Example Usage
 
         ```python

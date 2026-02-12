@@ -12,6 +12,41 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the File System resource in Oracle Cloud Infrastructure File Storage service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/filestorage/latest/FileSystem
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+//
+// Creates a new file system in the specified compartment and
+// availability domain. Instances can mount file systems in
+// another availability domain, but doing so might increase
+// latency when compared to mounting instances in the same
+// availability domain.
+//
+// After you create a file system, you can associate it with a mount
+// target. Instances can then mount the file system by connecting to the
+// mount target's IP address. You can associate a file system with
+// more than one mount target at a time.
+//
+// For information about access control and compartments, see
+// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+//
+// For information about Network Security Groups access control, see
+// [Network Security Groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+//
+// For information about availability domains, see [Regions and
+// Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+// To get a list of availability domains, use the
+// `ListAvailabilityDomains` operation in the Identity and Access
+// Management Service API.
+//
+// All Oracle Cloud Infrastructure resources, including
+// file systems, get an Oracle-assigned, unique ID called an Oracle
+// Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+// When you create a resource, you can find its OCID in the response.
+// You can also retrieve a resource's OCID by using a List API operation on that resource
+// type or by viewing the resource in the Console.
+//
 // ## Example Usage
 //
 // ```go

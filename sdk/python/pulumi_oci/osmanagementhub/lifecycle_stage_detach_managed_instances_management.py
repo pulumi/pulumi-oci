@@ -106,6 +106,13 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
                  managed_instance_details: Optional[pulumi.Input[Union['LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageDetachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Detaches (removes) a managed instance from a lifecycle stage.
+
         ## Example Usage
 
         ```python
@@ -143,6 +150,13 @@ class LifecycleStageDetachManagedInstancesManagement(pulumi.CustomResource):
                  args: LifecycleStageDetachManagedInstancesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/LifecycleStageDetachManagedInstancesManagement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Detaches (removes) a managed instance from a lifecycle stage.
+
         ## Example Usage
 
         ```python

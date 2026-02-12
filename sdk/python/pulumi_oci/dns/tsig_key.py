@@ -331,6 +331,14 @@ class TsigKey(pulumi.CustomResource):
                  secret: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/TsigKey
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        Creates a new TSIG key in the specified compartment. There is no
+        `opc-retry-token` header since TSIG key names must be globally unique.
+
         ## Example Usage
 
         ```python
@@ -378,6 +386,14 @@ class TsigKey(pulumi.CustomResource):
                  args: TsigKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/TsigKey
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+
+        Creates a new TSIG key in the specified compartment. There is no
+        `opc-retry-token` header since TSIG key names must be globally unique.
+
         ## Example Usage
 
         ```python

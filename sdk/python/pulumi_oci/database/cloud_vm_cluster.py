@@ -1727,6 +1727,13 @@ class CloudVmCluster(pulumi.CustomResource):
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a cloud VM cluster.
+
         ## Example Usage
 
         ```python
@@ -1871,6 +1878,13 @@ class CloudVmCluster(pulumi.CustomResource):
                  args: CloudVmClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a cloud VM cluster.
+
         ## Example Usage
 
         ```python

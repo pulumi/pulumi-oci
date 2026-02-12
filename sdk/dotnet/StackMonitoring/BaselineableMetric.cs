@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
+    /// This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/BaselineableMetric
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+    /// 
+    /// Creates the specified Baseline-able metric
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +42,7 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// ## Import
     /// 
-    /// BaselineableMetrics can be imported using the `id`, e.g.
+    /// BaselineableMetrics can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:StackMonitoring/baselineableMetric:BaselineableMetric test_baselineable_metric "id"

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// SchedulingPlans can be imported using the `id`, e.g.
+    /// SchedulingPlans can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/schedulingPlan:SchedulingPlan test_scheduling_plan "id"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
+    /// This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/containerengine/latest/VirtualNodePool
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/container_engine
+    /// 
+    /// Create a new virtual node pool.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -85,7 +92,7 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Import
     /// 
-    /// VirtualNodePools can be imported using the `id`, e.g.
+    /// VirtualNodePools can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ContainerEngine/virtualNodePool:VirtualNodePool test_virtual_node_pool "id"

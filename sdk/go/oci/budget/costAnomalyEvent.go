@@ -12,7 +12,12 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// ## Example Usage
+// This resource provides the Cost Anomaly Event resource in Oracle Cloud Infrastructure Budget service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/budgets/latest/CostAnomalyEvent
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/budget
+//
+// Update a CostAnomalyEvent identified by the OCID.
 //
 // ## Import
 //

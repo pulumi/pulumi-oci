@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/VolumeGroupBackup
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates a new backup volume group of the specified volume group.
+    /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,7 +49,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// VolumeGroupBackups can be imported using the `id`, e.g.
+    /// VolumeGroupBackups can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/volumeGroupBackup:VolumeGroupBackup test_volume_group_backup "id"

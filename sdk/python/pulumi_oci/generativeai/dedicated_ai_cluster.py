@@ -634,6 +634,13 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  unit_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai/latest/DedicatedAiCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai
+
+        Creates a dedicated AI cluster.
+
         ## Example Usage
 
         ```python
@@ -740,6 +747,13 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  args: DedicatedAiClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai/latest/DedicatedAiCluster
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai
+
+        Creates a dedicated AI cluster.
+
         ## Example Usage
 
         ```python

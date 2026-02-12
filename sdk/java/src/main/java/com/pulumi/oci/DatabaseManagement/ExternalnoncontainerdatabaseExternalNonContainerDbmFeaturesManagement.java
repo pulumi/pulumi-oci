@@ -16,6 +16,12 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ * Enables Database Management feature for the specified external non-container database.
+ * 
  * ## Example Usage
  * 
  * <pre>

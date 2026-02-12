@@ -10,6 +10,11 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ManagementAgent
 {
     /// <summary>
+    /// This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/management-agent/latest/ManagementAgent
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/management_agent
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -33,7 +38,7 @@ namespace Pulumi.Oci.ManagementAgent
     /// Compute instance must have OCA Plugin "Management Agent" enabled
     /// ## Import
     /// 
-    /// ManagementAgents can be imported using the `id`, e.g.
+    /// ManagementAgents can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ManagementAgent/managementAgent:ManagementAgent test_management_agent "id"
@@ -69,6 +74,18 @@ namespace Pulumi.Oci.ManagementAgent
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// Management Agent resources are not created or destroyed by terraform.
+        /// 
+        /// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+        /// 
+        /// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+        /// </summary>
         [Output("deployPluginsIds")]
         public Output<ImmutableArray<string>> DeployPluginsIds { get; private set; } = null!;
 
@@ -273,6 +290,19 @@ namespace Pulumi.Oci.ManagementAgent
 
         [Input("deployPluginsIds")]
         private InputList<string>? _deployPluginsIds;
+
+        /// <summary>
+        /// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// Management Agent resources are not created or destroyed by terraform.
+        /// 
+        /// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+        /// 
+        /// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+        /// </summary>
         public InputList<string> DeployPluginsIds
         {
             get => _deployPluginsIds ?? (_deployPluginsIds = new InputList<string>());
@@ -357,6 +387,19 @@ namespace Pulumi.Oci.ManagementAgent
 
         [Input("deployPluginsIds")]
         private InputList<string>? _deployPluginsIds;
+
+        /// <summary>
+        /// (Updatable) Plugin Id list to deploy to Management Agent. Once deployed, plugins cannot be undeployed.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// 
+        /// Management Agent resources are not created or destroyed by terraform.
+        /// 
+        /// Management Agents should be created using on premise installation, or OCA plugin for Management Agent. See [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html).
+        /// 
+        /// Destroy operation in terraform will not delete the Management Agent, this must be performed by steps indicated in [Management Agent](https://docs.oracle.com/en-us/iaas/management-agents/index.html). Destroy will remove the resource from terraform state only.
+        /// </summary>
         public InputList<string> DeployPluginsIds
         {
             get => _deployPluginsIds ?? (_deployPluginsIds = new InputList<string>());

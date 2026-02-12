@@ -21,6 +21,9 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// The package version.
         /// </summary>
         public readonly string Version;
+        /// <summary>
+        /// Base-64 payload of the Terraform zip package.
+        /// </summary>
         public readonly string ZipFileBase64encoded;
 
         [OutputConstructor]

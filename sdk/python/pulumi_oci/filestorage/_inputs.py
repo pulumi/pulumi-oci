@@ -63,46 +63,41 @@ __all__ = [
     'GetSnapshotsFilterArgsDict',
 ]
 
-MYPY = False
+class ExportExportOptionArgsDict(TypedDict):
+    source: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
 
-if not MYPY:
-    class ExportExportOptionArgsDict(TypedDict):
-        source: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
-
-        **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
-        """
-        access: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
-        """
-        allowed_auths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) Array of allowed NFS authentication types.
-        """
-        anonymous_gid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
-        """
-        anonymous_uid: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
-        """
-        identity_squash: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
-        """
-        is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
-        """
-        require_privileged_source_port: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        """
-elif False:
-    ExportExportOptionArgsDict: TypeAlias = Mapping[str, Any]
+    **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
+    """
+    access: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
+    """
+    allowed_auths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) Array of allowed NFS authentication types.
+    """
+    anonymous_gid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) GID value to remap to when squashing a client GID (see identitySquash for more details.) If unspecified defaults to `65534`.
+    """
+    anonymous_uid: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) UID value to remap to when squashing a client UID (see identitySquash for more details.) If unspecified, defaults to `65534`.
+    """
+    identity_squash: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
+    """
+    is_anonymous_access_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+    """
+    require_privileged_source_port: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
+    """
 
 @pulumi.input_type
 class ExportExportOptionArgs:
@@ -242,26 +237,23 @@ class ExportExportOptionArgs:
         pulumi.set(self, "require_privileged_source_port", value)
 
 
-if not MYPY:
-    class ExportLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    ExportLockArgsDict: TypeAlias = Mapping[str, Any]
+class ExportLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class ExportLockArgs:
@@ -333,26 +325,23 @@ class ExportLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class FileSystemLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    FileSystemLockArgsDict: TypeAlias = Mapping[str, Any]
+class FileSystemLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class FileSystemLockArgs:
@@ -424,18 +413,15 @@ class FileSystemLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class FileSystemSourceDetailArgsDict(TypedDict):
-        parent_file_system_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
-        source_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        """
-elif False:
-    FileSystemSourceDetailArgsDict: TypeAlias = Mapping[str, Any]
+class FileSystemSourceDetailArgsDict(TypedDict):
+    parent_file_system_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+    """
+    source_snapshot_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+    """
 
 @pulumi.input_type
 class FileSystemSourceDetailArgs:
@@ -476,26 +462,23 @@ class FileSystemSourceDetailArgs:
         pulumi.set(self, "source_snapshot_id", value)
 
 
-if not MYPY:
-    class FilesystemSnapshotPolicyLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    FilesystemSnapshotPolicyLockArgsDict: TypeAlias = Mapping[str, Any]
+class FilesystemSnapshotPolicyLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class FilesystemSnapshotPolicyLockArgs:
@@ -567,46 +550,43 @@ class FilesystemSnapshotPolicyLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class FilesystemSnapshotPolicyScheduleArgsDict(TypedDict):
-        period: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The frequency of scheduled snapshots.
-        """
-        time_zone: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Time zone used for scheduling the snapshot.
-        """
-        day_of_month: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
-        """
-        day_of_week: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
-        """
-        hour_of_day: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
-        """
-        month: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
-        """
-        retention_duration_in_seconds: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
-        """
-        schedule_prefix: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
-        """
-        time_schedule_start: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
-        """
-elif False:
-    FilesystemSnapshotPolicyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class FilesystemSnapshotPolicyScheduleArgsDict(TypedDict):
+    period: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The frequency of scheduled snapshots.
+    """
+    time_zone: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Time zone used for scheduling the snapshot.
+    """
+    day_of_month: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
+    """
+    day_of_week: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
+    """
+    hour_of_day: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
+    """
+    month: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
+    """
+    retention_duration_in_seconds: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
+    """
+    schedule_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+    """
+    time_schedule_start: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
+    """
 
 @pulumi.input_type
 class FilesystemSnapshotPolicyScheduleArgs:
@@ -757,30 +737,27 @@ class FilesystemSnapshotPolicyScheduleArgs:
         pulumi.set(self, "time_schedule_start", value)
 
 
-if not MYPY:
-    class MountTargetKerberosArgsDict(TypedDict):
-        kerberos_realm: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The Kerberos realm that the mount target will join.
-        """
-        backup_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Version of the keytab Secret in the Vault to use as a backup.
-        """
-        current_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Version of the keytab Secret in the Vault to use.
-        """
-        is_kerberos_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Specifies whether to enable or disable Kerberos.
-        """
-        key_tab_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
-        """
-elif False:
-    MountTargetKerberosArgsDict: TypeAlias = Mapping[str, Any]
+class MountTargetKerberosArgsDict(TypedDict):
+    kerberos_realm: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The Kerberos realm that the mount target will join.
+    """
+    backup_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Version of the keytab Secret in the Vault to use as a backup.
+    """
+    current_key_tab_secret_version: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Version of the keytab Secret in the Vault to use.
+    """
+    is_kerberos_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Specifies whether to enable or disable Kerberos.
+    """
+    key_tab_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+    """
 
 @pulumi.input_type
 class MountTargetKerberosArgs:
@@ -868,42 +845,39 @@ class MountTargetKerberosArgs:
         pulumi.set(self, "key_tab_secret_id", value)
 
 
-if not MYPY:
-    class MountTargetLdapIdmapArgsDict(TypedDict):
-        cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
-        """
-        cache_refresh_interval_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
-        """
-        group_search_base: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
-        """
-        negative_cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
-        """
-        outbound_connector1id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
-        """
-        outbound_connector2id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
-        """
-        schema_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Schema type of the LDAP account.
-        """
-        user_search_base: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
-        """
-elif False:
-    MountTargetLdapIdmapArgsDict: TypeAlias = Mapping[str, Any]
+class MountTargetLdapIdmapArgsDict(TypedDict):
+    cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The maximum amount of time the mount target is allowed to use a cached entry.
+    """
+    cache_refresh_interval_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+    """
+    group_search_base: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) All LDAP searches are recursive starting at this group.  Example: `CN=Group,DC=domain,DC=com`
+    """
+    negative_cache_lifetime_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+    """
+    outbound_connector1id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+    """
+    outbound_connector2id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+    """
+    schema_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Schema type of the LDAP account.
+    """
+    user_search_base: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
+    """
 
 @pulumi.input_type
 class MountTargetLdapIdmapArgs:
@@ -1040,26 +1014,23 @@ class MountTargetLdapIdmapArgs:
         pulumi.set(self, "user_search_base", value)
 
 
-if not MYPY:
-    class MountTargetLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    MountTargetLockArgsDict: TypeAlias = Mapping[str, Any]
+class MountTargetLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class MountTargetLockArgs:
@@ -1131,18 +1102,15 @@ class MountTargetLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class OutboundConnectorEndpointArgsDict(TypedDict):
-        hostname: pulumi.Input[_builtins.str]
-        """
-        Name of the DNS server.
-        """
-        port: pulumi.Input[_builtins.str]
-        """
-        Port of the DNS server.
-        """
-elif False:
-    OutboundConnectorEndpointArgsDict: TypeAlias = Mapping[str, Any]
+class OutboundConnectorEndpointArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    Name of the DNS server.
+    """
+    port: pulumi.Input[_builtins.str]
+    """
+    Port of the DNS server.
+    """
 
 @pulumi.input_type
 class OutboundConnectorEndpointArgs:
@@ -1181,26 +1149,23 @@ class OutboundConnectorEndpointArgs:
         pulumi.set(self, "port", value)
 
 
-if not MYPY:
-    class OutboundConnectorLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    OutboundConnectorLockArgsDict: TypeAlias = Mapping[str, Any]
+class OutboundConnectorLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class OutboundConnectorLockArgs:
@@ -1272,26 +1237,23 @@ class OutboundConnectorLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class ReplicationLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    ReplicationLockArgsDict: TypeAlias = Mapping[str, Any]
+class ReplicationLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class ReplicationLockArgs:
@@ -1363,26 +1325,23 @@ class ReplicationLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class SnapshotLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    SnapshotLockArgsDict: TypeAlias = Mapping[str, Any]
+class SnapshotLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class SnapshotLockArgs:
@@ -1454,13 +1413,10 @@ class SnapshotLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class GetExportSetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExportSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExportSetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExportSetsFilterArgs:
@@ -1501,13 +1457,10 @@ class GetExportSetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetExportsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetExportsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetExportsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetExportsFilterArgs:
@@ -1548,13 +1501,10 @@ class GetExportsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFileSystemQuotaRulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFileSystemQuotaRulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileSystemQuotaRulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFileSystemQuotaRulesFilterArgs:
@@ -1595,13 +1545,10 @@ class GetFileSystemQuotaRulesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFileSystemsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFileSystemsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFileSystemsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFileSystemsFilterArgs:
@@ -1642,13 +1589,10 @@ class GetFileSystemsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFilesystemSnapshotPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFilesystemSnapshotPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFilesystemSnapshotPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFilesystemSnapshotPoliciesFilterArgs:
@@ -1689,13 +1633,10 @@ class GetFilesystemSnapshotPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMountTargetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMountTargetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMountTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMountTargetsFilterArgs:
@@ -1736,13 +1677,10 @@ class GetMountTargetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetOutboundConnectorsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOutboundConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOutboundConnectorsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOutboundConnectorsFilterArgs:
@@ -1783,13 +1721,10 @@ class GetOutboundConnectorsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReplicationTargetsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReplicationTargetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReplicationTargetsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReplicationTargetsFilterArgs:
@@ -1830,13 +1765,10 @@ class GetReplicationTargetsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetReplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetReplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetReplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetReplicationsFilterArgs:
@@ -1877,16 +1809,13 @@ class GetReplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSnapshotsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Name of the snapshot. This value is immutable.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSnapshotsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Name of the snapshot. This value is immutable.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSnapshotsFilterArgs:

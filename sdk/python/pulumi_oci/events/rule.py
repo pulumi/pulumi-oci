@@ -413,6 +413,13 @@ class Rule(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
+        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/events/latest/Rule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/events
+
+        Creates a new rule.
+
         ## Example Usage
 
         ```python
@@ -485,6 +492,13 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/events/latest/Rule
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/events
+
+        Creates a new rule.
+
         ## Example Usage
 
         ```python

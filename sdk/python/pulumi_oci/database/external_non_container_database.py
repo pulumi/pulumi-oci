@@ -444,6 +444,13 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalNonContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new ExternalNonContainerDatabase resource
+
         ## Example Usage
 
         ```python
@@ -485,6 +492,13 @@ class ExternalNonContainerDatabase(pulumi.CustomResource):
                  args: ExternalNonContainerDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/ExternalNonContainerDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Creates a new ExternalNonContainerDatabase resource
+
         ## Example Usage
 
         ```python

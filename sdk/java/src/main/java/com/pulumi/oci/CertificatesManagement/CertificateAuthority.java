@@ -22,7 +22,12 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/latest/CertificateAuthority
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesManagement
+ * 
+ * Creates a new certificate authority (CA) according to the details of the request.
  * 
  * ## Import
  * 

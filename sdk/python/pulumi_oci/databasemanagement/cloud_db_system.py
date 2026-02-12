@@ -431,6 +431,13 @@ class CloudDbSystem(pulumi.CustomResource):
                  stack_monitoring_config: Optional[pulumi.Input[Union['CloudDbSystemStackMonitoringConfigArgs', 'CloudDbSystemStackMonitoringConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a cloud DB system and its related resources.
+
         ## Example Usage
 
         ```python
@@ -482,6 +489,13 @@ class CloudDbSystem(pulumi.CustomResource):
                  args: CloudDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/CloudDbSystem
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+
+        Creates a cloud DB system and its related resources.
+
         ## Example Usage
 
         ```python

@@ -133,6 +133,7 @@ class PrivateApplicationPackageDetails(dict):
         """
         :param _builtins.str package_type: The package's type.
         :param _builtins.str version: The package version.
+        :param _builtins.str zip_file_base64encoded: Base-64 payload of the Terraform zip package.
         """
         pulumi.set(__self__, "package_type", package_type)
         pulumi.set(__self__, "version", version)
@@ -157,6 +158,9 @@ class PrivateApplicationPackageDetails(dict):
     @_builtins.property
     @pulumi.getter(name="zipFileBase64encoded")
     def zip_file_base64encoded(self) -> _builtins.str:
+        """
+        Base-64 payload of the Terraform zip package.
+        """
         return pulumi.get(self, "zip_file_base64encoded")
 
 
@@ -525,8 +529,10 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
                  time_created: _builtins.str,
                  version: _builtins.str):
         """
+        :param _builtins.str content_url: The content URL of the terraform configuration.
         :param _builtins.str display_name: Exact match name filter.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private application package.
+        :param _builtins.str mime_type: The MIME type of the terraform configuration.
         :param _builtins.str package_type: Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
         :param _builtins.str private_application_id: The unique identifier for the private application.
         :param _builtins.str time_created: The date and time the private application package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-27T21:10:29.600Z`
@@ -544,6 +550,9 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
     @_builtins.property
     @pulumi.getter(name="contentUrl")
     def content_url(self) -> _builtins.str:
+        """
+        The content URL of the terraform configuration.
+        """
         return pulumi.get(self, "content_url")
 
     @_builtins.property
@@ -565,6 +574,9 @@ class GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItemResult
     @_builtins.property
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> _builtins.str:
+        """
+        The MIME type of the terraform configuration.
+        """
         return pulumi.get(self, "mime_type")
 
     @_builtins.property

@@ -60,6 +60,9 @@ export interface GetWorkspaceApplicationTaskScheduleResult {
      * The authorization mode for the task.
      */
     readonly authMode: string;
+    /**
+     * The information about the configuration provider.First level keys to this delegate map should be in the order first "bindings" then "childProviders".refer terraform Example.
+     */
     readonly configProviderDelegate: string;
     /**
      * The description of the aggregator.

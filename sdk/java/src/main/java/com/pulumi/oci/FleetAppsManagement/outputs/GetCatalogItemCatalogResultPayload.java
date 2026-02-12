@@ -45,6 +45,10 @@ public final class GetCatalogItemCatalogResultPayload {
      * 
      */
     private String timeExpires;
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     private String workingDirectory;
 
     private GetCatalogItemCatalogResultPayload() {}
@@ -97,6 +101,10 @@ public final class GetCatalogItemCatalogResultPayload {
     public String timeExpires() {
         return this.timeExpires;
     }
+    /**
+     * @return File path to the directory to use for running Terraform. If not specified, the root directory is used.
+     * 
+     */
     public String workingDirectory() {
         return this.workingDirectory;
     }

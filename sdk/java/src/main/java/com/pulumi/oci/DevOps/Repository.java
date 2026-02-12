@@ -18,7 +18,12 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * ## Example Usage
+ * This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/devops/latest/Repository
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/devops
+ * 
+ * Creates a new repository.
  * 
  * ## Import
  * 

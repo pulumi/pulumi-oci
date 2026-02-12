@@ -513,6 +513,13 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceExportRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Export Metadata Object
+
         ## Example Usage
 
         ```python
@@ -562,6 +569,13 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  args: WorkspaceExportRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceExportRequest
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+
+        Export Metadata Object
+
         ## Example Usage
 
         ```python

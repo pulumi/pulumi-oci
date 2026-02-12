@@ -7,6 +7,26 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Volume resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Volume
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
+ * 50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
+ * For general information about block volumes, see
+ * [Overview of Block Volume Service](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
+ *
+ * A volume and instance can be in separate compartments but must be in the same availability domain.
+ * For information about access control and compartments, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about
+ * availability domains, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+ * To get a list of availability domains, use the `ListAvailabilityDomains` operation
+ * in the Identity and Access Management Service API.
+ *
+ * You may optionally specify a *display name* for the volume, which is simply a friendly name or
+ * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+ *
  * ## Example Usage
  *
  * ```typescript

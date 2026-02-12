@@ -61,16 +61,11 @@ __all__ = [
     'GetProjectsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ModelComponentModelArgsDict(TypedDict):
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
-elif False:
-    ModelComponentModelArgsDict: TypeAlias = Mapping[str, Any]
+class ModelComponentModelArgsDict(TypedDict):
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+    """
 
 @pulumi.input_type
 class ModelComponentModelArgs:
@@ -95,30 +90,27 @@ class ModelComponentModelArgs:
         pulumi.set(self, "model_id", value)
 
 
-if not MYPY:
-    class ModelLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Lock type.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The compartment identifier.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the model was created, as an RFC3339 datetime string.
-        """
-elif False:
-    ModelLockArgsDict: TypeAlias = Mapping[str, Any]
+class ModelLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Lock type.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The compartment identifier.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the model was created, as an RFC3339 datetime string.
+    """
 
 @pulumi.input_type
 class ModelLockArgs:
@@ -206,26 +198,23 @@ class ModelLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class ModelMetricArgsDict(TypedDict):
-        dataset_summaries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgsDict']]]]
-        """
-        Summary of count of samples used during model training.
-        """
-        label_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgsDict']]]]
-        """
-        List of metrics entries per label.
-        """
-        model_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The type of the Document model.
-        """
-        overall_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgsDict']]]]
-        """
-        Overall Metrics report for Document Classification Model.
-        """
-elif False:
-    ModelMetricArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricArgsDict(TypedDict):
+    dataset_summaries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgsDict']]]]
+    """
+    Summary of count of samples used during model training.
+    """
+    label_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgsDict']]]]
+    """
+    List of metrics entries per label.
+    """
+    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The type of the Document model.
+    """
+    overall_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgsDict']]]]
+    """
+    Overall Metrics report for Document Classification Model.
+    """
 
 @pulumi.input_type
 class ModelMetricArgs:
@@ -298,22 +287,19 @@ class ModelMetricArgs:
         pulumi.set(self, "overall_metrics_reports", value)
 
 
-if not MYPY:
-    class ModelMetricDatasetSummaryArgsDict(TypedDict):
-        test_sample_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of samples used for testing the model.
-        """
-        training_sample_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of samples used for training the model.
-        """
-        validation_sample_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Number of samples used for validating the model.
-        """
-elif False:
-    ModelMetricDatasetSummaryArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricDatasetSummaryArgsDict(TypedDict):
+    test_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of samples used for testing the model.
+    """
+    training_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of samples used for training the model.
+    """
+    validation_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Number of samples used for validating the model.
+    """
 
 @pulumi.input_type
 class ModelMetricDatasetSummaryArgs:
@@ -370,26 +356,23 @@ class ModelMetricDatasetSummaryArgs:
         pulumi.set(self, "validation_sample_count", value)
 
 
-if not MYPY:
-    class ModelMetricLabelMetricsReportArgsDict(TypedDict):
-        confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgsDict']]]]
-        """
-        List of document classification confidence report.
-        """
-        document_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total test documents in the label.
-        """
-        label: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Label name
-        """
-        mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Mean average precision under different thresholds
-        """
-elif False:
-    ModelMetricLabelMetricsReportArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricLabelMetricsReportArgsDict(TypedDict):
+    confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgsDict']]]]
+    """
+    List of document classification confidence report.
+    """
+    document_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total test documents in the label.
+    """
+    label: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Label name
+    """
+    mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Mean average precision under different thresholds
+    """
 
 @pulumi.input_type
 class ModelMetricLabelMetricsReportArgs:
@@ -462,30 +445,27 @@ class ModelMetricLabelMetricsReportArgs:
         pulumi.set(self, "mean_average_precision", value)
 
 
-if not MYPY:
-    class ModelMetricLabelMetricsReportConfidenceEntryArgsDict(TypedDict):
-        accuracy: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        accuracy under the threshold
-        """
-        f1score: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        f1Score under the threshold
-        """
-        precision: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Precision under the threshold
-        """
-        recall: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Recall under the threshold
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Threshold used to calculate precision and recall.
-        """
-elif False:
-    ModelMetricLabelMetricsReportConfidenceEntryArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricLabelMetricsReportConfidenceEntryArgsDict(TypedDict):
+    accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    accuracy under the threshold
+    """
+    f1score: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    f1Score under the threshold
+    """
+    precision: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Precision under the threshold
+    """
+    recall: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Recall under the threshold
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Threshold used to calculate precision and recall.
+    """
 
 @pulumi.input_type
 class ModelMetricLabelMetricsReportConfidenceEntryArgs:
@@ -574,22 +554,19 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelMetricOverallMetricsReportArgsDict(TypedDict):
-        confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgsDict']]]]
-        """
-        List of document classification confidence report.
-        """
-        document_count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Total test documents in the label.
-        """
-        mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Mean average precision under different thresholds
-        """
-elif False:
-    ModelMetricOverallMetricsReportArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricOverallMetricsReportArgsDict(TypedDict):
+    confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgsDict']]]]
+    """
+    List of document classification confidence report.
+    """
+    document_count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Total test documents in the label.
+    """
+    mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Mean average precision under different thresholds
+    """
 
 @pulumi.input_type
 class ModelMetricOverallMetricsReportArgs:
@@ -646,30 +623,27 @@ class ModelMetricOverallMetricsReportArgs:
         pulumi.set(self, "mean_average_precision", value)
 
 
-if not MYPY:
-    class ModelMetricOverallMetricsReportConfidenceEntryArgsDict(TypedDict):
-        accuracy: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        accuracy under the threshold
-        """
-        f1score: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        f1Score under the threshold
-        """
-        precision: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Precision under the threshold
-        """
-        recall: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Recall under the threshold
-        """
-        threshold: NotRequired[pulumi.Input[_builtins.float]]
-        """
-        Threshold used to calculate precision and recall.
-        """
-elif False:
-    ModelMetricOverallMetricsReportConfidenceEntryArgsDict: TypeAlias = Mapping[str, Any]
+class ModelMetricOverallMetricsReportConfidenceEntryArgsDict(TypedDict):
+    accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    accuracy under the threshold
+    """
+    f1score: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    f1Score under the threshold
+    """
+    precision: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Precision under the threshold
+    """
+    recall: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Recall under the threshold
+    """
+    threshold: NotRequired[pulumi.Input[_builtins.float]]
+    """
+    Threshold used to calculate precision and recall.
+    """
 
 @pulumi.input_type
 class ModelMetricOverallMetricsReportConfidenceEntryArgs:
@@ -758,25 +732,22 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgs:
         pulumi.set(self, "threshold", value)
 
 
-if not MYPY:
-    class ModelModelSubTypeArgsDict(TypedDict):
-        model_sub_type: pulumi.Input[_builtins.str]
-        """
-        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
-        * `RECEIPT`
-        * `INVOICE`
-        * `PASSPORT`
-        * `DRIVER_LICENSE`
-        * `HEALTH_INSURANCE_ID`
-        """
-        model_type: pulumi.Input[_builtins.str]
-        """
-        Sub type model based on the model type. The allowed values are:
-        * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
-        * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
-        """
-elif False:
-    ModelModelSubTypeArgsDict: TypeAlias = Mapping[str, Any]
+class ModelModelSubTypeArgsDict(TypedDict):
+    model_sub_type: pulumi.Input[_builtins.str]
+    """
+    The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+    * `RECEIPT`
+    * `INVOICE`
+    * `PASSPORT`
+    * `DRIVER_LICENSE`
+    * `HEALTH_INSURANCE_ID`
+    """
+    model_type: pulumi.Input[_builtins.str]
+    """
+    Sub type model based on the model type. The allowed values are:
+    * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+    * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+    """
 
 @pulumi.input_type
 class ModelModelSubTypeArgs:
@@ -829,30 +800,27 @@ class ModelModelSubTypeArgs:
         pulumi.set(self, "model_type", value)
 
 
-if not MYPY:
-    class ModelTestingDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
-        """
-elif False:
-    ModelTestingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+class ModelTestingDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace name of the Object Storage bucket that contains the input data file.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
+    """
 
 @pulumi.input_type
 class ModelTestingDatasetArgs:
@@ -940,30 +908,27 @@ class ModelTestingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ModelTrainingDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
-        """
-elif False:
-    ModelTrainingDatasetArgsDict: TypeAlias = Mapping[str, Any]
+class ModelTrainingDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace name of the Object Storage bucket that contains the input data file.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
+    """
 
 @pulumi.input_type
 class ModelTrainingDatasetArgs:
@@ -1051,34 +1016,31 @@ class ModelTrainingDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ModelValidationDatasetArgsDict(TypedDict):
-        dataset_type: pulumi.Input[_builtins.str]
-        """
-        The dataset type, based on where it is stored.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the Object Storage bucket that contains the input data file.
-        """
-        dataset_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        OCID of the Data Labeling dataset.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The namespace name of the Object Storage bucket that contains the input data file.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The object name of the input data file.
+class ModelValidationDatasetArgsDict(TypedDict):
+    dataset_type: pulumi.Input[_builtins.str]
+    """
+    The dataset type, based on where it is stored.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the Object Storage bucket that contains the input data file.
+    """
+    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    OCID of the Data Labeling dataset.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The namespace name of the Object Storage bucket that contains the input data file.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The object name of the input data file.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ModelValidationDatasetArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ModelValidationDatasetArgs:
@@ -1174,28 +1136,25 @@ class ModelValidationDatasetArgs:
         pulumi.set(self, "object", value)
 
 
-if not MYPY:
-    class ProcessorJobInputLocationArgsDict(TypedDict):
-        source_type: pulumi.Input[_builtins.str]
-        """
-        The type of input location. The allowed values are:
-        * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
-        * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
-        """
-        data: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Raw document data with Base64 encoding.
-        """
-        object_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgsDict']]]]
-        """
-        The list of ObjectLocations.
-        """
-        page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The page ranges to be analysed.
-        """
-elif False:
-    ProcessorJobInputLocationArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobInputLocationArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    The type of input location. The allowed values are:
+    * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
+    * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
+    """
+    data: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Raw document data with Base64 encoding.
+    """
+    object_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgsDict']]]]
+    """
+    The list of ObjectLocations.
+    """
+    page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The page ranges to be analysed.
+    """
 
 @pulumi.input_type
 class ProcessorJobInputLocationArgs:
@@ -1271,26 +1230,23 @@ class ProcessorJobInputLocationArgs:
         pulumi.set(self, "page_ranges", value)
 
 
-if not MYPY:
-    class ProcessorJobInputLocationObjectLocationArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Object Storage bucket name.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Object Storage namespace name.
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The Object Storage object name.
-        """
-        page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        The page ranges to be analysed.
-        """
-elif False:
-    ProcessorJobInputLocationObjectLocationArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobInputLocationObjectLocationArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Object Storage bucket name.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Object Storage namespace name.
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The Object Storage object name.
+    """
+    page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    The page ranges to be analysed.
+    """
 
 @pulumi.input_type
 class ProcessorJobInputLocationObjectLocationArgs:
@@ -1363,22 +1319,19 @@ class ProcessorJobInputLocationObjectLocationArgs:
         pulumi.set(self, "page_ranges", value)
 
 
-if not MYPY:
-    class ProcessorJobOutputLocationArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        The Object Storage bucket name.
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        The Object Storage namespace.
-        """
-        prefix: pulumi.Input[_builtins.str]
-        """
-        The Object Storage folder name.
-        """
-elif False:
-    ProcessorJobOutputLocationArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobOutputLocationArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    The Object Storage bucket name.
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    The Object Storage namespace.
+    """
+    prefix: pulumi.Input[_builtins.str]
+    """
+    The Object Storage folder name.
+    """
 
 @pulumi.input_type
 class ProcessorJobOutputLocationArgs:
@@ -1432,42 +1385,39 @@ class ProcessorJobOutputLocationArgs:
         pulumi.set(self, "prefix", value)
 
 
-if not MYPY:
-    class ProcessorJobProcessorConfigArgsDict(TypedDict):
-        features: pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgsDict']]]
-        """
-        The types of document analysis requested.
-        """
-        processor_type: pulumi.Input[_builtins.str]
-        """
-        The type of the processor.
+class ProcessorJobProcessorConfigArgsDict(TypedDict):
+    features: pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgsDict']]]
+    """
+    The types of document analysis requested.
+    """
+    processor_type: pulumi.Input[_builtins.str]
+    """
+    The type of the processor.
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        document_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The document type.
-        """
-        is_zip_output_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether or not to generate a ZIP file containing the results.
-        """
-        language: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The document language, abbreviated according to the BCP 47 Language-Tag syntax.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier custom model OCID that should be used for inference.
-        """
-        normalization_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgsDict']]]]
-        """
-        A string-to-object map where the key is the normalization field and the object contains information about the field.
-        """
-elif False:
-    ProcessorJobProcessorConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    document_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The document type.
+    """
+    is_zip_output_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether or not to generate a ZIP file containing the results.
+    """
+    language: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The document language, abbreviated according to the BCP 47 Language-Tag syntax.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier custom model OCID that should be used for inference.
+    """
+    normalization_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgsDict']]]]
+    """
+    A string-to-object map where the key is the normalization field and the object contains information about the field.
+    """
 
 @pulumi.input_type
 class ProcessorJobProcessorConfigArgs:
@@ -1594,40 +1544,37 @@ class ProcessorJobProcessorConfigArgs:
         pulumi.set(self, "normalization_fields", value)
 
 
-if not MYPY:
-    class ProcessorJobProcessorConfigFeatureArgsDict(TypedDict):
-        feature_type: pulumi.Input[_builtins.str]
-        """
-        The type of document analysis requested. The allowed values are:
-        * `LANGUAGE_CLASSIFICATION`: Detect the language.
-        * `TEXT_EXTRACTION`: Recognize text.
-        * `TABLE_EXTRACTION`: Detect and extract data in tables.
-        * `KEY_VALUE_EXTRACTION`: Extract form fields.
-        * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
-        * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
-        """
-        generate_searchable_pdf: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether or not to generate a searchable PDF file.
-        """
-        max_results: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The maximum number of results to return.
-        """
-        model_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Unique identifier custom model OCID that should be used for inference.
-        """
-        selection_mark_detection: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        Whether checkbox detection feature is enabled or disabled.
-        """
-        tenancy_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The custom model tenancy ID when modelId represents aliasName.
-        """
-elif False:
-    ProcessorJobProcessorConfigFeatureArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobProcessorConfigFeatureArgsDict(TypedDict):
+    feature_type: pulumi.Input[_builtins.str]
+    """
+    The type of document analysis requested. The allowed values are:
+    * `LANGUAGE_CLASSIFICATION`: Detect the language.
+    * `TEXT_EXTRACTION`: Recognize text.
+    * `TABLE_EXTRACTION`: Detect and extract data in tables.
+    * `KEY_VALUE_EXTRACTION`: Extract form fields.
+    * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+    * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
+    """
+    generate_searchable_pdf: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether or not to generate a searchable PDF file.
+    """
+    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The maximum number of results to return.
+    """
+    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Unique identifier custom model OCID that should be used for inference.
+    """
+    selection_mark_detection: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    Whether checkbox detection feature is enabled or disabled.
+    """
+    tenancy_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The custom model tenancy ID when modelId represents aliasName.
+    """
 
 @pulumi.input_type
 class ProcessorJobProcessorConfigFeatureArgs:
@@ -1743,14 +1690,11 @@ class ProcessorJobProcessorConfigFeatureArgs:
         pulumi.set(self, "tenancy_id", value)
 
 
-if not MYPY:
-    class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
-        maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgsDict']]]]
-        """
-        A wrapped map.
-        """
-elif False:
-    ProcessorJobProcessorConfigNormalizationFieldArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
+    maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgsDict']]]]
+    """
+    A wrapped map.
+    """
 
 @pulumi.input_type
 class ProcessorJobProcessorConfigNormalizationFieldArgs:
@@ -1775,14 +1719,11 @@ class ProcessorJobProcessorConfigNormalizationFieldArgs:
         pulumi.set(self, "maps", value)
 
 
-if not MYPY:
-    class ProcessorJobProcessorConfigNormalizationFieldMapArgsDict(TypedDict):
-        normalization_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A string mapping to the normalization type.
-        """
-elif False:
-    ProcessorJobProcessorConfigNormalizationFieldMapArgsDict: TypeAlias = Mapping[str, Any]
+class ProcessorJobProcessorConfigNormalizationFieldMapArgsDict(TypedDict):
+    normalization_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A string mapping to the normalization type.
+    """
 
 @pulumi.input_type
 class ProcessorJobProcessorConfigNormalizationFieldMapArgs:
@@ -1807,30 +1748,27 @@ class ProcessorJobProcessorConfigNormalizationFieldMapArgs:
         pulumi.set(self, "normalization_type", value)
 
 
-if not MYPY:
-    class ProjectLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Lock type.
-        """
-        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The compartment identifier.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the project was created, as an RFC3339 datetime string.
-        """
-elif False:
-    ProjectLockArgsDict: TypeAlias = Mapping[str, Any]
+class ProjectLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Lock type.
+    """
+    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The compartment identifier.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the project was created, as an RFC3339 datetime string.
+    """
 
 @pulumi.input_type
 class ProjectLockArgs:
@@ -1918,13 +1856,10 @@ class ProjectLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class GetModelsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetModelsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetModelsFilterArgs:
@@ -1965,13 +1900,10 @@ class GetModelsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProjectsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProjectsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProjectsFilterArgs:

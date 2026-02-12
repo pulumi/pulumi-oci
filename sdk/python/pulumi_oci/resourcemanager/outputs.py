@@ -253,6 +253,10 @@ class GetStackConfigSourceResult(dict):
                  config_source_type: _builtins.str,
                  working_directory: _builtins.str,
                  zip_file_base64encoded: _builtins.str):
+        """
+        :param _builtins.str config_source_type: Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+        :param _builtins.str working_directory: File path to the directory from which Terraform runs. If not specified, we use the root directory.
+        """
         pulumi.set(__self__, "config_source_type", config_source_type)
         pulumi.set(__self__, "working_directory", working_directory)
         pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
@@ -260,11 +264,17 @@ class GetStackConfigSourceResult(dict):
     @_builtins.property
     @pulumi.getter(name="configSourceType")
     def config_source_type(self) -> _builtins.str:
+        """
+        Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+        """
         return pulumi.get(self, "config_source_type")
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory from which Terraform runs. If not specified, we use the root directory.
+        """
         return pulumi.get(self, "working_directory")
 
     @_builtins.property
@@ -317,6 +327,7 @@ class GetStacksStackResult(dict):
                  variables: Mapping[str, _builtins.str]):
         """
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
+        :param 'GetStacksStackConfigSourceArgs' config_source: Location of the Terraform configuration.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: General description of the stack.
         :param _builtins.str display_name: Display name on which to query.
@@ -324,7 +335,9 @@ class GetStacksStackResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
         :param _builtins.str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str terraform_version: The version of Terraform specified for the stack. Example: `1.5.x`
         :param _builtins.str time_created: The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
+        :param Mapping[str, _builtins.str] variables: Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_source", config_source)
@@ -350,6 +363,9 @@ class GetStacksStackResult(dict):
     @_builtins.property
     @pulumi.getter(name="configSource")
     def config_source(self) -> 'outputs.GetStacksStackConfigSourceResult':
+        """
+        Location of the Terraform configuration.
+        """
         return pulumi.get(self, "config_source")
 
     @_builtins.property
@@ -411,6 +427,9 @@ class GetStacksStackResult(dict):
     @_builtins.property
     @pulumi.getter(name="terraformVersion")
     def terraform_version(self) -> _builtins.str:
+        """
+        The version of Terraform specified for the stack. Example: `1.5.x`
+        """
         return pulumi.get(self, "terraform_version")
 
     @_builtins.property
@@ -424,6 +443,9 @@ class GetStacksStackResult(dict):
     @_builtins.property
     @pulumi.getter
     def variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Terraform variables associated with this resource. Maximum number of variables supported is 250. The maximum size of each variable, including both name and value, is 8192 bytes. Example: `{"CompartmentId": "compartment-id-value"}`
+        """
         return pulumi.get(self, "variables")
 
 
@@ -433,6 +455,10 @@ class GetStacksStackConfigSourceResult(dict):
                  config_source_type: _builtins.str,
                  working_directory: _builtins.str,
                  zip_file_base64encoded: _builtins.str):
+        """
+        :param _builtins.str config_source_type: Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+        :param _builtins.str working_directory: File path to the directory from which Terraform runs. If not specified, we use the root directory.
+        """
         pulumi.set(__self__, "config_source_type", config_source_type)
         pulumi.set(__self__, "working_directory", working_directory)
         pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
@@ -440,11 +466,17 @@ class GetStacksStackConfigSourceResult(dict):
     @_builtins.property
     @pulumi.getter(name="configSourceType")
     def config_source_type(self) -> _builtins.str:
+        """
+        Specifies the `configSourceType` for uploading the Terraform configuration. Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
+        """
         return pulumi.get(self, "config_source_type")
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> _builtins.str:
+        """
+        File path to the directory from which Terraform runs. If not specified, we use the root directory.
+        """
         return pulumi.get(self, "working_directory")
 
     @_builtins.property

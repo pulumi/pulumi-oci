@@ -265,6 +265,9 @@ class GetExadataInsightResult:
     @_builtins.property
     @pulumi.getter(name="isAutoSyncEnabled")
     def is_auto_sync_enabled(self) -> _builtins.bool:
+        """
+        Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight. This should be always set true when using terraform, when it is set to false member associations may be missing from the application.
+        """
         return pulumi.get(self, "is_auto_sync_enabled")
 
     @_builtins.property

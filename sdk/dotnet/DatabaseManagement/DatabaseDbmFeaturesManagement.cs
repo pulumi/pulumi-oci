@@ -10,6 +10,12 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/DatabaseDbmFeaturesManagement
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// Enables a Database Management feature for the specified cloud database.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

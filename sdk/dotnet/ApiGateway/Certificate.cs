@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway
 {
     /// <summary>
+    /// This resource provides the Certificate resource in Oracle Cloud Infrastructure API Gateway service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/Certificate
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+    /// 
+    /// Creates a new Certificate.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// ## Import
     /// 
-    /// Certificates can be imported using the `id`, e.g.
+    /// Certificates can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ApiGateway/certificate:Certificate test_certificate "id"

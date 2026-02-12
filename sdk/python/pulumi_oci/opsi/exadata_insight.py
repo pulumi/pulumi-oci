@@ -643,6 +643,13 @@ class ExadataInsight(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/ExadataInsight
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+
         ## Example Usage
 
         ```python
@@ -783,6 +790,13 @@ class ExadataInsight(pulumi.CustomResource):
                  args: ExadataInsightArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/operations-insights/latest/ExadataInsight
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osi
+
+        Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+
         ## Example Usage
 
         ```python

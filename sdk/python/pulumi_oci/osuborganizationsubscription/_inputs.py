@@ -19,18 +19,13 @@ __all__ = [
     'GetOrganizationSubscriptionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetOrganizationSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Currency name
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetOrganizationSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetOrganizationSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Currency name
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetOrganizationSubscriptionsFilterArgs:

@@ -7,6 +7,52 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Vcn resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/Vcn
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ *
+ * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
+ * For managing these resources, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
+ *
+ * Creates a new Virtual Cloud Network (VCN). For more information, see
+ * [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
+ *
+ * For the VCN, you specify a list of one or more IPv4 CIDR blocks that meet the following criteria:
+ *
+ * - The CIDR blocks must be valid.
+ * - They must not overlap with each other or with the on-premises network CIDR block.
+ * - The number of CIDR blocks does not exceed the limit of CIDR blocks allowed per VCN.
+ *
+ * For a CIDR block, Oracle recommends that you use one of the private IP address ranges specified in [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
+ * 172.16.0.0/16. The CIDR blocks can range from /16 to /30.
+ *
+ * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the VCN to
+ * reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
+ * compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
+ * Networking Service components. For more information about compartments and access control, see
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
+ * be unique, and you can change it. Avoid entering confidential information.
+ *
+ * You can also add a DNS label for the VCN, which is required if you want the instances to use the
+ * Interent and VCN Resolver option for DNS in the VCN. For more information, see
+ * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+ *
+ * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
+ * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for each is returned in the response. You can't delete these default objects, but you can change their
+ * contents (that is, change the route rules, security list rules, and so on).
+ *
+ * The VCN and subnets you create are not accessible until you attach an internet gateway or set up a Site-to-Site VPN
+ * or FastConnect. For more information, see
+ * [Overview of the Networking Service](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ *
+ * ## Supported Aliases
+ *
+ * * `oci.Core.VirtualNetwork`
+ *
  * ## Example Usage
  *
  * ```typescript

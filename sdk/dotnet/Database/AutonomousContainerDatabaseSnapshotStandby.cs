@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
+    /// This resource provides the Autonomous Container Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseSnapshotStandby
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
+    /// [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +40,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// AutonomousContainerDatabaseSnapshotStandby can be imported using the `id`, e.g.
+    /// AutonomousContainerDatabaseSnapshotStandby can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/autonomousContainerDatabaseSnapshotStandby:AutonomousContainerDatabaseSnapshotStandby test_autonomous_container_database_snapshot_standby "id"

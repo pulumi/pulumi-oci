@@ -186,6 +186,13 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  priority: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteDistributionStatement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Adds one route distribution statement to the specified route distribution.
+
         ## Example Usage
 
         ```python
@@ -229,6 +236,13 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
                  args: DrgRouteDistributionStatementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Drg Route Distribution Statement resource in Oracle Cloud Infrastructure Core service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/DrgRouteDistributionStatement
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Adds one route distribution statement to the specified route distribution.
+
         ## Example Usage
 
         ```python

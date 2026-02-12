@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/MultiCloudResourceDiscovery
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+    /// 
+    /// Discovers Multicloud Resource and their associated resources based on the information provided.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// MultiCloudResourceDiscoveries can be imported using the `id`, e.g.
+    /// MultiCloudResourceDiscoveries can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery test_multi_cloud_resource_discovery "id"

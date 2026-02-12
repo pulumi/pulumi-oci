@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
+    /// This resource provides the Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/DatastoreCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+    /// 
+    /// Creates a Oracle Cloud VMware Solution Datastore Cluster.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,7 +49,7 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// ## Import
     /// 
-    /// DatastoreClusters can be imported using the `id`, e.g.
+    /// DatastoreClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ocvp/datastoreCluster:DatastoreCluster test_datastore_cluster "id"

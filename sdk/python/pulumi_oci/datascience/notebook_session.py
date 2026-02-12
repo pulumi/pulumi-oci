@@ -450,6 +450,13 @@ class NotebookSession(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/NotebookSession
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new notebook session.
+
         ## Example Usage
 
         ```python
@@ -540,6 +547,13 @@ class NotebookSession(pulumi.CustomResource):
                  args: NotebookSessionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/NotebookSession
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a new notebook session.
+
         ## Example Usage
 
         ```python

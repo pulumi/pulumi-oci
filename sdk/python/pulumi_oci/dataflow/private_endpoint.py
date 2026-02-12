@@ -481,6 +481,43 @@ class PrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/PrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Creates a private endpoint to be used by applications.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_private_endpoint = oci.dataflow.PrivateEndpoint("test_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=private_endpoint_description,
+            display_name=private_endpoint_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            max_host_count=private_endpoint_max_host_count,
+            nsg_ids=private_endpoint_nsg_ids,
+            scan_details=[{
+                "fqdn": private_endpoint_scan_details_fqdn,
+                "port": private_endpoint_scan_details_port,
+            }])
+        ```
+
+        ## Note
+
+        When a Private Endpoint resource is created it will be in `INACTIVE` state. When user runs an application using a Private Endpoint resource only then it moves to `ACTIVE` state. Also if there is already a Private Endpoint resource that is in `ACTIVE` state then on running the new application, the new Private Endpoint will be moved to `ACTIVE` state while the old one will be moved to `INACTIVE` state by the service. To update these states in your terraform state file user needs to do a `terraform refresh`.
+
         ## Import
 
         PrivateEndpoints can be imported using the `id`, e.g.
@@ -513,6 +550,43 @@ class PrivateEndpoint(pulumi.CustomResource):
                  args: PrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/PrivateEndpoint
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+
+        Creates a private endpoint to be used by applications.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_private_endpoint = oci.dataflow.PrivateEndpoint("test_private_endpoint",
+            compartment_id=compartment_id,
+            dns_zones=private_endpoint_dns_zones,
+            subnet_id=test_subnet["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=private_endpoint_description,
+            display_name=private_endpoint_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            max_host_count=private_endpoint_max_host_count,
+            nsg_ids=private_endpoint_nsg_ids,
+            scan_details=[{
+                "fqdn": private_endpoint_scan_details_fqdn,
+                "port": private_endpoint_scan_details_port,
+            }])
+        ```
+
+        ## Note
+
+        When a Private Endpoint resource is created it will be in `INACTIVE` state. When user runs an application using a Private Endpoint resource only then it moves to `ACTIVE` state. Also if there is already a Private Endpoint resource that is in `ACTIVE` state then on running the new application, the new Private Endpoint will be moved to `ACTIVE` state while the old one will be moved to `INACTIVE` state by the service. To update these states in your terraform state file user needs to do a `terraform refresh`.
+
         ## Import
 
         PrivateEndpoints can be imported using the `id`, e.g.

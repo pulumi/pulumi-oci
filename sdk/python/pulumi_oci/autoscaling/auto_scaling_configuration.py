@@ -367,6 +367,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/autoscaling/latest/AutoScalingConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/autoscaling
+
+        Creates an autoscaling configuration.
+
         ## Example Usage
 
         ```python
@@ -459,6 +466,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                  args: AutoScalingConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/autoscaling/latest/AutoScalingConfiguration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/autoscaling
+
+        Creates an autoscaling configuration.
+
         ## Example Usage
 
         ```python

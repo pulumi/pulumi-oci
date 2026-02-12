@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SensitiveDataModelReferentialRelation
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+    /// 
+    /// Creates a new referential relation in the specified sensitive data model.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -50,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// ## Import
     /// 
-    /// SensitiveDataModelReferentialRelations can be imported using the `id`, e.g.
+    /// SensitiveDataModelReferentialRelations can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation test_sensitive_data_model_referential_relation "sensitiveDataModels/{sensitiveDataModelId}/referentialRelations/{referentialRelationKey}"

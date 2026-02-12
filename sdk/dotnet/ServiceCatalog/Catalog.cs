@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ServiceCatalog
 {
     /// <summary>
+    /// This resource provides the Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/service-catalog/latest/ServiceCatalog
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/service_catalog
+    /// 
+    /// Creates a brand new service catalog in a given compartment.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +47,7 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// ## Import
     /// 
-    /// ServiceCatalogs can be imported using the `id`, e.g.
+    /// ServiceCatalogs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:ServiceCatalog/catalog:Catalog test_service_catalog "id"

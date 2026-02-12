@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/DiscoveryJob
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+//
+// API to create discovery Job and submit discovery Details to agent.
+//
 // ## Example Usage
 //
 // ```go

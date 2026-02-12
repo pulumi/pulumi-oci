@@ -23,32 +23,27 @@ __all__ = [
     'GetProductLicensesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ProductLicenseImageArgsDict(TypedDict):
-        listing_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Marketplace image listing ID.
-        """
-        package_version: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Image package version.
-        """
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The image ID associated with the product license.
-        """
-        listing_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The listing name associated with the product license.
-        """
-        publisher: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The image publisher.
-        """
-elif False:
-    ProductLicenseImageArgsDict: TypeAlias = Mapping[str, Any]
+class ProductLicenseImageArgsDict(TypedDict):
+    listing_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Marketplace image listing ID.
+    """
+    package_version: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Image package version.
+    """
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The image ID associated with the product license.
+    """
+    listing_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The listing name associated with the product license.
+    """
+    publisher: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The image publisher.
+    """
 
 @pulumi.input_type
 class ProductLicenseImageArgs:
@@ -135,13 +130,10 @@ class ProductLicenseImageArgs:
         pulumi.set(self, "publisher", value)
 
 
-if not MYPY:
-    class GetLicenseRecordsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetLicenseRecordsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetLicenseRecordsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetLicenseRecordsFilterArgs:
@@ -182,13 +174,10 @@ class GetLicenseRecordsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetProductLicensesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetProductLicensesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetProductLicensesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetProductLicensesFilterArgs:

@@ -382,6 +382,13 @@ class Script(pulumi.CustomResource):
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/latest/Script
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_synthetics
+
+        Creates a new script.
+
         ## Example Usage
 
         ```python
@@ -433,6 +440,13 @@ class Script(pulumi.CustomResource):
                  args: ScriptArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Script resource in Oracle Cloud Infrastructure Apm Synthetics service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/latest/Script
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apm/apm_synthetics
+
+        Creates a new script.
+
         ## Example Usage
 
         ```python

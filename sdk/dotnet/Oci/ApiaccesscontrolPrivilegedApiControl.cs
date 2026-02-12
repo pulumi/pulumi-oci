@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Privileged Api Control resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/latest/PrivilegedApiControl
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apiaccesscontrol
+    /// 
+    /// Creates a PrivilegedApiControl.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -54,7 +61,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// PrivilegedApiControls can be imported using the `id`, e.g.
+    /// PrivilegedApiControls can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl test_privileged_api_control "id"

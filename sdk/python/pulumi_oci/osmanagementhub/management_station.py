@@ -671,6 +671,13 @@ class ManagementStation(pulumi.CustomResource):
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagementStation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Creates a management station using the proxy and mirror configuration information provided.
+
         ## Example Usage
 
         ```python
@@ -736,6 +743,13 @@ class ManagementStation(pulumi.CustomResource):
                  args: ManagementStationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagementStation
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+
+        Creates a management station using the proxy and mirror configuration information provided.
+
         ## Example Usage
 
         ```python

@@ -1400,6 +1400,17 @@ class ShardedDatabase(pulumi.CustomResource):
                  validate_network_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/latest/ShardedDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/globally_distributed_database
+
+        Creates a Sharded Database.
+
+          Patch operation to add, remove or update shards to the sharded database topology. In single patch
+        operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
+        and remove in single operation is not allowed.
+
         ## Example Usage
 
         ```python
@@ -1521,6 +1532,17 @@ class ShardedDatabase(pulumi.CustomResource):
                  args: ShardedDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Sharded Database resource in Oracle Cloud Infrastructure Globally Distributed Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/latest/ShardedDatabase
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/globally_distributed_database
+
+        Creates a Sharded Database.
+
+          Patch operation to add, remove or update shards to the sharded database topology. In single patch
+        operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
+        and remove in single operation is not allowed.
+
         ## Example Usage
 
         ```python

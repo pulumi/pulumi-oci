@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiDocument
 {
     /// <summary>
+    /// This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/document-understanding/latest/Project
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiDocument
+    /// 
+    /// Create a new project.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,7 +41,7 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// ## Import
     /// 
-    /// Projects can be imported using the `id`, e.g.
+    /// Projects can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:AiDocument/project:Project test_project "id"

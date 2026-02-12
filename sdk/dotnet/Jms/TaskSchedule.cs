@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
+    /// This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms/latest/TaskSchedule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms
+    /// 
+    /// Create a task schedule using the information provided.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -154,7 +161,7 @@ namespace Pulumi.Oci.Jms
     /// 
     /// ## Import
     /// 
-    /// TaskSchedules can be imported using the `id`, e.g.
+    /// TaskSchedules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Jms/taskSchedule:TaskSchedule test_task_schedule "id"

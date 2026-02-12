@@ -27,27 +27,22 @@ __all__ = [
     'GetSchedulesFilterArgsDict',
 ]
 
-MYPY = False
+class ScheduleResourceArgsDict(TypedDict):
+    id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) This is the resource OCID.
+    """
+    metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    """
+    (Updatable) This is additional information that helps to identity the resource for the schedule.
+    { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+    """
+    parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgsDict']]]]
+    """
+    (Updatable) This is the user input parameters to use when acting on the resource.
 
-if not MYPY:
-    class ScheduleResourceArgsDict(TypedDict):
-        id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) This is the resource OCID.
-        """
-        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
-        """
-        (Updatable) This is additional information that helps to identity the resource for the schedule.
-        { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
-        """
-        parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceParameterArgsDict']]]]
-        """
-        (Updatable) This is the user input parameters to use when acting on the resource.
-
-        { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "synced_folders": [ { "host_path": "data/", "guest_path": "/var/www", "type": "default" } ], "forwarded_ports": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
-        """
-elif False:
-    ScheduleResourceArgsDict: TypeAlias = Mapping[str, Any]
+    { "parameters": [ { "parameterType": "BODY", "value": { "ip": "192.168.44.44", "memory": "1024", "synced_folders": [ { "host_path": "data/", "guest_path": "/var/www", "type": "default" } ], "forwarded_ports": [] } }, { "parameterType": "PATH", "value": { "compartmentId": "ocid1.compartment.oc1..xxxxx", "instanceId": "ocid1.vcn.oc1..yyyy" } }, { "parameterType": "QUERY", "value": { "limit": "10", "tenantId": "ocid1.tenant.oc1..zzzz" } }, { "parameterType": "HEADER", "value": { "token": "xxxx" } } ] }
+    """
 
 @pulumi.input_type
 class ScheduleResourceArgs:
@@ -109,27 +104,24 @@ class ScheduleResourceArgs:
         pulumi.set(self, "parameters", value)
 
 
-if not MYPY:
-    class ScheduleResourceFilterArgsDict(TypedDict):
-        attribute: pulumi.Input[_builtins.str]
-        """
-        (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
-        """
-        condition: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This is the condition for the filter in comparison to its creation time.
-        """
-        should_include_child_compartments: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        This sets whether to include child compartments.
-        """
-        values: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]
-        """
-        (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
-        * When `attribute="DEFINED_TAGS"`:
-        """
-elif False:
-    ScheduleResourceFilterArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleResourceFilterArgsDict(TypedDict):
+    attribute: pulumi.Input[_builtins.str]
+    """
+    (Updatable) This is the resource attribute on which the threshold is defined. We support 5 different types of attributes: `DEFINED_TAGS`, `COMPARTMENT_ID`, `TIME_CREATED`, `LIFECYCLE_STATE` and `RESOURCE_TYPE`.
+    """
+    condition: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This is the condition for the filter in comparison to its creation time.
+    """
+    should_include_child_compartments: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    This sets whether to include child compartments.
+    """
+    values: NotRequired[pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterValueArgsDict']]]]
+    """
+    (Updatable) This is a collection of resource filter values, different types of filter has different value format, see below:
+    * When `attribute="DEFINED_TAGS"`:
+    """
 
 @pulumi.input_type
 class ScheduleResourceFilterArgs:
@@ -203,22 +195,19 @@ class ScheduleResourceFilterArgs:
         pulumi.set(self, "values", value)
 
 
-if not MYPY:
-    class ScheduleResourceFilterValueArgsDict(TypedDict):
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This is the namespace of the defined tag.
-        """
-        tag_key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This is the key of the defined tag.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        This is the lifecycle state value used for filtering.
-        """
-elif False:
-    ScheduleResourceFilterValueArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleResourceFilterValueArgsDict(TypedDict):
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This is the namespace of the defined tag.
+    """
+    tag_key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This is the key of the defined tag.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    This is the lifecycle state value used for filtering.
+    """
 
 @pulumi.input_type
 class ScheduleResourceFilterValueArgs:
@@ -275,19 +264,16 @@ class ScheduleResourceFilterValueArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ScheduleResourceParameterArgsDict(TypedDict):
-        parameter_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) This is the parameter type on which the input parameter is defined
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) This is the HTTP request header value.
-        { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
-        """
-elif False:
-    ScheduleResourceParameterArgsDict: TypeAlias = Mapping[str, Any]
+class ScheduleResourceParameterArgsDict(TypedDict):
+    parameter_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) This is the parameter type on which the input parameter is defined
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) This is the HTTP request header value.
+    { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+    """
 
 @pulumi.input_type
 class ScheduleResourceParameterArgs:
@@ -329,13 +315,10 @@ class ScheduleResourceParameterArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class GetSchedulesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSchedulesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSchedulesFilterArgs:

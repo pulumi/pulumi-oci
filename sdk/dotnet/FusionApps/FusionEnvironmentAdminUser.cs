@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
+    /// This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironmentAdminUser
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+    /// 
+    /// Create a FusionEnvironment admin user
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +42,7 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// ## Import
     /// 
-    /// FusionEnvironmentAdminUsers can be imported using the `id`, e.g.
+    /// FusionEnvironmentAdminUsers can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser test_fusion_environment_admin_user "fusionEnvironments/{fusionEnvironmentId}/adminUsers/{adminUsername}"

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbGcpIdentityConnector
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+    /// 
+    /// Creates Oracle DB GCP Identity Connector resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -46,7 +53,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// OracleDbGcpIdentityConnectors can be imported using the `id`, e.g.
+    /// OracleDbGcpIdentityConnectors can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector test_oracle_db_gcp_identity_connector "id"

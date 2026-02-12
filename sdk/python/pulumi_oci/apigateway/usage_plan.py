@@ -343,6 +343,13 @@ class UsagePlan(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsagePlanLockArgs', 'UsagePlanLockArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/UsagePlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new usage plan.
+
         ## Example Usage
 
         ```python
@@ -405,6 +412,13 @@ class UsagePlan(pulumi.CustomResource):
                  args: UsagePlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Usage Plan resource in Oracle Cloud Infrastructure API Gateway service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/api-gateway/latest/UsagePlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/api_gateway
+
+        Creates a new usage plan.
+
         ## Example Usage
 
         ```python

@@ -472,7 +472,12 @@ class DetectorRecipe(pulumi.CustomResource):
                  source_detector_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/DetectorRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a new DetectorRecipe resource.
 
         ## Import
 
@@ -510,7 +515,12 @@ class DetectorRecipe(pulumi.CustomResource):
                  args: DetectorRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/DetectorRecipe
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+
+        Creates a new DetectorRecipe resource.
 
         ## Import
 

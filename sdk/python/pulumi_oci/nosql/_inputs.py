@@ -35,36 +35,31 @@ __all__ = [
     'GetTablesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ConfigurationKmsKeyArgsDict(TypedDict):
-        id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
-        """
-        kms_key_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
-        """
-        kms_vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
-        """
-        time_updated: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
+class ConfigurationKmsKeyArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the KMS encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the id will be a null string.
+    """
+    kms_key_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
+    """
+    kms_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
+    """
+    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
 
 
-        ** IMPORTANT **
-        The configuration cannot be deleted.
-        """
-elif False:
-    ConfigurationKmsKeyArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    The configuration cannot be deleted.
+    """
 
 @pulumi.input_type
 class ConfigurationKmsKeyArgs:
@@ -161,22 +156,19 @@ class ConfigurationKmsKeyArgs:
         pulumi.set(self, "time_updated", value)
 
 
-if not MYPY:
-    class IndexKeyArgsDict(TypedDict):
-        column_name: pulumi.Input[_builtins.str]
-        """
-        The name of a column to be included as an index key.
-        """
-        json_field_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
-        """
-        json_path: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
-        """
-elif False:
-    IndexKeyArgsDict: TypeAlias = Mapping[str, Any]
+class IndexKeyArgsDict(TypedDict):
+    column_name: pulumi.Input[_builtins.str]
+    """
+    The name of a column to be included as an index key.
+    """
+    json_field_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
+    """
+    json_path: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
+    """
 
 @pulumi.input_type
 class IndexKeyArgs:
@@ -232,34 +224,31 @@ class IndexKeyArgs:
         pulumi.set(self, "json_path", value)
 
 
-if not MYPY:
-    class TableReplicaArgsDict(TypedDict):
-        capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
-        """
-        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message describing the current state in more detail.
-        """
-        max_write_units: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        Maximum sustained write throughput limit for the table.
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A customer-facing region identifier
-        """
-        state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of a table.
-        """
-        table_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the replica table
-        """
-elif False:
-    TableReplicaArgsDict: TypeAlias = Mapping[str, Any]
+class TableReplicaArgsDict(TypedDict):
+    capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+    """
+    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message describing the current state in more detail.
+    """
+    max_write_units: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    Maximum sustained write throughput limit for the table.
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A customer-facing region identifier
+    """
+    state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of a table.
+    """
+    table_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the replica table
+    """
 
 @pulumi.input_type
 class TableReplicaArgs:
@@ -364,30 +353,27 @@ class TableReplicaArgs:
         pulumi.set(self, "table_id", value)
 
 
-if not MYPY:
-    class TableSchemaArgsDict(TypedDict):
-        columns: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgsDict']]]]
-        """
-        The columns of a table.
-        """
-        identities: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgsDict']]]]
-        """
-        The identity properties of a table, if any.
-        """
-        primary_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of column names that make up a key.
-        """
-        shard_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
-        """
-        A list of column names that make up a key.
-        """
-        ttl: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        The default Time-to-Live for the table, in days.
-        """
-elif False:
-    TableSchemaArgsDict: TypeAlias = Mapping[str, Any]
+class TableSchemaArgsDict(TypedDict):
+    columns: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgsDict']]]]
+    """
+    The columns of a table.
+    """
+    identities: NotRequired[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgsDict']]]]
+    """
+    The identity properties of a table, if any.
+    """
+    primary_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of column names that make up a key.
+    """
+    shard_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    """
+    A list of column names that make up a key.
+    """
+    ttl: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    The default Time-to-Live for the table, in days.
+    """
 
 @pulumi.input_type
 class TableSchemaArgs:
@@ -476,34 +462,31 @@ class TableSchemaArgs:
         pulumi.set(self, "ttl", value)
 
 
-if not MYPY:
-    class TableSchemaColumnArgsDict(TypedDict):
-        default_value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The column default value.
-        """
-        is_as_uuid: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if the STRING column was declared AS UUID.
-        """
-        is_generated: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if the STRING AS UUID column is also GENERATED BY DEFAULT.
-        """
-        is_nullable: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        The column nullable flag.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Table name.
-        """
-        type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The column type.
-        """
-elif False:
-    TableSchemaColumnArgsDict: TypeAlias = Mapping[str, Any]
+class TableSchemaColumnArgsDict(TypedDict):
+    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The column default value.
+    """
+    is_as_uuid: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if the STRING column was declared AS UUID.
+    """
+    is_generated: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if the STRING AS UUID column is also GENERATED BY DEFAULT.
+    """
+    is_nullable: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    The column nullable flag.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Table name.
+    """
+    type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The column type.
+    """
 
 @pulumi.input_type
 class TableSchemaColumnArgs:
@@ -608,22 +591,19 @@ class TableSchemaColumnArgs:
         pulumi.set(self, "type", value)
 
 
-if not MYPY:
-    class TableSchemaIdentityArgsDict(TypedDict):
-        column_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the identity column.
-        """
-        is_always: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if the identity value is GENERATED ALWAYS.
-        """
-        is_null: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        True if the identity value is GENERATED BY DEFAULT ON NULL.
-        """
-elif False:
-    TableSchemaIdentityArgsDict: TypeAlias = Mapping[str, Any]
+class TableSchemaIdentityArgsDict(TypedDict):
+    column_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the identity column.
+    """
+    is_always: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if the identity value is GENERATED ALWAYS.
+    """
+    is_null: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    True if the identity value is GENERATED BY DEFAULT ON NULL.
+    """
 
 @pulumi.input_type
 class TableSchemaIdentityArgs:
@@ -680,30 +660,27 @@ class TableSchemaIdentityArgs:
         pulumi.set(self, "is_null", value)
 
 
-if not MYPY:
-    class TableTableLimitsArgsDict(TypedDict):
-        max_read_units: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Maximum sustained read throughput limit for the table.
-        """
-        max_storage_in_gbs: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Maximum size of storage used by the table.
-        """
-        max_write_units: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Maximum sustained write throughput limit for the table.
+class TableTableLimitsArgsDict(TypedDict):
+    max_read_units: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Maximum sustained read throughput limit for the table.
+    """
+    max_storage_in_gbs: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Maximum size of storage used by the table.
+    """
+    max_write_units: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Maximum sustained write throughput limit for the table.
 
 
-        ** IMPORTANT **
-        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
-        """
-        capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
-        """
-elif False:
-    TableTableLimitsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
+    """
+    capacity_mode: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+    """
 
 @pulumi.input_type
 class TableTableLimitsArgs:
@@ -781,16 +758,13 @@ class TableTableLimitsArgs:
         pulumi.set(self, "capacity_mode", value)
 
 
-if not MYPY:
-    class GetIndexesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A shell-globbing-style (*?[]) filter for names.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetIndexesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetIndexesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A shell-globbing-style (*?[]) filter for names.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetIndexesFilterArgs:
@@ -837,16 +811,13 @@ class GetIndexesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTablesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A shell-globbing-style (*?[]) filter for names.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTablesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A shell-globbing-style (*?[]) filter for names.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTablesFilterArgs:

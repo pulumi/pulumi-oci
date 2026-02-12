@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// SchedulingPolicies can be imported using the `id`, e.g.
+    /// SchedulingPolicies can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/schedulingPolicy:SchedulingPolicy test_scheduling_policy "id"

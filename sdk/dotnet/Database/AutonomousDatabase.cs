@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabase
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+    /// 
+    /// Creates a new Autonomous AI Database.
     /// 
     /// ## Import
     /// 
-    /// AutonomousDatabases can be imported using the `id`, e.g.
+    /// AutonomousDatabases can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/autonomousDatabase:AutonomousDatabase test_autonomous_database "id"
@@ -419,6 +424,16 @@ namespace Pulumi.Oci.Database
         [Output("isLocalDataGuardEnabled")]
         public Output<bool> IsLocalDataGuardEnabled { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+        /// 
+        /// This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        /// 
+        /// Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        /// * CreateAutonomousDatabase
+        /// * GetAutonomousDatabase
+        /// * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+        /// </summary>
         [Output("isMtlsConnectionRequired")]
         public Output<bool> IsMtlsConnectionRequired { get; private set; } = null!;
 
@@ -1421,6 +1436,16 @@ namespace Pulumi.Oci.Database
         [Input("isLocalDataGuardEnabled")]
         public Input<bool>? IsLocalDataGuardEnabled { get; set; }
 
+        /// <summary>
+        /// (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+        /// 
+        /// This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        /// 
+        /// Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        /// * CreateAutonomousDatabase
+        /// * GetAutonomousDatabase
+        /// * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+        /// </summary>
         [Input("isMtlsConnectionRequired")]
         public Input<bool>? IsMtlsConnectionRequired { get; set; }
 
@@ -2273,6 +2298,16 @@ namespace Pulumi.Oci.Database
         [Input("isLocalDataGuardEnabled")]
         public Input<bool>? IsLocalDataGuardEnabled { get; set; }
 
+        /// <summary>
+        /// (Updatable) Specifies if the Autonomous AI Database requires mTLS connections.
+        /// 
+        /// This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+        /// 
+        /// Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
+        /// * CreateAutonomousDatabase
+        /// * GetAutonomousDatabase
+        /// * UpdateAutonomousDatabase Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous AI Database Serverless. Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false. How do I make this change? Using either Oracle Cloud Infrastructure SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
+        /// </summary>
         [Input("isMtlsConnectionRequired")]
         public Input<bool>? IsMtlsConnectionRequired { get; set; }
 

@@ -35,20 +35,15 @@ __all__ = [
     'GetSecretsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class SecretReplicationConfigArgsDict(TypedDict):
-        replication_targets: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgsDict']]]
-        """
-        (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
-        """
-        is_write_forward_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
-        """
-elif False:
-    SecretReplicationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class SecretReplicationConfigArgsDict(TypedDict):
+    replication_targets: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgsDict']]]
+    """
+    (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+    """
+    is_write_forward_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+    """
 
 @pulumi.input_type
 class SecretReplicationConfigArgs:
@@ -88,22 +83,19 @@ class SecretReplicationConfigArgs:
         pulumi.set(self, "is_write_forward_enabled", value)
 
 
-if not MYPY:
-    class SecretReplicationConfigReplicationTargetArgsDict(TypedDict):
-        target_key_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the target region KMS key.
-        """
-        target_region: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The name of the target's region.
-        """
-        target_vault_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The OCID of the target region's Vault.
-        """
-elif False:
-    SecretReplicationConfigReplicationTargetArgsDict: TypeAlias = Mapping[str, Any]
+class SecretReplicationConfigReplicationTargetArgsDict(TypedDict):
+    target_key_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the target region KMS key.
+    """
+    target_region: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the target's region.
+    """
+    target_vault_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The OCID of the target region's Vault.
+    """
 
 @pulumi.input_type
 class SecretReplicationConfigReplicationTargetArgs:
@@ -157,22 +149,19 @@ class SecretReplicationConfigReplicationTargetArgs:
         pulumi.set(self, "target_vault_id", value)
 
 
-if not MYPY:
-    class SecretRotationConfigArgsDict(TypedDict):
-        target_system_details: pulumi.Input['SecretRotationConfigTargetSystemDetailsArgsDict']
-        """
-        (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
-        """
-        is_scheduled_rotation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
-        """
-        rotation_interval: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
-        """
-elif False:
-    SecretRotationConfigArgsDict: TypeAlias = Mapping[str, Any]
+class SecretRotationConfigArgsDict(TypedDict):
+    target_system_details: pulumi.Input['SecretRotationConfigTargetSystemDetailsArgsDict']
+    """
+    (Updatable) The TargetSystemDetails provides the targetSystem type and type-specific connection metadata
+    """
+    is_scheduled_rotation_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
+    """
+    rotation_interval: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The time interval that indicates the frequency for rotating secret data, as described in ISO 8601 format. The minimum value is 1 day and maximum value is 360 days. For example, if you want to set the time interval for rotating a secret data as 30 days, the duration is expressed as "P30D."
+    """
 
 @pulumi.input_type
 class SecretRotationConfigArgs:
@@ -228,22 +217,19 @@ class SecretRotationConfigArgs:
         pulumi.set(self, "rotation_interval", value)
 
 
-if not MYPY:
-    class SecretRotationConfigTargetSystemDetailsArgsDict(TypedDict):
-        target_system_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Unique identifier of the target system that Vault Secret connects to.
-        """
-        adb_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
-        """
-        function_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
-        """
-elif False:
-    SecretRotationConfigTargetSystemDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class SecretRotationConfigTargetSystemDetailsArgsDict(TypedDict):
+    target_system_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Unique identifier of the target system that Vault Secret connects to.
+    """
+    adb_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique identifier (OCID) for the autonomous database that Vault Secret connects to.
+    """
+    function_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The unique identifier (OCID) of the Oracle Cloud Infrastructure Functions that vault secret connects to.
+    """
 
 @pulumi.input_type
 class SecretRotationConfigTargetSystemDetailsArgs:
@@ -299,26 +285,23 @@ class SecretRotationConfigTargetSystemDetailsArgs:
         pulumi.set(self, "function_id", value)
 
 
-if not MYPY:
-    class SecretSecretContentArgsDict(TypedDict):
-        content_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The base64-encoded content of the secret.
-        """
-        content: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64-encoded content of the secret.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
-        """
-        stage: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
-        """
-elif False:
-    SecretSecretContentArgsDict: TypeAlias = Mapping[str, Any]
+class SecretSecretContentArgsDict(TypedDict):
+    content_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The base64-encoded content of the secret.
+    """
+    content: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64-encoded content of the secret.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Names should be unique within a secret. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+    """
+    stage: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The rotation state of the secret content. The default is `CURRENT`, meaning that the secret is currently in use. A secret version that you mark as `PENDING` is staged and available for use, but you don't yet want to rotate it into current, active use. For example, you might create or update a secret and mark its rotation state as `PENDING` if you haven't yet updated the secret on the target system. When creating a secret, only the value `CURRENT` is applicable, although the value `LATEST` is also automatically applied. When updating a secret, you can specify a version's rotation state as either `CURRENT` or `PENDING`.
+    """
 
 @pulumi.input_type
 class SecretSecretContentArgs:
@@ -390,26 +373,23 @@ class SecretSecretContentArgs:
         pulumi.set(self, "stage", value)
 
 
-if not MYPY:
-    class SecretSecretGenerationContextArgsDict(TypedDict):
-        generation_template: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of random bytes generation template for generating random byte type secret.
-        """
-        generation_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the predefined secret generation type.
-        """
-        passphrase_length: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Length of the passphrase to be generated
-        """
-        secret_template: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
-        """
-elif False:
-    SecretSecretGenerationContextArgsDict: TypeAlias = Mapping[str, Any]
+class SecretSecretGenerationContextArgsDict(TypedDict):
+    generation_template: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of random bytes generation template for generating random byte type secret.
+    """
+    generation_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the predefined secret generation type.
+    """
+    passphrase_length: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Length of the passphrase to be generated
+    """
+    secret_template: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) SecretTemplate captures structure in which customer wants to store secrets. This is optional and a default structure is available for each secret type.  The template can have any structure with static values that are not generated. Within the template, you can insert predefined placeholders to store secrets.  These placeholders are later replaced with the generated content and saved as a Base64 encoded content.
+    """
 
 @pulumi.input_type
 class SecretSecretGenerationContextArgs:
@@ -480,30 +460,27 @@ class SecretSecretGenerationContextArgs:
         pulumi.set(self, "secret_template", value)
 
 
-if not MYPY:
-    class SecretSecretRuleArgsDict(TypedDict):
-        rule_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
-        """
-        is_enforced_on_deleted_secret_versions: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
-        """
-        is_secret_content_retrieval_blocked_on_expiry: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
-        """
-        secret_version_expiry_interval: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
-        """
-        time_of_absolute_expiry: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
-        """
-elif False:
-    SecretSecretRuleArgsDict: TypeAlias = Mapping[str, Any]
+class SecretSecretRuleArgsDict(TypedDict):
+    rule_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of rule, which either controls when the secret contents expire or whether they can be reused.
+    """
+    is_enforced_on_deleted_secret_versions: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A property indicating whether the rule is applied even if the secret version with the content you are trying to reuse was deleted.
+    """
+    is_secret_content_retrieval_blocked_on_expiry: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) A property indicating whether to block retrieval of the secret content, on expiry. The default is false. If the secret has already expired and you would like to retrieve the secret contents, you need to edit the secret rule to disable this property, to allow reading the secret content.
+    """
+    secret_version_expiry_interval: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) A property indicating how long the secret contents will be considered valid, expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be updated when the secret content expires. The timer resets after you update the secret contents. The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported. For example, pass `P3D` to have the secret version expire every 3 days.
+    """
+    time_of_absolute_expiry: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
+    """
 
 @pulumi.input_type
 class SecretSecretRuleArgs:
@@ -591,22 +568,19 @@ class SecretSecretRuleArgs:
         pulumi.set(self, "time_of_absolute_expiry", value)
 
 
-if not MYPY:
-    class SecretSourceRegionInformationArgsDict(TypedDict):
-        source_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the source region KMS key.
-        """
-        source_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the source's region.
-        """
-        source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The OCID of the source region's Vault.
-        """
-elif False:
-    SecretSourceRegionInformationArgsDict: TypeAlias = Mapping[str, Any]
+class SecretSourceRegionInformationArgsDict(TypedDict):
+    source_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the source region KMS key.
+    """
+    source_region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The name of the source's region.
+    """
+    source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The OCID of the source region's Vault.
+    """
 
 @pulumi.input_type
 class SecretSourceRegionInformationArgs:
@@ -663,16 +637,13 @@ class SecretSourceRegionInformationArgs:
         pulumi.set(self, "source_vault_id", value)
 
 
-if not MYPY:
-    class GetSecretsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The secret name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSecretsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSecretsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The secret name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSecretsFilterArgs:

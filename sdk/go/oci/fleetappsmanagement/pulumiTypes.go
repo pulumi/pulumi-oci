@@ -27,7 +27,8 @@ type CatalogItemCatalogResultPayload struct {
 	// template id
 	TemplateId *string `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      *string `pulumi:"timeExpires"`
+	TimeExpires *string `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory *string `pulumi:"workingDirectory"`
 }
 
@@ -56,7 +57,8 @@ type CatalogItemCatalogResultPayloadArgs struct {
 	// template id
 	TemplateId pulumi.StringPtrInput `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      pulumi.StringPtrInput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringPtrInput `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringPtrInput `pulumi:"workingDirectory"`
 }
 
@@ -146,6 +148,7 @@ func (o CatalogItemCatalogResultPayloadOutput) TimeExpires() pulumi.StringPtrOut
 	return o.ApplyT(func(v CatalogItemCatalogResultPayload) *string { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o CatalogItemCatalogResultPayloadOutput) WorkingDirectory() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CatalogItemCatalogResultPayload) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }
@@ -198,7 +201,8 @@ type CatalogItemCatalogSourcePayload struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires *string `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          *string `pulumi:"version"`
+	Version *string `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory *string `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded *string `pulumi:"zipFileBase64encoded"`
@@ -243,7 +247,8 @@ type CatalogItemCatalogSourcePayloadArgs struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringPtrInput `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          pulumi.StringPtrInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringPtrInput `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded pulumi.StringPtrInput `pulumi:"zipFileBase64encoded"`
@@ -396,6 +401,7 @@ func (o CatalogItemCatalogSourcePayloadOutput) Version() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v CatalogItemCatalogSourcePayload) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o CatalogItemCatalogSourcePayloadOutput) WorkingDirectory() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CatalogItemCatalogSourcePayload) *string { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }
@@ -569,6 +575,7 @@ func (o CatalogItemCatalogSourcePayloadPtrOutput) Version() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o CatalogItemCatalogSourcePayloadPtrOutput) WorkingDirectory() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CatalogItemCatalogSourcePayload) *string {
 		if v == nil {
@@ -9875,6 +9882,7 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsOutput) TaskRecordId() pulumi.
 }
 
 type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails struct {
+	// Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command *string `pulumi:"command"`
@@ -9914,6 +9922,7 @@ type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsInput interface {
 }
 
 type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringPtrInput `pulumi:"command"`
@@ -10018,6 +10027,7 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) ToRunb
 	}).(RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput)
 }
 
+// Catalog Id having terraform package.
 func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -10116,6 +10126,7 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Ele
 	}).(RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput)
 }
 
+// Catalog Id having terraform package.
 func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetails) *string {
 		if v == nil {
@@ -10247,7 +10258,8 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Var
 
 type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent struct {
 	// Bucket Name.
-	Bucket    *string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum *string `pulumi:"checksum"`
@@ -10272,7 +10284,8 @@ type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentInput inte
 
 type RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringPtrInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
@@ -10366,6 +10379,7 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput)
 	return o.ApplyT(func(v RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
+// Catalog Id having terraform package.
 func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -10424,6 +10438,7 @@ func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+// Catalog Id having terraform package.
 func (o RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookRunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string {
 		if v == nil {
@@ -14439,6 +14454,7 @@ func (o RunbookVersionTaskTaskRecordDetailsOutput) TaskRecordId() pulumi.StringP
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetails struct {
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command *string `pulumi:"command"`
@@ -14478,6 +14494,7 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsInput interface {
 }
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs struct {
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringPtrInput `pulumi:"command"`
@@ -14582,6 +14599,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) ToRunbookVers
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -14678,6 +14696,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Elem() Run
 	}).(RunbookVersionTaskTaskRecordDetailsExecutionDetailsOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetails) *string {
 		if v == nil {
@@ -14809,7 +14828,8 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsPtrOutput) Variables(
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent struct {
 	// (Updatable) Bucket Name.
-	Bucket    *string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// (Updatable) md5 checksum of the artifact.
 	Checksum *string `pulumi:"checksum"`
@@ -14834,7 +14854,8 @@ type RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentInput interface {
 
 type RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentArgs struct {
 	// (Updatable) Bucket Name.
-	Bucket    pulumi.StringPtrInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// (Updatable) md5 checksum of the artifact.
 	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
@@ -14928,6 +14949,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput) Bucket
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -14986,6 +15008,7 @@ func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) Buc
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o RunbookVersionTaskTaskRecordDetailsExecutionDetailsContentPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *RunbookVersionTaskTaskRecordDetailsExecutionDetailsContent) *string {
 		if v == nil {
@@ -16780,6 +16803,7 @@ func (o TaskRecordDetailsPtrOutput) Scope() pulumi.StringPtrOutput {
 }
 
 type TaskRecordDetailsExecutionDetails struct {
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command *string `pulumi:"command"`
@@ -16819,6 +16843,7 @@ type TaskRecordDetailsExecutionDetailsInput interface {
 }
 
 type TaskRecordDetailsExecutionDetailsArgs struct {
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// (Updatable) Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringPtrInput `pulumi:"command"`
@@ -16923,6 +16948,7 @@ func (o TaskRecordDetailsExecutionDetailsOutput) ToTaskRecordDetailsExecutionDet
 	}).(TaskRecordDetailsExecutionDetailsPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o TaskRecordDetailsExecutionDetailsOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TaskRecordDetailsExecutionDetails) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -17015,6 +17041,7 @@ func (o TaskRecordDetailsExecutionDetailsPtrOutput) Elem() TaskRecordDetailsExec
 	}).(TaskRecordDetailsExecutionDetailsOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o TaskRecordDetailsExecutionDetailsPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TaskRecordDetailsExecutionDetails) *string {
 		if v == nil {
@@ -17146,7 +17173,8 @@ func (o TaskRecordDetailsExecutionDetailsPtrOutput) Variables() TaskRecordDetail
 
 type TaskRecordDetailsExecutionDetailsContent struct {
 	// (Updatable) Bucket Name.
-	Bucket    *string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId *string `pulumi:"catalogId"`
 	// (Updatable) md5 checksum of the artifact.
 	Checksum *string `pulumi:"checksum"`
@@ -17171,7 +17199,8 @@ type TaskRecordDetailsExecutionDetailsContentInput interface {
 
 type TaskRecordDetailsExecutionDetailsContentArgs struct {
 	// (Updatable) Bucket Name.
-	Bucket    pulumi.StringPtrInput `pulumi:"bucket"`
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Catalog Id having terraform package.
 	CatalogId pulumi.StringPtrInput `pulumi:"catalogId"`
 	// (Updatable) md5 checksum of the artifact.
 	Checksum pulumi.StringPtrInput `pulumi:"checksum"`
@@ -17265,6 +17294,7 @@ func (o TaskRecordDetailsExecutionDetailsContentOutput) Bucket() pulumi.StringPt
 	return o.ApplyT(func(v TaskRecordDetailsExecutionDetailsContent) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o TaskRecordDetailsExecutionDetailsContentOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TaskRecordDetailsExecutionDetailsContent) *string { return v.CatalogId }).(pulumi.StringPtrOutput)
 }
@@ -17323,6 +17353,7 @@ func (o TaskRecordDetailsExecutionDetailsContentPtrOutput) Bucket() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Catalog Id having terraform package.
 func (o TaskRecordDetailsExecutionDetailsContentPtrOutput) CatalogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TaskRecordDetailsExecutionDetailsContent) *string {
 		if v == nil {
@@ -18367,7 +18398,8 @@ type GetCatalogItemCatalogResultPayload struct {
 	// template id
 	TemplateId string `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      string `pulumi:"timeExpires"`
+	TimeExpires string `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory string `pulumi:"workingDirectory"`
 }
 
@@ -18396,7 +18428,8 @@ type GetCatalogItemCatalogResultPayloadArgs struct {
 	// template id
 	TemplateId pulumi.StringInput `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      pulumi.StringInput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringInput `pulumi:"workingDirectory"`
 }
 
@@ -18486,6 +18519,7 @@ func (o GetCatalogItemCatalogResultPayloadOutput) TimeExpires() pulumi.StringOut
 	return o.ApplyT(func(v GetCatalogItemCatalogResultPayload) string { return v.TimeExpires }).(pulumi.StringOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o GetCatalogItemCatalogResultPayloadOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemCatalogResultPayload) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }
@@ -18538,7 +18572,8 @@ type GetCatalogItemCatalogSourcePayload struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires string `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          string `pulumi:"version"`
+	Version string `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory string `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
@@ -18583,7 +18618,8 @@ type GetCatalogItemCatalogSourcePayloadArgs struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringInput `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringInput `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
@@ -18710,6 +18746,7 @@ func (o GetCatalogItemCatalogSourcePayloadOutput) Version() pulumi.StringOutput 
 	return o.ApplyT(func(v GetCatalogItemCatalogSourcePayload) string { return v.Version }).(pulumi.StringOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o GetCatalogItemCatalogSourcePayloadOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemCatalogSourcePayload) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }
@@ -20079,7 +20116,8 @@ type GetCatalogItemsCatalogItemCollectionItemCatalogResultPayload struct {
 	// template id
 	TemplateId string `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      string `pulumi:"timeExpires"`
+	TimeExpires string `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory string `pulumi:"workingDirectory"`
 }
 
@@ -20108,7 +20146,8 @@ type GetCatalogItemsCatalogItemCollectionItemCatalogResultPayloadArgs struct {
 	// template id
 	TemplateId pulumi.StringInput `pulumi:"templateId"`
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeExpires      pulumi.StringInput `pulumi:"timeExpires"`
+	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringInput `pulumi:"workingDirectory"`
 }
 
@@ -20200,6 +20239,7 @@ func (o GetCatalogItemsCatalogItemCollectionItemCatalogResultPayloadOutput) Time
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItemCatalogResultPayload) string { return v.TimeExpires }).(pulumi.StringOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o GetCatalogItemsCatalogItemCollectionItemCatalogResultPayloadOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItemCatalogResultPayload) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }
@@ -20252,7 +20292,8 @@ type GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayload struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires string `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          string `pulumi:"version"`
+	Version string `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory string `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded string `pulumi:"zipFileBase64encoded"`
@@ -20297,7 +20338,8 @@ type GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayloadArgs struct {
 	// The date and time expires, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
 	// This version parameter of Payload.
-	Version          pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringInput `pulumi:"version"`
+	// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 	WorkingDirectory pulumi.StringInput `pulumi:"workingDirectory"`
 	// The Base64 encoded template. This payload will trigger CreateTemplate API, where the parameter will be passed.
 	ZipFileBase64encoded pulumi.StringInput `pulumi:"zipFileBase64encoded"`
@@ -20428,6 +20470,7 @@ func (o GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayloadOutput) Vers
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayload) string { return v.Version }).(pulumi.StringOutput)
 }
 
+// File path to the directory to use for running Terraform. If not specified, the root directory is used.
 func (o GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayloadOutput) WorkingDirectory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogItemsCatalogItemCollectionItemCatalogSourcePayload) string { return v.WorkingDirectory }).(pulumi.StringOutput)
 }
@@ -45497,6 +45540,7 @@ func (o GetRunbookRunbookVersionTaskTaskRecordDetailArrayOutput) Index(i pulumi.
 }
 
 type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -45536,6 +45580,7 @@ type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailInput interface 
 }
 
 type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -45614,6 +45659,7 @@ func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) ToGet
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetail) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -45710,7 +45756,8 @@ func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailArrayOutput) 
 
 type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -45735,7 +45782,8 @@ type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentInput int
 
 type GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -45803,6 +45851,7 @@ func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentOutput
 	return o.ApplyT(func(v GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContent) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookRunbookVersionTaskTaskRecordDetailExecutionDetailContent) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -49056,6 +49105,7 @@ func (o GetRunbookVersionTaskTaskRecordDetailArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetRunbookVersionTaskTaskRecordDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -49095,6 +49145,7 @@ type GetRunbookVersionTaskTaskRecordDetailExecutionDetailInput interface {
 }
 
 type GetRunbookVersionTaskTaskRecordDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -49173,6 +49224,7 @@ func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) ToGetRunbook
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionTaskTaskRecordDetailExecutionDetail) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -49267,7 +49319,8 @@ func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailArrayOutput) Index(i
 
 type GetRunbookVersionTaskTaskRecordDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -49292,7 +49345,8 @@ type GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentInput interface 
 
 type GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -49360,6 +49414,7 @@ func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentOutput) Bucke
 	return o.ApplyT(func(v GetRunbookVersionTaskTaskRecordDetailExecutionDetailContent) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookVersionTaskTaskRecordDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionTaskTaskRecordDetailExecutionDetailContent) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -53123,6 +53178,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailArrayO
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -53162,6 +53218,7 @@ type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecution
 }
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -53240,6 +53297,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecut
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetail) string {
 		return v.CatalogId
@@ -53352,7 +53410,8 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecut
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -53377,7 +53436,8 @@ type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecution
 
 type GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -53447,6 +53507,7 @@ func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecut
 	}).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbookVersionsRunbookVersionCollectionItemTaskTaskRecordDetailExecutionDetailContent) string {
 		return v.CatalogId
@@ -57427,6 +57488,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailArrayO
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -57466,6 +57528,7 @@ type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecution
 }
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -57544,6 +57607,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecut
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetail) string {
 		return v.CatalogId
@@ -57656,7 +57720,8 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecut
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -57681,7 +57746,8 @@ type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecution
 
 type GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -57751,6 +57817,7 @@ func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecut
 	}).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRunbooksRunbookCollectionItemRunbookVersionTaskTaskRecordDetailExecutionDetailContent) string {
 		return v.CatalogId
@@ -63476,6 +63543,7 @@ func (o GetTaskRecordDetailArrayOutput) Index(i pulumi.IntInput) GetTaskRecordDe
 }
 
 type GetTaskRecordDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -63515,6 +63583,7 @@ type GetTaskRecordDetailExecutionDetailInput interface {
 }
 
 type GetTaskRecordDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -63593,6 +63662,7 @@ func (o GetTaskRecordDetailExecutionDetailOutput) ToGetTaskRecordDetailExecution
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetTaskRecordDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTaskRecordDetailExecutionDetail) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -63685,7 +63755,8 @@ func (o GetTaskRecordDetailExecutionDetailArrayOutput) Index(i pulumi.IntInput) 
 
 type GetTaskRecordDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -63710,7 +63781,8 @@ type GetTaskRecordDetailExecutionDetailContentInput interface {
 
 type GetTaskRecordDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -63778,6 +63850,7 @@ func (o GetTaskRecordDetailExecutionDetailContentOutput) Bucket() pulumi.StringO
 	return o.ApplyT(func(v GetTaskRecordDetailExecutionDetailContent) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetTaskRecordDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTaskRecordDetailExecutionDetailContent) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -64850,6 +64923,7 @@ func (o GetTaskRecordsTaskRecordCollectionItemDetailArrayOutput) Index(i pulumi.
 }
 
 type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail struct {
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command string `pulumi:"command"`
@@ -64889,6 +64963,7 @@ type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailInput interface 
 }
 
 type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailArgs struct {
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// Optional command to execute the content. You can provide any commands/arguments that can't be part of the script.
 	Command pulumi.StringInput `pulumi:"command"`
@@ -64967,6 +65042,7 @@ func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailOutput) ToGet
 	return o
 }
 
+// Catalog Id having terraform package.
 func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetail) string { return v.CatalogId }).(pulumi.StringOutput)
 }
@@ -65063,7 +65139,8 @@ func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailArrayOutput) 
 
 type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent struct {
 	// Bucket Name.
-	Bucket    string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId string `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum string `pulumi:"checksum"`
@@ -65088,7 +65165,8 @@ type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentInput int
 
 type GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentArgs struct {
 	// Bucket Name.
-	Bucket    pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Catalog Id having terraform package.
 	CatalogId pulumi.StringInput `pulumi:"catalogId"`
 	// md5 checksum of the artifact.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
@@ -65156,6 +65234,7 @@ func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentOutput
 	return o.ApplyT(func(v GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// Catalog Id having terraform package.
 func (o GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContentOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTaskRecordsTaskRecordCollectionItemDetailExecutionDetailContent) string { return v.CatalogId }).(pulumi.StringOutput)
 }

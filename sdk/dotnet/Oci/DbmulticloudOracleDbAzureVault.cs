@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
+    /// This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-multicloud-integrations/latest/OracleDbAzureVault
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dbmulticloud
+    /// 
+    /// Creates DB Azure Vault resource.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -45,7 +52,7 @@ namespace Pulumi.Oci.Oci
     /// 
     /// ## Import
     /// 
-    /// OracleDbAzureVaults can be imported using the `id`, e.g.
+    /// OracleDbAzureVaults can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault test_oracle_db_azure_vault "id"

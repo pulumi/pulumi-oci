@@ -431,7 +431,12 @@ class MigrationPlan(pulumi.CustomResource):
                  target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationPlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration plan.
 
         ## Import
 
@@ -459,7 +464,12 @@ class MigrationPlan(pulumi.CustomResource):
                  args: MigrationPlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/ocm/latest/MigrationPlan
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cloudMigrations
+
+        Creates a migration plan.
 
         ## Import
 

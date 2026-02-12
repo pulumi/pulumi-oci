@@ -644,6 +644,13 @@ class JobRun(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Job Run resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/JobRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a job run.
+
         ## Example Usage
 
         ```python
@@ -792,6 +799,13 @@ class JobRun(pulumi.CustomResource):
                  args: JobRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Job Run resource in Oracle Cloud Infrastructure Data Science service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/JobRun
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+
+        Creates a job run.
+
         ## Example Usage
 
         ```python

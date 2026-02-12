@@ -59,20 +59,15 @@ __all__ = [
     'GetPbfListingsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ApplicationImagePolicyConfigArgsDict(TypedDict):
-        is_policy_enabled: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Define if image signature verification policy is enabled for the application.
-        """
-        key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgsDict']]]]
-        """
-        (Updatable) A list of KMS key details.
-        """
-elif False:
-    ApplicationImagePolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationImagePolicyConfigArgsDict(TypedDict):
+    is_policy_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Define if image signature verification policy is enabled for the application.
+    """
+    key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgsDict']]]]
+    """
+    (Updatable) A list of KMS key details.
+    """
 
 @pulumi.input_type
 class ApplicationImagePolicyConfigArgs:
@@ -112,14 +107,11 @@ class ApplicationImagePolicyConfigArgs:
         pulumi.set(self, "key_details", value)
 
 
-if not MYPY:
-    class ApplicationImagePolicyConfigKeyDetailArgsDict(TypedDict):
-        kms_key_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
-        """
-elif False:
-    ApplicationImagePolicyConfigKeyDetailArgsDict: TypeAlias = Mapping[str, Any]
+class ApplicationImagePolicyConfigKeyDetailArgsDict(TypedDict):
+    kms_key_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+    """
 
 @pulumi.input_type
 class ApplicationImagePolicyConfigKeyDetailArgs:
@@ -143,22 +135,19 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
         pulumi.set(self, "kms_key_id", value)
 
 
-if not MYPY:
-    class ApplicationTraceConfigArgsDict(TypedDict):
-        domain_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        """
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Define if tracing is enabled for the resource. 
+class ApplicationTraceConfigArgsDict(TypedDict):
+    domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
+    """
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Define if tracing is enabled for the resource. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    ApplicationTraceConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class ApplicationTraceConfigArgs:
@@ -207,30 +196,27 @@ class ApplicationTraceConfigArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class FunctionFailureDestinationArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of destination for the response to a failed detached function invocation.
-        """
-        channel_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The ID of the channel in the queue.
-        """
-        queue_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
-        """
-        stream_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        """
-        topic_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
-elif False:
-    FunctionFailureDestinationArgsDict: TypeAlias = Mapping[str, Any]
+class FunctionFailureDestinationArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of destination for the response to a failed detached function invocation.
+    """
+    channel_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the channel in the queue.
+    """
+    queue_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+    """
+    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+    """
+    topic_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+    """
 
 @pulumi.input_type
 class FunctionFailureDestinationArgs:
@@ -318,18 +304,15 @@ class FunctionFailureDestinationArgs:
         pulumi.set(self, "topic_id", value)
 
 
-if not MYPY:
-    class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
-        strategy: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The strategy for provisioned concurrency to be used.
-        """
-        count: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Configuration specifying a constant amount of provisioned concurrency.
-        """
-elif False:
-    FunctionProvisionedConcurrencyConfigArgsDict: TypeAlias = Mapping[str, Any]
+class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
+    strategy: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The strategy for provisioned concurrency to be used.
+    """
+    count: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Configuration specifying a constant amount of provisioned concurrency.
+    """
 
 @pulumi.input_type
 class FunctionProvisionedConcurrencyConfigArgs:
@@ -369,18 +352,15 @@ class FunctionProvisionedConcurrencyConfigArgs:
         pulumi.set(self, "count", value)
 
 
-if not MYPY:
-    class FunctionSourceDetailsArgsDict(TypedDict):
-        pbf_listing_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
-        """
-        source_type: pulumi.Input[_builtins.str]
-        """
-        Type of the Function Source. Possible values: PBF.
-        """
-elif False:
-    FunctionSourceDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class FunctionSourceDetailsArgsDict(TypedDict):
+    pbf_listing_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the PbfListing this function is sourced from.
+    """
+    source_type: pulumi.Input[_builtins.str]
+    """
+    Type of the Function Source. Possible values: PBF.
+    """
 
 @pulumi.input_type
 class FunctionSourceDetailsArgs:
@@ -419,30 +399,27 @@ class FunctionSourceDetailsArgs:
         pulumi.set(self, "source_type", value)
 
 
-if not MYPY:
-    class FunctionSuccessDestinationArgsDict(TypedDict):
-        kind: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The type of destination for the response to a successful detached function invocation.
-        """
-        channel_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The ID of the channel in the queue.
-        """
-        queue_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
-        """
-        stream_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
-        """
-        topic_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
-        """
-elif False:
-    FunctionSuccessDestinationArgsDict: TypeAlias = Mapping[str, Any]
+class FunctionSuccessDestinationArgsDict(TypedDict):
+    kind: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of destination for the response to a successful detached function invocation.
+    """
+    channel_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The ID of the channel in the queue.
+    """
+    queue_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+    """
+    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+    """
+    topic_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+    """
 
 @pulumi.input_type
 class FunctionSuccessDestinationArgs:
@@ -530,18 +507,15 @@ class FunctionSuccessDestinationArgs:
         pulumi.set(self, "topic_id", value)
 
 
-if not MYPY:
-    class FunctionTraceConfigArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) Define if tracing is enabled for the resource. 
+class FunctionTraceConfigArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) Define if tracing is enabled for the resource. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    FunctionTraceConfigArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class FunctionTraceConfigArgs:
@@ -574,13 +548,10 @@ class FunctionTraceConfigArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class GetApplicationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetApplicationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetApplicationsFilterArgs:
@@ -621,13 +592,10 @@ class GetApplicationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFunctionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFunctionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFunctionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFunctionsFilterArgs:
@@ -668,13 +636,10 @@ class GetFunctionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentAdminUsersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentAdminUsersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentAdminUsersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentAdminUsersFilterArgs:
@@ -715,13 +680,10 @@ class GetFusionEnvironmentAdminUsersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentDataMaskingActivitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
@@ -762,13 +724,10 @@ class GetFusionEnvironmentDataMaskingActivitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentFamiliesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentFamiliesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentFamiliesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentFamiliesFilterArgs:
@@ -809,13 +768,10 @@ class GetFusionEnvironmentFamiliesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentRefreshActivitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentRefreshActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentRefreshActivitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentRefreshActivitiesFilterArgs:
@@ -856,13 +812,10 @@ class GetFusionEnvironmentRefreshActivitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentScheduledActivitiesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentScheduledActivitiesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentScheduledActivitiesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentScheduledActivitiesFilterArgs:
@@ -903,13 +856,10 @@ class GetFusionEnvironmentScheduledActivitiesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentServiceAttachmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentServiceAttachmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentServiceAttachmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentServiceAttachmentsFilterArgs:
@@ -950,13 +900,10 @@ class GetFusionEnvironmentServiceAttachmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
@@ -997,13 +944,10 @@ class GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetFusionEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetFusionEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetFusionEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetFusionEnvironmentsFilterArgs:
@@ -1044,16 +988,13 @@ class GetFusionEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPbfListingTriggersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the service trigger source of a PBF.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPbfListingTriggersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPbfListingTriggersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the service trigger source of a PBF.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPbfListingTriggersFilterArgs:
@@ -1100,16 +1041,13 @@ class GetPbfListingTriggersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPbfListingVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPbfListingVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPbfListingVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPbfListingVersionsFilterArgs:
@@ -1156,16 +1094,13 @@ class GetPbfListingVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPbfListingsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to return only resources that match the entire PBF name given.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPbfListingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPbfListingsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire PBF name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPbfListingsFilterArgs:

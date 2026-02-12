@@ -27,26 +27,21 @@ __all__ = [
     'GetAppAccelerationsFilterArgsDict',
 ]
 
-MYPY = False
+class AppAccelerationPolicyResponseCachingPolicyArgsDict(TypedDict):
+    is_response_header_based_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When false, responses will not be cached by the backend based on response headers.
 
-if not MYPY:
-    class AppAccelerationPolicyResponseCachingPolicyArgsDict(TypedDict):
-        is_response_header_based_caching_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When false, responses will not be cached by the backend based on response headers.
+    When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
 
-        When true, responses that contain one of the supported cache control headers will be cached according to the values specified in the cache control headers.
+    The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
 
-        The "X-Accel-Expires" header field sets caching time of a response in seconds. The zero value disables caching for a response. If the value starts with the @ prefix, it sets an absolute time in seconds since Epoch, up to which the response may be cached.
+    If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
 
-        If the header does not include the "X-Accel-Expires" field, parameters of caching may be set in the header fields "Expires" or "Cache-Control".
+    If the header includes the "Set-Cookie" field, such a response will not be cached.
 
-        If the header includes the "Set-Cookie" field, such a response will not be cached.
-
-        If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
-        """
-elif False:
-    AppAccelerationPolicyResponseCachingPolicyArgsDict: TypeAlias = Mapping[str, Any]
+    If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
+    """
 
 @pulumi.input_type
 class AppAccelerationPolicyResponseCachingPolicyArgs:
@@ -91,14 +86,11 @@ class AppAccelerationPolicyResponseCachingPolicyArgs:
         pulumi.set(self, "is_response_header_based_caching_enabled", value)
 
 
-if not MYPY:
-    class AppAccelerationPolicyResponseCompressionPolicyArgsDict(TypedDict):
-        gzip_compression: NotRequired[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict']]
-        """
-        (Updatable) An object that specifies the gzip compression policy.
-        """
-elif False:
-    AppAccelerationPolicyResponseCompressionPolicyArgsDict: TypeAlias = Mapping[str, Any]
+class AppAccelerationPolicyResponseCompressionPolicyArgsDict(TypedDict):
+    gzip_compression: NotRequired[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict']]
+    """
+    (Updatable) An object that specifies the gzip compression policy.
+    """
 
 @pulumi.input_type
 class AppAccelerationPolicyResponseCompressionPolicyArgs:
@@ -123,16 +115,13 @@ class AppAccelerationPolicyResponseCompressionPolicyArgs:
         pulumi.set(self, "gzip_compression", value)
 
 
-if not MYPY:
-    class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict(TypedDict):
-        is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
+class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict(TypedDict):
+    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
 
-        When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
-        """
-elif False:
-    AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgsDict: TypeAlias = Mapping[str, Any]
+    When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
+    """
 
 @pulumi.input_type
 class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
@@ -161,13 +150,10 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs:
         pulumi.set(self, "is_enabled", value)
 
 
-if not MYPY:
-    class GetAppAccelerationPoliciesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAppAccelerationPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAppAccelerationPoliciesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAppAccelerationPoliciesFilterArgs:
@@ -208,13 +194,10 @@ class GetAppAccelerationPoliciesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetAppAccelerationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetAppAccelerationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetAppAccelerationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetAppAccelerationsFilterArgs:

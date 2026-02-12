@@ -481,6 +481,13 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/latest/ClusterPlacementGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cluster_placement_groups
+
+        Creates a new cluster placement group in the specified compartment.
+
         ## Example Usage
 
         ```python
@@ -545,6 +552,13 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                  args: ClusterPlacementGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/latest/ClusterPlacementGroup
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/cluster_placement_groups
+
+        Creates a new cluster placement group in the specified compartment.
+
         ## Example Usage
 
         ```python

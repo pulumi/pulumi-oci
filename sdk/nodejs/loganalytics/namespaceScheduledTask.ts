@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/NamespaceScheduledTask
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+ *
+ * Schedule a task as specified and return task info.
+ *
  * ## Example Usage
  *
  * ```typescript

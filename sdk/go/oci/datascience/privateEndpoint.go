@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/DataSciencePrivateEndpoint
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+//
+// Creates a Data Science private endpoint to be used by a Data Science resource.
+//
 // ## Example Usage
 //
 // ```go

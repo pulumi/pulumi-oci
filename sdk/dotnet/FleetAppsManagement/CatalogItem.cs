@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
+    /// This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fleet-management/latest/CatalogItem
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fleet_apps_management
+    /// 
+    /// Creates a CatalogItem.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -67,7 +74,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     /// 
     /// ## Import
     /// 
-    /// CatalogItems can be imported using the `id`, e.g.
+    /// CatalogItems can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:FleetAppsManagement/catalogItem:CatalogItem test_catalog_item "id"

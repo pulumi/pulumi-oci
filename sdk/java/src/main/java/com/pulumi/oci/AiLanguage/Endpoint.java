@@ -16,6 +16,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/language/latest/Endpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiLanguage
+ * 
+ * Creates a new endpoint and deploy the trained model
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
+    /// This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalExadataStorageConnector
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Creates the Exadata storage server connector after validating the connection information.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -49,7 +56,7 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// ## Import
     /// 
-    /// ExternalExadataStorageConnectors can be imported using the `id`, e.g.
+    /// ExternalExadataStorageConnectors can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector test_external_exadata_storage_connector "id"

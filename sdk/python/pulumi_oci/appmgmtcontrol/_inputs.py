@@ -19,15 +19,10 @@ __all__ = [
     'GetMonitoredInstancesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetMonitoredInstancesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMonitoredInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMonitoredInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMonitoredInstancesFilterArgs:

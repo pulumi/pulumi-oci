@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// ## Import
     /// 
-    /// SchedulingPolicySchedulingWindows can be imported using the `id`, e.g.
+    /// SchedulingPolicySchedulingWindows can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow test_scheduling_policy_scheduling_window "schedulingPolicies/{schedulingPolicyId}/schedulingWindows/{schedulingWindowId}"

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// ## Import
     /// 
-    /// ModelDefinedMetadataArtifacts can be imported using the `id`, e.g.
+    /// ModelDefinedMetadataArtifacts can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact test_model_defined_metadata_artifact "id"

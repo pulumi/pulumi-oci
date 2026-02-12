@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ExternalListener
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+    /// 
+    /// Updates the external listener specified by `externalListenerId`.
     /// 
     /// ## Import
     /// 
-    /// ExternalListeners can be imported using the `id`, e.g.
+    /// ExternalListeners can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseManagement/externalListener:ExternalListener test_external_listener "id"

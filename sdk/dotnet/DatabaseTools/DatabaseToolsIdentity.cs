@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DatabaseTools
     /// 
     /// ## Import
     /// 
-    /// DatabaseToolsIdentities can be imported using the `id`, e.g.
+    /// DatabaseToolsIdentities can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity test_database_tools_identity "id"

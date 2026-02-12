@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-management/latest/ManagedDatabaseGroup
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databasemanagement
+ *
+ * Creates a Managed Database Group. The group does not contain any
+ * Managed Databases when it is created, and they must be added later.
+ *
  * ## Example Usage
  *
  * ```typescript

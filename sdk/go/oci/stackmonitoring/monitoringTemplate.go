@@ -12,6 +12,13 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
+// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/stack-monitoring/latest/MonitoringTemplate
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/stack_monitoring
+//
+// Creates a new monitoring template for a given compartment.
+//
 // ## Example Usage
 //
 // ```go

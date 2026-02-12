@@ -571,6 +571,13 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  workflow_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflowJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
+
         ## Example Usage
 
         ```python
@@ -632,6 +639,13 @@ class MediaWorkflowJob(pulumi.CustomResource):
                  args: MediaWorkflowJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dms/latest/MediaWorkflowJob
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/media_services
+
+        Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
+
         ## Example Usage
 
         ```python

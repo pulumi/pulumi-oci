@@ -10,6 +10,17 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
+    /// This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-flow/latest/SqlEndpoint
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataflow
+    /// 
+    /// ## Note
+    /// 
+    /// Resource Discovery is not supported for this resource.
+    /// 
+    /// Create a new Sql Endpoint.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -78,7 +89,7 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// ## Import
     /// 
-    /// SqlEndpoints can be imported using the `id`, e.g.
+    /// SqlEndpoints can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataFlow/sqlEndpoint:SqlEndpoint test_sql_endpoint "id"

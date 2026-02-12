@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
+    /// This resource provides the Log Analytics Entity Associations Add resource in Oracle Cloud Infrastructure Log Analytics service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsEntity/AddEntityAssociations
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/log_analytics
+    /// 
+    /// Adds association between input source log analytics entity and one or more existing destination entities.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -32,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// ## Import
     /// 
-    /// LogAnalyticsEntityAssociationsAdd can be imported using the `id`, e.g.
+    /// LogAnalyticsEntityAssociationsAdd can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd test_log_analytics_entity_associations_add "id"

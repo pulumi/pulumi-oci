@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
+    /// This resource provides the Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-integration/latest/WorkspaceApplicationTaskSchedule
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dataintegration
+    /// 
+    /// Endpoint to be used create TaskSchedule.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -131,7 +138,7 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// ## Import
     /// 
-    /// WorkspaceApplicationTaskSchedules can be imported using the `id`, e.g.
+    /// WorkspaceApplicationTaskSchedules can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule test_workspace_application_task_schedule "workspaces/{workspaceId}/applications/{applicationKey}/taskSchedules/{taskScheduleKey}"

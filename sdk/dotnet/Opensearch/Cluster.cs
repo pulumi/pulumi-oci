@@ -10,11 +10,25 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opensearch
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/opensearch/latest/OpensearchCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/opensearch
+    /// 
+    /// Creates a new OpensearchCluster.
+    /// 
+    /// ## Prerequisites
+    /// 
+    /// The below policies must be created in compartment before creating OpensearchCluster
+    /// 
+    /// ##### {Compartment-Name} - Name of  your compartment
+    /// 
+    /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+    /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
     /// 
     /// ## Import
     /// 
-    /// OpensearchClusters can be imported using the `id`, e.g.
+    /// OpensearchClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Opensearch/cluster:Cluster test_opensearch_cluster "id"

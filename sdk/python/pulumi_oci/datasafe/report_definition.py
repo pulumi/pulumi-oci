@@ -637,6 +637,13 @@ class ReportDefinition(pulumi.CustomResource):
                  summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict']]]]] = None,
                  __props__=None):
         """
+        This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/ReportDefinition
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
+
         ## Example Usage
 
         ```python
@@ -713,6 +720,13 @@ class ReportDefinition(pulumi.CustomResource):
                  args: ReportDefinitionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/ReportDefinition
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a new report definition with parameters specified in the body. The report definition is stored in the specified compartment.
+
         ## Example Usage
 
         ```python

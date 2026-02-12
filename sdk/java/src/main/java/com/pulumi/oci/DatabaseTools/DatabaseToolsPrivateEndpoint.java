@@ -18,6 +18,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database-tools/latest/DatabaseToolsPrivateEndpoint
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/databaseTools
+ * 
+ * Creates a new Database Tools private endpoint.
+ * 
  * ## Example Usage
  * 
  * <pre>

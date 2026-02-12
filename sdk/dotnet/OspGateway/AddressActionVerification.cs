@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OspGateway
 {
     /// <summary>
+    /// This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/osp_gateway
+    /// 
+    /// Verify address
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -57,7 +64,7 @@ namespace Pulumi.Oci.OspGateway
     /// 
     /// ## Import
     /// 
-    /// AddressActionVerifications can be imported using the `id`, e.g.
+    /// AddressActionVerifications can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OspGateway/addressActionVerification:AddressActionVerification test_address_action_verification "id"

@@ -17,6 +17,18 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousDatabaseWallet
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ * 
+ * Creates and downloads a wallet for the specified Autonomous AI Database.
+ * 
+ * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
+ * See this example for more details.
+ * 
+ * Recreate the resource to create and download a new wallet.
+ * 
  * ## Example Usage
  * 
  * <pre>
@@ -75,9 +87,17 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
+    /**
+     * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     @Export(name="base64EncodeContent", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> base64EncodeContent;
 
+    /**
+     * @return Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
+     * 
+     */
     public Output<Optional<Boolean>> base64EncodeContent() {
         return Codegen.optional(this.base64EncodeContent);
     }

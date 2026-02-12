@@ -293,6 +293,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyDataguardArgs']]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: Oracle AI Database version of the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
@@ -642,6 +643,9 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -1296,6 +1300,14 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
+        This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseAddStandby
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
+
         ## Example Usage
 
         ```python
@@ -1363,6 +1375,14 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseAddStandbyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabaseAddStandby
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+
+        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
+
         ## Example Usage
 
         ```python
@@ -1604,6 +1624,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_unique_name: **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         :param pulumi.Input[_builtins.str] db_version: Oracle AI Database version of the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
@@ -1840,6 +1861,9 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @_builtins.property

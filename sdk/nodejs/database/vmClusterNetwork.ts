@@ -7,6 +7,14 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Vm Cluster Network resource in Oracle Cloud Infrastructure Database service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/database/latest/VmClusterNetwork
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
+ *
+ * Creates the VM cluster network. Applies to Exadata Cloud@Customer instances only.
+ * To create a cloud VM cluster in an Exadata Cloud Service instance, use the [CreateCloudVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster) operation.
+ *
  * ## Example Usage
  *
  * ```typescript
@@ -143,6 +151,9 @@ export class VmClusterNetwork extends pulumi.CustomResource {
      * The date and time when the VM cluster network was created.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     */
     declare public readonly validateVmClusterNetwork: pulumi.Output<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
@@ -280,6 +291,9 @@ export interface VmClusterNetworkState {
      * The date and time when the VM cluster network was created.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     */
     validateVmClusterNetwork?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
@@ -332,6 +346,9 @@ export interface VmClusterNetworkArgs {
      * (Updatable) The SCAN details.
      */
     scans: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkScan>[]>;
+    /**
+     * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
+     */
     validateVmClusterNetwork?: pulumi.Input<boolean>;
     /**
      * (Updatable) Details of the client and backup networks.

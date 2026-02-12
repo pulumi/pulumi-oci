@@ -10,11 +10,16 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// ## Example Usage
+    /// This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/os-management/latest/ManagedInstance
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/os_management_hub
+    /// 
+    /// Updates the specified managed instance information, such as description, ONS topic, and associated management station.
     /// 
     /// ## Import
     /// 
-    /// ManagedInstances can be imported using the `id`, e.g.
+    /// ManagedInstances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:OsManagementHub/managedInstance:ManagedInstance test_managed_instance "id"

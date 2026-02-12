@@ -7,6 +7,15 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/generative-ai-agents/latest/DataIngestionJob
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/generative_ai_agent
+ *
+ * **CreateDataIngestionJob**
+ *
+ * Creates a data ingestion job.
+ *
  * ## Example Usage
  *
  * ```typescript

@@ -10,6 +10,14 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
+    /// This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/dns/latest/TsigKey
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/dns
+    /// 
+    /// Creates a new TSIG key in the specified compartment. There is no
+    /// `opc-retry-token` header since TSIG key names must be globally unique.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -35,7 +43,7 @@ namespace Pulumi.Oci.Dns
     /// 
     /// ## Import
     /// 
-    /// TsigKeys can be imported using the `id`, e.g.
+    /// TsigKeys can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Dns/tsigKey:TsigKey test_tsig_key "id"

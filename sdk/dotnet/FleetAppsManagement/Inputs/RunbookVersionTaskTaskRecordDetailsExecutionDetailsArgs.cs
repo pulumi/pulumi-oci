@@ -12,6 +12,9 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
 
     public sealed class RunbookVersionTaskTaskRecordDetailsExecutionDetailsArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Catalog Id having terraform package.
+        /// </summary>
         [Input("catalogId")]
         public Input<string>? CatalogId { get; set; }
 

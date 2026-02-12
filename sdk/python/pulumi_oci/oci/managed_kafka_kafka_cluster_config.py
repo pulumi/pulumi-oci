@@ -285,6 +285,13 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  latest_config: Optional[pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/kafka/latest/KafkaClusterConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/managed_kafka
+
+        Creates a KafkaClusterConfig.
+
         ## Example Usage
 
         ```python
@@ -331,6 +338,13 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  args: ManagedKafkaKafkaClusterConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/kafka/latest/KafkaClusterConfig
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/managed_kafka
+
+        Creates a KafkaClusterConfig.
+
         ## Example Usage
 
         ```python

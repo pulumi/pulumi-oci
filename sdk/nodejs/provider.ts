@@ -138,6 +138,9 @@ export interface ProviderArgs {
      * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     fingerprint?: pulumi.Input<string>;
+    /**
+     * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
+     */
     ignoreDefinedTags?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Optional) A PEM formatted RSA private key for the user.

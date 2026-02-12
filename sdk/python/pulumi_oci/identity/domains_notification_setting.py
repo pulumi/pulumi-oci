@@ -1371,7 +1371,12 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  test_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        ## Example Usage
+        This resource provides the Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/NotificationSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace Notification Settings
 
         ## Import
 
@@ -1523,7 +1528,12 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  args: DomainsNotificationSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## Example Usage
+        This resource provides the Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/NotificationSetting
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Replace Notification Settings
 
         ## Import
 

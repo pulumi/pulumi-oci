@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/jms-java-download/latest/JavaLicenseAcceptanceRecord
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/jms_java_downloads
+ *
+ * Creates a Java license acceptance record for the specified license type in a tenancy.
+ *
  * ## Example Usage
  *
  * ```typescript

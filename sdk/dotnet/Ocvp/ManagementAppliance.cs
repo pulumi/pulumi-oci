@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Ocvp
     /// 
     /// ## Import
     /// 
-    /// ManagementAppliances can be imported using the `id`, e.g.
+    /// ManagementAppliances can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ocvp/managementAppliance:ManagementAppliance test_management_appliance "id"

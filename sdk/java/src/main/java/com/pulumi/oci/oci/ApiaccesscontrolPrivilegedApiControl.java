@@ -18,6 +18,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Privileged Api Control resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/oracle-api-access-control/latest/PrivilegedApiControl
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/apiaccesscontrol
+ * 
+ * Creates a PrivilegedApiControl.
+ * 
  * ## Example Usage
  * 
  * <pre>

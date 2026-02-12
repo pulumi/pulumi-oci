@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vision/latest/Project
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/aiVision
+ *
+ * Create a new project.
+ *
  * ## Example Usage
  *
  * ```typescript

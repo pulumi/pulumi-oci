@@ -15,6 +15,29 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Console History resource in Oracle Cloud Infrastructure Core service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+ * 
+ * Captures the most recent serial console data (up to a megabyte) for the
+ * specified instance.
+ * 
+ * The `CaptureConsoleHistory` operation works with the other console history operations
+ * as described below.
+ * 
+ * 1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
+ *    most recent console history. This call returns a `ConsoleHistory`
+ *    object. The object will have a state of REQUESTED.
+ * 2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
+ *    the identifier of the console history metadata. The state of the
+ *    `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and
+ *    then SUCCEEDED (or FAILED).
+ * 3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
+ *    metadata).
+ * 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
+ *    and the console history data.
+ * 
  * ## Example Usage
  * 
  * <pre>

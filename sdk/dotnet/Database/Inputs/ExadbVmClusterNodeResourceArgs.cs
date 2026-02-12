@@ -24,6 +24,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("nodeId")]
         public Input<string>? NodeId { get; set; }
 
+        /// <summary>
+        /// User provided identifier for each node. `NodeName` only exists in Terraform config and state and does not exist in server side. It serves as a placeholder for a node before the node is provisioned. `NodeName` 1) must be unique among all nodes 2) must not be an empty string 3) must not contain any space. 4) `NodeResource` block can be removed to trigger a remove-node operation but `NodeName` can not be changed.
+        /// </summary>
         [Input("nodeName", required: true)]
         public Input<string> NodeName { get; set; } = null!;
 

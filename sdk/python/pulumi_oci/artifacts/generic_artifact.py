@@ -298,6 +298,11 @@ class GenericArtifact(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/GenericArtifact
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+
         ## Example Usage
 
         ```python
@@ -339,6 +344,11 @@ class GenericArtifact(pulumi.CustomResource):
                  args: GenericArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/GenericArtifact
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts
+
         ## Example Usage
 
         ```python

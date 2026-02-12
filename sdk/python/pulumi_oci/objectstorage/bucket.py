@@ -629,6 +629,14 @@ class Bucket(pulumi.CustomResource):
                  versioning: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
+        confidential information in bucket names.
+
         ## Example Usage
 
         ```python
@@ -697,6 +705,14 @@ class Bucket(pulumi.CustomResource):
                  args: BucketArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+
+        Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
+        confidential information in bucket names.
+
         ## Example Usage
 
         ```python

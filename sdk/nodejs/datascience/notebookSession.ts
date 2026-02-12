@@ -7,6 +7,13 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/NotebookSession
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience
+ *
+ * Creates a new notebook session.
+ *
  * ## Example Usage
  *
  * ```typescript

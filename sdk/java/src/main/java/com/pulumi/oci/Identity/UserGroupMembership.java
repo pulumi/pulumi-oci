@@ -14,6 +14,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/UserGroupMembership
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+ * 
+ * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
+ * 
  * ## Example Usage
  * 
  * <pre>

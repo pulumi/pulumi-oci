@@ -10,6 +10,24 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
+    /// This resource provides the Compute Cluster resource in Oracle Cloud Infrastructure Core service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
+    /// 
+    /// Creates an empty [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+    /// is a remote direct memory access (RDMA) network group.
+    /// 
+    /// After the compute cluster is created, you can use the compute cluster's OCID with the
+    /// [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) operation to create instances in the compute cluster.
+    /// The instances must be created in the same compartment and availability domain as the cluster.
+    /// 
+    /// Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+    /// 
+    /// If you want predictable capacity for a specific number of identical instances that are managed as a group,
+    /// create a cluster network that uses instance pools by using the
+    /// [CreateClusterNetwork](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ClusterNetwork/CreateClusterNetwork) operation.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -40,7 +58,7 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Import
     /// 
-    /// ComputeClusters can be imported using the `id`, e.g.
+    /// ComputeClusters can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Core/computeCluster:ComputeCluster test_compute_cluster "id"

@@ -84,9 +84,17 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.arguments);
     }
 
+    /**
+     * Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+     * 
+     */
     @Import(name="asynchronous")
     private @Nullable Output<Boolean> asynchronous;
 
+    /**
+     * @return Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+     * 
+     */
     public Optional<Output<Boolean>> asynchronous() {
         return Optional.ofNullable(this.asynchronous);
     }
@@ -555,11 +563,23 @@ public final class InvokeRunArgs extends com.pulumi.resources.ResourceArgs {
             return arguments(List.of(arguments));
         }
 
+        /**
+         * @param asynchronous Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder asynchronous(@Nullable Output<Boolean> asynchronous) {
             $.asynchronous = asynchronous;
             return this;
         }
 
+        /**
+         * @param asynchronous Flag to invoke run asynchronously. The default is true and Terraform provider will not wait for run resource to reach target state of `SUCCEEDED`, `FAILED` or `CANCELLED` before exiting. User must wait to perform operations that need resource to be in target states. Set this to false to override this behavior.
+         * 
+         * @return builder
+         * 
+         */
         public Builder asynchronous(Boolean asynchronous) {
             return asynchronous(Output.of(asynchronous));
         }

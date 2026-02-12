@@ -22,6 +22,13 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/fusion-applications/latest/FusionEnvironment
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/fusionapps
+ * 
+ * Creates a new FusionEnvironment.
+ * 
  * ## Example Usage
  * 
  * <pre>

@@ -382,6 +382,13 @@ class OciCacheUser(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
+
         ## Example Usage
 
         ```python
@@ -436,6 +443,13 @@ class OciCacheUser(pulumi.CustomResource):
                  args: OciCacheUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/redis/latest/OciCacheUser
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/redis
+
+        Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
+
         ## Example Usage
 
         ```python

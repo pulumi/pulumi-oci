@@ -15,6 +15,13 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/usage/latest/Query
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/metering_computation
+ * 
+ * Returns the created query.
+ * 
  * ## Example Usage
  * 
  * <pre>

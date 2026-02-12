@@ -80,6 +80,7 @@ class DomainsGroupArgs:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
                
                **SCIM++ Properties:**
@@ -289,6 +290,9 @@ class DomainsGroupArgs:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -554,6 +558,7 @@ class _DomainsGroupState:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
@@ -892,6 +897,9 @@ class _DomainsGroupState:
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
@@ -1263,6 +1271,13 @@ class DomainsGroup(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Group
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a group.
+
         ## Example Usage
 
         ```python
@@ -1359,6 +1374,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[_builtins.str] idcs_endpoint: The basic endpoint for the identity domain
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict']]]] members: (Updatable) The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
                
@@ -1434,6 +1450,13 @@ class DomainsGroup(pulumi.CustomResource):
                  args: DomainsGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity-domains/latest/Group
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity_domains
+
+        Create a group.
+
         ## Example Usage
 
         ```python
@@ -1682,6 +1705,7 @@ class DomainsGroup(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[_builtins.bool] force_delete: (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainsGroupIdcsCreatedByArgs', 'DomainsGroupIdcsCreatedByArgsDict']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
                **SCIM++ Properties:**
@@ -1965,6 +1989,9 @@ class DomainsGroup(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="forceDelete")
     def force_delete(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
+        """
         return pulumi.get(self, "force_delete")
 
     @_builtins.property

@@ -105,20 +105,15 @@ __all__ = [
     'GetTrailSequencesFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class ConnectionAdditionalAttributeArgsDict(TypedDict):
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name of the property entry.
-        """
-        value: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The value of the property entry.
-        """
-elif False:
-    ConnectionAdditionalAttributeArgsDict: TypeAlias = Mapping[str, Any]
+class ConnectionAdditionalAttributeArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name of the property entry.
+    """
+    value: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The value of the property entry.
+    """
 
 @pulumi.input_type
 class ConnectionAdditionalAttributeArgs:
@@ -159,24 +154,21 @@ class ConnectionAdditionalAttributeArgs:
         pulumi.set(self, "value", value)
 
 
-if not MYPY:
-    class ConnectionBootstrapServerArgsDict(TypedDict):
-        host: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The name or address of a host.
-        """
-        port: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) The port of an endpoint usually specified for a connection.
-        """
-        private_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+class ConnectionBootstrapServerArgsDict(TypedDict):
+    host: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The name or address of a host.
+    """
+    port: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) The port of an endpoint usually specified for a connection.
+    """
+    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 
-        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
-        """
-elif False:
-    ConnectionBootstrapServerArgsDict: TypeAlias = Mapping[str, Any]
+    The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+    """
 
 @pulumi.input_type
 class ConnectionBootstrapServerArgs:
@@ -237,46 +229,43 @@ class ConnectionBootstrapServerArgs:
         pulumi.set(self, "private_ip", value)
 
 
-if not MYPY:
-    class ConnectionCatalogArgsDict(TypedDict):
-        catalog_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The catalog type.
-        """
-        branch: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
-        """
-        client_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The OAuth client ID used for authentication.
-        """
-        client_secret_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
-        """
-        glue_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
-        """
-        name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The catalog name within Polaris where Iceberg tables are registered.
-        """
-        principal_role: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Snowflake role used to access Polaris.
-        """
-        properties_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        """
-        uri: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-        """
-elif False:
-    ConnectionCatalogArgsDict: TypeAlias = Mapping[str, Any]
+class ConnectionCatalogArgsDict(TypedDict):
+    catalog_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The catalog type.
+    """
+    branch: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+    """
+    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The OAuth client ID used for authentication.
+    """
+    client_secret_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+    """
+    glue_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
+    """
+    name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The catalog name within Polaris where Iceberg tables are registered.
+    """
+    principal_role: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Snowflake role used to access Polaris.
+    """
+    properties_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+    """
+    uri: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+    """
 
 @pulumi.input_type
 class ConnectionCatalogArgs:
@@ -428,14 +417,11 @@ class ConnectionCatalogArgs:
         pulumi.set(self, "uri", value)
 
 
-if not MYPY:
-    class ConnectionIngressIpArgsDict(TypedDict):
-        ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
-elif False:
-    ConnectionIngressIpArgsDict: TypeAlias = Mapping[str, Any]
+class ConnectionIngressIpArgsDict(TypedDict):
+    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+    """
 
 @pulumi.input_type
 class ConnectionIngressIpArgs:
@@ -460,26 +446,23 @@ class ConnectionIngressIpArgs:
         pulumi.set(self, "ingress_ip", value)
 
 
-if not MYPY:
-    class ConnectionLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-elif False:
-    ConnectionLockArgsDict: TypeAlias = Mapping[str, Any]
+class ConnectionLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+    """
 
 @pulumi.input_type
 class ConnectionLockArgs:
@@ -551,58 +534,55 @@ class ConnectionLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class ConnectionStorageArgsDict(TypedDict):
-        storage_type: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The storage type used in the Iceberg connection.
-        """
-        access_key_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Access key ID to access the Amazon S3 bucket.
-        """
-        account_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
-        """
-        account_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Sets the Azure storage account name.
-        """
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        """
-        container: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
-        """
-        endpoint: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        """
-        project_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The Google Cloud Project where the bucket exists.
-        """
-        region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
-        """
-        scheme_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The scheme of the storage.
-        """
-        secret_access_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        """
-        service_account_key_file_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-        """
-elif False:
-    ConnectionStorageArgsDict: TypeAlias = Mapping[str, Any]
+class ConnectionStorageArgsDict(TypedDict):
+    storage_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The storage type used in the Iceberg connection.
+    """
+    access_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Access key ID to access the Amazon S3 bucket.
+    """
+    account_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+    """
+    account_name: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Sets the Azure storage account name.
+    """
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+    """
+    container: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
+    """
+    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+    """
+    project_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The Google Cloud Project where the bucket exists.
+    """
+    region: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+    """
+    scheme_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The scheme of the storage.
+    """
+    secret_access_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+    """
+    service_account_key_file_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+    """
 
 @pulumi.input_type
 class ConnectionStorageArgs:
@@ -802,26 +782,23 @@ class ConnectionStorageArgs:
         pulumi.set(self, "service_account_key_file_secret_id", value)
 
 
-if not MYPY:
-    class DeploymentBackupLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-elif False:
-    DeploymentBackupLockArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentBackupLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+    """
 
 @pulumi.input_type
 class DeploymentBackupLockArgs:
@@ -893,34 +870,31 @@ class DeploymentBackupLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class DeploymentBackupScheduleArgsDict(TypedDict):
-        bucket: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of the bucket where the object is to be uploaded in the object storage
-        """
-        compartment_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
-        """
-        frequency_backup_scheduled: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
-        """
-        is_metadata_only: pulumi.Input[_builtins.bool]
-        """
-        (Updatable) Parameter to allow users to create backup without trails
-        """
-        namespace: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Name of namespace that serves as a container for all of your buckets
-        """
-        time_backup_scheduled: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
-        """
-elif False:
-    DeploymentBackupScheduleArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentBackupScheduleArgsDict(TypedDict):
+    bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of the bucket where the object is to be uploaded in the object storage
+    """
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+    """
+    frequency_backup_scheduled: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+    """
+    is_metadata_only: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Parameter to allow users to create backup without trails
+    """
+    namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Name of namespace that serves as a container for all of your buckets
+    """
+    time_backup_scheduled: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The start timestamp for the deployment backup schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
+    """
 
 @pulumi.input_type
 class DeploymentBackupScheduleArgs:
@@ -1019,34 +993,31 @@ class DeploymentBackupScheduleArgs:
         pulumi.set(self, "time_backup_scheduled", value)
 
 
-if not MYPY:
-    class DeploymentDeploymentDiagnosticDataArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
-        diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the deployment diagnostic collection.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
-        time_diagnostic_end: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-        time_diagnostic_start: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-elif False:
-    DeploymentDeploymentDiagnosticDataArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentDeploymentDiagnosticDataArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the bucket where the object is to be uploaded in the object storage
+    """
+    diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the deployment diagnostic collection.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of namespace that serves as a container for all of your buckets
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the diagnostic collected and uploaded to object storage
+    """
+    time_diagnostic_end: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+    """
+    time_diagnostic_start: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+    """
 
 @pulumi.input_type
 class DeploymentDeploymentDiagnosticDataArgs:
@@ -1151,14 +1122,11 @@ class DeploymentDeploymentDiagnosticDataArgs:
         pulumi.set(self, "time_diagnostic_start", value)
 
 
-if not MYPY:
-    class DeploymentIngressIpArgsDict(TypedDict):
-        ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
-elif False:
-    DeploymentIngressIpArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentIngressIpArgsDict(TypedDict):
+    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+    """
 
 @pulumi.input_type
 class DeploymentIngressIpArgs:
@@ -1183,26 +1151,23 @@ class DeploymentIngressIpArgs:
         pulumi.set(self, "ingress_ip", value)
 
 
-if not MYPY:
-    class DeploymentLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-        """
-elif False:
-    DeploymentLockArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+    """
 
 @pulumi.input_type
 class DeploymentLockArgs:
@@ -1274,30 +1239,27 @@ class DeploymentLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class DeploymentMaintenanceConfigurationArgsDict(TypedDict):
-        bundle_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
-        """
-        interim_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
-        """
-        is_interim_release_auto_upgrade_enabled: NotRequired[pulumi.Input[_builtins.bool]]
-        """
-        (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
-        """
-        major_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
-        """
-        security_patch_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
-        """
-        (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
-        """
-elif False:
-    DeploymentMaintenanceConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentMaintenanceConfigurationArgsDict(TypedDict):
+    bundle_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+    """
+    interim_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+    """
+    is_interim_release_auto_upgrade_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    """
+    (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
+    """
+    major_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
+    """
+    security_patch_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    """
+    (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
+    """
 
 @pulumi.input_type
 class DeploymentMaintenanceConfigurationArgs:
@@ -1386,18 +1348,15 @@ class DeploymentMaintenanceConfigurationArgs:
         pulumi.set(self, "security_patch_upgrade_period_in_days", value)
 
 
-if not MYPY:
-    class DeploymentMaintenanceWindowArgsDict(TypedDict):
-        day: pulumi.Input[_builtins.str]
-        """
-        (Updatable) Days of the week.
-        """
-        start_hour: pulumi.Input[_builtins.int]
-        """
-        (Updatable) Start hour for maintenance period. Hour is in UTC.
-        """
-elif False:
-    DeploymentMaintenanceWindowArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentMaintenanceWindowArgsDict(TypedDict):
+    day: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Days of the week.
+    """
+    start_hour: pulumi.Input[_builtins.int]
+    """
+    (Updatable) Start hour for maintenance period. Hour is in UTC.
+    """
 
 @pulumi.input_type
 class DeploymentMaintenanceWindowArgs:
@@ -1436,50 +1395,47 @@ class DeploymentMaintenanceWindowArgs:
         pulumi.set(self, "start_hour", value)
 
 
-if not MYPY:
-    class DeploymentOggDataArgsDict(TypedDict):
-        deployment_name: pulumi.Input[_builtins.str]
-        """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-        """
-        admin_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
-        """
-        admin_username: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The GoldenGate deployment console username.
-        """
-        certificate: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
-        """
-        credential_store: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The type of credential store for OGG.
-        """
-        group_to_roles_mapping: NotRequired[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgsDict']]
-        """
-        (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
-        """
-        identity_domain_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        """
-        key: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The base64 encoded content of the PEM file containing the private key.
-        """
-        ogg_version: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Version of OGG
-        """
-        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
-        """
-elif False:
-    DeploymentOggDataArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentOggDataArgsDict(TypedDict):
+    deployment_name: pulumi.Input[_builtins.str]
+    """
+    The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+    """
+    admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+    """
+    admin_username: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The GoldenGate deployment console username.
+    """
+    certificate: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
+    """
+    credential_store: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The type of credential store for OGG.
+    """
+    group_to_roles_mapping: NotRequired[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgsDict']]
+    """
+    (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
+    """
+    identity_domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+    """
+    key: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The base64 encoded content of the PEM file containing the private key.
+    """
+    ogg_version: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Version of OGG
+    """
+    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+    """
 
 @pulumi.input_type
 class DeploymentOggDataArgs:
@@ -1647,26 +1603,23 @@ class DeploymentOggDataArgs:
         pulumi.set(self, "password_secret_id", value)
 
 
-if not MYPY:
-    class DeploymentOggDataGroupToRolesMappingArgsDict(TypedDict):
-        security_group_id: pulumi.Input[_builtins.str]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
-        """
-        administrator_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
-        """
-        operator_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
-        """
-        user_group_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
-        """
-elif False:
-    DeploymentOggDataGroupToRolesMappingArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentOggDataGroupToRolesMappingArgsDict(TypedDict):
+    security_group_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
+    """
+    administrator_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
+    """
+    operator_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
+    """
+    user_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
+    """
 
 @pulumi.input_type
 class DeploymentOggDataGroupToRolesMappingArgs:
@@ -1738,18 +1691,15 @@ class DeploymentOggDataGroupToRolesMappingArgs:
         pulumi.set(self, "user_group_id", value)
 
 
-if not MYPY:
-    class DeploymentPlacementArgsDict(TypedDict):
-        availability_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The availability domain of a placement.
-        """
-        fault_domain: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) The fault domain of a placement.
-        """
-elif False:
-    DeploymentPlacementArgsDict: TypeAlias = Mapping[str, Any]
+class DeploymentPlacementArgsDict(TypedDict):
+    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The availability domain of a placement.
+    """
+    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) The fault domain of a placement.
+    """
 
 @pulumi.input_type
 class DeploymentPlacementArgs:
@@ -1790,14 +1740,11 @@ class DeploymentPlacementArgs:
         pulumi.set(self, "fault_domain", value)
 
 
-if not MYPY:
-    class PipelineIngressIpArgsDict(TypedDict):
-        ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
-        """
-elif False:
-    PipelineIngressIpArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineIngressIpArgsDict(TypedDict):
+    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+    """
 
 @pulumi.input_type
 class PipelineIngressIpArgs:
@@ -1822,26 +1769,23 @@ class PipelineIngressIpArgs:
         pulumi.set(self, "ingress_ip", value)
 
 
-if not MYPY:
-    class PipelineLockArgsDict(TypedDict):
-        type: pulumi.Input[_builtins.str]
-        """
-        Type of the lock.
-        """
-        message: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
-        """
-        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-        """
-        time_created: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        When the lock was created.
-        """
-elif False:
-    PipelineLockArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineLockArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    Type of the lock.
+    """
+    message: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+    """
+    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+    """
+    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    When the lock was created.
+    """
 
 @pulumi.input_type
 class PipelineLockArgs:
@@ -1913,22 +1857,19 @@ class PipelineLockArgs:
         pulumi.set(self, "time_created", value)
 
 
-if not MYPY:
-    class PipelineMappingRuleArgsDict(TypedDict):
-        mapping_type: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
-        """
-        source: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The source schema/table combination for replication to target.
-        """
-        target: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The target schema/table combination for replication from the source.
-        """
-elif False:
-    PipelineMappingRuleArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineMappingRuleArgsDict(TypedDict):
+    mapping_type: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+    """
+    source: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The source schema/table combination for replication to target.
+    """
+    target: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The target schema/table combination for replication from the source.
+    """
 
 @pulumi.input_type
 class PipelineMappingRuleArgs:
@@ -1985,30 +1926,27 @@ class PipelineMappingRuleArgs:
         pulumi.set(self, "target", value)
 
 
-if not MYPY:
-    class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
-        bucket: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the bucket where the object is to be uploaded in the object storage
-        """
-        diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The state of the pipeline diagnostics collection.
-        """
-        namespace: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of namespace that serves as a container for all of your buckets
-        """
-        object: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        Name of the diagnostic collected and uploaded to object storage
-        """
-        time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
-        """
-elif False:
-    PipelinePipelineDiagnosticDataArgsDict: TypeAlias = Mapping[str, Any]
+class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
+    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the bucket where the object is to be uploaded in the object storage
+    """
+    diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The state of the pipeline diagnostics collection.
+    """
+    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of namespace that serves as a container for all of your buckets
+    """
+    object: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    Name of the diagnostic collected and uploaded to object storage
+    """
+    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
+    """
 
 @pulumi.input_type
 class PipelinePipelineDiagnosticDataArgs:
@@ -2097,26 +2035,23 @@ class PipelinePipelineDiagnosticDataArgs:
         pulumi.set(self, "time_last_collected", value)
 
 
-if not MYPY:
-    class PipelineProcessOptionsArgsDict(TypedDict):
-        initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgsDict']
-        """
-        (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
-        """
-        replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgsDict']
-        """
-        (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
-        """
-        should_restart_on_failure: pulumi.Input[_builtins.str]
-        """
-        (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
-        """
-        start_using_default_mapping: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
-        """
-elif False:
-    PipelineProcessOptionsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineProcessOptionsArgsDict(TypedDict):
+    initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgsDict']
+    """
+    (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+    """
+    replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgsDict']
+    """
+    (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
+    """
+    should_restart_on_failure: pulumi.Input[_builtins.str]
+    """
+    (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
+    """
+    start_using_default_mapping: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
+    """
 
 @pulumi.input_type
 class PipelineProcessOptionsArgs:
@@ -2186,18 +2121,15 @@ class PipelineProcessOptionsArgs:
         pulumi.set(self, "start_using_default_mapping", value)
 
 
-if not MYPY:
-    class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
-        is_initial_load: pulumi.Input[_builtins.str]
-        """
-        (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
-        """
-        action_on_existing_table: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
-        """
-elif False:
-    PipelineProcessOptionsInitialDataLoadArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
+    is_initial_load: pulumi.Input[_builtins.str]
+    """
+    (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
+    """
+    action_on_existing_table: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
+    """
 
 @pulumi.input_type
 class PipelineProcessOptionsInitialDataLoadArgs:
@@ -2237,22 +2169,19 @@ class PipelineProcessOptionsInitialDataLoadArgs:
         pulumi.set(self, "action_on_existing_table", value)
 
 
-if not MYPY:
-    class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):
-        can_replicate_schema_change: pulumi.Input[_builtins.str]
-        """
-        (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
-        """
-        action_on_ddl_error: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
-        """
-        action_on_dml_error: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
-        """
-elif False:
-    PipelineProcessOptionsReplicateSchemaChangeArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):
+    can_replicate_schema_change: pulumi.Input[_builtins.str]
+    """
+    (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
+    """
+    action_on_ddl_error: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+    """
+    action_on_dml_error: NotRequired[pulumi.Input[_builtins.str]]
+    """
+    (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
+    """
 
 @pulumi.input_type
 class PipelineProcessOptionsReplicateSchemaChangeArgs:
@@ -2308,14 +2237,11 @@ class PipelineProcessOptionsReplicateSchemaChangeArgs:
         pulumi.set(self, "action_on_dml_error", value)
 
 
-if not MYPY:
-    class PipelineSourceConnectionDetailsArgsDict(TypedDict):
-        connection_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        """
-elif False:
-    PipelineSourceConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+class PipelineSourceConnectionDetailsArgsDict(TypedDict):
+    connection_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+    """
 
 @pulumi.input_type
 class PipelineSourceConnectionDetailsArgs:
@@ -2339,18 +2265,15 @@ class PipelineSourceConnectionDetailsArgs:
         pulumi.set(self, "connection_id", value)
 
 
-if not MYPY:
-    class PipelineTargetConnectionDetailsArgsDict(TypedDict):
-        connection_id: pulumi.Input[_builtins.str]
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
+class PipelineTargetConnectionDetailsArgsDict(TypedDict):
+    connection_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
 
 
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-elif False:
-    PipelineTargetConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
 
 @pulumi.input_type
 class PipelineTargetConnectionDetailsArgs:
@@ -2382,16 +2305,13 @@ class PipelineTargetConnectionDetailsArgs:
         pulumi.set(self, "connection_id", value)
 
 
-if not MYPY:
-    class GetConnectionAssignmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The name of the connection in the assignment (aliasName).
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConnectionAssignmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConnectionAssignmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the connection in the assignment (aliasName).
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConnectionAssignmentsFilterArgs:
@@ -2438,16 +2358,13 @@ class GetConnectionAssignmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetConnectionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        The catalog name within Polaris where Iceberg tables are registered.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetConnectionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetConnectionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The catalog name within Polaris where Iceberg tables are registered.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetConnectionsFilterArgs:
@@ -2494,13 +2411,10 @@ class GetConnectionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDatabaseRegistrationsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDatabaseRegistrationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDatabaseRegistrationsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDatabaseRegistrationsFilterArgs:
@@ -2541,13 +2455,10 @@ class GetDatabaseRegistrationsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentBackupsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentBackupsFilterArgs:
@@ -2588,13 +2499,10 @@ class GetDeploymentBackupsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentCertificatesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentCertificatesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentCertificatesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentCertificatesFilterArgs:
@@ -2635,13 +2543,10 @@ class GetDeploymentCertificatesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentEnvironmentsFilterArgs:
@@ -2682,13 +2587,10 @@ class GetDeploymentEnvironmentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentPeersFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentPeersFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentPeersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentPeersFilterArgs:
@@ -2729,13 +2631,10 @@ class GetDeploymentPeersFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentTypesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentTypesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentTypesFilterArgs:
@@ -2776,13 +2675,10 @@ class GetDeploymentTypesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentUpgradesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentUpgradesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentUpgradesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentUpgradesFilterArgs:
@@ -2823,13 +2719,10 @@ class GetDeploymentUpgradesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentVersionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentVersionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentVersionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentVersionsFilterArgs:
@@ -2870,13 +2763,10 @@ class GetDeploymentVersionsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetDeploymentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetDeploymentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetDeploymentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetDeploymentsFilterArgs:
@@ -2917,13 +2807,10 @@ class GetDeploymentsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetMessagesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetMessagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetMessagesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetMessagesFilterArgs:
@@ -2964,16 +2851,13 @@ class GetMessagesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelineRunningProcessesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        An object's Display Name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelineRunningProcessesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelineRunningProcessesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    An object's Display Name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelineRunningProcessesFilterArgs:
@@ -3020,13 +2904,10 @@ class GetPipelineRunningProcessesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelineSchemaTablesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelineSchemaTablesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelineSchemaTablesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelineSchemaTablesFilterArgs:
@@ -3067,13 +2948,10 @@ class GetPipelineSchemaTablesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelineSchemasFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelineSchemasFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelineSchemasFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelineSchemasFilterArgs:
@@ -3114,13 +2992,10 @@ class GetPipelineSchemasFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetPipelinesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetPipelinesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetPipelinesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetPipelinesFilterArgs:
@@ -3161,16 +3036,13 @@ class GetPipelinesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetRecipesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        An object's Display Name.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetRecipesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetRecipesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    An object's Display Name.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetRecipesFilterArgs:
@@ -3217,13 +3089,10 @@ class GetRecipesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTrailFilesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTrailFilesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTrailFilesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTrailFilesFilterArgs:
@@ -3264,13 +3133,10 @@ class GetTrailFilesFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetTrailSequencesFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetTrailSequencesFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetTrailSequencesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetTrailSequencesFilterArgs:

@@ -62,9 +62,17 @@ public final class DataAssetArgs extends com.pulumi.resources.ResourceArgs {
         return this.displayName;
     }
 
+    /**
+     * (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     @Import(name="properties")
     private @Nullable Output<Map<String,String>> properties;
 
+    /**
+     * @return (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+     * 
+     */
     public Optional<Output<Map<String,String>>> properties() {
         return Optional.ofNullable(this.properties);
     }
@@ -181,11 +189,23 @@ public final class DataAssetArgs extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
+        /**
+         * @param properties (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+         * 
+         * @return builder
+         * 
+         */
         public Builder properties(@Nullable Output<Map<String,String>> properties) {
             $.properties = properties;
             return this;
         }
 
+        /**
+         * @param properties (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a data asset type, a query can be done on &#39;/types?type=dataAsset&#39; that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
+         * 
+         * @return builder
+         * 
+         */
         public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
         }

@@ -5,6 +5,13 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/goldengate/latest/ConnectionAssignment
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/goldengate
+ *
+ * Creates a new Connection Assignment.
+ *
  * ## Example Usage
  *
  * ```typescript

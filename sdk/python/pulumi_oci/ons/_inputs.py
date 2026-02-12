@@ -21,18 +21,13 @@ __all__ = [
     'GetSubscriptionsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetNotificationTopicsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        """
-        A filter to only return resources that match the given name exactly.
-        """
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetNotificationTopicsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetNotificationTopicsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to only return resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetNotificationTopicsFilterArgs:
@@ -79,13 +74,10 @@ class GetNotificationTopicsFilterArgs:
         pulumi.set(self, "regex", value)
 
 
-if not MYPY:
-    class GetSubscriptionsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetSubscriptionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetSubscriptionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetSubscriptionsFilterArgs:

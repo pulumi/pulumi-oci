@@ -201,6 +201,13 @@ class UserGroupMembership(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/UserGroupMembership
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
+
         ## Example Usage
 
         ```python
@@ -237,6 +244,13 @@ class UserGroupMembership(pulumi.CustomResource):
                  args: UserGroupMembershipArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/identity/latest/UserGroupMembership
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/identity
+
+        Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
+
         ## Example Usage
 
         ```python

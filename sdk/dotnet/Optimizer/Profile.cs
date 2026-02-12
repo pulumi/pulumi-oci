@@ -10,6 +10,13 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer
 {
     /// <summary>
+    /// This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/advisor/latest/Profile
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/optimizer
+    /// 
+    /// Creates a new profile.
+    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -69,7 +76,7 @@ namespace Pulumi.Oci.Optimizer
     /// 
     /// ## Import
     /// 
-    /// Profiles can be imported using the `id`, e.g.
+    /// Profiles can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Optimizer/profile:Profile test_profile "id"

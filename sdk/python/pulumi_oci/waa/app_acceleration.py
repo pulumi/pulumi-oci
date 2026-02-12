@@ -380,6 +380,13 @@ class AppAcceleration(pulumi.CustomResource):
                  web_app_acceleration_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waa/latest/WebAppAcceleration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_acceleration
+
+        Creates a new WebAppAcceleration.
+
         ## Example Usage
 
         ```python
@@ -431,6 +438,13 @@ class AppAcceleration(pulumi.CustomResource):
                  args: AppAccelerationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/waa/latest/WebAppAcceleration
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/web_app_acceleration
+
+        Creates a new WebAppAcceleration.
+
         ## Example Usage
 
         ```python

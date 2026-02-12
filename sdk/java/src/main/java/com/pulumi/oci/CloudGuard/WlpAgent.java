@@ -15,6 +15,14 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
+ * This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/cloud-guard/latest/WlpAgent
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/certificatesguard
+ * 
+ * Creates and registers a WLP agent for an
+ * on-premise resource.
+ * 
  * ## Example Usage
  * 
  * <pre>

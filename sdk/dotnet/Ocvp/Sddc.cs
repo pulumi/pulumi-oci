@@ -10,9 +10,108 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
+    /// This resource provides the Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+    /// Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Sddc
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+    /// 
+    /// Creates an Oracle Cloud VMware Solution software-defined data center (SDDC).
+    /// 
+    /// Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
+    /// creation of the SDDC.
+    /// 
+    /// **Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSddc = new Oci.Ocvp.Sddc("test_sddc", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         InitialConfigurations = new[]
+    ///         {
+    ///             new Oci.Ocvp.Inputs.SddcInitialConfigurationArgs
+    ///             {
+    ///                 InitialClusterConfigurations = new[]
+    ///                 {
+    ///                     new Oci.Ocvp.Inputs.SddcInitialConfigurationInitialClusterConfigurationArgs
+    ///                     {
+    ///                         ComputeAvailabilityDomain = sddcInitialConfigurationInitialClusterConfigurationsComputeAvailabilityDomain,
+    ///                         EsxiHostsCount = sddcInitialConfigurationInitialClusterConfigurationsEsxiHostsCount,
+    ///                         NetworkConfiguration = new Oci.Ocvp.Inputs.SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs
+    ///                         {
+    ///                             NsxEdgeVtepVlanId = testVlan.Id,
+    ///                             NsxVtepVlanId = testVlan.Id,
+    ///                             ProvisioningSubnetId = testSubnet.Id,
+    ///                             VmotionVlanId = testVlan.Id,
+    ///                             VsanVlanId = testVlan.Id,
+    ///                             HcxVlanId = testVlan.Id,
+    ///                             NsxEdgeUplink1vlanId = testNsxEdgeUplink1vlan.Id,
+    ///                             NsxEdgeUplink2vlanId = testNsxEdgeUplink2vlan.Id,
+    ///                             ProvisioningVlanId = testVlan.Id,
+    ///                             ReplicationVlanId = testVlan.Id,
+    ///                             VsphereVlanId = testVlan.Id,
+    ///                         },
+    ///                         VsphereType = sddcInitialConfigurationInitialClusterConfigurationsVsphereType,
+    ///                         CapacityReservationId = testCapacityReservation.Id,
+    ///                         DatastoreClusterIds = sddcInitialConfigurationInitialClusterConfigurationsDatastoreClusterIds,
+    ///                         Datastores = new[]
+    ///                         {
+    ///                             new Oci.Ocvp.Inputs.SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs
+    ///                             {
+    ///                                 BlockVolumeIds = sddcInitialConfigurationInitialClusterConfigurationsDatastoresBlockVolumeIds,
+    ///                                 DatastoreType = sddcInitialConfigurationInitialClusterConfigurationsDatastoresDatastoreType,
+    ///                             },
+    ///                         },
+    ///                         DisplayName = sddcInitialConfigurationInitialClusterConfigurationsDisplayName,
+    ///                         InitialCommitment = sddcInitialConfigurationInitialClusterConfigurationsInitialCommitment,
+    ///                         InitialHostOcpuCount = sddcInitialConfigurationInitialClusterConfigurationsInitialHostOcpuCount,
+    ///                         InitialHostShapeName = testShape.Name,
+    ///                         InstanceDisplayNamePrefix = sddcInitialConfigurationInitialClusterConfigurationsInstanceDisplayNamePrefix,
+    ///                         IsShieldedInstanceEnabled = sddcInitialConfigurationInitialClusterConfigurationsIsShieldedInstanceEnabled,
+    ///                         WorkloadNetworkCidr = sddcInitialConfigurationInitialClusterConfigurationsWorkloadNetworkCidr,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         SshAuthorizedKeys = sddcSshAuthorizedKeys,
+    ///         VmwareSoftwareVersion = sddcVmwareSoftwareVersion,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = sddcDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsSingleHostSddc = sddcIsSingleHostSddc,
+    ///         HcxAction = hcxAction,
+    ///         IsHcxEnabled = sddcIsHcxEnabled,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## How to migrate from deprecated fields to new fields
+    /// 
+    /// 1. Before starting migration, back up your terraform state file.
+    /// 2. Get the SDDC OCID for the `oci.Ocvp.Sddc` resource you plan to migrate.
+    /// 3. Remove the `oci.Ocvp.Sddc` resource from Terraform state via command: terraform state rm \&lt;resource address\&gt;
+    /// 4. Update `oci.Ocvp.Sddc` resource config. Remove all deprecated fields and add corresponding new fields to the resource config. Note: Remove and do not add `HcxAction` or `RefreshHcxLicenseStatus` because these fields will not be imported.
+    /// 5. Import `oci.Ocvp.Sddc` resource to Terraform state using command: terraform import \&lt;resource address\&gt; \&lt;SDDC OCID\&gt;.
+    /// 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.Sddc` resource. If there is any planned change, update `oci.Ocvp.Sddc` resource config until there is no planned change.
+    /// 
     /// ## Import
     /// 
-    /// Sddcs can be imported using the `id`, e.g.
+    /// Sddcs can be imported using the `Id`, e.g.
     /// 
     /// ```sh
     /// $ pulumi import oci:Ocvp/sddc:Sddc test_sddc "id"
@@ -89,6 +188,9 @@ namespace Pulumi.Oci.Ocvp
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+        /// </summary>
         [Output("hcxAction")]
         public Output<string?> HcxAction { get; private set; } = null!;
 
@@ -527,6 +629,9 @@ namespace Pulumi.Oci.Ocvp
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+        /// </summary>
         [Input("hcxAction")]
         public Input<string>? HcxAction { get; set; }
 
@@ -789,6 +894,9 @@ namespace Pulumi.Oci.Ocvp
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) The action to be performed upon HCX licenses. "UPGRADE" will upgrade the SDDC from HCX Advanced to HCX Enterprise. "DOWNGRADE" will downgrade the SDDC from HCX Enterprise to HCX Advanced after current HCX Enterprise billing cycle end date. After downgrade completion, you can run `terraform refresh` to update the Terraform state. "CANCEL_DOWNGRADE" will cancel the pending downgrade of HCX licenses. The action will only be performed when its value is changed. This field can also be used to enable HCX Enterprise during SDDC creation. If "UPGRADE" is set during SDDC creation, the SDDC will be created with HCX Enterprise enable. Supported actions during update: UPGRADE, DOWNGRADE, CANCEL_DOWNGRADE. Supported actions during creation: UPGRADE.
+        /// </summary>
         [Input("hcxAction")]
         public Input<string>? HcxAction { get; set; }
 

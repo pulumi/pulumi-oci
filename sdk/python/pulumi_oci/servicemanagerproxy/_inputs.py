@@ -19,15 +19,10 @@ __all__ = [
     'GetServiceEnvironmentsFilterArgsDict',
 ]
 
-MYPY = False
-
-if not MYPY:
-    class GetServiceEnvironmentsFilterArgsDict(TypedDict):
-        name: _builtins.str
-        values: Sequence[_builtins.str]
-        regex: NotRequired[_builtins.bool]
-elif False:
-    GetServiceEnvironmentsFilterArgsDict: TypeAlias = Mapping[str, Any]
+class GetServiceEnvironmentsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
 
 @pulumi.input_type
 class GetServiceEnvironmentsFilterArgs:

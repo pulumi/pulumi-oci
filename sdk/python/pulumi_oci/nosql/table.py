@@ -447,6 +447,13 @@ class Table(pulumi.CustomResource):
                  table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
                  __props__=None):
         """
+        This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/Table
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+
+        Create a new table.
+
         ## Example Usage
 
         ```python
@@ -495,6 +502,13 @@ class Table(pulumi.CustomResource):
                  args: TableArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/nosql-database/latest/Table
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage
+
+        Create a new table.
+
         ## Example Usage
 
         ```python

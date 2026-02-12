@@ -7,6 +7,16 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
+ * This resource provides the Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ * Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/vmware/latest/Datastore
+ *
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/ocvp
+ *
+ * Creates a Oracle Cloud VMware Solution Datastore.
+ *
+ * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the
+ * creation of the Datastore.
+ *
  * ## Example Usage
  *
  * ```typescript

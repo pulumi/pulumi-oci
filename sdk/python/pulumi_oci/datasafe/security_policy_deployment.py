@@ -478,6 +478,13 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
                  target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
+        This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicyDeployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a Data Safe security policy deployment in the Data Safe Console.
+
         ## Example Usage
 
         ```python
@@ -531,6 +538,13 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
                  args: SecurityPolicyDeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
+        Api doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-safe/latest/SecurityPolicyDeployment
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
+
+        Creates a Data Safe security policy deployment in the Data Safe Console.
+
         ## Example Usage
 
         ```python
